@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300
+END
+DemoSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3215/trunk/tos/sensorboards/mts300/DemoSensorC.nc
+END
+SounderC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3111/trunk/tos/sensorboards/mts300/SounderC.nc
+END
+AccelReadP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/AccelReadP.nc
+END
+MagP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5060/trunk/tos/sensorboards/mts300/MagP.nc
+END
+MicStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MicStreamC.nc
+END
+MicP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MicP.nc
+END
+.sensor
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5086/trunk/tos/sensorboards/mts300/.sensor
+END
+MagReadStreamP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MagReadStreamP.nc
+END
+PhotoTempP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3112/trunk/tos/sensorboards/mts300/PhotoTempP.nc
+END
+MagXC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MagXC.nc
+END
+MagYC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MagYC.nc
+END
+MicReadStreamP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MicReadStreamP.nc
+END
+PhotoTempDeviceC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5062/trunk/tos/sensorboards/mts300/PhotoTempDeviceC.nc
+END
+AccelXC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/AccelXC.nc
+END
+AccelYC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/AccelYC.nc
+END
+Mag.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/Mag.nc
+END
+ArbitratedTempDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/ArbitratedTempDeviceP.nc
+END
+TempC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/TempC.nc
+END
+MagConfigP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MagConfigP.nc
+END
+MicC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MicC.nc
+END
+MagReadP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MagReadP.nc
+END
+SensorMts300C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/SensorMts300C.nc
+END
+MicReadP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MicReadP.nc
+END
+Mts300Sounder.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3117/trunk/tos/sensorboards/mts300/Mts300Sounder.nc
+END
+AccelP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3111/trunk/tos/sensorboards/mts300/AccelP.nc
+END
+ArbitratedPhotoDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/ArbitratedPhotoDeviceP.nc
+END
+PhotoC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3112/trunk/tos/sensorboards/mts300/PhotoC.nc
+END
+DemoSensorStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3215/trunk/tos/sensorboards/mts300/DemoSensorStreamC.nc
+END
+SounderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3111/trunk/tos/sensorboards/mts300/SounderP.nc
+END
+AccelReadStreamP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/AccelReadStreamP.nc
+END
+PhotoTempControlP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3280/trunk/tos/sensorboards/mts300/PhotoTempControlP.nc
+END
+MicSetting.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MicSetting.nc
+END
+MicDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/MicDeviceP.nc
+END
+MagXStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MagXStreamC.nc
+END
+MagYStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mts300/MagYStreamC.nc
+END
+mts300.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts300/mts300.h
+END
+AccelConfigP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3111/trunk/tos/sensorboards/mts300/AccelConfigP.nc
+END
+AccelXStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/AccelXStreamC.nc
+END
+AccelYStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3113/trunk/tos/sensorboards/mts300/AccelYStreamC.nc
+END

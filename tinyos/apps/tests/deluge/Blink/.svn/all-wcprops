@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5209/trunk/apps/tests/deluge/Blink
+END
+BlinkC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/apps/tests/deluge/Blink/BlinkC.nc
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3705/trunk/apps/tests/deluge/Blink/volumes-stm25p.xml
+END
+BlinkAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/apps/tests/deluge/Blink/BlinkAppC.nc
+END
+burn
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5209/trunk/apps/tests/deluge/Blink/burn
+END
+burn-net
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4893/trunk/apps/tests/deluge/Blink/burn-net
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3705/trunk/apps/tests/deluge/Blink/volumes-at45db.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4189/trunk/apps/tests/deluge/Blink/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4090/trunk/apps/tests/deluge/Blink/Makefile
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3197/trunk/apps/tests/telosb/TestUserButton
+END
+TestUserButtonC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3197/trunk/apps/tests/telosb/TestUserButton/TestUserButtonC.nc
+END
+TestUserButtonAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3197/trunk/apps/tests/telosb/TestUserButton/TestUserButtonAppC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3197/trunk/apps/tests/telosb/TestUserButton/Makefile
+END

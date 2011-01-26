@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial
+END
+reswig
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2399/trunk/tools/tinyos/java/serial/reswig
+END
+NativeSerialEnums.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial/NativeSerialEnums.h
+END
+NativeSerial_linux.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial/NativeSerial_linux.cpp
+END
+TOSComm.i
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial/TOSComm.i
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4856/trunk/tools/tinyos/java/serial/Makefile.am
+END
+NativeSerial_win32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial/NativeSerial_win32.cpp
+END
+TOSComm_wrap.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2399/trunk/tools/tinyos/java/serial/TOSComm_wrap.cxx
+END
+NativeSerial_darwin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial/NativeSerial_darwin.cpp
+END
+NativeSerial.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/tools/tinyos/java/serial/NativeSerial.h
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3494/trunk/tools/tinyos/java/serial/.cvsignore
+END
+TOSComm_wrap_win32.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2399/trunk/tools/tinyos/java/serial/TOSComm_wrap_win32.cxx
+END

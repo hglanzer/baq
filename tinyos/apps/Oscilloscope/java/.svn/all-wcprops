@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/4827/trunk/apps/Oscilloscope/java
+END
+Graph.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3570/trunk/apps/Oscilloscope/java/Graph.java
+END
+run
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2399/trunk/apps/Oscilloscope/java/run
+END
+Node.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3566/trunk/apps/Oscilloscope/java/Node.java
+END
+ColorCellEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3566/trunk/apps/Oscilloscope/java/ColorCellEditor.java
+END
+Window.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4827/trunk/apps/Oscilloscope/java/Window.java
+END
+Data.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3566/trunk/apps/Oscilloscope/java/Data.java
+END
+oscilloscope.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4314/trunk/apps/Oscilloscope/java/oscilloscope.jar
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3538/trunk/apps/Oscilloscope/java/.cvsignore
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2399/trunk/apps/Oscilloscope/java/Makefile
+END
+Oscilloscope.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3568/trunk/apps/Oscilloscope/java/Oscilloscope.java
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3565/trunk/apps/Oscilloscope/java/build.xml
+END

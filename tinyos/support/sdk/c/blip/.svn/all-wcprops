@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/config.h.in
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/Makefile.in
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/configure.ac
+END
+bootstrap.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/bootstrap.sh
+END
+serial_tun.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/serial_tun.conf
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/Makefile.am
+END

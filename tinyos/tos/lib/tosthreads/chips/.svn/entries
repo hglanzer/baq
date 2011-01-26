@@ -1,0 +1,58 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosthreads/chips
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+tda5250
+dir
+
+xe1205
+dir
+
+msp430
+dir
+
+cc1000
+dir
+
+pxa27x
+dir
+
+atm128
+dir
+
+rf230
+dir
+
+cc2420
+dir
+
+atm1281
+dir
+
+m16c62p
+dir
+

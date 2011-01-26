@@ -1,0 +1,70 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tools/tinyos/java
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+serial
+dir
+
+env
+dir
+
+Makefile.am
+file
+
+
+
+
+2010-11-04T11:14:59.000000Z
+041bc664a1cc05cd92650157d598b0c6
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+.cvsignore
+file
+
+
+
+
+2010-11-04T11:14:59.000000Z
+26f08908d0224edf3c0936d2d9ff132c
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+README
+file
+
+
+
+
+2010-11-04T11:14:59.000000Z
+949f60c9f73568588f2f7d2c4af5b9a5
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+

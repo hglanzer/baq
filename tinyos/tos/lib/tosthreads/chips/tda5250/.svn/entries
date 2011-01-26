@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosthreads/chips/tda5250
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+Tda5250ActiveMessageP.nc
+file
+
+
+
+
+2010-11-04T11:15:33.000000Z
+4aa28d455c46cb6b7b48ea3488cdd1ec
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+Tda5250ActiveMessageC.nc
+file
+
+
+
+
+2010-11-04T11:15:33.000000Z
+feaae28e0ccfacfdecad8c92764efaa2
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

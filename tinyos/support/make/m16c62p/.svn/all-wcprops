@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5177/trunk/support/make/m16c62p
+END
+reinstall.extra
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4707/trunk/support/make/m16c62p/reinstall.extra
+END
+sm16cf.extra
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5038/trunk/support/make/m16c62p/sm16cf.extra
+END
+m16c62p.rules
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5177/trunk/support/make/m16c62p/m16c62p.rules
+END
+debug.extra
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4707/trunk/support/make/m16c62p/debug.extra
+END
+install.extra
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4707/trunk/support/make/m16c62p/install.extra
+END
+crt.S
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5078/trunk/support/make/m16c62p/crt.S
+END
+debugopt.extra
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4707/trunk/support/make/m16c62p/debugopt.extra
+END
+m16c.x
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5078/trunk/support/make/m16c62p/m16c.x
+END

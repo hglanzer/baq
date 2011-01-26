@@ -1,0 +1,43 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/support/sdk/python
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+tinyos
+dir
+
+tos.py
+file
+
+
+
+
+2010-11-04T11:16:20.000000Z
+d4b6e9588cad9e296782d359b7318ca2
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

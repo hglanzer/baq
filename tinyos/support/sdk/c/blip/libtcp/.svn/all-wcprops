@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp
+END
+test_circ.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/test_circ.c
+END
+circ.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/circ.c
+END
+tcplib.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/tcplib.h
+END
+circ.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/circ.h
+END
+test_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/test_server.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/Makefile
+END
+tcplib.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/support/sdk/c/blip/libtcp/tcplib.c
+END

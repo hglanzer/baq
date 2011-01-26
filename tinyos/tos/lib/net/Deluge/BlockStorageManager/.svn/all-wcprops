@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager
+END
+BlockReaderC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockReaderC.nc
+END
+BlockStorageManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockStorageManager.h
+END
+VolumeId.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/VolumeId.nc
+END
+VolumeIdC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/VolumeIdC.nc
+END
+BlockStorageLockClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockStorageLockClientC.nc
+END
+BlockWriterC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockWriterC.nc
+END
+BlockStorageManagerP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockStorageManagerP.nc
+END
+BlockStorageLockC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockStorageLockC.nc
+END
+BlockStorageManagerC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/BlockStorageManager/BlockStorageManagerC.nc
+END

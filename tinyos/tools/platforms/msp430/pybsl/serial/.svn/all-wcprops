@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4450/trunk/tools/platforms/msp430/pybsl/serial
+END
+serialutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/serial/serialutil.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4450/trunk/tools/platforms/msp430/pybsl/serial/__init__.py
+END
+serialjava.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/4450/trunk/tools/platforms/msp430/pybsl/serial/serialjava.py
+END
+serialposix.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4450/trunk/tools/platforms/msp430/pybsl/serial/serialposix.py
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/serial/Makefile.am
+END
+serialwin32.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4450/trunk/tools/platforms/msp430/pybsl/serial/serialwin32.py
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3330/trunk/tools/platforms/msp430/pybsl/serial/.cvsignore
+END

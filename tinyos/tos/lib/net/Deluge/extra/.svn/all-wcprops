@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5188/trunk/tos/lib/net/Deluge/extra
+END
+TOSBoot.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/TOSBoot.h
+END
+NetProgC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/NetProgC.nc
+END
+NetProg.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/NetProg.h
+END
+NetProgM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/NetProgM.nc
+END
+NetProg.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/NetProg.nc
+END

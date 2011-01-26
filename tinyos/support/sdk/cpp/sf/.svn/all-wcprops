@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/4625/trunk/support/sdk/cpp/sf
+END
+sfpacket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4508/trunk/support/sdk/cpp/sf/sfpacket.cpp
+END
+serialcomm.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4508/trunk/support/sdk/cpp/sf/serialcomm.h
+END
+packetbuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3863/trunk/support/sdk/cpp/sf/packetbuffer.cpp
+END
+tcpcomm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4508/trunk/support/sdk/cpp/sf/tcpcomm.cpp
+END
+sfpacket.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3880/trunk/support/sdk/cpp/sf/sfpacket.h
+END
+packetbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3863/trunk/support/sdk/cpp/sf/packetbuffer.h
+END
+serialprotocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3411/trunk/support/sdk/cpp/sf/serialprotocol.h
+END
+tcpcomm.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3863/trunk/support/sdk/cpp/sf/tcpcomm.h
+END
+sf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3457/trunk/support/sdk/cpp/sf/sf.cpp
+END
+sfcontrol.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4508/trunk/support/sdk/cpp/sf/sfcontrol.cpp
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3516/trunk/support/sdk/cpp/sf/build.xml
+END
+sfcontrol.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3460/trunk/support/sdk/cpp/sf/sfcontrol.h
+END
+basecomm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3863/trunk/support/sdk/cpp/sf/basecomm.cpp
+END
+sharedinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3411/trunk/support/sdk/cpp/sf/sharedinfo.h
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3411/trunk/support/sdk/cpp/sf/README.txt
+END
+basecomm.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3863/trunk/support/sdk/cpp/sf/basecomm.h
+END
+serialcomm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/4625/trunk/support/sdk/cpp/sf/serialcomm.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3411/trunk/support/sdk/cpp/sf/Makefile
+END

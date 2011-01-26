@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2977/trunk/tools/platforms/msp430/pybsl/winexe
+END
+README.windows
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2977/trunk/tools/platforms/msp430/pybsl/winexe/README.windows
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/winexe/setup.py
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/winexe/Makefile
+END
+build-windist
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/winexe/build-windist
+END

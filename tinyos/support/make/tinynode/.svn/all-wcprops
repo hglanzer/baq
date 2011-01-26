@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/4090/trunk/support/make/tinynode
+END
+tinynode.rules
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2399/trunk/support/make/tinynode/tinynode.rules
+END
+bsl.extra
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2977/trunk/support/make/tinynode/bsl.extra
+END
+init.gdb.in
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2399/trunk/support/make/tinynode/init.gdb.in
+END
+xedebug.in
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2399/trunk/support/make/tinynode/xedebug.in
+END
+noflash.gdb.in
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2399/trunk/support/make/tinynode/noflash.gdb.in
+END
+noflash.extra
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2399/trunk/support/make/tinynode/noflash.extra
+END
+flash.gdb.in
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2399/trunk/support/make/tinynode/flash.gdb.in
+END
+gdb.extra
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4090/trunk/support/make/tinynode/gdb.extra
+END
+digi.extra
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2977/trunk/support/make/tinynode/digi.extra
+END

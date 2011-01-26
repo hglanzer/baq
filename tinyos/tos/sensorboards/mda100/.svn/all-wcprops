@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/4265/trunk/tos/sensorboards/mda100
+END
+DemoSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/DemoSensorC.nc
+END
+PhotoTempConfigP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/PhotoTempConfigP.nc
+END
+ArbitratedTempDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mda100/ArbitratedTempDeviceP.nc
+END
+.sensor
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4265/trunk/tos/sensorboards/mda100/.sensor
+END
+PhotoTempConfigC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/PhotoTempConfigC.nc
+END
+TempC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mda100/TempC.nc
+END
+SharedAnalogDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/SharedAnalogDeviceP.nc
+END
+mda100.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/mda100.h
+END
+PhotoImplP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/PhotoImplP.nc
+END
+ArbitratedPhotoDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/ArbitratedPhotoDeviceP.nc
+END
+SharedAnalogDeviceC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/4005/trunk/tos/sensorboards/mda100/SharedAnalogDeviceC.nc
+END
+PhotoC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3537/trunk/tos/sensorboards/mda100/PhotoC.nc
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/4941/trunk/apps/tests/TestLpl
+END
+TestLplC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4804/trunk/apps/tests/TestLpl/TestLplC.nc
+END
+TestLplAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/4941/trunk/apps/tests/TestLpl/TestLplAppC.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4804/trunk/apps/tests/TestLpl/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4202/trunk/apps/tests/TestLpl/Makefile
+END

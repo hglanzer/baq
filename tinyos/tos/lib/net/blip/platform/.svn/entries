@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/net/blip/platform
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+RF230ReadLqiC.nc
+file
+
+
+
+
+2010-11-04T11:15:37.000000Z
+f7973a0bf6788414ec1b2a1bf36e90a0
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+CC2420ReadLqiC.nc
+file
+
+
+
+
+2010-11-04T11:15:37.000000Z
+2d4256157d758a50e6a0976ce56b345e
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+

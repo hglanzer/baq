@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/printf
+END
+avr_stdio.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4277/trunk/tos/lib/tosthreads/lib/printf/avr_stdio.h
+END
+PrintfP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5039/trunk/tos/lib/tosthreads/lib/printf/PrintfP.nc
+END
+PrintfC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/lib/printf/PrintfC.nc
+END
+printf.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/printf/printf.h
+END

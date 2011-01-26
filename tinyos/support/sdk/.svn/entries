@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/support/sdk
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+java
+dir
+
+python
+dir
+
+cpp
+dir
+
+c
+dir
+

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/5108/trunk/tos/chips/atm128
+END
+Atm128Power.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/Atm128Power.h
+END
+McuSleepC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/McuSleepC.nc
+END
+atm128hardware.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/atm128hardware.h
+END
+Atm128I2C.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/Atm128I2C.h
+END
+Atm128UartP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4123/trunk/tos/chips/atm128/Atm128UartP.nc
+END
+atm128const.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/atm128const.h
+END
+Atm128Uart0C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/Atm128Uart0C.nc
+END
+Atm128Uart1C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5101/trunk/tos/chips/atm128/Atm128Uart1C.nc
+END
+HplAtm128UartP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/HplAtm128UartP.nc
+END
+HplAtm128Uart.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/HplAtm128Uart.nc
+END
+crc.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/crc.h
+END
+Atm128Uart.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/Atm128Uart.h
+END
+Atm128Clock.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/Atm128Clock.h
+END
+HplAtm128UartC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/HplAtm128UartC.nc
+END

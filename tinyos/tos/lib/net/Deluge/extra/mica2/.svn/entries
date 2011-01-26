@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/net/Deluge/extra/mica2
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+NetProg_platform.h
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+052bf289daa9933e8ae8d566e89ed9f9
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

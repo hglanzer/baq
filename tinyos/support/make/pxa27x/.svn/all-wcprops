@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5015/trunk/support/make/pxa27x
+END
+reinstall.extra
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2977/trunk/support/make/pxa27x/reinstall.extra
+END
+pxa27x.rules
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5015/trunk/support/make/pxa27x/pxa27x.rules
+END
+jflashmm.extra
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3958/trunk/support/make/pxa27x/jflashmm.extra
+END
+xflash.extra
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3966/trunk/support/make/pxa27x/xflash.extra
+END
+debug.extra
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2977/trunk/support/make/pxa27x/debug.extra
+END
+install.extra
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/support/make/pxa27x/install.extra
+END
+openocd.extra
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3966/trunk/support/make/pxa27x/openocd.extra
+END
+debugopt.extra
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2977/trunk/support/make/pxa27x/debugopt.extra
+END

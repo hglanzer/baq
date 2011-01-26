@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/doc/policy
+http://tinyos-main.googlecode.com/svn
+
+
+
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+owners.txt
+file
+
+
+
+
+2010-11-04T11:16:12.000000Z
+9adae4a2f7d4101169df27a99f48564b
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+policy.txt
+file
+
+
+
+
+2010-11-04T11:16:12.000000Z
+1a5d0078b14b19535363cd496c624855
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+

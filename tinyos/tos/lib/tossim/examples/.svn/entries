@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tossim/examples
+http://tinyos-main.googlecode.com/svn
+
+
+
+2007-04-20T21:39:36.000000Z
+3240
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+variables.py
+file
+
+
+
+
+2010-11-04T11:15:48.000000Z
+f2e3c26e039b49f63f566ca4e96d8ac1
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+packets.py
+file
+
+
+
+
+2010-11-04T11:15:48.000000Z
+b12fae99c5c6bf25492ae28fa142b76c
+2007-04-20T21:39:36.000000Z
+3240
+scipio
+

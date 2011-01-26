@@ -1,0 +1,41 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tools/platforms/intelmote2/openocd
+http://tinyos-main.googlecode.com/svn
+
+
+
+2008-05-29T20:23:47.000000Z
+3967
+kusy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+imote2-ocd-program.py
+file
+
+
+
+
+2010-11-04T11:15:00.000000Z
+12c0dc7781d3d59a8d54e6d361527591
+2008-05-29T20:23:47.000000Z
+3967
+kusy
+has-props
+

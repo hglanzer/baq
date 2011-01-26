@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi
+END
+Atm128Spi.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi/Atm128Spi.nc
+END
+Atm128SpiP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi/Atm128SpiP.nc
+END
+Atm128SpiC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi/Atm128SpiC.nc
+END
+HplAtm128SpiP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi/HplAtm128SpiP.nc
+END
+Atm128Spi.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi/Atm128Spi.h
+END
+HplAtm128SpiC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/spi/HplAtm128SpiC.nc
+END

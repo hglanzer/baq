@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5015/trunk/tools/platforms/msp430/pybsl
+END
+tos-bsl-license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/tos-bsl-license.txt
+END
+tos-bsl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/tos-bsl.txt
+END
+tos-bsl-win.tar.gz
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/tos-bsl-win.tar.gz
+END
+tos-bsl.1.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/tos-bsl.1.in
+END
+tos-bsl.in
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5015/trunk/tools/platforms/msp430/pybsl/tos-bsl.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/Makefile.am
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/.cvsignore
+END
+elf.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/pybsl/elf.py
+END

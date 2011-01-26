@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/apps/tests/mica2/ADC
+END
+TestADCM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/apps/tests/mica2/ADC/TestADCM.nc
+END
+TestADCC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/apps/tests/mica2/ADC/TestADCC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2898/trunk/apps/tests/mica2/ADC/Makefile
+END

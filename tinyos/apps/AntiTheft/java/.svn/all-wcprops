@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5108/trunk/apps/AntiTheft/java
+END
+antitheft.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3478/trunk/apps/AntiTheft/java/antitheft.jar
+END
+run
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3146/trunk/apps/AntiTheft/java/run
+END
+BagPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3150/trunk/apps/AntiTheft/java/BagPanel.java
+END
+AntiTheftGui.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/apps/AntiTheft/java/AntiTheftGui.java
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3149/trunk/apps/AntiTheft/java/.cvsignore
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3146/trunk/apps/AntiTheft/java/Makefile
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4169/trunk/apps/AntiTheft/java/build.xml
+END

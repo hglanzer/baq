@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4810/trunk/apps/tutorials/LowPowerSensing/Sampler
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/Sampler/volumes-stm25p.xml
+END
+LowPowerSensingPeriodicSamplerC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/4810/trunk/apps/tutorials/LowPowerSensing/Sampler/LowPowerSensingPeriodicSamplerC.nc
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/Sampler/volumes-at45db.xml
+END
+LowPowerSensingPeriodicSamplerAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/4531/trunk/apps/tutorials/LowPowerSensing/Sampler/LowPowerSensingPeriodicSamplerAppC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4084/trunk/apps/tutorials/LowPowerSensing/Sampler/Makefile
+END

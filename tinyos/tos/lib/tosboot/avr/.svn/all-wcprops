@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/avr
+END
+HardwareC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/avr/HardwareC.nc
+END
+ProgFlashC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/avr/ProgFlashC.nc
+END
+InternalFlashC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/avr/InternalFlashC.nc
+END

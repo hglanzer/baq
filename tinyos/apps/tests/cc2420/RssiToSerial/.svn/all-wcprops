@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4482/trunk/apps/tests/cc2420/RssiToSerial
+END
+SpecAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4153/trunk/apps/tests/cc2420/RssiToSerial/SpecAnalyzer.java
+END
+RssiToSerialP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4158/trunk/apps/tests/cc2420/RssiToSerial/RssiToSerialP.nc
+END
+RssiToSerialC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4158/trunk/apps/tests/cc2420/RssiToSerial/RssiToSerialC.nc
+END
+RssiToSerial.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4153/trunk/apps/tests/cc2420/RssiToSerial/RssiToSerial.h
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4312/trunk/apps/tests/cc2420/RssiToSerial/README.txt
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4261/trunk/apps/tests/cc2420/RssiToSerial/.cvsignore
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4482/trunk/apps/tests/cc2420/RssiToSerial/Makefile
+END

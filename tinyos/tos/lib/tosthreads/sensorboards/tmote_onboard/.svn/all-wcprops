@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard
+END
+CHamamatsuS10871TsrP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/CHamamatsuS10871TsrP.nc
+END
+tosthread_hamamatsuS1087.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/tosthread_hamamatsuS1087.h
+END
+BlockingSensirionSht11ReaderImplP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/BlockingSensirionSht11ReaderImplP.nc
+END
+CHamamatsuS1087ParC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/CHamamatsuS1087ParC.nc
+END
+tosthread_sensirionSht11.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/tosthread_sensirionSht11.h
+END
+tmote_onboard_sensors.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/tmote_onboard_sensors.h
+END
+CSensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/CSensirionSht11C.nc
+END
+BlockingHamamatsuS1087ParC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/BlockingHamamatsuS1087ParC.nc
+END
+CHamamatsuS10871TsrC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/CHamamatsuS10871TsrC.nc
+END
+BlockingSensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/BlockingSensirionSht11C.nc
+END
+BlockingSensirionSht11ReaderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/BlockingSensirionSht11ReaderP.nc
+END
+tosthread_hamamatsuS10871.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/tosthread_hamamatsuS10871.h
+END
+BlockingHamamatsuS10871TsrC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/BlockingHamamatsuS10871TsrC.nc
+END
+CHamamatsuS1087ParP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/CHamamatsuS1087ParP.nc
+END
+CSensirionSht11P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/4832/trunk/tos/lib/tosthreads/sensorboards/tmote_onboard/CSensirionSht11P.nc
+END

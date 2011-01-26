@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/i2c
+END
+Atm128I2C.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/i2c/Atm128I2C.h
+END
+Atm128I2CMaster.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/i2c/Atm128I2CMaster.nc
+END
+Atm128I2CMasterP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3033/trunk/tos/chips/atm128/i2c/Atm128I2CMasterP.nc
+END
+HplAtm128I2CBus.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/i2c/HplAtm128I2CBus.nc
+END
+Atm128I2CMasterImplP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2898/trunk/tos/chips/atm128/i2c/Atm128I2CMasterImplP.nc
+END
+HplAtm128I2CBusP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/i2c/HplAtm128I2CBusP.nc
+END
+Atm128I2CMasterC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2399/trunk/tos/chips/atm128/i2c/Atm128I2CMasterC.nc
+END
+Atm128I2C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/i2c/Atm128I2C.nc
+END
+HplAtm128I2CBusC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/i2c/HplAtm128I2CBusC.nc
+END
+Atm128I2CMasterPacketP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/4969/trunk/tos/chips/atm128/i2c/Atm128I2CMasterPacketP.nc
+END

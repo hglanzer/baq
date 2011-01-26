@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/5002/trunk/tools/release
+END
+nesc.spec
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/4335/trunk/tools/release/nesc.spec
+END
+deputy.spec
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4335/trunk/tools/release/deputy.spec
+END
+tinyos-tools.files
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4943/trunk/tools/release/tinyos-tools.files
+END
+tinyos.files
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4943/trunk/tools/release/tinyos.files
+END
+extractor
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/4943/trunk/tools/release/extractor
+END
+deputy.files
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4335/trunk/tools/release/deputy.files
+END
+tinyos-tools.spec
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5002/trunk/tools/release/tinyos-tools.spec
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3507/trunk/tools/release/build.xml
+END
+build-rpms
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5002/trunk/tools/release/build-rpms
+END
+tinyos.spec
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5002/trunk/tools/release/tinyos.spec
+END

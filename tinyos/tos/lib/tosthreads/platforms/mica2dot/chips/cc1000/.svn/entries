@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosthreads/platforms/mica2dot/chips/cc1000
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+HplCC1000InitP.nc
+file
+
+
+
+
+2010-11-04T11:15:35.000000Z
+3e7023bedc10da4c30d90da259fdb200
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4917/trunk/apps/tosthreads/capps/SenseStoreAndForward
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/4013/trunk/apps/tosthreads/capps/SenseStoreAndForward/volumes-stm25p.xml
+END
+SenseStoreAndForward.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/4917/trunk/apps/tosthreads/capps/SenseStoreAndForward/SenseStoreAndForward.c
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/4013/trunk/apps/tosthreads/capps/SenseStoreAndForward/volumes-at45db.xml
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/4165/trunk/apps/tosthreads/capps/SenseStoreAndForward/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/4013/trunk/apps/tosthreads/capps/SenseStoreAndForward/Makefile
+END

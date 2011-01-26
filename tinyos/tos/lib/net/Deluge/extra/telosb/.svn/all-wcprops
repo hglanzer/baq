@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/telosb
+END
+ReprogramGuardP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3930/trunk/tos/lib/net/Deluge/extra/telosb/ReprogramGuardP.nc
+END
+TOSBoot_platform.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/5108/trunk/tos/lib/net/Deluge/extra/telosb/TOSBoot_platform.h
+END
+ReprogramGuardC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3930/trunk/tos/lib/net/Deluge/extra/telosb/ReprogramGuardC.nc
+END

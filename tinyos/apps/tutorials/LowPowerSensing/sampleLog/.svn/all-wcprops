@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog
+END
+PeriodicSampleLoggerP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/PeriodicSampleLoggerP.nc
+END
+SampleLogReaderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/SampleLogReaderP.nc
+END
+SampleLogReaderC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/SampleLogReaderC.nc
+END
+PeriodicSampleLogger16C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/PeriodicSampleLogger16C.nc
+END
+SampleNxConverter.nc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/SampleNxConverter.nc
+END
+GenericSensorSample.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/GenericSensorSample.h
+END
+SampleLogRead.nc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/sampleLog/SampleLogRead.nc
+END

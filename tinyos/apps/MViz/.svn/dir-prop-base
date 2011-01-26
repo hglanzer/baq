@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 46
+build
+.*.swp
+build
+MVizMsg.class
+MVizMsg.java
+
+END

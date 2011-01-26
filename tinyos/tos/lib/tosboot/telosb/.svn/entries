@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosboot/telosb
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+hardware.h
+file
+
+
+
+
+2010-11-04T11:15:44.000000Z
+a41194c37abef2f6932e0c01a005499b
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

@@ -1,0 +1,110 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/support/sdk/c/blip
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+interface
+dir
+
+config.h.in
+file
+
+
+
+
+2010-11-04T11:16:21.000000Z
+0600f3c6ec12ebb5af7236664ae2a7d1
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+Makefile.in
+file
+
+
+
+
+2010-11-04T11:16:21.000000Z
+b83d826af7a845ef1b38a5613bd32e59
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+configure.ac
+file
+
+
+
+
+2010-11-04T11:16:21.000000Z
+dfef000f738edf28825c83aef11bad26
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+bootstrap.sh
+file
+
+
+
+
+2010-11-04T11:16:21.000000Z
+3da1c8cb82c0c31cb9515c350fae6131
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+has-props
+
+serial_tun.conf
+file
+
+
+
+
+2010-11-04T11:16:21.000000Z
+be5e2cda4ee8df7a3ed301d45a835ca4
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+Makefile.am
+file
+
+
+
+
+2010-11-04T11:16:21.000000Z
+74ae60fcbcf0348956e7fa996ac7ba56
+2010-09-10T21:11:14.458971Z
+5168
+sdhags
+
+libtcp
+dir
+
+lib6lowpan
+dir
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/kernel/stargate
+END
+stargate_ssp.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/kernel/stargate/stargate_ssp.c
+END
+stargate_ssp.o
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/stargate/stargate_ssp.o
+END
+ssp_load.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/stargate/ssp_load.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/stargate/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/stargate/Makefile
+END

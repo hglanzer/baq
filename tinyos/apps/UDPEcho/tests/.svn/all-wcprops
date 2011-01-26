@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/4473/trunk/apps/UDPEcho/tests
+END
+seqtest.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4473/trunk/apps/UDPEcho/tests/seqtest.pl
+END
+echotest.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4473/trunk/apps/UDPEcho/tests/echotest.pl
+END

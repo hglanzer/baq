@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/chips/atm128/adc
+END
+BlockingAdcP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/4018/trunk/tos/lib/tosthreads/chips/atm128/adc/BlockingAdcP.nc
+END
+BlockingAdcReadStreamClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/chips/atm128/adc/BlockingAdcReadStreamClientC.nc
+END
+BlockingAdcReadClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/chips/atm128/adc/BlockingAdcReadClientC.nc
+END

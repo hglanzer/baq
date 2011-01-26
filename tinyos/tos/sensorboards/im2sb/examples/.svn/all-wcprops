@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/sensorboards/im2sb/examples
+END
+TestSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4005/trunk/tos/sensorboards/im2sb/examples/TestSensor.h
+END
+TestSensorMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestSensorMsg.java
+END
+TestSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tos/sensorboards/im2sb/examples/TestSensor.java
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/Makefile
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/apps/tests/TestLocalTime
+END
+TestLocalTime.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3288/trunk/apps/tests/TestLocalTime/TestLocalTime.h
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4449/trunk/apps/tests/TestLocalTime/README.txt
+END
+TestLocalTimeC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5108/trunk/apps/tests/TestLocalTime/TestLocalTimeC.nc
+END
+TestLocalTimeAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/apps/tests/TestLocalTime/TestLocalTimeAppC.nc
+END
+dump.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4449/trunk/apps/tests/TestLocalTime/dump.py
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3288/trunk/apps/tests/TestLocalTime/Makefile
+END

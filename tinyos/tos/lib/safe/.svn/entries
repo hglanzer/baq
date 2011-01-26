@@ -1,0 +1,55 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/safe
+http://tinyos-main.googlecode.com/svn
+
+
+
+2008-12-09T03:55:12.000000Z
+4448
+regehr
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+include
+dir
+
+SafeFailureHandlerP.nc
+file
+
+
+
+
+2010-11-04T11:15:49.000000Z
+914bad0af964ae2d1b9a566765169cc0
+2008-12-09T03:55:12.000000Z
+4448
+regehr
+
+SafeFailureHandlerC.nc
+file
+
+
+
+
+2010-11-04T11:15:49.000000Z
+6d0cd75c84d132aacf25cf06aa813f18
+2008-09-06T21:22:33.000000Z
+4370
+regehr
+

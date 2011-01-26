@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/5158/trunk/support/sdk/java
+END
+Makefile.include
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2399/trunk/support/sdk/java/Makefile.include
+END
+tinyos.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5158/trunk/support/sdk/java/tinyos.jar
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2399/trunk/support/sdk/java/.cvsignore
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3553/trunk/support/sdk/java/Makefile
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5158/trunk/support/sdk/java/build.xml
+END

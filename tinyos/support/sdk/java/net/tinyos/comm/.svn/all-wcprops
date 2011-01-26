@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5158/trunk/support/sdk/java/net/tinyos/comm
+END
+TOSCommJNI.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5158/trunk/support/sdk/java/net/tinyos/comm/TOSCommJNI.java
+END
+UnsupportedCommOperationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/5108/trunk/support/sdk/java/net/tinyos/comm/UnsupportedCommOperationException.java
+END
+SerialPort.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/support/sdk/java/net/tinyos/comm/SerialPort.java
+END
+TOSSerial.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/support/sdk/java/net/tinyos/comm/TOSSerial.java
+END
+NativeSerial.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3293/trunk/support/sdk/java/net/tinyos/comm/NativeSerial.java
+END
+SerialPortEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/5108/trunk/support/sdk/java/net/tinyos/comm/SerialPortEvent.java
+END
+ByteQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/support/sdk/java/net/tinyos/comm/ByteQueue.java
+END
+SerialPortListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/5108/trunk/support/sdk/java/net/tinyos/comm/SerialPortListener.java
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2399/trunk/support/sdk/java/net/tinyos/comm/Makefile
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2977/trunk/support/sdk/java/net/tinyos/comm/package.html
+END

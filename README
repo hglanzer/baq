@@ -1,0 +1,6 @@
+*** baq-arbeit harald glanzer ***
+
+	porting tinyos --> bigARV6 - dev-board
+
+	--> this dir contains bigAVR6 - specific files
+	--> no other platform-files in this branch

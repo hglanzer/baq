@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/universal_sensors
+END
+SensorSample.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/universal_sensors/SensorSample.h
+END
+SampleNxConverterC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/universal_sensors/SampleNxConverterC.nc
+END
+SamplePeriodicLogC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/universal_sensors/SamplePeriodicLogC.nc
+END

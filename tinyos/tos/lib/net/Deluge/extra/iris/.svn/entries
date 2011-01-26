@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/net/Deluge/extra/iris
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+NetProgC.nc
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+0e944994fea220bc7def29de25ba949d
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+NetProgM.nc
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+d1ee6c713c1c3da736881638b46a1fcf
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

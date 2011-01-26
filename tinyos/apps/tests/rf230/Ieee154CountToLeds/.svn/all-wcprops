@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/apps/tests/rf230/Ieee154CountToLeds
+END
+RadioCountToLedsC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/5108/trunk/apps/tests/rf230/Ieee154CountToLeds/RadioCountToLedsC.nc
+END
+RadioCountToLedsAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5108/trunk/apps/tests/rf230/Ieee154CountToLeds/RadioCountToLedsAppC.nc
+END
+RadioCountToLeds.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/5108/trunk/apps/tests/rf230/Ieee154CountToLeds/RadioCountToLeds.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4764/trunk/apps/tests/rf230/Ieee154CountToLeds/Makefile
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4018/trunk/tos/lib/tosthreads/chips/msp430/adc12
+END
+BlockingAdcP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/4018/trunk/tos/lib/tosthreads/chips/msp430/adc12/BlockingAdcP.nc
+END
+BlockingAdcReadStreamClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/adc12/BlockingAdcReadStreamClientC.nc
+END
+BlockingAdcReadClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/4017/trunk/tos/lib/tosthreads/chips/msp430/adc12/BlockingAdcReadClientC.nc
+END

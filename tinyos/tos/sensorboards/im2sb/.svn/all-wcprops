@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/5108/trunk/tos/sensorboards/im2sb
+END
+LIS3L02DQC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/LIS3L02DQC.nc
+END
+Tsl2561InternalC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/Tsl2561InternalC.nc
+END
+HalSensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/HalSensirionSht11C.nc
+END
+Tsl2561C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/Tsl2561C.nc
+END
+MAX136xInternalP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/MAX136xInternalP.nc
+END
+.sensor
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/.sensor
+END
+LIS3L02DQInternalP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/LIS3L02DQInternalP.nc
+END
+SensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/SensirionSht11C.nc
+END
+Tsl2561InternalP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/Tsl2561InternalP.nc
+END
+TMP175InternalC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/TMP175InternalC.nc
+END
+TMP175C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/TMP175C.nc
+END
+HplSensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/HplSensirionSht11C.nc
+END
+im2sb.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4005/trunk/tos/sensorboards/im2sb/im2sb.h
+END
+MAX136xInternalC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/MAX136xInternalC.nc
+END
+TMP175InternalP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/TMP175InternalP.nc
+END
+MAX136xC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/MAX136xC.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/README.txt
+END
+LIS3L02DQInternalC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/LIS3L02DQInternalC.nc
+END
+HplSensirionSht11P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/HplSensirionSht11P.nc
+END

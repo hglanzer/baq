@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestLis3l02dq
+END
+TestSensorM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestLis3l02dq/TestSensorM.nc
+END
+TestSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestLis3l02dq/TestSensorC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestLis3l02dq/Makefile
+END

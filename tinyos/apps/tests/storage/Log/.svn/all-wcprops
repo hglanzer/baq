@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/4980/trunk/apps/tests/storage/Log
+END
+RandRWC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/4980/trunk/apps/tests/storage/Log/RandRWC.nc
+END
+RandRWAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4163/trunk/apps/tests/storage/Log/RandRWAppC.nc
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2399/trunk/apps/tests/storage/Log/volumes-stm25p.xml
+END
+volumes-pxa27xp30.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2880/trunk/apps/tests/storage/Log/volumes-pxa27xp30.xml
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2399/trunk/apps/tests/storage/Log/volumes-at45db.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3414/trunk/apps/tests/storage/Log/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2399/trunk/apps/tests/storage/Log/Makefile
+END

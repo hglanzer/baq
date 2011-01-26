@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4810/trunk/apps/tutorials/LowPowerSensing/Base
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/Base/volumes-stm25p.xml
+END
+LowPowerSensingBaseC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/4810/trunk/apps/tutorials/LowPowerSensing/Base/LowPowerSensingBaseC.nc
+END
+LowPowerSensingBaseAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/4531/trunk/apps/tutorials/LowPowerSensing/Base/LowPowerSensingBaseAppC.nc
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3557/trunk/apps/tutorials/LowPowerSensing/Base/volumes-at45db.xml
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4084/trunk/apps/tutorials/LowPowerSensing/Base/Makefile
+END

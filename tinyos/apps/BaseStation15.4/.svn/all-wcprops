@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/apps/BaseStation15.4
+END
+seriallisten15-4.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4044/trunk/apps/BaseStation15.4/seriallisten15-4.c
+END
+BaseStationP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/apps/BaseStation15.4/BaseStationP.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4000/trunk/apps/BaseStation15.4/Makefile
+END
+BaseStationC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/apps/BaseStation15.4/BaseStationC.nc
+END

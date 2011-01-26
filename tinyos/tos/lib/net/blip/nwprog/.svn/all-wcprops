@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog
+END
+DelugeReadIdentP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog/DelugeReadIdentP.nc
+END
+BootImage.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog/BootImage.nc
+END
+At45dbStorageMapP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog/At45dbStorageMapP.nc
+END
+NWProgP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog/NWProgP.nc
+END
+Deluge.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog/Deluge.h
+END
+NWProgC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/nwprog/NWProgC.nc
+END

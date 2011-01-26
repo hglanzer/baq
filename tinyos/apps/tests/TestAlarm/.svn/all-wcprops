@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2977/trunk/apps/tests/TestAlarm
+END
+BlinkC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2977/trunk/apps/tests/TestAlarm/BlinkC.nc
+END
+BlinkM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2977/trunk/apps/tests/TestAlarm/BlinkM.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2399/trunk/apps/tests/TestAlarm/Makefile
+END

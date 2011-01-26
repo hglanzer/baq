@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java
+END
+Graph.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/Graph.java
+END
+run
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/run
+END
+Node.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/Node.java
+END
+ColorCellEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/ColorCellEditor.java
+END
+Window.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/Window.java
+END
+Data.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/Data.java
+END
+oscilloscope.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/oscilloscope.jar
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/Makefile
+END
+Oscilloscope.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/Oscilloscope.java
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4068/trunk/apps/tosthreads/apps/TestCollection/java/build.xml
+END

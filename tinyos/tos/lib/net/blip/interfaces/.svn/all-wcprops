@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces
+END
+IPPacket.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/IPPacket.nc
+END
+IPLower.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/IPLower.nc
+END
+ReadLqi.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/ReadLqi.nc
+END
+BlipStatistics.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/BlipStatistics.nc
+END
+InternalIPExtension.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/InternalIPExtension.nc
+END
+Tcp.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/Tcp.nc
+END
+ICMPPing.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/ICMPPing.nc
+END
+ICMP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/ICMP.nc
+END
+IPExtensions.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/IPExtensions.nc
+END
+IP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/IP.nc
+END
+UDP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/UDP.nc
+END
+IPApp.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/IPApp.nc
+END
+TLVHeader.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/TLVHeader.nc
+END
+IPAddress.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/interfaces/IPAddress.nc
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/4237/trunk/tos/lib/net/drip
+END
+DisseminatorP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3784/trunk/tos/lib/net/drip/DisseminatorP.nc
+END
+DisseminationEngine.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4237/trunk/tos/lib/net/drip/DisseminationEngine.h
+END
+DisseminatorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3585/trunk/tos/lib/net/drip/DisseminatorC.nc
+END
+DisseminationTimerP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3585/trunk/tos/lib/net/drip/DisseminationTimerP.nc
+END
+DisseminationC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3585/trunk/tos/lib/net/drip/DisseminationC.nc
+END
+DisseminationCache.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3986/trunk/tos/lib/net/drip/DisseminationCache.nc
+END
+DisseminationEngineP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3585/trunk/tos/lib/net/drip/DisseminationEngineP.nc
+END
+DisseminationEngineImplP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3585/trunk/tos/lib/net/drip/DisseminationEngineImplP.nc
+END

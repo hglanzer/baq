@@ -1,0 +1,73 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-11-04T08:18:55.363071Z
+5211
+mmaroti@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+serial
+dir
+
+tosthreads
+dir
+
+timer
+dir
+
+byte_radio
+dir
+
+net
+dir
+
+tosboot
+dir
+
+power
+dir
+
+gpio
+dir
+
+mac
+dir
+
+printf
+dir
+
+diagmsg
+dir
+
+ftsp
+dir
+
+rfxlink
+dir
+
+safe
+dir
+
+tossim
+dir
+

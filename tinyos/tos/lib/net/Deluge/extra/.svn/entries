@@ -1,0 +1,121 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/net/Deluge/extra
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-09-20T16:07:42.168129Z
+5188
+henrik.makitaavola@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+TOSBoot.h
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+0d2cf19cad6b8bd85035c02409281a8b
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+NetProgC.nc
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+9b051431e186b8c4ecdb714037c0b5c9
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+epic
+dir
+
+telos
+dir
+
+msp430
+dir
+
+avr
+dir
+
+telosb
+dir
+
+tinynode
+dir
+
+NetProgM.nc
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+502f74e292ded6391693550a2eba3dac
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+mica2
+dir
+
+m16c62p
+dir
+
+micaz
+dir
+
+NetProg.h
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+db8e86ce974a185ddf581596e377fe81
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+iris
+dir
+
+NetProg.nc
+file
+
+
+
+
+2010-11-04T11:15:42.000000Z
+8533497bcf9f404e4ec562f717f91db4
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+mulle
+dir
+

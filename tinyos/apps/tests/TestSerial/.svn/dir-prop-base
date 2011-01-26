@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 62
+TestSerialMsg.java
+TestSerialMsg.class
+TestSerial.class
+build
+
+END

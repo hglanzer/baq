@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/apps/tests/deluge/GoldenImage
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3705/trunk/apps/tests/deluge/GoldenImage/volumes-stm25p.xml
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3705/trunk/apps/tests/deluge/GoldenImage/volumes-at45db.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/4469/trunk/apps/tests/deluge/GoldenImage/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4469/trunk/apps/tests/deluge/GoldenImage/Makefile
+END
+GoldenImageAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/apps/tests/deluge/GoldenImage/GoldenImageAppC.nc
+END

@@ -1,0 +1,43 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/sensorboards
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+mda100
+dir
+
+mts300
+dir
+
+basicsb
+dir
+
+mts400
+dir
+
+im2sb
+dir
+

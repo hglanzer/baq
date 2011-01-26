@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc
+END
+AdcStreamP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4131/trunk/tos/chips/atm128/adc/AdcStreamP.nc
+END
+AdcReadClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/AdcReadClientC.nc
+END
+Atm128AdcSingle.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/Atm128AdcSingle.nc
+END
+Atm128AdcC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/Atm128AdcC.nc
+END
+HplAtm128Adc.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/HplAtm128Adc.nc
+END
+HplAtm128AdcC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/HplAtm128AdcC.nc
+END
+WireAdcP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/WireAdcP.nc
+END
+Atm128AdcMultiple.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/Atm128AdcMultiple.nc
+END
+AdcReadStreamClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/AdcReadStreamClientC.nc
+END
+Atm128AdcP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/Atm128AdcP.nc
+END
+AdcP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4172/trunk/tos/chips/atm128/adc/AdcP.nc
+END
+HplAtm128AdcP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/HplAtm128AdcP.nc
+END
+AdcReadNowClientC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/AdcReadNowClientC.nc
+END
+Atm128AdcConfig.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/Atm128AdcConfig.nc
+END
+WireAdcStreamP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/WireAdcStreamP.nc
+END
+Atm128Adc.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/adc/Atm128Adc.h
+END
+Adc.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2977/trunk/tos/chips/atm128/adc/Adc.h
+END

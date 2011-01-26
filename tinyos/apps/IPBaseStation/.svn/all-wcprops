@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/5108/trunk/apps/IPBaseStation
+END
+Reset.nc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5108/trunk/apps/IPBaseStation/Reset.nc
+END
+ResetC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5108/trunk/apps/IPBaseStation/ResetC.nc
+END
+Reset.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5108/trunk/apps/IPBaseStation/Reset.h
+END
+BaseStationP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/apps/IPBaseStation/BaseStationP.nc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4998/trunk/apps/IPBaseStation/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4751/trunk/apps/IPBaseStation/Makefile
+END
+BaseStationC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/apps/IPBaseStation/BaseStationC.nc
+END

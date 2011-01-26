@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5108/trunk/apps/tests/TestPowerManager
+END
+MyComponentP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5108/trunk/apps/tests/TestPowerManager/MyComponentP.nc
+END
+TestPowerManagerC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/apps/tests/TestPowerManager/TestPowerManagerC.nc
+END
+TestPowerManagerAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/5108/trunk/apps/tests/TestPowerManager/TestPowerManagerAppC.nc
+END
+MyComponentC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5108/trunk/apps/tests/TestPowerManager/MyComponentC.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2399/trunk/apps/tests/TestPowerManager/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2898/trunk/apps/tests/TestPowerManager/Makefile
+END

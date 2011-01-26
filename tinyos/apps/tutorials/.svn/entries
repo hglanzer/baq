@@ -1,0 +1,55 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/apps/tutorials
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-10-14T22:52:00.657212Z
+5201
+mmaroti@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+PacketParrot
+dir
+
+BlinkToRadio
+dir
+
+BlinkTask
+dir
+
+Printf
+dir
+
+SharedResourceDemo
+dir
+
+LowPowerSensing
+dir
+
+BlinkConfig
+dir
+
+RssiDemo
+dir
+
+BlinkFail
+dir
+

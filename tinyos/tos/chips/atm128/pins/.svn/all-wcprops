@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins
+END
+HplAtm128InterruptSig.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128InterruptSig.nc
+END
+Atm128Interrupt.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/Atm128Interrupt.h
+END
+HplAtm128InterruptC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128InterruptC.nc
+END
+HplAtm128InterruptSigP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128InterruptSigP.nc
+END
+HplAtm128GeneralIOSlowPinP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc
+END
+HplAtm128InterruptPinP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128InterruptPinP.nc
+END
+HplAtm128GeneralIOC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128GeneralIOC.nc
+END
+HplAtm128GeneralIOPortP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128GeneralIOPortP.nc
+END
+Atm128GpioInterruptC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5066/trunk/tos/chips/atm128/pins/Atm128GpioInterruptC.nc
+END
+Atm128InterruptC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/Atm128InterruptC.nc
+END
+HplAtm128Interrupt.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128Interrupt.nc
+END
+HplAtm128GeneralIOPinP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc
+END

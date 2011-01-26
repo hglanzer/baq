@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosthreads/chips/cc2420
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+CC2420ActiveMessageC.nc
+file
+
+
+
+
+2010-11-04T11:15:34.000000Z
+0beae29c0305b4a157a53748b6fb6988
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+CC2420ActiveMessageP.nc
+file
+
+
+
+
+2010-11-04T11:15:34.000000Z
+108e4a75ce027f389c32fbc5983b8c4b
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/apps/tutorials/RssiDemo/java
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+RssiDemo.java
+file
+
+
+
+
+2010-11-04T11:15:10.000000Z
+0cd3d44f539b5ea6b2954248fba7f194
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+Makefile
+file
+
+
+
+
+2010-11-04T11:15:10.000000Z
+0884239dd6cdccc5daf08356714cdece
+2008-04-15T17:56:48.000000Z
+3859
+klueska
+

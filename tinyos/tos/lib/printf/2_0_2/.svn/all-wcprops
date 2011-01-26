@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/tos/lib/printf/2_0_2
+END
+avr_stdio.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4007/trunk/tos/lib/printf/2_0_2/avr_stdio.h
+END
+PrintfP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/lib/printf/2_0_2/PrintfP.nc
+END
+PrintfFlush.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/printf/2_0_2/PrintfFlush.nc
+END
+PrintfC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/lib/printf/2_0_2/PrintfC.nc
+END
+printf.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/tos/lib/printf/2_0_2/printf.h
+END

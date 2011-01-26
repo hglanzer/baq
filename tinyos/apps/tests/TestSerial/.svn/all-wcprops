@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerial
+END
+TestSerial.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerial/TestSerial.java
+END
+TestSerialC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerial/TestSerialC.nc
+END
+TestSerialAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerial/TestSerialAppC.nc
+END
+TestSerial.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4124/trunk/apps/tests/TestSerial/TestSerial.h
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4449/trunk/apps/tests/TestSerial/README.txt
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3328/trunk/apps/tests/TestSerial/.cvsignore
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4190/trunk/apps/tests/TestSerial/Makefile
+END

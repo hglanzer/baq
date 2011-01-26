@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/apps/tests/deluge/Basestation
+END
+BasestationAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/apps/tests/deluge/Basestation/BasestationAppC.nc
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4405/trunk/apps/tests/deluge/Basestation/volumes-stm25p.xml
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4405/trunk/apps/tests/deluge/Basestation/volumes-at45db.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/4405/trunk/apps/tests/deluge/Basestation/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4405/trunk/apps/tests/deluge/Basestation/Makefile
+END

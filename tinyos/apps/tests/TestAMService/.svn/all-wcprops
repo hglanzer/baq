@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/apps/tests/TestAMService
+END
+TestAMServiceC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5108/trunk/apps/tests/TestAMService/TestAMServiceC.nc
+END
+TestAMServiceAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/apps/tests/TestAMService/TestAMServiceAppC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2898/trunk/apps/tests/TestAMService/Makefile
+END

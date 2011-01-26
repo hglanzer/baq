@@ -1,0 +1,34 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/support
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-09-13T06:54:16.873958Z
+5177
+henrik.makitaavola@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+sdk
+dir
+
+make
+dir
+

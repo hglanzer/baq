@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5201/trunk/apps/tutorials/RssiDemo/RssiBase
+END
+ApplicationDefinitions.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3859/trunk/apps/tutorials/RssiDemo/RssiBase/ApplicationDefinitions.h
+END
+RssiBaseC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4224/trunk/apps/tutorials/RssiDemo/RssiBase/RssiBaseC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4083/trunk/apps/tutorials/RssiDemo/RssiBase/Makefile
+END
+RssiBaseAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5201/trunk/apps/tutorials/RssiDemo/RssiBase/RssiBaseAppC.nc
+END

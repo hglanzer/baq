@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/5108/trunk/apps/tests/NxFloat
+END
+TestSerial.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/apps/tests/NxFloat/TestSerial.java
+END
+TestSerialC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/apps/tests/NxFloat/TestSerialC.nc
+END
+TestSerialAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/apps/tests/NxFloat/TestSerialAppC.nc
+END
+TestSerial.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4379/trunk/apps/tests/NxFloat/TestSerial.h
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4379/trunk/apps/tests/NxFloat/README.txt
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4379/trunk/apps/tests/NxFloat/.cvsignore
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4379/trunk/apps/tests/NxFloat/Makefile
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/config
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/config/Makefile.in
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/config/depcomp
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/config/missing
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/config/Makefile.am
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/config/install-sh
+END

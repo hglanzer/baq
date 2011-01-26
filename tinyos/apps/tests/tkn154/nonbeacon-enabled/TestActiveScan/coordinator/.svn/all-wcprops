@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/4622/trunk/apps/tests/tkn154/nonbeacon-enabled/TestActiveScan/coordinator
+END
+TestActiveScanCoordC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/4622/trunk/apps/tests/tkn154/nonbeacon-enabled/TestActiveScan/coordinator/TestActiveScanCoordC.nc
+END
+TestActiveScanCoordAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/4622/trunk/apps/tests/tkn154/nonbeacon-enabled/TestActiveScan/coordinator/TestActiveScanCoordAppC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/4622/trunk/apps/tests/tkn154/nonbeacon-enabled/TestActiveScan/coordinator/Makefile
+END

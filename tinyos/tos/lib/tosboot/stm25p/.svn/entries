@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosboot/stm25p
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+ExtFlashC.nc
+file
+
+
+
+
+2010-11-04T11:15:44.000000Z
+171fdcf7a593ac73727758944d8a89c7
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+ExtFlashP.nc
+file
+
+
+
+
+2010-11-04T11:15:44.000000Z
+fd34407b432706d5f661702a6c965a9d
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

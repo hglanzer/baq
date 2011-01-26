@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/4398/trunk/apps/tests/msp430/Adc12
+END
+EvaluatorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3365/trunk/apps/tests/msp430/Adc12/EvaluatorC.nc
+END
+TestAdcMultiC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/4398/trunk/apps/tests/msp430/Adc12/TestAdcMultiC.nc
+END
+evaluator.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3365/trunk/apps/tests/msp430/Adc12/evaluator.h
+END
+TestAdcAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/4398/trunk/apps/tests/msp430/Adc12/TestAdcAppC.nc
+END
+TestAdcSingleC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4398/trunk/apps/tests/msp430/Adc12/TestAdcSingleC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3156/trunk/apps/tests/msp430/Adc12/Makefile
+END

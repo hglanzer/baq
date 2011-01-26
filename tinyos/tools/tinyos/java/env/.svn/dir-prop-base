@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 67
+Makefile
+Makefile.in
+.deps
+getenv.dll
+libgetenv.so
+libgetenv-32.so
+
+END

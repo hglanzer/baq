@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts400
+END
+Taos2550LogicP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Taos2550LogicP.nc
+END
+Accel202.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Accel202.h
+END
+HalAccel202C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/HalAccel202C.nc
+END
+Taos2550C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Taos2550C.nc
+END
+Taos2550ReaderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/Taos2550ReaderP.nc
+END
+Intersema.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Intersema.nc
+END
+Calibration.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts400/Calibration.nc
+END
+.sensor
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5069/trunk/tos/sensorboards/mts400/.sensor
+END
+HplIntersema5534P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5098/trunk/tos/sensorboards/mts400/HplIntersema5534P.nc
+END
+Accel202C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Accel202C.nc
+END
+Accel202ReaderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Accel202ReaderP.nc
+END
+HplAdg715C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/HplAdg715C.nc
+END
+HalIntersema5534C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5098/trunk/tos/sensorboards/mts400/HalIntersema5534C.nc
+END
+HplSensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HplSensirionSht11C.nc
+END
+HplTaos2550P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HplTaos2550P.nc
+END
+Adg715ControlP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Adg715ControlP.nc
+END
+HplIntersema5534C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/5098/trunk/tos/sensorboards/mts400/HplIntersema5534C.nc
+END
+Adg715.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/Adg715.h
+END
+HplAccel202P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HplAccel202P.nc
+END
+HalSensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HalSensirionSht11C.nc
+END
+HplTaos2550C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HplTaos2550C.nc
+END
+Accel202LogicP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Accel202LogicP.nc
+END
+Adg715C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/Adg715C.nc
+END
+Adg715ControlC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Adg715ControlC.nc
+END
+SensirionSht11C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/SensirionSht11C.nc
+END
+Intersema5534.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5098/trunk/tos/sensorboards/mts400/Intersema5534.h
+END
+HplAccel202C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HplAccel202C.nc
+END
+Intersema5534LogicP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5108/trunk/tos/sensorboards/mts400/Intersema5534LogicP.nc
+END
+Channel.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Channel.nc
+END
+Taos2550.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/Taos2550.h
+END
+HalTaos2550C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5068/trunk/tos/sensorboards/mts400/HalTaos2550C.nc
+END
+Intersema5534ReaderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5098/trunk/tos/sensorboards/mts400/Intersema5534ReaderP.nc
+END
+Intersema5534C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5098/trunk/tos/sensorboards/mts400/Intersema5534C.nc
+END
+HplSensirionSht11P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5099/trunk/tos/sensorboards/mts400/HplSensirionSht11P.nc
+END

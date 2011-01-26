@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLpl
+END
+TestFtspAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLpl/TestFtspAppC.nc
+END
+TestFtsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLpl/TestFtsp.h
+END
+TestFtspMsg.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4639/trunk/apps/tests/TestFtsp/FtspLpl/TestFtspMsg.py
+END
+FtspDataLogger.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4639/trunk/apps/tests/TestFtsp/FtspLpl/FtspDataLogger.py
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4639/trunk/apps/tests/TestFtsp/FtspLpl/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4639/trunk/apps/tests/TestFtsp/FtspLpl/Makefile
+END
+TestFtspC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLpl/TestFtspC.nc
+END

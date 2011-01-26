@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/5108/trunk/apps/tests/TestAMOnOff
+END
+TestAMOnOffC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/apps/tests/TestAMOnOff/TestAMOnOffC.nc
+END
+TestAMOnOffAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5108/trunk/apps/tests/TestAMOnOff/TestAMOnOffAppC.nc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2399/trunk/apps/tests/TestAMOnOff/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2399/trunk/apps/tests/TestAMOnOff/Makefile
+END

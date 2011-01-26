@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3582/trunk/apps/tests/mica2/mts300
+END
+XMTS300.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3075/trunk/apps/tests/mica2/mts300/XMTS300.h
+END
+TestMts300P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3582/trunk/apps/tests/mica2/mts300/TestMts300P.nc
+END
+TestMts300C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3110/trunk/apps/tests/mica2/mts300/TestMts300C.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3075/trunk/apps/tests/mica2/mts300/Makefile
+END

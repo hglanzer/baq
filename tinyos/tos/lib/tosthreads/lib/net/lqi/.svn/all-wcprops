@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/net/lqi
+END
+CCollectionC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/4352/trunk/tos/lib/tosthreads/lib/net/lqi/CCollectionC.nc
+END
+BlockingCollectionSenderP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/net/lqi/BlockingCollectionSenderP.nc
+END
+ccollection.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4352/trunk/tos/lib/tosthreads/lib/net/lqi/ccollection.h
+END
+BlockingCollectionSenderImplP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/net/lqi/BlockingCollectionSenderImplP.nc
+END
+BlockingCollectionSenderC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/net/lqi/BlockingCollectionSenderC.nc
+END
+CCollectionIdP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/lib/net/lqi/CCollectionIdP.nc
+END
+CCollectionP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/4400/trunk/tos/lib/tosthreads/lib/net/lqi/CCollectionP.nc
+END

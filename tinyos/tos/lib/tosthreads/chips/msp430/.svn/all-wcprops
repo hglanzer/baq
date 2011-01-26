@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430
+END
+Msp430TimerCommonP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/Msp430TimerCommonP.nc
+END
+Msp430Adc12P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/Msp430Adc12P.nc
+END
+HplMsp430InterruptP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430InterruptP.nc
+END
+Msp430TimerC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/Msp430TimerC.nc
+END
+HplMsp430InterruptNMIP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430InterruptNMIP.nc
+END
+HplMsp430DmaP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430DmaP.nc
+END
+HplMsp430Usart0C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430Usart0C.nc
+END
+HplMsp430Usart1C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430Usart1C.nc
+END
+chip_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/chip_thread.h
+END
+HplMsp430Usart0P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430Usart0P.nc
+END
+HplMsp430Usart1P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430Usart1P.nc
+END
+HplMsp430InterruptC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430InterruptC.nc
+END
+HplMsp430InterruptNMIC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430InterruptNMIC.nc
+END
+HplAdc12P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/msp430/HplAdc12P.nc
+END
+HplMsp430DmaC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/msp430/HplMsp430DmaC.nc
+END

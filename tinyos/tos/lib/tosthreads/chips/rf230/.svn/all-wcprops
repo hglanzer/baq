@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/rf230
+END
+RF230ActiveMessageC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/rf230/RF230ActiveMessageC.nc
+END
+ActiveMessageLayerC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/rf230/ActiveMessageLayerC.nc
+END
+ActiveMessageLayerP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/rf230/ActiveMessageLayerP.nc
+END
+RF230RadioC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/chips/rf230/RF230RadioC.nc
+END

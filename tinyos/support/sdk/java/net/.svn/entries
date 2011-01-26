@@ -1,0 +1,43 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/support/sdk/java/net
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-08-29T14:35:02.863270Z
+5158
+urs.hunkeler
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+tinyos
+dir
+
+Makefile
+file
+
+
+
+
+2010-11-04T11:16:19.000000Z
+1975304af177f7e00abf700c4e8a0388
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+

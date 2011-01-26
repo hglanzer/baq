@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3931/trunk/apps/tests/TestAdc
+END
+TestAdcC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3931/trunk/apps/tests/TestAdc/TestAdcC.nc
+END
+TestAdcAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/apps/tests/TestAdc/TestAdcAppC.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2399/trunk/apps/tests/TestAdc/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2898/trunk/apps/tests/TestAdc/Makefile
+END

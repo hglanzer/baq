@@ -1,0 +1,52 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/lib/tosthreads/chips/cc1000
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+CC1000ActiveMessageP.nc
+file
+
+
+
+
+2010-11-04T11:15:33.000000Z
+425122fdc970bebafda05f45fb10190f
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+CC1000ActiveMessageC.nc
+file
+
+
+
+
+2010-11-04T11:15:34.000000Z
+bc57d3593c9ed357b1198b468cf1c63c
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/doc
+END
+README.stk500
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/doc/README.stk500
+END
+README.xilinx
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/doc/README.xilinx
+END
+HOWTO.windows
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/doc/HOWTO.windows
+END
+uisp-parport-connect.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/doc/uisp-parport-connect.txt
+END

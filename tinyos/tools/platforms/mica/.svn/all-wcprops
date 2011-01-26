@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/4222/trunk/tools/platforms/mica
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/Makefile.am
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/.cvsignore
+END

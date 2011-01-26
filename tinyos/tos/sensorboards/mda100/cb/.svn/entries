@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/sensorboards/mda100/cb
+http://tinyos-main.googlecode.com/svn
+
+
+
+2007-08-21T04:44:10.000000Z
+3537
+klueska
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+TempImplP.nc
+file
+
+
+
+
+2010-11-04T11:15:25.000000Z
+7c33567aefc527f6861ccc179817e88a
+2007-08-21T04:44:10.000000Z
+3537
+klueska
+

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/5181/trunk/apps/tests/tkn154
+END
+Makefile.include
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4619/trunk/apps/tests/tkn154/Makefile.include
+END
+makeall.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4609/trunk/apps/tests/tkn154/makeall.sh
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4926/trunk/apps/tests/tkn154/README.txt
+END

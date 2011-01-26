@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4963/trunk/apps/tosthreads/capps/TestLogStorage
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/4013/trunk/apps/tosthreads/capps/TestLogStorage/volumes-stm25p.xml
+END
+volumes-pxa27xp30.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/4013/trunk/apps/tosthreads/capps/TestLogStorage/volumes-pxa27xp30.xml
+END
+TestLogStorage.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/4917/trunk/apps/tosthreads/capps/TestLogStorage/TestLogStorage.c
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/4013/trunk/apps/tosthreads/capps/TestLogStorage/volumes-at45db.xml
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/4963/trunk/apps/tosthreads/capps/TestLogStorage/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4937/trunk/apps/tosthreads/capps/TestLogStorage/Makefile
+END

@@ -1,0 +1,58 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tools/platforms/mica/uisp/kernel
+http://tinyos-main.googlecode.com/svn
+
+
+
+2006-12-12T18:23:47.000000Z
+2977
+vlahan
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+win32
+dir
+
+Makefile.am
+file
+
+
+
+
+2010-11-04T11:15:02.000000Z
+0be3aa9ad910667024896c34545e72a5
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+stargate
+dir
+
+.cvsignore
+file
+
+
+
+
+2010-11-04T11:15:02.000000Z
+26f08908d0224edf3c0936d2d9ff132c
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+

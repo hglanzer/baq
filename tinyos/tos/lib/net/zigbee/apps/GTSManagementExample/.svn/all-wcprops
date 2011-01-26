@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4760/trunk/tos/lib/net/zigbee/apps/GTSManagementExample
+END
+GTSManagementExampleP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/4760/trunk/tos/lib/net/zigbee/apps/GTSManagementExample/GTSManagementExampleP.nc
+END
+GTSManagementExampleC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/4760/trunk/tos/lib/net/zigbee/apps/GTSManagementExample/GTSManagementExampleC.nc
+END
+gtsmanagementexample.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3762/trunk/tos/lib/net/zigbee/apps/GTSManagementExample/gtsmanagementexample.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/4760/trunk/tos/lib/net/zigbee/apps/GTSManagementExample/Makefile
+END

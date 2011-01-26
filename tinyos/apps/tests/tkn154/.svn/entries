@@ -1,0 +1,74 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/apps/tests/tkn154
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-09-13T10:36:31.639858Z
+5181
+jan.hauer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+beacon-enabled
+dir
+
+Makefile.include
+file
+
+
+
+
+2010-11-04T11:15:14.000000Z
+057948a298a133c774012616ae74b191
+2009-05-28T09:55:56.000000Z
+4619
+janhauer
+
+makeall.sh
+file
+
+
+
+
+2010-11-04T11:15:14.000000Z
+1f862b6021f841b0b6aea2ae02469e03
+2009-05-18T16:23:41.000000Z
+4609
+janhauer
+has-props
+
+packetsniffer
+dir
+
+nonbeacon-enabled
+dir
+
+README.txt
+file
+
+
+
+
+2010-11-04T11:15:14.000000Z
+557c3995894ae55bf9212e92d271b221
+2010-01-05T17:12:57.000000Z
+4926
+janhauer
+

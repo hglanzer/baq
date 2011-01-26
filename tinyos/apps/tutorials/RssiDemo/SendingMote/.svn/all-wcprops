@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3859/trunk/apps/tutorials/RssiDemo/SendingMote
+END
+SendingMoteAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3859/trunk/apps/tutorials/RssiDemo/SendingMote/SendingMoteAppC.nc
+END
+ApplicationDefinitions.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3859/trunk/apps/tutorials/RssiDemo/SendingMote/ApplicationDefinitions.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3859/trunk/apps/tutorials/RssiDemo/SendingMote/Makefile
+END
+SendingMoteC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3859/trunk/apps/tutorials/RssiDemo/SendingMote/SendingMoteC.nc
+END

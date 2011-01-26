@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/config.h.in
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/configure
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/Makefile.in
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/AUTHORS
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/INSTALL
+END
+configure.in
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/configure.in
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/COPYING
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/Makefile.am
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/NEWS
+END
+bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/bootstrap
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3647/trunk/tools/platforms/msp430/cppbsl/README
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/4317/trunk/tools/platforms/msp430/cppbsl/aclocal.m4
+END

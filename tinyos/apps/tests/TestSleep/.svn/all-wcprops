@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/apps/tests/TestSleep
+END
+TestSleepM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/apps/tests/TestSleep/TestSleepM.nc
+END
+TestSleepC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/apps/tests/TestSleep/TestSleepC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2898/trunk/apps/tests/TestSleep/Makefile
+END

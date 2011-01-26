@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src
+END
+timeradd.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/timeradd.h
+END
+Error.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Error.h
+END
+AvrDummy.C
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/AvrDummy.C
+END
+Global.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Global.h
+END
+DAPA.C
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/DAPA.C
+END
+AvrDummy.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/AvrDummy.h
+END
+DAPA.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/DAPA.h
+END
+Terminal.C
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Terminal.C
+END
+AvrAtmel.C
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/AvrAtmel.C
+END
+Serial.C
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Serial.C
+END
+AvrAtmel.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/AvrAtmel.h
+END
+cygwinp.C
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/cygwinp.C
+END
+Terminal.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Terminal.h
+END
+ppdev.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/ppdev.h
+END
+AvrStargate.C
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/AvrStargate.C
+END
+Main.C
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Main.C
+END
+Serial.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Serial.h
+END
+cygwinp.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/cygwinp.h
+END
+MotIntl.C
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/MotIntl.C
+END
+Stk500.C
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Stk500.C
+END
+SASA.C
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/SASA.C
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Makefile.am
+END
+Avr.C
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Avr.C
+END
+AvrStargate.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/AvrStargate.h
+END
+MotIntl.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/MotIntl.h
+END
+Stk500.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Stk500.h
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/src/.cvsignore
+END
+parport.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/parport.h
+END
+SASA.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/SASA.h
+END
+Avr.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/uisp/src/Avr.h
+END

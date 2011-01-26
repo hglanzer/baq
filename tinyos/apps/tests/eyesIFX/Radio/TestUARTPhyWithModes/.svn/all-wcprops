@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestUARTPhyWithModes
+END
+TestUARTPhyP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestUARTPhyWithModes/TestUARTPhyP.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2898/trunk/apps/tests/eyesIFX/Radio/TestUARTPhyWithModes/Makefile
+END
+TestUARTPhyC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestUARTPhyWithModes/TestUARTPhyC.nc
+END

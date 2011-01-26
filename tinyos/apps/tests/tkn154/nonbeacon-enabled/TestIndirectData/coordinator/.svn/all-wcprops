@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/4621/trunk/apps/tests/tkn154/nonbeacon-enabled/TestIndirectData/coordinator
+END
+TestIndirectDataCoordC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/4621/trunk/apps/tests/tkn154/nonbeacon-enabled/TestIndirectData/coordinator/TestIndirectDataCoordC.nc
+END
+TestIndirectDataCoordAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/4621/trunk/apps/tests/tkn154/nonbeacon-enabled/TestIndirectData/coordinator/TestIndirectDataCoordAppC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/4621/trunk/apps/tests/tkn154/nonbeacon-enabled/TestIndirectData/coordinator/Makefile
+END

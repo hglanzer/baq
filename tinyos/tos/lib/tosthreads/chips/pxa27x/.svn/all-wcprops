@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/pxa27x
+END
+chip_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/pxa27x/chip_thread.h
+END
+HplPXA27xInterruptM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/pxa27x/HplPXA27xInterruptM.nc
+END
+HplPXA27xInterruptImplM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/4011/trunk/tos/lib/tosthreads/chips/pxa27x/HplPXA27xInterruptImplM.nc
+END

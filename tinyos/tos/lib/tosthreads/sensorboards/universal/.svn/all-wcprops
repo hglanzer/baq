@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4400/trunk/tos/lib/tosthreads/sensorboards/universal
+END
+BlockingSineSensorP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/4018/trunk/tos/lib/tosthreads/sensorboards/universal/BlockingSineSensorP.nc
+END
+BlockingSineSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/4018/trunk/tos/lib/tosthreads/sensorboards/universal/BlockingSineSensorC.nc
+END
+universal_sensors.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/4020/trunk/tos/lib/tosthreads/sensorboards/universal/universal_sensors.h
+END
+CSineSensorP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4400/trunk/tos/lib/tosthreads/sensorboards/universal/CSineSensorP.nc
+END
+tosthread_sinesensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/4020/trunk/tos/lib/tosthreads/sensorboards/universal/tosthread_sinesensor.h
+END
+CSineSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4020/trunk/tos/lib/tosthreads/sensorboards/universal/CSineSensorC.nc
+END

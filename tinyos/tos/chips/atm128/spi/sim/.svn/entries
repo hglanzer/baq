@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tos/chips/atm128/spi/sim
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+Atm128SpiC.nc
+file
+
+
+
+
+2010-11-04T11:16:00.000000Z
+5d77b5f5b75690bd0ccf455e39bb1b2a
+2010-06-29T22:07:56.000000Z
+5108
+scipio
+

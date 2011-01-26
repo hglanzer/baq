@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/4869/trunk/support/sdk/c/sf
+END
+seriallisten.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/seriallisten.c
+END
+sfsource.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/sfsource.h
+END
+serialsource.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4470/trunk/support/sdk/c/sf/serialsource.c
+END
+serialsource.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4376/trunk/support/sdk/c/sf/serialsource.h
+END
+prettylisten.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/prettylisten.c
+END
+sf.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/4865/trunk/support/sdk/c/sf/sf.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/README
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3823/trunk/support/sdk/c/sf/build.xml
+END
+sfsend.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/sfsend.c
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/configure.ac
+END
+autoconf.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/autoconf.h
+END
+message.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4378/trunk/support/sdk/c/sf/message.c
+END
+sflisten.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/sflisten.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4869/trunk/support/sdk/c/sf/Makefile.am
+END
+message.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4378/trunk/support/sdk/c/sf/message.h
+END
+serialsend.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3687/trunk/support/sdk/c/sf/serialsend.c
+END
+sfsource.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4865/trunk/support/sdk/c/sf/sfsource.c
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4261/trunk/support/sdk/c/sf/.cvsignore
+END
+bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4253/trunk/support/sdk/c/sf/bootstrap
+END

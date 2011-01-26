@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4373/trunk/tos/lib/tosthreads/chips/msp430/sensors
+END
+BlockingMsp430InternalVoltageC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/4373/trunk/tos/lib/tosthreads/chips/msp430/sensors/BlockingMsp430InternalVoltageC.nc
+END
+BlockingMsp430InternalTemperatureC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/4373/trunk/tos/lib/tosthreads/chips/msp430/sensors/BlockingMsp430InternalTemperatureC.nc
+END

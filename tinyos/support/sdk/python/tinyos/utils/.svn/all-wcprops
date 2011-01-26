@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/utils
+END
+Watcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/utils/Watcher.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/utils/__init__.py
+END
+Singleton.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/utils/Singleton.py
+END

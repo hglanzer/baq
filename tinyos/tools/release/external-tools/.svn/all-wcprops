@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4374/trunk/tools/release/external-tools
+END
+binutils.spec
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4337/trunk/tools/release/external-tools/binutils.spec
+END
+avarice.spec
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4337/trunk/tools/release/external-tools/avarice.spec
+END
+avr-insight.spec
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4337/trunk/tools/release/external-tools/avr-insight.spec
+END
+make.spec
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3573/trunk/tools/release/external-tools/make.spec
+END
+msp430-libc.spec
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4374/trunk/tools/release/external-tools/msp430-libc.spec
+END
+xscale-elf.gcc.spec
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4337/trunk/tools/release/external-tools/xscale-elf.gcc.spec
+END
+avr-libc.spec
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4374/trunk/tools/release/external-tools/avr-libc.spec
+END
+avr-gcc.spec
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4374/trunk/tools/release/external-tools/avr-gcc.spec
+END

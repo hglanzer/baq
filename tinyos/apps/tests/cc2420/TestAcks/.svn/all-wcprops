@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4312/trunk/apps/tests/cc2420/TestAcks
+END
+TestAcksP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3179/trunk/apps/tests/cc2420/TestAcks/TestAcksP.nc
+END
+TestAcksC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4153/trunk/apps/tests/cc2420/TestAcks/TestAcksC.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4312/trunk/apps/tests/cc2420/TestAcks/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3179/trunk/apps/tests/cc2420/TestAcks/Makefile
+END

@@ -1,0 +1,40 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/apps/tests/tkn154/nonbeacon-enabled
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-01-05T17:12:57.000000Z
+4926
+janhauer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+TestActiveScan
+dir
+
+TestPromiscuous
+dir
+
+TestIndirectData
+dir
+
+TestAssociate
+dir
+

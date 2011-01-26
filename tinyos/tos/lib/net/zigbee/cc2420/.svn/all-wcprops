@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4759/trunk/tos/lib/net/zigbee/cc2420
+END
+CC2420ReceiveP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/4759/trunk/tos/lib/net/zigbee/cc2420/CC2420ReceiveP.nc
+END
+CC2420ControlC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/CC2420ControlC.nc
+END
+CC2420TransmitC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/CC2420TransmitC.nc
+END
+CC2420ReceiveC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/CC2420ReceiveC.nc
+END
+CC2420Config.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4672/trunk/tos/lib/net/zigbee/cc2420/CC2420Config.nc
+END
+Sendframe.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/Sendframe.nc
+END
+CC2420SpiP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/CC2420SpiP.nc
+END
+AddressFilter.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/AddressFilter.nc
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/readme.txt
+END
+Receiveframe.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/Receiveframe.nc
+END
+CC2420ControlP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/CC2420ControlP.nc
+END
+CC2420TransmitP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3761/trunk/tos/lib/net/zigbee/cc2420/CC2420TransmitP.nc
+END

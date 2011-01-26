@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tools/platforms/msp430/motelist
+END
+motelist.1
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/motelist/motelist.1
+END
+motelist-macos
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3314/trunk/tools/platforms/msp430/motelist/motelist-macos
+END
+motelist-win32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/5108/trunk/tools/platforms/msp430/motelist/motelist-win32.cpp
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3314/trunk/tools/platforms/msp430/motelist/Makefile.am
+END
+motelist-linux
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2977/trunk/tools/platforms/msp430/motelist/motelist-linux
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2399/trunk/tools/platforms/msp430/motelist/.cvsignore
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/5015/trunk/support/make/msp
+END
+reinstall.extra
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/4090/trunk/support/make/msp/reinstall.extra
+END
+bsl.extra
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4090/trunk/support/make/msp/bsl.extra
+END
+jtag.extra
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4090/trunk/support/make/msp/jtag.extra
+END
+debug.extra
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2977/trunk/support/make/msp/debug.extra
+END
+install.extra
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4090/trunk/support/make/msp/install.extra
+END
+msp.rules
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5015/trunk/support/make/msp/msp.rules
+END
+debugopt.extra
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2977/trunk/support/make/msp/debugopt.extra
+END
+id.extra
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3678/trunk/support/make/msp/id.extra
+END

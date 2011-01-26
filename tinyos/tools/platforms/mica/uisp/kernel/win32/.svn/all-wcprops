@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/win32
+END
+giveio.sys
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/win32/giveio.sys
+END
+giveio-install.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/win32/giveio-install.cpp
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/win32/Makefile.am
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/uisp/kernel/win32/.cvsignore
+END

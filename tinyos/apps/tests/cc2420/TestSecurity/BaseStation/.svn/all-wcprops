@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5108/trunk/apps/tests/cc2420/TestSecurity/BaseStation
+END
+BaseStationP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/5108/trunk/apps/tests/cc2420/TestSecurity/BaseStation/BaseStationP.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/4889/trunk/apps/tests/cc2420/TestSecurity/BaseStation/Makefile
+END
+BaseStationC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/5108/trunk/apps/tests/cc2420/TestSecurity/BaseStation/BaseStationC.nc
+END

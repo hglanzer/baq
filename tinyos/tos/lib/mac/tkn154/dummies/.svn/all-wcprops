@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4977/trunk/tos/lib/mac/tkn154/dummies
+END
+NoBeaconSynchronizeP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4547/trunk/tos/lib/mac/tkn154/dummies/NoBeaconSynchronizeP.nc
+END
+NoDispatchQueueP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/4517/trunk/tos/lib/mac/tkn154/dummies/NoDispatchQueueP.nc
+END
+NoScanP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4547/trunk/tos/lib/mac/tkn154/dummies/NoScanP.nc
+END
+NoDeviceCfpP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4547/trunk/tos/lib/mac/tkn154/dummies/NoDeviceCfpP.nc
+END
+NoBeaconTransmitP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4899/trunk/tos/lib/mac/tkn154/dummies/NoBeaconTransmitP.nc
+END
+NoCoordBroadcastP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/4547/trunk/tos/lib/mac/tkn154/dummies/NoCoordBroadcastP.nc
+END
+NoDisassociateP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4796/trunk/tos/lib/mac/tkn154/dummies/NoDisassociateP.nc
+END
+NoAssociateP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4515/trunk/tos/lib/mac/tkn154/dummies/NoAssociateP.nc
+END
+NoCoordRealignmentP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/4515/trunk/tos/lib/mac/tkn154/dummies/NoCoordRealignmentP.nc
+END
+NoPromiscuousModeP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4977/trunk/tos/lib/mac/tkn154/dummies/NoPromiscuousModeP.nc
+END
+NoCoordCfpP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4547/trunk/tos/lib/mac/tkn154/dummies/NoCoordCfpP.nc
+END
+NoRxEnableP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4515/trunk/tos/lib/mac/tkn154/dummies/NoRxEnableP.nc
+END
+NoDispatchSlottedCsmaP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/4816/trunk/tos/lib/mac/tkn154/dummies/NoDispatchSlottedCsmaP.nc
+END

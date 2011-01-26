@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5108/trunk/apps/tutorials/BlinkConfig
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2855/trunk/apps/tutorials/BlinkConfig/volumes-stm25p.xml
+END
+BlinkConfigC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5108/trunk/apps/tutorials/BlinkConfig/BlinkConfigC.nc
+END
+BlinkConfigAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/apps/tutorials/BlinkConfig/BlinkConfigAppC.nc
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2855/trunk/apps/tutorials/BlinkConfig/volumes-at45db.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3158/trunk/apps/tutorials/BlinkConfig/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2855/trunk/apps/tutorials/BlinkConfig/Makefile
+END

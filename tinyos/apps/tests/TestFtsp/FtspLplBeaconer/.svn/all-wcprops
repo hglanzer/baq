@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLplBeaconer
+END
+RadioCountToLedsC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLplBeaconer/RadioCountToLedsC.nc
+END
+RadioCountToLedsAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLplBeaconer/RadioCountToLedsAppC.nc
+END
+RadioCountToLeds.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/5108/trunk/apps/tests/TestFtsp/FtspLplBeaconer/RadioCountToLeds.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4639/trunk/apps/tests/TestFtsp/FtspLplBeaconer/Makefile
+END

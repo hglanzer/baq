@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/platforms/mica2/chips/cc1000
+END
+HplCC1000SpiP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/platforms/mica2/chips/cc1000/HplCC1000SpiP.nc
+END
+HplCC1000InitP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5108/trunk/tos/lib/tosthreads/platforms/mica2/chips/cc1000/HplCC1000InitP.nc
+END

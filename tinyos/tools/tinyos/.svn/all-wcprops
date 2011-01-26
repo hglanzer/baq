@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/5108/trunk/tools/tinyos
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/4139/trunk/tools/tinyos/Makefile.am
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2399/trunk/tools/tinyos/.cvsignore
+END

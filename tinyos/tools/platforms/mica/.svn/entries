@@ -1,0 +1,58 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/tools/platforms/mica
+http://tinyos-main.googlecode.com/svn
+
+
+
+2008-07-08T12:31:18.000000Z
+4222
+beutel
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+uisp
+dir
+
+cc1000-channelgen
+dir
+
+Makefile.am
+file
+
+
+
+
+2010-11-04T11:15:03.000000Z
+e420b97f3f64d34d9d615b9dc9a03b2f
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+
+.cvsignore
+file
+
+
+
+
+2010-11-04T11:15:03.000000Z
+26f08908d0224edf3c0936d2d9ff132c
+2006-07-12T17:03:22.000000Z
+2399
+scipio
+

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/4958/trunk/apps/tests/TestDip
+END
+gentest.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4190/trunk/apps/tests/TestDip/gentest.py
+END
+TestDip.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4190/trunk/apps/tests/TestDip/TestDip.h
+END
+TestDipP-Master.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4900/trunk/apps/tests/TestDip/TestDipP-Master.nc
+END
+TestDipC-Master.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4900/trunk/apps/tests/TestDip/TestDipC-Master.nc
+END
+DipInject.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/4190/trunk/apps/tests/TestDip/DipInject.java
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4958/trunk/apps/tests/TestDip/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/4900/trunk/apps/tests/TestDip/Makefile
+END

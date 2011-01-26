@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/4830/trunk/apps/AntiTheft/Nodes
+END
+AntiTheftC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/4830/trunk/apps/AntiTheft/Nodes/AntiTheftC.nc
+END
+AntiTheftAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3873/trunk/apps/AntiTheft/Nodes/AntiTheftAppC.nc
+END
+antitheft.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3149/trunk/apps/AntiTheft/Nodes/antitheft.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4830/trunk/apps/AntiTheft/Nodes/Makefile
+END

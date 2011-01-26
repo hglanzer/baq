@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4200/trunk/apps/tests/storage/SyncLog
+END
+SyncLogC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3582/trunk/apps/tests/storage/SyncLog/SyncLogC.nc
+END
+volumes-stm25p.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3441/trunk/apps/tests/storage/SyncLog/volumes-stm25p.xml
+END
+SyncLogAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/4163/trunk/apps/tests/storage/SyncLog/SyncLogAppC.nc
+END
+volumes-pxa27xp30.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/4200/trunk/apps/tests/storage/SyncLog/volumes-pxa27xp30.xml
+END
+volumes-at45db.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3441/trunk/apps/tests/storage/SyncLog/volumes-at45db.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/4163/trunk/apps/tests/storage/SyncLog/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3441/trunk/apps/tests/storage/SyncLog/Makefile
+END

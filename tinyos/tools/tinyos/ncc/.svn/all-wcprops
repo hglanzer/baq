@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/4377/trunk/tools/tinyos/ncc
+END
+nesdoc.in
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4377/trunk/tools/tinyos/ncc/nesdoc.in
+END
+mig.in
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2399/trunk/tools/tinyos/ncc/mig.in
+END
+ncc.1
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/4263/trunk/tools/tinyos/ncc/ncc.1
+END
+ncg.1
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2399/trunk/tools/tinyos/ncc/ncg.1
+END
+ncc.in
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3987/trunk/tools/tinyos/ncc/ncc.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2399/trunk/tools/tinyos/ncc/Makefile.am
+END
+nesdoc.1
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4377/trunk/tools/tinyos/ncc/nesdoc.1
+END
+mig.1
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2399/trunk/tools/tinyos/ncc/mig.1
+END
+ncg.in
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2399/trunk/tools/tinyos/ncc/ncg.in
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2399/trunk/tools/tinyos/ncc/.cvsignore
+END

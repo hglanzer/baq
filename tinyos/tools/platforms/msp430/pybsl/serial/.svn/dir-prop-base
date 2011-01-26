@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 65
+Makefile
+Makefile.in
+__init__.pyc
+serialutil.pyc
+serialposix.pyc
+
+END

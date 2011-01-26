@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/message
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/message/__init__.py
+END
+MoteIF.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/message/MoteIF.py
+END
+Message.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/message/Message.py
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/message/Makefile
+END
+SerialPacket.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3591/trunk/support/sdk/python/tinyos/message/SerialPacket.py
+END

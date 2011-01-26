@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/5108/trunk/tos/lib/net/dip
+END
+DisseminatorP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3791/trunk/tos/lib/net/dip/DisseminatorP.nc
+END
+DipTrickleMilliC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/net/dip/DipTrickleMilliC.nc
+END
+DipVersionC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipVersionC.nc
+END
+DipDataP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipDataP.nc
+END
+qsort.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3702/trunk/tos/lib/net/dip/qsort.c
+END
+DipLogicC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipLogicC.nc
+END
+DipSummaryC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipSummaryC.nc
+END
+AMDipC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4900/trunk/tos/lib/net/dip/AMDipC.nc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/4959/trunk/tos/lib/net/dip/README
+END
+DipTrickleMilliP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/net/dip/DipTrickleMilliP.nc
+END
+DipVectorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipVectorC.nc
+END
+DipVersionP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4646/trunk/tos/lib/net/dip/DipVersionP.nc
+END
+Dip.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5082/trunk/tos/lib/net/dip/Dip.h
+END
+DisseminatorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DisseminatorC.nc
+END
+DisseminationC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DisseminationC.nc
+END
+DipDataC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipDataC.nc
+END
+DipLogicP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5082/trunk/tos/lib/net/dip/DipLogicP.nc
+END
+AMDipP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4900/trunk/tos/lib/net/dip/AMDipP.nc
+END
+DipSummaryP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4633/trunk/tos/lib/net/dip/DipSummaryP.nc
+END
+DipVectorP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3715/trunk/tos/lib/net/dip/DipVectorP.nc
+END

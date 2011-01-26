@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/5108/trunk/tos/lib/gpio
+END
+SoftCaptureC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4006/trunk/tos/lib/gpio/SoftCaptureC.nc
+END
+SoftIrqP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/tos/lib/gpio/SoftIrqP.nc
+END
+SoftIrqC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/tos/lib/gpio/SoftIrqC.nc
+END
+SoftCaptureP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4006/trunk/tos/lib/gpio/SoftCaptureP.nc
+END

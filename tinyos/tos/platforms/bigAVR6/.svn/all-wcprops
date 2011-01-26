@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5122/trunk/tos/platforms/mica2
+END
+DemoSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2977/trunk/tos/platforms/mica2/DemoSensorC.nc
+END
+TimeSyncMessageC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5108/trunk/tos/platforms/mica2/TimeSyncMessageC.nc
+END
+ActiveMessageC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5108/trunk/tos/platforms/mica2/ActiveMessageC.nc
+END
+.platform
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3972/trunk/tos/platforms/mica2/.platform
+END
+hardware.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5122/trunk/tos/platforms/mica2/hardware.h
+END
+DemoSensorNowC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2977/trunk/tos/platforms/mica2/DemoSensorNowC.nc
+END
+deluge.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3173/trunk/tos/platforms/mica2/deluge.xml
+END
+MotePlatformP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4172/trunk/tos/platforms/mica2/MotePlatformP.nc
+END
+platform.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3095/trunk/tos/platforms/mica2/platform.h
+END
+MotePlatformC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2977/trunk/tos/platforms/mica2/MotePlatformC.nc
+END
+DemoSensorStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tos/platforms/mica2/DemoSensorStreamC.nc
+END
+NestedResourceC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tos/platforms/mica2/NestedResourceC.nc
+END
+platform_message.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/tos/platforms/mica2/platform_message.h
+END

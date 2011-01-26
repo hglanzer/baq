@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/epic
+END
+ExtFlashC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/epic/ExtFlashC.nc
+END
+hardware.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/epic/hardware.h
+END
+ExtFlashP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/lib/tosboot/epic/ExtFlashP.nc
+END

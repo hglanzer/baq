@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerialBandwidth
+END
+TestSerial.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerialBandwidth/TestSerial.java
+END
+TestSerialC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerialBandwidth/TestSerialC.nc
+END
+TestSerialAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/apps/tests/TestSerialBandwidth/TestSerialAppC.nc
+END
+TestSerial.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2898/trunk/apps/tests/TestSerialBandwidth/TestSerial.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4482/trunk/apps/tests/TestSerialBandwidth/Makefile
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3489/trunk/apps/tests/msp430/AdcSimple
+END
+AdcSimpleC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3489/trunk/apps/tests/msp430/AdcSimple/AdcSimpleC.nc
+END
+AdcSimpleAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3489/trunk/apps/tests/msp430/AdcSimple/AdcSimpleAppC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3489/trunk/apps/tests/msp430/AdcSimple/Makefile
+END

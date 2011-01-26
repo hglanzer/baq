@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/5108/trunk/apps/TCPEcho
+END
+HttpdP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/4649/trunk/apps/TCPEcho/HttpdP.nc
+END
+TCPEchoP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/apps/TCPEcho/TCPEchoP.nc
+END
+TCPEchoC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/apps/TCPEcho/TCPEchoC.nc
+END
+UDPReport.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5108/trunk/apps/TCPEcho/UDPReport.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/4998/trunk/apps/TCPEcho/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/4651/trunk/apps/TCPEcho/Makefile
+END

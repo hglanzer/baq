@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestPacketSerializer
+END
+TestPacketSerializerP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestPacketSerializer/TestPacketSerializerP.nc
+END
+TestPacketSerializerC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestPacketSerializer/TestPacketSerializerC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2898/trunk/apps/tests/eyesIFX/Radio/TestPacketSerializer/Makefile
+END

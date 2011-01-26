@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/5036/trunk/apps/Oscilloscope
+END
+OscilloscopeC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5036/trunk/apps/Oscilloscope/OscilloscopeC.nc
+END
+OscilloscopeAppC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2399/trunk/apps/Oscilloscope/OscilloscopeAppC.nc
+END
+Oscilloscope.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2399/trunk/apps/Oscilloscope/Oscilloscope.h
+END
+oscilloscope.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/4449/trunk/apps/Oscilloscope/oscilloscope.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/4305/trunk/apps/Oscilloscope/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2399/trunk/apps/Oscilloscope/Makefile
+END

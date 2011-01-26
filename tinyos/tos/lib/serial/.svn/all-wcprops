@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/5204/trunk/tos/lib/serial
+END
+SerialFlush.nc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialFlush.nc
+END
+SerialAMQueueP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialAMQueueP.nc
+END
+SerialActiveMessageC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialActiveMessageC.nc
+END
+SerialPacketInfo.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2399/trunk/tos/lib/serial/SerialPacketInfo.nc
+END
+SerialPacketInfo802_15_4P.nc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialPacketInfo802_15_4P.nc
+END
+SerialAMReceiverC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialAMReceiverC.nc
+END
+SerialDispatcherC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialDispatcherC.nc
+END
+HdlcTranslateC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5194/trunk/tos/lib/serial/HdlcTranslateC.nc
+END
+ReceiveBytePacket.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/serial/ReceiveBytePacket.nc
+END
+SerialP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5204/trunk/tos/lib/serial/SerialP.nc
+END
+SerialActiveMessageP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialActiveMessageP.nc
+END
+SerialAMSenderC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialAMSenderC.nc
+END
+Serial802_15_4C.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/lib/serial/Serial802_15_4C.nc
+END
+SerialPacketInfoActiveMessageP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialPacketInfoActiveMessageP.nc
+END
+SerialQueueP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialQueueP.nc
+END
+SendBytePacket.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SendBytePacket.nc
+END
+Serial.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5108/trunk/tos/lib/serial/Serial.h
+END
+SerialDispatcherP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialDispatcherP.nc
+END
+SerialFrameComm.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialFrameComm.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2399/trunk/tos/lib/serial/README.txt
+END
+SerialByteComm.nc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5108/trunk/tos/lib/serial/SerialByteComm.nc
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell
+END
+UDPShellP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/UDPShellP.nc
+END
+BinaryCommand.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/BinaryCommand.nc
+END
+UDPShellC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/UDPShellC.nc
+END
+BinaryShell.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/BinaryShell.h
+END
+FlashShellP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/FlashShellP.nc
+END
+ShellCommandP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/ShellCommandP.nc
+END
+ShellCommand.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/ShellCommand.nc
+END
+FlashShellC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/FlashShellC.nc
+END
+ShellCommandC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/ShellCommandC.nc
+END
+RegisterShellCommand.nc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/RegisterShellCommand.nc
+END
+BinaryShellP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/BinaryShellP.nc
+END
+Shell.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/Shell.h
+END
+BinaryShellC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5168/trunk/tos/lib/net/blip/shell/BinaryShellC.nc
+END

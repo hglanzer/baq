@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 61
+Constants.java
+OscilloscopeMsg.java
+oscilloscope.jar
+*.class
+
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/cc1000-channelgen
+END
+tos-channelgen.1
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/cc1000-channelgen/tos-channelgen.1
+END
+tos-channelgen.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2977/trunk/tools/platforms/mica/cc1000-channelgen/tos-channelgen.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/cc1000-channelgen/Makefile.am
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2399/trunk/tools/platforms/mica/cc1000-channelgen/.cvsignore
+END

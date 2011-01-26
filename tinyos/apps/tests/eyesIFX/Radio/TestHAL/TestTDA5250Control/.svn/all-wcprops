@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestHAL/TestTDA5250Control
+END
+TestTda5250ControlP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestHAL/TestTDA5250Control/TestTda5250ControlP.nc
+END
+TestTda5250ControlC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/5108/trunk/apps/tests/eyesIFX/Radio/TestHAL/TestTDA5250Control/TestTda5250ControlC.nc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2898/trunk/apps/tests/eyesIFX/Radio/TestHAL/TestTDA5250Control/Makefile
+END

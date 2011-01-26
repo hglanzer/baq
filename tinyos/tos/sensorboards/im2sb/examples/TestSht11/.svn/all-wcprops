@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestSht11
+END
+TestSensorM.nc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestSht11/TestSensorM.nc
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestSht11/README.txt
+END
+TestSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2977/trunk/tos/sensorboards/im2sb/examples/TestSht11/TestSensorC.nc
+END

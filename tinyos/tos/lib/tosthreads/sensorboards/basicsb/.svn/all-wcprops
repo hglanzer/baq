@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/4400/trunk/tos/lib/tosthreads/sensorboards/basicsb
+END
+BlockingPhotoStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/BlockingPhotoStreamC.nc
+END
+BlockingTempC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/BlockingTempC.nc
+END
+BlockingPhotoC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/BlockingPhotoC.nc
+END
+CTempP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/4400/trunk/tos/lib/tosthreads/sensorboards/basicsb/CTempP.nc
+END
+tosthread_temp.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/tosthread_temp.h
+END
+basicsb_sensors.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/basicsb_sensors.h
+END
+CTempC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/CTempC.nc
+END
+CPhotoP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4400/trunk/tos/lib/tosthreads/sensorboards/basicsb/CPhotoP.nc
+END
+BlockingTempStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/BlockingTempStreamC.nc
+END
+tosthread_photo.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/tosthread_photo.h
+END
+CPhotoC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/4022/trunk/tos/lib/tosthreads/sensorboards/basicsb/CPhotoC.nc
+END

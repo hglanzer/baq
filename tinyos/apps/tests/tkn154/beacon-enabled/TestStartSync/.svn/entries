@@ -1,0 +1,58 @@
+8
+
+dir
+5211
+http://tinyos-main.googlecode.com/svn/trunk/apps/tests/tkn154/beacon-enabled/TestStartSync
+http://tinyos-main.googlecode.com/svn
+
+
+
+2010-01-05T17:12:57.000000Z
+4926
+janhauer
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+285f258d-8064-b571-fbc6-9656dc998e90
+
+device
+dir
+
+coordinator
+dir
+
+app_profile.h
+file
+
+
+
+
+2010-11-04T11:15:13.000000Z
+76241f78a4bcd731428bfc278da47e79
+2009-05-18T16:21:55.000000Z
+4608
+janhauer
+
+README.txt
+file
+
+
+
+
+2010-11-04T11:15:13.000000Z
+6124ae743a383db731d1c2aa4ab0859e
+2010-01-05T17:12:57.000000Z
+4926
+janhauer
+

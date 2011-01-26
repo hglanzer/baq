@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb
+END
+DemoSensorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/DemoSensorC.nc
+END
+TempStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/TempStreamC.nc
+END
+TempDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/TempDeviceP.nc
+END
+TempP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/TempP.nc
+END
+PhotoStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/PhotoStreamC.nc
+END
+.sensor
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2399/trunk/tos/sensorboards/basicsb/.sensor
+END
+TempC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/TempC.nc
+END
+PhotoDeviceP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/PhotoDeviceP.nc
+END
+PhotoP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/PhotoP.nc
+END
+PhotoC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/PhotoC.nc
+END
+DemoSensorStreamC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2977/trunk/tos/sensorboards/basicsb/DemoSensorStreamC.nc
+END
+basicsb.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2399/trunk/tos/sensorboards/basicsb/basicsb.h
+END

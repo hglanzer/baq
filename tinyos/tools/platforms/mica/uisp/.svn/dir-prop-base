@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 137
+.dates-set
+Makefile
+Makefile.in
+aclocal.m4
+config
+autom4te.cache
+config.log
+config.status
+uisp.1
+kernel
+uisp.spec
+config.cache
+configure
+
+END

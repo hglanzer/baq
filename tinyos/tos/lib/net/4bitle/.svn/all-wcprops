@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/5208/trunk/tos/lib/net/4bitle
+END
+LinkEstimatorP.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5208/trunk/tos/lib/net/4bitle/LinkEstimatorP.nc
+END
+LinkEstimator.nc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5108/trunk/tos/lib/net/4bitle/LinkEstimator.nc
+END
+LinkEstimatorC.nc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5108/trunk/tos/lib/net/4bitle/LinkEstimatorC.nc
+END
+LinkEstimator.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5108/trunk/tos/lib/net/4bitle/LinkEstimator.h
+END
