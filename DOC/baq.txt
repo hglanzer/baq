@@ -1,0 +1,106 @@
+
+### aufbau der build-environment ###
+
+* copy -r /opt/tinyos --> homedir
+* setzen der env-variablen:	TOSDIR	
+				TOSROOT
+				MAKERULES
+
+### aufbau einer platform ###
+
+* siehe dokument "TOS platform creation.pdf"
+* ./tinyos-2.x/platforms/<PLATFORMNAME>
+* ./tinyos-2.x/platforms/<PLATFORMNAME>/hardware.h
+
+* ./tinyos-2.x/platforms/<PLATFORMNAME>/.platform
+	(
+		--> anpassen der @includes
+	)
+
+* ./tinyos-2.x/support/make/<PLATFORNAME>.target
+	(	
+		--> kopieren eines bestehende files
+		--> umschreiben des targets auf <PLATFORMNAME>
+	)
+
+
+-------------------------------------
+
+### tinyos ###
+
+application besteht aus components, welche 'gewired' werden.
+components haben	* spezifikation
+			* implementation
+
+components bieten interfaces an und benutzen events(welche von den 
+interfaces der 'wired' components zur verfügung gestellt werden)
+
+es gibt 2 arten von components:	* modules
+				* configurations
+					
+interfaces sind bidirectional: bieten 'commands' und 'events' an
+
+
+## Boot Sequence ##
+
+The TinyOS boot sequence has four steps:
+
+   1. Scheduler initialization
+   2. Component initialization
+   3. Signal that the boot process has completed
+   4. Run the scheduler 
+
+
+			INITIALISIERUNG
+
+alles beginnt mit tos/system/RealMainP.nc - enthält main(). 
+hier werden die init-funktionen der reihe nach aufgerufen:
+		* platform_bootstrap();		// MAKRO in tos.h
+		* call Scheduler.init(); 	// SchedulerBasicP.nc
+		* call PlatformInit.init();	// Plattformabhängig - variabel je nach wiring:
+						zb. stellt tos/platforms/mica/PlatformP.nc diese
+						init() - funktion zur verfügung
+
+			in PlatformInit.init() wird mittels
+			call MeasureClock.init();
+			die CPU-Clock gemessen. 
+
+			--> VERWENDUNG EINER EXTERNEN CLOCK auf MICA-Platform für Timer0
+			
+			
+UMSTELLUNG AUF SYNCRONE(CPU) - CLOCK --> eigenes Modul in tos/system/timerSync
+	* AC0 in ASSR = 0 setzen(cpu- statt externe clock)
+	* PowerDown - Problem: McuSleepC.nc in tos/chips/atm128
+			--> DEFINITV BESTÄTIGT!
+
+	* umschreiben sämtlicher filename von *Async* --> *Sync*
+	* umschreiben der definitionen von *Async* --> *Sync* (da wo sie vorkommen...)
+	* zusätzlicher prescaler in HplAtm128Timer0SyncP.nc(interruptroutine SIG_OUTPUT_COMPARE0)
+	* in platform.h --> setzen eines PRESCALER-Wertes
+		--> falls nicht gesetzt: DEFINE PRESCALER 1 (#ifndef)
+
+
+UART - einbau
+	* UART0 / UART1: optimal wäre ein generisches interface
+		--> zuviel aufwand fürs erste. statische module für je UART0 und UART1
+	* TX: ISR fuer sendString - senden der einzelnen tasks per funktionsaufruf - NICHT PER TASK!
+			--> zuviel overhead / ruiniert timing!
+
+	* RX per ISR / funkt prinzipiell. welche interfaces sollen hier zur verfügung gestellt werden?
+
+LCD2x16
+	* module in platform/bigAVR6/lcd2x16
+	* ACHTUNG: nach kompletten power-off des boards: hw-init des lcd dauert SEHR lange(länger als bootup von
+		tinyos) --> deswegen funktioniert das lcd nach wiederanstecken nicht
+		--> softreset durchführen, dann passts
+
+	FRAGE: wie sollen die wartezeiten beim senden von befehlen / daten realisiert werden?
+		momentan busywait. problem könnte sein dass Timerinterface im untermodul lcd2x16 
+		nicht verfügbar ist...
+
+
+
+
+
+
+
