@@ -71,8 +71,8 @@ implementation
 	//	call UART1.uartInit();
 	//	call LCD2x16.init(CURSOR_ON_BLINK_OFF);
 		call LCD128x64.initLCD(0x00);
-	        call Timer0.startPeriodic(180);
-	        call Timer1.startPeriodic(180);
+	        call Timer0.startPeriodic(100);
+	        call Timer1.startPeriodic(100);
 /*
 	        call Timer2.startPeriodic(1000);
 	        call Timer3.startPeriodic(4000);

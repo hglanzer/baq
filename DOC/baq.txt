@@ -104,3 +104,56 @@ LCD2x16
 
 
 
+## FLASH der platform ##
+
+flash mittels AVRISP mkII ueber usb-port
+
+stecker AVRISP <--> bigAVR6:
+
+     rotes Kabel = VCC
+	|
+	|
+	v
+	ooo
+	ooo
+MOSI ___|||
+SCK  ____||
+RESET_____|
+
+momentan gibt es noch kein einheitliches Make-file, derzeit werden 2
+verschiedene Makefiles verwendet.
+
+1. erstellen des ihex - bin-file
+2. runterladen dieses ihex-files in EPROM
+
+cd TOSROOT
+cd apps/<app-NAME>/
+make bigAVR6		# angepasstes tinyos - makefile, erstellt main.ihex
+cd build/bigAVR6
+make install		# von ESE, download mittels avrdude
+
+
+## ANPASSEN DES MAKEFILES ##
+um zukünftig nur mehr 1 makefile und damit damit einem kommando kompilieren +
+downloaden zu können, wurden folgende anpassungen gemacht:
+
+	-->	erweitern des AVR_HELP - targets: zeile mit avrdude
+	-->	unter umständen muss dies noch erweitert werden damit
+		connection-port mitgegeben werden kann
+		<TOSROOT>/support/make/avr/avr.rules
+
+	<TOSROOT>/support/make/avr/avrdude.extra:
+
+	-->	file wurde von dapa.extra kopiert. hier sind die eigentlichen
+		flash-targets eingetragen. $(MAIN_IHEX) enthaelt den relativen
+		pfad zum ihex - binaryfile
+
+damit ergibt sich folgende commandline zum kompilieren UND flashen:
+
+make bigAVR6 install avrdude
+
+um diesen aufruf noch zu verkürzen wurde fuer avr-boards der
+default-programmer auf 'avrdude' gesetzt:
+	
+		<TOSROOT>/support/make/avr/avr.rules
+			DEFAULT_PROGRAM ?= avrdude

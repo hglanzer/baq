@@ -10,10 +10,11 @@ define AVR_HELP
 
  Programmer options:
 
-   dapa         : (default) use parallel port programmer
-   mib510,<dev> : use MIB510/MIB520 serial port programming board at port <dev>
-   eprb,<host>	: use EPRB (MIB600) at hostname <host>
-   avrisp,<dev> : use AVRISP serial programmer at port <dev>
+   dapa          : (default) use parallel port programmer
+   mib510,<dev>  : use MIB510/MIB520 serial port programming board at port <dev>
+   eprb,<host>	 : use EPRB (MIB600) at hostname <host>
+   avrisp,<dev>  : use AVRISP serial programmer at port <dev>
+   avrdude	 : use AVRDUDE/AVRISP usb-programmer
 
    The dev or host parameter for the programmer option need not be specified,
    in which case it is expected to be defined as in an environment variable of
@@ -82,7 +83,8 @@ endif
 ifdef DEFAULT_PROGRAM_AVR
 DEFAULT_PROGRAM = $(DEFAULT_PROGRAM_AVR)
 endif
-DEFAULT_PROGRAM ?= dapa
+#DEFAULT_PROGRAM ?= dapa
+DEFAULT_PROGRAM ?= avrdude
 
 
 

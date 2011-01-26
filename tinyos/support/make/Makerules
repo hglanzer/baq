@@ -2,13 +2,9 @@
 #$Id: Makerules,v 1.6 2008/09/26 20:13:58 klueska Exp $
 
 # @author Cory Sharp <cssharp@eecs.berkeley.edu>
+# change by hglanzer, 26.1.2011
 
 ### --- This makefile requires GNU Make version 3.80 or newer.
-
-
-### ---
-### --- Prepare variables
-### ---
 
 #  Get TOSDIR from ncc if it isn't set already.
 ifndef TOSDIR
@@ -154,10 +150,10 @@ $(foreach file,$(VALID_TARGETS),$(if $(filter $(call names,$(file)),$(GOALS)),$(
 $(foreach goal,$(MAKECMDGOALS),$(if $(filter-out $(TARGETS) help,$(goal)),$(eval $(call TOSMake_extra_targets,$(goal)))))
 
 
-### ---
-### --- Define USAGE, print help if necessary or requested, etc.
-### ---
+TEST:
+	@echo "BLABLA";
 
+### --- Define USAGE, print help if necessary or requested, etc.
 #  USAGE is printed out when help is requested.  Files other than this should
 #  add text to HELP, not USAGE.
 define USAGE
@@ -166,7 +162,7 @@ define USAGE
 Usage:  make <target> <extras>
         make <target> help
 
-        Valid targets: $(call names,$(VALID_TARGETS))
+        ###Valid targets: $(call names,$(VALID_TARGETS))
         Valid extras: $(call names,$(VALID_EXTRAS))
 $(HELP)
 
@@ -175,6 +171,8 @@ endef
 #  If no target or an invalid target is specified, print usage.
 ifeq ($(TARGETS),)
   ifeq ($(GOALS),)
+
+    $(error $(TARGETS) ###############)
     $(error $(USAGE)Please specify a valid target)
   else
     $(error $(USAGE)ERROR, "$(GOALS)" does not specify a valid target)
@@ -201,5 +199,6 @@ $(COMPONENT).nc:
 	@echo "ERROR: You need to create a top level file called $(COMPONENT).nc, or modify your local Makefile to point to the real name of your top level component."
 	@false
 
+# PHONY - targets hängen von nichts ab, sollen IMMER erzeugt werden:
 .PHONY: FORCE
 

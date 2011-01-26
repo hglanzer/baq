@@ -1,0 +1,32 @@
+#-*-Makefile-*- vim:syntax=make
+#$Id: avrisp.extra,v 1.8 2008-09-22 15:41:35 sallai Exp $
+# hglanzer, 26. 1. 2011
+# angepasst von dapa.extra
+# flash - targets fuer bigAVR6 mittels avrdude / usb / avrispMKII
+
+#ifeq ($(AVRISP),)
+#$(error AVRISP must be defined, try "make $(TARGETS) help")
+#endif
+
+PROGRAM = avrdude
+
+ifeq ($(PROGRAMMER),avrdude)
+    ifdef BOOTLOADER_IMG
+      ifeq ($(shell [ -f /bin/cygwin1.dll ] && echo cygwin),cygwin)
+        BOOTLOADER_IMG := $(shell cygpath -m $(BOOTLOADER_IMG))
+      endif
+    endif
+    
+    PROGRAMMER_FLAGS = -p m128 -c avrisp2 -P usb -e -U flash:w:$(MAIN_IHEX)
+#    PROGRAMMER_FLAGS = -p m128 -c avrisp2 -P usb -e -U flash:w:build/bigAVR6/main.ihex
+    PROGRAMMER_INSTALL_SREC_FLAGS =
+    PROGRAMMER_INSTLAL_BOOTLOADER_FLAGS=
+endif
+
+program: FORCE
+	@echo "    installing $(PLATFORM) binary using avrdude"
+	$(PROGRAMMER) $(PROGRAMMER_FLAGS) $(PROGRAMMER_INSTALL_SREC_FLAGS)
+
+program_bl: FORCE
+	@echo "    installing $(PLATFORM) bootloader using avrdude"
+	$(PROGRAMMER) $(PROGRAMMER_FLAGS) $(PROGRAMMER_INSTALL_BOOTLOADER_FLAGS)
