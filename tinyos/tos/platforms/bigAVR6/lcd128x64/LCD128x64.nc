@@ -19,7 +19,7 @@ interface LCD128x64
 
 	command void startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
 
-	command void startWriteString(char *data, uint8_t x, uint8_t y);
+	command uint8_t startWriteString(char *data, uint8_t x, uint8_t y);
 	
 	command void startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 

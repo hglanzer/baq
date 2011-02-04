@@ -231,9 +231,9 @@ implementation
 	{
 		uint8_t index = 0, offset = 0;
 
-		if(state != BUSY)
-		{
-			state = BUSY;	
+//		if(state != BUSY)
+//		{
+//			state = BUSY;	
 			while (*dataPtr)
 			{
 				for(index=0; index<5; index++)
@@ -248,7 +248,7 @@ implementation
 				offset++;
 				dataPtr++;
 			}
-		}
+//		}
 		state = IDLE;
 	}
 
@@ -344,14 +344,21 @@ implementation
 		signal LCD128x64.initDone();
 	}
 
-	command void LCD128x64.startWriteString(char *data, uint8_t x, uint8_t y)
+	command uint8_t LCD128x64.startWriteString(char *data, uint8_t x, uint8_t y)
 	{
+		if(state == BUSY)
+		{
+			return FAIL;
+		}
+		state = BUSY;
 		xPos[STRING] = x;
 		yPos[STRING] = y;
 		dataPtr = data;
 
 		post writeString();
 		signal LCD128x64.stringWritten();
+		state = IDLE;	
+		return SUCCESS;
 	}
 
 	command void LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)

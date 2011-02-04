@@ -12,6 +12,9 @@
 
 module LedC @safe()
 {
+
+uses interface Read<uint16_t> as Read0;
+
 	uses interface Leds;
 	uses interface Boot;
 //	uses interface UART1;
@@ -31,9 +34,16 @@ implementation
         volatile uint8_t delay1=0, delay0=0;
 
 	char rcvBuf[10];
-        
+       
+	event void Read0.readDone(error_t res, uint16_t val)
+	{
+
+	}
+ 
 	task void runTasks()
         {
+		call Read0.read();
+
 		call LCD128x64.startClearScreen(0x00);
 	//	call LCD128x64.startWriteString("hello...\0", 25+count2, 20);
 	//	call LCD128x64.startWriteCircle(30, 30, count);

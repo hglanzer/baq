@@ -157,3 +157,19 @@ default-programmer auf 'avrdude' gesetzt:
 	
 		<TOSROOT>/support/make/avr/avr.rules
 			DEFAULT_PROGRAM ?= avrdude
+
+## ADC / Touchscreen
+
+x - koordinaten auf channel 0 PORTF0
+y - koordinaten auf channel 1 PORTF1
+
+um x zu lesen: driveA = PORTG3 = 1, PORTG4 = 0
+um y zu lesen: driveB = PORTG4 = 1, PORTG3 = 0
+
+es wird das interface Atm128AdcSingle / getData verwendet
+leftJustfiy = 0, prescaler tw. auf 5, ref-voltage => hier gibt es einen jumper
+J18 / rechts neben GLCD... ??
+
+	# einbinden Touchscreen in userprogramm:
+
+		* einbinden des interfaces 'TouchScreen (TouchScreen.nc)

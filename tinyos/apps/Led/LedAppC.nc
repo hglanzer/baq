@@ -6,11 +6,15 @@ configuration LedAppC
 }
 implementation
 {
+
 	components MainC, LedC, LedsC;
 	
 //	components UARTC1;
 //	components LCD2x16C;
 	components LCD128x64C;
+	
+	components WireAdcP;
+	
 	components new TimerMilliC() as Timer0;
 	components new TimerMilliC() as Timer1;
 /*
@@ -20,6 +24,8 @@ implementation
 	LedC.UART1 -> UARTC1;
 	LedC.LCD2x16 -> LCD2x16C;
 */  
+
+
 	LedC -> MainC.Boot;
 	LedC.Leds -> LedsC;
 	LedC.LCD128x64 -> LCD128x64C;
@@ -30,5 +36,7 @@ implementation
 	LedC.Timer2 -> Timer2;
 	LedC.Timer3 -> Timer3;
 */
+	//LedC.WireAdcP -> Read0;
+	LedC.Read0 -> WireAdcP;
 }
 
