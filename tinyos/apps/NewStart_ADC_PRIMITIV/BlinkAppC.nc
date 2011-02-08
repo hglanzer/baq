@@ -11,14 +11,13 @@ configuration BlinkAppC
 implementation
 {
 	components MainC, BlinkC, LCD128x64C;
+	components Atm128AdcC;
+	components new AdcReadClientC() as ADC0;
 	components new TimerMilliC() as TIMER0;
-	components TouchScreenC;
-
-
 	BlinkC -> MainC.Boot;
 	BlinkC.LCD128x64 -> LCD128x64C;
+	BlinkC.Atm128AdcSingle -> Atm128AdcC;
 	BlinkC.Timer0 -> TIMER0;
-	BlinkC.TouchScreen -> TouchScreenC;
-
+	BlinkC.Read -> ADC0;
 }
 

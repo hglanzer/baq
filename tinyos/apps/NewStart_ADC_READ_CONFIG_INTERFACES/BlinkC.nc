@@ -14,64 +14,40 @@ module BlinkC @safe()
 	uses interface Boot;
 	uses interface LCD128x64;
 	uses interface Timer<TMilli> as Timer0;
-
-	uses interface TouchScreen;
 	
-//	uses interface Read<uint16_t>;
-//	provides interface Atm128AdcConfig;
+	uses interface Read<uint16_t>;
+
+	provides interface Atm128AdcConfig;
+//	provides interface Atm128AdcConfig[uint8_t client];
 
 }
 implementation
 {
 	volatile uint8_t count = 0, x_true=0;
+	uint16_t xy_data;
 	char buf[10]="2131231";
-	
-	event void TouchScreen.xyReady(uint16_t x, uint16_t y)
+
+	task void calc_xy()
 	{
 		volatile uint8_t tmp = 0;
-
-		tmp = (x % 10);
+		atomic
+	{
+		tmp = (xy_data % 10);
 		buf[3] = tmp + 0x30;
-		x = (x - tmp) / 10;
+		xy_data = (xy_data - tmp) / 10;
 
-		tmp = (x % 10);
-		buf[2] = tmp + 0x30;
-		x = (x - tmp) / 10;
+		tmp = (xy_data % 10);
+		buf[2] = tmp + 0x30; 
+		xy_data = (xy_data - tmp) / 10;
 
-		tmp = (x % 10);
-		buf[1] = tmp + 0x30;
-		x = (x - tmp) / 10;
+		tmp = (xy_data % 10);
+		buf[1] = tmp + 0x30; 
+		xy_data = (xy_data - tmp) / 10;
 
-		tmp = (x % 10);
-		buf[0] = tmp + 0x30;
+		tmp = (xy_data % 10);
+		buf[0] = tmp + 0x30; 
 		buf[4] = '\0';
-		
-		call LCD128x64.startWriteString(buf, 45, 20);
-
-/*
-		buf[0] = '0';
-		buf[1] = '0';
-		buf[2] = '0';
-		buf[3] = '0';
-
-		tmp = (y % 10);
-		buf[3] = tmp + 0x30;
-		y = (y - tmp) / 10;
-
-		tmp = (y % 10);
-		buf[2] = tmp + 0x30;
-		y = (y - tmp) / 10;
-
-		tmp = (y % 10);
-		buf[1] = tmp + 0x30;
-		y = (y - tmp) / 10;
-
-		tmp = (y % 10);
-		buf[0] = tmp + 0x30;
-		buf[4] = '\0';
-		
-		call LCD128x64.startWriteString(buf, 45, 30);
-*/
+	}
 	}
 
 	task void update_display()
@@ -102,11 +78,24 @@ implementation
 		}
 	}
 
+	async command uint8_t Atm128AdcConfig.getRefVoltage(void)
+	{
+		return 1;
+	}
+	async command uint8_t Atm128AdcConfig.getChannel()
+	{
+		if(x_true == 1)
+			return ATM128_ADC_SNGL_ADC0;
+		else
+			return ATM128_ADC_SNGL_ADC1;
+	}
+	async command uint8_t Atm128AdcConfig.getPrescaler()
+	{
+		return ATM128_ADC_PRESCALE_128;
+	}
+	
 	event void Timer0.fired()
 	{
-		call TouchScreen.getXY();
-	
-/*
 		if(x_true == 1)	
 		{
 			PORTG |= (1<<3);
@@ -118,21 +107,21 @@ implementation
 			PORTG &= ~(1<<3);
 		}
 		call Read.read();
-*/
 	}
 
-/*	
+	
 	event void Read.readDone(error_t err, uint16_t val)
 	{
 		xy_data = val;
 		post calc_xy();
 		post update_display();
 	}
-*/
 
 	event void Boot.booted()
 	{
-		call LCD128x64.initLCD(0x00);
+		DDRG |= ((1<<3) | (1<<4));
+		PORTG = 0x00;
+		call LCD128x64.initLCD(0x01);
 	}
 	event void LCD128x64.initDone()
 	{

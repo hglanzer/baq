@@ -12,13 +12,14 @@ implementation
 {
 	components MainC, BlinkC, LCD128x64C;
 	components new TimerMilliC() as TIMER0;
-	components TouchScreenC;
-
+	components new AdcReadClientC();
 
 	BlinkC -> MainC.Boot;
 	BlinkC.LCD128x64 -> LCD128x64C;
 	BlinkC.Timer0 -> TIMER0;
-	BlinkC.TouchScreen -> TouchScreenC;
 
+	BlinkC.Read -> AdcReadClientC;
+	BlinkC.Atm128AdcConfig <- AdcReadClientC;
+//	BlinkC.AdcConfigure <- Adc1;
 }
 
