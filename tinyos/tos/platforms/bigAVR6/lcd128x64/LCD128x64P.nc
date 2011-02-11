@@ -8,7 +8,8 @@ module LCD128x64P
 
 implementation
 {
-	uint8_t state = IDLE, modPattern = 0x00;
+	static volatile	uint8_t state = 0;
+	uint8_t modPattern = 0x00;
 	uint8_t pageAddr, xAddr = 0;
 	uint8_t rad, aRect, bRect, xLineEnd, yLineEnd;
 	uint8_t xPos[4], yPos[4];
@@ -193,6 +194,8 @@ implementation
 			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE]);
 			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE] + aRect - 1);
 		}
+		state = state & ~(1<<BUSY_RECT);
+		signal LCD128x64.rectangleWritten();
 	}
 	
 	task void writeCircle()
@@ -225,31 +228,30 @@ implementation
 			}
 			x++;
 		}
+		state = state & ~(1<<BUSY_CIRCLE);
+		signal LCD128x64.circleWritten();
 	}
 
 	task void writeString()
 	{
 		uint8_t index = 0, offset = 0;
 
-//		if(state != BUSY)
-//		{
-//			state = BUSY;	
-			while (*dataPtr)
+		while (*dataPtr)
+		{
+			for(index=0; index<5; index++)
 			{
-				for(index=0; index<5; index++)
-				{
-			
-					setAddress(xPos[STRING]+offset, yPos[STRING]/8);
-				        writeGLCD(DATA, (uint8_t)pgm_read_byte(&Font5x7[((*dataPtr - 0x20) * 5) + index]));
-					offset++;
-				}
-				setAddress(xPos[STRING]+offset, yPos[STRING]);
-				writeGLCD(DATA, 0x00);
+		
+				setAddress(xPos[STRING]+offset, yPos[STRING]/8);
+			        writeGLCD(DATA, (uint8_t)pgm_read_byte(&Font5x7[((*dataPtr - 0x20) * 5) + index]));
 				offset++;
-				dataPtr++;
 			}
-//		}
-		state = IDLE;
+			setAddress(xPos[STRING]+offset, yPos[STRING]);
+			writeGLCD(DATA, 0x00);
+			offset++;
+			dataPtr++;
+		}
+		state = state & ~(1<<BUSY_STRING);
+		signal LCD128x64.stringWritten();
 	}
 
 	command void LCD128x64.writeByte(uint8_t x, uint8_t y, uint8_t data)
@@ -259,7 +261,7 @@ implementation
 	}
 
 
-	void task clearScreen()
+	void task clearScreenNB()
 	{
 		// clear LCD - loop through all pages
 		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops
@@ -270,6 +272,22 @@ implementation
 				writeGLCD(DATA, modPattern);
 			}
 		}
+		state = state & ~(BUSY_CLEAR);
+	}
+
+	void clearScreen()
+	//void task clearScreen()
+	{
+		// clear LCD - loop through all pages
+		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops
+		{
+			for(xAddr=0; xAddr<GLCD_XPIXELS; xAddr++)	// 128 loops
+			{
+				setAddress(xAddr, pageAddr);
+				writeGLCD(DATA, modPattern);
+			}
+		}
+		state = state & ~(BUSY_CLEAR);
 	}
 
 	void task writeLine()
@@ -321,6 +339,8 @@ implementation
 				}
 			}			
 		}
+		state = state & ~(1<<BUSY_LINE);
+		signal LCD128x64.lineWritten();
 	}
 	
 	command void LCD128x64.initLCD(uint8_t pattern)
@@ -338,7 +358,9 @@ implementation
 		writeGLCD(COMM, (GLCD_ON_CTRL | GLCD_ON_DISPLAY));
 
 		// clear screen
-		call LCD128x64.startClearScreen(pattern);
+		modPattern = pattern;
+		clearScreen();
+		//call LCD128x64.startClearScreen(pattern);
 		// set init-position						TODO
 
 		signal LCD128x64.initDone();
@@ -346,55 +368,90 @@ implementation
 
 	command uint8_t LCD128x64.startWriteString(char *data, uint8_t x, uint8_t y)
 	{
-		if(state == BUSY)
+		if((state & BUSY_STRING ) == 1)
 		{
 			return FAIL;
 		}
-		state = BUSY;
-		xPos[STRING] = x;
-		yPos[STRING] = y;
-		dataPtr = data;
-
-		post writeString();
-		signal LCD128x64.stringWritten();
-		state = IDLE;	
-		return SUCCESS;
+		else
+		{
+			state = state | (1<<BUSY_STRING);
+			xPos[STRING] = x;
+			yPos[STRING] = y;
+			dataPtr = data;
+	
+			post writeString();
+			return SUCCESS;
+		}
 	}
 
-	command void LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
+	command error_t LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 	{
-		xPos[RECTANGLE] = x;
-		yPos[RECTANGLE] = y;
-		aRect = a;
-		bRect = b;
+		if( (state & BUSY_RECT) == 1)
+		{
+			return FAIL;
+		}
+		else
+		{
+			state = state | BUSY_RECT;
+			xPos[RECTANGLE] = x;
+			yPos[RECTANGLE] = y;
+			aRect = a;
+			bRect = b;
 
-		post writeRectangle();
-		signal LCD128x64.rectangleWritten();
+			post writeRectangle();
+			return SUCCESS;
+		}
 	}	
 
-	command void LCD128x64.startWriteCircle(uint8_t x, uint8_t y, uint8_t radius)
+	command error_t LCD128x64.startWriteCircle(uint8_t x, uint8_t y, uint8_t radius)
 	{
-		xPos[CIRCLE] = x;
-		yPos[CIRCLE] = y;
-		rad = radius;
+		if( (state & BUSY_CIRCLE) == 1)
+		{
+			return FAIL;
+		}
+		else
+		{
+			state = state | BUSY_CIRCLE;
+			xPos[CIRCLE] = x;
+			yPos[CIRCLE] = y;
+			rad = radius;
 	
-		post writeCircle();
-		signal LCD128x64.circleWritten();
+			post writeCircle();
+			return SUCCESS;
+		}
 	}
 	
-	command void LCD128x64.startClearScreen(uint8_t pattern)
+	command error_t LCD128x64.startClearScreen(uint8_t pattern)
 	{
-		modPattern = pattern;
-		post clearScreen();
+		if( (state & BUSY_CLEAR) == 1)
+		{
+			return FAIL;
+		}
+		else
+		{
+			state = state | BUSY_CLEAR;
+			modPattern = pattern;
+			post clearScreenNB();
+			return SUCCESS;
+		}
 	}
 
-	command void LCD128x64.startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
+	command error_t LCD128x64.startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
 	{
-		xPos[LINE] = x;
-		yPos[LINE] = y;
-		xLineEnd = xEnd;
-		yLineEnd = yEnd;
+		if( (state & BUSY_LINE ) == 1)
+		{
+			return FAIL;
+		}
+		else
+		{
+			state = state | BUSY_LINE;
+			xPos[LINE] = x;
+			yPos[LINE] = y;
+			xLineEnd = xEnd;
+			yLineEnd = yEnd;
 
-		post writeLine();
+			post writeLine();
+			return SUCCESS;
+		}
 	}
 }

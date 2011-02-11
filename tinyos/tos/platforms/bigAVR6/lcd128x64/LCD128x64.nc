@@ -15,15 +15,15 @@ interface LCD128x64
 
 	command void writeBar(uint8_t x, uint8_t y, uint8_t width, uint8_t length);
 	
-	command void startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
+	command error_t startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 
-	command void startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
+	command error_t startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
 
 	command uint8_t startWriteString(char *data, uint8_t x, uint8_t y);
 	
-	command void startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
+	command error_t startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 
-	command void startClearScreen(uint8_t pattern);
+	command error_t startClearScreen(uint8_t pattern);
 
 	event void initDone(void);
 	
@@ -33,5 +33,5 @@ interface LCD128x64
 	
 	event void rectangleWritten(void);
 	
-		
+	event void lineWritten(void);
 }

@@ -17,6 +17,7 @@
 
 */
 
+
 #define DATA_OUT_GLCD   PORTA
 #define DATA_IN_GLCD	PINA
 #define DATA_DDR_GLCD	DDRA
@@ -56,3 +57,16 @@
 #define HORIZONTAL		0
 #define UP			1
 #define DOWN			2
+
+#ifndef	_LCD128x64
+#define	_LCD128x64
+enum
+{
+	BUSY_STRING	=	1,
+	BUSY_CIRCLE	=	2,
+	BUSY_RECT	=	4,
+	BUSY_LINE	=	8,
+	BUSY_CLEAR	=	16,
+};
+
+#endif

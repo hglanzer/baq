@@ -20,6 +20,5 @@ implementation
 
 	BlinkC.Read -> AdcReadClientC;
 	BlinkC.Atm128AdcConfig <- AdcReadClientC;
-//	BlinkC.AdcConfigure <- Adc1;
 }
 
