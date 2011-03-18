@@ -1,82 +1,0 @@
-8
-
-dir
-5211
-http://tinyos-main.googlecode.com/svn/trunk/apps/tutorials/LowPowerSensing
-http://tinyos-main.googlecode.com/svn
-
-
-
-2009-10-22T18:37:41.000000Z
-4810
-razvanm
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-285f258d-8064-b571-fbc6-9656dc998e90
-
-java
-dir
-
-sampleLog
-dir
-
-Sampler
-dir
-
-universal_sensors
-dir
-
-LowPowerSensingMsgs.h
-file
-
-
-
-
-2010-11-04T11:15:10.000000Z
-2b6dc25306770c246084d9aa470080aa
-2007-09-03T22:46:36.000000Z
-3557
-klueska
-
-tmote_onboard_sensors
-dir
-
-LowPowerSensingConstants.h
-file
-
-
-
-
-2010-11-04T11:15:10.000000Z
-9edcebd7aa5de2fd663bd41ccd3287ea
-2008-06-18T18:28:02.000000Z
-4084
-sallai
-
-Base
-dir
-
-README
-file
-
-
-
-
-2010-11-04T11:15:10.000000Z
-ee6f6cc157475e7872061d8e0eecc91c
-2008-03-03T03:11:27.000000Z
-3828
-klueska
-

@@ -1,3 +1,25 @@
+/*
+	harald glanzer, TU wien
+
+	128x64 - GLCD interface implementation
+
+
+	0/0					127/0	
+	-----------------------------------------
+	|					|
+	|					|
+	|					|
+	|					|
+	|	GLCD - PIXEL COORDINATES	|
+	|					|
+	|					|
+	|					|
+	|					|
+	-----------------------------------------
+	0/63					127/63
+
+*/
+
 #include "LCD128x64.h"
 #include "font5x7.h"
 
@@ -11,8 +33,8 @@ implementation
 	static volatile	uint8_t state = 0;
 	uint8_t modPattern = 0x00;
 	uint8_t pageAddr, xAddr = 0;
-	uint8_t rad, aRect, bRect, xLineEnd, yLineEnd;
-	uint8_t xPos[4], yPos[4];
+	uint8_t rad, aRect, bRect, xLineEnd, yLineEnd, aBar, bBar;
+	uint8_t xPos[5], yPos[5];
 	char *dataPtr;
 
 	//void wait4Controller()
@@ -153,46 +175,19 @@ implementation
 		writeGLCD(DATA, byte);
 	}
 
-	command void LCD128x64.writeBar(uint8_t x, uint8_t y, uint8_t width, uint8_t length)
-	{
-		uint8_t w_count, tmp, byte=0, y_mod;
-		
-		if(length <8)
-		{	
-			y_mod = length % 8;
-			for( tmp=0; tmp < 8; tmp++)
-			{
-				if(tmp < y_mod)
-				{
-					byte |= (1<<tmp);
-				}
-			}
-			for(w_count = 0; w_count < width; w_count++)
-			{
-				setAddress((x+w_count), (y-9));
-		                writeGLCD(DATA, byte);
-			}
-		}
-		else
-		{
-
-		}
-	}
-
 	// draw rectangle
 	task void writeRectangle()
-//	command void LCD128x64.writeRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 	{
 		unsigned char j;
-		for (j = 0; j < aRect; j++)
-		{
-			call LCD128x64.setPixel(xPos[RECTANGLE], yPos[RECTANGLE] + j);
-			call LCD128x64.setPixel(xPos[RECTANGLE] + bRect - 1, yPos[RECTANGLE] + j);
-		}
 		for (j = 0; j < bRect; j++)
 		{
+			call LCD128x64.setPixel(xPos[RECTANGLE], yPos[RECTANGLE] + j);
+			call LCD128x64.setPixel(xPos[RECTANGLE] + aRect - 1, yPos[RECTANGLE] + j);
+		}
+		for (j = 0; j < aRect; j++)
+		{
 			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE]);
-			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE] + aRect - 1);
+			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE] + bRect - 1);
 		}
 		state = state & ~(1<<BUSY_RECT);
 		signal LCD128x64.rectangleWritten();
@@ -273,6 +268,8 @@ implementation
 			}
 		}
 		state = state & ~(BUSY_CLEAR);
+
+		signal LCD128x64.screenCleared();
 	}
 
 	void clearScreen()
@@ -292,20 +289,33 @@ implementation
 
 	void task writeLine()
 	{
-		uint8_t count, orientation;
-		float tmp;
+		static volatile uint8_t count, orientation, dx, dy, steep = 0, steepCnt = 0;
+		float tmp = 0;
+
+		dx = xLineEnd - xPos[LINE];
 
 		if(yLineEnd > yPos[LINE])	// descending line
 		{
 			tmp = ((yLineEnd - yPos[LINE]) / ((float)(xLineEnd - xPos[LINE])));
 			orientation = DOWN;
+			dy = yLineEnd - yPos[LINE];
 		}
 		if(yLineEnd < yPos[LINE])	// ascending line
 		{
 			tmp = (yPos[LINE] - yLineEnd) / ((float)xLineEnd - xPos[LINE]);
 			orientation = UP;
+			dy = yPos[LINE] - yLineEnd;
 		}
-			
+	
+		// steep line to draw - so it will not be enough to draw only on pixel in y-direction for every x-step
+		// the steeper the line --> the more y-pixels for one x-step	
+
+		// FIXME - check Radar - example
+		if(dy > dx)
+			steep = dy / dx;
+		else
+			steep = 0;
+	
 		if(yLineEnd == yPos[LINE])
 		{
 			tmp = 0;
@@ -326,14 +336,21 @@ implementation
 			{
 				if(orientation == UP)
 				{
-					call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]-(tmp*(float)count));
+					for(steepCnt = 0; steepCnt <= steep; steepCnt++)
+					{
+						if((yPos[LINE]-(tmp*(float)count)+steepCnt) >= yLineEnd)
+							call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]-(tmp*(float)count)+steepCnt);
+					}
 				}
-				if(orientation == DOWN)
+				else if(orientation == DOWN)
 				{
-					call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]+(tmp*(float)count));
+					for(steepCnt = 0; steepCnt <= steep; steepCnt++)
+					{
+						call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]+(tmp*(float)count)+steepCnt);
+					}
 				}
 	
-				if(orientation == HORIZONTAL)
+				else if(orientation == HORIZONTAL)
 				{
 					call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]);
 				}
@@ -341,6 +358,71 @@ implementation
 		}
 		state = state & ~(1<<BUSY_LINE);
 		signal LCD128x64.lineWritten();
+	}
+
+	/*
+		too be fast, writeBar() uses 3 different approches for drawing. faster drawing is
+		possible by writing 8bit at one time with setAdress() and writeGLCD
+
+		otherwise, pixel after pixel has to be set...
+	*/
+	task void writeBar()
+	{
+		static volatile uint8_t x_count, y_count, y_mod = 0, byte;
+
+		for(x_count = 0; x_count < aBar; x_count++)
+		{
+			/*
+				this is easy to do: bar starts at a 8bit-boundary in y-direction, and height of bar 
+				is a multiple of 8 --> so always write 8bit at one time!
+				FAST!
+			*/
+			if( (yPos[BAR] % 8 == 0) && (bBar % 8 == 0))
+			{
+				y_mod = bBar / 8;
+				for(y_count = 0; y_count < y_mod; y_count++)
+				{
+					setAddress((xPos[BAR]+x_count), ((yPos[BAR]) / 8) + y_count);
+		                	writeGLCD(DATA, 0xFF);
+				}
+			}
+		
+			/*
+				easy too: bar at 8bit-boundary, but height isnt a multiple of 8
+			*/
+			if((bBar < 8) && (yPos[BAR] % 8 == 0))
+			{
+				// do this just once
+				if(y_mod == 0)
+				{
+					y_mod = bBar % 8;
+					// use y_count for this loop / so save one uint8_t
+					for( y_count = 0; y_count < y_mod; y_count++)
+					{
+						byte |= (1<<y_count);
+					}
+				}
+				setAddress((xPos[BAR]+x_count), (yPos[BAR]/8));
+		                writeGLCD(DATA, byte);
+			}
+
+			/*
+				bar doesnt start at 8bit-boundary in y-direction, or height isnt multiple of 8 - or both!
+				--> would be complex to calculate and draw(in y-direction):
+				* at first the 'upper' 8 bits
+				* then zero or more 0xff-bytes would follow
+				* afterwards perhaps another byte(bottom-lines)
+		
+				so instead of complex calculation, write pixel after pixel...	
+			*/
+			else
+			{
+				for(y_count = 0; y_count < bBar; y_count++)
+				{
+					call LCD128x64.setPixel(xPos[BAR] + x_count, yPos[BAR] + y_count);
+				}
+			}
+		}
 	}
 	
 	command void LCD128x64.initLCD(uint8_t pattern)
@@ -384,9 +466,21 @@ implementation
 		}
 	}
 
+	/*
+		x, y = coordinates left upper corner of rectangle
+		a = length(x-direction)
+		b = heigth(y-direction)
+
+		returns OK if command 'writeRectangle' is posted to tinyos-schedule, will signal() when finished
+		returns FAIL if another 'writeRectangle' is in progress or if rectangle is to big for glcd(128x64 px)
+	*/
 	command error_t LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 	{
 		if( (state & BUSY_RECT) == 1)
+		{
+			return FAIL;
+		}
+		else if(((x+a) > 128) || ((y+b) > 64))
 		{
 			return FAIL;
 		}
@@ -423,15 +517,51 @@ implementation
 	
 	command error_t LCD128x64.startClearScreen(uint8_t pattern)
 	{
-		if( (state & BUSY_CLEAR) == 1)
+
+		/*
+			wird startClearScreen 2x hintereinander aufgerufen -->
+			ueberschreiben des alten patterns mit dem aktuellen / sollte
+			in diesem fall ja eher unkritisch sein(hauptsache 'geloescht')
+		*/
+//		if( (state & BUSY_CLEAR) == 1)
+//		{
+//			return FAIL;
+//		}
+//		else
+//		{
+			state = state | BUSY_CLEAR;
+			modPattern = pattern;
+			post clearScreenNB();
+			return SUCCESS;
+//		}
+	}
+
+	/*
+		x, y = coordinates left upper corner of bar
+		length = length in x-direction
+		width = width in y-direction
+
+		returns OK   if 'writeBar' was posted to scheduler, will signal() afterwards when finished
+		returns FAIL bar is too big for glcd or if another writeBar is scheduled and hasn't finished yet 
+	*/
+	command error_t LCD128x64.startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
+	{
+
+		if( (state & BUSY_BAR) == 1)
+		{
+			return FAIL;
+		}
+		else if((width == 0) || (length==0) || ((x+length) > 128) || ((y+width) > 64))
 		{
 			return FAIL;
 		}
 		else
 		{
-			state = state | BUSY_CLEAR;
-			modPattern = pattern;
-			post clearScreenNB();
+			xPos[BAR] = x;
+			yPos[BAR] = y;
+			aBar = length;
+			bBar = width;
+			post writeBar();
 			return SUCCESS;
 		}
 	}
@@ -445,11 +575,21 @@ implementation
 		else
 		{
 			state = state | BUSY_LINE;
-			xPos[LINE] = x;
-			yPos[LINE] = y;
-			xLineEnd = xEnd;
-			yLineEnd = yEnd;
+			if(x < xEnd)
+			{
+				xPos[LINE] = x;
+				yPos[LINE] = y;
+				xLineEnd = xEnd;
+				yLineEnd = yEnd;
+			}
 
+			else
+			{
+				xPos[LINE] = xEnd;
+				yPos[LINE] = yEnd;
+				xLineEnd = x;
+				yLineEnd = y;
+			}
 			post writeLine();
 			return SUCCESS;
 		}

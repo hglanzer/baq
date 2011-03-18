@@ -53,6 +53,7 @@
 #define CIRCLE			1
 #define STRING			2
 #define LINE			3
+#define BAR			4
 
 #define HORIZONTAL		0
 #define UP			1
@@ -67,6 +68,7 @@ enum
 	BUSY_RECT	=	4,
 	BUSY_LINE	=	8,
 	BUSY_CLEAR	=	16,
+	BUSY_BAR	=	32,
 };
 
 #endif

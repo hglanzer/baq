@@ -1,40 +1,0 @@
-8
-
-dir
-5211
-http://tinyos-main.googlecode.com/svn/trunk/apps/tests/deluge
-http://tinyos-main.googlecode.com/svn
-
-
-
-2010-11-02T11:54:15.463711Z
-5209
-henrik.makitaavola@gmail.com
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-285f258d-8064-b571-fbc6-9656dc998e90
-
-SerialBlink
-dir
-
-Blink
-dir
-
-GoldenImage
-dir
-
-Basestation
-dir
-

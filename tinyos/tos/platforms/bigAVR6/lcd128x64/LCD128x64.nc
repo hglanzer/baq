@@ -9,11 +9,21 @@ interface LCD128x64
 	*/
 	command void writeByte(uint8_t x, uint8_t y, uint8_t data);
 	
+	/*
+		no posted task!  
+	*/	
 	command void writePixel(uint8_t x, uint8_t y, uint8_t on);
-	
+
+	/*
+		no posted task!  
+	*/	
 	command void setPixel(uint8_t x, uint8_t y);
 
-	command void writeBar(uint8_t x, uint8_t y, uint8_t width, uint8_t length);
+	/*
+		if possible: write bar at 8bit-boundaries(in y-direction: 0, 8, 16, ...)
+		and use width < 8 or width = multiple of 8 --> FASTER
+	*/
+	command error_t startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
 	
 	command error_t startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 
@@ -24,7 +34,7 @@ interface LCD128x64
 	command error_t startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 
 	command error_t startClearScreen(uint8_t pattern);
-
+	
 	event void initDone(void);
 	
 	event void circleWritten(void);
@@ -34,4 +44,8 @@ interface LCD128x64
 	event void rectangleWritten(void);
 	
 	event void lineWritten(void);
+	
+	event void barWritten(void);
+
+	event void screenCleared(void);
 }

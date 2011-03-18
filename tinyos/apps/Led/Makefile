@@ -1,3 +1,0 @@
-COMPONENT=LedAppC
-include $(MAKERULES)
-
