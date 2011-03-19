@@ -11,6 +11,7 @@
 push( @includes, qw(
 
   %T/platforms/bigAVR6
+  %T/platforms/bigAVR6/GLCD
   %T/platforms/bigAVR6/TouchScreen
   %T/platforms/bigAVR6/lcd2x16
   %T/platforms/bigAVR6/lcd128x64
