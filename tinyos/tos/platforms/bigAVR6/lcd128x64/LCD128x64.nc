@@ -23,17 +23,17 @@ interface LCD128x64
 		if possible: write bar at 8bit-boundaries(in y-direction: 0, 8, 16, ...)
 		and use width < 8 or width = multiple of 8 --> FASTER
 	*/
-	command error_t startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
+	command void startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
 	
-	command error_t startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
+	command void startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 
-	command error_t startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
+	command void startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
 
-	command uint8_t startWriteString(char *data, uint8_t x, uint8_t y);
+	command void startWriteString(char *data, uint8_t x, uint8_t y);
 	
-	command error_t startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
+	command void startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 
-	command error_t startClearScreen(uint8_t pattern);
+	command void startClearScreen(uint8_t pattern);
 	
 	event void initDone(void);
 	

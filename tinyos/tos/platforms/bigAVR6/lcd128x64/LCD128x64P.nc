@@ -4,19 +4,15 @@
 	128x64 - GLCD interface implementation
 
 
-	0/0					127/0	
-	-----------------------------------------
-	|					|
-	|					|
-	|					|
-	|					|
-	|	GLCD - PIXEL COORDINATES	|
-	|					|
-	|					|
-	|					|
-	|					|
-	-----------------------------------------
-	0/63					127/63
+	0/0			127/0	
+	-------------------------
+	|			|
+	|			|
+	| GLCD-PIXEL COORDINATES|
+	|			|
+	|			|
+	-------------------------
+	0/63			127/63
 
 */
 
@@ -30,7 +26,6 @@ module LCD128x64P
 
 implementation
 {
-	static volatile	uint8_t state = 0;
 	uint8_t modPattern = 0x00;
 	uint8_t pageAddr, xAddr = 0;
 	uint8_t rad, aRect, bRect, xLineEnd, yLineEnd, aBar, bBar;
@@ -88,7 +83,6 @@ implementation
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
 		CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
-
 	}
 
 	void setAddress(uint8_t x, uint8_t y)
@@ -189,7 +183,6 @@ implementation
 			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE]);
 			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE] + bRect - 1);
 		}
-		state = state & ~(1<<BUSY_RECT);
 		signal LCD128x64.rectangleWritten();
 	}
 	
@@ -223,7 +216,6 @@ implementation
 			}
 			x++;
 		}
-		state = state & ~(1<<BUSY_CIRCLE);
 		signal LCD128x64.circleWritten();
 	}
 
@@ -245,7 +237,6 @@ implementation
 			offset++;
 			dataPtr++;
 		}
-		state = state & ~(1<<BUSY_STRING);
 		signal LCD128x64.stringWritten();
 	}
 
@@ -267,8 +258,6 @@ implementation
 				writeGLCD(DATA, modPattern);
 			}
 		}
-		state = state & ~(BUSY_CLEAR);
-
 		signal LCD128x64.screenCleared();
 	}
 
@@ -284,7 +273,6 @@ implementation
 				writeGLCD(DATA, modPattern);
 			}
 		}
-		state = state & ~(BUSY_CLEAR);
 	}
 
 	void task writeLine()
@@ -356,7 +344,6 @@ implementation
 				}
 			}			
 		}
-		state = state & ~(1<<BUSY_LINE);
 		signal LCD128x64.lineWritten();
 	}
 
@@ -448,22 +435,13 @@ implementation
 		signal LCD128x64.initDone();
 	}
 
-	command uint8_t LCD128x64.startWriteString(char *data, uint8_t x, uint8_t y)
+	command void LCD128x64.startWriteString(char *data, uint8_t x, uint8_t y)
 	{
-		if((state & BUSY_STRING ) == 1)
-		{
-			return FAIL;
-		}
-		else
-		{
-			state = state | (1<<BUSY_STRING);
-			xPos[STRING] = x;
-			yPos[STRING] = y;
-			dataPtr = data;
+		xPos[STRING] = x;
+		yPos[STRING] = y;
+		dataPtr = data;
 	
-			post writeString();
-			return SUCCESS;
-		}
+		post writeString();
 	}
 
 	/*
@@ -471,69 +449,34 @@ implementation
 		a = length(x-direction)
 		b = heigth(y-direction)
 
-		returns OK if command 'writeRectangle' is posted to tinyos-schedule, will signal() when finished
-		returns FAIL if another 'writeRectangle' is in progress or if rectangle is to big for glcd(128x64 px)
 	*/
-	command error_t LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
+	command void LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 	{
-		if( (state & BUSY_RECT) == 1)
-		{
-			return FAIL;
-		}
-		else if(((x+a) > 128) || ((y+b) > 64))
-		{
-			return FAIL;
-		}
-		else
-		{
-			state = state | BUSY_RECT;
-			xPos[RECTANGLE] = x;
-			yPos[RECTANGLE] = y;
-			aRect = a;
-			bRect = b;
+		xPos[RECTANGLE] = x;
+		yPos[RECTANGLE] = y;
+		aRect = a;
+		bRect = b;
 
-			post writeRectangle();
-			return SUCCESS;
-		}
+		post writeRectangle();
 	}	
 
-	command error_t LCD128x64.startWriteCircle(uint8_t x, uint8_t y, uint8_t radius)
+	command void LCD128x64.startWriteCircle(uint8_t x, uint8_t y, uint8_t radius)
 	{
-		if( (state & BUSY_CIRCLE) == 1)
-		{
-			return FAIL;
-		}
-		else
-		{
-			state = state | BUSY_CIRCLE;
-			xPos[CIRCLE] = x;
-			yPos[CIRCLE] = y;
-			rad = radius;
+		xPos[CIRCLE] = x;
+		yPos[CIRCLE] = y;
+		rad = radius;
 	
-			post writeCircle();
-			return SUCCESS;
-		}
+		post writeCircle();
 	}
-	
-	command error_t LCD128x64.startClearScreen(uint8_t pattern)
-	{
 
-		/*
-			wird startClearScreen 2x hintereinander aufgerufen -->
-			ueberschreiben des alten patterns mit dem aktuellen / sollte
-			in diesem fall ja eher unkritisch sein(hauptsache 'geloescht')
-		*/
-//		if( (state & BUSY_CLEAR) == 1)
-//		{
-//			return FAIL;
-//		}
-//		else
-//		{
-			state = state | BUSY_CLEAR;
-			modPattern = pattern;
-			post clearScreenNB();
-			return SUCCESS;
-//		}
+	/*
+		fills screen with pattern, use 0x00 for clearing, 0xff to set all pixel
+		8bit are drawn in y-direction, line for line
+	*/	
+	command void LCD128x64.startClearScreen(uint8_t pattern)
+	{
+		modPattern = pattern;
+		post clearScreenNB();
 	}
 
 	/*
@@ -541,57 +484,32 @@ implementation
 		length = length in x-direction
 		width = width in y-direction
 
-		returns OK   if 'writeBar' was posted to scheduler, will signal() afterwards when finished
-		returns FAIL bar is too big for glcd or if another writeBar is scheduled and hasn't finished yet 
 	*/
-	command error_t LCD128x64.startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
+	command void LCD128x64.startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
 	{
-
-		if( (state & BUSY_BAR) == 1)
-		{
-			return FAIL;
-		}
-		else if((width == 0) || (length==0) || ((x+length) > 128) || ((y+width) > 64))
-		{
-			return FAIL;
-		}
-		else
-		{
-			xPos[BAR] = x;
-			yPos[BAR] = y;
-			aBar = length;
-			bBar = width;
-			post writeBar();
-			return SUCCESS;
-		}
+		xPos[BAR] = x;
+		yPos[BAR] = y;
+		aBar = length;
+		bBar = width;
+		post writeBar();
 	}
 
-	command error_t LCD128x64.startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
+	command void LCD128x64.startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
 	{
-		if( (state & BUSY_LINE ) == 1)
+		if(x < xEnd)
 		{
-			return FAIL;
+			xPos[LINE] = x;
+			yPos[LINE] = y;
+			xLineEnd = xEnd;
+			yLineEnd = yEnd;
 		}
 		else
 		{
-			state = state | BUSY_LINE;
-			if(x < xEnd)
-			{
-				xPos[LINE] = x;
-				yPos[LINE] = y;
-				xLineEnd = xEnd;
-				yLineEnd = yEnd;
-			}
-
-			else
-			{
-				xPos[LINE] = xEnd;
-				yPos[LINE] = yEnd;
-				xLineEnd = x;
-				yLineEnd = y;
-			}
-			post writeLine();
-			return SUCCESS;
+			xPos[LINE] = xEnd;
+			yPos[LINE] = yEnd;
+			xLineEnd = x;
+			yLineEnd = y;
 		}
+		post writeLine();
 	}
 }

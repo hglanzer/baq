@@ -1,8 +1,6 @@
 interface TouchScreen
 {
 
-	command void calibrateTouchScreen(); 
-
 	command void getXY();
 
 	command void isPressed(bool on);
@@ -13,8 +11,6 @@ interface TouchScreen
 		8 bit sollte jedoch reichen
 	*/
 	event void xyReady(uint8_t x, uint8_t y);
-
-	event void calibrated();
 
 	event void tsPressed();
 }

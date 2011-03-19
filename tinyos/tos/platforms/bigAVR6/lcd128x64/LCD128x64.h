@@ -61,14 +61,5 @@
 
 #ifndef	_LCD128x64
 #define	_LCD128x64
-enum
-{
-	BUSY_STRING	=	1,
-	BUSY_CIRCLE	=	2,
-	BUSY_RECT	=	4,
-	BUSY_LINE	=	8,
-	BUSY_CLEAR	=	16,
-	BUSY_BAR	=	32,
-};
 
 #endif
