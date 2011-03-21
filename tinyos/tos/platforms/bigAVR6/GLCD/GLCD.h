@@ -18,12 +18,9 @@ enum
 
 #define MEDIAN          0x3F0
 
-#define X_TRESHOLD      30
-#define Y_TRESHOLD      60
-
-#define X_MIN           50
-#define X_MAX           855
-#define X_DISTANCE      820
+#define X_MIN           54
+#define X_MAX           865
+#define X_DISTANCE      810
 
 #define Y_MIN           128
 #define Y_MAX           800

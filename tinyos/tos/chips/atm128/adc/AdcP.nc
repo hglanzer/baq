@@ -1,4 +1,4 @@
-/* $Id: AdcP.nc,v 1.6 2008-06-26 04:39:03 regehr Exp $
+/* $Id: AdcP.nc,v 1.6 2008/06/26 04:39:03 regehr Exp $
  * Copyright (c) 2005 Intel Corporation
  * All rights reserved.
  *
@@ -54,17 +54,12 @@ module AdcP @safe() {
   }
 }
 implementation {
+  enum {
+    IDLE,
+    ACQUIRE_DATA,
+    ACQUIRE_DATA_NOW,
+  };
 
-// hglanzer - disabled ENUM
-// wg. strangen compileerror:
-	//In component `AdcP':
-	///homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc:59: syntax error before `1'
-//enum
-//{
-//    IDLE,
-//    1,
-//    2
-//};
   /* Resource reservation is required, and it's incorrect to call getData
      again before dataReady is signaled, so there are no races in correct
      programs */
@@ -98,11 +93,11 @@ implementation {
   }
 
   command error_t Read.read[uint8_t c]() {
-    return startGet(1, c);
+    return startGet(ACQUIRE_DATA, c);
   }
 
   async command error_t ReadNow.read[uint8_t c]() {
-    return startGet(2, c);
+    return startGet(ACQUIRE_DATA_NOW, c);
   }
 
   task void acquiredData() {
@@ -113,7 +108,7 @@ implementation {
   async event void Atm128AdcSingle.dataReady(uint16_t data, bool precise) {
     switch (state)
       {
-      case 1:
+      case ACQUIRE_DATA:
 	if (!precise)
 	  sample();
 	else
@@ -123,7 +118,7 @@ implementation {
 	  }
 	break;
 
-      case 2:
+      case ACQUIRE_DATA_NOW:
 	if (!precise)
 	  sample();
 	else

@@ -410,6 +410,7 @@ implementation
 				}
 			}
 		}
+		signal LCD128x64.barWritten();
 	}
 	
 	command void LCD128x64.initLCD(uint8_t pattern)

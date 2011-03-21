@@ -1,3 +1,5 @@
+#include "GLCD.h"
+
 module GLCDP
 {
         provides interface GLCD;
@@ -8,7 +10,7 @@ module GLCDP
 
 implementation
 {
-	static volatile uint8_t state = UNCALIBRATED;
+	static volatile uint8_t stateTS = UNCALIBRATED, stateGLCD = 0;
 	static volatile uint16_t x_max=X_MAX, y_max=Y_MAX, x_min=X_MIN, y_min=Y_MIN;
 
 
@@ -26,8 +28,8 @@ implementation
 	{
 		float x_tmp = 0, y_tmp = 0;
 		
-		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
-		{
+//		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
+//		{
 	        
 			// offset entfernen
 			x_raw = x_raw - X_MIN;
@@ -39,11 +41,11 @@ implementation
 			x_tmp = x_tmp * 128;
 			y_tmp = y_tmp * 64;
 			signal GLCD.xyReady(x_tmp, y_tmp);
-		}
-		else
-		{
-                        signal GLCD.xyReady(200,200);
-		}
+//		}
+//		else
+//		{
+  //                      signal GLCD.xyReady(200,200);
+//		}
         }
 
 
@@ -66,17 +68,18 @@ implementation
 	*/
 	command error_t GLCD.calibrateTouchScreen()
 	{
-		if((state == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (state == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
+		if((stateTS == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (stateTS == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
 		{
 			return FAIL;
 		}
 		else
 		{
-			state = CALIBRATION_IN_PROGRESS_LEFT_BOTTOM;
+			stateTS = CALIBRATION_IN_PROGRESS_LEFT_BOTTOM;
 
 			call LCD128x64.startClearScreen(0x00);
-			call LCD128x64.startWriteString("Press Left/Bottom", 0, 50);
+			call LCD128x64.startWriteString("Press Left/Bottom", 0, 60);
 			call TouchScreen.getXY();
+			return SUCCESS;
 		}
 	}
 
@@ -90,19 +93,19 @@ implementation
 				TOUCHSCREEN - events
 		#########################################################	*/
 
-	event void TouchScreen.xyReady(uint8_t x, uint8_t y)
+	event void TouchScreen.xyReady(uint16_t x, uint16_t y)
 	{
 		/*
 			calibration is in progress, and we just got the first xy-pair.
 			save them and proceed to next step...
 		*/
-		if(state == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM)
+		if(stateTS == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM)
 		{
 			x_min = x;
 			y_min = y;
-			state = CALIBRATION_IN_PROGRESS_RIGHT_TOP;
+			stateTS = CALIBRATION_IN_PROGRESS_RIGHT_TOP;
 			call LCD128x64.startClearScreen(0x00);
-			call LCD128x64.startWriteString("Press Right/Top", 50, 0);
+			call LCD128x64.startWriteString("Press Right/Top", 39, 0);
 			call TouchScreen.getXY();
 		}
 	
@@ -110,13 +113,13 @@ implementation
 			calibration is in progress, and we just got the second xy-pair.
 			save them if valid and proceed, otherwise request new values
 		*/
-		else if(state == CALIBRATION_IN_PROGRESS_RIGHT_TOP)
+		else if(stateTS == CALIBRATION_IN_PROGRESS_RIGHT_TOP)
 		{
 			if((x > (x_min + X_CALIB_DISTANCE) ) && (y > (y_min + Y_CALIB_DISTANCE)))
 			{
 				x_max = x;
 				y_max = y;
-				state = CALIBRATION_DONE;
+				stateTS = CALIBRATION_DONE;
 				call LCD128x64.startClearScreen(0x00);
 				call LCD128x64.startWriteString("Calibrated", 30, 32);
 				signal GLCD.calibrated();
@@ -132,7 +135,8 @@ implementation
 		*/
 		else
 		{
-			calcXY(x, y);	
+		calcXY(x, y);	
+//	signal GLCD.xyReady(x, y);
 		}
 	}
 
@@ -171,7 +175,7 @@ implementation
 	
 	command error_t GLCD.startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
 	{
-		if( (state & BUSY_BAR) == 1)
+		if( (stateGLCD & BUSY_BAR) == 1)
 		{
 			return FAIL;
 		}
@@ -181,7 +185,7 @@ implementation
 		}
 		else
 		{
-			state = state | BUSY_BAR;
+			stateGLCD = stateGLCD | BUSY_BAR;
 			call LCD128x64.startWriteBar(x, y, length, width);
 			return SUCCESS;
 		}
@@ -189,7 +193,7 @@ implementation
 
 	command error_t GLCD.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 	{
-		if( (state & BUSY_RECT) == 1)
+		if( (stateGLCD & BUSY_RECT) == 1)
 		{
 			return FAIL;
 		}
@@ -199,7 +203,7 @@ implementation
 		}
 		else
 		{
-			state = state | BUSY_RECT;
+			stateGLCD = stateGLCD | BUSY_RECT;
 			call LCD128x64.startWriteRectangle(x, y, a, b);
 			return SUCCESS;
 		}
@@ -207,13 +211,13 @@ implementation
 
 	command error_t GLCD.startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius)
 	{
-		if( (state & BUSY_CIRCLE) == 1)
+		if( (stateGLCD & BUSY_CIRCLE) == 1)
 		{
 			return FAIL;
 		}
 		else
 		{
-			state = state | BUSY_CIRCLE;
+			stateGLCD = stateGLCD | BUSY_CIRCLE;
 			call LCD128x64.startWriteCircle(xcenter, ycenter, radius);
 			return SUCCESS;
 		}
@@ -222,13 +226,13 @@ implementation
 
 	command error_t GLCD.startWriteString(char *data, uint8_t x, uint8_t y)
 	{
-		if( (state & BUSY_STRING ) == 1)
+		if( (stateGLCD & BUSY_STRING ) == 1)
 		{
 			return FAIL;
 		}
 		else
 		{
-			state = state | BUSY_STRING;
+			stateGLCD = stateGLCD | BUSY_STRING;
 			call LCD128x64.startWriteString(data, x, y);
 			return SUCCESS;
 		}
@@ -236,7 +240,7 @@ implementation
 
 	command error_t GLCD.startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
 	{
-		if( (state & BUSY_LINE ) == 1)
+		if( (stateGLCD & BUSY_LINE ) == 1)
 		{
 			return FAIL;
 		}
@@ -246,7 +250,7 @@ implementation
 		}
 		else
 		{
-			state = state | BUSY_LINE;
+			stateGLCD = stateGLCD | BUSY_LINE;
 			call LCD128x64.startWriteLine(x, y, xEnd, yEnd);
 			return SUCCESS;
 		}
@@ -254,13 +258,13 @@ implementation
 
 	command error_t GLCD.startClearScreen(uint8_t pattern)
 	{
-		if( (state & BUSY_CLEAR ) == 1)
+		if( (stateGLCD & BUSY_CLEAR ) == 1)
 		{
 			return FAIL;
 		}
 		else
 		{
-			state = state | BUSY_CLEAR;
+			stateGLCD = stateGLCD | BUSY_CLEAR;
 			call LCD128x64.startClearScreen(pattern);
 			return SUCCESS;
 		}
@@ -280,25 +284,25 @@ implementation
 
 	event void LCD128x64.circleWritten(void)
 	{
-		state = state & ~(BUSY_CIRCLE);
+		stateGLCD = stateGLCD & ~(BUSY_CIRCLE);
 		signal GLCD.circleWritten();
 	}
 
 	event void LCD128x64.rectangleWritten(void)
 	{
-		state = state & ~(BUSY_RECT);
+		stateGLCD = stateGLCD & ~(BUSY_RECT);
 		signal GLCD.rectangleWritten();
 	}
 
 	event void LCD128x64.lineWritten(void)
 	{
-		state = state & ~(BUSY_LINE);
+		stateGLCD = stateGLCD & ~(BUSY_LINE);
 		signal GLCD.lineWritten();
 	}
 
 	event void LCD128x64.barWritten(void)
 	{
-		state = state & ~(BUSY_BAR);
+		stateGLCD = stateGLCD & ~(BUSY_BAR);
 		signal GLCD.barWritten();
 	}
 
@@ -309,7 +313,8 @@ implementation
 	*/
 	event void LCD128x64.stringWritten(void)
 	{
-		if((state == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (state == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
+		stateGLCD = stateGLCD & ~(BUSY_STRING);
+		if((stateGLCD == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (stateGLCD == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
 		{
 			// ignore this signal - doesnt belong to user-application!
 		}
@@ -324,13 +329,14 @@ implementation
 	*/
 	event void LCD128x64.screenCleared(void)
 	{
-		if((state == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (state == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
+		stateGLCD = stateGLCD & ~(BUSY_CLEAR);
+		if((stateGLCD == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (stateGLCD == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
 		{
 			// ignore this signal - doesnt belong to user-application!
 		}
 		else
 		{
-			state = state & ~(BUSY_CLEAR);
+			stateGLCD = stateGLCD & ~(BUSY_CLEAR);
 			signal GLCD.screenCleared();
 		}
 	}

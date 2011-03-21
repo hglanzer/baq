@@ -10,15 +10,12 @@ configuration BlinkAppC
 }
 implementation
 {
-	components MainC, BlinkC, LCD128x64C;
+	components MainC, BlinkC;
 	components new TimerMilliC() as TIMER0;
-	components TouchScreenC;
-
+	components GLCD;
 
 	BlinkC -> MainC.Boot;
-	BlinkC.LCD128x64 -> LCD128x64C;
 	BlinkC.Timer0 -> TIMER0;
-	BlinkC.TouchScreen -> TouchScreenC;
-
+	BlinkC.GLCD -> GLCD;
 }
 

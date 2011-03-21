@@ -6,11 +6,9 @@ interface TouchScreen
 	command void isPressed(bool on);
 
 	/*
-		TODO:liefert die skalierten x/y - werte
-		ADC liefert zwar prinzipiell 10 bit - werte, skalierung auf
-		8 bit sollte jedoch reichen
+		parameter: unscaled / raw adc-values
 	*/
-	event void xyReady(uint8_t x, uint8_t y);
+	event void xyReady(uint16_t x, uint16_t y);
 
 	event void tsPressed();
 }

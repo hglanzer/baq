@@ -15,23 +15,6 @@
 module TouchScreenP
 {
 	/*
-		ACHTUNG:	fehler in tos/chips/atm128/adc/AdcP.nc	???
-	
-	// hglanzer - disabled ENUM
-	// wg. strangen compileerror:
-        //In component `AdcP':
-        ///homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc:59: syntax error before `1'
-	enum
-	{
-	    IDLE        = 0,
-	    BLA         = 1,    
-	    BLA2        = 2,    
-	};
-
-	beim arbeiten im lab: auskommentierter zustand war OK - warum auch immer
-	beim arbeiten @ st.peter, neue arbeitsumgebung: compilererror 'IDLE undefined'...
-		
-		???
 
 	*/
 	uses interface Read<uint16_t>;
@@ -44,7 +27,7 @@ implementation
 {
 	volatile uint8_t channel;
 	static volatile uint8_t state, pressDetect = FALSE;
-	static volatile uint16_t x, y, x_max=X_MAX, x_min=X_MIN, y_max=Y_MAX, y_min=Y_MIN, t1, t2;
+	static volatile uint16_t x, y;
 
 	task void checkTS()
 	{
@@ -131,12 +114,17 @@ implementation
 						if(val > Y_TRESHOLD)
 						{
 							y = val;
+							state = FINISHED;
+							UNDRIVE_B;
 							signal TouchScreen.xyReady(x, y);
 						}
 						else
 						{
 							call Read.read();
 						}
+					break;
+
+					case FINISHED:
 					break;
 			
 				}
