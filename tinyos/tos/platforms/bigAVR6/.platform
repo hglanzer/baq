@@ -1,5 +1,5 @@
 #
-# FILE: mica2/.platform
+# FILE: bigAVR6/.platform
 # 
 # Includes that should take precedence come first.  Platforms come before
 # chips because they may override files.  These must be specified as
@@ -15,11 +15,12 @@ push( @includes, qw(
   %T/platforms/bigAVR6/TouchScreen
   %T/platforms/bigAVR6/lcd2x16
   %T/platforms/bigAVR6/lcd128x64
+  %T/platforms/bigAVR6/uart
   %T/chips/atm128
+#  %T/chips/atm128/uart
   %T/chips/atm128/adc
 #  %T/chips/atm128/i2c
   %T/chips/atm128/pins
-  %T/chips/atm128/uart
 #  %T/chips/atm128/spi
   %T/chips/atm128/timerSync
   %T/lib/timer

@@ -81,6 +81,15 @@ configuration PlatformLedsC
   provides interface GeneralIO as LedD6;
   provides interface GeneralIO as LedD7;
 
+  provides interface GeneralIO as LedE0;
+  provides interface GeneralIO as LedE1;
+  provides interface GeneralIO as LedE2;
+  provides interface GeneralIO as LedE3;
+  provides interface GeneralIO as LedE4;
+  provides interface GeneralIO as LedE5;
+  provides interface GeneralIO as LedE6;
+  provides interface GeneralIO as LedE7;
+
   uses interface Init;
 }
 implementation
@@ -129,4 +138,13 @@ implementation
   LedD5 = IO.PortD5;
   LedD6 = IO.PortD6; 
   LedD7 = IO.PortD7; 
+
+  LedE0 = IO.PortE0;
+  LedE1 = IO.PortE1;
+  LedE2 = IO.PortE2; 
+  LedE3 = IO.PortE3;
+  LedE4 = IO.PortE4;
+  LedE5 = IO.PortE5;
+  LedE6 = IO.PortE6; 
+  LedE7 = IO.PortE7; 
 }

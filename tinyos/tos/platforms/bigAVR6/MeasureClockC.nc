@@ -33,8 +33,8 @@ implementation
   enum {
     /* This is expected number of cycles per jiffy at the platform's
        specified MHz. Assumes PLATFORM_MHZ == 1, 2, 4, 8 or 16. */
-    //MAGIC = 488 / (16 / PLATFORM_MHZ)
-    MAGIC = 488 / (16 / 8)			// FIXME - wird PLATFORM ordnungsgemaess fuer bigAVR6 gesetzt?
+    MAGIC = 488 / (16 / PLATFORM_MHZ)
+//    MAGIC = 488 / (16 / 8)			// FIXME - wird PLATFORM ordnungsgemaess fuer bigAVR6 gesetzt?
 						// falls JA - obere zeile aktivieren
   };
 
@@ -123,6 +123,7 @@ implementation
 
   async command uint16_t Atm128Calibrate.baudrateRegister(uint32_t baudrate) {
     // value is (cycles*32768) / (8*baudrate) - 1
-    return ((uint32_t)cycles << 12) / baudrate - 1;
+//    return ((uint32_t)cycles << 12) / baudrate - 1;	// hglanzer, falsche baudrate-berechnung
+    return 8;	// equals to 57600 BAUD when UARTx2 = 0, 114000BAUD when UARTx2 = 1
   }
 }

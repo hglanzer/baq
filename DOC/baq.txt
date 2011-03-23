@@ -79,6 +79,7 @@ UMSTELLUNG AUF SYNCRONE(CPU) - CLOCK --> eigenes Modul in tos/system/timerSync
 	* in platform.h --> setzen eines PRESCALER-Wertes
 		--> falls nicht gesetzt: DEFINE PRESCALER 1 (#ifndef)
 
+---------------------------------------------------------------------------------------------------------
 
 UART - einbau
 	* UART0 / UART1: optimal wäre ein generisches interface
@@ -87,6 +88,28 @@ UART - einbau
 			--> zuviel overhead / ruiniert timing!
 
 	* RX per ISR / funkt prinzipiell. welche interfaces sollen hier zur verfügung gestellt werden?
+
+
+** BESSER **
+	verwenden des tinyos - uartstacks. fürs erste UartByte und UartStream verwendet.
+	
+	PROBLEME:	*falsche baudrateberechnung in platforms/bigAVR6/MeasureClockC.nc in 			
+			Atm128Calibrate.baudrateRegister(). wenn return 8 --> 57600BAUD x 2(doublespeed wird gesetzt)
+			im speziellen wird der wert 'cycles' falsch berechnet. möglicherweise auswirkungen auf 
+			ADC/prescaler!
+
+			deshalb rückgabewert in baudrateRegister() FIX mit 8 eingestellt. --> 57600 BAUD
+			allerdings wird in HplAtm128UartP.nc beim init() der UART-Register UARTX2 = 1 aktiviert
+			--> resultierende Baudrate daher 2x57600 = 115200 8N1
+
+			
+			*Port B funktioniert(wiring mit Atm128Uart1C) 
+			* PORT A(Atm128Uart0C) funktioniert *NICHT* wenn jumper J21 auf external programmer!
+
+			implementierung der 2 uart-schnittstellen: 2 versch. interfaces bigAVR6UART0/1
+			die jeweils auf Atm128Uart0 / 1 wired werden
+---------------------------------------------------------------------------------------------------------
+
 
 LCD2x16
 	* module in platform/bigAVR6/lcd2x16
@@ -170,6 +193,3 @@ es wird das interface Atm128AdcSingle / getData verwendet
 leftJustfiy = 0, prescaler tw. auf 5, ref-voltage => hier gibt es einen jumper
 J18 / rechts neben GLCD... ??
 
-	# einbinden Touchscreen in userprogramm:
-
-		* einbinden des interfaces 'TouchScreen (TouchScreen.nc)
