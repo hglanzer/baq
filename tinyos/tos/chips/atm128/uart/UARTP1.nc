@@ -67,7 +67,6 @@ implementation
 		if (state != IDLE)
 		{
 			count++;
-			PORTB = count;
 			return FAIL;
 		}
 

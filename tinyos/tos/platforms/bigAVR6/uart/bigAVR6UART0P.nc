@@ -5,7 +5,6 @@ module bigAVR6UART0P
 	uses interface UartByte;
 	uses interface UartStream;
 	uses interface StdControl;
-//	uses interface Init;
 }
 
 implementation
@@ -42,6 +41,7 @@ implementation
 	
 	async event void UartStream.sendDone( uint8_t* buf, uint16_t len, error_t error )
 	{
+		call StdControl.stop();
 		signal bigAVR6UART0.sendDone(buf, len, error);
 	}
 

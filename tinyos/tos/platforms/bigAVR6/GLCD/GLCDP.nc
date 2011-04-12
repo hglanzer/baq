@@ -28,8 +28,8 @@ implementation
 	{
 		float x_tmp = 0, y_tmp = 0;
 		
-//		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
-//		{
+		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
+		{
 	        
 			// offset entfernen
 			x_raw = x_raw - X_MIN;
@@ -41,11 +41,11 @@ implementation
 			x_tmp = x_tmp * 128;
 			y_tmp = y_tmp * 64;
 			signal GLCD.xyReady(x_tmp, y_tmp);
-//		}
-//		else
-//		{
-  //                      signal GLCD.xyReady(200,200);
-//		}
+		}
+		else
+		{
+			signal GLCD.xyReady(200,200);
+		}
         }
 
 
@@ -135,8 +135,7 @@ implementation
 		*/
 		else
 		{
-		calcXY(x, y);	
-//	signal GLCD.xyReady(x, y);
+			calcXY(x, y);	
 		}
 	}
 
@@ -224,9 +223,18 @@ implementation
 
 	}
 
+	/*
+		char *data - pointer to datastring. MUST BE `\0` - terminated!
+		uint8_t x  - x-startposition
+		uint8_t y  - y-position(=row, 0...7)
+	*/
 	command error_t GLCD.startWriteString(char *data, uint8_t x, uint8_t y)
 	{
 		if( (stateGLCD & BUSY_STRING ) == 1)
+		{
+			return FAIL;
+		}
+		else if((x > 128) || (y > 7))
 		{
 			return FAIL;
 		}

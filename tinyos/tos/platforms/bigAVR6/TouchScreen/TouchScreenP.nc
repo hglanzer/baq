@@ -18,6 +18,10 @@ module TouchScreenP
 
 	*/
 	uses interface Read<uint16_t>;
+	uses interface GeneralIO as driveA;
+	uses interface GeneralIO as driveB;
+	uses interface GeneralIO as adcX;
+	uses interface GeneralIO as adcY;
 
 	provides interface Atm128AdcConfig;
 	provides interface TouchScreen;
@@ -37,16 +41,15 @@ implementation
 	command void TouchScreen.getXY()
 	{
 		state = DUMMY_FIRST_X;
-		DDRG |= (1<<4);		// FIXME - GPIO??
-		DDRG |= (1<<3);
-		DDRF &= ~(1<<1);	// ADC - kanäle 
-		DDRF &= ~(1<<0);
+		call driveA.makeOutput();
+		call driveB.makeOutput();
+		call adcX.makeInput();
+		call adcY.makeInput();
 
-		UNREAD_X;
-		UNREAD_Y;
-
-		DRIVE_A;
-		UNDRIVE_B;
+		call driveA.set();
+		call driveB.clr();
+		call adcX.clr();
+		call adcY.clr();
 		
 		atomic
 		{
@@ -82,9 +85,9 @@ implementation
 							else
 							{
 								x = val;
+								call driveA.clr();
+								call driveB.set();
 
-								UNDRIVE_A;
-								DRIVE_B;
 								channel = ATM128_ADC_SNGL_ADC1;
 								state = DUMMY_FIRST_Y;
 								call Read.read();
@@ -115,7 +118,7 @@ implementation
 						{
 							y = val;
 							state = FINISHED;
-							UNDRIVE_B;
+							call adcY.clr();
 							signal TouchScreen.xyReady(x, y);
 						}
 						else

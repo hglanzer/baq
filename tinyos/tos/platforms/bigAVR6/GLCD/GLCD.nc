@@ -16,8 +16,8 @@ interface GLCD
                 ADC liefert zwar prinzipiell 10 bit - werte, skalierung auf
                 8 bit sollte jedoch reichen
         */
-	//event void xyReady(uint16_t x, uint16_t y);
-	event void xyReady(uint8_t x, uint8_t y);
+	event void xyReady(uint16_t x, uint16_t y);
+	//event void xyReady(uint8_t x, uint8_t y);
 
 	event void calibrated();
 

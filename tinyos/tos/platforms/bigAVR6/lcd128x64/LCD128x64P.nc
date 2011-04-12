@@ -17,6 +17,7 @@
 */
 
 #include "LCD128x64.h"
+#include "LCD2x16.h"
 #include "font5x7.h"
 
 module LCD128x64P
@@ -58,25 +59,21 @@ implementation
 	{
 		post wait4Controller();
 		//wait4Controller();
-
+		
+		CTRL_GLCD |=  (1 << ENABLE_GLCD);		// ARGLLLL ***
 		if(mode == COMM)
 		{
 			// WRITE COMMANDS to GLCD - RAM
 			CTRL_GLCD &= ~( (1<< RW_GLCD) | (1 << REGSEL_GLCD) );
-			CTRL_GLCD |=  (1 << ENABLE_GLCD);
-		
 			DATA_DDR_GLCD = 0xFF;
-			DATA_OUT_GLCD = data;
-
 		}
 		else
 		{
 			// WRITE DATA TO GLCD - RAM
 			CTRL_GLCD &= ~( 1<< RW_GLCD );
-			CTRL_GLCD |=  ((1 << ENABLE_GLCD) | (1 << REGSEL_GLCD));
-			DATA_DDR_GLCD = 0xFF;
-			DATA_OUT_GLCD = data;
+			CTRL_GLCD |=  (1 << REGSEL_GLCD);
 		}
+		DATA_OUT_GLCD = data;
 
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
@@ -85,11 +82,11 @@ implementation
 		CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
 	}
 
-	void setAddress(uint8_t x, uint8_t y)
+	void setAddress(uint8_t xAdd, uint8_t yAdd)
 	{	
 		uint8_t tmp;
 	
-		if(x < 64)
+		if(xAdd < 64)
 		{
 			CTRL_GLCD |= (1<<CS1_GLCD);
 			CTRL_GLCD &= ~(1<<CS0_GLCD);
@@ -100,10 +97,10 @@ implementation
 			CTRL_GLCD &= ~(1<<CS1_GLCD);
 		}
 		
-		tmp = x & 0x3f;		// make x address valid
+		tmp = xAdd & 0x3f;		// make x address valid
 		writeGLCD(COMM, tmp | GLCD_SET_Y_ADDR);
 
-		tmp = y & 0x3f;
+		tmp = yAdd & 0x3f;
 		writeGLCD(COMM, tmp | GLCD_SET_X_ADDR);
 	}
 
@@ -223,12 +220,12 @@ implementation
 	{
 		uint8_t index = 0, offset = 0;
 
-		while (*dataPtr)
+		while (*dataPtr != '\0')
 		{
 			for(index=0; index<5; index++)
 			{
 		
-				setAddress(xPos[STRING]+offset, yPos[STRING]/8);
+				setAddress(xPos[STRING]+offset, yPos[STRING]);
 			        writeGLCD(DATA, (uint8_t)pgm_read_byte(&Font5x7[((*dataPtr - 0x20) * 5) + index]));
 				offset++;
 			}
@@ -250,19 +247,22 @@ implementation
 	void task clearScreenNB()
 	{
 		// clear LCD - loop through all pages
-		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops
+		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops - writing 8bit in vertical direction at once
 		{
 			for(xAddr=0; xAddr<GLCD_XPIXELS; xAddr++)	// 128 loops
 			{
-				setAddress(xAddr, pageAddr);
+				setAddress(xAddr, pageAddr);	// hglanzer, UART - DEBUG FIX ME
 				writeGLCD(DATA, modPattern);
 			}
 		}
 		signal LCD128x64.screenCleared();
 	}
 
+	/*
+		this is the blocking clearScreen - only called by initLCD
+		when calling the interface-function startClearScreen(uint8_t pattern), the non-blocking task clearScreenNB is used
+	*/
 	void clearScreen()
-	//void task clearScreen()
 	{
 		// clear LCD - loop through all pages
 		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops
@@ -417,9 +417,10 @@ implementation
 	{
 		// set controlports and dataports to OUTPUT
 		CTRL_DDR_GLCD |= (0xFC);	// set CTRL to output
-		DATA_DDR_GLCD = 0xFF;		// set DATA to output
+		DATA_DDR_GLCD |= 0xFF;		// set DATA to output
 		CTRL_GLCD &= ~(0xFC);		// set all controlbits LOW
 		DATA_OUT_GLCD = 0x00;		// and reset the pins
+
 
 		// deactivate glcd - reset
 		CTRL_GLCD |= (1<<RESET_GLCD);

@@ -108,6 +108,10 @@ UART - einbau
 
 			implementierung der 2 uart-schnittstellen: 2 versch. interfaces bigAVR6UART0/1
 			die jeweils auf Atm128Uart0 / 1 wired werden
+
+	** ACHTUNG **
+	PortD3 = UART1_TX / hier hängt auch die RTC dran. RTC per SW15 deaktivieren!
+
 ---------------------------------------------------------------------------------------------------------
 
 
@@ -123,8 +127,55 @@ LCD2x16
 
 
 
+-------------------------------------------------------------------------------------------------------------
+
+*** MEMORYCARD ***
+
+	HplAtm128SpiP.nc 
+	
+	ansteuerung über SPI. Vcc des microcontrollers = 5V, Vcc memoryslot = 3,3V 
+		--> 74LVCC3245A bus tranceiver dazwischengeschaltet, dieser setzt die spannungspegel 5V --> 3.3V um
+		umgekehrt von MCU / 5V --> MMC / 3.3V reicht ein spannungsteiler
+
+		
+	Pinzuordnung:
+
+	ATM128 SCK	---------------------------------------------->	MMC SCK
+	ATM128 MOSI	---------------------------------------------->	MMC DIN
+	ATM128 MISO	<-------------- B3 CC3245A A3  <---------------	MMC DOUT
+						   DIR <--------------- MMC DOUT
+	ATM128 !RD	---------------------------------------------->	MMC CS
+	ATM128 !RD	-------------->	CC4345A !OE
+	ATM128 ALE	---------------------------------------------->	MMC CD
 
 
+						________________________		_________________
+				----------------|B3		      A3|-------x-------|DOUT		|
+				|		| ** BUS Transceiver **	|  	|	|		|
+				|	--------|!OE		     DIR|--------	|   ** MMC **	|
+				|	|	|_______________________|		|		|
+	_________________	|	|						|		|
+	|     PB3 / MISO|--------	|						|		|
+	|     PB2 / MOSI|---------------+-----------------------------------------------|DIN		|
+	|     PB1 / SCK	|---------------+-----------------------------------------------|SCK		|
+	|		|		|						|		|
+	| ** ATM 128 **	|		|						|		|
+	|		|		|						|		|
+	|     PG1 / !RD	|---------------x-----------------------------------------------|CS		|
+	|     PG2 / ALE	|---------------------------------------------------------------|CD		|
+	|_______________|								|_______________|
+
+
+ALE = Adress Latch Enable to external memory
+!RD = Read strobe to external memory
+
+
+		wenn PG1 = LOW --> chipselect von MMC, ausserdem ist transceiverchip eingeschaltet. ansonsten
+		trennung der 2 busse
+
+		PG2: sobald mmc in slot eingesteckt --> kontakt wird geschlossen, und damit PG2 auf LOW gezogen
+
+		http://elm-chan.org/docs/mmc/sdinit.png
 
 
 ## FLASH der platform ##

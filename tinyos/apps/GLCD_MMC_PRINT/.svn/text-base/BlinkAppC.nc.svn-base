@@ -1,5 +1,7 @@
-/*
- * Copyright (c) 2004-2005 The Regents of the University  of California.
+// $Id: BlinkAppC.nc,v 1.6 2010-06-29 22:07:14 scipio Exp $
+
+/*									tab:4
+ * Copyright (c) 2000-2005 The Regents of the University  of California.  
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -12,7 +14,7 @@
  *   notice, this list of conditions and the following disclaimer in the
  *   documentation and/or other materials provided with the
  *   distribution.
- * - Neither the name of the copyright holders nor the names of
+ * - Neither the name of the University of California nor the names of
  *   its contributors may be used to endorse or promote products derived
  *   from this software without specific prior written permission.
  *
@@ -29,57 +31,39 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * Copyright (c) 2004-2005 Intel Corporation
+ * Copyright (c) 2002-2005 Intel Corporation
  * All rights reserved.
  *
- * This file is distributed under the terms in the attached INTEL-LICENSE
+ * This file is distributed under the terms in the attached INTEL-LICENSE     
  * file. If you do not find these files, copies can be found by writing to
- * Intel Research Berkeley, 2150 Shattuck Avenue, Suite 1300, Berkeley, CA,
+ * Intel Research Berkeley, 2150 Shattuck Avenue, Suite 1300, Berkeley, CA, 
  * 94704.  Attention:  Intel License Inquiry.
  */
 
 /**
+ * Blink is a basic application that toggles a mote's LED periodically.
+ * It does so by starting a Timer that fires every second. It uses the
+ * OSKI TimerMilli service to achieve this goal.
  *
- * The Active Message layer on the mica2 platform. This is a naming wrapper
- * around the CC1000 Active Message layer that implemets timesync interface (TEP 133).
- *
- * @author Philip Levis
- * @author Brano Kusy
- * @author Marco Langerwisch (Mica2 port)
- */
+ * @author tinyos-help@millennium.berkeley.edu
+ **/
 
-configuration TimeSyncMessageC {
-  provides
-  {
-    interface SplitControl;
-    interface Receive[am_id_t id];
-    interface Receive as Snoop[am_id_t id];
-    interface Packet;
-    interface AMPacket;
-
-    interface PacketTimeStamp<T32khz, uint32_t> as PacketTimeStamp32khz;
-    interface PacketTimeStamp<TMilli, uint32_t> as PacketTimeStampMilli;
-
-    interface TimeSyncAMSend<T32khz, uint32_t> as TimeSyncAMSend32khz[am_id_t id];
-    interface TimeSyncPacket<T32khz, uint32_t> as TimeSyncPacket32khz;
-
-    interface TimeSyncAMSend<TMilli, uint32_t> as TimeSyncAMSendMilli[am_id_t id];
-    interface TimeSyncPacket<TMilli, uint32_t> as TimeSyncPacketMilli;
-  }
+configuration BlinkAppC
+{
 }
-implementation {
-  components CC1000TimeSyncMessageC as AM;
+implementation
+{
+  components MainC, BlinkC, LedsC;
+  components new TimerMilliC() as Timer0;
+  components new TimerMilliC() as Timer1;
+  components new TimerMilliC() as Timer2;
 
-  SplitControl = AM;
 
-  Receive      = AM.Receive;
-  Snoop        = AM.Snoop;
-  Packet       = AM;
-  AMPacket     = AM;
-  TimeSyncAMSend32khz       = AM;
-  TimeSyncAMSendMilli       = AM;
-  TimeSyncPacket32khz       = AM;
-  TimeSyncPacketMilli       = AM;
-  PacketTimeStamp32khz      = AM;
-  PacketTimeStampMilli      = AM;
+  BlinkC -> MainC.Boot;
+
+  BlinkC.Timer0 -> Timer0;
+  BlinkC.Timer1 -> Timer1;
+  BlinkC.Timer2 -> Timer2;
+  BlinkC.Leds -> LedsC;
 }
+
