@@ -1,0 +1,5379 @@
+
+build/bigAVR6/main.exe:     file format elf32-avr
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 39 01 	jmp	0x272	; 0x272 <__init>
+       4:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+       8:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+       c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      10:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      14:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      18:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      1c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      20:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      24:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      28:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      2c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      30:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      34:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      38:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      3c:	0c 94 67 0c 	jmp	0x18ce	; 0x18ce <__vector_15>
+      40:	0c 94 b5 0c 	jmp	0x196a	; 0x196a <__vector_16>
+      44:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      48:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      4c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      50:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      54:	0c 94 fc 0b 	jmp	0x17f8	; 0x17f8 <__vector_21>
+      58:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      5c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      60:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      64:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      68:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      6c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      70:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      74:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      78:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      7c:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      80:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      84:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+      88:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <__bad_interrupt>
+
+0000008c <McuSleepC__atm128PowerBits>:
+      8c:	00 08 1c 18 14 10                                   ......
+
+00000092 <Font5x7>:
+      92:	00 00 00 00 00 00 00 5f 00 00 00 07 00 07 00 14     ......._........
+      a2:	7f 14 7f 14 24 2a 7f 2a 12 23 13 08 64 62 36 49     ....$*.*.#..db6I
+      b2:	55 22 50 00 05 03 00 00 00 1c 22 41 00 00 41 22     U"P......."A..A"
+      c2:	1c 00 08 2a 1c 2a 08 08 08 3e 08 08 00 50 30 00     ...*.*...>...P0.
+      d2:	00 08 08 08 08 08 00 60 60 00 00 20 10 08 04 02     .......``.. ....
+      e2:	3e 51 49 45 3e 00 42 7f 40 00 42 61 51 49 46 21     >QIE>.B.@.BaQIF!
+      f2:	41 45 4b 31 18 14 12 7f 10 27 45 45 45 39 3c 4a     AEK1.....'EEE9<J
+     102:	49 49 30 01 71 09 05 03 36 49 49 49 36 06 49 49     II0.q...6III6.II
+     112:	29 1e 00 36 36 00 00 00 56 36 00 00 00 08 14 22     )..66...V6....."
+     122:	41 14 14 14 14 14 41 22 14 08 00 02 01 51 09 06     A.....A".....Q..
+     132:	32 49 79 41 3e 7e 11 11 11 7e 7f 49 49 49 36 3e     2IyA>~...~.III6>
+     142:	41 41 41 22 7f 41 41 22 1c 7f 49 49 49 41 7f 09     AAA".AA"..IIIA..
+     152:	09 01 01 3e 41 41 51 32 7f 08 08 08 7f 00 41 7f     ...>AAQ2......A.
+     162:	41 00 20 40 41 3f 01 7f 08 14 22 41 7f 40 40 40     A. @A?...."A.@@@
+     172:	40 7f 02 04 02 7f 7f 04 08 10 7f 3e 41 41 41 3e     @..........>AAA>
+     182:	7f 09 09 09 06 3e 41 51 21 5e 7f 09 19 29 46 46     .....>AQ!^...)FF
+     192:	49 49 49 31 01 01 7f 01 01 3f 40 40 40 3f 1f 20     III1.....?@@@?. 
+     1a2:	40 20 1f 7f 20 18 20 7f 63 14 08 14 63 03 04 78     @ .. . .c...c..x
+     1b2:	04 03 61 51 49 45 43 00 00 7f 41 41 02 04 08 10     ..aQIEC...AA....
+     1c2:	20 41 41 7f 00 00 04 02 01 02 04 40 40 40 40 40      AA........@@@@@
+     1d2:	00 01 02 04 00 20 54 54 54 78 7f 48 44 44 38 38     ..... TTTx.HDD88
+     1e2:	44 44 44 20 38 44 44 48 7f 38 54 54 54 18 08 7e     DDD 8DDH.8TTT..~
+     1f2:	09 01 02 08 14 54 54 3c 7f 08 04 04 78 00 44 7d     .....TT<....x.D}
+     202:	40 00 20 40 44 3d 00 00 7f 10 28 44 00 41 7f 40     @. @D=....(D.A.@
+     212:	00 7c 04 18 04 78 7c 08 04 04 78 38 44 44 44 38     .|...x|...x8DDD8
+     222:	7c 14 14 14 08 08 14 14 18 7c 7c 08 04 04 08 48     |........||....H
+     232:	54 54 54 20 04 3f 44 40 20 3c 40 40 20 7c 1c 20     TTT .?D@ <@@ |. 
+     242:	40 20 1c 3c 40 30 40 3c 44 28 10 28 44 0c 50 50     @ .<@0@<D(.(D.PP
+     252:	50 3c 44 64 54 4c 44 00 08 36 41 00 00 00 7f 00     P<DdTLD..6A.....
+     262:	00 00 41 36 08 00 08 08 2a 1c 08 08 1c 2a 08 08     ..A6....*....*..
+
+00000272 <__init>:
+     272:	11 24       	eor	r1, r1
+     274:	1f be       	out	0x3f, r1	; 63
+     276:	cf ef       	ldi	r28, 0xFF	; 255
+     278:	d0 e1       	ldi	r29, 0x10	; 16
+     27a:	de bf       	out	0x3e, r29	; 62
+     27c:	cd bf       	out	0x3d, r28	; 61
+
+0000027e <__do_copy_data>:
+     27e:	11 e0       	ldi	r17, 0x01	; 1
+     280:	a0 e0       	ldi	r26, 0x00	; 0
+     282:	b1 e0       	ldi	r27, 0x01	; 1
+     284:	ec ee       	ldi	r30, 0xEC	; 236
+     286:	fe e1       	ldi	r31, 0x1E	; 30
+     288:	00 e0       	ldi	r16, 0x00	; 0
+     28a:	0b bf       	out	0x3b, r16	; 59
+     28c:	02 c0       	rjmp	.+4      	; 0x292 <__do_copy_data+0x14>
+     28e:	07 90       	elpm	r0, Z+
+     290:	0d 92       	st	X+, r0
+     292:	ae 32       	cpi	r26, 0x2E	; 46
+     294:	b1 07       	cpc	r27, r17
+     296:	d9 f7       	brne	.-10     	; 0x28e <__do_copy_data+0x10>
+
+00000298 <__do_clear_bss>:
+     298:	11 e0       	ldi	r17, 0x01	; 1
+     29a:	ae e2       	ldi	r26, 0x2E	; 46
+     29c:	b1 e0       	ldi	r27, 0x01	; 1
+     29e:	01 c0       	rjmp	.+2      	; 0x2a2 <.do_clear_bss_start>
+
+000002a0 <.do_clear_bss_loop>:
+     2a0:	1d 92       	st	X+, r1
+
+000002a2 <.do_clear_bss_start>:
+     2a2:	a0 39       	cpi	r26, 0x90	; 144
+     2a4:	b1 07       	cpc	r27, r17
+     2a6:	e1 f7       	brne	.-8      	; 0x2a0 <.do_clear_bss_loop>
+     2a8:	0e 94 c6 0c 	call	0x198c	; 0x198c <main>
+     2ac:	0c 94 75 0f 	jmp	0x1eea	; 0x1eea <_exit>
+
+000002b0 <__bad_interrupt>:
+     2b0:	0c 94 00 00 	jmp	0	; 0x0 <__heap_end>
+
+000002b4 <__nesc_atomic_start>:
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     2b4:	8f b7       	in	r24, 0x3f	; 63
+     2b6:	f8 94       	cli
+    __nesc_disable_interrupt();
+    asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+    return result;
+}
+     2b8:	99 27       	eor	r25, r25
+     2ba:	08 95       	ret
+
+000002bc <__nesc_atomic_end>:
+
+/* Restores interrupt mask to original state. */
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     2bc:	8f bf       	out	0x3f, r24	; 63
+     2be:	08 95       	ret
+
+000002c0 <ecombine>:
+     combination function: two successes, or two identical errors are
+     preserved, while conflicting errors are represented by FAIL.
+*/
+{
+  return r1 == r2 ? r1 : FAIL;
+     2c0:	86 17       	cp	r24, r22
+     2c2:	19 f0       	breq	.+6      	; 0x2ca <ecombine+0xa>
+     2c4:	81 e0       	ldi	r24, 0x01	; 1
+     2c6:	90 e0       	ldi	r25, 0x00	; 0
+     2c8:	08 95       	ret
+     2ca:	99 27       	eor	r25, r25
+}
+     2cc:	08 95       	ret
+
+000002ce <HplAtm128AdcP__HplAtm128Adc__setAdcsra>:
+  async command void HplAtm128Adc.setAdmux( Atm128Admux_t x ) { 
+    ADMUX = Admux2int(x); 
+  }
+  async command void HplAtm128Adc.setAdcsra( Atm128Adcsra_t x ) { 
+    ADCSRA = Adcsra2int(x); 
+     2ce:	99 27       	eor	r25, r25
+     2d0:	86 b9       	out	0x06, r24	; 6
+     2d2:	08 95       	ret
+
+000002d4 <Atm128AdcP__HplAtm128Adc__setAdcsra>:
+  /**
+   * Set the ADCSRA (ADC control) register
+   * @param adcsra New ADCSRA value
+   */
+  async command void setAdcsra(Atm128Adcsra_t adcsra);
+     2d4:	0e 94 67 01 	call	0x2ce	; 0x2ce <HplAtm128AdcP__HplAtm128Adc__setAdcsra>
+     2d8:	08 95       	ret
+
+000002da <Atm128AlarmSyncP__0__Timer__get>:
+
+	uint8_t count = 0;
+
+  //=== Read the current timer value. ===================================
+  async command uint8_t  Timer.get() { return TCNT0; }
+     2da:	82 b7       	in	r24, 0x32	; 50
+  /** 
+   * Get the current time.
+   * @return  the current time
+   */
+  async command timer_size get();
+     2dc:	99 27       	eor	r25, r25
+     2de:	08 95       	ret
+
+000002e0 <Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag>:
+  async command Atm128_TIMSK_t getInterruptMask();
+  async command void setInterruptMask( Atm128_TIMSK_t mask);
+
+  /// Interrupt flag register: Direct access
+  async command Atm128_TIFR_t getInterruptFlag();
+     2e0:	86 b7       	in	r24, 0x36	; 54
+     2e2:	08 95       	ret
+
+000002e4 <Atm128AlarmSyncP__0__Compare__get>:
+
+  //=== Set/clear the current timer value. ==============================
+  async command void Timer.set(uint8_t t)  {
+    TCNT0 = t;
+  }
+
+  //=== Read the current timer scale. ===================================
+  async command uint8_t Timer.getScale() { return TCCR0 & 0x7; }
+
+  //=== Turn off the timers. ============================================
+  async command void Timer.off() { call Timer.setScale(AVR_CLOCK_OFF); }
+
+  //=== Write a new timer scale. ========================================
+  async command void Timer.setScale(uint8_t s)  { 
+    Atm128TimerControl_t x = call TimerCtrl.getControl();
+    x.bits.cs = s;
+    call TimerCtrl.setControl(x);  
+  }
+
+  //=== Read the control registers. =====================================
+  async command Atm128TimerControl_t TimerCtrl.getControl() { 
+    return *(Atm128TimerControl_t*)&TCCR0; 
+  }
+
+  //=== Write the control registers. ====================================
+  async command void TimerCtrl.setControl( Atm128TimerControl_t x ) { 
+    TCCR0 = x.flat; 
+  }
+
+  //=== Read the interrupt mask. =====================================
+  async command Atm128_TIMSK_t TimerCtrl.getInterruptMask() { 
+    return *(Atm128_TIMSK_t*)&TIMSK; 
+  }
+
+  //=== Write the interrupt mask. ====================================
+  DEFINE_UNION_CAST(TimerMask8_2int, Atm128_TIMSK_t, uint8_t);
+  DEFINE_UNION_CAST(TimerMask16_2int, Atm128_ETIMSK_t, uint8_t);
+
+  async command void TimerCtrl.setInterruptMask( Atm128_TIMSK_t x ) { 
+    TIMSK = TimerMask8_2int(x); 
+  }
+
+  //=== Read the interrupt flags. =====================================
+  async command Atm128_TIFR_t TimerCtrl.getInterruptFlag() { 
+    return *(Atm128_TIFR_t*)&TIFR; 
+  }
+
+  //=== Write the interrupt flags. ====================================
+  DEFINE_UNION_CAST(TimerFlags8_2int, Atm128_TIFR_t, uint8_t);
+  DEFINE_UNION_CAST(TimerFlags16_2int, Atm128_ETIFR_t, uint8_t);
+
+  async command void TimerCtrl.setInterruptFlag( Atm128_TIFR_t x ) { 
+    TIFR = TimerFlags8_2int(x); 
+  }
+
+  //=== Timer 8-bit implementation. ====================================
+  async command void Timer.reset() { TIFR = 1 << TOV0; }
+  async command void Timer.start() { SET_BIT(TIMSK, TOIE0); }
+  async command void Timer.stop()  { CLR_BIT(TIMSK, TOIE0); }
+
+  bool overflowed() {
+    return (call TimerCtrl.getInterruptFlag()).bits.tov0; 
+  }
+
+  async command bool Timer.test()  { 
+    return overflowed();
+  }
+  async command bool Timer.isOn()  { 
+    return (call TimerCtrl.getInterruptMask()).bits.toie0; 
+  }
+  async command void Compare.reset() { TIFR = 1 << OCF0; }
+  async command void Compare.start() { SET_BIT(TIMSK,OCIE0); }
+  async command void Compare.stop()  { CLR_BIT(TIMSK,OCIE0); }
+  async command bool Compare.test()  { 
+    return (call TimerCtrl.getInterruptFlag()).bits.ocf0; 
+  }
+  async command bool Compare.isOn()  { 
+    return (call TimerCtrl.getInterruptMask()).bits.ocie0; 
+  }
+
+  //=== Read the compare registers. =====================================
+  async command uint8_t Compare.get()   { return OCR0; }
+     2e4:	81 b7       	in	r24, 0x31	; 49
+  /** 
+   * Get the compare time to fire on.
+   * @return  the compare time value
+   */
+  async command size_type get();
+     2e6:	99 27       	eor	r25, r25
+     2e8:	08 95       	ret
+
+000002ea <Atm128AlarmSyncP__0__Counter__get>:
+    if (overflowed)
+      signal Counter.overflow();
+  }  
+
+  async command uint32_t Counter.get() {
+     2ea:	df 92       	push	r13
+     2ec:	ef 92       	push	r14
+     2ee:	ff 92       	push	r15
+     2f0:	0f 93       	push	r16
+     2f2:	1f 93       	push	r17
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     2f4:	df b6       	in	r13, 0x3f	; 63
+     2f6:	f8 94       	cli
+    uint32_t now;
+
+    atomic
+      {
+	/* Current time is base+TCNT0 if no interrupt is pending. But if
+	   an interrupt is pending, then it's base + compare value + 1 + TCNT0 */
+	uint8_t now8 = call Timer.get();
+     2f8:	0e 94 6d 01 	call	0x2da	; 0x2da <Atm128AlarmSyncP__0__Timer__get>
+     2fc:	e8 2e       	mov	r14, r24
+
+	if ((call TimerCtrl.getInterruptFlag()).bits.ocf0)
+     2fe:	0e 94 70 01 	call	0x2e0	; 0x2e0 <Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag>
+     302:	81 ff       	sbrs	r24, 1
+     304:	1c c0       	rjmp	.+56     	; 0x33e <Atm128AlarmSyncP__0__Counter__get+0x54>
+	  /* We need to reread TCNT0 as it might've overflowed after we
+	     read TCNT0 the first time */
+	  now = base + call Compare.get() + 1 + call Timer.get();
+     306:	0e 94 72 01 	call	0x2e4	; 0x2e4 <Atm128AlarmSyncP__0__Compare__get>
+     30a:	e0 90 8a 01 	lds	r14, 0x018A
+     30e:	f0 90 8b 01 	lds	r15, 0x018B
+     312:	00 91 8c 01 	lds	r16, 0x018C
+     316:	10 91 8d 01 	lds	r17, 0x018D
+     31a:	e8 0e       	add	r14, r24
+     31c:	f1 1c       	adc	r15, r1
+     31e:	01 1d       	adc	r16, r1
+     320:	11 1d       	adc	r17, r1
+     322:	0e 94 6d 01 	call	0x2da	; 0x2da <Atm128AlarmSyncP__0__Timer__get>
+     326:	08 94       	sec
+     328:	e1 1c       	adc	r14, r1
+     32a:	f1 1c       	adc	r15, r1
+     32c:	01 1d       	adc	r16, r1
+     32e:	11 1d       	adc	r17, r1
+     330:	a8 01       	movw	r20, r16
+     332:	97 01       	movw	r18, r14
+     334:	28 0f       	add	r18, r24
+     336:	31 1d       	adc	r19, r1
+     338:	41 1d       	adc	r20, r1
+     33a:	51 1d       	adc	r21, r1
+     33c:	0e c0       	rjmp	.+28     	; 0x35a <Atm128AlarmSyncP__0__Counter__get+0x70>
+	else
+	  /* We need to use the value of TCNT0 from before we check the
+	     interrupt flag, as it might wrap around after the check */
+	  now = base + now8;
+     33e:	80 91 8a 01 	lds	r24, 0x018A
+     342:	90 91 8b 01 	lds	r25, 0x018B
+     346:	a0 91 8c 01 	lds	r26, 0x018C
+     34a:	b0 91 8d 01 	lds	r27, 0x018D
+     34e:	9c 01       	movw	r18, r24
+     350:	ad 01       	movw	r20, r26
+     352:	2e 0d       	add	r18, r14
+     354:	31 1d       	adc	r19, r1
+     356:	41 1d       	adc	r20, r1
+     358:	51 1d       	adc	r21, r1
+     35a:	8d 2d       	mov	r24, r13
+     35c:	99 27       	eor	r25, r25
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     35e:	8f bf       	out	0x3f, r24	; 63
+      }
+    return now;
+  }
+     360:	ca 01       	movw	r24, r20
+     362:	b9 01       	movw	r22, r18
+     364:	1f 91       	pop	r17
+     366:	0f 91       	pop	r16
+     368:	ff 90       	pop	r15
+     36a:	ef 90       	pop	r14
+     36c:	df 90       	pop	r13
+     36e:	08 95       	ret
+
+00000370 <VirtualizeTimerC__0__TimerFrom__getNow>:
+
+  async command bool Counter.isOverflowPending() {
+    atomic
+      return (call TimerCtrl.getInterruptFlag()).bits.ocf0 &&
+	!(base + call Compare.get() + 1);
+  }
+
+  async command void Counter.clearOverflow() { 
+    atomic
+      if (call Counter.isOverflowPending())
+	{
+	  base = 0;
+	  call Compare.reset();
+	}
+      else
+	return;
+    setInterrupt();
+  }
+
+  async command void Alarm.start(uint32_t ndt) {
+    call Alarm.startAt(call Counter.get(), ndt);
+  }
+
+  async command void Alarm.stop() {
+    atomic set = FALSE;
+  }
+
+  async command bool Alarm.isRunning() {
+    atomic return set;
+  }
+
+  async command void Alarm.startAt(uint32_t nt0, uint32_t ndt) {
+    atomic
+      {
+	set = TRUE;
+	t0 = nt0;
+	dt = ndt;
+      }
+    setInterrupt();
+  }
+
+  async command uint32_t Alarm.getNow() {
+    return call Counter.get();
+     370:	0e 94 75 01 	call	0x2ea	; 0x2ea <Atm128AlarmSyncP__0__Counter__get>
+     374:	08 95       	ret
+
+00000376 <RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued>:
+      return TRUE;
+    }
+  }
+  	
+  async command bool RoundRobinQueue.isEnqueued(resource_client_id_t id) {
+     376:	98 2f       	mov	r25, r24
+     378:	96 95       	lsr	r25
+     37a:	96 95       	lsr	r25
+     37c:	96 95       	lsr	r25
+     37e:	ed e6       	ldi	r30, 0x6D	; 109
+     380:	f1 e0       	ldi	r31, 0x01	; 1
+     382:	e9 0f       	add	r30, r25
+     384:	f1 1d       	adc	r31, r1
+     386:	87 70       	andi	r24, 0x07	; 7
+     388:	21 e0       	ldi	r18, 0x01	; 1
+     38a:	30 e0       	ldi	r19, 0x00	; 0
+     38c:	02 c0       	rjmp	.+4      	; 0x392 <RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued+0x1c>
+     38e:	22 0f       	add	r18, r18
+     390:	33 1f       	adc	r19, r19
+     392:	8a 95       	dec	r24
+     394:	e2 f7       	brpl	.-8      	; 0x38e <RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued+0x18>
+     396:	80 81       	ld	r24, Z
+     398:	82 23       	and	r24, r18
+  	return resQ[id / 8] & (1 << (id % 8));
+  }
+     39a:	99 27       	eor	r25, r25
+     39c:	08 95       	ret
+
+0000039e <HplAtm128AdcP__McuPowerState__update>:
+     * Called by any component to tell TinyOS that the MCU low
+     * power state may have changed. Generally, this should be
+     * called whenever a peripheral/timer is started/stopped. 
+     */
+    async command void update();
+     39e:	08 95       	ret
+
+000003a0 <SchedulerBasicP__TaskBasic__postTask>:
+   * Return SUCCESS if the post succeeded, EBUSY if it was already posted.
+   */
+  
+  async command error_t TaskBasic.postTask[uint8_t id]()
+  {
+     3a0:	28 2f       	mov	r18, r24
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     3a2:	9f b7       	in	r25, 0x3f	; 63
+     3a4:	f8 94       	cli
+     3a6:	ef e4       	ldi	r30, 0x4F	; 79
+     3a8:	f1 e0       	ldi	r31, 0x01	; 1
+     3aa:	e8 0f       	add	r30, r24
+     3ac:	f1 1d       	adc	r31, r1
+     3ae:	80 81       	ld	r24, Z
+     3b0:	8f 3f       	cpi	r24, 0xFF	; 255
+     3b2:	99 f4       	brne	.+38     	; 0x3da <SchedulerBasicP__TaskBasic__postTask+0x3a>
+     3b4:	30 91 8f 01 	lds	r19, 0x018F
+     3b8:	23 17       	cp	r18, r19
+     3ba:	89 f4       	brne	.+34     	; 0x3de <SchedulerBasicP__TaskBasic__postTask+0x3e>
+     3bc:	0e c0       	rjmp	.+28     	; 0x3da <SchedulerBasicP__TaskBasic__postTask+0x3a>
+     3be:	20 93 85 01 	sts	0x0185, r18
+     3c2:	20 93 8f 01 	sts	0x018F, r18
+     3c6:	07 c0       	rjmp	.+14     	; 0x3d6 <SchedulerBasicP__TaskBasic__postTask+0x36>
+     3c8:	ef e4       	ldi	r30, 0x4F	; 79
+     3ca:	f1 e0       	ldi	r31, 0x01	; 1
+     3cc:	e3 0f       	add	r30, r19
+     3ce:	f1 1d       	adc	r31, r1
+     3d0:	20 83       	st	Z, r18
+     3d2:	20 93 8f 01 	sts	0x018F, r18
+     3d6:	20 e0       	ldi	r18, 0x00	; 0
+     3d8:	07 c0       	rjmp	.+14     	; 0x3e8 <SchedulerBasicP__TaskBasic__postTask+0x48>
+     3da:	25 e0       	ldi	r18, 0x05	; 5
+     3dc:	05 c0       	rjmp	.+10     	; 0x3e8 <SchedulerBasicP__TaskBasic__postTask+0x48>
+     3de:	80 91 85 01 	lds	r24, 0x0185
+     3e2:	8f 3f       	cpi	r24, 0xFF	; 255
+     3e4:	89 f7       	brne	.-30     	; 0x3c8 <SchedulerBasicP__TaskBasic__postTask+0x28>
+     3e6:	eb cf       	rjmp	.-42     	; 0x3be <SchedulerBasicP__TaskBasic__postTask+0x1e>
+    atomic { return pushTask(id) ? SUCCESS : EBUSY; }
+     3e8:	89 2f       	mov	r24, r25
+     3ea:	99 27       	eor	r25, r25
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     3ec:	8f bf       	out	0x3f, r24	; 63
+  }
+
+  default event void TaskBasic.runTask[uint8_t id]()
+  {
+     3ee:	82 2f       	mov	r24, r18
+     3f0:	99 27       	eor	r25, r25
+     3f2:	08 95       	ret
+
+000003f4 <ArbiterP__0__grantedTask__postTask>:
+   * posted; the semantics of a non-SUCCESS return value depend on the
+   * implementation of this interface (the class of task).
+   */
+  
+  async command error_t postTask();
+     3f4:	82 e0       	ldi	r24, 0x02	; 2
+     3f6:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     3fa:	99 27       	eor	r25, r25
+     3fc:	08 95       	ret
+
+000003fe <TouchScreenP__Read__read>:
+   * Initiates a read of the value.
+   * 
+   * @return SUCCESS if a readDone() event will eventually come back.
+   */
+  command error_t read();
+     3fe:	1f 93       	push	r17
+     400:	cf 93       	push	r28
+     402:	df 93       	push	r29
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     404:	8f b7       	in	r24, 0x3f	; 63
+     406:	f8 94       	cli
+  task void grantedTask();
+  
+  async command error_t Resource.request[uint8_t id]() {
+    signal ResourceRequested.requested[resId]();
+    atomic {
+     408:	28 2f       	mov	r18, r24
+     40a:	33 27       	eor	r19, r19
+     40c:	12 2f       	mov	r17, r18
+      if(state == RES_CONTROLLED) {
+     40e:	80 91 2f 01 	lds	r24, 0x012F
+     412:	88 23       	and	r24, r24
+     414:	09 f0       	breq	.+2      	; 0x418 <TouchScreenP__Read__read+0x1a>
+     416:	2f c0       	rjmp	.+94     	; 0x476 <TouchScreenP__Read__read+0x78>
+        state = RES_GRANTING;
+     418:	81 e0       	ldi	r24, 0x01	; 1
+     41a:	80 93 2f 01 	sts	0x012F, r24
+        reqResId = id;
+     41e:	10 92 80 01 	sts	0x0180, r1
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     422:	2f bf       	out	0x3f, r18	; 63
+     424:	8f b7       	in	r24, 0x3f	; 63
+     426:	f8 94       	cli
+     called. This drops A/D conversion latency by a factor of two (but
+     increases idle mode power consumption a little). 
+  */
+  async command error_t AsyncStdControl.start() {
+    atomic call HplAtm128Adc.enableAdc();
+     428:	99 27       	eor	r25, r25
+  }
+
+  async command void HplAtm128Adc.setPrescaler(uint8_t scale){
+    Atm128Adcsra_t  current_val = call HplAtm128Adc.getAdcsra(); 
+    current_val.adif = FALSE;
+    current_val.adps = scale;
+    call HplAtm128Adc.setAdcsra(current_val);
+  }
+
+  // Individual bit manipulation. These all clear any pending A/D interrupt.
+  async command void HplAtm128Adc.enableAdc() {
+    SET_BIT(ADCSRA, ADEN); 
+     42a:	37 9a       	sbi	0x06, 7	; 6
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     42c:	8f bf       	out	0x3f, r24	; 63
+     42e:	8f b7       	in	r24, 0x3f	; 63
+     430:	f8 94       	cli
+      }
+      else if (reqResId == id) {
+      	return SUCCESS;
+      }
+      else return call Queue.enqueue(id);
+    }
+    signal ResourceDefaultOwner.requested();
+    return SUCCESS;
+  }
+
+  async command error_t Resource.immediateRequest[uint8_t id]() {
+    signal ResourceRequested.immediateRequested[resId]();
+    atomic {
+      if(state == RES_CONTROLLED) {
+        state = RES_IMM_GRANTING;
+        reqResId = id;
+      }
+      else return FAIL;
+    }
+    signal ResourceDefaultOwner.immediateRequested();
+    if(resId == id) {
+      call ResourceConfigure.configure[resId]();
+      return SUCCESS;
+    }
+    atomic state = RES_CONTROLLED;
+    return FAIL;
+  }
+  
+  async command error_t Resource.release[uint8_t id]() {
+    atomic {
+      if(state == RES_BUSY && resId == id) {
+        if(call Queue.isEmpty() == FALSE) {
+          reqResId = call Queue.dequeue();
+          resId = NO_RES;
+          state = RES_GRANTING;
+          post grantedTask();
+          call ResourceConfigure.unconfigure[id]();
+        }
+        else {
+          resId = default_owner_id;
+          state = RES_CONTROLLED;
+          call ResourceConfigure.unconfigure[id]();
+          signal ResourceDefaultOwner.granted();
+        }
+        return SUCCESS;
+      }
+    }
+    return FAIL;
+  }
+
+  async command error_t ResourceDefaultOwner.release() {
+    atomic {
+     432:	c8 2f       	mov	r28, r24
+     434:	dd 27       	eor	r29, r29
+     436:	9c 2f       	mov	r25, r28
+      if(resId == default_owner_id) {
+     438:	80 91 25 01 	lds	r24, 0x0125
+     43c:	81 30       	cpi	r24, 0x01	; 1
+     43e:	b9 f4       	brne	.+46     	; 0x46e <TouchScreenP__Read__read+0x70>
+        if(state == RES_GRANTING) {
+     440:	80 91 2f 01 	lds	r24, 0x012F
+     444:	81 30       	cpi	r24, 0x01	; 1
+     446:	31 f4       	brne	.+12     	; 0x454 <TouchScreenP__Read__read+0x56>
+          post grantedTask();
+     448:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <ArbiterP__0__grantedTask__postTask>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     44c:	cf bf       	out	0x3f, r28	; 63
+     44e:	80 e0       	ldi	r24, 0x00	; 0
+     450:	90 e0       	ldi	r25, 0x00	; 0
+     452:	29 c0       	rjmp	.+82     	; 0x4a6 <TouchScreenP__Read__read+0xa8>
+          return SUCCESS;
+        }
+        else if(state == RES_IMM_GRANTING) {
+     454:	82 30       	cpi	r24, 0x02	; 2
+     456:	59 f4       	brne	.+22     	; 0x46e <TouchScreenP__Read__read+0x70>
+          resId = reqResId;
+     458:	80 91 80 01 	lds	r24, 0x0180
+     45c:	80 93 25 01 	sts	0x0125, r24
+          state = RES_BUSY;
+     460:	83 e0       	ldi	r24, 0x03	; 3
+     462:	80 93 2f 01 	sts	0x012F, r24
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     466:	cf bf       	out	0x3f, r28	; 63
+     468:	80 e0       	ldi	r24, 0x00	; 0
+     46a:	90 e0       	ldi	r25, 0x00	; 0
+     46c:	1c c0       	rjmp	.+56     	; 0x4a6 <TouchScreenP__Read__read+0xa8>
+     46e:	9f bf       	out	0x3f, r25	; 63
+     470:	80 e0       	ldi	r24, 0x00	; 0
+     472:	90 e0       	ldi	r25, 0x00	; 0
+     474:	18 c0       	rjmp	.+48     	; 0x4a6 <TouchScreenP__Read__read+0xa8>
+     476:	80 91 80 01 	lds	r24, 0x0180
+     47a:	88 23       	and	r24, r24
+     47c:	21 f4       	brne	.+8      	; 0x486 <TouchScreenP__Read__read+0x88>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     47e:	2f bf       	out	0x3f, r18	; 63
+     480:	80 e0       	ldi	r24, 0x00	; 0
+     482:	90 e0       	ldi	r25, 0x00	; 0
+     484:	10 c0       	rjmp	.+32     	; 0x4a6 <TouchScreenP__Read__read+0xa8>
+
+  async command resource_client_id_t RoundRobinQueue.dequeue() {
+    int i;
+    atomic {
+      for (i = last+1; ; i++) {
+        if(i == size)
+          i = 0;
+        if (call RoundRobinQueue.isEnqueued(i)) {
+          clearEntry(i);
+          last = i;
+          return i;
+        }
+        if (i == last)
+          break;
+      }
+      return NO_ENTRY;
+    }
+  }
+  
+  async command error_t RoundRobinQueue.enqueue(resource_client_id_t id) {
+    atomic {
+      if (!(call RoundRobinQueue.isEnqueued(id))) {
+     486:	80 e0       	ldi	r24, 0x00	; 0
+     488:	0e 94 bb 01 	call	0x376	; 0x376 <RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued>
+     48c:	88 23       	and	r24, r24
+     48e:	19 f0       	breq	.+6      	; 0x496 <TouchScreenP__Read__read+0x98>
+     490:	85 e0       	ldi	r24, 0x05	; 5
+     492:	90 e0       	ldi	r25, 0x00	; 0
+     494:	07 c0       	rjmp	.+14     	; 0x4a4 <TouchScreenP__Read__read+0xa6>
+        resQ[id / 8] |=  1 << (id % 8);
+     496:	80 91 6d 01 	lds	r24, 0x016D
+     49a:	81 60       	ori	r24, 0x01	; 1
+     49c:	80 93 6d 01 	sts	0x016D, r24
+     4a0:	80 e0       	ldi	r24, 0x00	; 0
+     4a2:	90 e0       	ldi	r25, 0x00	; 0
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     4a4:	1f bf       	out	0x3f, r17	; 63
+     4a6:	df 91       	pop	r29
+     4a8:	cf 91       	pop	r28
+     4aa:	1f 91       	pop	r17
+     4ac:	08 95       	ret
+
+000004ae <TouchScreenP__TouchScreen__getXY>:
+	}
+
+	command void TouchScreen.getXY()
+	{
+		state = DUMMY_FIRST_X;
+     4ae:	81 e0       	ldi	r24, 0x01	; 1
+     4b0:	80 93 42 01 	sts	0x0142, r24
+		DDRG |= (1<<4);		// FIXME - GPIO??
+     4b4:	e4 e6       	ldi	r30, 0x64	; 100
+     4b6:	f0 e0       	ldi	r31, 0x00	; 0
+     4b8:	80 81       	ld	r24, Z
+     4ba:	80 61       	ori	r24, 0x10	; 16
+     4bc:	80 83       	st	Z, r24
+		DDRG |= (1<<3);
+     4be:	80 81       	ld	r24, Z
+     4c0:	88 60       	ori	r24, 0x08	; 8
+     4c2:	80 83       	st	Z, r24
+		DDRF &= ~(1<<1);	// ADC - kanäle 
+     4c4:	e1 e6       	ldi	r30, 0x61	; 97
+     4c6:	f0 e0       	ldi	r31, 0x00	; 0
+     4c8:	80 81       	ld	r24, Z
+     4ca:	8d 7f       	andi	r24, 0xFD	; 253
+     4cc:	80 83       	st	Z, r24
+		DDRF &= ~(1<<0);
+     4ce:	80 81       	ld	r24, Z
+     4d0:	8e 7f       	andi	r24, 0xFE	; 254
+     4d2:	80 83       	st	Z, r24
+
+		DRIVE_A;
+     4d4:	e5 e6       	ldi	r30, 0x65	; 101
+     4d6:	f0 e0       	ldi	r31, 0x00	; 0
+     4d8:	80 81       	ld	r24, Z
+     4da:	88 60       	ori	r24, 0x08	; 8
+     4dc:	80 83       	st	Z, r24
+		UNDRIVE_B;
+     4de:	80 81       	ld	r24, Z
+     4e0:	8f 7e       	andi	r24, 0xEF	; 239
+     4e2:	80 83       	st	Z, r24
+
+	/*TESTSHIT*/
+PORTD = 0x56;
+     4e4:	86 e5       	ldi	r24, 0x56	; 86
+     4e6:	82 bb       	out	0x12, r24	; 18
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     4e8:	8f b7       	in	r24, 0x3f	; 63
+     4ea:	f8 94       	cli
+		
+		atomic
+     4ec:	99 27       	eor	r25, r25
+		{
+			channel =  ATM128_ADC_SNGL_ADC0;
+     4ee:	10 92 49 01 	sts	0x0149, r1
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     4f2:	8f bf       	out	0x3f, r24	; 63
+		}
+		call Read.read();
+     4f4:	0e 94 ff 01 	call	0x3fe	; 0x3fe <TouchScreenP__Read__read>
+     4f8:	08 95       	ret
+
+000004fa <GLCDP__TouchScreen__getXY>:
+interface TouchScreen
+{
+
+	command void getXY();
+     4fa:	0e 94 57 02 	call	0x4ae	; 0x4ae <TouchScreenP__TouchScreen__getXY>
+     4fe:	08 95       	ret
+
+00000500 <BlinkC__GLCD__getXY>:
+	}
+
+	command void GLCD.getXY()
+	{
+		call TouchScreen.getXY();
+     500:	0e 94 7d 02 	call	0x4fa	; 0x4fa <GLCDP__TouchScreen__getXY>
+     504:	08 95       	ret
+
+00000506 <VirtualizeTimerC__0__updateFromTimer__postTask>:
+     506:	8c e0       	ldi	r24, 0x0C	; 12
+     508:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     50c:	99 27       	eor	r25, r25
+     50e:	08 95       	ret
+
+00000510 <VirtualizeTimerC__0__fireTimers>:
+
+volatile uint8_t c = 0;
+
+  void fireTimers(uint32_t now)
+  {
+     510:	ef 92       	push	r14
+     512:	ff 92       	push	r15
+     514:	0f 93       	push	r16
+     516:	1f 93       	push	r17
+    uint8_t num;
+
+    for (num=0; num<NUM_TIMERS; num++)
+      {
+	Timer_t* timer = &m_timers[num];
+
+	if (timer->isrunning)
+     518:	e0 91 76 01 	lds	r30, 0x0176
+     51c:	e1 ff       	sbrs	r30, 1
+     51e:	32 c0       	rjmp	.+100    	; 0x584 <VirtualizeTimerC__0__fireTimers+0x74>
+	  {
+	    uint32_t elapsed = now - timer->t0;
+     520:	e0 90 6e 01 	lds	r14, 0x016E
+     524:	f0 90 6f 01 	lds	r15, 0x016F
+     528:	00 91 70 01 	lds	r16, 0x0170
+     52c:	10 91 71 01 	lds	r17, 0x0171
+
+	    if (elapsed >= timer->dt)
+     530:	20 91 72 01 	lds	r18, 0x0172
+     534:	30 91 73 01 	lds	r19, 0x0173
+     538:	40 91 74 01 	lds	r20, 0x0174
+     53c:	50 91 75 01 	lds	r21, 0x0175
+     540:	dc 01       	movw	r26, r24
+     542:	cb 01       	movw	r24, r22
+     544:	8e 19       	sub	r24, r14
+     546:	9f 09       	sbc	r25, r15
+     548:	a0 0b       	sbc	r26, r16
+     54a:	b1 0b       	sbc	r27, r17
+     54c:	82 17       	cp	r24, r18
+     54e:	93 07       	cpc	r25, r19
+     550:	a4 07       	cpc	r26, r20
+     552:	b5 07       	cpc	r27, r21
+     554:	b8 f0       	brcs	.+46     	; 0x584 <VirtualizeTimerC__0__fireTimers+0x74>
+	      {
+		if (timer->isoneshot)
+     556:	e0 ff       	sbrs	r30, 0
+     558:	05 c0       	rjmp	.+10     	; 0x564 <VirtualizeTimerC__0__fireTimers+0x54>
+		  timer->isrunning = FALSE;
+     55a:	8e 2f       	mov	r24, r30
+     55c:	8d 7f       	andi	r24, 0xFD	; 253
+     55e:	80 93 76 01 	sts	0x0176, r24
+     562:	0e c0       	rjmp	.+28     	; 0x580 <VirtualizeTimerC__0__fireTimers+0x70>
+		else // Update timer for next event
+		  timer->t0 += timer->dt;
+     564:	d8 01       	movw	r26, r16
+     566:	c7 01       	movw	r24, r14
+     568:	82 0f       	add	r24, r18
+     56a:	93 1f       	adc	r25, r19
+     56c:	a4 1f       	adc	r26, r20
+     56e:	b5 1f       	adc	r27, r21
+     570:	80 93 6e 01 	sts	0x016E, r24
+     574:	90 93 6f 01 	sts	0x016F, r25
+     578:	a0 93 70 01 	sts	0x0170, r26
+     57c:	b0 93 71 01 	sts	0x0171, r27
+	}
+	
+	event void Timer0.fired()
+	{
+		call GLCD.getXY();
+     580:	0e 94 80 02 	call	0x500	; 0x500 <BlinkC__GLCD__getXY>
+
+		signal Timer.fired[num]();
+    break;
+	      }
+	  }
+      }
+    post updateFromTimer();
+     584:	0e 94 83 02 	call	0x506	; 0x506 <VirtualizeTimerC__0__updateFromTimer__postTask>
+     588:	1f 91       	pop	r17
+     58a:	0f 91       	pop	r16
+     58c:	ff 90       	pop	r15
+     58e:	ef 90       	pop	r14
+     590:	08 95       	ret
+
+00000592 <Atm128AlarmSyncP__0__Compare__set>:
+
+  //=== Write the compare registers. ====================================
+  async command void Compare.set(uint8_t t)   { 
+    OCR0 = t; 
+     592:	81 bf       	out	0x31, r24	; 49
+     594:	08 95       	ret
+
+00000596 <Atm128AlarmSyncP__0__setInterrupt>:
+     596:	df 92       	push	r13
+     598:	ef 92       	push	r14
+     59a:	ff 92       	push	r15
+     59c:	0f 93       	push	r16
+     59e:	1f 93       	push	r17
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     5a0:	8f b7       	in	r24, 0x3f	; 63
+     5a2:	f8 94       	cli
+     5a4:	d8 2e       	mov	r13, r24
+     5a6:	0e 94 72 01 	call	0x2e4	; 0x2e4 <Atm128AlarmSyncP__0__Compare__get>
+     5aa:	08 2f       	mov	r16, r24
+     5ac:	0e 94 6d 01 	call	0x2da	; 0x2da <Atm128AlarmSyncP__0__Timer__get>
+     5b0:	18 2f       	mov	r17, r24
+     5b2:	0e 94 70 01 	call	0x2e0	; 0x2e0 <Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag>
+     5b6:	01 17       	cp	r16, r17
+     5b8:	11 f0       	breq	.+4      	; 0x5be <Atm128AlarmSyncP__0__setInterrupt+0x28>
+     5ba:	81 ff       	sbrs	r24, 1
+     5bc:	02 c0       	rjmp	.+4      	; 0x5c2 <Atm128AlarmSyncP__0__setInterrupt+0x2c>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     5be:	df be       	out	0x3f, r13	; 63
+     5c0:	6d c0       	rjmp	.+218    	; 0x69c <Atm128AlarmSyncP__0__setInterrupt+0x106>
+     5c2:	80 91 8e 01 	lds	r24, 0x018E
+     5c6:	88 23       	and	r24, r24
+     5c8:	e1 f1       	breq	.+120    	; 0x642 <Atm128AlarmSyncP__0__setInterrupt+0xac>
+     5ca:	0e 94 75 01 	call	0x2ea	; 0x2ea <Atm128AlarmSyncP__0__Counter__get>
+     5ce:	e0 90 69 01 	lds	r14, 0x0169
+     5d2:	f0 90 6a 01 	lds	r15, 0x016A
+     5d6:	00 91 6b 01 	lds	r16, 0x016B
+     5da:	10 91 6c 01 	lds	r17, 0x016C
+     5de:	20 91 5c 01 	lds	r18, 0x015C
+     5e2:	30 91 5d 01 	lds	r19, 0x015D
+     5e6:	40 91 5e 01 	lds	r20, 0x015E
+     5ea:	50 91 5f 01 	lds	r21, 0x015F
+     5ee:	6e 19       	sub	r22, r14
+     5f0:	7f 09       	sbc	r23, r15
+     5f2:	80 0b       	sbc	r24, r16
+     5f4:	91 0b       	sbc	r25, r17
+     5f6:	62 17       	cp	r22, r18
+     5f8:	73 07       	cpc	r23, r19
+     5fa:	84 07       	cpc	r24, r20
+     5fc:	95 07       	cpc	r25, r21
+     5fe:	28 f0       	brcs	.+10     	; 0x60a <Atm128AlarmSyncP__0__setInterrupt+0x74>
+     600:	10 92 8e 01 	sts	0x018E, r1
+     604:	01 e0       	ldi	r16, 0x01	; 1
+     606:	26 ee       	ldi	r18, 0xE6	; 230
+     608:	1e c0       	rjmp	.+60     	; 0x646 <Atm128AlarmSyncP__0__setInterrupt+0xb0>
+     60a:	2e 0d       	add	r18, r14
+     60c:	3f 1d       	adc	r19, r15
+     60e:	40 1f       	adc	r20, r16
+     610:	51 1f       	adc	r21, r17
+     612:	80 91 8a 01 	lds	r24, 0x018A
+     616:	90 91 8b 01 	lds	r25, 0x018B
+     61a:	a0 91 8c 01 	lds	r26, 0x018C
+     61e:	b0 91 8d 01 	lds	r27, 0x018D
+     622:	28 1b       	sub	r18, r24
+     624:	39 0b       	sbc	r19, r25
+     626:	4a 0b       	sbc	r20, r26
+     628:	5b 0b       	sbc	r21, r27
+     62a:	27 3e       	cpi	r18, 0xE7	; 231
+     62c:	31 05       	cpc	r19, r1
+     62e:	41 05       	cpc	r20, r1
+     630:	51 05       	cpc	r21, r1
+     632:	38 f4       	brcc	.+14     	; 0x642 <Atm128AlarmSyncP__0__setInterrupt+0xac>
+     634:	22 30       	cpi	r18, 0x02	; 2
+     636:	10 f0       	brcs	.+4      	; 0x63c <Atm128AlarmSyncP__0__setInterrupt+0xa6>
+     638:	00 e0       	ldi	r16, 0x00	; 0
+     63a:	05 c0       	rjmp	.+10     	; 0x646 <Atm128AlarmSyncP__0__setInterrupt+0xb0>
+     63c:	00 e0       	ldi	r16, 0x00	; 0
+     63e:	22 e0       	ldi	r18, 0x02	; 2
+     640:	02 c0       	rjmp	.+4      	; 0x646 <Atm128AlarmSyncP__0__setInterrupt+0xb0>
+     642:	00 e0       	ldi	r16, 0x00	; 0
+     644:	26 ee       	ldi	r18, 0xE6	; 230
+     646:	12 2f       	mov	r17, r18
+     648:	11 50       	subi	r17, 0x01	; 1
+     64a:	00 b6       	in	r0, 0x30	; 48
+     64c:	01 fc       	sbrc	r0, 1
+     64e:	fd cf       	rjmp	.-6      	; 0x64a <Atm128AlarmSyncP__0__setInterrupt+0xb4>
+     650:	0e 94 6d 01 	call	0x2da	; 0x2da <Atm128AlarmSyncP__0__Timer__get>
+     654:	18 17       	cp	r17, r24
+     656:	09 f4       	brne	.+2      	; 0x65a <Atm128AlarmSyncP__0__setInterrupt+0xc4>
+     658:	1f 5f       	subi	r17, 0xFF	; 255
+     65a:	20 91 8a 01 	lds	r18, 0x018A
+     65e:	30 91 8b 01 	lds	r19, 0x018B
+     662:	40 91 8c 01 	lds	r20, 0x018C
+     666:	50 91 8d 01 	lds	r21, 0x018D
+     66a:	da 01       	movw	r26, r20
+     66c:	c9 01       	movw	r24, r18
+     66e:	01 96       	adiw	r24, 0x01	; 1
+     670:	a1 1d       	adc	r26, r1
+     672:	b1 1d       	adc	r27, r1
+     674:	81 0f       	add	r24, r17
+     676:	91 1d       	adc	r25, r1
+     678:	a1 1d       	adc	r26, r1
+     67a:	b1 1d       	adc	r27, r1
+     67c:	82 17       	cp	r24, r18
+     67e:	93 07       	cpc	r25, r19
+     680:	a4 07       	cpc	r26, r20
+     682:	b5 07       	cpc	r27, r21
+     684:	10 f4       	brcc	.+4      	; 0x68a <Atm128AlarmSyncP__0__setInterrupt+0xf4>
+     686:	12 2f       	mov	r17, r18
+     688:	10 95       	com	r17
+     68a:	81 2f       	mov	r24, r17
+     68c:	0e 94 c9 02 	call	0x592	; 0x592 <Atm128AlarmSyncP__0__Compare__set>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     690:	df be       	out	0x3f, r13	; 63
+     692:	00 23       	and	r16, r16
+     694:	19 f0       	breq	.+6      	; 0x69c <Atm128AlarmSyncP__0__setInterrupt+0x106>
+     696:	8b e0       	ldi	r24, 0x0B	; 11
+     698:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     69c:	1f 91       	pop	r17
+     69e:	0f 91       	pop	r16
+     6a0:	ff 90       	pop	r15
+     6a2:	ef 90       	pop	r14
+     6a4:	df 90       	pop	r13
+     6a6:	08 95       	ret
+
+000006a8 <AlarmToTimerC__0__start>:
+  uint32_t m_dt;
+  bool m_oneshot;
+
+  void start(uint32_t t0, uint32_t dt, bool oneshot)
+  {
+     6a8:	0f 93       	push	r16
+    m_dt = dt;
+     6aa:	20 93 81 01 	sts	0x0181, r18
+     6ae:	30 93 82 01 	sts	0x0182, r19
+     6b2:	40 93 83 01 	sts	0x0183, r20
+     6b6:	50 93 84 01 	sts	0x0184, r21
+    m_oneshot = oneshot;
+     6ba:	00 93 61 01 	sts	0x0161, r16
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     6be:	af b7       	in	r26, 0x3f	; 63
+     6c0:	f8 94       	cli
+     6c2:	bb 27       	eor	r27, r27
+     6c4:	e1 e0       	ldi	r30, 0x01	; 1
+     6c6:	e0 93 8e 01 	sts	0x018E, r30
+     6ca:	60 93 69 01 	sts	0x0169, r22
+     6ce:	70 93 6a 01 	sts	0x016A, r23
+     6d2:	80 93 6b 01 	sts	0x016B, r24
+     6d6:	90 93 6c 01 	sts	0x016C, r25
+     6da:	20 93 5c 01 	sts	0x015C, r18
+     6de:	30 93 5d 01 	sts	0x015D, r19
+     6e2:	40 93 5e 01 	sts	0x015E, r20
+     6e6:	50 93 5f 01 	sts	0x015F, r21
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     6ea:	af bf       	out	0x3f, r26	; 63
+     6ec:	0e 94 cb 02 	call	0x596	; 0x596 <Atm128AlarmSyncP__0__setInterrupt>
+     6f0:	0f 91       	pop	r16
+     6f2:	08 95       	ret
+
+000006f4 <LCD128x64P__wait4Controller__postTask>:
+     6f4:	84 e0       	ldi	r24, 0x04	; 4
+     6f6:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     6fa:	99 27       	eor	r25, r25
+     6fc:	08 95       	ret
+
+000006fe <LCD128x64P__writeGLCD>:
+		DATA_DDR_GLCD = 0xFF;		// reset old condition
+	}
+
+	void writeGLCD(uint8_t mode, uint8_t data)
+	{
+     6fe:	0f 93       	push	r16
+     700:	1f 93       	push	r17
+     702:	18 2f       	mov	r17, r24
+     704:	06 2f       	mov	r16, r22
+		post wait4Controller();
+     706:	0e 94 7a 03 	call	0x6f4	; 0x6f4 <LCD128x64P__wait4Controller__postTask>
+		//wait4Controller();
+
+		if(mode == COMM)
+     70a:	11 23       	and	r17, r17
+     70c:	41 f4       	brne	.+16     	; 0x71e <LCD128x64P__writeGLCD+0x20>
+		{
+			// WRITE COMMANDS to GLCD - RAM
+			CTRL_GLCD &= ~( (1<< RW_GLCD) | (1 << REGSEL_GLCD) );
+     70e:	83 b1       	in	r24, 0x03	; 3
+     710:	8f 7c       	andi	r24, 0xCF	; 207
+     712:	83 b9       	out	0x03, r24	; 3
+			CTRL_GLCD |=  (1 << ENABLE_GLCD);
+     714:	1e 9a       	sbi	0x03, 6	; 3
+		
+			DATA_DDR_GLCD = 0xFF;
+     716:	8f ef       	ldi	r24, 0xFF	; 255
+     718:	8a bb       	out	0x1a, r24	; 26
+			DATA_OUT_GLCD = data;
+     71a:	0b bb       	out	0x1b, r16	; 27
+     71c:	07 c0       	rjmp	.+14     	; 0x72c <LCD128x64P__writeGLCD+0x2e>
+
+		}
+		else
+		{
+			// WRITE DATA TO GLCD - RAM
+			CTRL_GLCD &= ~( 1<< RW_GLCD );
+     71e:	1d 98       	cbi	0x03, 5	; 3
+			CTRL_GLCD |=  ((1 << ENABLE_GLCD) | (1 << REGSEL_GLCD));
+     720:	83 b1       	in	r24, 0x03	; 3
+     722:	80 65       	ori	r24, 0x50	; 80
+     724:	83 b9       	out	0x03, r24	; 3
+			DATA_DDR_GLCD = 0xFF;
+     726:	8f ef       	ldi	r24, 0xFF	; 255
+     728:	8a bb       	out	0x1a, r24	; 26
+			DATA_OUT_GLCD = data;
+     72a:	0b bb       	out	0x1b, r16	; 27
+		}
+
+		asm volatile ("nop"); asm volatile ("nop");
+     72c:	00 00       	nop
+     72e:	00 00       	nop
+		asm volatile ("nop"); asm volatile ("nop");
+     730:	00 00       	nop
+     732:	00 00       	nop
+		asm volatile ("nop"); asm volatile ("nop");
+     734:	00 00       	nop
+     736:	00 00       	nop
+		asm volatile ("nop"); asm volatile ("nop");
+     738:	00 00       	nop
+     73a:	00 00       	nop
+		CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
+     73c:	1e 98       	cbi	0x03, 6	; 3
+     73e:	1f 91       	pop	r17
+     740:	0f 91       	pop	r16
+     742:	08 95       	ret
+
+00000744 <LCD128x64P__setAddress>:
+	}
+
+	void setAddress(uint8_t x, uint8_t y)
+	{	
+     744:	1f 93       	push	r17
+     746:	16 2f       	mov	r17, r22
+		uint8_t tmp;
+	
+		if(x < 64)
+     748:	80 34       	cpi	r24, 0x40	; 64
+     74a:	18 f4       	brcc	.+6      	; 0x752 <LCD128x64P__setAddress+0xe>
+		{
+			CTRL_GLCD |= (1<<CS1_GLCD);
+     74c:	1b 9a       	sbi	0x03, 3	; 3
+			CTRL_GLCD &= ~(1<<CS0_GLCD);
+     74e:	1a 98       	cbi	0x03, 2	; 3
+     750:	02 c0       	rjmp	.+4      	; 0x756 <LCD128x64P__setAddress+0x12>
+		}
+		else
+		{
+			CTRL_GLCD |= (1<<CS0_GLCD);
+     752:	1a 9a       	sbi	0x03, 2	; 3
+			CTRL_GLCD &= ~(1<<CS1_GLCD);
+     754:	1b 98       	cbi	0x03, 3	; 3
+		}
+		
+		tmp = x & 0x3f;		// make x address valid
+		writeGLCD(COMM, tmp | GLCD_SET_Y_ADDR);
+     756:	68 2f       	mov	r22, r24
+     758:	6f 73       	andi	r22, 0x3F	; 63
+     75a:	60 64       	ori	r22, 0x40	; 64
+     75c:	80 e0       	ldi	r24, 0x00	; 0
+     75e:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+
+		tmp = y & 0x3f;
+		writeGLCD(COMM, tmp | GLCD_SET_X_ADDR);
+     762:	61 2f       	mov	r22, r17
+     764:	6f 73       	andi	r22, 0x3F	; 63
+     766:	68 6b       	ori	r22, 0xB8	; 184
+     768:	80 e0       	ldi	r24, 0x00	; 0
+     76a:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+     76e:	1f 91       	pop	r17
+     770:	08 95       	ret
+
+00000772 <LCD128x64P__LCD128x64__setPixel>:
+	}
+
+	uint8_t readByte(uint8_t mode)
+	{
+		uint8_t tmp = 0, c = 0;
+
+		for(c = 0; c < 2; c++)	// dummy read needed!
+		{
+			post wait4Controller();
+			//wait4Controller();
+
+			CTRL_GLCD |= ((1<<ENABLE_GLCD)) | (1 << RW_GLCD);
+			if(mode == COMM)	// read COMMANDREGISTER
+			{
+				CTRL_GLCD &= ~(1 << REGSEL_GLCD);
+			}
+			else			// read DATAREGISTER
+			{
+				CTRL_GLCD |= (1 << REGSEL_GLCD);
+				DATA_DDR_GLCD = 0x00;
+			}
+			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
+
+			tmp = DATA_IN_GLCD;
+	
+			CTRL_GLCD &= ~( (1<<ENABLE_GLCD) | (1<<RW_GLCD));
+			DATA_DDR_GLCD = 0xFF;
+		}
+
+		return tmp;
+	}
+
+	command void LCD128x64.setPixel(uint8_t x, uint8_t y)
+	{
+     772:	df 92       	push	r13
+     774:	ef 92       	push	r14
+     776:	ff 92       	push	r15
+     778:	0f 93       	push	r16
+     77a:	1f 93       	push	r17
+     77c:	e8 2e       	mov	r14, r24
+     77e:	d6 2e       	mov	r13, r22
+	        unsigned char temp;
+
+	        setAddress(x, y/8);
+     780:	f6 2e       	mov	r15, r22
+     782:	f6 94       	lsr	r15
+     784:	f6 94       	lsr	r15
+     786:	f6 94       	lsr	r15
+     788:	6f 2d       	mov	r22, r15
+     78a:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+     78e:	10 e0       	ldi	r17, 0x00	; 0
+     790:	0e 94 7a 03 	call	0x6f4	; 0x6f4 <LCD128x64P__wait4Controller__postTask>
+     794:	83 b1       	in	r24, 0x03	; 3
+     796:	80 66       	ori	r24, 0x60	; 96
+     798:	83 b9       	out	0x03, r24	; 3
+     79a:	1c 9a       	sbi	0x03, 4	; 3
+     79c:	1a ba       	out	0x1a, r1	; 26
+     79e:	00 00       	nop
+     7a0:	00 00       	nop
+     7a2:	00 00       	nop
+     7a4:	00 00       	nop
+     7a6:	00 00       	nop
+     7a8:	00 00       	nop
+     7aa:	00 00       	nop
+     7ac:	00 00       	nop
+     7ae:	09 b3       	in	r16, 0x19	; 25
+     7b0:	83 b1       	in	r24, 0x03	; 3
+     7b2:	8f 79       	andi	r24, 0x9F	; 159
+     7b4:	83 b9       	out	0x03, r24	; 3
+     7b6:	8f ef       	ldi	r24, 0xFF	; 255
+     7b8:	8a bb       	out	0x1a, r24	; 26
+     7ba:	1f 5f       	subi	r17, 0xFF	; 255
+     7bc:	12 30       	cpi	r17, 0x02	; 2
+     7be:	41 f7       	brne	.-48     	; 0x790 <LCD128x64P__LCD128x64__setPixel+0x1e>
+	        temp = readByte(DATA);
+	        setAddress(x, y/8);
+     7c0:	6f 2d       	mov	r22, r15
+     7c2:	8e 2d       	mov	r24, r14
+     7c4:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+	        writeGLCD(DATA, temp | (1 << (y % 8)));
+     7c8:	8d 2d       	mov	r24, r13
+     7ca:	87 70       	andi	r24, 0x07	; 7
+     7cc:	21 e0       	ldi	r18, 0x01	; 1
+     7ce:	30 e0       	ldi	r19, 0x00	; 0
+     7d0:	02 c0       	rjmp	.+4      	; 0x7d6 <LCD128x64P__LCD128x64__setPixel+0x64>
+     7d2:	22 0f       	add	r18, r18
+     7d4:	33 1f       	adc	r19, r19
+     7d6:	8a 95       	dec	r24
+     7d8:	e2 f7       	brpl	.-8      	; 0x7d2 <LCD128x64P__LCD128x64__setPixel+0x60>
+     7da:	60 2f       	mov	r22, r16
+     7dc:	62 2b       	or	r22, r18
+     7de:	81 e0       	ldi	r24, 0x01	; 1
+     7e0:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+     7e4:	1f 91       	pop	r17
+     7e6:	0f 91       	pop	r16
+     7e8:	ff 90       	pop	r15
+     7ea:	ef 90       	pop	r14
+     7ec:	df 90       	pop	r13
+     7ee:	08 95       	ret
+
+000007f0 <ArbiterP__0__ResourceConfigure__unconfigure>:
+  /**
+   * Used to unconfigure a resource just before releasing it.
+   * Must always be used in conjuntion with the Resource interface.
+   */
+  async command void unconfigure();
+     7f0:	08 95       	ret
+
+000007f2 <GLCDP__LCD128x64__startClearScreen>:
+	}
+
+	command void LCD128x64.writePixel(uint8_t x, uint8_t y, uint8_t on)
+	{
+		uint8_t byte;
+		setAddress(x, y/8);
+		byte = readByte(DATA);
+
+		setAddress(x, y/8);
+		
+		if(on == TRUE)
+		{
+			byte |= (1<<(y%8));
+		}
+		else
+		{
+			byte &= ~(1<<(y%8));
+		}
+		writeGLCD(DATA, byte);
+	}
+
+	// draw rectangle
+	task void writeRectangle()
+	{
+		unsigned char j;
+		for (j = 0; j < bRect; j++)
+		{
+			call LCD128x64.setPixel(xPos[RECTANGLE], yPos[RECTANGLE] + j);
+			call LCD128x64.setPixel(xPos[RECTANGLE] + aRect - 1, yPos[RECTANGLE] + j);
+		}
+		for (j = 0; j < aRect; j++)
+		{
+			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE]);
+			call LCD128x64.setPixel(xPos[RECTANGLE] + j, yPos[RECTANGLE] + bRect - 1);
+		}
+		signal LCD128x64.rectangleWritten();
+	}
+	
+	task void writeCircle()
+	{
+		int tswitch, y, x = 0, yDraw = 0;
+		unsigned char d;
+
+		d = yPos[CIRCLE] - xPos[CIRCLE];
+		y = rad;
+		tswitch = 3 - 2 * rad;
+		while (x <= y)
+		{
+			yDraw = y;
+			//yDraw = y * 10 / 12;
+			call LCD128x64.setPixel(xPos[CIRCLE] + x, yPos[CIRCLE] + yDraw);
+			call LCD128x64.setPixel(xPos[CIRCLE] + x, yPos[CIRCLE] - yDraw);
+			call LCD128x64.setPixel(xPos[CIRCLE] - x, yPos[CIRCLE] + yDraw);
+			call LCD128x64.setPixel(xPos[CIRCLE] - x, yPos[CIRCLE] - yDraw);
+			call LCD128x64.setPixel(yPos[CIRCLE] + yDraw - d, yPos[CIRCLE] + x);
+			call LCD128x64.setPixel(yPos[CIRCLE] + yDraw - d, yPos[CIRCLE] - x);
+			call LCD128x64.setPixel(yPos[CIRCLE] - yDraw - d, yPos[CIRCLE] + x);
+			call LCD128x64.setPixel(yPos[CIRCLE] - yDraw - d, yPos[CIRCLE] - x);
+	
+			if (tswitch < 0) 
+				tswitch += (4 * x + 6);
+			else
+			{
+				tswitch += (4 * (x - yDraw) + 10);
+				y--;
+			}
+			x++;
+		}
+		signal LCD128x64.circleWritten();
+	}
+
+	task void writeString()
+	{
+		uint8_t index = 0, offset = 0;
+
+		while (*dataPtr)
+		{
+			for(index=0; index<5; index++)
+			{
+		
+				setAddress(xPos[STRING]+offset, yPos[STRING]/8);
+			        writeGLCD(DATA, (uint8_t)pgm_read_byte(&Font5x7[((*dataPtr - 0x20) * 5) + index]));
+				offset++;
+			}
+			setAddress(xPos[STRING]+offset, yPos[STRING]);
+			writeGLCD(DATA, 0x00);
+			offset++;
+			dataPtr++;
+		}
+		signal LCD128x64.stringWritten();
+	}
+
+	command void LCD128x64.writeByte(uint8_t x, uint8_t y, uint8_t data)
+	{
+		setAddress(x, y);
+		writeGLCD(DATA, data);
+	}
+
+
+	void task clearScreenNB()
+	{
+		// clear LCD - loop through all pages
+		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops
+		{
+			for(xAddr=0; xAddr<GLCD_XPIXELS; xAddr++)	// 128 loops
+			{
+				setAddress(xAddr, pageAddr);
+				writeGLCD(DATA, modPattern);
+			}
+		}
+		signal LCD128x64.screenCleared();
+	}
+
+	void clearScreen()
+	//void task clearScreen()
+	{
+		// clear LCD - loop through all pages
+		for(pageAddr=0; pageAddr<(GLCD_YPIXELS>>3); pageAddr++)	// 8 loops
+		{
+			for(xAddr=0; xAddr<GLCD_XPIXELS; xAddr++)	// 128 loops
+			{
+				setAddress(xAddr, pageAddr);
+				writeGLCD(DATA, modPattern);
+			}
+		}
+	}
+
+	void task writeLine()
+	{
+		static volatile uint8_t count, orientation, dx, dy, steep = 0, steepCnt = 0;
+		float tmp = 0;
+
+		dx = xLineEnd - xPos[LINE];
+
+		if(yLineEnd > yPos[LINE])	// descending line
+		{
+			tmp = ((yLineEnd - yPos[LINE]) / ((float)(xLineEnd - xPos[LINE])));
+			orientation = DOWN;
+			dy = yLineEnd - yPos[LINE];
+		}
+		if(yLineEnd < yPos[LINE])	// ascending line
+		{
+			tmp = (yPos[LINE] - yLineEnd) / ((float)xLineEnd - xPos[LINE]);
+			orientation = UP;
+			dy = yPos[LINE] - yLineEnd;
+		}
+	
+		// steep line to draw - so it will not be enough to draw only on pixel in y-direction for every x-step
+		// the steeper the line --> the more y-pixels for one x-step	
+
+		// FIXME - check Radar - example
+		if(dy > dx)
+			steep = dy / dx;
+		else
+			steep = 0;
+	
+		if(yLineEnd == yPos[LINE])
+		{
+			tmp = 0;
+			orientation = HORIZONTAL;
+		}
+
+		if(xPos[LINE] == xLineEnd)		// special case - vertical line
+		{
+			for(count = 0; count < (yLineEnd - yPos[LINE]); count++)
+			{
+				call LCD128x64.setPixel(xPos[LINE], yPos[LINE]+count);
+			}
+		}
+		else
+		{
+
+			for(count = 0; count <= (xLineEnd - xPos[LINE]); count++)
+			{
+				if(orientation == UP)
+				{
+					for(steepCnt = 0; steepCnt <= steep; steepCnt++)
+					{
+						if((yPos[LINE]-(tmp*(float)count)+steepCnt) >= yLineEnd)
+							call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]-(tmp*(float)count)+steepCnt);
+					}
+				}
+				else if(orientation == DOWN)
+				{
+					for(steepCnt = 0; steepCnt <= steep; steepCnt++)
+					{
+						call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]+(tmp*(float)count)+steepCnt);
+					}
+				}
+	
+				else if(orientation == HORIZONTAL)
+				{
+					call LCD128x64.setPixel(xPos[LINE]+count, yPos[LINE]);
+				}
+			}			
+		}
+		signal LCD128x64.lineWritten();
+	}
+
+	/*
+		too be fast, writeBar() uses 3 different approches for drawing. faster drawing is
+		possible by writing 8bit at one time with setAdress() and writeGLCD
+
+		otherwise, pixel after pixel has to be set...
+	*/
+	task void writeBar()
+	{
+		static volatile uint8_t x_count, y_count, y_mod = 0, byte;
+
+		for(x_count = 0; x_count < aBar; x_count++)
+		{
+			/*
+				this is easy to do: bar starts at a 8bit-boundary in y-direction, and height of bar 
+				is a multiple of 8 --> so always write 8bit at one time!
+				FAST!
+			*/
+			if( (yPos[BAR] % 8 == 0) && (bBar % 8 == 0))
+			{
+				y_mod = bBar / 8;
+				for(y_count = 0; y_count < y_mod; y_count++)
+				{
+					setAddress((xPos[BAR]+x_count), ((yPos[BAR]) / 8) + y_count);
+		                	writeGLCD(DATA, 0xFF);
+				}
+			}
+		
+			/*
+				easy too: bar at 8bit-boundary, but height isnt a multiple of 8
+			*/
+			if((bBar < 8) && (yPos[BAR] % 8 == 0))
+			{
+				// do this just once
+				if(y_mod == 0)
+				{
+					y_mod = bBar % 8;
+					// use y_count for this loop / so save one uint8_t
+					for( y_count = 0; y_count < y_mod; y_count++)
+					{
+						byte |= (1<<y_count);
+					}
+				}
+				setAddress((xPos[BAR]+x_count), (yPos[BAR]/8));
+		                writeGLCD(DATA, byte);
+			}
+
+			/*
+				bar doesnt start at 8bit-boundary in y-direction, or height isnt multiple of 8 - or both!
+				--> would be complex to calculate and draw(in y-direction):
+				* at first the 'upper' 8 bits
+				* then zero or more 0xff-bytes would follow
+				* afterwards perhaps another byte(bottom-lines)
+		
+				so instead of complex calculation, write pixel after pixel...	
+			*/
+			else
+			{
+				for(y_count = 0; y_count < bBar; y_count++)
+				{
+					call LCD128x64.setPixel(xPos[BAR] + x_count, yPos[BAR] + y_count);
+				}
+			}
+		}
+		signal LCD128x64.barWritten();
+	}
+	
+	command void LCD128x64.initLCD(uint8_t pattern)
+	{
+		// set controlports and dataports to OUTPUT
+		CTRL_DDR_GLCD |= (0xFC);	// set CTRL to output
+		DATA_DDR_GLCD = 0xFF;		// set DATA to output
+		CTRL_GLCD &= ~(0xFC);		// set all controlbits LOW
+		DATA_OUT_GLCD = 0x00;		// and reset the pins
+
+		// deactivate glcd - reset
+		CTRL_GLCD |= (1<<RESET_GLCD);
+
+		// turn on glcd
+		writeGLCD(COMM, (GLCD_ON_CTRL | GLCD_ON_DISPLAY));
+
+		// clear screen
+		modPattern = pattern;
+		clearScreen();
+		//call LCD128x64.startClearScreen(pattern);
+		// set init-position						TODO
+
+		signal LCD128x64.initDone();
+	}
+
+	command void LCD128x64.startWriteString(char *data, uint8_t x, uint8_t y)
+	{
+		xPos[STRING] = x;
+		yPos[STRING] = y;
+		dataPtr = data;
+	
+		post writeString();
+	}
+
+	/*
+		x, y = coordinates left upper corner of rectangle
+		a = length(x-direction)
+		b = heigth(y-direction)
+
+	*/
+	command void LCD128x64.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
+	{
+		xPos[RECTANGLE] = x;
+		yPos[RECTANGLE] = y;
+		aRect = a;
+		bRect = b;
+
+		post writeRectangle();
+	}	
+
+	command void LCD128x64.startWriteCircle(uint8_t x, uint8_t y, uint8_t radius)
+	{
+		xPos[CIRCLE] = x;
+		yPos[CIRCLE] = y;
+		rad = radius;
+	
+		post writeCircle();
+	}
+
+	/*
+		fills screen with pattern, use 0x00 for clearing, 0xff to set all pixel
+		8bit are drawn in y-direction, line for line
+	*/	
+	command void LCD128x64.startClearScreen(uint8_t pattern)
+	{
+		modPattern = pattern;
+     7f2:	80 93 30 01 	sts	0x0130, r24
+     7f6:	88 e0       	ldi	r24, 0x08	; 8
+     7f8:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     7fc:	08 95       	ret
+
+000007fe <GLCDP__LCD128x64__startWriteString>:
+     7fe:	60 93 7d 01 	sts	0x017D, r22
+     802:	40 93 4c 01 	sts	0x014C, r20
+     806:	90 93 67 01 	sts	0x0167, r25
+     80a:	80 93 66 01 	sts	0x0166, r24
+     80e:	87 e0       	ldi	r24, 0x07	; 7
+     810:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     814:	08 95       	ret
+
+00000816 <Atm128AdcP__HplAtm128Adc__getAdmux>:
+     816:	87 b1       	in	r24, 0x07	; 7
+     818:	08 95       	ret
+
+0000081a <Atm128AdcP__HplAtm128Adc__setAdmux>:
+     81a:	99 27       	eor	r25, r25
+     81c:	87 b9       	out	0x07, r24	; 7
+     81e:	08 95       	ret
+
+00000820 <AdcP__sample>:
+  uint8_t prescaler() {
+    return call Atm128AdcConfig.getPrescaler[client]();
+  }
+
+  void sample() {
+     820:	ef 92       	push	r14
+     822:	ff 92       	push	r15
+     824:	0f 93       	push	r16
+     826:	1f 93       	push	r17
+     828:	80 91 89 01 	lds	r24, 0x0189
+   * Obtain prescaler value.
+   * @return The prescaler value to use. Must be one of the 
+   *   ATM128_ADC_PRESCALE_xxx values from Atm128Adc.h.
+   */
+  async command uint8_t getPrescaler();
+     82c:	88 23       	and	r24, r24
+     82e:	09 f4       	brne	.+2      	; 0x832 <AdcP__sample+0x12>
+     830:	83 c0       	rjmp	.+262    	; 0x938 <AdcP__sample+0x118>
+     832:	88 23       	and	r24, r24
+     834:	21 f0       	breq	.+8      	; 0x83e <AdcP__sample+0x1e>
+     836:	2f e1       	ldi	r18, 0x1F	; 31
+     838:	ff 24       	eor	r15, r15
+     83a:	00 e0       	ldi	r16, 0x00	; 0
+     83c:	08 c0       	rjmp	.+16     	; 0x84e <AdcP__sample+0x2e>
+     83e:	ff 24       	eor	r15, r15
+     840:	00 e0       	ldi	r16, 0x00	; 0
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     842:	8f b7       	in	r24, 0x3f	; 63
+     844:	f8 94       	cli
+	}
+
+	event void Read.readDone(error_t err, uint16_t val)
+	{	
+		atomic
+		{
+			if(err == SUCCESS)
+			{
+				switch(state)
+				{
+					// dummy-value for first x-value --> TRASH
+					case DUMMY_FIRST_X:
+						x = val;
+						state = FIRST_X;
+						call Read.read();
+					break;
+					
+					// got the actual x-value
+					case FIRST_X:
+						if(val > X_TRESHOLD)
+						{
+							if(pressDetect == TRUE)
+							{
+								pressDetect = FALSE;
+								signal TouchScreen.tsPressed();
+								UNDRIVE_A;
+								UNDRIVE_B;
+							}
+							else
+							{
+								x = val;
+
+								UNDRIVE_A;
+								DRIVE_B;
+								channel = ATM128_ADC_SNGL_ADC1;
+								state = DUMMY_FIRST_Y;
+								call Read.read();
+							}
+						}
+						else
+						{
+							if(pressDetect == TRUE)
+							{
+								post checkTS();
+								UNDRIVE_A;
+								UNDRIVE_B;
+							}
+							else
+							{
+								call Read.read();
+							}
+						}
+					break;
+	
+					// dummy-value for the first y-value
+					case DUMMY_FIRST_Y:
+						y = val;
+						state = FIRST_Y;
+						call Read.read();
+					break;
+
+					case FIRST_Y:
+						if(val > Y_TRESHOLD)
+						{
+							y = val;
+							state = FINISHED;
+							UNDRIVE_A;
+							UNDRIVE_B;
+							signal TouchScreen.xyReady(x, y);
+						}
+						else
+						{
+							call Read.read();
+						}
+					break;
+
+					case FINISHED:
+					break;
+			
+				}
+			}
+		}
+	}
+
+
+	/*
+		interface wird verwendet um press-detection EIN / AUSzuschalten
+		wenn EIN --> setze globales flag und poste entspr. task
+	*/
+	command void TouchScreen.isPressed(bool on)
+	{
+		pressDetect = on;
+		if(on == TRUE)
+		{
+			post checkTS();
+		}
+	}
+
+	async command uint8_t Atm128AdcConfig.getRefVoltage(void)
+	{
+		return 1;
+	}
+	
+	async command uint8_t Atm128AdcConfig.getChannel()
+	{
+		atomic
+     846:	99 27       	eor	r25, r25
+		{
+			return channel;
+     848:	20 91 49 01 	lds	r18, 0x0149
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     84c:	8f bf       	out	0x3f, r24	; 63
+    call Atm128AdcSingle.getData(channel(), refVoltage(), FALSE, prescaler());
+     84e:	12 2f       	mov	r17, r18
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     850:	ef b6       	in	r14, 0x3f	; 63
+     852:	f8 94       	cli
+    return SUCCESS;
+  }
+
+  async command error_t AsyncStdControl.stop() {
+    atomic call HplAtm128Adc.disableAdc();
+
+    return SUCCESS;
+  }
+
+  /* Return TRUE if switching to 'channel' with reference voltage 'refVoltage'
+     will give a precise result (the first sample after changing reference
+     voltage or switching to/between a differential channel is imprecise)
+  */
+  inline bool isPrecise(Atm128Admux_t admux, uint8_t channel, uint8_t refVoltage) {
+    return refVoltage == admux.refs &&
+      (channel <= ATM128_ADC_SNGL_ADC7 || channel >= ATM128_ADC_SNGL_1_23 || channel == admux.mux);
+  }
+
+  async event void HplAtm128Adc.dataReady(uint16_t data) {
+    bool precise, multiple;
+    uint8_t channel;
+
+    atomic 
+      {
+	channel = f.channel;
+	precise = f.precise;
+	multiple = f.multiple;
+      }
+
+    if (!multiple)
+      {
+	/* A single sample. Disable the ADC interrupt to avoid starting
+	   a new sample at the next "sleep" instruction. */
+	call HplAtm128Adc.disableInterruption();
+	signal Atm128AdcSingle.dataReady(data, precise);
+      }
+    else
+      {
+	/* Multiple sampling. The user can:
+	   - tell us to stop sampling
+	   - or, to continue sampling on a new channel, possibly with a
+	     new reference voltage; however this change applies not to
+	     the next sample (the hardware has already started working on
+	     that), but on the one after.
+	*/
+	bool cont;
+	uint8_t nextChannel, nextVoltage;
+	Atm128Admux_t admux;
+
+	atomic 
+	  {
+	    admux = call HplAtm128Adc.getAdmux();
+	    nextVoltage = admux.refs;
+	    nextChannel = admux.mux;
+	  }
+
+	cont = signal Atm128AdcMultiple.dataReady(data, precise, channel,
+						  &nextChannel, &nextVoltage);
+	atomic
+	  if (cont)
+	    {
+	      /* Switch channels and update our internal channel+precision
+		 tracking state (f and nextF). Note that this tracking will
+		 be incorrect if we take too long to get to this point. */
+	      admux.refs = nextVoltage;
+	      admux.mux = nextChannel;
+	      call HplAtm128Adc.setAdmux(admux);
+
+	      f = nextF;
+	      nextF.channel = nextChannel;
+	      nextF.precise = isPrecise(admux, nextChannel, nextVoltage);
+	    }
+	  else
+	    call HplAtm128Adc.cancel();
+      }
+  }
+
+  /* Start sampling based on request parameters */
+  void getData(uint8_t channel, uint8_t refVoltage, bool leftJustify, uint8_t prescaler) {
+    Atm128Admux_t admux;
+    Atm128Adcsra_t adcsr;
+
+    admux = call HplAtm128Adc.getAdmux();
+    f.precise = isPrecise(admux, channel, refVoltage);
+    f.channel = channel;
+
+    admux.refs = refVoltage;
+    admux.adlar = leftJustify;
+    admux.mux = channel;
+    call HplAtm128Adc.setAdmux(admux);
+
+    adcsr.aden = ATM128_ADC_ENABLE_ON;
+    adcsr.adsc = ATM128_ADC_START_CONVERSION_ON;
+    adcsr.adfr = f.multiple;
+    adcsr.adif = ATM128_ADC_INT_FLAG_ON; // clear any stale flag
+    adcsr.adie = ATM128_ADC_INT_ENABLE_ON;
+    if (prescaler == ATM128_ADC_PRESCALE)
+      prescaler = call Atm128Calibrate.adcPrescaler();
+    adcsr.adps = prescaler;
+    call HplAtm128Adc.setAdcsra(adcsr);
+  }
+
+  async command bool Atm128AdcSingle.getData(uint8_t channel, uint8_t refVoltage,
+					     bool leftJustify, uint8_t prescaler) {
+    atomic
+      {
+	f.multiple = FALSE;
+     854:	80 91 62 01 	lds	r24, 0x0162
+     858:	8e 7f       	andi	r24, 0xFE	; 254
+     85a:	80 93 62 01 	sts	0x0162, r24
+     85e:	0e 94 0b 04 	call	0x816	; 0x816 <Atm128AdcP__HplAtm128Adc__getAdmux>
+     862:	48 2f       	mov	r20, r24
+     864:	4f 71       	andi	r20, 0x1F	; 31
+     866:	20 2f       	mov	r18, r16
+     868:	33 27       	eor	r19, r19
+     86a:	82 95       	swap	r24
+     86c:	86 95       	lsr	r24
+     86e:	86 95       	lsr	r24
+     870:	83 70       	andi	r24, 0x03	; 3
+     872:	99 27       	eor	r25, r25
+     874:	28 17       	cp	r18, r24
+     876:	39 07       	cpc	r19, r25
+     878:	19 f0       	breq	.+6      	; 0x880 <AdcP__sample+0x60>
+     87a:	20 e0       	ldi	r18, 0x00	; 0
+     87c:	30 e0       	ldi	r19, 0x00	; 0
+     87e:	13 c0       	rjmp	.+38     	; 0x8a6 <AdcP__sample+0x86>
+     880:	81 2f       	mov	r24, r17
+     882:	88 50       	subi	r24, 0x08	; 8
+     884:	86 31       	cpi	r24, 0x16	; 22
+     886:	18 f0       	brcs	.+6      	; 0x88e <AdcP__sample+0x6e>
+     888:	21 e0       	ldi	r18, 0x01	; 1
+     88a:	30 e0       	ldi	r19, 0x00	; 0
+     88c:	0c c0       	rjmp	.+24     	; 0x8a6 <AdcP__sample+0x86>
+     88e:	60 e0       	ldi	r22, 0x00	; 0
+     890:	70 e0       	ldi	r23, 0x00	; 0
+     892:	21 2f       	mov	r18, r17
+     894:	33 27       	eor	r19, r19
+     896:	84 2f       	mov	r24, r20
+     898:	99 27       	eor	r25, r25
+     89a:	28 17       	cp	r18, r24
+     89c:	39 07       	cpc	r19, r25
+     89e:	11 f4       	brne	.+4      	; 0x8a4 <AdcP__sample+0x84>
+     8a0:	61 e0       	ldi	r22, 0x01	; 1
+     8a2:	70 e0       	ldi	r23, 0x00	; 0
+     8a4:	9b 01       	movw	r18, r22
+     8a6:	21 70       	andi	r18, 0x01	; 1
+     8a8:	22 0f       	add	r18, r18
+     8aa:	90 91 62 01 	lds	r25, 0x0162
+     8ae:	91 78       	andi	r25, 0x81	; 129
+     8b0:	81 2f       	mov	r24, r17
+     8b2:	8f 71       	andi	r24, 0x1F	; 31
+     8b4:	38 2f       	mov	r19, r24
+     8b6:	33 0f       	add	r19, r19
+     8b8:	33 0f       	add	r19, r19
+     8ba:	92 2b       	or	r25, r18
+     8bc:	93 2b       	or	r25, r19
+     8be:	90 93 62 01 	sts	0x0162, r25
+     8c2:	90 2f       	mov	r25, r16
+     8c4:	92 95       	swap	r25
+     8c6:	99 0f       	add	r25, r25
+     8c8:	99 0f       	add	r25, r25
+     8ca:	90 7c       	andi	r25, 0xC0	; 192
+     8cc:	89 2b       	or	r24, r25
+     8ce:	0e 94 0d 04 	call	0x81a	; 0x81a <Atm128AdcP__HplAtm128Adc__setAdmux>
+     8d2:	80 91 62 01 	lds	r24, 0x0162
+     8d6:	28 2f       	mov	r18, r24
+     8d8:	21 70       	andi	r18, 0x01	; 1
+     8da:	38 e0       	ldi	r19, 0x08	; 8
+     8dc:	f3 16       	cp	r15, r19
+     8de:	91 f5       	brne	.+100    	; 0x944 <AdcP__sample+0x124>
+  }
+
+  async command uint8_t Atm128Calibrate.adcPrescaler() {
+    /* This is also log2(cycles/3.05). But that's a pain to compute */
+    if (cycles >= 390)
+     8e0:	80 91 86 01 	lds	r24, 0x0186
+     8e4:	90 91 87 01 	lds	r25, 0x0187
+     8e8:	31 e0       	ldi	r19, 0x01	; 1
+     8ea:	86 38       	cpi	r24, 0x86	; 134
+     8ec:	93 07       	cpc	r25, r19
+     8ee:	18 f0       	brcs	.+6      	; 0x8f6 <AdcP__sample+0xd6>
+     8f0:	87 e0       	ldi	r24, 0x07	; 7
+     8f2:	90 e0       	ldi	r25, 0x00	; 0
+     8f4:	1f c0       	rjmp	.+62     	; 0x934 <AdcP__sample+0x114>
+      return ATM128_ADC_PRESCALE_128;
+    if (cycles >= 195)
+     8f6:	83 3c       	cpi	r24, 0xC3	; 195
+     8f8:	91 05       	cpc	r25, r1
+     8fa:	18 f0       	brcs	.+6      	; 0x902 <AdcP__sample+0xe2>
+     8fc:	86 e0       	ldi	r24, 0x06	; 6
+     8fe:	90 e0       	ldi	r25, 0x00	; 0
+     900:	19 c0       	rjmp	.+50     	; 0x934 <AdcP__sample+0x114>
+      return ATM128_ADC_PRESCALE_64;
+    if (cycles >= 97)
+     902:	81 36       	cpi	r24, 0x61	; 97
+     904:	91 05       	cpc	r25, r1
+     906:	18 f0       	brcs	.+6      	; 0x90e <AdcP__sample+0xee>
+     908:	85 e0       	ldi	r24, 0x05	; 5
+     90a:	90 e0       	ldi	r25, 0x00	; 0
+     90c:	13 c0       	rjmp	.+38     	; 0x934 <AdcP__sample+0x114>
+      return ATM128_ADC_PRESCALE_32;
+    if (cycles >= 48)
+     90e:	80 33       	cpi	r24, 0x30	; 48
+     910:	91 05       	cpc	r25, r1
+     912:	18 f0       	brcs	.+6      	; 0x91a <AdcP__sample+0xfa>
+     914:	84 e0       	ldi	r24, 0x04	; 4
+     916:	90 e0       	ldi	r25, 0x00	; 0
+     918:	0d c0       	rjmp	.+26     	; 0x934 <AdcP__sample+0x114>
+      return ATM128_ADC_PRESCALE_16;
+    if (cycles >= 24)
+     91a:	88 31       	cpi	r24, 0x18	; 24
+     91c:	91 05       	cpc	r25, r1
+     91e:	18 f0       	brcs	.+6      	; 0x926 <AdcP__sample+0x106>
+     920:	83 e0       	ldi	r24, 0x03	; 3
+     922:	90 e0       	ldi	r25, 0x00	; 0
+     924:	07 c0       	rjmp	.+14     	; 0x934 <AdcP__sample+0x114>
+      return ATM128_ADC_PRESCALE_8;
+    if (cycles >= 12)
+     926:	0c 97       	sbiw	r24, 0x0c	; 12
+     928:	18 f0       	brcs	.+6      	; 0x930 <AdcP__sample+0x110>
+     92a:	82 e0       	ldi	r24, 0x02	; 2
+     92c:	90 e0       	ldi	r25, 0x00	; 0
+     92e:	02 c0       	rjmp	.+4      	; 0x934 <AdcP__sample+0x114>
+     930:	80 e0       	ldi	r24, 0x00	; 0
+     932:	90 e0       	ldi	r25, 0x00	; 0
+     934:	f8 2e       	mov	r15, r24
+     936:	06 c0       	rjmp	.+12     	; 0x944 <AdcP__sample+0x124>
+  }
+     938:	0f 2e       	mov	r0, r31
+     93a:	f7 e0       	ldi	r31, 0x07	; 7
+     93c:	ff 2e       	mov	r15, r31
+     93e:	f0 2d       	mov	r31, r0
+     940:	01 e0       	ldi	r16, 0x01	; 1
+     942:	7f cf       	rjmp	.-258    	; 0x842 <AdcP__sample+0x22>
+     944:	9f 2d       	mov	r25, r15
+     946:	97 70       	andi	r25, 0x07	; 7
+     948:	81 2f       	mov	r24, r17
+     94a:	88 7f       	andi	r24, 0xF8	; 248
+     94c:	89 2b       	or	r24, r25
+     94e:	88 61       	ori	r24, 0x18	; 24
+     950:	92 2f       	mov	r25, r18
+     952:	91 70       	andi	r25, 0x01	; 1
+     954:	92 95       	swap	r25
+     956:	99 0f       	add	r25, r25
+     958:	90 7e       	andi	r25, 0xE0	; 224
+     95a:	8f 7d       	andi	r24, 0xDF	; 223
+     95c:	89 2b       	or	r24, r25
+     95e:	80 6c       	ori	r24, 0xC0	; 192
+     960:	0e 94 6a 01 	call	0x2d4	; 0x2d4 <Atm128AdcP__HplAtm128Adc__setAdcsra>
+     964:	8e 2d       	mov	r24, r14
+     966:	99 27       	eor	r25, r25
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     968:	8f bf       	out	0x3f, r24	; 63
+     96a:	1f 91       	pop	r17
+     96c:	0f 91       	pop	r16
+     96e:	ff 90       	pop	r15
+     970:	ef 90       	pop	r14
+     972:	08 95       	ret
+
+00000974 <SchedulerBasicP__TaskBasic__runTask>:
+
+  /**
+   * Event from the scheduler to run this task. Following the TinyOS
+   * concurrency model, the codes invoked from <tt>run()</tt> signals
+   * execute atomically with respect to one another, but can be
+   * preempted by async commands/events.
+   */
+  event void runTask();
+     974:	4f 92       	push	r4
+     976:	5f 92       	push	r5
+     978:	6f 92       	push	r6
+     97a:	7f 92       	push	r7
+     97c:	8f 92       	push	r8
+     97e:	9f 92       	push	r9
+     980:	af 92       	push	r10
+     982:	bf 92       	push	r11
+     984:	cf 92       	push	r12
+     986:	df 92       	push	r13
+     988:	ef 92       	push	r14
+     98a:	ff 92       	push	r15
+     98c:	0f 93       	push	r16
+     98e:	1f 93       	push	r17
+     990:	cf 93       	push	r28
+     992:	df 93       	push	r29
+     994:	86 30       	cpi	r24, 0x06	; 6
+     996:	09 f4       	brne	.+2      	; 0x99a <SchedulerBasicP__TaskBasic__runTask+0x26>
+     998:	d2 c2       	rjmp	.+1444   	; 0xf3e <SchedulerBasicP__TaskBasic__runTask+0x5ca>
+     99a:	87 30       	cpi	r24, 0x07	; 7
+     99c:	90 f4       	brcc	.+36     	; 0x9c2 <SchedulerBasicP__TaskBasic__runTask+0x4e>
+     99e:	83 30       	cpi	r24, 0x03	; 3
+     9a0:	09 f4       	brne	.+2      	; 0x9a4 <SchedulerBasicP__TaskBasic__runTask+0x30>
+     9a2:	4e c0       	rjmp	.+156    	; 0xa40 <SchedulerBasicP__TaskBasic__runTask+0xcc>
+     9a4:	84 30       	cpi	r24, 0x04	; 4
+     9a6:	30 f4       	brcc	.+12     	; 0x9b4 <SchedulerBasicP__TaskBasic__runTask+0x40>
+     9a8:	81 30       	cpi	r24, 0x01	; 1
+     9aa:	79 f1       	breq	.+94     	; 0xa0a <SchedulerBasicP__TaskBasic__runTask+0x96>
+     9ac:	82 30       	cpi	r24, 0x02	; 2
+     9ae:	09 f0       	breq	.+2      	; 0x9b2 <SchedulerBasicP__TaskBasic__runTask+0x3e>
+     9b0:	f2 c6       	rjmp	.+3556   	; 0x1796 <__stack+0x697>
+     9b2:	2e c0       	rjmp	.+92     	; 0xa10 <SchedulerBasicP__TaskBasic__runTask+0x9c>
+     9b4:	84 30       	cpi	r24, 0x04	; 4
+     9b6:	09 f4       	brne	.+2      	; 0x9ba <SchedulerBasicP__TaskBasic__runTask+0x46>
+     9b8:	73 c2       	rjmp	.+1254   	; 0xea0 <SchedulerBasicP__TaskBasic__runTask+0x52c>
+     9ba:	85 30       	cpi	r24, 0x05	; 5
+     9bc:	09 f0       	breq	.+2      	; 0x9c0 <SchedulerBasicP__TaskBasic__runTask+0x4c>
+     9be:	eb c6       	rjmp	.+3542   	; 0x1796 <__stack+0x697>
+     9c0:	15 c0       	rjmp	.+42     	; 0x9ec <SchedulerBasicP__TaskBasic__runTask+0x78>
+     9c2:	89 30       	cpi	r24, 0x09	; 9
+     9c4:	09 f4       	brne	.+2      	; 0x9c8 <SchedulerBasicP__TaskBasic__runTask+0x54>
+     9c6:	b9 c3       	rjmp	.+1906   	; 0x113a <__stack+0x3b>
+     9c8:	8a 30       	cpi	r24, 0x0A	; 10
+     9ca:	30 f4       	brcc	.+12     	; 0x9d8 <SchedulerBasicP__TaskBasic__runTask+0x64>
+     9cc:	87 30       	cpi	r24, 0x07	; 7
+     9ce:	a1 f0       	breq	.+40     	; 0x9f8 <SchedulerBasicP__TaskBasic__runTask+0x84>
+     9d0:	88 30       	cpi	r24, 0x08	; 8
+     9d2:	09 f0       	breq	.+2      	; 0x9d6 <SchedulerBasicP__TaskBasic__runTask+0x62>
+     9d4:	e0 c6       	rjmp	.+3520   	; 0x1796 <__stack+0x697>
+     9d6:	80 c3       	rjmp	.+1792   	; 0x10d8 <SchedulerBasicP__TaskBasic__runTask+0x764>
+     9d8:	8b 30       	cpi	r24, 0x0B	; 11
+     9da:	09 f4       	brne	.+2      	; 0x9de <SchedulerBasicP__TaskBasic__runTask+0x6a>
+     9dc:	61 c6       	rjmp	.+3266   	; 0x16a0 <__stack+0x5a1>
+     9de:	8b 30       	cpi	r24, 0x0B	; 11
+     9e0:	08 f4       	brcc	.+2      	; 0x9e4 <SchedulerBasicP__TaskBasic__runTask+0x70>
+     9e2:	a4 c5       	rjmp	.+2888   	; 0x152c <__stack+0x42d>
+     9e4:	8c 30       	cpi	r24, 0x0C	; 12
+     9e6:	09 f0       	breq	.+2      	; 0x9ea <SchedulerBasicP__TaskBasic__runTask+0x76>
+     9e8:	d6 c6       	rjmp	.+3500   	; 0x1796 <__stack+0x697>
+     9ea:	86 c6       	rjmp	.+3340   	; 0x16f8 <__stack+0x5f9>
+     9ec:	80 91 65 01 	lds	r24, 0x0165
+     9f0:	88 23       	and	r24, r24
+     9f2:	09 f0       	breq	.+2      	; 0x9f6 <SchedulerBasicP__TaskBasic__runTask+0x82>
+     9f4:	68 c2       	rjmp	.+1232   	; 0xec6 <SchedulerBasicP__TaskBasic__runTask+0x552>
+     9f6:	81 c2       	rjmp	.+1282   	; 0xefa <SchedulerBasicP__TaskBasic__runTask+0x586>
+     9f8:	e0 91 66 01 	lds	r30, 0x0166
+     9fc:	f0 91 67 01 	lds	r31, 0x0167
+     a00:	80 81       	ld	r24, Z
+     a02:	88 23       	and	r24, r24
+     a04:	09 f0       	breq	.+2      	; 0xa08 <SchedulerBasicP__TaskBasic__runTask+0x94>
+     a06:	bd c6       	rjmp	.+3450   	; 0x1782 <__stack+0x683>
+     a08:	5a c3       	rjmp	.+1716   	; 0x10be <SchedulerBasicP__TaskBasic__runTask+0x74a>
+     a0a:	0e 94 57 02 	call	0x4ae	; 0x4ae <TouchScreenP__TouchScreen__getXY>
+     a0e:	c3 c6       	rjmp	.+3462   	; 0x1796 <__stack+0x697>
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     a10:	2f b7       	in	r18, 0x3f	; 63
+     a12:	f8 94       	cli
+          return SUCCESS;
+        }
+      }
+    }
+    return FAIL;
+  }
+    
+  /**
+    Check if the Resource is currently in use
+  */    
+  async command bool ArbiterInfo.inUse() {
+    atomic {
+      if (state == RES_CONTROLLED)
+        return FALSE;
+    }
+    return TRUE;
+  }
+
+  /**
+    Returns the current user of the Resource.
+    If there is no current user, the return value
+    will be 0xFF
+  */      
+  async command uint8_t ArbiterInfo.userId() {
+    atomic {
+      if(state != RES_BUSY)
+        return NO_RES;
+      return resId;
+    }
+  }
+
+  /**
+   * Returns my user id.
+   */      
+  async command uint8_t Resource.isOwner[uint8_t id]() {
+    atomic {
+      if(resId == id && state == RES_BUSY) return TRUE;
+      else return FALSE;
+    }
+  }
+
+  async command uint8_t ResourceDefaultOwner.isOwner() {
+    atomic return (state == RES_CONTROLLED
+            || (resId == default_owner_id
+                && (state == RES_GRANTING || state == RES_IMM_GRANTING)));
+  }
+  
+  task void grantedTask() {
+    atomic {
+     a14:	33 27       	eor	r19, r19
+      resId = reqResId;
+     a16:	80 91 80 01 	lds	r24, 0x0180
+     a1a:	80 93 25 01 	sts	0x0125, r24
+      state = RES_BUSY;
+     a1e:	83 e0       	ldi	r24, 0x03	; 3
+     a20:	80 93 2f 01 	sts	0x012F, r24
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     a24:	2f bf       	out	0x3f, r18	; 63
+
+  /**
+   * You are now in control of the resource.
+   */
+  event void granted();
+     a26:	80 91 25 01 	lds	r24, 0x0125
+     a2a:	88 23       	and	r24, r24
+     a2c:	09 f0       	breq	.+2      	; 0xa30 <SchedulerBasicP__TaskBasic__runTask+0xbc>
+     a2e:	b3 c6       	rjmp	.+3430   	; 0x1796 <__stack+0x697>
+
+  error_t startGet(uint8_t newState, uint8_t newClient) {
+    /* Note: we retry imprecise results in dataReady */
+    state = newState;
+     a30:	81 e0       	ldi	r24, 0x01	; 1
+     a32:	80 93 68 01 	sts	0x0168, r24
+    client = newClient;
+     a36:	10 92 89 01 	sts	0x0189, r1
+    sample();
+     a3a:	0e 94 10 04 	call	0x820	; 0x820 <AdcP__sample>
+     a3e:	ab c6       	rjmp	.+3414   	; 0x1796 <__stack+0x697>
+
+    return SUCCESS;
+  }
+
+  command error_t Read.read[uint8_t c]() {
+    return startGet(ACQUIRE_DATA, c);
+  }
+
+  async command error_t ReadNow.read[uint8_t c]() {
+    return startGet(ACQUIRE_DATA_NOW, c);
+  }
+
+  task void acquiredData() {
+    state = IDLE;
+     a40:	10 92 68 01 	sts	0x0168, r1
+    signal Read.readDone[client](SUCCESS, val);
+     a44:	00 91 79 01 	lds	r16, 0x0179
+     a48:	10 91 7a 01 	lds	r17, 0x017A
+     a4c:	80 91 89 01 	lds	r24, 0x0189
+   
+  /**
+  * Release a shared resource you previously acquired.  
+  *
+  * @return SUCCESS The resource has been released <br>
+  *         FAIL You tried to release but you are not the
+  *              owner of the resource 
+  *
+  * @note This command should never be called between putting in a request 	  
+  *       and waiting for a granted event.  Doing so will result in a
+  *       potential race condition.  There are ways to guarantee that no
+  *       race will occur, but they are clumsy and overly complicated.
+  *       Since it doesn't logically make since to be calling
+  *       <code>release</code> before receiving a <code>granted</code> event, 
+  *       we have opted to keep thing simple and warn you about the potential 
+  *       race.
+  */
+  async command error_t release();
+     a50:	88 23       	and	r24, r24
+     a52:	09 f0       	breq	.+2      	; 0xa56 <SchedulerBasicP__TaskBasic__runTask+0xe2>
+     a54:	55 c0       	rjmp	.+170    	; 0xb00 <SchedulerBasicP__TaskBasic__runTask+0x18c>
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     a56:	8f b7       	in	r24, 0x3f	; 63
+     a58:	f8 94       	cli
+     a5a:	e8 2e       	mov	r14, r24
+     a5c:	80 91 2f 01 	lds	r24, 0x012F
+     a60:	83 30       	cpi	r24, 0x03	; 3
+     a62:	09 f0       	breq	.+2      	; 0xa66 <SchedulerBasicP__TaskBasic__runTask+0xf2>
+     a64:	4b c0       	rjmp	.+150    	; 0xafc <SchedulerBasicP__TaskBasic__runTask+0x188>
+     a66:	80 91 25 01 	lds	r24, 0x0125
+     a6a:	88 23       	and	r24, r24
+     a6c:	41 f0       	breq	.+16     	; 0xa7e <SchedulerBasicP__TaskBasic__runTask+0x10a>
+     a6e:	46 c0       	rjmp	.+140    	; 0xafc <SchedulerBasicP__TaskBasic__runTask+0x188>
+     a70:	81 e0       	ldi	r24, 0x01	; 1
+     a72:	80 93 25 01 	sts	0x0125, r24
+     a76:	10 92 2f 01 	sts	0x012F, r1
+    call McuPowerState.update();
+  }
+  async command void HplAtm128Adc.disableAdc() {
+    CLR_BIT(ADCSRA, ADEN); 
+     a7a:	37 98       	cbi	0x06, 7	; 6
+     a7c:	3d c0       	rjmp	.+122    	; 0xaf8 <SchedulerBasicP__TaskBasic__runTask+0x184>
+     a7e:	80 91 6d 01 	lds	r24, 0x016D
+     a82:	88 23       	and	r24, r24
+     a84:	09 f0       	breq	.+2      	; 0xa88 <SchedulerBasicP__TaskBasic__runTask+0x114>
+     a86:	76 c6       	rjmp	.+3308   	; 0x1774 <__stack+0x675>
+     a88:	f3 cf       	rjmp	.-26     	; 0xa70 <SchedulerBasicP__TaskBasic__runTask+0xfc>
+     a8a:	8f 2d       	mov	r24, r15
+     a8c:	86 95       	lsr	r24
+     a8e:	86 95       	lsr	r24
+     a90:	86 95       	lsr	r24
+     a92:	4f 2d       	mov	r20, r15
+     a94:	55 27       	eor	r21, r21
+     a96:	ed e6       	ldi	r30, 0x6D	; 109
+     a98:	f1 e0       	ldi	r31, 0x01	; 1
+     a9a:	e8 0f       	add	r30, r24
+     a9c:	f1 1d       	adc	r31, r1
+     a9e:	9a 01       	movw	r18, r20
+     aa0:	27 70       	andi	r18, 0x07	; 7
+     aa2:	30 70       	andi	r19, 0x00	; 0
+     aa4:	81 e0       	ldi	r24, 0x01	; 1
+     aa6:	90 e0       	ldi	r25, 0x00	; 0
+     aa8:	02 c0       	rjmp	.+4      	; 0xaae <SchedulerBasicP__TaskBasic__runTask+0x13a>
+     aaa:	88 0f       	add	r24, r24
+     aac:	99 1f       	adc	r25, r25
+     aae:	2a 95       	dec	r18
+     ab0:	e2 f7       	brpl	.-8      	; 0xaaa <SchedulerBasicP__TaskBasic__runTask+0x136>
+     ab2:	80 95       	com	r24
+     ab4:	20 81       	ld	r18, Z
+     ab6:	28 23       	and	r18, r24
+     ab8:	20 83       	st	Z, r18
+     aba:	c0 93 2e 01 	sts	0x012E, r28
+     abe:	12 c0       	rjmp	.+36     	; 0xae4 <SchedulerBasicP__TaskBasic__runTask+0x170>
+     ac0:	c1 30       	cpi	r28, 0x01	; 1
+     ac2:	d1 05       	cpc	r29, r1
+     ac4:	11 f4       	brne	.+4      	; 0xaca <SchedulerBasicP__TaskBasic__runTask+0x156>
+     ac6:	c0 e0       	ldi	r28, 0x00	; 0
+     ac8:	d0 e0       	ldi	r29, 0x00	; 0
+     aca:	fc 2e       	mov	r15, r28
+     acc:	8c 2f       	mov	r24, r28
+     ace:	0e 94 bb 01 	call	0x376	; 0x376 <RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued>
+     ad2:	88 23       	and	r24, r24
+     ad4:	d1 f6       	brne	.-76     	; 0xa8a <SchedulerBasicP__TaskBasic__runTask+0x116>
+     ad6:	cc 15       	cp	r28, r12
+     ad8:	dd 05       	cpc	r29, r13
+     ada:	11 f0       	breq	.+4      	; 0xae0 <SchedulerBasicP__TaskBasic__runTask+0x16c>
+     adc:	21 96       	adiw	r28, 0x01	; 1
+     ade:	f0 cf       	rjmp	.-32     	; 0xac0 <SchedulerBasicP__TaskBasic__runTask+0x14c>
+     ae0:	4f ef       	ldi	r20, 0xFF	; 255
+     ae2:	50 e0       	ldi	r21, 0x00	; 0
+     ae4:	40 93 80 01 	sts	0x0180, r20
+     ae8:	8f ef       	ldi	r24, 0xFF	; 255
+     aea:	80 93 25 01 	sts	0x0125, r24
+     aee:	81 e0       	ldi	r24, 0x01	; 1
+     af0:	80 93 2f 01 	sts	0x012F, r24
+     af4:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <ArbiterP__0__grantedTask__postTask>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     af8:	ef be       	out	0x3f, r14	; 63
+     afa:	05 c0       	rjmp	.+10     	; 0xb06 <SchedulerBasicP__TaskBasic__runTask+0x192>
+     afc:	ef be       	out	0x3f, r14	; 63
+     afe:	03 c0       	rjmp	.+6      	; 0xb06 <SchedulerBasicP__TaskBasic__runTask+0x192>
+
+  /**
+   * Signals the completion of the read().
+   *
+   * @param result SUCCESS if the read() was successful
+   * @param val the value that has been read
+   */
+  event void readDone( error_t result, val_t val );
+     b00:	88 23       	and	r24, r24
+     b02:	09 f0       	breq	.+2      	; 0xb06 <SchedulerBasicP__TaskBasic__runTask+0x192>
+     b04:	48 c6       	rjmp	.+3216   	; 0x1796 <__stack+0x697>
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+     b06:	7f b6       	in	r7, 0x3f	; 63
+     b08:	f8 94       	cli
+     b0a:	80 91 42 01 	lds	r24, 0x0142
+     b0e:	82 30       	cpi	r24, 0x02	; 2
+     b10:	b9 f0       	breq	.+46     	; 0xb40 <SchedulerBasicP__TaskBasic__runTask+0x1cc>
+     b12:	83 30       	cpi	r24, 0x03	; 3
+     b14:	20 f4       	brcc	.+8      	; 0xb1e <SchedulerBasicP__TaskBasic__runTask+0x1aa>
+     b16:	81 30       	cpi	r24, 0x01	; 1
+     b18:	09 f0       	breq	.+2      	; 0xb1c <SchedulerBasicP__TaskBasic__runTask+0x1a8>
+     b1a:	be c1       	rjmp	.+892    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     b1c:	07 c0       	rjmp	.+14     	; 0xb2c <SchedulerBasicP__TaskBasic__runTask+0x1b8>
+     b1e:	83 30       	cpi	r24, 0x03	; 3
+     b20:	09 f4       	brne	.+2      	; 0xb24 <SchedulerBasicP__TaskBasic__runTask+0x1b0>
+     b22:	49 c0       	rjmp	.+146    	; 0xbb6 <SchedulerBasicP__TaskBasic__runTask+0x242>
+     b24:	84 30       	cpi	r24, 0x04	; 4
+     b26:	09 f0       	breq	.+2      	; 0xb2a <SchedulerBasicP__TaskBasic__runTask+0x1b6>
+     b28:	b7 c1       	rjmp	.+878    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     b2a:	4f c0       	rjmp	.+158    	; 0xbca <SchedulerBasicP__TaskBasic__runTask+0x256>
+     b2c:	10 93 44 01 	sts	0x0144, r17
+     b30:	00 93 43 01 	sts	0x0143, r16
+     b34:	82 e0       	ldi	r24, 0x02	; 2
+     b36:	80 93 42 01 	sts	0x0142, r24
+     b3a:	0e 94 ff 01 	call	0x3fe	; 0x3fe <TouchScreenP__Read__read>
+     b3e:	ac c1       	rjmp	.+856    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     b40:	0f 31       	cpi	r16, 0x1F	; 31
+     b42:	11 05       	cpc	r17, r1
+     b44:	30 f1       	brcs	.+76     	; 0xb92 <SchedulerBasicP__TaskBasic__runTask+0x21e>
+     b46:	80 91 33 01 	lds	r24, 0x0133
+     b4a:	81 30       	cpi	r24, 0x01	; 1
+     b4c:	69 f4       	brne	.+26     	; 0xb68 <SchedulerBasicP__TaskBasic__runTask+0x1f4>
+     b4e:	10 92 33 01 	sts	0x0133, r1
+	}
+
+	event void Boot.booted()
+	{
+//		call MMC.init();
+		call GLCD.initLCD(0x01);
+	}
+
+/*
+	event void MMC.initDone()
+	{
+	}
+
+	event void MMC.blockReady(uint8_t *data)
+	{
+		uint8_t i=0;
+		call GLCD.isPressed(TRUE);
+	}
+*/
+
+	event void GLCD.initDone()
+	{
+//		call GLCD.calibrateTouchScreen();
+//		call Timer0.startPeriodic(100);
+//		call GLCD.startWriteRectangle(0, 0, 128, 4);
+//		call GLCD.startWriteBar(0, 8, 100, 40);
+//		call GLCD.isPressed(TRUE);
+		call Timer0.startPeriodic(500);
+	}
+
+	event void GLCD.tsPressed()
+	{
+//		call MMC.readBlock(NULL);
+		call GLCD.getXY();
+     b52:	0e 94 80 02 	call	0x500	; 0x500 <BlinkC__GLCD__getXY>
+     b56:	e5 e6       	ldi	r30, 0x65	; 101
+     b58:	f0 e0       	ldi	r31, 0x00	; 0
+     b5a:	80 81       	ld	r24, Z
+     b5c:	87 7f       	andi	r24, 0xF7	; 247
+     b5e:	80 83       	st	Z, r24
+     b60:	80 81       	ld	r24, Z
+     b62:	8f 7e       	andi	r24, 0xEF	; 239
+     b64:	80 83       	st	Z, r24
+     b66:	98 c1       	rjmp	.+816    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     b68:	10 93 44 01 	sts	0x0144, r17
+     b6c:	00 93 43 01 	sts	0x0143, r16
+     b70:	e5 e6       	ldi	r30, 0x65	; 101
+     b72:	f0 e0       	ldi	r31, 0x00	; 0
+     b74:	80 81       	ld	r24, Z
+     b76:	87 7f       	andi	r24, 0xF7	; 247
+     b78:	80 83       	st	Z, r24
+     b7a:	80 81       	ld	r24, Z
+     b7c:	80 61       	ori	r24, 0x10	; 16
+     b7e:	80 83       	st	Z, r24
+     b80:	81 e0       	ldi	r24, 0x01	; 1
+     b82:	80 93 49 01 	sts	0x0149, r24
+     b86:	83 e0       	ldi	r24, 0x03	; 3
+     b88:	80 93 42 01 	sts	0x0142, r24
+     b8c:	0e 94 ff 01 	call	0x3fe	; 0x3fe <TouchScreenP__Read__read>
+     b90:	83 c1       	rjmp	.+774    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     b92:	80 91 33 01 	lds	r24, 0x0133
+     b96:	81 30       	cpi	r24, 0x01	; 1
+     b98:	59 f4       	brne	.+22     	; 0xbb0 <SchedulerBasicP__TaskBasic__runTask+0x23c>
+     b9a:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+     b9e:	e5 e6       	ldi	r30, 0x65	; 101
+     ba0:	f0 e0       	ldi	r31, 0x00	; 0
+     ba2:	80 81       	ld	r24, Z
+     ba4:	87 7f       	andi	r24, 0xF7	; 247
+     ba6:	80 83       	st	Z, r24
+     ba8:	80 81       	ld	r24, Z
+     baa:	8f 7e       	andi	r24, 0xEF	; 239
+     bac:	80 83       	st	Z, r24
+     bae:	74 c1       	rjmp	.+744    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     bb0:	0e 94 ff 01 	call	0x3fe	; 0x3fe <TouchScreenP__Read__read>
+     bb4:	71 c1       	rjmp	.+738    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     bb6:	10 93 46 01 	sts	0x0146, r17
+     bba:	00 93 45 01 	sts	0x0145, r16
+     bbe:	84 e0       	ldi	r24, 0x04	; 4
+     bc0:	80 93 42 01 	sts	0x0142, r24
+     bc4:	0e 94 ff 01 	call	0x3fe	; 0x3fe <TouchScreenP__Read__read>
+     bc8:	67 c1       	rjmp	.+718    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     bca:	0d 33       	cpi	r16, 0x3D	; 61
+     bcc:	11 05       	cpc	r17, r1
+     bce:	08 f4       	brcc	.+2      	; 0xbd2 <SchedulerBasicP__TaskBasic__runTask+0x25e>
+     bd0:	61 c1       	rjmp	.+706    	; 0xe94 <SchedulerBasicP__TaskBasic__runTask+0x520>
+     bd2:	10 93 46 01 	sts	0x0146, r17
+     bd6:	00 93 45 01 	sts	0x0145, r16
+     bda:	85 e0       	ldi	r24, 0x05	; 5
+     bdc:	80 93 42 01 	sts	0x0142, r24
+     be0:	e5 e6       	ldi	r30, 0x65	; 101
+     be2:	f0 e0       	ldi	r31, 0x00	; 0
+     be4:	80 81       	ld	r24, Z
+     be6:	87 7f       	andi	r24, 0xF7	; 247
+     be8:	80 83       	st	Z, r24
+     bea:	80 81       	ld	r24, Z
+     bec:	8f 7e       	andi	r24, 0xEF	; 239
+     bee:	80 83       	st	Z, r24
+     bf0:	c0 91 45 01 	lds	r28, 0x0145
+     bf4:	d0 91 46 01 	lds	r29, 0x0146
+     bf8:	00 91 43 01 	lds	r16, 0x0143
+     bfc:	10 91 44 01 	lds	r17, 0x0144
+	}
+
+
+	/*	#########################################################
+				TOUCHSCREEN - events
+		#########################################################	*/
+
+	event void TouchScreen.xyReady(uint16_t x, uint16_t y)
+	{
+		/*
+			calibration is in progress, and we just got the first xy-pair.
+			save them and proceed to next step...
+		*/
+		if(stateTS == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM)
+     c00:	80 91 34 01 	lds	r24, 0x0134
+     c04:	81 30       	cpi	r24, 0x01	; 1
+     c06:	b9 f4       	brne	.+46     	; 0xc36 <SchedulerBasicP__TaskBasic__runTask+0x2c2>
+		{
+			x_min = x;
+     c08:	10 93 27 01 	sts	0x0127, r17
+     c0c:	00 93 26 01 	sts	0x0126, r16
+			y_min = y;
+     c10:	d0 93 29 01 	sts	0x0129, r29
+     c14:	c0 93 28 01 	sts	0x0128, r28
+			stateTS = CALIBRATION_IN_PROGRESS_RIGHT_TOP;
+     c18:	82 e0       	ldi	r24, 0x02	; 2
+     c1a:	80 93 34 01 	sts	0x0134, r24
+			call LCD128x64.startClearScreen(0x00);
+     c1e:	80 e0       	ldi	r24, 0x00	; 0
+     c20:	0e 94 f9 03 	call	0x7f2	; 0x7f2 <GLCDP__LCD128x64__startClearScreen>
+			call LCD128x64.startWriteString("Press Right/Top", 39, 0);
+     c24:	40 e0       	ldi	r20, 0x00	; 0
+     c26:	67 e2       	ldi	r22, 0x27	; 39
+     c28:	80 e0       	ldi	r24, 0x00	; 0
+     c2a:	91 e0       	ldi	r25, 0x01	; 1
+     c2c:	0e 94 ff 03 	call	0x7fe	; 0x7fe <GLCDP__LCD128x64__startWriteString>
+			call TouchScreen.getXY();
+     c30:	0e 94 7d 02 	call	0x4fa	; 0x4fa <GLCDP__TouchScreen__getXY>
+     c34:	31 c1       	rjmp	.+610    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+		}
+	
+		/*
+			calibration is in progress, and we just got the second xy-pair.
+			save them if valid and proceed, otherwise request new values
+		*/
+		else if(stateTS == CALIBRATION_IN_PROGRESS_RIGHT_TOP)
+     c36:	80 91 34 01 	lds	r24, 0x0134
+     c3a:	82 30       	cpi	r24, 0x02	; 2
+     c3c:	51 f5       	brne	.+84     	; 0xc92 <SchedulerBasicP__TaskBasic__runTask+0x31e>
+		{
+			if((x > (x_min + X_CALIB_DISTANCE) ) && (y > (y_min + Y_CALIB_DISTANCE)))
+     c3e:	80 91 26 01 	lds	r24, 0x0126
+     c42:	90 91 27 01 	lds	r25, 0x0127
+     c46:	8c 59       	subi	r24, 0x9C	; 156
+     c48:	9f 4f       	sbci	r25, 0xFF	; 255
+     c4a:	80 17       	cp	r24, r16
+     c4c:	91 07       	cpc	r25, r17
+     c4e:	f0 f4       	brcc	.+60     	; 0xc8c <SchedulerBasicP__TaskBasic__runTask+0x318>
+     c50:	80 91 28 01 	lds	r24, 0x0128
+     c54:	90 91 29 01 	lds	r25, 0x0129
+     c58:	8c 59       	subi	r24, 0x9C	; 156
+     c5a:	9f 4f       	sbci	r25, 0xFF	; 255
+     c5c:	8c 17       	cp	r24, r28
+     c5e:	9d 07       	cpc	r25, r29
+     c60:	a8 f4       	brcc	.+42     	; 0xc8c <SchedulerBasicP__TaskBasic__runTask+0x318>
+			{
+				x_max = x;
+     c62:	10 93 2b 01 	sts	0x012B, r17
+     c66:	00 93 2a 01 	sts	0x012A, r16
+				y_max = y;
+     c6a:	d0 93 2d 01 	sts	0x012D, r29
+     c6e:	c0 93 2c 01 	sts	0x012C, r28
+				stateTS = CALIBRATION_DONE;
+     c72:	83 e0       	ldi	r24, 0x03	; 3
+     c74:	80 93 34 01 	sts	0x0134, r24
+				call LCD128x64.startClearScreen(0x00);
+     c78:	80 e0       	ldi	r24, 0x00	; 0
+     c7a:	0e 94 f9 03 	call	0x7f2	; 0x7f2 <GLCDP__LCD128x64__startClearScreen>
+				call LCD128x64.startWriteString("Calibrated", 30, 32);
+     c7e:	40 e2       	ldi	r20, 0x20	; 32
+     c80:	6e e1       	ldi	r22, 0x1E	; 30
+     c82:	80 e1       	ldi	r24, 0x10	; 16
+     c84:	91 e0       	ldi	r25, 0x01	; 1
+     c86:	0e 94 ff 03 	call	0x7fe	; 0x7fe <GLCDP__LCD128x64__startWriteString>
+     c8a:	06 c1       	rjmp	.+524    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+				signal GLCD.calibrated();
+			}
+			else
+			{
+				call TouchScreen.getXY();
+     c8c:	0e 94 7d 02 	call	0x4fa	; 0x4fa <GLCDP__TouchScreen__getXY>
+     c90:	03 c1       	rjmp	.+518    	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     c92:	06 53       	subi	r16, 0x36	; 54
+     c94:	10 40       	sbci	r17, 0x00	; 0
+     c96:	b8 01       	movw	r22, r16
+     c98:	88 27       	eor	r24, r24
+     c9a:	77 fd       	sbrc	r23, 7
+     c9c:	80 95       	com	r24
+     c9e:	98 2f       	mov	r25, r24
+     ca0:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+     ca4:	11 23       	and	r17, r17
+     ca6:	34 f4       	brge	.+12     	; 0xcb4 <SchedulerBasicP__TaskBasic__runTask+0x340>
+     ca8:	20 e0       	ldi	r18, 0x00	; 0
+     caa:	30 e0       	ldi	r19, 0x00	; 0
+     cac:	40 e8       	ldi	r20, 0x80	; 128
+     cae:	57 e4       	ldi	r21, 0x47	; 71
+     cb0:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+     cb4:	20 e0       	ldi	r18, 0x00	; 0
+     cb6:	30 e8       	ldi	r19, 0x80	; 128
+     cb8:	4a e4       	ldi	r20, 0x4A	; 74
+     cba:	54 e4       	ldi	r21, 0x44	; 68
+     cbc:	0e 94 1d 0e 	call	0x1c3a	; 0x1c3a <__divsf3>
+     cc0:	4b 01       	movw	r8, r22
+     cc2:	5c 01       	movw	r10, r24
+     cc4:	8e 01       	movw	r16, r28
+     cc6:	00 58       	subi	r16, 0x80	; 128
+     cc8:	10 40       	sbci	r17, 0x00	; 0
+     cca:	b8 01       	movw	r22, r16
+     ccc:	88 27       	eor	r24, r24
+     cce:	77 fd       	sbrc	r23, 7
+     cd0:	80 95       	com	r24
+     cd2:	98 2f       	mov	r25, r24
+     cd4:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+     cd8:	11 23       	and	r17, r17
+     cda:	34 f4       	brge	.+12     	; 0xce8 <SchedulerBasicP__TaskBasic__runTask+0x374>
+     cdc:	20 e0       	ldi	r18, 0x00	; 0
+     cde:	30 e0       	ldi	r19, 0x00	; 0
+     ce0:	40 e8       	ldi	r20, 0x80	; 128
+     ce2:	57 e4       	ldi	r21, 0x47	; 71
+     ce4:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+     ce8:	20 e0       	ldi	r18, 0x00	; 0
+     cea:	30 e0       	ldi	r19, 0x00	; 0
+     cec:	48 e2       	ldi	r20, 0x28	; 40
+     cee:	54 e4       	ldi	r21, 0x44	; 68
+     cf0:	0e 94 1d 0e 	call	0x1c3a	; 0x1c3a <__divsf3>
+     cf4:	20 e0       	ldi	r18, 0x00	; 0
+     cf6:	30 e0       	ldi	r19, 0x00	; 0
+     cf8:	40 e8       	ldi	r20, 0x80	; 128
+     cfa:	52 e4       	ldi	r21, 0x42	; 66
+     cfc:	0e 94 fa 0e 	call	0x1df4	; 0x1df4 <__mulsf3>
+     d00:	0e 94 63 0e 	call	0x1cc6	; 0x1cc6 <__fixsfsi>
+     d04:	6b 01       	movw	r12, r22
+     d06:	7c 01       	movw	r14, r24
+     d08:	06 2f       	mov	r16, r22
+     d0a:	20 e0       	ldi	r18, 0x00	; 0
+     d0c:	30 e0       	ldi	r19, 0x00	; 0
+     d0e:	40 e0       	ldi	r20, 0x00	; 0
+     d10:	53 e4       	ldi	r21, 0x43	; 67
+     d12:	c5 01       	movw	r24, r10
+     d14:	b4 01       	movw	r22, r8
+     d16:	0e 94 fa 0e 	call	0x1df4	; 0x1df4 <__mulsf3>
+     d1a:	0e 94 63 0e 	call	0x1cc6	; 0x1cc6 <__fixsfsi>
+     d1e:	9b 01       	movw	r18, r22
+     d20:	ac 01       	movw	r20, r24
+	}
+
+	event void GLCD.calibrated()
+	{
+	}
+
+	event void GLCD.screenCleared(void)
+	{
+	}
+
+	event void GLCD.barWritten()
+	{
+	}
+	event void GLCD.circleWritten()
+	{
+
+	}
+	event void GLCD.rectangleWritten()
+	{
+
+	}
+	event void GLCD.stringWritten()
+	{
+	}
+	event void GLCD.lineWritten()
+	{
+
+	}
+
+	//event void GLCD.xyReady(uint16_t x, uint16_t y)
+	event void GLCD.xyReady(uint8_t x, uint8_t y)
+	{
+		tmp = (x % 10);
+     d22:	86 2f       	mov	r24, r22
+     d24:	6a e0       	ldi	r22, 0x0A	; 10
+     d26:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     d2a:	90 93 35 01 	sts	0x0135, r25
+		buf[3] = tmp + 0x30;
+     d2e:	80 91 35 01 	lds	r24, 0x0135
+     d32:	80 5d       	subi	r24, 0xD0	; 208
+     d34:	80 93 1e 01 	sts	0x011E, r24
+		x = (x - tmp) / 10;
+     d38:	80 91 35 01 	lds	r24, 0x0135
+     d3c:	33 27       	eor	r19, r19
+     d3e:	28 1b       	sub	r18, r24
+     d40:	31 09       	sbc	r19, r1
+     d42:	c9 01       	movw	r24, r18
+     d44:	6a e0       	ldi	r22, 0x0A	; 10
+     d46:	70 e0       	ldi	r23, 0x00	; 0
+     d48:	0e 94 4e 0f 	call	0x1e9c	; 0x1e9c <__divmodhi4>
+     d4c:	9b 01       	movw	r18, r22
+
+		tmp = (x % 10);
+     d4e:	86 2f       	mov	r24, r22
+     d50:	6a e0       	ldi	r22, 0x0A	; 10
+     d52:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     d56:	90 93 35 01 	sts	0x0135, r25
+		buf[2] = tmp + 0x30;
+     d5a:	80 91 35 01 	lds	r24, 0x0135
+     d5e:	80 5d       	subi	r24, 0xD0	; 208
+     d60:	80 93 1d 01 	sts	0x011D, r24
+		x = (x - tmp) / 10;
+     d64:	80 91 35 01 	lds	r24, 0x0135
+     d68:	33 27       	eor	r19, r19
+     d6a:	28 1b       	sub	r18, r24
+     d6c:	31 09       	sbc	r19, r1
+     d6e:	c9 01       	movw	r24, r18
+     d70:	6a e0       	ldi	r22, 0x0A	; 10
+     d72:	70 e0       	ldi	r23, 0x00	; 0
+     d74:	0e 94 4e 0f 	call	0x1e9c	; 0x1e9c <__divmodhi4>
+     d78:	9b 01       	movw	r18, r22
+
+		tmp = (x % 10);
+     d7a:	86 2f       	mov	r24, r22
+     d7c:	6a e0       	ldi	r22, 0x0A	; 10
+     d7e:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     d82:	90 93 35 01 	sts	0x0135, r25
+		buf[1] = tmp + 0x30;
+     d86:	80 91 35 01 	lds	r24, 0x0135
+     d8a:	80 5d       	subi	r24, 0xD0	; 208
+     d8c:	80 93 1c 01 	sts	0x011C, r24
+		x = (x - tmp) / 10;
+     d90:	80 91 35 01 	lds	r24, 0x0135
+     d94:	33 27       	eor	r19, r19
+     d96:	28 1b       	sub	r18, r24
+     d98:	31 09       	sbc	r19, r1
+     d9a:	c9 01       	movw	r24, r18
+     d9c:	6a e0       	ldi	r22, 0x0A	; 10
+     d9e:	70 e0       	ldi	r23, 0x00	; 0
+     da0:	0e 94 4e 0f 	call	0x1e9c	; 0x1e9c <__divmodhi4>
+     da4:	cb 01       	movw	r24, r22
+     da6:	b6 2e       	mov	r11, r22
+
+		tmp = (x % 10);
+     da8:	6a e0       	ldi	r22, 0x0A	; 10
+     daa:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     dae:	90 93 35 01 	sts	0x0135, r25
+		buf[0] = tmp + 0x30;
+     db2:	80 91 35 01 	lds	r24, 0x0135
+     db6:	80 5d       	subi	r24, 0xD0	; 208
+     db8:	80 93 1b 01 	sts	0x011B, r24
+		buf[4] = '/';
+     dbc:	8f e2       	ldi	r24, 0x2F	; 47
+     dbe:	80 93 1f 01 	sts	0x011F, r24
+		
+		tmp = (y % 10);
+     dc2:	8c 2d       	mov	r24, r12
+     dc4:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     dc8:	90 93 35 01 	sts	0x0135, r25
+		buf[8] = tmp + 0x30;
+     dcc:	80 91 35 01 	lds	r24, 0x0135
+     dd0:	80 5d       	subi	r24, 0xD0	; 208
+     dd2:	80 93 23 01 	sts	0x0123, r24
+		y = (y - tmp) / 10;
+     dd6:	80 91 35 01 	lds	r24, 0x0135
+     dda:	11 27       	eor	r17, r17
+     ddc:	08 1b       	sub	r16, r24
+     dde:	11 09       	sbc	r17, r1
+     de0:	c8 01       	movw	r24, r16
+     de2:	6a e0       	ldi	r22, 0x0A	; 10
+     de4:	70 e0       	ldi	r23, 0x00	; 0
+     de6:	0e 94 4e 0f 	call	0x1e9c	; 0x1e9c <__divmodhi4>
+     dea:	9b 01       	movw	r18, r22
+
+		tmp = (y % 10);
+     dec:	86 2f       	mov	r24, r22
+     dee:	6a e0       	ldi	r22, 0x0A	; 10
+     df0:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     df4:	90 93 35 01 	sts	0x0135, r25
+		buf[7] = tmp + 0x30;
+     df8:	80 91 35 01 	lds	r24, 0x0135
+     dfc:	80 5d       	subi	r24, 0xD0	; 208
+     dfe:	80 93 22 01 	sts	0x0122, r24
+		y = (y - tmp) / 10;
+     e02:	80 91 35 01 	lds	r24, 0x0135
+     e06:	33 27       	eor	r19, r19
+     e08:	28 1b       	sub	r18, r24
+     e0a:	31 09       	sbc	r19, r1
+     e0c:	c9 01       	movw	r24, r18
+     e0e:	6a e0       	ldi	r22, 0x0A	; 10
+     e10:	70 e0       	ldi	r23, 0x00	; 0
+     e12:	0e 94 4e 0f 	call	0x1e9c	; 0x1e9c <__divmodhi4>
+     e16:	9b 01       	movw	r18, r22
+
+		tmp = (y % 10);
+     e18:	86 2f       	mov	r24, r22
+     e1a:	6a e0       	ldi	r22, 0x0A	; 10
+     e1c:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     e20:	90 93 35 01 	sts	0x0135, r25
+		buf[6] = tmp + 0x30;
+     e24:	80 91 35 01 	lds	r24, 0x0135
+     e28:	80 5d       	subi	r24, 0xD0	; 208
+     e2a:	80 93 21 01 	sts	0x0121, r24
+		y = (y - tmp) / 10;
+     e2e:	80 91 35 01 	lds	r24, 0x0135
+
+		tmp = (y % 10);
+     e32:	33 27       	eor	r19, r19
+     e34:	28 1b       	sub	r18, r24
+     e36:	31 09       	sbc	r19, r1
+     e38:	c9 01       	movw	r24, r18
+     e3a:	6a e0       	ldi	r22, 0x0A	; 10
+     e3c:	70 e0       	ldi	r23, 0x00	; 0
+     e3e:	0e 94 4e 0f 	call	0x1e9c	; 0x1e9c <__divmodhi4>
+     e42:	cb 01       	movw	r24, r22
+     e44:	6a e0       	ldi	r22, 0x0A	; 10
+     e46:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+     e4a:	90 93 35 01 	sts	0x0135, r25
+		buf[5] = tmp + 0x30;
+     e4e:	80 91 35 01 	lds	r24, 0x0135
+     e52:	80 5d       	subi	r24, 0xD0	; 208
+     e54:	80 93 20 01 	sts	0x0120, r24
+		buf[9] = '\0';
+     e58:	10 92 24 01 	sts	0x0124, r1
+			}
+		}
+		/*
+			getXY was requested by user-application, so calculate the xy-pixel-values out of rawdata
+			and signal xyReady afterwards. done in localfunction calcXY():
+		*/
+		else
+		{
+		calcXY(x, y);	
+//	signal GLCD.xyReady(x, y);
+		}
+	}
+
+	/*
+		'connect' the lowlevel-signal tsPressed from TouchScreen to upper instance
+	*/
+	event void TouchScreen.tsPressed()
+	{
+		signal GLCD.tsPressed();
+	}
+
+
+	/*	#########################################################
+				LCD128x64 - interfacefunctions
+		#########################################################	*/
+
+	command void GLCD.initLCD(uint8_t pattern)
+	{
+		call LCD128x64.initLCD(pattern);
+	}
+
+	command void GLCD.writeByte(uint8_t x, uint8_t y, uint8_t data)
+	{
+		call LCD128x64.writeByte(x, y, data);
+	}
+
+	command void GLCD.writePixel(uint8_t x, uint8_t y, uint8_t on)
+	{
+		call LCD128x64.writePixel(x, y, on);
+	}
+
+	command void GLCD.setPixel(uint8_t x, uint8_t y)
+	{
+		call LCD128x64.setPixel(x, y);
+	}
+	
+	command error_t GLCD.startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
+	{
+		if( (stateGLCD & BUSY_BAR) == 1)
+		{
+			return FAIL;
+		}
+		else if((width == 0) || (length==0) || ((x+length) > 128) || ((y+width) > 64))
+		{
+			return FAIL;
+		}
+		else
+		{
+			stateGLCD = stateGLCD | BUSY_BAR;
+			call LCD128x64.startWriteBar(x, y, length, width);
+			return SUCCESS;
+		}
+	}
+
+	command error_t GLCD.startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
+	{
+		if( (stateGLCD & BUSY_RECT) == 1)
+		{
+			return FAIL;
+		}
+		else if(((x+a) > 128) || ((y+b) > 64))
+		{
+			return FAIL;
+		}
+		else
+		{
+			stateGLCD = stateGLCD | BUSY_RECT;
+			call LCD128x64.startWriteRectangle(x, y, a, b);
+			return SUCCESS;
+		}
+	}
+
+	command error_t GLCD.startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius)
+	{
+		if( (stateGLCD & BUSY_CIRCLE) == 1)
+		{
+			return FAIL;
+		}
+		else
+		{
+			stateGLCD = stateGLCD | BUSY_CIRCLE;
+			call LCD128x64.startWriteCircle(xcenter, ycenter, radius);
+			return SUCCESS;
+		}
+
+	}
+
+	command error_t GLCD.startWriteString(char *data, uint8_t x, uint8_t y)
+	{
+		if( (stateGLCD & BUSY_STRING ) == 1)
+		{
+			return FAIL;
+		}
+		else
+		{
+			stateGLCD = stateGLCD | BUSY_STRING;
+			call LCD128x64.startWriteString(data, x, y);
+			return SUCCESS;
+		}
+	}
+
+	command error_t GLCD.startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
+	{
+		if( (stateGLCD & BUSY_LINE ) == 1)
+		{
+			return FAIL;
+		}
+		else if(( x>128 )||( y>64 )||( xEnd>128 )||( yEnd>64 ))
+		{
+			return FAIL;
+		}
+		else
+		{
+			stateGLCD = stateGLCD | BUSY_LINE;
+			call LCD128x64.startWriteLine(x, y, xEnd, yEnd);
+			return SUCCESS;
+		}
+	}
+
+	command error_t GLCD.startClearScreen(uint8_t pattern)
+	{
+		if( (stateGLCD & BUSY_CLEAR ) == 1)
+     e5c:	80 91 36 01 	lds	r24, 0x0136
+		{
+			return FAIL;
+		}
+		else
+		{
+			stateGLCD = stateGLCD | BUSY_CLEAR;
+     e60:	80 91 36 01 	lds	r24, 0x0136
+     e64:	80 61       	ori	r24, 0x10	; 16
+     e66:	80 93 36 01 	sts	0x0136, r24
+			call LCD128x64.startClearScreen(pattern);
+     e6a:	80 e0       	ldi	r24, 0x00	; 0
+     e6c:	0e 94 f9 03 	call	0x7f2	; 0x7f2 <GLCDP__LCD128x64__startClearScreen>
+     e70:	80 91 36 01 	lds	r24, 0x0136
+     e74:	80 fd       	sbrc	r24, 0
+     e76:	0b c0       	rjmp	.+22     	; 0xe8e <SchedulerBasicP__TaskBasic__runTask+0x51a>
+     e78:	80 91 36 01 	lds	r24, 0x0136
+     e7c:	81 60       	ori	r24, 0x01	; 1
+     e7e:	80 93 36 01 	sts	0x0136, r24
+     e82:	48 e2       	ldi	r20, 0x28	; 40
+     e84:	6d e2       	ldi	r22, 0x2D	; 45
+     e86:	8b e1       	ldi	r24, 0x1B	; 27
+     e88:	91 e0       	ldi	r25, 0x01	; 1
+     e8a:	0e 94 ff 03 	call	0x7fe	; 0x7fe <GLCDP__LCD128x64__startWriteString>
+	
+		call GLCD.startClearScreen(0x00);;
+		call GLCD.startWriteString(buf, 45, 40);
+//		call GLCD.isPressed(TRUE);
+		x_lokal = x;
+     e8e:	b0 92 41 01 	sts	0x0141, r11
+     e92:	02 c0       	rjmp	.+4      	; 0xe98 <SchedulerBasicP__TaskBasic__runTask+0x524>
+     e94:	0e 94 ff 01 	call	0x3fe	; 0x3fe <TouchScreenP__Read__read>
+     e98:	87 2d       	mov	r24, r7
+     e9a:	99 27       	eor	r25, r25
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+     e9c:	8f bf       	out	0x3f, r24	; 63
+     e9e:	7b c4       	rjmp	.+2294   	; 0x1796 <__stack+0x697>
+     ea0:	1a ba       	out	0x1a, r1	; 26
+     ea2:	1d 9a       	sbi	0x03, 5	; 3
+     ea4:	1c 98       	cbi	0x03, 4	; 3
+     ea6:	1e 9a       	sbi	0x03, 6	; 3
+     ea8:	cf 9b       	sbis	0x19, 7	; 25
+     eaa:	08 c0       	rjmp	.+16     	; 0xebc <SchedulerBasicP__TaskBasic__runTask+0x548>
+     eac:	1e 98       	cbi	0x03, 6	; 3
+     eae:	00 00       	nop
+     eb0:	00 00       	nop
+     eb2:	1e 9a       	sbi	0x03, 6	; 3
+     eb4:	00 00       	nop
+     eb6:	00 00       	nop
+     eb8:	cf 99       	sbic	0x19, 7	; 25
+     eba:	f8 cf       	rjmp	.-16     	; 0xeac <SchedulerBasicP__TaskBasic__runTask+0x538>
+     ebc:	1e 98       	cbi	0x03, 6	; 3
+     ebe:	1d 9a       	sbi	0x03, 5	; 3
+     ec0:	8f ef       	ldi	r24, 0xFF	; 255
+     ec2:	8a bb       	out	0x1a, r24	; 26
+     ec4:	68 c4       	rjmp	.+2256   	; 0x1796 <__stack+0x697>
+     ec6:	10 e0       	ldi	r17, 0x00	; 0
+     ec8:	80 91 4a 01 	lds	r24, 0x014A
+     ecc:	61 2f       	mov	r22, r17
+     ece:	68 0f       	add	r22, r24
+     ed0:	80 91 7b 01 	lds	r24, 0x017B
+     ed4:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     ed8:	80 91 4a 01 	lds	r24, 0x014A
+     edc:	61 2f       	mov	r22, r17
+     ede:	68 0f       	add	r22, r24
+     ee0:	80 91 7b 01 	lds	r24, 0x017B
+     ee4:	90 91 77 01 	lds	r25, 0x0177
+     ee8:	89 0f       	add	r24, r25
+     eea:	81 50       	subi	r24, 0x01	; 1
+     eec:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     ef0:	1f 5f       	subi	r17, 0xFF	; 255
+     ef2:	80 91 65 01 	lds	r24, 0x0165
+     ef6:	18 17       	cp	r17, r24
+     ef8:	38 f3       	brcs	.-50     	; 0xec8 <SchedulerBasicP__TaskBasic__runTask+0x554>
+     efa:	80 91 77 01 	lds	r24, 0x0177
+     efe:	88 23       	and	r24, r24
+     f00:	c1 f0       	breq	.+48     	; 0xf32 <SchedulerBasicP__TaskBasic__runTask+0x5be>
+     f02:	10 e0       	ldi	r17, 0x00	; 0
+     f04:	80 91 7b 01 	lds	r24, 0x017B
+     f08:	60 91 4a 01 	lds	r22, 0x014A
+     f0c:	81 0f       	add	r24, r17
+     f0e:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     f12:	60 91 4a 01 	lds	r22, 0x014A
+     f16:	80 91 65 01 	lds	r24, 0x0165
+     f1a:	68 0f       	add	r22, r24
+     f1c:	61 50       	subi	r22, 0x01	; 1
+     f1e:	80 91 7b 01 	lds	r24, 0x017B
+     f22:	81 0f       	add	r24, r17
+     f24:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     f28:	1f 5f       	subi	r17, 0xFF	; 255
+     f2a:	80 91 77 01 	lds	r24, 0x0177
+     f2e:	18 17       	cp	r17, r24
+     f30:	48 f3       	brcs	.-46     	; 0xf04 <SchedulerBasicP__TaskBasic__runTask+0x590>
+			return SUCCESS;
+		}
+	}
+	
+	/*	#########################################################
+				LCD128x64 - events - START
+		#########################################################	*/
+
+	/*
+		'connect' lowlevel-signals from LCD128x64 to upper instance GLCD
+	*/
+	event void LCD128x64.initDone(void)
+	{
+		signal GLCD.initDone();
+	}
+
+	event void LCD128x64.circleWritten(void)
+	{
+		stateGLCD = stateGLCD & ~(BUSY_CIRCLE);
+		signal GLCD.circleWritten();
+	}
+
+	event void LCD128x64.rectangleWritten(void)
+	{
+		stateGLCD = stateGLCD & ~(BUSY_RECT);
+     f32:	80 91 36 01 	lds	r24, 0x0136
+     f36:	8b 7f       	andi	r24, 0xFB	; 251
+     f38:	80 93 36 01 	sts	0x0136, r24
+     f3c:	2c c4       	rjmp	.+2136   	; 0x1796 <__stack+0x697>
+     f3e:	90 91 4b 01 	lds	r25, 0x014B
+     f42:	80 91 7c 01 	lds	r24, 0x017C
+     f46:	b9 2e       	mov	r11, r25
+     f48:	b8 1a       	sub	r11, r24
+     f4a:	80 91 88 01 	lds	r24, 0x0188
+     f4e:	c8 2f       	mov	r28, r24
+     f50:	dd 27       	eor	r29, r29
+     f52:	9e 01       	movw	r18, r28
+     f54:	22 0f       	add	r18, r18
+     f56:	33 1f       	adc	r19, r19
+     f58:	83 e0       	ldi	r24, 0x03	; 3
+     f5a:	90 e0       	ldi	r25, 0x00	; 0
+     f5c:	7c 01       	movw	r14, r24
+     f5e:	e2 1a       	sub	r14, r18
+     f60:	f3 0a       	sbc	r15, r19
+     f62:	cc 24       	eor	r12, r12
+     f64:	dd 24       	eor	r13, r13
+     f66:	88 24       	eor	r8, r8
+     f68:	99 24       	eor	r9, r9
+     f6a:	80 91 4b 01 	lds	r24, 0x014B
+     f6e:	6c 2f       	mov	r22, r28
+     f70:	68 0f       	add	r22, r24
+     f72:	80 91 7c 01 	lds	r24, 0x017C
+     f76:	8c 0d       	add	r24, r12
+     f78:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     f7c:	60 91 4b 01 	lds	r22, 0x014B
+     f80:	6c 1b       	sub	r22, r28
+     f82:	80 91 7c 01 	lds	r24, 0x017C
+     f86:	8c 0d       	add	r24, r12
+     f88:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     f8c:	80 91 4b 01 	lds	r24, 0x014B
+     f90:	6c 2f       	mov	r22, r28
+     f92:	68 0f       	add	r22, r24
+     f94:	80 91 7c 01 	lds	r24, 0x017C
+     f98:	8c 19       	sub	r24, r12
+     f9a:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     f9e:	60 91 4b 01 	lds	r22, 0x014B
+     fa2:	6c 1b       	sub	r22, r28
+     fa4:	80 91 7c 01 	lds	r24, 0x017C
+     fa8:	8c 19       	sub	r24, r12
+     faa:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     fae:	80 91 4b 01 	lds	r24, 0x014B
+     fb2:	6c 2d       	mov	r22, r12
+     fb4:	68 0f       	add	r22, r24
+     fb6:	8c 0f       	add	r24, r28
+     fb8:	8b 19       	sub	r24, r11
+     fba:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     fbe:	80 91 4b 01 	lds	r24, 0x014B
+     fc2:	68 2f       	mov	r22, r24
+     fc4:	6c 19       	sub	r22, r12
+     fc6:	8c 0f       	add	r24, r28
+     fc8:	8b 19       	sub	r24, r11
+     fca:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     fce:	80 91 4b 01 	lds	r24, 0x014B
+     fd2:	6c 2d       	mov	r22, r12
+     fd4:	68 0f       	add	r22, r24
+     fd6:	8c 1b       	sub	r24, r28
+     fd8:	8b 19       	sub	r24, r11
+     fda:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     fde:	80 91 4b 01 	lds	r24, 0x014B
+     fe2:	68 2f       	mov	r22, r24
+     fe4:	6c 19       	sub	r22, r12
+     fe6:	8c 1b       	sub	r24, r28
+     fe8:	8b 19       	sub	r24, r11
+     fea:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+     fee:	ff 20       	and	r15, r15
+     ff0:	34 f4       	brge	.+12     	; 0xffe <SchedulerBasicP__TaskBasic__runTask+0x68a>
+     ff2:	c7 01       	movw	r24, r14
+     ff4:	06 96       	adiw	r24, 0x06	; 6
+     ff6:	74 01       	movw	r14, r8
+     ff8:	e8 0e       	add	r14, r24
+     ffa:	f9 1e       	adc	r15, r25
+     ffc:	0e c0       	rjmp	.+28     	; 0x101a <SchedulerBasicP__TaskBasic__runTask+0x6a6>
+     ffe:	c6 01       	movw	r24, r12
+    1000:	8c 1b       	sub	r24, r28
+    1002:	9d 0b       	sbc	r25, r29
+    1004:	88 0f       	add	r24, r24
+    1006:	99 1f       	adc	r25, r25
+    1008:	88 0f       	add	r24, r24
+    100a:	99 1f       	adc	r25, r25
+    100c:	97 01       	movw	r18, r14
+    100e:	26 5f       	subi	r18, 0xF6	; 246
+    1010:	3f 4f       	sbci	r19, 0xFF	; 255
+    1012:	7c 01       	movw	r14, r24
+    1014:	e2 0e       	add	r14, r18
+    1016:	f3 1e       	adc	r15, r19
+    1018:	21 97       	sbiw	r28, 0x01	; 1
+    101a:	08 94       	sec
+    101c:	c1 1c       	adc	r12, r1
+    101e:	d1 1c       	adc	r13, r1
+    1020:	84 e0       	ldi	r24, 0x04	; 4
+    1022:	90 e0       	ldi	r25, 0x00	; 0
+    1024:	88 0e       	add	r8, r24
+    1026:	99 1e       	adc	r9, r25
+    1028:	cc 15       	cp	r28, r12
+    102a:	dd 05       	cpc	r29, r13
+    102c:	0c f0       	brlt	.+2      	; 0x1030 <SchedulerBasicP__TaskBasic__runTask+0x6bc>
+    102e:	9d cf       	rjmp	.-198    	; 0xf6a <SchedulerBasicP__TaskBasic__runTask+0x5f6>
+    1030:	80 91 36 01 	lds	r24, 0x0136
+    1034:	8d 7f       	andi	r24, 0xFD	; 253
+    1036:	80 93 36 01 	sts	0x0136, r24
+    103a:	ad c3       	rjmp	.+1882   	; 0x1796 <__stack+0x697>
+    103c:	60 91 4c 01 	lds	r22, 0x014C
+    1040:	66 95       	lsr	r22
+    1042:	66 95       	lsr	r22
+    1044:	66 95       	lsr	r22
+    1046:	8f 2d       	mov	r24, r15
+    1048:	80 0f       	add	r24, r16
+    104a:	90 91 7d 01 	lds	r25, 0x017D
+    104e:	89 0f       	add	r24, r25
+    1050:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+    1054:	e0 91 66 01 	lds	r30, 0x0166
+    1058:	f0 91 67 01 	lds	r31, 0x0167
+    105c:	e0 81       	ld	r30, Z
+    105e:	85 e0       	ldi	r24, 0x05	; 5
+    1060:	e8 02       	muls	r30, r24
+    1062:	f0 01       	movw	r30, r0
+    1064:	11 24       	eor	r1, r1
+    1066:	e0 0f       	add	r30, r16
+    1068:	f1 1f       	adc	r31, r17
+    106a:	ee 50       	subi	r30, 0x0E	; 14
+    106c:	f0 40       	sbci	r31, 0x00	; 0
+    106e:	c8 95       	lpm
+    1070:	e0 2d       	mov	r30, r0
+    1072:	6e 2f       	mov	r22, r30
+    1074:	81 e0       	ldi	r24, 0x01	; 1
+    1076:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    107a:	0f 5f       	subi	r16, 0xFF	; 255
+    107c:	1f 4f       	sbci	r17, 0xFF	; 255
+    107e:	05 30       	cpi	r16, 0x05	; 5
+    1080:	11 05       	cpc	r17, r1
+    1082:	e1 f6       	brne	.-72     	; 0x103c <SchedulerBasicP__TaskBasic__runTask+0x6c8>
+    1084:	8f 2d       	mov	r24, r15
+    1086:	8b 5f       	subi	r24, 0xFB	; 251
+    1088:	90 91 7d 01 	lds	r25, 0x017D
+    108c:	60 91 4c 01 	lds	r22, 0x014C
+    1090:	89 0f       	add	r24, r25
+    1092:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+    1096:	60 e0       	ldi	r22, 0x00	; 0
+    1098:	81 e0       	ldi	r24, 0x01	; 1
+    109a:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    109e:	e0 91 66 01 	lds	r30, 0x0166
+    10a2:	f0 91 67 01 	lds	r31, 0x0167
+    10a6:	cf 01       	movw	r24, r30
+    10a8:	01 96       	adiw	r24, 0x01	; 1
+    10aa:	90 93 67 01 	sts	0x0167, r25
+    10ae:	80 93 66 01 	sts	0x0166, r24
+    10b2:	81 81       	ldd	r24, Z+1	; 0x01
+    10b4:	88 23       	and	r24, r24
+    10b6:	19 f0       	breq	.+6      	; 0x10be <SchedulerBasicP__TaskBasic__runTask+0x74a>
+    10b8:	96 e0       	ldi	r25, 0x06	; 6
+    10ba:	f9 0e       	add	r15, r25
+    10bc:	63 c3       	rjmp	.+1734   	; 0x1784 <__stack+0x685>
+		signal GLCD.rectangleWritten();
+	}
+
+	event void LCD128x64.lineWritten(void)
+	{
+		stateGLCD = stateGLCD & ~(BUSY_LINE);
+		signal GLCD.lineWritten();
+	}
+
+	event void LCD128x64.barWritten(void)
+	{
+		stateGLCD = stateGLCD & ~(BUSY_BAR);
+		signal GLCD.barWritten();
+	}
+
+	/*
+		2 cases when this signal occurs:
+			1. user requested LCD128x64.startWriteString() --> report to upper instance GLCD
+			2. signal comes from calibration-statusstrings --> ignore this signal
+	*/
+	event void LCD128x64.stringWritten(void)
+	{
+		stateGLCD = stateGLCD & ~(BUSY_STRING);
+    10be:	80 91 36 01 	lds	r24, 0x0136
+    10c2:	8e 7f       	andi	r24, 0xFE	; 254
+    10c4:	80 93 36 01 	sts	0x0136, r24
+		if((stateGLCD == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (stateGLCD == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
+    10c8:	80 91 36 01 	lds	r24, 0x0136
+    10cc:	81 30       	cpi	r24, 0x01	; 1
+    10ce:	09 f4       	brne	.+2      	; 0x10d2 <SchedulerBasicP__TaskBasic__runTask+0x75e>
+    10d0:	62 c3       	rjmp	.+1732   	; 0x1796 <__stack+0x697>
+    10d2:	80 91 36 01 	lds	r24, 0x0136
+    10d6:	5f c3       	rjmp	.+1726   	; 0x1796 <__stack+0x697>
+    10d8:	10 92 78 01 	sts	0x0178, r1
+    10dc:	10 92 31 01 	sts	0x0131, r1
+    10e0:	80 e0       	ldi	r24, 0x00	; 0
+    10e2:	60 91 78 01 	lds	r22, 0x0178
+    10e6:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+    10ea:	60 91 30 01 	lds	r22, 0x0130
+    10ee:	81 e0       	ldi	r24, 0x01	; 1
+    10f0:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    10f4:	80 91 31 01 	lds	r24, 0x0131
+    10f8:	8f 5f       	subi	r24, 0xFF	; 255
+    10fa:	80 93 31 01 	sts	0x0131, r24
+    10fe:	88 23       	and	r24, r24
+    1100:	84 f7       	brge	.-32     	; 0x10e2 <SchedulerBasicP__TaskBasic__runTask+0x76e>
+    1102:	80 91 78 01 	lds	r24, 0x0178
+    1106:	8f 5f       	subi	r24, 0xFF	; 255
+    1108:	80 93 78 01 	sts	0x0178, r24
+    110c:	88 30       	cpi	r24, 0x08	; 8
+    110e:	30 f3       	brcs	.-52     	; 0x10dc <SchedulerBasicP__TaskBasic__runTask+0x768>
+		{
+			// ignore this signal - doesnt belong to user-application!
+		}
+		else
+		{
+			signal GLCD.stringWritten();
+		}
+	}
+	
+	/*
+		same as LCD128x64.stringWritten
+	*/
+	event void LCD128x64.screenCleared(void)
+	{
+		stateGLCD = stateGLCD & ~(BUSY_CLEAR);
+    1110:	80 91 36 01 	lds	r24, 0x0136
+    1114:	8f 7e       	andi	r24, 0xEF	; 239
+    1116:	80 93 36 01 	sts	0x0136, r24
+		if((stateGLCD == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM) || (stateGLCD == CALIBRATION_IN_PROGRESS_RIGHT_TOP))
+    111a:	80 91 36 01 	lds	r24, 0x0136
+    111e:	81 30       	cpi	r24, 0x01	; 1
+    1120:	09 f4       	brne	.+2      	; 0x1124 <__stack+0x25>
+    1122:	39 c3       	rjmp	.+1650   	; 0x1796 <__stack+0x697>
+    1124:	80 91 36 01 	lds	r24, 0x0136
+    1128:	82 30       	cpi	r24, 0x02	; 2
+    112a:	09 f4       	brne	.+2      	; 0x112e <__stack+0x2f>
+    112c:	34 c3       	rjmp	.+1640   	; 0x1796 <__stack+0x697>
+		{
+			// ignore this signal - doesnt belong to user-application!
+		}
+		else
+		{
+			stateGLCD = stateGLCD & ~(BUSY_CLEAR);
+    112e:	80 91 36 01 	lds	r24, 0x0136
+    1132:	8f 7e       	andi	r24, 0xEF	; 239
+    1134:	80 93 36 01 	sts	0x0136, r24
+    1138:	2e c3       	rjmp	.+1628   	; 0x1796 <__stack+0x697>
+    113a:	a0 90 64 01 	lds	r10, 0x0164
+    113e:	d0 90 7e 01 	lds	r13, 0x017E
+    1142:	8a 2d       	mov	r24, r10
+    1144:	8d 19       	sub	r24, r13
+    1146:	80 93 3a 01 	sts	0x013A, r24
+    114a:	c0 90 4d 01 	lds	r12, 0x014D
+    114e:	b0 90 48 01 	lds	r11, 0x0148
+    1152:	cb 14       	cp	r12, r11
+    1154:	58 f0       	brcs	.+22     	; 0x116c <__stack+0x6d>
+    1156:	0f 2e       	mov	r0, r31
+    1158:	f0 e0       	ldi	r31, 0x00	; 0
+    115a:	4f 2e       	mov	r4, r31
+    115c:	f0 e0       	ldi	r31, 0x00	; 0
+    115e:	5f 2e       	mov	r5, r31
+    1160:	f0 e0       	ldi	r31, 0x00	; 0
+    1162:	6f 2e       	mov	r6, r31
+    1164:	f0 e0       	ldi	r31, 0x00	; 0
+    1166:	7f 2e       	mov	r7, r31
+    1168:	f0 2d       	mov	r31, r0
+    116a:	25 c0       	rjmp	.+74     	; 0x11b6 <__stack+0xb7>
+    116c:	6b 2d       	mov	r22, r11
+    116e:	77 27       	eor	r23, r23
+    1170:	6c 19       	sub	r22, r12
+    1172:	71 09       	sbc	r23, r1
+    1174:	88 27       	eor	r24, r24
+    1176:	77 fd       	sbrc	r23, 7
+    1178:	80 95       	com	r24
+    117a:	98 2f       	mov	r25, r24
+    117c:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    1180:	7b 01       	movw	r14, r22
+    1182:	8c 01       	movw	r16, r24
+    1184:	6a 2d       	mov	r22, r10
+    1186:	77 27       	eor	r23, r23
+    1188:	6d 19       	sub	r22, r13
+    118a:	71 09       	sbc	r23, r1
+    118c:	88 27       	eor	r24, r24
+    118e:	77 fd       	sbrc	r23, 7
+    1190:	80 95       	com	r24
+    1192:	98 2f       	mov	r25, r24
+    1194:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    1198:	9b 01       	movw	r18, r22
+    119a:	ac 01       	movw	r20, r24
+    119c:	c8 01       	movw	r24, r16
+    119e:	b7 01       	movw	r22, r14
+    11a0:	0e 94 1d 0e 	call	0x1c3a	; 0x1c3a <__divsf3>
+    11a4:	2b 01       	movw	r4, r22
+    11a6:	3c 01       	movw	r6, r24
+    11a8:	82 e0       	ldi	r24, 0x02	; 2
+    11aa:	80 93 3b 01 	sts	0x013B, r24
+    11ae:	8b 2d       	mov	r24, r11
+    11b0:	8c 19       	sub	r24, r12
+    11b2:	80 93 39 01 	sts	0x0139, r24
+    11b6:	bc 14       	cp	r11, r12
+    11b8:	e8 f5       	brcc	.+122    	; 0x1234 <__stack+0x135>
+    11ba:	6c 2d       	mov	r22, r12
+    11bc:	77 27       	eor	r23, r23
+    11be:	6b 19       	sub	r22, r11
+    11c0:	71 09       	sbc	r23, r1
+    11c2:	88 27       	eor	r24, r24
+    11c4:	77 fd       	sbrc	r23, 7
+    11c6:	80 95       	com	r24
+    11c8:	98 2f       	mov	r25, r24
+    11ca:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    11ce:	3b 01       	movw	r6, r22
+    11d0:	4c 01       	movw	r8, r24
+    11d2:	6a 2d       	mov	r22, r10
+    11d4:	77 27       	eor	r23, r23
+    11d6:	67 fd       	sbrc	r22, 7
+    11d8:	70 95       	com	r23
+    11da:	87 2f       	mov	r24, r23
+    11dc:	97 2f       	mov	r25, r23
+    11de:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    11e2:	7b 01       	movw	r14, r22
+    11e4:	8c 01       	movw	r16, r24
+    11e6:	aa 20       	and	r10, r10
+    11e8:	44 f4       	brge	.+16     	; 0x11fa <__stack+0xfb>
+    11ea:	20 e0       	ldi	r18, 0x00	; 0
+    11ec:	30 e0       	ldi	r19, 0x00	; 0
+    11ee:	40 e8       	ldi	r20, 0x80	; 128
+    11f0:	53 e4       	ldi	r21, 0x43	; 67
+    11f2:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    11f6:	7b 01       	movw	r14, r22
+    11f8:	8c 01       	movw	r16, r24
+    11fa:	6d 2d       	mov	r22, r13
+    11fc:	77 27       	eor	r23, r23
+    11fe:	88 27       	eor	r24, r24
+    1200:	77 fd       	sbrc	r23, 7
+    1202:	80 95       	com	r24
+    1204:	98 2f       	mov	r25, r24
+    1206:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    120a:	9b 01       	movw	r18, r22
+    120c:	ac 01       	movw	r20, r24
+    120e:	c8 01       	movw	r24, r16
+    1210:	b7 01       	movw	r22, r14
+    1212:	0e 94 da 0d 	call	0x1bb4	; 0x1bb4 <__subsf3>
+    1216:	9b 01       	movw	r18, r22
+    1218:	ac 01       	movw	r20, r24
+    121a:	c4 01       	movw	r24, r8
+    121c:	b3 01       	movw	r22, r6
+    121e:	0e 94 1d 0e 	call	0x1c3a	; 0x1c3a <__divsf3>
+    1222:	2b 01       	movw	r4, r22
+    1224:	3c 01       	movw	r6, r24
+    1226:	81 e0       	ldi	r24, 0x01	; 1
+    1228:	80 93 3b 01 	sts	0x013B, r24
+    122c:	8c 2d       	mov	r24, r12
+    122e:	8b 19       	sub	r24, r11
+    1230:	80 93 39 01 	sts	0x0139, r24
+    1234:	90 91 39 01 	lds	r25, 0x0139
+    1238:	80 91 3a 01 	lds	r24, 0x013A
+    123c:	89 17       	cp	r24, r25
+    123e:	48 f4       	brcc	.+18     	; 0x1252 <__stack+0x153>
+    1240:	80 91 39 01 	lds	r24, 0x0139
+    1244:	60 91 3a 01 	lds	r22, 0x013A
+    1248:	0e 94 42 0f 	call	0x1e84	; 0x1e84 <__udivmodqi4>
+    124c:	80 93 38 01 	sts	0x0138, r24
+    1250:	02 c0       	rjmp	.+4      	; 0x1256 <__stack+0x157>
+    1252:	10 92 38 01 	sts	0x0138, r1
+    1256:	cb 14       	cp	r12, r11
+    1258:	61 f4       	brne	.+24     	; 0x1272 <__stack+0x173>
+    125a:	10 92 3b 01 	sts	0x013B, r1
+    125e:	0f 2e       	mov	r0, r31
+    1260:	f0 e0       	ldi	r31, 0x00	; 0
+    1262:	4f 2e       	mov	r4, r31
+    1264:	f0 e0       	ldi	r31, 0x00	; 0
+    1266:	5f 2e       	mov	r5, r31
+    1268:	f0 e0       	ldi	r31, 0x00	; 0
+    126a:	6f 2e       	mov	r6, r31
+    126c:	f0 e0       	ldi	r31, 0x00	; 0
+    126e:	7f 2e       	mov	r7, r31
+    1270:	f0 2d       	mov	r31, r0
+    1272:	ad 14       	cp	r10, r13
+    1274:	41 f5       	brne	.+80     	; 0x12c6 <__stack+0x1c7>
+    1276:	10 92 3c 01 	sts	0x013C, r1
+    127a:	20 91 3c 01 	lds	r18, 0x013C
+    127e:	33 27       	eor	r19, r19
+    1280:	8b 2d       	mov	r24, r11
+    1282:	99 27       	eor	r25, r25
+    1284:	8c 19       	sub	r24, r12
+    1286:	91 09       	sbc	r25, r1
+    1288:	28 17       	cp	r18, r24
+    128a:	39 07       	cpc	r19, r25
+    128c:	0c f0       	brlt	.+2      	; 0x1290 <__stack+0x191>
+    128e:	48 c1       	rjmp	.+656    	; 0x1520 <__stack+0x421>
+    1290:	60 91 3c 01 	lds	r22, 0x013C
+    1294:	6c 0d       	add	r22, r12
+    1296:	80 91 7e 01 	lds	r24, 0x017E
+    129a:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+    129e:	80 91 3c 01 	lds	r24, 0x013C
+    12a2:	8f 5f       	subi	r24, 0xFF	; 255
+    12a4:	80 93 3c 01 	sts	0x013C, r24
+    12a8:	20 91 3c 01 	lds	r18, 0x013C
+    12ac:	c0 90 4d 01 	lds	r12, 0x014D
+    12b0:	33 27       	eor	r19, r19
+    12b2:	80 91 48 01 	lds	r24, 0x0148
+    12b6:	99 27       	eor	r25, r25
+    12b8:	8c 19       	sub	r24, r12
+    12ba:	91 09       	sbc	r25, r1
+    12bc:	28 17       	cp	r18, r24
+    12be:	39 07       	cpc	r19, r25
+    12c0:	0c f0       	brlt	.+2      	; 0x12c4 <__stack+0x1c5>
+    12c2:	2e c1       	rjmp	.+604    	; 0x1520 <__stack+0x421>
+    12c4:	e5 cf       	rjmp	.-54     	; 0x1290 <__stack+0x191>
+    12c6:	10 92 3c 01 	sts	0x013C, r1
+    12ca:	20 91 3c 01 	lds	r18, 0x013C
+    12ce:	33 27       	eor	r19, r19
+    12d0:	8a 2d       	mov	r24, r10
+    12d2:	99 27       	eor	r25, r25
+    12d4:	8d 19       	sub	r24, r13
+    12d6:	91 09       	sbc	r25, r1
+    12d8:	82 17       	cp	r24, r18
+    12da:	93 07       	cpc	r25, r19
+    12dc:	0c f4       	brge	.+2      	; 0x12e0 <__stack+0x1e1>
+    12de:	20 c1       	rjmp	.+576    	; 0x1520 <__stack+0x421>
+    12e0:	80 91 3b 01 	lds	r24, 0x013B
+    12e4:	81 30       	cpi	r24, 0x01	; 1
+    12e6:	09 f0       	breq	.+2      	; 0x12ea <__stack+0x1eb>
+    12e8:	9e c0       	rjmp	.+316    	; 0x1426 <__stack+0x327>
+    12ea:	10 92 37 01 	sts	0x0137, r1
+    12ee:	90 91 37 01 	lds	r25, 0x0137
+    12f2:	80 91 38 01 	lds	r24, 0x0138
+    12f6:	89 17       	cp	r24, r25
+    12f8:	08 f4       	brcc	.+2      	; 0x12fc <__stack+0x1fd>
+    12fa:	ff c0       	rjmp	.+510    	; 0x14fa <__stack+0x3fb>
+    12fc:	60 91 4d 01 	lds	r22, 0x014D
+    1300:	77 27       	eor	r23, r23
+    1302:	88 27       	eor	r24, r24
+    1304:	77 fd       	sbrc	r23, 7
+    1306:	80 95       	com	r24
+    1308:	98 2f       	mov	r25, r24
+    130a:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    130e:	5b 01       	movw	r10, r22
+    1310:	6c 01       	movw	r12, r24
+    1312:	10 91 3c 01 	lds	r17, 0x013C
+    1316:	90 90 37 01 	lds	r9, 0x0137
+    131a:	61 2f       	mov	r22, r17
+    131c:	77 27       	eor	r23, r23
+    131e:	67 fd       	sbrc	r22, 7
+    1320:	70 95       	com	r23
+    1322:	87 2f       	mov	r24, r23
+    1324:	97 2f       	mov	r25, r23
+    1326:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    132a:	11 23       	and	r17, r17
+    132c:	34 f4       	brge	.+12     	; 0x133a <__stack+0x23b>
+    132e:	20 e0       	ldi	r18, 0x00	; 0
+    1330:	30 e0       	ldi	r19, 0x00	; 0
+    1332:	40 e8       	ldi	r20, 0x80	; 128
+    1334:	53 e4       	ldi	r21, 0x43	; 67
+    1336:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    133a:	9b 01       	movw	r18, r22
+    133c:	ac 01       	movw	r20, r24
+    133e:	c3 01       	movw	r24, r6
+    1340:	b2 01       	movw	r22, r4
+    1342:	0e 94 fa 0e 	call	0x1df4	; 0x1df4 <__mulsf3>
+    1346:	9b 01       	movw	r18, r22
+    1348:	ac 01       	movw	r20, r24
+    134a:	c6 01       	movw	r24, r12
+    134c:	b5 01       	movw	r22, r10
+    134e:	0e 94 da 0d 	call	0x1bb4	; 0x1bb4 <__subsf3>
+    1352:	7b 01       	movw	r14, r22
+    1354:	8c 01       	movw	r16, r24
+    1356:	69 2d       	mov	r22, r9
+    1358:	77 27       	eor	r23, r23
+    135a:	88 27       	eor	r24, r24
+    135c:	77 fd       	sbrc	r23, 7
+    135e:	80 95       	com	r24
+    1360:	98 2f       	mov	r25, r24
+    1362:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    1366:	9b 01       	movw	r18, r22
+    1368:	ac 01       	movw	r20, r24
+    136a:	c8 01       	movw	r24, r16
+    136c:	b7 01       	movw	r22, r14
+    136e:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    1372:	7b 01       	movw	r14, r22
+    1374:	8c 01       	movw	r16, r24
+    1376:	60 91 48 01 	lds	r22, 0x0148
+    137a:	77 27       	eor	r23, r23
+    137c:	88 27       	eor	r24, r24
+    137e:	77 fd       	sbrc	r23, 7
+    1380:	80 95       	com	r24
+    1382:	98 2f       	mov	r25, r24
+    1384:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    1388:	9b 01       	movw	r18, r22
+    138a:	ac 01       	movw	r20, r24
+    138c:	c8 01       	movw	r24, r16
+    138e:	b7 01       	movw	r22, r14
+    1390:	0e 94 8d 0e 	call	0x1d1a	; 0x1d1a <__gesf2>
+    1394:	88 23       	and	r24, r24
+    1396:	d4 f1       	brlt	.+116    	; 0x140c <__stack+0x30d>
+    1398:	10 91 3c 01 	lds	r17, 0x013C
+    139c:	90 90 37 01 	lds	r9, 0x0137
+    13a0:	80 90 3c 01 	lds	r8, 0x013C
+    13a4:	61 2f       	mov	r22, r17
+    13a6:	77 27       	eor	r23, r23
+    13a8:	67 fd       	sbrc	r22, 7
+    13aa:	70 95       	com	r23
+    13ac:	87 2f       	mov	r24, r23
+    13ae:	97 2f       	mov	r25, r23
+    13b0:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    13b4:	11 23       	and	r17, r17
+    13b6:	34 f4       	brge	.+12     	; 0x13c4 <__stack+0x2c5>
+    13b8:	20 e0       	ldi	r18, 0x00	; 0
+    13ba:	30 e0       	ldi	r19, 0x00	; 0
+    13bc:	40 e8       	ldi	r20, 0x80	; 128
+    13be:	53 e4       	ldi	r21, 0x43	; 67
+    13c0:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    13c4:	9b 01       	movw	r18, r22
+    13c6:	ac 01       	movw	r20, r24
+    13c8:	c3 01       	movw	r24, r6
+    13ca:	b2 01       	movw	r22, r4
+    13cc:	0e 94 fa 0e 	call	0x1df4	; 0x1df4 <__mulsf3>
+    13d0:	9b 01       	movw	r18, r22
+    13d2:	ac 01       	movw	r20, r24
+    13d4:	c6 01       	movw	r24, r12
+    13d6:	b5 01       	movw	r22, r10
+    13d8:	0e 94 da 0d 	call	0x1bb4	; 0x1bb4 <__subsf3>
+    13dc:	7b 01       	movw	r14, r22
+    13de:	8c 01       	movw	r16, r24
+    13e0:	69 2d       	mov	r22, r9
+    13e2:	77 27       	eor	r23, r23
+    13e4:	88 27       	eor	r24, r24
+    13e6:	77 fd       	sbrc	r23, 7
+    13e8:	80 95       	com	r24
+    13ea:	98 2f       	mov	r25, r24
+    13ec:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    13f0:	9b 01       	movw	r18, r22
+    13f2:	ac 01       	movw	r20, r24
+    13f4:	c8 01       	movw	r24, r16
+    13f6:	b7 01       	movw	r22, r14
+    13f8:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    13fc:	0e 94 63 0e 	call	0x1cc6	; 0x1cc6 <__fixsfsi>
+    1400:	20 91 7e 01 	lds	r18, 0x017E
+    1404:	88 2d       	mov	r24, r8
+    1406:	82 0f       	add	r24, r18
+    1408:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+    140c:	80 91 37 01 	lds	r24, 0x0137
+    1410:	8f 5f       	subi	r24, 0xFF	; 255
+    1412:	80 93 37 01 	sts	0x0137, r24
+    1416:	90 91 37 01 	lds	r25, 0x0137
+    141a:	80 91 38 01 	lds	r24, 0x0138
+    141e:	89 17       	cp	r24, r25
+    1420:	08 f4       	brcc	.+2      	; 0x1424 <__stack+0x325>
+    1422:	6b c0       	rjmp	.+214    	; 0x14fa <__stack+0x3fb>
+    1424:	6b cf       	rjmp	.-298    	; 0x12fc <__stack+0x1fd>
+    1426:	80 91 3b 01 	lds	r24, 0x013B
+    142a:	82 30       	cpi	r24, 0x02	; 2
+    142c:	09 f0       	breq	.+2      	; 0x1430 <__stack+0x331>
+    142e:	5a c0       	rjmp	.+180    	; 0x14e4 <__stack+0x3e5>
+    1430:	10 92 37 01 	sts	0x0137, r1
+    1434:	90 91 37 01 	lds	r25, 0x0137
+    1438:	80 91 38 01 	lds	r24, 0x0138
+    143c:	89 17       	cp	r24, r25
+    143e:	08 f4       	brcc	.+2      	; 0x1442 <__stack+0x343>
+    1440:	5c c0       	rjmp	.+184    	; 0x14fa <__stack+0x3fb>
+    1442:	10 91 3c 01 	lds	r17, 0x013C
+    1446:	b0 90 37 01 	lds	r11, 0x0137
+    144a:	a0 90 3c 01 	lds	r10, 0x013C
+    144e:	60 91 4d 01 	lds	r22, 0x014D
+    1452:	77 27       	eor	r23, r23
+    1454:	88 27       	eor	r24, r24
+    1456:	77 fd       	sbrc	r23, 7
+    1458:	80 95       	com	r24
+    145a:	98 2f       	mov	r25, r24
+    145c:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    1460:	6b 01       	movw	r12, r22
+    1462:	7c 01       	movw	r14, r24
+    1464:	61 2f       	mov	r22, r17
+    1466:	77 27       	eor	r23, r23
+    1468:	67 fd       	sbrc	r22, 7
+    146a:	70 95       	com	r23
+    146c:	87 2f       	mov	r24, r23
+    146e:	97 2f       	mov	r25, r23
+    1470:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    1474:	11 23       	and	r17, r17
+    1476:	34 f4       	brge	.+12     	; 0x1484 <__stack+0x385>
+    1478:	20 e0       	ldi	r18, 0x00	; 0
+    147a:	30 e0       	ldi	r19, 0x00	; 0
+    147c:	40 e8       	ldi	r20, 0x80	; 128
+    147e:	53 e4       	ldi	r21, 0x43	; 67
+    1480:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    1484:	9b 01       	movw	r18, r22
+    1486:	ac 01       	movw	r20, r24
+    1488:	c3 01       	movw	r24, r6
+    148a:	b2 01       	movw	r22, r4
+    148c:	0e 94 fa 0e 	call	0x1df4	; 0x1df4 <__mulsf3>
+    1490:	9b 01       	movw	r18, r22
+    1492:	ac 01       	movw	r20, r24
+    1494:	c7 01       	movw	r24, r14
+    1496:	b6 01       	movw	r22, r12
+    1498:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    149c:	7b 01       	movw	r14, r22
+    149e:	8c 01       	movw	r16, r24
+    14a0:	6b 2d       	mov	r22, r11
+    14a2:	77 27       	eor	r23, r23
+    14a4:	88 27       	eor	r24, r24
+    14a6:	77 fd       	sbrc	r23, 7
+    14a8:	80 95       	com	r24
+    14aa:	98 2f       	mov	r25, r24
+    14ac:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <__floatsisf>
+    14b0:	9b 01       	movw	r18, r22
+    14b2:	ac 01       	movw	r20, r24
+    14b4:	c8 01       	movw	r24, r16
+    14b6:	b7 01       	movw	r22, r14
+    14b8:	0e 94 db 0d 	call	0x1bb6	; 0x1bb6 <__addsf3>
+    14bc:	0e 94 63 0e 	call	0x1cc6	; 0x1cc6 <__fixsfsi>
+    14c0:	20 91 7e 01 	lds	r18, 0x017E
+    14c4:	8a 2d       	mov	r24, r10
+    14c6:	82 0f       	add	r24, r18
+    14c8:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+    14cc:	80 91 37 01 	lds	r24, 0x0137
+    14d0:	8f 5f       	subi	r24, 0xFF	; 255
+    14d2:	80 93 37 01 	sts	0x0137, r24
+    14d6:	90 91 37 01 	lds	r25, 0x0137
+    14da:	80 91 38 01 	lds	r24, 0x0138
+    14de:	89 17       	cp	r24, r25
+    14e0:	60 f0       	brcs	.+24     	; 0x14fa <__stack+0x3fb>
+    14e2:	af cf       	rjmp	.-162    	; 0x1442 <__stack+0x343>
+    14e4:	80 91 3b 01 	lds	r24, 0x013B
+    14e8:	88 23       	and	r24, r24
+    14ea:	39 f4       	brne	.+14     	; 0x14fa <__stack+0x3fb>
+    14ec:	80 91 3c 01 	lds	r24, 0x013C
+    14f0:	60 91 4d 01 	lds	r22, 0x014D
+    14f4:	8d 0d       	add	r24, r13
+    14f6:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+    14fa:	80 91 3c 01 	lds	r24, 0x013C
+    14fe:	8f 5f       	subi	r24, 0xFF	; 255
+    1500:	80 93 3c 01 	sts	0x013C, r24
+    1504:	20 91 3c 01 	lds	r18, 0x013C
+    1508:	d0 90 7e 01 	lds	r13, 0x017E
+    150c:	33 27       	eor	r19, r19
+    150e:	80 91 64 01 	lds	r24, 0x0164
+    1512:	99 27       	eor	r25, r25
+    1514:	8d 19       	sub	r24, r13
+    1516:	91 09       	sbc	r25, r1
+    1518:	82 17       	cp	r24, r18
+    151a:	93 07       	cpc	r25, r19
+    151c:	0c f0       	brlt	.+2      	; 0x1520 <__stack+0x421>
+    151e:	e0 ce       	rjmp	.-576    	; 0x12e0 <__stack+0x1e1>
+    1520:	80 91 36 01 	lds	r24, 0x0136
+    1524:	87 7f       	andi	r24, 0xF7	; 247
+    1526:	80 93 36 01 	sts	0x0136, r24
+    152a:	35 c1       	rjmp	.+618    	; 0x1796 <__stack+0x697>
+    152c:	10 92 40 01 	sts	0x0140, r1
+    1530:	90 91 40 01 	lds	r25, 0x0140
+    1534:	80 91 47 01 	lds	r24, 0x0147
+    1538:	98 17       	cp	r25, r24
+    153a:	08 f0       	brcs	.+2      	; 0x153e <__stack+0x43f>
+    153c:	ab c0       	rjmp	.+342    	; 0x1694 <__stack+0x595>
+    153e:	80 91 4e 01 	lds	r24, 0x014E
+    1542:	99 27       	eor	r25, r25
+    1544:	87 70       	andi	r24, 0x07	; 7
+    1546:	90 70       	andi	r25, 0x00	; 0
+    1548:	89 2b       	or	r24, r25
+    154a:	a1 f5       	brne	.+104    	; 0x15b4 <__stack+0x4b5>
+    154c:	20 91 60 01 	lds	r18, 0x0160
+    1550:	82 2f       	mov	r24, r18
+    1552:	99 27       	eor	r25, r25
+    1554:	87 70       	andi	r24, 0x07	; 7
+    1556:	90 70       	andi	r25, 0x00	; 0
+    1558:	89 2b       	or	r24, r25
+    155a:	61 f5       	brne	.+88     	; 0x15b4 <__stack+0x4b5>
+    155c:	82 2f       	mov	r24, r18
+    155e:	86 95       	lsr	r24
+    1560:	86 95       	lsr	r24
+    1562:	86 95       	lsr	r24
+    1564:	80 93 3e 01 	sts	0x013E, r24
+    1568:	10 92 3f 01 	sts	0x013F, r1
+    156c:	90 91 3f 01 	lds	r25, 0x013F
+    1570:	80 91 3e 01 	lds	r24, 0x013E
+    1574:	98 17       	cp	r25, r24
+    1576:	f0 f4       	brcc	.+60     	; 0x15b4 <__stack+0x4b5>
+    1578:	90 91 3f 01 	lds	r25, 0x013F
+    157c:	80 91 40 01 	lds	r24, 0x0140
+    1580:	60 91 4e 01 	lds	r22, 0x014E
+    1584:	66 95       	lsr	r22
+    1586:	66 95       	lsr	r22
+    1588:	66 95       	lsr	r22
+    158a:	69 0f       	add	r22, r25
+    158c:	90 91 7f 01 	lds	r25, 0x017F
+    1590:	89 0f       	add	r24, r25
+    1592:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+    1596:	6f ef       	ldi	r22, 0xFF	; 255
+    1598:	81 e0       	ldi	r24, 0x01	; 1
+    159a:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    159e:	80 91 3f 01 	lds	r24, 0x013F
+    15a2:	8f 5f       	subi	r24, 0xFF	; 255
+    15a4:	80 93 3f 01 	sts	0x013F, r24
+    15a8:	90 91 3f 01 	lds	r25, 0x013F
+    15ac:	80 91 3e 01 	lds	r24, 0x013E
+    15b0:	98 17       	cp	r25, r24
+    15b2:	10 f3       	brcs	.-60     	; 0x1578 <__stack+0x479>
+    15b4:	20 91 60 01 	lds	r18, 0x0160
+    15b8:	28 30       	cpi	r18, 0x08	; 8
+    15ba:	08 f0       	brcs	.+2      	; 0x15be <__stack+0x4bf>
+    15bc:	42 c0       	rjmp	.+132    	; 0x1642 <__stack+0x543>
+    15be:	60 91 4e 01 	lds	r22, 0x014E
+    15c2:	86 2f       	mov	r24, r22
+    15c4:	99 27       	eor	r25, r25
+    15c6:	87 70       	andi	r24, 0x07	; 7
+    15c8:	90 70       	andi	r25, 0x00	; 0
+    15ca:	89 2b       	or	r24, r25
+    15cc:	d1 f5       	brne	.+116    	; 0x1642 <__stack+0x543>
+    15ce:	80 91 3e 01 	lds	r24, 0x013E
+    15d2:	88 23       	and	r24, r24
+    15d4:	31 f5       	brne	.+76     	; 0x1622 <__stack+0x523>
+    15d6:	82 2f       	mov	r24, r18
+    15d8:	87 70       	andi	r24, 0x07	; 7
+    15da:	80 93 3e 01 	sts	0x013E, r24
+    15de:	10 92 3f 01 	sts	0x013F, r1
+    15e2:	90 91 3f 01 	lds	r25, 0x013F
+    15e6:	80 91 3e 01 	lds	r24, 0x013E
+    15ea:	98 17       	cp	r25, r24
+    15ec:	d0 f4       	brcc	.+52     	; 0x1622 <__stack+0x523>
+    15ee:	41 e0       	ldi	r20, 0x01	; 1
+    15f0:	50 e0       	ldi	r21, 0x00	; 0
+    15f2:	80 91 3f 01 	lds	r24, 0x013F
+    15f6:	20 91 3d 01 	lds	r18, 0x013D
+    15fa:	fa 01       	movw	r30, r20
+    15fc:	02 c0       	rjmp	.+4      	; 0x1602 <__stack+0x503>
+    15fe:	ee 0f       	add	r30, r30
+    1600:	ff 1f       	adc	r31, r31
+    1602:	8a 95       	dec	r24
+    1604:	e2 f7       	brpl	.-8      	; 0x15fe <__stack+0x4ff>
+    1606:	2e 2b       	or	r18, r30
+    1608:	20 93 3d 01 	sts	0x013D, r18
+    160c:	80 91 3f 01 	lds	r24, 0x013F
+    1610:	8f 5f       	subi	r24, 0xFF	; 255
+    1612:	80 93 3f 01 	sts	0x013F, r24
+    1616:	90 91 3f 01 	lds	r25, 0x013F
+    161a:	80 91 3e 01 	lds	r24, 0x013E
+    161e:	98 17       	cp	r25, r24
+    1620:	40 f3       	brcs	.-48     	; 0x15f2 <__stack+0x4f3>
+    1622:	80 91 40 01 	lds	r24, 0x0140
+    1626:	66 95       	lsr	r22
+    1628:	66 95       	lsr	r22
+    162a:	66 95       	lsr	r22
+    162c:	90 91 7f 01 	lds	r25, 0x017F
+    1630:	89 0f       	add	r24, r25
+    1632:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+    1636:	60 91 3d 01 	lds	r22, 0x013D
+    163a:	81 e0       	ldi	r24, 0x01	; 1
+    163c:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    1640:	1d c0       	rjmp	.+58     	; 0x167c <__stack+0x57d>
+    1642:	10 92 3f 01 	sts	0x013F, r1
+    1646:	80 91 3f 01 	lds	r24, 0x013F
+    164a:	82 17       	cp	r24, r18
+    164c:	b8 f4       	brcc	.+46     	; 0x167c <__stack+0x57d>
+    164e:	60 91 3f 01 	lds	r22, 0x013F
+    1652:	80 91 40 01 	lds	r24, 0x0140
+    1656:	90 91 4e 01 	lds	r25, 0x014E
+    165a:	69 0f       	add	r22, r25
+    165c:	90 91 7f 01 	lds	r25, 0x017F
+    1660:	89 0f       	add	r24, r25
+    1662:	0e 94 b9 03 	call	0x772	; 0x772 <LCD128x64P__LCD128x64__setPixel>
+    1666:	80 91 3f 01 	lds	r24, 0x013F
+    166a:	8f 5f       	subi	r24, 0xFF	; 255
+    166c:	80 93 3f 01 	sts	0x013F, r24
+    1670:	90 91 3f 01 	lds	r25, 0x013F
+    1674:	80 91 60 01 	lds	r24, 0x0160
+    1678:	98 17       	cp	r25, r24
+    167a:	48 f3       	brcs	.-46     	; 0x164e <__stack+0x54f>
+    167c:	80 91 40 01 	lds	r24, 0x0140
+    1680:	8f 5f       	subi	r24, 0xFF	; 255
+    1682:	80 93 40 01 	sts	0x0140, r24
+    1686:	90 91 40 01 	lds	r25, 0x0140
+    168a:	80 91 47 01 	lds	r24, 0x0147
+    168e:	98 17       	cp	r25, r24
+    1690:	08 f4       	brcc	.+2      	; 0x1694 <__stack+0x595>
+    1692:	55 cf       	rjmp	.-342    	; 0x153e <__stack+0x43f>
+    1694:	80 91 36 01 	lds	r24, 0x0136
+    1698:	8f 7d       	andi	r24, 0xDF	; 223
+    169a:	80 93 36 01 	sts	0x0136, r24
+    169e:	7b c0       	rjmp	.+246    	; 0x1796 <__stack+0x697>
+    call Alarm.startAt(t0, dt);
+  }
+
+  command void Timer.startPeriodic(uint32_t dt)
+  { start(call Alarm.getNow(), dt, FALSE); }
+
+  command void Timer.startOneShot(uint32_t dt)
+  { start(call Alarm.getNow(), dt, TRUE); }
+
+  command void Timer.stop()
+  { call Alarm.stop(); }
+
+  task void fired()
+  { 
+    if(m_oneshot == FALSE)
+    16a0:	80 91 61 01 	lds	r24, 0x0161
+    16a4:	88 23       	and	r24, r24
+    16a6:	19 f5       	brne	.+70     	; 0x16ee <__stack+0x5ef>
+      start(call Alarm.getAlarm(), m_dt, FALSE);
+    16a8:	20 91 81 01 	lds	r18, 0x0181
+    16ac:	30 91 82 01 	lds	r19, 0x0182
+    16b0:	40 91 83 01 	lds	r20, 0x0183
+    16b4:	50 91 84 01 	lds	r21, 0x0184
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+    16b8:	ef b7       	in	r30, 0x3f	; 63
+    16ba:	f8 94       	cli
+  }
+
+  async command uint32_t Alarm.getAlarm() {
+    atomic return t0 + dt;
+    16bc:	ff 27       	eor	r31, r31
+    16be:	60 91 69 01 	lds	r22, 0x0169
+    16c2:	70 91 6a 01 	lds	r23, 0x016A
+    16c6:	80 91 6b 01 	lds	r24, 0x016B
+    16ca:	90 91 6c 01 	lds	r25, 0x016C
+    16ce:	e0 90 5c 01 	lds	r14, 0x015C
+    16d2:	f0 90 5d 01 	lds	r15, 0x015D
+    16d6:	00 91 5e 01 	lds	r16, 0x015E
+    16da:	10 91 5f 01 	lds	r17, 0x015F
+    16de:	6e 0d       	add	r22, r14
+    16e0:	7f 1d       	adc	r23, r15
+    16e2:	80 1f       	adc	r24, r16
+    16e4:	91 1f       	adc	r25, r17
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    16e6:	ef bf       	out	0x3f, r30	; 63
+    16e8:	00 e0       	ldi	r16, 0x00	; 0
+    16ea:	0e 94 54 03 	call	0x6a8	; 0x6a8 <AlarmToTimerC__0__start>
+  }
+  
+  task void updateFromTimer()
+  {
+    /* This code supports a maximum dt of MAXINT. If min_remaining and
+       remaining were switched to uint32_t, and the logic changed a
+       little, dt's up to 2^32-1 should work (but at a slightly higher
+       runtime cost). */
+    uint32_t now = call TimerFrom.getNow();
+    int32_t min_remaining = (1UL << 31) - 1; /* max int32_t */
+    bool min_remaining_isset = FALSE;
+    uint8_t num;
+
+    call TimerFrom.stop();
+
+    for (num=0; num<NUM_TIMERS; num++)
+      {
+	Timer_t* timer = &m_timers[num];
+
+	if (timer->isrunning)
+	  {
+	    uint32_t elapsed = now - timer->t0;
+	    int32_t remaining = timer->dt - elapsed;
+
+	    if (remaining < min_remaining)
+	      {
+		min_remaining = remaining;
+		min_remaining_isset = TRUE;
+	      }
+	  }
+      }
+
+    if (min_remaining_isset)
+      {
+	if (min_remaining <= 0)
+	  fireTimers(now);
+	else
+	  call TimerFrom.startOneShotAt(now, min_remaining);
+      }
+  }
+  
+  event void TimerFrom.fired()
+  {
+    fireTimers(call TimerFrom.getNow());
+    16ee:	0e 94 b8 01 	call	0x370	; 0x370 <VirtualizeTimerC__0__TimerFrom__getNow>
+    16f2:	0e 94 88 02 	call	0x510	; 0x510 <VirtualizeTimerC__0__fireTimers>
+    16f6:	4f c0       	rjmp	.+158    	; 0x1796 <__stack+0x697>
+    16f8:	0e 94 b8 01 	call	0x370	; 0x370 <VirtualizeTimerC__0__TimerFrom__getNow>
+    16fc:	6b 01       	movw	r12, r22
+    16fe:	7c 01       	movw	r14, r24
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+    1700:	8f b7       	in	r24, 0x3f	; 63
+    1702:	f8 94       	cli
+    1704:	99 27       	eor	r25, r25
+    1706:	10 92 8e 01 	sts	0x018E, r1
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    170a:	8f bf       	out	0x3f, r24	; 63
+    170c:	80 91 76 01 	lds	r24, 0x0176
+    1710:	81 ff       	sbrs	r24, 1
+    1712:	41 c0       	rjmp	.+130    	; 0x1796 <__stack+0x697>
+    1714:	80 91 6e 01 	lds	r24, 0x016E
+    1718:	90 91 6f 01 	lds	r25, 0x016F
+    171c:	a0 91 70 01 	lds	r26, 0x0170
+    1720:	b0 91 71 01 	lds	r27, 0x0171
+    1724:	a7 01       	movw	r20, r14
+    1726:	96 01       	movw	r18, r12
+    1728:	28 1b       	sub	r18, r24
+    172a:	39 0b       	sbc	r19, r25
+    172c:	4a 0b       	sbc	r20, r26
+    172e:	5b 0b       	sbc	r21, r27
+    1730:	80 91 72 01 	lds	r24, 0x0172
+    1734:	90 91 73 01 	lds	r25, 0x0173
+    1738:	a0 91 74 01 	lds	r26, 0x0174
+    173c:	b0 91 75 01 	lds	r27, 0x0175
+    1740:	82 1b       	sub	r24, r18
+    1742:	93 0b       	sbc	r25, r19
+    1744:	a4 0b       	sbc	r26, r20
+    1746:	b5 0b       	sbc	r27, r21
+    1748:	9c 01       	movw	r18, r24
+    174a:	ad 01       	movw	r20, r26
+    174c:	8f 3f       	cpi	r24, 0xFF	; 255
+    174e:	ff ef       	ldi	r31, 0xFF	; 255
+    1750:	9f 07       	cpc	r25, r31
+    1752:	ff ef       	ldi	r31, 0xFF	; 255
+    1754:	af 07       	cpc	r26, r31
+    1756:	ff e7       	ldi	r31, 0x7F	; 127
+    1758:	bf 07       	cpc	r27, r31
+    175a:	b9 f4       	brne	.+46     	; 0x178a <__stack+0x68b>
+    175c:	1c c0       	rjmp	.+56     	; 0x1796 <__stack+0x697>
+    175e:	c7 01       	movw	r24, r14
+    1760:	b6 01       	movw	r22, r12
+    1762:	0e 94 88 02 	call	0x510	; 0x510 <VirtualizeTimerC__0__fireTimers>
+    1766:	17 c0       	rjmp	.+46     	; 0x1796 <__stack+0x697>
+    signal Timer.fired();
+  }
+
+  async event void Alarm.fired()
+  { post fired(); }
+
+  command bool Timer.isRunning()
+  { return call Alarm.isRunning(); }
+
+  command bool Timer.isOneShot()
+  { return m_oneshot; }
+
+  command void Timer.startPeriodicAt(uint32_t t0, uint32_t dt)
+  { start(t0, dt, FALSE); }
+
+  command void Timer.startOneShotAt(uint32_t t0, uint32_t dt)
+  { start(t0, dt, TRUE); }
+    1768:	01 e0       	ldi	r16, 0x01	; 1
+    176a:	c7 01       	movw	r24, r14
+    176c:	b6 01       	movw	r22, r12
+    176e:	0e 94 54 03 	call	0x6a8	; 0x6a8 <AlarmToTimerC__0__start>
+    1772:	11 c0       	rjmp	.+34     	; 0x1796 <__stack+0x697>
+    1774:	80 91 2e 01 	lds	r24, 0x012E
+    1778:	c8 2e       	mov	r12, r24
+    177a:	dd 24       	eor	r13, r13
+    177c:	e6 01       	movw	r28, r12
+    177e:	21 96       	adiw	r28, 0x01	; 1
+    1780:	9f c9       	rjmp	.-3266   	; 0xac0 <SchedulerBasicP__TaskBasic__runTask+0x14c>
+    1782:	ff 24       	eor	r15, r15
+    1784:	00 e0       	ldi	r16, 0x00	; 0
+    1786:	10 e0       	ldi	r17, 0x00	; 0
+    1788:	59 cc       	rjmp	.-1870   	; 0x103c <SchedulerBasicP__TaskBasic__runTask+0x6c8>
+    178a:	18 16       	cp	r1, r24
+    178c:	19 06       	cpc	r1, r25
+    178e:	1a 06       	cpc	r1, r26
+    1790:	1b 06       	cpc	r1, r27
+    1792:	54 f3       	brlt	.-44     	; 0x1768 <__stack+0x669>
+    1794:	e4 cf       	rjmp	.-56     	; 0x175e <__stack+0x65f>
+    1796:	df 91       	pop	r29
+    1798:	cf 91       	pop	r28
+    179a:	1f 91       	pop	r17
+    179c:	0f 91       	pop	r16
+    179e:	ff 90       	pop	r15
+    17a0:	ef 90       	pop	r14
+    17a2:	df 90       	pop	r13
+    17a4:	cf 90       	pop	r12
+    17a6:	bf 90       	pop	r11
+    17a8:	af 90       	pop	r10
+    17aa:	9f 90       	pop	r9
+    17ac:	8f 90       	pop	r8
+    17ae:	7f 90       	pop	r7
+    17b0:	6f 90       	pop	r6
+    17b2:	5f 90       	pop	r5
+    17b4:	4f 90       	pop	r4
+    17b6:	08 95       	ret
+
+000017b8 <RealMainP__Scheduler__runNextTask>:
+    17b8:	80 91 85 01 	lds	r24, 0x0185
+    17bc:	8f 3f       	cpi	r24, 0xFF	; 255
+    17be:	c9 f0       	breq	.+50     	; 0x17f2 <RealMainP__Scheduler__runNextTask+0x3a>
+    17c0:	28 2f       	mov	r18, r24
+    17c2:	33 27       	eor	r19, r19
+    17c4:	f9 01       	movw	r30, r18
+    17c6:	e1 5b       	subi	r30, 0xB1	; 177
+    17c8:	fe 4f       	sbci	r31, 0xFE	; 254
+    17ca:	e0 81       	ld	r30, Z
+    17cc:	e0 93 85 01 	sts	0x0185, r30
+    17d0:	ef 3f       	cpi	r30, 0xFF	; 255
+    17d2:	11 f4       	brne	.+4      	; 0x17d8 <RealMainP__Scheduler__runNextTask+0x20>
+    17d4:	e0 93 8f 01 	sts	0x018F, r30
+    17d8:	f9 01       	movw	r30, r18
+    17da:	e1 5b       	subi	r30, 0xB1	; 177
+    17dc:	fe 4f       	sbci	r31, 0xFE	; 254
+    17de:	8f ef       	ldi	r24, 0xFF	; 255
+    17e0:	80 83       	st	Z, r24
+    17e2:	2f 3f       	cpi	r18, 0xFF	; 255
+    17e4:	31 f0       	breq	.+12     	; 0x17f2 <RealMainP__Scheduler__runNextTask+0x3a>
+    17e6:	82 2f       	mov	r24, r18
+    17e8:	0e 94 ba 04 	call	0x974	; 0x974 <SchedulerBasicP__TaskBasic__runTask>
+    17ec:	81 e0       	ldi	r24, 0x01	; 1
+    17ee:	90 e0       	ldi	r25, 0x00	; 0
+    17f0:	08 95       	ret
+    17f2:	80 e0       	ldi	r24, 0x00	; 0
+    17f4:	90 e0       	ldi	r25, 0x00	; 0
+    *
+    * @return        whether a task was run -- TRUE indicates a task
+    *                ran, FALSE indicates there was no task to run.
+    */
+  command bool runNextTask();
+    17f6:	08 95       	ret
+
+000017f8 <__vector_21>:
+    call McuPowerState.update();
+  }
+  async command void HplAtm128Adc.enableInterruption() { SET_BIT(ADCSRA, ADIE); }
+  async command void HplAtm128Adc.disableInterruption() { CLR_BIT(ADCSRA, ADIE); }
+  async command void HplAtm128Adc.setContinuous() { SET_BIT(ADCSRA, ADFR); }
+  async command void HplAtm128Adc.setSingle() { CLR_BIT(ADCSRA, ADFR); }
+  async command void HplAtm128Adc.resetInterrupt() { SET_BIT(ADCSRA, ADIF); }
+  async command void HplAtm128Adc.startConversion() { SET_BIT(ADCSRA, ADSC); }
+
+
+  /* A/D status checks */
+  async command bool HplAtm128Adc.isEnabled()     {       
+    return (call HplAtm128Adc.getAdcsra()).aden; 
+  }
+
+  async command bool HplAtm128Adc.isStarted()     {
+    return (call HplAtm128Adc.getAdcsra()).adsc; 
+  }
+  
+  async command bool HplAtm128Adc.isComplete()    {
+    return (call HplAtm128Adc.getAdcsra()).adif; 
+  }
+
+  /* A/D interrupt handlers. Signals dataReady event with interrupts enabled */
+  AVR_ATOMIC_HANDLER(SIG_ADC) {
+    17f8:	1f 92       	push	r1
+    17fa:	0f 92       	push	r0
+    17fc:	0f b6       	in	r0, 0x3f	; 63
+    17fe:	0f 92       	push	r0
+    1800:	11 24       	eor	r1, r1
+    1802:	ef 92       	push	r14
+    1804:	ff 92       	push	r15
+    1806:	1f 93       	push	r17
+    1808:	2f 93       	push	r18
+    180a:	3f 93       	push	r19
+    180c:	4f 93       	push	r20
+    180e:	5f 93       	push	r21
+    1810:	6f 93       	push	r22
+    1812:	7f 93       	push	r23
+    1814:	8f 93       	push	r24
+    1816:	9f 93       	push	r25
+    1818:	af 93       	push	r26
+    181a:	bf 93       	push	r27
+    181c:	ef 93       	push	r30
+    181e:	ff 93       	push	r31
+    1820:	44 b1       	in	r20, 0x04	; 4
+    1822:	55 b1       	in	r21, 0x05	; 5
+#define READ_FLAG(port, flag) ((port) & (flag))
+
+/* Enables interrupts. */
+inline void __nesc_enable_interrupt() @safe() {
+    sei();
+    1824:	78 94       	sei
+}
+/* Disables all interrupts. */
+inline void __nesc_disable_interrupt() @safe() {
+    cli();
+}
+
+/* Defines data type for storing interrupt mask state during atomic. */
+typedef uint8_t __nesc_atomic_t;
+__nesc_atomic_t __nesc_atomic_start(void);
+void __nesc_atomic_end(__nesc_atomic_t original_SREG);
+
+#ifndef NESC_BUILD_BINARY
+/* @spontaneous() functions should not be included when NESC_BUILD_BINARY
+   is #defined, to avoid duplicate functions definitions wheb binary
+   components are used. Such functions do need a prototype in all cases,
+   though. */
+
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+    1826:	8f b7       	in	r24, 0x3f	; 63
+    1828:	f8 94       	cli
+    182a:	99 27       	eor	r25, r25
+    182c:	20 91 62 01 	lds	r18, 0x0162
+    1830:	32 2f       	mov	r19, r18
+    1832:	36 95       	lsr	r19
+    1834:	31 70       	andi	r19, 0x01	; 1
+    1836:	21 70       	andi	r18, 0x01	; 1
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    1838:	8f bf       	out	0x3f, r24	; 63
+    183a:	22 23       	and	r18, r18
+    183c:	e9 f4       	brne	.+58     	; 0x1878 <__vector_21+0x80>
+    183e:	33 98       	cbi	0x06, 3	; 6
+  }
+
+  async event void Atm128AdcSingle.dataReady(uint16_t data, bool precise) {
+    switch (state)
+    1840:	80 91 68 01 	lds	r24, 0x0168
+    1844:	81 30       	cpi	r24, 0x01	; 1
+    1846:	19 f0       	breq	.+6      	; 0x184e <__vector_21+0x56>
+    1848:	82 30       	cpi	r24, 0x02	; 2
+    184a:	69 f5       	brne	.+90     	; 0x18a6 <__vector_21+0xae>
+    184c:	0d c0       	rjmp	.+26     	; 0x1868 <__vector_21+0x70>
+      {
+      case ACQUIRE_DATA:
+	if (!precise)
+    184e:	33 23       	and	r19, r19
+    1850:	19 f4       	brne	.+6      	; 0x1858 <__vector_21+0x60>
+	  sample();
+    1852:	0e 94 10 04 	call	0x820	; 0x820 <AdcP__sample>
+    1856:	27 c0       	rjmp	.+78     	; 0x18a6 <__vector_21+0xae>
+	else
+	  {
+	    val = data;
+    1858:	50 93 7a 01 	sts	0x017A, r21
+    185c:	40 93 79 01 	sts	0x0179, r20
+    1860:	83 e0       	ldi	r24, 0x03	; 3
+    1862:	0e 94 d0 01 	call	0x3a0	; 0x3a0 <SchedulerBasicP__TaskBasic__postTask>
+    1866:	1f c0       	rjmp	.+62     	; 0x18a6 <__vector_21+0xae>
+	    post acquiredData();
+	  }
+	break;
+
+      case ACQUIRE_DATA_NOW:
+	if (!precise)
+    1868:	33 23       	and	r19, r19
+    186a:	19 f4       	brne	.+6      	; 0x1872 <__vector_21+0x7a>
+	  sample();
+    186c:	0e 94 10 04 	call	0x820	; 0x820 <AdcP__sample>
+    1870:	1a c0       	rjmp	.+52     	; 0x18a6 <__vector_21+0xae>
+	else
+	  {
+	    state = IDLE;
+    1872:	10 92 68 01 	sts	0x0168, r1
+    1876:	17 c0       	rjmp	.+46     	; 0x18a6 <__vector_21+0xae>
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+    1878:	8f b7       	in	r24, 0x3f	; 63
+    187a:	f8 94       	cli
+    187c:	99 27       	eor	r25, r25
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    187e:	8f bf       	out	0x3f, r24	; 63
+    1880:	ef b6       	in	r14, 0x3f	; 63
+    1882:	f8 94       	cli
+    1884:	ff 24       	eor	r15, r15
+    1886:	16 b1       	in	r17, 0x06	; 6
+    uint16_t data = call HplAtm128Adc.getValue();
+    
+    __nesc_enable_interrupt();
+    signal HplAtm128Adc.dataReady(data);
+  }
+
+  default async event void HplAtm128Adc.dataReady(uint16_t done) { }
+
+  async command bool HplAtm128Adc.cancel() { 
+    /* This is tricky */
+    atomic
+      {
+	Atm128Adcsra_t oldSr = call HplAtm128Adc.getAdcsra(), newSr;
+
+	/* To cancel a conversion, first turn off ADEN, then turn off
+	   ADSC. We also cancel any pending interrupt.
+	   Finally we reenable the ADC.
+	*/
+	newSr = oldSr;
+	newSr.aden = FALSE;
+    1888:	1f 77       	andi	r17, 0x7F	; 127
+	newSr.adif = TRUE; /* This clears a pending interrupt... */
+    188a:	10 61       	ori	r17, 0x10	; 16
+	newSr.adie = FALSE; /* We don't want to start sampling again at the
+			       next sleep */
+	call HplAtm128Adc.setAdcsra(newSr);
+    188c:	81 2f       	mov	r24, r17
+    188e:	87 77       	andi	r24, 0x77	; 119
+    1890:	0e 94 67 01 	call	0x2ce	; 0x2ce <HplAtm128AdcP__HplAtm128Adc__setAdcsra>
+	newSr.adsc = FALSE;
+    1894:	17 7b       	andi	r17, 0xB7	; 183
+	call HplAtm128Adc.setAdcsra(newSr);
+    1896:	81 2f       	mov	r24, r17
+    1898:	0e 94 67 01 	call	0x2ce	; 0x2ce <HplAtm128AdcP__HplAtm128Adc__setAdcsra>
+	newSr.aden = TRUE;
+	call HplAtm128Adc.setAdcsra(newSr);
+    189c:	81 2f       	mov	r24, r17
+    189e:	80 68       	ori	r24, 0x80	; 128
+    18a0:	0e 94 67 01 	call	0x2ce	; 0x2ce <HplAtm128AdcP__HplAtm128Adc__setAdcsra>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    18a4:	ef be       	out	0x3f, r14	; 63
+    18a6:	ff 91       	pop	r31
+    18a8:	ef 91       	pop	r30
+    18aa:	bf 91       	pop	r27
+    18ac:	af 91       	pop	r26
+    18ae:	9f 91       	pop	r25
+    18b0:	8f 91       	pop	r24
+    18b2:	7f 91       	pop	r23
+    18b4:	6f 91       	pop	r22
+    18b6:	5f 91       	pop	r21
+    18b8:	4f 91       	pop	r20
+    18ba:	3f 91       	pop	r19
+    18bc:	2f 91       	pop	r18
+    18be:	1f 91       	pop	r17
+    18c0:	ff 90       	pop	r15
+    18c2:	ef 90       	pop	r14
+    18c4:	0f 90       	pop	r0
+    18c6:	0f be       	out	0x3f, r0	; 63
+    18c8:	0f 90       	pop	r0
+    18ca:	1f 90       	pop	r1
+    18cc:	18 95       	reti
+
+000018ce <__vector_15>:
+  }
+
+  //=== Timer interrupts signals ========================================
+  inline void stabiliseTimer0() {
+    TCCR0 = TCCR0;
+    while (ASSR & 1 << TCR0UB)
+      ;
+  }
+
+  /**
+   * On the atm128, there is a small latency when waking up from
+   * POWER_SAVE mode. So if a timer is going to go off very soon, it's
+   * better to drop down until EXT_STANDBY, which has a 6 cycle wakeup
+   * latency. This function calculates whether staying in EXT_STANDBY
+   * is needed. If the timer is not running it returns POWER_DOWN.
+   * Please refer to TEP 112 and the atm128 datasheet for details.
+   */
+  
+  async command mcu_power_t McuPowerOverride.lowestState() {
+    uint8_t diff;
+    // We need to make sure that the sleep wakeup latency will not
+    // cause us to miss a timer. POWER_SAVE 
+    if (TIMSK & (1 << OCIE0 | 1 << TOIE0)) {
+      // need to wait for timer 0 updates propagate before sleeping
+      // (we don't need to worry about reentering sleep mode too early,
+      // as the wake ups from timer0 wait at least one TOSC1 cycle
+      // anyway - see the stabiliseTimer0 function)
+
+      while (ASSR & (1 << TCN0UB | 1 << OCR0UB | 1 << TCR0UB))
+	;
+
+      diff = OCR0 - TCNT0;
+      if (diff < EXT_STANDBY_T0_THRESHOLD ||
+	  TCNT0 > 256 - EXT_STANDBY_T0_THRESHOLD) 
+	return ATM128_POWER_EXT_STANDBY;
+      return ATM128_POWER_SAVE;
+    }
+    else {
+      return ATM128_POWER_DOWN;
+    }
+  }
+
+//#define PRESCALER 250
+
+#ifndef PRESCALER
+#define PRESCALER 1
+#endif
+ 
+  default async event void Compare.fired() { }
+  AVR_ATOMIC_HANDLER(SIG_OUTPUT_COMPARE0) {
+    18ce:	1f 92       	push	r1
+    18d0:	0f 92       	push	r0
+    18d2:	0f b6       	in	r0, 0x3f	; 63
+    18d4:	0f 92       	push	r0
+    18d6:	11 24       	eor	r1, r1
+    18d8:	2f 93       	push	r18
+    18da:	3f 93       	push	r19
+    18dc:	4f 93       	push	r20
+    18de:	5f 93       	push	r21
+    18e0:	6f 93       	push	r22
+    18e2:	7f 93       	push	r23
+    18e4:	8f 93       	push	r24
+    18e6:	9f 93       	push	r25
+    18e8:	af 93       	push	r26
+    18ea:	bf 93       	push	r27
+    18ec:	ef 93       	push	r30
+    18ee:	ff 93       	push	r31
+
+	if(count == PRESCALER)
+    18f0:	80 91 32 01 	lds	r24, 0x0132
+    18f4:	8a 3f       	cpi	r24, 0xFA	; 250
+    18f6:	29 f5       	brne	.+74     	; 0x1942 <__vector_15+0x74>
+    18f8:	83 b7       	in	r24, 0x33	; 51
+    18fa:	83 bf       	out	0x33, r24	; 51
+    18fc:	00 b6       	in	r0, 0x30	; 48
+    18fe:	00 fc       	sbrc	r0, 0
+    1900:	fd cf       	rjmp	.-6      	; 0x18fc <__vector_15+0x2e>
+    1902:	0e 94 72 01 	call	0x2e4	; 0x2e4 <Atm128AlarmSyncP__0__Compare__get>
+    1906:	99 27       	eor	r25, r25
+    1908:	01 96       	adiw	r24, 0x01	; 1
+    190a:	aa 27       	eor	r26, r26
+    190c:	bb 27       	eor	r27, r27
+    190e:	20 91 8a 01 	lds	r18, 0x018A
+    1912:	30 91 8b 01 	lds	r19, 0x018B
+    1916:	40 91 8c 01 	lds	r20, 0x018C
+    191a:	50 91 8d 01 	lds	r21, 0x018D
+    191e:	28 0f       	add	r18, r24
+    1920:	39 1f       	adc	r19, r25
+    1922:	4a 1f       	adc	r20, r26
+    1924:	5b 1f       	adc	r21, r27
+    1926:	20 93 8a 01 	sts	0x018A, r18
+    192a:	30 93 8b 01 	sts	0x018B, r19
+    192e:	40 93 8c 01 	sts	0x018C, r20
+    1932:	50 93 8d 01 	sts	0x018D, r21
+#define READ_FLAG(port, flag) ((port) & (flag))
+
+/* Enables interrupts. */
+inline void __nesc_enable_interrupt() @safe() {
+    sei();
+    1936:	78 94       	sei
+    1938:	0e 94 cb 02 	call	0x596	; 0x596 <Atm128AlarmSyncP__0__setInterrupt>
+	{
+    	stabiliseTimer0();
+	    signal Compare.fired();
+		count = 0;
+    193c:	10 92 32 01 	sts	0x0132, r1
+    1940:	03 c0       	rjmp	.+6      	; 0x1948 <__vector_15+0x7a>
+	}
+	else
+	{
+		count++;
+    1942:	8f 5f       	subi	r24, 0xFF	; 255
+    1944:	80 93 32 01 	sts	0x0132, r24
+    1948:	ff 91       	pop	r31
+    194a:	ef 91       	pop	r30
+    194c:	bf 91       	pop	r27
+    194e:	af 91       	pop	r26
+    1950:	9f 91       	pop	r25
+    1952:	8f 91       	pop	r24
+    1954:	7f 91       	pop	r23
+    1956:	6f 91       	pop	r22
+    1958:	5f 91       	pop	r21
+    195a:	4f 91       	pop	r20
+    195c:	3f 91       	pop	r19
+    195e:	2f 91       	pop	r18
+    1960:	0f 90       	pop	r0
+    1962:	0f be       	out	0x3f, r0	; 63
+    1964:	0f 90       	pop	r0
+    1966:	1f 90       	pop	r1
+    1968:	18 95       	reti
+
+0000196a <__vector_16>:
+	}
+  }
+
+
+  default async event void Timer.overflow() { }
+  AVR_ATOMIC_HANDLER(SIG_OVERFLOW0) {
+    196a:	1f 92       	push	r1
+    196c:	0f 92       	push	r0
+    196e:	0f b6       	in	r0, 0x3f	; 63
+    1970:	0f 92       	push	r0
+    1972:	11 24       	eor	r1, r1
+    1974:	8f 93       	push	r24
+    1976:	83 b7       	in	r24, 0x33	; 51
+    1978:	83 bf       	out	0x33, r24	; 51
+    197a:	00 b6       	in	r0, 0x30	; 48
+    197c:	00 fc       	sbrc	r0, 0
+    197e:	fd cf       	rjmp	.-6      	; 0x197a <__vector_16+0x10>
+    1980:	8f 91       	pop	r24
+    1982:	0f 90       	pop	r0
+    1984:	0f be       	out	0x3f, r0	; 63
+    1986:	0f 90       	pop	r0
+    1988:	1f 90       	pop	r1
+    198a:	18 95       	reti
+
+0000198c <main>:
+  uses interface Init as PlatformInit;
+  uses interface Init as SoftwareInit;
+}
+implementation {
+  int main() @C() @spontaneous() {
+    198c:	cd ef       	ldi	r28, 0xFD	; 253
+    198e:	d0 e1       	ldi	r29, 0x10	; 16
+    1990:	de bf       	out	0x3e, r29	; 62
+    1992:	cd bf       	out	0x3d, r28	; 61
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+    1994:	1f b7       	in	r17, 0x3f	; 63
+    1996:	f8 94       	cli
+    1998:	4d e0       	ldi	r20, 0x0D	; 13
+    199a:	50 e0       	ldi	r21, 0x00	; 0
+    199c:	6f ef       	ldi	r22, 0xFF	; 255
+    199e:	70 e0       	ldi	r23, 0x00	; 0
+    19a0:	8f e4       	ldi	r24, 0x4F	; 79
+    19a2:	91 e0       	ldi	r25, 0x01	; 1
+    19a4:	0e 94 d3 0d 	call	0x1ba6	; 0x1ba6 <memset>
+    19a8:	8f ef       	ldi	r24, 0xFF	; 255
+    19aa:	80 93 85 01 	sts	0x0185, r24
+    19ae:	80 93 8f 01 	sts	0x018F, r24
+    19b2:	81 e0       	ldi	r24, 0x01	; 1
+    19b4:	8e bd       	out	0x2e, r24	; 46
+    19b6:	83 e0       	ldi	r24, 0x03	; 3
+    19b8:	83 bf       	out	0x33, r24	; 51
+    19ba:	4c b5       	in	r20, 0x2c	; 44
+    19bc:	5d b5       	in	r21, 0x2d	; 45
+    19be:	8a e7       	ldi	r24, 0x7A	; 122
+    19c0:	8a 83       	std	Y+2, r24	; 0x02
+    19c2:	09 c0       	rjmp	.+18     	; 0x19d6 <main+0x4a>
+    19c4:	2c b5       	in	r18, 0x2c	; 44
+    19c6:	3d b5       	in	r19, 0x2d	; 45
+    19c8:	24 17       	cp	r18, r20
+    19ca:	35 07       	cpc	r19, r21
+    19cc:	18 f4       	brcc	.+6      	; 0x19d4 <main+0x48>
+    19ce:	8a 81       	ldd	r24, Y+2	; 0x02
+    19d0:	81 50       	subi	r24, 0x01	; 1
+    19d2:	8a 83       	std	Y+2, r24	; 0x02
+    19d4:	a9 01       	movw	r20, r18
+    19d6:	8a 81       	ldd	r24, Y+2	; 0x02
+    19d8:	88 23       	and	r24, r24
+    19da:	a1 f7       	brne	.-24     	; 0x19c4 <main+0x38>
+    19dc:	82 b7       	in	r24, 0x32	; 50
+    19de:	89 83       	std	Y+1, r24	; 0x01
+    19e0:	92 b7       	in	r25, 0x32	; 50
+    19e2:	89 81       	ldd	r24, Y+1	; 0x01
+    19e4:	98 17       	cp	r25, r24
+    19e6:	e1 f3       	breq	.-8      	; 0x19e0 <main+0x54>
+    19e8:	2c b5       	in	r18, 0x2c	; 44
+    19ea:	3d b5       	in	r19, 0x2d	; 45
+    19ec:	82 b7       	in	r24, 0x32	; 50
+    19ee:	89 83       	std	Y+1, r24	; 0x01
+    19f0:	92 b7       	in	r25, 0x32	; 50
+    19f2:	89 81       	ldd	r24, Y+1	; 0x01
+    19f4:	98 17       	cp	r25, r24
+    19f6:	e1 f3       	breq	.-8      	; 0x19f0 <main+0x64>
+    19f8:	8c b5       	in	r24, 0x2c	; 44
+    19fa:	9d b5       	in	r25, 0x2d	; 45
+    19fc:	82 1b       	sub	r24, r18
+    19fe:	93 0b       	sbc	r25, r19
+    1a00:	40 96       	adiw	r24, 0x10	; 16
+    1a02:	96 95       	lsr	r25
+    1a04:	87 95       	ror	r24
+    1a06:	92 95       	swap	r25
+    1a08:	82 95       	swap	r24
+    1a0a:	8f 70       	andi	r24, 0x0F	; 15
+    1a0c:	89 27       	eor	r24, r25
+    1a0e:	9f 70       	andi	r25, 0x0F	; 15
+    1a10:	89 27       	eor	r24, r25
+    1a12:	90 93 87 01 	sts	0x0187, r25
+    1a16:	80 93 86 01 	sts	0x0186, r24
+    1a1a:	13 be       	out	0x33, r1	; 51
+    1a1c:	83 b7       	in	r24, 0x33	; 51
+    1a1e:	8e bd       	out	0x2e, r24	; 46
+    1a20:	8e b5       	in	r24, 0x2e	; 46
+    1a22:	80 bf       	out	0x30, r24	; 48
+    1a24:	12 be       	out	0x32, r1	; 50
+    1a26:	1d bc       	out	0x2d, r1	; 45
+    1a28:	1c bc       	out	0x2c, r1	; 44
+    1a2a:	8f ef       	ldi	r24, 0xFF	; 255
+    1a2c:	86 bf       	out	0x36, r24	; 54
+    1a2e:	86 b7       	in	r24, 0x36	; 54
+    1a30:	80 93 7c 00 	sts	0x007C, r24
+    1a34:	80 b7       	in	r24, 0x30	; 48
+    1a36:	99 27       	eor	r25, r25
+    1a38:	87 70       	andi	r24, 0x07	; 7
+    1a3a:	90 70       	andi	r25, 0x00	; 0
+    1a3c:	89 2b       	or	r24, r25
+    1a3e:	d1 f7       	brne	.-12     	; 0x1a34 <main+0xa8>
+implementation {
+
+  command error_t PlatformInit.init() {
+    // Pull C I/O port pins low
+    PORTC = 0;
+    1a40:	15 ba       	out	0x15, r1	; 21
+    DDRC = 0xff;
+    1a42:	8f ef       	ldi	r24, 0xFF	; 255
+    1a44:	84 bb       	out	0x14, r24	; 20
+    1a46:	80 e0       	ldi	r24, 0x00	; 0
+    1a48:	0e 94 6a 01 	call	0x2d4	; 0x2d4 <Atm128AdcP__HplAtm128Adc__setAdcsra>
+    error_t ok;
+
+    /* First thing is to measure the clock frequency */
+    ok = call MeasureClock.init();
+    ok = ecombine(ok, call MoteInit.init());
+    1a4c:	60 e0       	ldi	r22, 0x00	; 0
+    1a4e:	80 e0       	ldi	r24, 0x00	; 0
+    1a50:	0e 94 60 01 	call	0x2c0	; 0x2c0 <ecombine>
+
+    if (ok != SUCCESS)
+    1a54:	88 23       	and	r24, r24
+    1a56:	11 f4       	brne	.+4      	; 0x1a5c <main+0xd0>
+    1a58:	80 e2       	ldi	r24, 0x20	; 32
+    1a5a:	85 bf       	out	0x35, r24	; 53
+    atomic
+      {
+	/* First, initialize the Scheduler so components can post
+	   tasks. Initialize all of the very hardware specific stuff, such
+	   as CPU settings, counters, etc. After the hardware is ready,
+	   initialize the requisite software components and start
+	   execution.*/
+	platform_bootstrap();
+	
+	call Scheduler.init(); 
+    
+	/* Initialize the platform. Then spin on the Scheduler, passing
+	 * FALSE so it will not put the system to sleep if there are no
+	 * more tasks; if no tasks remain, continue on to software
+	 * initialization */
+	call PlatformInit.init();    
+	while (call Scheduler.runNextTask());
+    1a5c:	0e 94 dc 0b 	call	0x17b8	; 0x17b8 <RealMainP__Scheduler__runNextTask>
+    1a60:	88 23       	and	r24, r24
+    1a62:	e1 f7       	brne	.-8      	; 0x1a5c <main+0xd0>
+    stabiliseTimer0();
+    signal Timer.overflow();
+  }
+
+  // synchronous status register support
+  async command Atm128Assr_t TimerSync.getAssr() {
+    return *(Atm128Assr_t *)&ASSR;
+  }
+
+  async command void TimerSync.setAssr(Atm128Assr_t x) {
+    ASSR = x.flat;
+  }
+
+  async command void TimerSync.setTimer0Synchronous() {
+    ASSR &= (1 << AS0);
+    1a64:	80 b7       	in	r24, 0x30	; 48
+    1a66:	88 70       	andi	r24, 0x08	; 8
+    1a68:	80 bf       	out	0x30, r24	; 48
+    1a6a:	8b e0       	ldi	r24, 0x0B	; 11
+    1a6c:	83 bf       	out	0x33, r24	; 51
+    1a6e:	86 ee       	ldi	r24, 0xE6	; 230
+    1a70:	0e 94 c9 02 	call	0x592	; 0x592 <Atm128AlarmSyncP__0__Compare__set>
+    1a74:	87 b7       	in	r24, 0x37	; 55
+    1a76:	82 60       	ori	r24, 0x02	; 2
+    1a78:	87 bf       	out	0x37, r24	; 55
+    1a7a:	0e 94 cb 02 	call	0x596	; 0x596 <Atm128AlarmSyncP__0__setInterrupt>
+    1a7e:	10 92 6d 01 	sts	0x016D, r1
+
+	/* Initialize software components.Then spin on the Scheduler,
+	 * passing FALSE so it will not put the system to sleep if there
+	 * are no more tasks; if no tasks remain, the system has booted
+	 * successfully.*/
+	call SoftwareInit.init(); 
+	while (call Scheduler.runNextTask());
+    1a82:	0e 94 dc 0b 	call	0x17b8	; 0x17b8 <RealMainP__Scheduler__runNextTask>
+    1a86:	88 23       	and	r24, r24
+    1a88:	e1 f7       	brne	.-8      	; 0x1a82 <main+0xf6>
+    1a8a:	81 2f       	mov	r24, r17
+    1a8c:	99 27       	eor	r25, r25
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    1a8e:	8f bf       	out	0x3f, r24	; 63
+    1a90:	78 94       	sei
+    1a92:	82 b1       	in	r24, 0x02	; 2
+    1a94:	8c 6f       	ori	r24, 0xFC	; 252
+    1a96:	82 b9       	out	0x02, r24	; 2
+    1a98:	8f ef       	ldi	r24, 0xFF	; 255
+    1a9a:	8a bb       	out	0x1a, r24	; 26
+    1a9c:	83 b1       	in	r24, 0x03	; 3
+    1a9e:	83 70       	andi	r24, 0x03	; 3
+    1aa0:	83 b9       	out	0x03, r24	; 3
+    1aa2:	1b ba       	out	0x1b, r1	; 27
+    1aa4:	1f 9a       	sbi	0x03, 7	; 3
+    1aa6:	6f e3       	ldi	r22, 0x3F	; 63
+    1aa8:	80 e0       	ldi	r24, 0x00	; 0
+    1aaa:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    1aae:	81 e0       	ldi	r24, 0x01	; 1
+    1ab0:	80 93 30 01 	sts	0x0130, r24
+    1ab4:	10 92 78 01 	sts	0x0178, r1
+    1ab8:	10 92 31 01 	sts	0x0131, r1
+    1abc:	80 e0       	ldi	r24, 0x00	; 0
+    1abe:	60 91 78 01 	lds	r22, 0x0178
+    1ac2:	0e 94 a2 03 	call	0x744	; 0x744 <LCD128x64P__setAddress>
+    1ac6:	60 91 30 01 	lds	r22, 0x0130
+    1aca:	81 e0       	ldi	r24, 0x01	; 1
+    1acc:	0e 94 7f 03 	call	0x6fe	; 0x6fe <LCD128x64P__writeGLCD>
+    1ad0:	80 91 31 01 	lds	r24, 0x0131
+    1ad4:	8f 5f       	subi	r24, 0xFF	; 255
+    1ad6:	80 93 31 01 	sts	0x0131, r24
+    1ada:	88 23       	and	r24, r24
+    1adc:	84 f7       	brge	.-32     	; 0x1abe <main+0x132>
+    1ade:	80 91 78 01 	lds	r24, 0x0178
+    1ae2:	8f 5f       	subi	r24, 0xFF	; 255
+    1ae4:	80 93 78 01 	sts	0x0178, r24
+    1ae8:	88 30       	cpi	r24, 0x08	; 8
+    1aea:	30 f3       	brcs	.-52     	; 0x1ab8 <main+0x12c>
+  }
+
+  void startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
+  {
+    Timer_t* timer = &m_timers[num];
+    timer->t0 = t0;
+    timer->dt = dt;
+    timer->isoneshot = isoneshot;
+    timer->isrunning = TRUE;
+    post updateFromTimer();
+  }
+
+  command void Timer.startPeriodic[uint8_t num](uint32_t dt)
+  {
+    startTimer(num, call TimerFrom.getNow(), dt, FALSE);
+    1aec:	0e 94 b8 01 	call	0x370	; 0x370 <VirtualizeTimerC__0__TimerFrom__getNow>
+    1af0:	60 93 6e 01 	sts	0x016E, r22
+    1af4:	70 93 6f 01 	sts	0x016F, r23
+    1af8:	80 93 70 01 	sts	0x0170, r24
+    1afc:	90 93 71 01 	sts	0x0171, r25
+    1b00:	84 ef       	ldi	r24, 0xF4	; 244
+    1b02:	91 e0       	ldi	r25, 0x01	; 1
+    1b04:	a0 e0       	ldi	r26, 0x00	; 0
+    1b06:	b0 e0       	ldi	r27, 0x00	; 0
+    1b08:	80 93 72 01 	sts	0x0172, r24
+    1b0c:	90 93 73 01 	sts	0x0173, r25
+    1b10:	a0 93 74 01 	sts	0x0174, r26
+    1b14:	b0 93 75 01 	sts	0x0175, r27
+    1b18:	80 91 76 01 	lds	r24, 0x0176
+    1b1c:	8e 7f       	andi	r24, 0xFE	; 254
+    1b1e:	82 60       	ori	r24, 0x02	; 2
+    1b20:	80 93 76 01 	sts	0x0176, r24
+    1b24:	0e 94 83 02 	call	0x506	; 0x506 <VirtualizeTimerC__0__updateFromTimer__postTask>
+/* Saves current interrupt mask state and disables interrupts. */
+inline __nesc_atomic_t 
+__nesc_atomic_start(void) @spontaneous() @safe()
+{
+    __nesc_atomic_t result = SREG;
+    1b28:	8f b7       	in	r24, 0x3f	; 63
+    1b2a:	f8 94       	cli
+    __nesc_disable_interrupt();
+    asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+    return result;
+    1b2c:	68 2f       	mov	r22, r24
+    1b2e:	77 27       	eor	r23, r23
+    1b30:	2f e4       	ldi	r18, 0x4F	; 79
+    1b32:	31 e0       	ldi	r19, 0x01	; 1
+    1b34:	5f ef       	ldi	r21, 0xFF	; 255
+    1b36:	ec e8       	ldi	r30, 0x8C	; 140
+    1b38:	f0 e0       	ldi	r31, 0x00	; 0
+    1b3a:	c8 95       	lpm
+    1b3c:	40 2d       	mov	r20, r0
+    1b3e:	1a c0       	rjmp	.+52     	; 0x1b74 <main+0x1e8>
+    1b40:	87 b7       	in	r24, 0x37	; 55
+    1b42:	99 27       	eor	r25, r25
+    1b44:	83 70       	andi	r24, 0x03	; 3
+    1b46:	90 70       	andi	r25, 0x00	; 0
+    1b48:	89 2b       	or	r24, r25
+    1b4a:	61 f0       	breq	.+24     	; 0x1b64 <main+0x1d8>
+    1b4c:	80 b7       	in	r24, 0x30	; 48
+    1b4e:	99 27       	eor	r25, r25
+    1b50:	87 70       	andi	r24, 0x07	; 7
+    1b52:	90 70       	andi	r25, 0x00	; 0
+    1b54:	89 2b       	or	r24, r25
+    1b56:	d1 f7       	brne	.-12     	; 0x1b4c <main+0x1c0>
+    1b58:	81 b7       	in	r24, 0x31	; 49
+    1b5a:	92 b7       	in	r25, 0x32	; 50
+    1b5c:	89 1b       	sub	r24, r25
+    1b5e:	8c 30       	cpi	r24, 0x0C	; 12
+    1b60:	08 f0       	brcs	.+2      	; 0x1b64 <main+0x1d8>
+    1b62:	82 b7       	in	r24, 0x32	; 50
+  async command void McuSleep.sleep() {
+    uint8_t powerState;
+
+    powerState = mcombine(getPowerState(), call McuPowerOverride.lowestState());
+    MCUCR =
+    1b64:	85 b7       	in	r24, 0x35	; 53
+    1b66:	83 7e       	andi	r24, 0xE3	; 227
+    1b68:	80 62       	ori	r24, 0x20	; 32
+    1b6a:	84 2b       	or	r24, r20
+    1b6c:	85 bf       	out	0x35, r24	; 53
+      (MCUCR & 0xe3) | 1 << SE | read_uint8_t(&atm128PowerBits[powerState]);
+
+    sei();
+    1b6e:	78 94       	sei
+    // All of memory may change at this point...
+    asm volatile ("sleep" : : : "memory");
+    1b70:	88 95       	sleep
+    cli();
+    1b72:	f8 94       	cli
+    1b74:	80 91 85 01 	lds	r24, 0x0185
+    1b78:	8f 3f       	cpi	r24, 0xFF	; 255
+    1b7a:	11 f3       	breq	.-60     	; 0x1b40 <main+0x1b4>
+    1b7c:	99 27       	eor	r25, r25
+    1b7e:	fc 01       	movw	r30, r24
+    1b80:	e2 0f       	add	r30, r18
+    1b82:	f3 1f       	adc	r31, r19
+    1b84:	e0 81       	ld	r30, Z
+    1b86:	e0 93 85 01 	sts	0x0185, r30
+    1b8a:	ef 3f       	cpi	r30, 0xFF	; 255
+    1b8c:	11 f4       	brne	.+4      	; 0x1b92 <main+0x206>
+    1b8e:	e0 93 8f 01 	sts	0x018F, r30
+    1b92:	fc 01       	movw	r30, r24
+    1b94:	e2 0f       	add	r30, r18
+    1b96:	f3 1f       	adc	r31, r19
+    1b98:	50 83       	st	Z, r21
+    1b9a:	8f 3f       	cpi	r24, 0xFF	; 255
+    1b9c:	89 f2       	breq	.-94     	; 0x1b40 <main+0x1b4>
+inline void 
+__nesc_atomic_end(__nesc_atomic_t original_SREG) @spontaneous() @safe()
+{
+  asm volatile("" : : : "memory"); /* ensure atomic section effect visibility */
+  SREG = original_SREG;
+    1b9e:	6f bf       	out	0x3f, r22	; 63
+    1ba0:	0e 94 ba 04 	call	0x974	; 0x974 <SchedulerBasicP__TaskBasic__runTask>
+    1ba4:	c1 cf       	rjmp	.-126    	; 0x1b28 <main+0x19c>
+
+00001ba6 <memset>:
+    1ba6:	dc 01       	movw	r26, r24
+    1ba8:	01 c0       	rjmp	.+2      	; 0x1bac <memset+0x6>
+    1baa:	6d 93       	st	X+, r22
+    1bac:	41 50       	subi	r20, 0x01	; 1
+    1bae:	50 40       	sbci	r21, 0x00	; 0
+    1bb0:	e0 f7       	brcc	.-8      	; 0x1baa <memset+0x4>
+    1bb2:	08 95       	ret
+
+00001bb4 <__subsf3>:
+    1bb4:	50 58       	subi	r21, 0x80	; 128
+
+00001bb6 <__addsf3>:
+    1bb6:	19 2e       	mov	r1, r25
+    1bb8:	ef d0       	rcall	.+478    	; 0x1d98 <__fp_split3>
+    1bba:	01 d0       	rcall	.+2      	; 0x1bbe <__addsf3x>
+    1bbc:	d2 c0       	rjmp	.+420    	; 0x1d62 <__fp_merge>
+
+00001bbe <__addsf3x>:
+    1bbe:	ba 17       	cp	r27, r26
+    1bc0:	62 07       	cpc	r22, r18
+    1bc2:	73 07       	cpc	r23, r19
+    1bc4:	84 07       	cpc	r24, r20
+    1bc6:	95 07       	cpc	r25, r21
+    1bc8:	b1 f1       	breq	.+108    	; 0x1c36 <__addsf3x+0x78>
+    1bca:	88 f4       	brcc	.+34     	; 0x1bee <__addsf3x+0x30>
+    1bcc:	0e f4       	brtc	.+2      	; 0x1bd0 <__addsf3x+0x12>
+    1bce:	10 94       	com	r1
+    1bd0:	0b 2e       	mov	r0, r27
+    1bd2:	ba 2f       	mov	r27, r26
+    1bd4:	a0 2d       	mov	r26, r0
+    1bd6:	06 2e       	mov	r0, r22
+    1bd8:	62 2f       	mov	r22, r18
+    1bda:	20 2d       	mov	r18, r0
+    1bdc:	07 2e       	mov	r0, r23
+    1bde:	73 2f       	mov	r23, r19
+    1be0:	30 2d       	mov	r19, r0
+    1be2:	08 2e       	mov	r0, r24
+    1be4:	84 2f       	mov	r24, r20
+    1be6:	40 2d       	mov	r20, r0
+    1be8:	09 2e       	mov	r0, r25
+    1bea:	95 2f       	mov	r25, r21
+    1bec:	50 2d       	mov	r21, r0
+    1bee:	ff 27       	eor	r31, r31
+    1bf0:	55 23       	and	r21, r21
+    1bf2:	b9 f0       	breq	.+46     	; 0x1c22 <__addsf3x+0x64>
+    1bf4:	59 1b       	sub	r21, r25
+    1bf6:	49 f0       	breq	.+18     	; 0x1c0a <__addsf3x+0x4c>
+    1bf8:	57 3e       	cpi	r21, 0xE7	; 231
+    1bfa:	98 f0       	brcs	.+38     	; 0x1c22 <__addsf3x+0x64>
+    1bfc:	46 95       	lsr	r20
+    1bfe:	37 95       	ror	r19
+    1c00:	27 95       	ror	r18
+    1c02:	a7 95       	ror	r26
+    1c04:	f0 40       	sbci	r31, 0x00	; 0
+    1c06:	53 95       	inc	r21
+    1c08:	c9 f7       	brne	.-14     	; 0x1bfc <__addsf3x+0x3e>
+    1c0a:	76 f0       	brts	.+28     	; 0x1c28 <__addsf3x+0x6a>
+    1c0c:	ba 0f       	add	r27, r26
+    1c0e:	62 1f       	adc	r22, r18
+    1c10:	73 1f       	adc	r23, r19
+    1c12:	84 1f       	adc	r24, r20
+    1c14:	30 f4       	brcc	.+12     	; 0x1c22 <__addsf3x+0x64>
+    1c16:	87 95       	ror	r24
+    1c18:	77 95       	ror	r23
+    1c1a:	67 95       	ror	r22
+    1c1c:	b7 95       	ror	r27
+    1c1e:	f0 40       	sbci	r31, 0x00	; 0
+    1c20:	93 95       	inc	r25
+    1c22:	17 fa       	bst	r1, 7
+    1c24:	0f 2e       	mov	r0, r31
+    1c26:	08 95       	ret
+    1c28:	bf 1b       	sub	r27, r31
+    1c2a:	bb 27       	eor	r27, r27
+    1c2c:	ba 0b       	sbc	r27, r26
+    1c2e:	62 0b       	sbc	r22, r18
+    1c30:	73 0b       	sbc	r23, r19
+    1c32:	84 0b       	sbc	r24, r20
+    1c34:	f6 cf       	rjmp	.-20     	; 0x1c22 <__addsf3x+0x64>
+    1c36:	de f6       	brtc	.-74     	; 0x1bee <__addsf3x+0x30>
+    1c38:	db c0       	rjmp	.+438    	; 0x1df0 <__fp_zerox>
+
+00001c3a <__divsf3>:
+    1c3a:	ae d0       	rcall	.+348    	; 0x1d98 <__fp_split3>
+    1c3c:	01 d0       	rcall	.+2      	; 0x1c40 <__divsf3x>
+    1c3e:	91 c0       	rjmp	.+290    	; 0x1d62 <__fp_merge>
+
+00001c40 <__divsf3x>:
+    1c40:	55 23       	and	r21, r21
+    1c42:	59 f0       	breq	.+22     	; 0x1c5a <__divsf3x+0x1a>
+    1c44:	99 23       	and	r25, r25
+    1c46:	69 f0       	breq	.+26     	; 0x1c62 <__divsf3x+0x22>
+    1c48:	9f 57       	subi	r25, 0x7F	; 127
+    1c4a:	5f 57       	subi	r21, 0x7F	; 127
+    1c4c:	95 1b       	sub	r25, r21
+    1c4e:	33 f4       	brvc	.+12     	; 0x1c5c <__divsf3x+0x1c>
+    1c50:	42 f4       	brpl	.+16     	; 0x1c62 <__divsf3x+0x22>
+    1c52:	90 38       	cpi	r25, 0x80	; 128
+    1c54:	11 f4       	brne	.+4      	; 0x1c5a <__divsf3x+0x1a>
+    1c56:	91 58       	subi	r25, 0x81	; 129
+    1c58:	05 c0       	rjmp	.+10     	; 0x1c64 <__divsf3x+0x24>
+    1c5a:	9b c0       	rjmp	.+310    	; 0x1d92 <__fp_nan>
+    1c5c:	91 58       	subi	r25, 0x81	; 129
+    1c5e:	9f 3f       	cpi	r25, 0xFF	; 255
+    1c60:	09 f4       	brne	.+2      	; 0x1c64 <__divsf3x+0x24>
+    1c62:	c6 c0       	rjmp	.+396    	; 0x1df0 <__fp_zerox>
+    1c64:	bb 27       	eor	r27, r27
+    1c66:	11 24       	eor	r1, r1
+    1c68:	62 17       	cp	r22, r18
+    1c6a:	73 07       	cpc	r23, r19
+    1c6c:	84 07       	cpc	r24, r20
+    1c6e:	30 f4       	brcc	.+12     	; 0x1c7c <__divsf3x+0x3c>
+    1c70:	66 0f       	add	r22, r22
+    1c72:	77 1f       	adc	r23, r23
+    1c74:	88 1f       	adc	r24, r24
+    1c76:	bb 1f       	adc	r27, r27
+    1c78:	91 50       	subi	r25, 0x01	; 1
+    1c7a:	98 f3       	brcs	.-26     	; 0x1c62 <__divsf3x+0x22>
+    1c7c:	11 d0       	rcall	.+34     	; 0x1ca0 <__divsf3x+0x60>
+    1c7e:	0f 92       	push	r0
+    1c80:	0f d0       	rcall	.+30     	; 0x1ca0 <__divsf3x+0x60>
+    1c82:	0f 92       	push	r0
+    1c84:	0d d0       	rcall	.+26     	; 0x1ca0 <__divsf3x+0x60>
+    1c86:	a0 e8       	ldi	r26, 0x80	; 128
+    1c88:	26 17       	cp	r18, r22
+    1c8a:	37 07       	cpc	r19, r23
+    1c8c:	48 07       	cpc	r20, r24
+    1c8e:	1b 06       	cpc	r1, r27
+    1c90:	09 f0       	breq	.+2      	; 0x1c94 <__divsf3x+0x54>
+    1c92:	a0 48       	sbci	r26, 0x80	; 128
+    1c94:	ba 2f       	mov	r27, r26
+    1c96:	60 2d       	mov	r22, r0
+    1c98:	7f 91       	pop	r23
+    1c9a:	8f 91       	pop	r24
+    1c9c:	00 24       	eor	r0, r0
+    1c9e:	08 95       	ret
+    1ca0:	a0 e8       	ldi	r26, 0x80	; 128
+    1ca2:	00 24       	eor	r0, r0
+    1ca4:	62 17       	cp	r22, r18
+    1ca6:	73 07       	cpc	r23, r19
+    1ca8:	84 07       	cpc	r24, r20
+    1caa:	b1 05       	cpc	r27, r1
+    1cac:	28 f0       	brcs	.+10     	; 0x1cb8 <__divsf3x+0x78>
+    1cae:	62 1b       	sub	r22, r18
+    1cb0:	73 0b       	sbc	r23, r19
+    1cb2:	84 0b       	sbc	r24, r20
+    1cb4:	b1 09       	sbc	r27, r1
+    1cb6:	0a 2a       	or	r0, r26
+    1cb8:	66 0f       	add	r22, r22
+    1cba:	77 1f       	adc	r23, r23
+    1cbc:	88 1f       	adc	r24, r24
+    1cbe:	bb 1f       	adc	r27, r27
+    1cc0:	a6 95       	lsr	r26
+    1cc2:	81 f7       	brne	.-32     	; 0x1ca4 <__divsf3x+0x64>
+    1cc4:	08 95       	ret
+
+00001cc6 <__fixsfsi>:
+    1cc6:	97 fb       	bst	r25, 7
+    1cc8:	73 d0       	rcall	.+230    	; 0x1db0 <__fp_split1>
+    1cca:	9f 37       	cpi	r25, 0x7F	; 127
+    1ccc:	38 f0       	brcs	.+14     	; 0x1cdc <__fixsfsi+0x16>
+    1cce:	fe e9       	ldi	r31, 0x9E	; 158
+    1cd0:	f9 1b       	sub	r31, r25
+    1cd2:	98 2f       	mov	r25, r24
+    1cd4:	87 2f       	mov	r24, r23
+    1cd6:	76 2f       	mov	r23, r22
+    1cd8:	6b 2f       	mov	r22, r27
+    1cda:	05 c0       	rjmp	.+10     	; 0x1ce6 <__fixsfsi+0x20>
+    1cdc:	86 c0       	rjmp	.+268    	; 0x1dea <__fp_zero>
+    1cde:	96 95       	lsr	r25
+    1ce0:	87 95       	ror	r24
+    1ce2:	77 95       	ror	r23
+    1ce4:	67 95       	ror	r22
+    1ce6:	f1 50       	subi	r31, 0x01	; 1
+    1ce8:	d0 f7       	brcc	.-12     	; 0x1cde <__fixsfsi+0x18>
+    1cea:	3e f4       	brtc	.+14     	; 0x1cfa <__fp_lneg+0xe>
+
+00001cec <__fp_lneg>:
+    1cec:	90 95       	com	r25
+    1cee:	80 95       	com	r24
+    1cf0:	70 95       	com	r23
+    1cf2:	61 95       	neg	r22
+    1cf4:	7f 4f       	sbci	r23, 0xFF	; 255
+    1cf6:	8f 4f       	sbci	r24, 0xFF	; 255
+    1cf8:	9f 4f       	sbci	r25, 0xFF	; 255
+    1cfa:	08 95       	ret
+
+00001cfc <__floatunssisf>:
+    1cfc:	e8 94       	clt
+    1cfe:	03 c0       	rjmp	.+6      	; 0x1d06 <__floatsisf+0x6>
+
+00001d00 <__floatsisf>:
+    1d00:	97 fb       	bst	r25, 7
+    1d02:	0e f4       	brtc	.+2      	; 0x1d06 <__floatsisf+0x6>
+    1d04:	f3 df       	rcall	.-26     	; 0x1cec <__fp_lneg>
+    1d06:	b6 2f       	mov	r27, r22
+    1d08:	67 2f       	mov	r22, r23
+    1d0a:	78 2f       	mov	r23, r24
+    1d0c:	89 2f       	mov	r24, r25
+    1d0e:	9e e9       	ldi	r25, 0x9E	; 158
+    1d10:	00 24       	eor	r0, r0
+    1d12:	27 c0       	rjmp	.+78     	; 0x1d62 <__fp_merge>
+
+00001d14 <__eqsf2>:
+    1d14:	0e d0       	rcall	.+28     	; 0x1d32 <.fp_cmp>
+    1d16:	5e f0       	brts	.+22     	; 0x1d2e <__cmpsf2+0xe>
+    1d18:	04 c0       	rjmp	.+8      	; 0x1d22 <__cmpsf2+0x2>
+
+00001d1a <__gesf2>:
+    1d1a:	0b d0       	rcall	.+22     	; 0x1d32 <.fp_cmp>
+    1d1c:	26 f0       	brts	.+8      	; 0x1d26 <__cmpsf2+0x6>
+    1d1e:	01 c0       	rjmp	.+2      	; 0x1d22 <__cmpsf2+0x2>
+
+00001d20 <__cmpsf2>:
+    1d20:	08 d0       	rcall	.+16     	; 0x1d32 <.fp_cmp>
+    1d22:	19 f0       	breq	.+6      	; 0x1d2a <__cmpsf2+0xa>
+    1d24:	20 f4       	brcc	.+8      	; 0x1d2e <__cmpsf2+0xe>
+    1d26:	8f ef       	ldi	r24, 0xFF	; 255
+    1d28:	08 95       	ret
+    1d2a:	80 e0       	ldi	r24, 0x00	; 0
+    1d2c:	08 95       	ret
+    1d2e:	81 e0       	ldi	r24, 0x01	; 1
+    1d30:	08 95       	ret
+
+00001d32 <.fp_cmp>:
+    1d32:	97 fb       	bst	r25, 7
+    1d34:	09 2e       	mov	r0, r25
+    1d36:	05 26       	eor	r0, r21
+    1d38:	00 f8       	bld	r0, 0
+    1d3a:	68 94       	set
+    1d3c:	30 d0       	rcall	.+96     	; 0x1d9e <__fp_split2>
+    1d3e:	e8 94       	clt
+    1d40:	07 fc       	sbrc	r0, 7
+    1d42:	07 c0       	rjmp	.+14     	; 0x1d52 <.fp_cmp+0x20>
+    1d44:	62 17       	cp	r22, r18
+    1d46:	73 07       	cpc	r23, r19
+    1d48:	84 07       	cpc	r24, r20
+    1d4a:	95 07       	cpc	r25, r21
+    1d4c:	21 f0       	breq	.+8      	; 0x1d56 <.fp_cmp+0x24>
+    1d4e:	08 f4       	brcc	.+2      	; 0x1d52 <.fp_cmp+0x20>
+    1d50:	00 94       	com	r0
+    1d52:	07 94       	ror	r0
+    1d54:	98 94       	clz
+    1d56:	08 95       	ret
+    1d58:	9a 95       	dec	r25
+    1d5a:	bb 0f       	add	r27, r27
+    1d5c:	66 1f       	adc	r22, r22
+    1d5e:	77 1f       	adc	r23, r23
+    1d60:	88 1f       	adc	r24, r24
+
+00001d62 <__fp_merge>:
+    1d62:	11 24       	eor	r1, r1
+    1d64:	99 23       	and	r25, r25
+    1d66:	a1 f0       	breq	.+40     	; 0x1d90 <__fp_merge+0x2e>
+    1d68:	88 23       	and	r24, r24
+    1d6a:	b2 f7       	brpl	.-20     	; 0x1d58 <.fp_cmp+0x26>
+    1d6c:	9f 3f       	cpi	r25, 0xFF	; 255
+    1d6e:	59 f0       	breq	.+22     	; 0x1d86 <__fp_merge+0x24>
+    1d70:	bb 0f       	add	r27, r27
+    1d72:	48 f4       	brcc	.+18     	; 0x1d86 <__fp_merge+0x24>
+    1d74:	21 f4       	brne	.+8      	; 0x1d7e <__fp_merge+0x1c>
+    1d76:	00 20       	and	r0, r0
+    1d78:	11 f4       	brne	.+4      	; 0x1d7e <__fp_merge+0x1c>
+    1d7a:	60 ff       	sbrs	r22, 0
+    1d7c:	04 c0       	rjmp	.+8      	; 0x1d86 <__fp_merge+0x24>
+    1d7e:	6f 5f       	subi	r22, 0xFF	; 255
+    1d80:	7f 4f       	sbci	r23, 0xFF	; 255
+    1d82:	8f 4f       	sbci	r24, 0xFF	; 255
+    1d84:	9f 4f       	sbci	r25, 0xFF	; 255
+    1d86:	88 1f       	adc	r24, r24
+    1d88:	97 95       	ror	r25
+    1d8a:	87 95       	ror	r24
+    1d8c:	97 f9       	bld	r25, 7
+    1d8e:	08 95       	ret
+    1d90:	2c c0       	rjmp	.+88     	; 0x1dea <__fp_zero>
+
+00001d92 <__fp_nan>:
+    1d92:	9f ef       	ldi	r25, 0xFF	; 255
+    1d94:	80 ec       	ldi	r24, 0xC0	; 192
+    1d96:	08 95       	ret
+
+00001d98 <__fp_split3>:
+    1d98:	05 2e       	mov	r0, r21
+    1d9a:	09 26       	eor	r0, r25
+    1d9c:	07 fa       	bst	r0, 7
+
+00001d9e <__fp_split2>:
+    1d9e:	44 0f       	add	r20, r20
+    1da0:	55 1f       	adc	r21, r21
+    1da2:	5f 3f       	cpi	r21, 0xFF	; 255
+    1da4:	79 f0       	breq	.+30     	; 0x1dc4 <__fp_split1+0x14>
+    1da6:	aa 27       	eor	r26, r26
+    1da8:	a5 17       	cp	r26, r21
+    1daa:	08 f0       	brcs	.+2      	; 0x1dae <__fp_split2+0x10>
+    1dac:	51 e0       	ldi	r21, 0x01	; 1
+    1dae:	47 95       	ror	r20
+
+00001db0 <__fp_split1>:
+    1db0:	88 0f       	add	r24, r24
+    1db2:	99 1f       	adc	r25, r25
+    1db4:	9f 3f       	cpi	r25, 0xFF	; 255
+    1db6:	31 f0       	breq	.+12     	; 0x1dc4 <__fp_split1+0x14>
+    1db8:	bb 27       	eor	r27, r27
+    1dba:	b9 17       	cp	r27, r25
+    1dbc:	08 f0       	brcs	.+2      	; 0x1dc0 <__fp_split1+0x10>
+    1dbe:	91 e0       	ldi	r25, 0x01	; 1
+    1dc0:	87 95       	ror	r24
+    1dc2:	08 95       	ret
+    1dc4:	9f 91       	pop	r25
+    1dc6:	9f 91       	pop	r25
+    1dc8:	11 24       	eor	r1, r1
+    1dca:	e3 cf       	rjmp	.-58     	; 0x1d92 <__fp_nan>
+
+00001dcc <__fp_split_a>:
+    1dcc:	97 fb       	bst	r25, 7
+    1dce:	88 0f       	add	r24, r24
+    1dd0:	99 1f       	adc	r25, r25
+    1dd2:	9f 3f       	cpi	r25, 0xFF	; 255
+    1dd4:	31 f0       	breq	.+12     	; 0x1de2 <__fp_split_a+0x16>
+    1dd6:	bb 27       	eor	r27, r27
+    1dd8:	b9 17       	cp	r27, r25
+    1dda:	08 f0       	brcs	.+2      	; 0x1dde <__fp_split_a+0x12>
+    1ddc:	91 e0       	ldi	r25, 0x01	; 1
+    1dde:	87 95       	ror	r24
+    1de0:	08 95       	ret
+    1de2:	9f 91       	pop	r25
+    1de4:	9f 91       	pop	r25
+    1de6:	11 24       	eor	r1, r1
+    1de8:	d4 cf       	rjmp	.-88     	; 0x1d92 <__fp_nan>
+
+00001dea <__fp_zero>:
+    1dea:	66 27       	eor	r22, r22
+    1dec:	77 27       	eor	r23, r23
+    1dee:	88 27       	eor	r24, r24
+
+00001df0 <__fp_zerox>:
+    1df0:	99 27       	eor	r25, r25
+    1df2:	08 95       	ret
+
+00001df4 <__mulsf3>:
+    1df4:	d1 df       	rcall	.-94     	; 0x1d98 <__fp_split3>
+    1df6:	01 d0       	rcall	.+2      	; 0x1dfa <__mulsf3x>
+    1df8:	b4 cf       	rjmp	.-152    	; 0x1d62 <__fp_merge>
+
+00001dfa <__mulsf3x>:
+    1dfa:	99 23       	and	r25, r25
+    1dfc:	39 f0       	breq	.+14     	; 0x1e0c <__mulsf3x+0x12>
+    1dfe:	55 23       	and	r21, r21
+    1e00:	29 f0       	breq	.+10     	; 0x1e0c <__mulsf3x+0x12>
+    1e02:	9f 57       	subi	r25, 0x7F	; 127
+    1e04:	5f 57       	subi	r21, 0x7F	; 127
+    1e06:	95 0f       	add	r25, r21
+    1e08:	13 f4       	brvc	.+4      	; 0x1e0e <__mulsf3x+0x14>
+    1e0a:	9a f1       	brmi	.+102    	; 0x1e72 <__mulsf3x+0x78>
+    1e0c:	f1 cf       	rjmp	.-30     	; 0x1df0 <__fp_zerox>
+    1e0e:	91 58       	subi	r25, 0x81	; 129
+    1e10:	9f 3f       	cpi	r25, 0xFF	; 255
+    1e12:	e1 f3       	breq	.-8      	; 0x1e0c <__mulsf3x+0x12>
+    1e14:	62 9f       	mul	r22, r18
+    1e16:	a1 2d       	mov	r26, r1
+    1e18:	0f 92       	push	r0
+    1e1a:	bb 27       	eor	r27, r27
+    1e1c:	63 9f       	mul	r22, r19
+    1e1e:	a0 0d       	add	r26, r0
+    1e20:	b1 1d       	adc	r27, r1
+    1e22:	ee 27       	eor	r30, r30
+    1e24:	72 9f       	mul	r23, r18
+    1e26:	a0 0d       	add	r26, r0
+    1e28:	b1 1d       	adc	r27, r1
+    1e2a:	ee 1f       	adc	r30, r30
+    1e2c:	af 93       	push	r26
+    1e2e:	aa 27       	eor	r26, r26
+    1e30:	64 9f       	mul	r22, r20
+    1e32:	b0 0d       	add	r27, r0
+    1e34:	e1 1d       	adc	r30, r1
+    1e36:	73 9f       	mul	r23, r19
+    1e38:	b0 0d       	add	r27, r0
+    1e3a:	e1 1d       	adc	r30, r1
+    1e3c:	aa 1f       	adc	r26, r26
+    1e3e:	66 27       	eor	r22, r22
+    1e40:	82 9f       	mul	r24, r18
+    1e42:	b0 0d       	add	r27, r0
+    1e44:	e1 1d       	adc	r30, r1
+    1e46:	a6 1f       	adc	r26, r22
+    1e48:	55 27       	eor	r21, r21
+    1e4a:	74 9f       	mul	r23, r20
+    1e4c:	e0 0d       	add	r30, r0
+    1e4e:	a1 1d       	adc	r26, r1
+    1e50:	55 1f       	adc	r21, r21
+    1e52:	83 9f       	mul	r24, r19
+    1e54:	e0 0d       	add	r30, r0
+    1e56:	a1 1d       	adc	r26, r1
+    1e58:	56 1f       	adc	r21, r22
+    1e5a:	84 9f       	mul	r24, r20
+    1e5c:	a0 0d       	add	r26, r0
+    1e5e:	51 1d       	adc	r21, r1
+    1e60:	85 2f       	mov	r24, r21
+    1e62:	7a 2f       	mov	r23, r26
+    1e64:	6e 2f       	mov	r22, r30
+    1e66:	1f 90       	pop	r1
+    1e68:	0f 90       	pop	r0
+    1e6a:	88 23       	and	r24, r24
+    1e6c:	1a f4       	brpl	.+6      	; 0x1e74 <__mulsf3x+0x7a>
+    1e6e:	93 95       	inc	r25
+    1e70:	39 f4       	brne	.+14     	; 0x1e80 <__mulsf3x+0x86>
+    1e72:	8f cf       	rjmp	.-226    	; 0x1d92 <__fp_nan>
+    1e74:	00 0c       	add	r0, r0
+    1e76:	11 1c       	adc	r1, r1
+    1e78:	bb 1f       	adc	r27, r27
+    1e7a:	66 1f       	adc	r22, r22
+    1e7c:	77 1f       	adc	r23, r23
+    1e7e:	88 1f       	adc	r24, r24
+    1e80:	01 28       	or	r0, r1
+    1e82:	08 95       	ret
+
+00001e84 <__udivmodqi4>:
+    1e84:	99 1b       	sub	r25, r25
+    1e86:	79 e0       	ldi	r23, 0x09	; 9
+    1e88:	04 c0       	rjmp	.+8      	; 0x1e92 <__udivmodqi4_ep>
+
+00001e8a <__udivmodqi4_loop>:
+    1e8a:	99 1f       	adc	r25, r25
+    1e8c:	96 17       	cp	r25, r22
+    1e8e:	08 f0       	brcs	.+2      	; 0x1e92 <__udivmodqi4_ep>
+    1e90:	96 1b       	sub	r25, r22
+
+00001e92 <__udivmodqi4_ep>:
+    1e92:	88 1f       	adc	r24, r24
+    1e94:	7a 95       	dec	r23
+    1e96:	c9 f7       	brne	.-14     	; 0x1e8a <__udivmodqi4_loop>
+    1e98:	80 95       	com	r24
+    1e9a:	08 95       	ret
+
+00001e9c <__divmodhi4>:
+    1e9c:	97 fb       	bst	r25, 7
+    1e9e:	09 2e       	mov	r0, r25
+    1ea0:	07 26       	eor	r0, r23
+    1ea2:	0a d0       	rcall	.+20     	; 0x1eb8 <__divmodhi4_neg1>
+    1ea4:	77 fd       	sbrc	r23, 7
+    1ea6:	04 d0       	rcall	.+8      	; 0x1eb0 <__divmodhi4_neg2>
+    1ea8:	0c d0       	rcall	.+24     	; 0x1ec2 <__udivmodhi4>
+    1eaa:	06 d0       	rcall	.+12     	; 0x1eb8 <__divmodhi4_neg1>
+    1eac:	00 20       	and	r0, r0
+    1eae:	1a f4       	brpl	.+6      	; 0x1eb6 <__divmodhi4_exit>
+
+00001eb0 <__divmodhi4_neg2>:
+    1eb0:	70 95       	com	r23
+    1eb2:	61 95       	neg	r22
+    1eb4:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00001eb6 <__divmodhi4_exit>:
+    1eb6:	08 95       	ret
+
+00001eb8 <__divmodhi4_neg1>:
+    1eb8:	f6 f7       	brtc	.-4      	; 0x1eb6 <__divmodhi4_exit>
+    1eba:	90 95       	com	r25
+    1ebc:	81 95       	neg	r24
+    1ebe:	9f 4f       	sbci	r25, 0xFF	; 255
+    1ec0:	08 95       	ret
+
+00001ec2 <__udivmodhi4>:
+    1ec2:	aa 1b       	sub	r26, r26
+    1ec4:	bb 1b       	sub	r27, r27
+    1ec6:	51 e1       	ldi	r21, 0x11	; 17
+    1ec8:	07 c0       	rjmp	.+14     	; 0x1ed8 <__udivmodhi4_ep>
+
+00001eca <__udivmodhi4_loop>:
+    1eca:	aa 1f       	adc	r26, r26
+    1ecc:	bb 1f       	adc	r27, r27
+    1ece:	a6 17       	cp	r26, r22
+    1ed0:	b7 07       	cpc	r27, r23
+    1ed2:	10 f0       	brcs	.+4      	; 0x1ed8 <__udivmodhi4_ep>
+    1ed4:	a6 1b       	sub	r26, r22
+    1ed6:	b7 0b       	sbc	r27, r23
+
+00001ed8 <__udivmodhi4_ep>:
+    1ed8:	88 1f       	adc	r24, r24
+    1eda:	99 1f       	adc	r25, r25
+    1edc:	5a 95       	dec	r21
+    1ede:	a9 f7       	brne	.-22     	; 0x1eca <__udivmodhi4_loop>
+    1ee0:	80 95       	com	r24
+    1ee2:	90 95       	com	r25
+    1ee4:	bc 01       	movw	r22, r24
+    1ee6:	cd 01       	movw	r24, r26
+    1ee8:	08 95       	ret
+
+00001eea <_exit>:
+    1eea:	ff cf       	rjmp	.-2      	; 0x1eea <_exit>

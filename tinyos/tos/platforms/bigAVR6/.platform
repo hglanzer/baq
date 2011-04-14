@@ -17,6 +17,7 @@ push( @includes, qw(
   %T/platforms/bigAVR6/lcd128x64
   %T/platforms/bigAVR6/uart
   %T/platforms/bigAVR6/mmc
+  %T/platforms/bigAVR6/eth
   %T/chips/atm128
   %T/chips/atm128/uart
   %T/chips/atm128/adc

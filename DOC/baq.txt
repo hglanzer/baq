@@ -125,13 +125,83 @@ LCD2x16
 		momentan busywait. problem könnte sein dass Timerinterface im untermodul lcd2x16 
 		nicht verfügbar ist...
 
+-------------------------------------------------------------------------------------------------------------
+
+ETHERNET
+
+	2 interruptquellen / davon nur eine interessant: !INT - FALLENDE FLANKE
+	falls verwendet - mit pin für externen interrupt verbinden mittel GpioInterrupt
 
 
+	** verbindung bigAVR6 <--> EthernetBoard
+
+	PB0(!SS)	--------------->	!CS
+	PB1(SCK)	--------------->	SCK
+	PB2(MOSI)	--------------->	MOSI
+	PB3(MISO)	--------------->	MISO
+
+	VCC		--------------->	VCC
+	GND		--------------->	GND
+
+	eventuell noch !RST und !INT anschliessen
+
+	startup:
+	keine LESE / SCHREIBOPERATIONEN solange CLKRDY in ESTATS == 0(POLLING...)
+
+	LEDS: 3 Leds am Board
+
+
+	** SPI Instruction Set **
+
+	Read Control Register		0 0 0 a a a a a			
+	Read Buffer Memory		0 0 1 1 1 0 1 0		read from 8kb RX/TX buffer
+	Write Control Register		0 1 0 a a a a a	+ data	
+	Write Buffer Memory		0 1 1 1 1 0 1 0 + data	write to  8kb RX/TX buffer
+	Bit Field Set			1 0 0 a a a a a + data	write to ETH/MAC/MII register
+	Bit Field Clear			1 0 1 a a a a a	+ data
+	System Command (Soft Reset)   	1 1 1 1 1 1 1 1
+
+
+	AUTOINCREMENT RX/TX - buffer
+	ERXFCON.CRCEN = 1  / CRC geprüft & defekte pakete werden verworfen(RX)
+	MACON3.PADCFG<2:0> / padding + CRC automatisch berechnet?
+	HALF DUPLEX verwenden
+
+	** Control Register
+
+	1. auswahl der bank				@ECON1 / 0x1F, alle 4 bänke
+
+
+
+
+	** initialisierung
+
+	1. RX buffer, setzen von ERXST und ERXND auf gerade adressen, TX buffer verwendet autom. rest
+	2. receive buffers ERXFCON
+	3. OST abwarten, ESTAT_CLKRDY = 1?
+	4. MAC init - pdf seite 36
+		1 MARST	= 0	(get out of reset)	@ MACON2
+		2 MARXEN	= 1	(enable RX)	@ MACON1
+		3 PADCFG, TXCRCEN, FULDPX 		@ MACON3
+		4 diverses				@ MACON4
+		5 setzen der maximalen framelänge	@ MAMXFL
+		6 back-to-back inter packet gap		@ MABBIPG	0x12 for half duplex?
+		7 non-back-to-back inter packet gap	@ MAIPGL	0x12
+		8 					@ MAIPGH	0xc
+		9
+		10 set mac adress			@ MAADR0 - MAADR5
 -------------------------------------------------------------------------------------------------------------
 
 *** MEMORYCARD ***
 
 	HplAtm128SpiP.nc 
+
+	verwendung des tinyos - spi-stacks. lowlevel-read-support
+	NO WRITE, NO FILESYSTEM-support
+
+	ACHTUNG: um spi nutzen zu können muss der jumper J21(USB PROG) nach dem download abgezogen werden,
+	da sonst spi-pin auf fixen pegel gezogen wird. sollte hinfällig sein sobald internes programming
+	verfügbar	
 	
 	ansteuerung über SPI. Vcc des microcontrollers = 5V, Vcc memoryslot = 3,3V 
 		--> 74LVCC3245A bus tranceiver dazwischengeschaltet, dieser setzt die spannungspegel 5V --> 3.3V um

@@ -1,11 +1,11 @@
 <tos_image>
   <ident>
-    <uidhash>8FAB5634L</uidhash>
+    <uidhash>0E27F126L</uidhash>
     <hostname>ecslab6</hostname>
     <username>hglanzer</username>
     <appname>BlinkAppC</appname>
     <userhash>4248BFE2L</userhash>
-    <timestamp>4DA42E4EL</timestamp>
+    <timestamp>4DA5C15DL</timestamp>
     <deluge_support>no</deluge_support>
     <platform>bigAVR6</platform>
   </ident>
