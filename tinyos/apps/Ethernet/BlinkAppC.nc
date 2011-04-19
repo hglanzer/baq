@@ -13,14 +13,14 @@ implementation
 	components MainC, BlinkC;
 	components GLCDC;
 //	components new TimerMilliC() as TIMER0;
-	components EthernetC;
+	components UDPC;
 //	components MMCC;
 
 	BlinkC -> MainC.Boot;
 //	BlinkC.Timer0 -> TIMER0;
 	BlinkC.GLCD -> GLCDC;
 
-	BlinkC.Eth -> EthernetC;
+	BlinkC.UDP -> UDPC;
 
 //	BlinkC.MMC -> MMCC;
 }

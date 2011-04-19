@@ -1,9 +1,9 @@
-#include "Ethernet.h"
+#include "IEEE8023.h"
 
-module EthernetP
+module IEEE8023P
 {
-	provides interface Ethernet;
-	uses interface GeneralIO as ssMMC;		// SS for mmc / must be set to high in this modul, otherwise driver-collision
+	provides interface IEEE8023;
+	uses interface GeneralIO as ssMMC;	// SS for mmc / must be set to high in this modul, otherwise driver-collision
 	uses interface GeneralIO as ssETH;
 	uses interface GeneralIO as rstETH;
 	uses interface GeneralIO as intETH;
@@ -14,7 +14,8 @@ module EthernetP
 
 implementation
 {
-	static volatile uint8_t stateETH = UNINIT;
+	static volatile uint8_t stateETH = IEEE8023_UNINIT;
+	static volatile uint16_t *TXdataPtr, *TXdstMAC;
 
 	uint8_t writeSPI(uint8_t opcode, uint8_t data)
 	{
@@ -43,16 +44,104 @@ implementation
 		call ssETH.set();
 	}
 
-	command uint8_t Ethernet.init(uint8_t *mac)
+	void setBit(uint8_t reg, uint8_t bit)
 	{
-		if(stateETH == UNINIT)
+		call ssETH.clr();
+		call SpiByte.write((ENC28J60_BIT_FIELD_SET | reg));
+		call SpiByte.write(bit);
+		call ssETH.set();
+	}
+
+	void sendPacket()
+	{		
+		uint16_t payloadCounter = 0, payloadLength;
+		uint16_t *tmpPtr;
+		uint16_t *tmpDoublePtr;
+
+		setBank(0x00);
+		// set START-adress for WR-Pointer = TX-Buffer-Start
+		writeSPI((ENC28J60_WRITE_CTRL_REG | EWRPTL), (TXSTART_INIT & 0xFF));
+		writeSPI((ENC28J60_WRITE_CTRL_REG | EWRPTH), (TXSTART_INIT >> 8));
+
+		// write per-packet-control-byte - nothing to override.
+		writeSPI((ENC28J60_WRITE_BUF_MEM), 0x00);
+	
+		// DEST-MAC
+		writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) & 0xFF);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) >> 8);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) & 0xFF);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) >> 8);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) & 0xFF);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) >> 8);
+	
+		// SOURCE-MAC
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR0);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR1);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR2);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR3);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR4);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR5);
+
+		// set len = datapayload WITHOUT PADDING in byte
+		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+1) >> 8);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+1));
+
+		// frame-PAYLOAD - write ip-header(20 bytes, 2 bytes per loop --> 10 loops)
+		for(payloadCounter = 0; payloadCounter < 10; payloadCounter++)
+		{
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) >> 8);
+		}
+
+		tmpPtr = (uint16_t *)*(TXdataPtr+10);
+	
+		// frame-PAYLOAD - write udp-header(8 byte)
+		for(payloadCounter = 0; payloadCounter < 4; payloadCounter++)
+		{
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter) >> 8);
+		}
+
+		// frame-PAYLOAD - write ACTUAL PAYLOAD-DATA from application - finally...
+		payloadLength = *(tmpPtr + 2);
+		payloadLength = payloadLength - 8;
+
+		tmpDoublePtr = (uint16_t *)*(tmpPtr+4);
+
+		for(payloadCounter = 0; payloadCounter < (payloadLength/2); payloadCounter++)
+		{
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpDoublePtr + payloadCounter));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpDoublePtr + payloadCounter) >> 8);
+		}
+
+// FIXME data for odd-length
+// ETXNDH/L richtig berechent?
+
+		// set end-adress for TX
+		// misuse payloadCounter. ip-packet-totallength + ethernetframe-bytes
+		payloadCounter = *(TXdataPtr+1) + 14;
+		writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDL), ((TXSTART_INIT & 0xFF) + (payloadCounter & 0xFF)));
+		writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDH), (TXSTART_INIT >> 8) + (payloadCounter >> 8));
+		
+		// START transmission!
+		setBit(ECON1, ECON1_TXRTS);
+	}
+
+	uint8_t arp()
+	{
+
+	}
+
+	command uint8_t IEEE8023.init()
+	{
+		if(stateETH == IEEE8023_UNINIT)
 		{
 			call ssETH.makeOutput();	// must be OUTPUT or Master-function is resetted to Slave-function
 							// should be done in SPI-stack, see bigAVR6/mmc/
-			call ssETH.set();		// perhaps we can use this pin for Ethernet-slaveselect...?
+			call ssETH.set();		// perhaps we can use this pin for IEEE8023-slaveselect...?
 
 			call rstETH.makeOutput();
-			call rstETH.set();		// Ethernetboard has low-active reset / FIXME - eigenartiges verhalten wenn set to HIGH
+			call rstETH.set();		// IEEE8023board has low-active reset
 
 			if(call Resource.request() == FAIL)
 			{
@@ -60,50 +149,38 @@ implementation
 			}
 			else
 			{
-				stateETH = INITIALIZING;
+				stateETH = IEEE8023_INITIALIZING;
 				return SUCCESS;
 			}	
-/*
-		call rstETH.makeOutput();
-		call rstETH.set();		// Ethernetboard has low-active reset / FIXME - eigenartiges verhalten wenn set to HIGH
-		call ssMMC.makeOutput();	// must be high, regardless if MMC is used or not
-		call ssMMC.set();		// otherwise driver-collission: ethernetboard cann't drive MISO
-			DDRB |= (1<<0);	//SS
-			DDRB |= (1<<1);	//SCK
-			DDRB |= (1<<2);	//MOSI
-			DDRB &= ~(1<<3);//MISO
+		}
+		else
+		{
+			return FAIL;
+		}
+	}
 
-			PORTB |= (1<<0);
-			PORTB |= (1<<3);
-	
-			SPCR |= (1<<MSTR);
-			SPCR &= ~(1<<CPOL);
-			SPCR &= ~(1<<DORD);
-			SPCR &= ~(1<<SPR0);
-			SPCR &= ~(1<<SPR1);
-			SPCR |= (1<<SPE);
-while(1)
-{
-		PORTB &= ~(1<<0);
-			writeSPI(0xff, 0xff); // soft-reset
-			rc = writeSPI((ENC28J60_READ_CTRL_REG | ESTAT), (ENC28J60_READ_CTRL_REG | ESTAT));
-			writeSPI((ENC28J60_WRITE_CTRL_REG | ETXSTL), 0x00);
-			writeSPI((ENC28J60_WRITE_CTRL_REG | ETXSTH), 0x00);
-			
-			writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDL), 0xFC);
-			writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDH), 0x0F);
-
-			rc = writeSPI(0x06, 0x06);
-			PORTA = rc;
-		PORTB |= (1<<0);
-};
-*/
+	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint16_t *dstMAC)
+	{
+		if(stateETH == IEEE8023_READY)
+		{
+			if(call Resource.request() == FAIL)
+			{
+				return FAIL;
+			}
+			else
+			{
+				TXdataPtr = dataPtr;
+				TXdstMAC = dstMAC;
+				stateETH = IEEE8023_TX;
+				return SUCCESS;
+			}
 
 		}
 		else
 		{
 			return FAIL;
 		}
+		
 	}
 
 	event void Resource.granted(void)
@@ -116,7 +193,7 @@ while(1)
 	
 		switch(stateETH)
 		{
-			case INITIALIZING:
+			case IEEE8023_INITIALIZING:
 				// perform soft reset, write 0xFF
 				writeSPI(ENC28J60_SOFT_RESET, ENC28J60_SOFT_RESET);
 
@@ -161,6 +238,8 @@ while(1)
 				writeSPI((ENC28J60_WRITE_CTRL_REG | ETXSTL), (TXSTART_INIT & 0xFF));
 				writeSPI((ENC28J60_WRITE_CTRL_REG | ETXSTH), (TXSTART_INIT >> 8));
 				
+				// set Autoincrement for Read/Write-buffer
+				writeSPI((ENC28J60_WRITE_CTRL_REG | ECON2), 0x80);
 				/*	
 					BANK1 - STUFF
 					Filter Options
@@ -209,38 +288,41 @@ while(1)
 				writeSPI(ENC28J60_WRITE_CTRL_REG | MAADR4, MACADR4);
 				writeSPI(ENC28J60_WRITE_CTRL_REG | MAADR5, MACADR5);
 				
-				
-				/*	
-					DEBUGGING only. read one of the values just set and write to PORTA-leds for checking...
-					and set LEDA/B to blink-mode by accessing PHY-register
-					dont forget to set the bank!!!
-				*/
 				setBank(0x02);
 
 
+				// no loopbackback
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIREGADR, PHCON2);
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRL, 0x00);
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRH, 0x01);
 
-// FIXME: loopback, interrupts, packet-reception, siehe avrlib...
-
-
-
+				// ledA & ledB
 				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIREGADR, PHLCON);
-				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRL, 0xB0);	// SLOW BLINK LEDB
-				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRH, 0x0A);	// FAST BLINK LEDA
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRL, (0x04<<4));	// link status
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRH, 0x01);		// transmit activity
 				
+				/*	
+					DEBUGGING only. read value just set and write to PORTA-leds for checking...
 				setBank(0x02);
 				rc = writeSPI(ENC28J60_READ_CTRL_REG | MAADR5, ENC28J60_READ_CTRL_REG | MAADR5);
 				PORTA = rc;
+				*/
 
+				stateETH = IEEE8023_READY;
+				
 				call Resource.release();
-				signal Ethernet.initDone();
+				signal IEEE8023.initDone();
 			break;
 
-			case RX:
+			case IEEE8023_RX:
 
 			break;
 	
-			case TX:
-
+			case IEEE8023_TX:
+				sendPacket();
+				stateETH = IEEE8023_READY;
+				signal IEEE8023.sendDone();
+				call Resource.release();
 			break;
 		}
 	}

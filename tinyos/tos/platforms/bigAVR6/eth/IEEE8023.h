@@ -35,12 +35,12 @@
 	#define ENC28J60_H
 
 	// define MAC-adress to be used: 2c:6b:f5:8a:72:a7
-	#define MACADR0 0xA7
-	#define MACADR1 0x72
-	#define MACADR2 0x8A
-	#define MACADR3 0xF5
-	#define MACADR4 0x6B
-	#define MACADR5 0x2C
+	#define MACADR0 0x00
+	#define MACADR1 0x16
+	#define MACADR2 0xCB
+	#define MACADR3 0xCA
+	#define MACADR4 0x5D
+	#define MACADR5 0x55
 	
 
 	// ENC28J60 Control Registers
@@ -338,9 +338,10 @@
 
 		enum
 		{
-			UNINIT		= 0,
-			INITIALIZING	= 1,
-			RX		= 2,
-			TX		= 3,
+			IEEE8023_UNINIT		= 0,
+			IEEE8023_INITIALIZING	= 1,
+			IEEE8023_READY		= 2,
+			IEEE8023_RX		= 3,
+			IEEE8023_TX		= 4,
 		};
 #endif

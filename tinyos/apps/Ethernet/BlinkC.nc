@@ -19,7 +19,7 @@ module BlinkC @safe()
 	uses interface GLCD;
 //	uses interface Timer<TMilli> as Timer0;
 
-	uses interface Ethernet as Eth;
+	uses interface UDP;
 //	uses interface MMC;
 }
 implementation
@@ -88,7 +88,7 @@ implementation
 //		call Timer0.startPeriodic(1000);
 //		call GLCD.startClearScreen(count);
 //		call GLCD.isPressed(TRUE);
-		call Eth.init(0x00);
+		call UDP.initStack();
 	}
 
 	event void GLCD.tsPressed()
@@ -133,6 +133,7 @@ implementation
 	event void GLCD.xyReady(uint16_t x, uint16_t y)
 	//event void GLCD.xyReady(uint8_t x, uint8_t y)
 	{
+		uint8_t dest[4];
 /*
 		call MMC.readBlock(count2);
 		count2++;
@@ -180,7 +181,14 @@ implementation
 */
 		if(x<128 && y < 64)
 			if((x>110) && (y>50))
-				call GLCD.startClearScreen(0x00);
+			{
+				dest[3] = 80;
+				dest[2] = 64;
+				dest[1] = 129;
+				dest[0] = 156;
+				call UDP.sendData((uint16_t *)"hello world!", &dest[0], 3000, 3000, 12);
+			//	call GLCD.startClearScreen(0x00);
+			}
 			else
 			{
 				if((call GLCD.startWriteRectangle(x, 64-y, 1, 1)) == SUCCESS)
@@ -195,10 +203,15 @@ implementation
 		else
 			call GLCD.isPressed(TRUE);
 	}
-////////////////////////////	ETH	///////////////////////////
+////////////////////////////	UDP	///////////////////////////
 
-	event void Eth.initDone(void)
+	event void UDP.initDone()
 	{
-		call GLCD.startWriteString("eth init done\0", 0, 0);
+		call GLCD.startWriteString("stack init done", 0, 0);
+	}
+	
+	event void UDP.sendDone()
+	{
+		call GLCD.isPressed(TRUE);
 	}
 }
