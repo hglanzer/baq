@@ -182,11 +182,11 @@ implementation
 		if(x<128 && y < 64)
 			if((x>110) && (y>50))
 			{
-				dest[3] = 80;
-				dest[2] = 64;
-				dest[1] = 129;
-				dest[0] = 156;
-				call UDP.sendData((uint16_t *)"hello world!", &dest[0], 3000, 3000, 12);
+				dest[0] = 192;
+				dest[1] = 168;
+				dest[2] = 0;
+				dest[3] = 1;
+				call UDP.sendData((uint16_t *)"hello world!powpow1234567890HATSCH FUCKING RULEZ", &dest[0], 443, 80, sizeof("hello world!powpow1234567890HATSCH FUCKING RULEZ"));
 			//	call GLCD.startClearScreen(0x00);
 			}
 			else

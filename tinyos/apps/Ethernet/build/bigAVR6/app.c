@@ -185,7 +185,7 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memset(void *arg_0x2ac588bad7f0, int arg_0x2ac588bada58, size_t arg_0x2ac588badd00);
+extern void *memset(void *arg_0x2aabbef797f0, int arg_0x2aabbef79a58, size_t arg_0x2aabbef79d00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2ac588bce968, const void *arg_0x2ac588bcec40);
+typedef int (*__compar_fn_t)(const void *arg_0x2aabbef9a968, const void *arg_0x2aabbef9ac40);
 # 23 "/homes/hglanzer/GIT/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -968,33 +968,56 @@ static unsigned char __attribute((progmem)) Font5x7[480] = {
 0x00, 0x41, 0x36, 0x08, 0x00, 
 0x08, 0x08, 0x2A, 0x1C, 0x08, 
 0x08, 0x1C, 0x2A, 0x08, 0x08 };
-# 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.h"
+# 17 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.h"
 #line 8
 typedef struct __nesc_unnamed4303 {
-  uint16_t srcPort;
-  uint16_t dstPort;
-  uint16_t length;
+  uint8_t srcPortH;
+  uint8_t srcPortL;
+  uint8_t dstPortH;
+  uint8_t dstPortL;
+  uint8_t lengthH;
+  uint8_t lengthL;
   uint16_t chkSum;
   uint16_t *payload;
 } udpStruct;
-# 25 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.h"
-#line 12
+# 47 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.h"
+#line 31
 typedef struct __nesc_unnamed4304 {
 
   uint8_t version;
+
   uint8_t TOS;
-  uint16_t length;
+  uint8_t lengthH;
+  uint8_t lengthL;
   uint16_t identification;
   uint16_t flags_fragOffset;
   uint8_t ttl;
   uint8_t prot;
-  uint16_t chkSum;
+  uint8_t chkSumH;
+  uint8_t chkSumL;
   uint8_t srcIP[4];
   uint8_t dstIP[4];
   uint16_t *data;
 } ipStruct;
+#line 63
+#line 49
+typedef struct __nesc_unnamed4305 {
+
+  uint8_t hwTypeH;
+  uint8_t hwTypeL;
+  uint8_t protH;
+  uint8_t protL;
+  uint8_t hwSize;
+  uint8_t protSize;
+  uint8_t arpTypeH;
+  uint8_t arpTypeL;
+  uint8_t srcMAC[6];
+  uint8_t srcIP[4];
+  uint8_t dstMAC[6];
+  uint8_t dstIP[4];
+} arpStruct;
 # 339 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.h"
-enum __nesc_unnamed4305 {
+enum __nesc_unnamed4306 {
 
   IEEE8023_UNINIT = 0, 
   IEEE8023_INITIALIZING = 1, 
@@ -1002,8 +1025,14 @@ enum __nesc_unnamed4305 {
   IEEE8023_RX = 3, 
   IEEE8023_TX = 4
 };
+
+enum __nesc_unnamed4307 {
+
+  ARP = 0, 
+  IP = 1
+};
 # 41 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.h"
-enum __nesc_unnamed4306 {
+enum __nesc_unnamed4308 {
   ATM128_SPI_CLK_DIVIDE_4 = 0, 
   ATM128_SPI_CLK_DIVIDE_16 = 1, 
   ATM128_SPI_CLK_DIVIDE_64 = 2, 
@@ -1011,7 +1040,7 @@ enum __nesc_unnamed4306 {
 };
 #line 58
 #line 49
-typedef struct __nesc_unnamed4307 {
+typedef struct __nesc_unnamed4309 {
   uint8_t spie : 1;
   uint8_t spe : 1;
   uint8_t dord : 1;
@@ -1025,7 +1054,7 @@ Atm128SPIControl_s;
 
 
 #line 59
-typedef union __nesc_unnamed4308 {
+typedef union __nesc_unnamed4310 {
   uint8_t flat;
   Atm128SPIControl_s bits;
 } Atm128SPIControl_t;
@@ -1040,7 +1069,7 @@ typedef Atm128SPIControl_t Atm128_SPCR_t;
 
 
 #line 67
-typedef struct __nesc_unnamed4309 {
+typedef struct __nesc_unnamed4311 {
   uint8_t spif : 1;
   uint8_t wcol : 1;
   uint8_t rsvd : 5;
@@ -1051,7 +1080,7 @@ Atm128SPIStatus_s;
 
 
 #line 74
-typedef union __nesc_unnamed4310 {
+typedef union __nesc_unnamed4312 {
   uint8_t flat;
   Atm128SPIStatus_s bits;
 } Atm128SPIStatus_t;
@@ -1065,7 +1094,7 @@ typedef uint16_t AdcP__ReadNow__val_t;
 typedef uint16_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__width_t;
 typedef /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__width_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t;
 typedef /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__width_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t;
-enum /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0____nesc_unnamed4311 {
+enum /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0____nesc_unnamed4313 {
   AdcReadClientC__0__ID = 0U, AdcReadClientC__0__HAL_ID = 0U
 };
 # 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Init.nc"
@@ -1132,11 +1161,11 @@ static uint8_t MeasureClockC__Atm128Calibrate__adcPrescaler(void );
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2ac588cd6108);
+uint8_t arg_0x2aabbf0a2108);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2ac588cd6108);
+uint8_t arg_0x2aabbf0a2108);
 # 57 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1317,29 +1346,29 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac589090328);
+uint8_t arg_0x2aabbf45c328);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac58908e538);
+uint8_t arg_0x2aabbf45a538);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac58908e538);
+uint8_t arg_0x2aabbf45a538);
 # 56 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac5890771a0);
+uint8_t arg_0x2aabbf4431a0);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac5890771a0);
+uint8_t arg_0x2aabbf4431a0);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac5890771a0);
+uint8_t arg_0x2aabbf4431a0);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__runTask(void );
 # 62 "/homes/hglanzer/GIT/tinyos/tos/lib/power/PowerDownCleanup.nc"
@@ -1351,25 +1380,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t AdcP__Read__read(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890fbac0);
+uint8_t arg_0x2aabbf4c7ac0);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f96d8, 
+uint8_t arg_0x2aabbf4c56d8, 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f6cd0);
+uint8_t arg_0x2aabbf4c2cd0);
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f6cd0);
+uint8_t arg_0x2aabbf4c2cd0);
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f6cd0);
+uint8_t arg_0x2aabbf4c2cd0);
 # 81 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1377,31 +1406,31 @@ static void AdcP__acquiredData__runTask(void );
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__read(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac58912a6b8);
+uint8_t arg_0x2aabbf4f66b8);
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac58912a6b8, 
+uint8_t arg_0x2aabbf4f66b8, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589127390, 
+uint8_t arg_0x2aabbf4f3390, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589126e30);
+uint8_t arg_0x2aabbf4f2e30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589126e30);
+uint8_t arg_0x2aabbf4f2e30);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__granted(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589126e30);
+uint8_t arg_0x2aabbf4f2e30);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeRectangle__runTask(void );
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
@@ -1431,23 +1460,27 @@ static void LCD128x64P__clearScreenNB__runTask(void );
 # 5 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
 static uint8_t UDPP__UDP__initStack(void );
 #line 3
-static uint8_t UDPP__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint8_t len);
+static uint8_t UDPP__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len);
 # 7 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
 static void UDPP__IP__initDone(void );
 
 static void UDPP__IP__sendDone(void );
-# 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+# 16 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
 static void IPP__IEEE8023__initDone(void );
 
 static void IPP__IEEE8023__sendDone(void );
 # 5 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
 static uint8_t IPP__IP__initStack(void );
 #line 3
-static uint8_t IPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP);
+static uint8_t IPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP, uint16_t len);
 # 8 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
 static uint8_t IEEE8023P__IEEE8023__init(void );
 
-static uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC);
+
+
+
+
+static uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void IEEE8023P__Resource__granted(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1467,7 +1500,7 @@ error_t error);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__ResourceArbiter__granted(
 # 99 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892e5220);
+uint8_t arg_0x2aabbf6ec868);
 # 45 "/homes/hglanzer/GIT/tinyos/tos/interfaces/SpiByte.nc"
 static uint8_t Atm128SpiP__SpiByte__write(uint8_t tx);
 # 109 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
@@ -1475,15 +1508,15 @@ static void Atm128SpiP__Spi__dataReady(uint8_t data);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__release(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892dec00);
+uint8_t arg_0x2aabbf6e3408);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__request(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892dec00);
+uint8_t arg_0x2aabbf6e3408);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__default__granted(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892dec00);
+uint8_t arg_0x2aabbf6e3408);
 # 89 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void HplAtm128SpiP__SPI__sleep(void );
 #line 83
@@ -1532,23 +1565,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0__F
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(
 # 52 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac5893c4020);
+uint8_t arg_0x2aabbf7ad408);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac5893c3538);
+uint8_t arg_0x2aabbf7ab920);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac5893c3538);
+uint8_t arg_0x2aabbf7ab920);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(
 # 51 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac58939fe30);
+uint8_t arg_0x2aabbf7ae258);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(
 # 51 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac58939fe30);
+uint8_t arg_0x2aabbf7ae258);
 # 90 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ArbiterInfo__inUse(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1627,7 +1660,7 @@ static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__I
 
 static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void );
 # 33 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/MeasureClockC.nc"
-enum MeasureClockC____nesc_unnamed4312 {
+enum MeasureClockC____nesc_unnamed4314 {
 
 
   MeasureClockC__MAGIC = 488 / (16 / PLATFORM_MHZ)
@@ -1657,11 +1690,11 @@ int main(void )   ;
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2ac588cd6108);
+uint8_t arg_0x2aabbf0a2108);
 # 76 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-enum SchedulerBasicP____nesc_unnamed4313 {
+enum SchedulerBasicP____nesc_unnamed4315 {
 
   SchedulerBasicP__NUM_TASKS = 13U, 
   SchedulerBasicP__NO_TASK = 255
@@ -1741,9 +1774,9 @@ static void BlinkC__GLCD__initLCD(uint8_t pattern);
 # 5 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
 static uint8_t BlinkC__UDP__initStack(void );
 #line 3
-static uint8_t BlinkC__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint8_t len);
+static uint8_t BlinkC__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len);
 # 31 "BlinkC.nc"
-enum BlinkC____nesc_unnamed4314 {
+enum BlinkC____nesc_unnamed4316 {
 #line 31
   BlinkC__testTask = 0U
 };
@@ -1970,7 +2003,7 @@ static void TouchScreenP__adcY__makeInput(void );
 #line 41
 static void TouchScreenP__adcY__clr(void );
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
-enum TouchScreenP____nesc_unnamed4315 {
+enum TouchScreenP____nesc_unnamed4317 {
 #line 36
   TouchScreenP__checkTS = 1U
 };
@@ -2047,14 +2080,14 @@ static void Atm128AdcP__HplAtm128Adc__setAdcsra(Atm128Adcsra_t adcsra);
 static uint8_t Atm128AdcP__Atm128Calibrate__adcPrescaler(void );
 # 102 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcP.nc"
 #line 98
-struct Atm128AdcP____nesc_unnamed4316 {
+struct Atm128AdcP____nesc_unnamed4318 {
   bool multiple : 1;
   bool precise : 1;
   uint8_t channel : 5;
 } Atm128AdcP__f;
 #line 102
 #line 98
-struct Atm128AdcP____nesc_unnamed4316 
+struct Atm128AdcP____nesc_unnamed4318 
 
 
 
@@ -2137,7 +2170,7 @@ void __vector_21(void ) __attribute((signal))   ;
 
 static inline bool HplAtm128AdcP__HplAtm128Adc__cancel(void );
 # 49 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
-enum /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0____nesc_unnamed4317 {
+enum /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0____nesc_unnamed4319 {
   RoundRobinResourceQueueC__0__NO_ENTRY = 0xFF, 
   RoundRobinResourceQueueC__0__SIZE = 1U ? (1U - 1) / 8 + 1 : 0
 };
@@ -2173,15 +2206,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac589090328);
+uint8_t arg_0x2aabbf45c328);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac58908e538);
+uint8_t arg_0x2aabbf45a538);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac58908e538);
+uint8_t arg_0x2aabbf45a538);
 # 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -2195,28 +2228,28 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2ac5890771a0);
+uint8_t arg_0x2aabbf4431a0);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4318 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4320 {
 #line 75
   ArbiterP__0__grantedTask = 2U
 };
 #line 75
 typedef int /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_sillytask_grantedTask[/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask];
 #line 67
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4319 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4321 {
 #line 67
   ArbiterP__0__RES_CONTROLLED, ArbiterP__0__RES_GRANTING, ArbiterP__0__RES_IMM_GRANTING, ArbiterP__0__RES_BUSY
 };
 #line 68
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4320 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4322 {
 #line 68
   ArbiterP__0__default_owner_id = 1U
 };
 #line 69
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4321 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4323 {
 #line 69
   ArbiterP__0__NO_RES = 0xFF
 };
@@ -2277,41 +2310,41 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890fbac0, 
+uint8_t arg_0x2aabbf4c7ac0, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f96d8, 
+uint8_t arg_0x2aabbf4c56d8, 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f6cd0);
+uint8_t arg_0x2aabbf4c2cd0);
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f6cd0);
+uint8_t arg_0x2aabbf4c2cd0);
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2ac5890f6cd0);
+uint8_t arg_0x2aabbf4c2cd0);
 # 70 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t AdcP__acquiredData__postTask(void );
 # 103 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-enum AdcP____nesc_unnamed4322 {
+enum AdcP____nesc_unnamed4324 {
 #line 103
   AdcP__acquiredData = 3U
 };
 #line 103
 typedef int AdcP____nesc_sillytask_acquiredData[AdcP__acquiredData];
 #line 57
-enum AdcP____nesc_unnamed4323 {
+enum AdcP____nesc_unnamed4325 {
   AdcP__IDLE, 
   AdcP__ACQUIRE_DATA, 
   AdcP__ACQUIRE_DATA_NOW
@@ -2381,21 +2414,21 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac58912a6b8, 
+uint8_t arg_0x2aabbf4f66b8, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 55
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(
 # 26 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589127390);
+uint8_t arg_0x2aabbf4f3390);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589126e30);
+uint8_t arg_0x2aabbf4f2e30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2ac589126e30);
+uint8_t arg_0x2aabbf4f2e30);
 
 
 
@@ -2450,49 +2483,49 @@ static error_t LCD128x64P__wait4Controller__postTask(void );
 #line 67
 static error_t LCD128x64P__clearScreenNB__postTask(void );
 # 37 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-enum LCD128x64P____nesc_unnamed4324 {
+enum LCD128x64P____nesc_unnamed4326 {
 #line 37
   LCD128x64P__wait4Controller = 4U
 };
 #line 37
 typedef int LCD128x64P____nesc_sillytask_wait4Controller[LCD128x64P__wait4Controller];
 #line 170
-enum LCD128x64P____nesc_unnamed4325 {
+enum LCD128x64P____nesc_unnamed4327 {
 #line 170
   LCD128x64P__writeRectangle = 5U
 };
 #line 170
 typedef int LCD128x64P____nesc_sillytask_writeRectangle[LCD128x64P__writeRectangle];
 #line 186
-enum LCD128x64P____nesc_unnamed4326 {
+enum LCD128x64P____nesc_unnamed4328 {
 #line 186
   LCD128x64P__writeCircle = 6U
 };
 #line 186
 typedef int LCD128x64P____nesc_sillytask_writeCircle[LCD128x64P__writeCircle];
 #line 219
-enum LCD128x64P____nesc_unnamed4327 {
+enum LCD128x64P____nesc_unnamed4329 {
 #line 219
   LCD128x64P__writeString = 7U
 };
 #line 219
 typedef int LCD128x64P____nesc_sillytask_writeString[LCD128x64P__writeString];
 #line 247
-enum LCD128x64P____nesc_unnamed4328 {
+enum LCD128x64P____nesc_unnamed4330 {
 #line 247
   LCD128x64P__clearScreenNB = 8U
 };
 #line 247
 typedef int LCD128x64P____nesc_sillytask_clearScreenNB[LCD128x64P__clearScreenNB];
 #line 278
-enum LCD128x64P____nesc_unnamed4329 {
+enum LCD128x64P____nesc_unnamed4331 {
 #line 278
   LCD128x64P__writeLine = 9U
 };
 #line 278
 typedef int LCD128x64P____nesc_sillytask_writeLine[LCD128x64P__writeLine];
 #line 356
-enum LCD128x64P____nesc_unnamed4330 {
+enum LCD128x64P____nesc_unnamed4332 {
 #line 356
   LCD128x64P__writeBar = 10U
 };
@@ -2560,12 +2593,12 @@ static void UDPP__UDP__sendDone(void );
 # 5 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
 static uint8_t UDPP__IP__initStack(void );
 #line 3
-static uint8_t UDPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP);
+static uint8_t UDPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP, uint16_t len);
 # 11 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
 udpStruct UDPP__udpData;
-
-static inline uint8_t UDPP__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint8_t len);
-#line 39
+#line 24
+static inline uint8_t UDPP__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len);
+#line 56
 static inline uint8_t UDPP__UDP__initStack(void );
 
 
@@ -2580,22 +2613,26 @@ static inline void UDPP__IP__sendDone(void );
 # 8 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
 static uint8_t IPP__IEEE8023__init(void );
 
-static uint8_t IPP__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC);
+
+
+
+
+static uint8_t IPP__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
 # 7 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
 static void IPP__IP__initDone(void );
 
 static void IPP__IP__sendDone(void );
-# 11 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+# 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static volatile uint8_t IPP__dstMAC[6];
 ipStruct IPP__ipData;
+arpStruct IPP__request;
 
-static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP);
-#line 59
+static inline uint16_t IPP__ipChksum(uint16_t len_ip_header);
+#line 43
+static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP, uint16_t len);
+#line 127
 static inline uint8_t IPP__IP__initStack(void );
-
-
-
-
+#line 161
 static inline void IPP__IEEE8023__initDone(void );
 
 
@@ -2613,7 +2650,7 @@ static void IEEE8023P__ssETH__makeOutput(void );
 #line 40
 static void IEEE8023P__ssETH__set(void );
 static void IEEE8023P__ssETH__clr(void );
-# 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+# 16 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
 static void IEEE8023P__IEEE8023__initDone(void );
 
 static void IEEE8023P__IEEE8023__sendDone(void );
@@ -2627,9 +2664,13 @@ static error_t IEEE8023P__Resource__release(void );
 static error_t IEEE8023P__Resource__request(void );
 # 17 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
 static volatile uint8_t IEEE8023P__stateETH = IEEE8023_UNINIT;
+#line 17
+static volatile uint8_t IEEE8023P__ipType = 0;
 static volatile uint16_t *IEEE8023P__TXdataPtr;
 #line 18
 static volatile uint16_t *IEEE8023P__TXdstMAC;
+#line 18
+static volatile uint16_t IEEE8023P__TXlen;
 
 static uint8_t IEEE8023P__writeSPI(uint8_t opcode, uint8_t data);
 #line 34
@@ -2644,11 +2685,11 @@ static inline void IEEE8023P__setBit(uint8_t reg, uint8_t bit);
 
 
 static inline void IEEE8023P__sendPacket(void );
-#line 132
+#line 137
 static inline uint8_t IEEE8023P__IEEE8023__init(void );
-#line 159
-static inline uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC);
-#line 183
+#line 164
+static uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
+#line 190
 static inline void IEEE8023P__Resource__granted(void );
 # 82 "/homes/hglanzer/GIT/tinyos/tos/interfaces/SpiPacket.nc"
 static void Atm128SpiP__SpiPacket__sendDone(
@@ -2665,11 +2706,11 @@ error_t error);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__release(
 # 99 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892e5220);
+uint8_t arg_0x2aabbf6ec868);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__request(
 # 99 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892e5220);
+uint8_t arg_0x2aabbf6ec868);
 # 89 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void Atm128SpiP__Spi__sleep(void );
 #line 83
@@ -2693,13 +2734,13 @@ static void Atm128SpiP__Spi__setClockPhase(bool sampleOnTrailing);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__granted(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2ac5892dec00);
+uint8_t arg_0x2aabbf6e3408);
 # 90 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool Atm128SpiP__ArbiterInfo__inUse(void );
 # 52 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerState.nc"
 static void Atm128SpiP__McuPowerState__update(void );
 # 255 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-enum Atm128SpiP____nesc_unnamed4331 {
+enum Atm128SpiP____nesc_unnamed4333 {
 #line 255
   Atm128SpiP__zeroTask = 11U
 };
@@ -2711,7 +2752,7 @@ uint8_t * Atm128SpiP__txBuffer;
 uint8_t * Atm128SpiP__rxBuffer;
 uint16_t Atm128SpiP__pos;
 
-enum Atm128SpiP____nesc_unnamed4332 {
+enum Atm128SpiP____nesc_unnamed4334 {
   Atm128SpiP__SPI_IDLE, 
   Atm128SpiP__SPI_BUSY, 
   Atm128SpiP__SPI_ATOMIC_SIZE = 10
@@ -2798,7 +2839,7 @@ static inline void HplAtm128SpiP__SPI__setClock(uint8_t v);
 #line 230
 static inline void HplAtm128SpiP__SPI__setMasterDoubleSpeed(bool on);
 # 49 "/homes/hglanzer/GIT/tinyos/tos/system/FcfsResourceQueueC.nc"
-enum /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0____nesc_unnamed4333 {
+enum /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0____nesc_unnamed4335 {
 #line 49
   FcfsResourceQueueC__0__NO_ENTRY = 0xFF
 };
@@ -2825,15 +2866,15 @@ static inline error_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQue
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(
 # 52 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac5893c4020);
+uint8_t arg_0x2aabbf7ad408);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac5893c3538);
+uint8_t arg_0x2aabbf7ab920);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac5893c3538);
+uint8_t arg_0x2aabbf7ab920);
 # 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -2843,23 +2884,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Que
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(
 # 51 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2ac58939fe30);
+uint8_t arg_0x2aabbf7ae258);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask__postTask(void );
 # 69 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4334 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4336 {
 #line 69
   SimpleArbiterP__0__grantedTask = 12U
 };
 #line 69
 typedef int /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_sillytask_grantedTask[/*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask];
 #line 62
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4335 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4337 {
 #line 62
   SimpleArbiterP__0__RES_IDLE = 0, SimpleArbiterP__0__RES_GRANTING = 1, SimpleArbiterP__0__RES_BUSY = 2
 };
 #line 63
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4336 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4338 {
 #line 63
   SimpleArbiterP__0__NO_RES = 0xFF
 };
@@ -2947,7 +2988,7 @@ static inline uint8_t HplAtm128AdcP__Adcsra2int(Atm128Adcsra_t x)
 #line 60
 {
 #line 60
-  union __nesc_unnamed4337 {
+  union __nesc_unnamed4339 {
 #line 60
     Atm128Adcsra_t f;
 #line 60
@@ -3244,7 +3285,7 @@ inline static void UDPP__UDP__sendDone(void ){
 #line 9
 }
 #line 9
-# 49 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+# 66 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
 static inline void UDPP__IP__sendDone(void )
 {
   UDPP__UDP__sendDone();
@@ -3257,19 +3298,19 @@ inline static void IPP__IP__sendDone(void ){
 #line 9
 }
 #line 9
-# 69 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+# 166 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static inline void IPP__IEEE8023__sendDone(void )
 {
   IPP__IP__sendDone();
 }
 
-# 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+# 18 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
 inline static void IEEE8023P__IEEE8023__sendDone(void ){
-#line 14
+#line 18
   IPP__IEEE8023__sendDone();
-#line 14
+#line 18
 }
-#line 14
+#line 18
 # 55 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit0*/HplAtm128GeneralIOPinP__8__IO__set(void )
 #line 55
@@ -3327,10 +3368,7 @@ static inline void IEEE8023P__setBit(uint8_t reg, uint8_t bit)
 static inline void IEEE8023P__sendPacket(void )
 {
   uint16_t payloadCounter = 0;
-#line 57
-  uint16_t payloadLength;
   uint16_t *tmpPtr;
-  uint16_t *tmpDoublePtr;
 
   IEEE8023P__setBank(0x00);
 
@@ -3357,15 +3395,26 @@ static inline void IEEE8023P__sendPacket(void )
   IEEE8023P__writeSPI(0x7A, 0x55);
 
 
-  IEEE8023P__writeSPI(0x7A, *(IEEE8023P__TXdataPtr + 1) >> 8);
-  IEEE8023P__writeSPI(0x7A, *(IEEE8023P__TXdataPtr + 1));
 
+
+
+  IEEE8023P__writeSPI(0x7A, 0x08);
+
+  if (IEEE8023P__ipType == IP) {
+    IEEE8023P__writeSPI(0x7A, 0x00);
+    }
+  else {
+#line 93
+    IEEE8023P__writeSPI(0x7A, 0x06);
+    }
 
   for (payloadCounter = 0; payloadCounter < 10; payloadCounter++) 
     {
-      IEEE8023P__writeSPI(0x7A, *(IEEE8023P__TXdataPtr + payloadCounter));
+      IEEE8023P__writeSPI(0x7A, *(IEEE8023P__TXdataPtr + payloadCounter) & 0xFF);
       IEEE8023P__writeSPI(0x7A, *(IEEE8023P__TXdataPtr + payloadCounter) >> 8);
     }
+
+
 
   tmpPtr = (uint16_t *)*(IEEE8023P__TXdataPtr + 10);
 
@@ -3377,22 +3426,19 @@ static inline void IEEE8023P__sendPacket(void )
     }
 
 
-  payloadLength = *(tmpPtr + 2);
-  payloadLength = payloadLength - 8;
-
-  tmpDoublePtr = (uint16_t *)*(tmpPtr + 4);
-
-  for (payloadCounter = 0; payloadCounter < payloadLength / 2; payloadCounter++) 
+  tmpPtr = (uint16_t *)*(tmpPtr + 4);
+  for (payloadCounter = 0; payloadCounter < IEEE8023P__TXlen / 2; payloadCounter++) 
     {
-      IEEE8023P__writeSPI(0x7A, *(tmpDoublePtr + payloadCounter));
-      IEEE8023P__writeSPI(0x7A, *(tmpDoublePtr + payloadCounter) >> 8);
+      IEEE8023P__writeSPI(0x7A, *(tmpPtr + payloadCounter));
+      IEEE8023P__writeSPI(0x7A, *(tmpPtr + payloadCounter) >> 8);
     }
 
 
 
-  payloadCounter = *(IEEE8023P__TXdataPtr + 1) + 14;
-  IEEE8023P__writeSPI(0x40 | (0x06 | 0x00), (0x0000 & 0xFF) + (payloadCounter & 0xFF));
-  IEEE8023P__writeSPI(0x40 | (0x07 | 0x00), (0x0000 >> 8) + (payloadCounter >> 8));
+
+  IEEE8023P__TXlen = 0x0000 + IEEE8023P__TXlen + 14;
+  IEEE8023P__writeSPI(0x40 | (0x06 | 0x00), IEEE8023P__TXlen & 0xFF);
+  IEEE8023P__writeSPI(0x40 | (0x07 | 0x00), IEEE8023P__TXlen >> 8);
 
 
   IEEE8023P__setBit(0x1F, 0x08);
@@ -3455,7 +3501,7 @@ inline static void UDPP__UDP__initDone(void ){
 #line 7
 }
 #line 7
-# 44 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+# 61 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
 static inline void UDPP__IP__initDone(void )
 {
   UDPP__UDP__initDone();
@@ -3468,19 +3514,19 @@ inline static void IPP__IP__initDone(void ){
 #line 7
 }
 #line 7
-# 64 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+# 161 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static inline void IPP__IEEE8023__initDone(void )
 {
   IPP__IP__initDone();
 }
 
-# 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+# 16 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
 inline static void IEEE8023P__IEEE8023__initDone(void ){
-#line 12
+#line 16
   IPP__IEEE8023__initDone();
-#line 12
+#line 16
 }
-#line 12
+#line 16
 # 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
 static __inline void /*HplAtm128GeneralIOC.G1*/HplAtm128GeneralIOSlowPinP__9__IO__set(void )
 #line 56
@@ -3519,11 +3565,11 @@ inline static void IEEE8023P__ssMMC__makeOutput(void ){
 #line 46
 }
 #line 46
-# 183 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
+# 190 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
 static inline void IEEE8023P__Resource__granted(void )
 {
   volatile uint8_t rc = 0;
-#line 185
+#line 192
   volatile uint8_t count = 0;
 
   IEEE8023P__ssETH__set();
@@ -3552,9 +3598,9 @@ static inline void IEEE8023P__Resource__granted(void )
           rc = IEEE8023P__writeSPI(0x00 | 0x1D, 0x00 | 0x1D);
         }
       while ((
-#line 211
+#line 218
       rc & 0x01) == 0);
-#line 223
+#line 230
       IEEE8023P__writeSPI(0x40 | (0x08 | 0x00), 0x0600 & 0xFF);
       IEEE8023P__writeSPI(0x40 | (0x09 | 0x00), 0x0600 >> 8);
 
@@ -3654,6 +3700,7 @@ static inline void IEEE8023P__Resource__granted(void )
         IEEE8023P__sendPacket();
       IEEE8023P__stateETH = IEEE8023_READY;
       IEEE8023P__IEEE8023__sendDone();
+
       IEEE8023P__Resource__release();
       break;
     }
@@ -3666,9 +3713,9 @@ static inline void Atm128SpiP__Resource__default__granted(uint8_t id)
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2ac5892dec00){
+inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2aabbf6e3408){
 #line 102
-  switch (arg_0x2ac5892dec00) {
+  switch (arg_0x2aabbf6e3408) {
 #line 102
     case 0:
 #line 102
@@ -3678,7 +3725,7 @@ inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2ac5892dec00){
 #line 102
     default:
 #line 102
-      Atm128SpiP__Resource__default__granted(arg_0x2ac5892dec00);
+      Atm128SpiP__Resource__default__granted(arg_0x2aabbf6e3408);
 #line 102
       break;
 #line 102
@@ -3694,9 +3741,9 @@ static inline void Atm128SpiP__ResourceArbiter__granted(uint8_t id)
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2ac58939fe30){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2aabbf7ae258){
 #line 102
-  Atm128SpiP__ResourceArbiter__granted(arg_0x2ac58939fe30);
+  Atm128SpiP__ResourceArbiter__granted(arg_0x2aabbf7ae258);
 #line 102
 }
 #line 102
@@ -3707,9 +3754,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2ac5893c3538){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2aabbf7ab920){
 #line 59
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2ac5893c3538);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2aabbf7ab920);
 #line 59
 }
 #line 59
@@ -3749,9 +3796,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2ac5893c3538){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2aabbf7ab920){
 #line 65
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2ac5893c3538);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2aabbf7ab920);
 #line 65
 }
 #line 65
@@ -3888,13 +3935,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2ac5892e5220){
+inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2aabbf6ec868){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2ac5892e5220);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2aabbf6ec868);
 #line 120
 
 #line 120
@@ -4553,13 +4600,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2ac589126e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2aabbf4f2e30){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  switch (arg_0x2ac589126e30) {
+  switch (arg_0x2aabbf4f2e30) {
 #line 88
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 88
@@ -4569,7 +4616,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 88
     default:
 #line 88
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2ac589126e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2aabbf4f2e30);
 #line 88
       break;
 #line 88
@@ -4912,9 +4959,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2ac58912a6b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2aabbf4f66b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-  switch (arg_0x2ac58912a6b8) {
+  switch (arg_0x2aabbf4f66b8) {
 #line 63
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 63
@@ -4924,7 +4971,7 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
     default:
 #line 63
-      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2ac58912a6b8, result, val);
+      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2aabbf4f66b8, result, val);
 #line 63
       break;
 #line 63
@@ -5015,9 +5062,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2ac58908e538){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2aabbf45a538){
 #line 65
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2ac58908e538);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2aabbf45a538);
 #line 65
 }
 #line 65
@@ -5196,13 +5243,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2ac589126e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2aabbf4f2e30){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  switch (arg_0x2ac589126e30) {
+  switch (arg_0x2aabbf4f2e30) {
 #line 120
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 120
@@ -5212,7 +5259,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 120
     default:
 #line 120
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2ac589126e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2aabbf4f2e30);
 #line 120
       break;
 #line 120
@@ -5233,9 +5280,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x2ac5890fbac0, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x2aabbf4c7ac0, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2ac5890fbac0, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2aabbf4c7ac0, result, val);
 #line 63
 }
 #line 63
@@ -5254,9 +5301,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequest
 }
 
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2ac589090328){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2aabbf45c328){
 #line 53
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2ac589090328);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2aabbf45c328);
 #line 53
 }
 #line 53
@@ -5548,72 +5595,73 @@ inline static void TouchScreenP__adcX__clr(void ){
 #line 41
 }
 #line 41
-# 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t IEEE8023P__Resource__request(void ){
-#line 88
+# 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+inline static uint8_t IPP__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type){
+#line 14
   unsigned char result;
-#line 88
+#line 14
 
-#line 88
-  result = Atm128SpiP__Resource__request(0);
-#line 88
+#line 14
+  result = IEEE8023P__IEEE8023__sendFrame(dataPtr, dstMAC, len, type);
+#line 14
 
-#line 88
+#line 14
   return result;
-#line 88
+#line 14
 }
-#line 88
-# 159 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
-static inline uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC)
+#line 14
+# 16 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+static inline uint16_t IPP__ipChksum(uint16_t len_ip_header)
 {
-  if (IEEE8023P__stateETH == IEEE8023_READY) 
-    {
-      if (IEEE8023P__Resource__request() == FAIL) 
-        {
-          return FAIL;
-        }
-      else 
-        {
-          IEEE8023P__TXdataPtr = dataPtr;
-          IEEE8023P__TXdstMAC = dstMAC;
-          IEEE8023P__stateETH = IEEE8023_TX;
-          return SUCCESS;
-        }
-    }
-  else 
+  uint32_t sum = 0;
+  uint16_t word16 = 0;
+#line 19
+  uint16_t i = 0;
+#line 19
+  uint16_t *tmpPtr;
 
+  tmpPtr = (uint16_t *)&IPP__ipData;
+
+
+
+
+  for (i = 0; i < 10; i++) 
     {
-      return FAIL;
+      word16 = (*(tmpPtr + i) & 0xFF00) + (*(tmpPtr + i) & 0xFF);
+      sum = sum + (uint32_t )word16;
     }
+
+
+  while (sum >> 16) 
+    {
+      sum = (sum & 0xFFFF) + (sum >> 16);
+    }
+
+
+  sum = ~sum;
+  return (uint16_t )sum;
 }
 
-# 10 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
-inline static uint8_t IPP__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC){
-#line 10
-  unsigned char result;
-#line 10
-
-#line 10
-  result = IEEE8023P__IEEE8023__sendFrame(dataPtr, dstMAC);
-#line 10
-
-#line 10
-  return result;
-#line 10
-}
-#line 10
-# 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
-static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP)
+static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP, uint16_t len)
 {
-  IPP__ipData.version = 0x54;
+  uint16_t tmp = 0;
+#line 45
+  uint16_t *ipHeaderPtr;
+
+  ipHeaderPtr = (uint16_t *)&IPP__ipData;
+
+  IPP__ipData.version = 0x45;
 
   IPP__ipData.TOS = 0x00;
-  IPP__ipData.length = *(dataPtr + 2) + 20;
+  len = len + 20;
+  IPP__ipData.lengthH = len >> 8;
+  IPP__ipData.lengthL = len & 0xFF;
   IPP__ipData.identification = 0x6666;
   IPP__ipData.flags_fragOffset = 0x00;
   IPP__ipData.ttl = 0xFF;
   IPP__ipData.prot = 0x11;
-  IPP__ipData.chkSum = 0x3454;
+  IPP__ipData.chkSumL = 0;
+  IPP__ipData.chkSumH = 0;
 
   IPP__ipData.srcIP[0] = 192;
   IPP__ipData.srcIP[1] = 168;
@@ -5628,11 +5676,43 @@ static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP)
   IPP__ipData.data = dataPtr;
 
 
+  tmp = IPP__ipChksum(len);
+  IPP__ipData.chkSumH = tmp & 0xFF;
+  IPP__ipData.chkSumL = tmp >> 8;
 
 
 
 
 
+
+  if (((IPP__ipData.srcIP[0] & 255) & (IPP__ipData.dstIP[0] & 255)) == 0 && ((IPP__ipData.srcIP[1] & 255) & (IPP__ipData.dstIP[1] & 255)) == 0 && ((IPP__ipData.srcIP[2] & 255) & (IPP__ipData.dstIP[2] & 255)) == 0 && ((IPP__ipData.srcIP[3] & 0) & (IPP__ipData.dstIP[3] & 0)) == 0) 
+
+
+
+
+    {
+
+      IPP__request.dstIP[0] = IPP__ipData.dstIP[0];
+      IPP__request.dstIP[1] = IPP__ipData.dstIP[1];
+      IPP__request.dstIP[2] = IPP__ipData.dstIP[2];
+      IPP__request.dstIP[3] = IPP__ipData.dstIP[3];
+    }
+  else 
+    {
+
+      IPP__request.dstIP[0] = 192;
+      IPP__request.dstIP[1] = 168;
+      IPP__request.dstIP[2] = 0;
+      IPP__request.dstIP[3] = 1;
+    }
+
+  IPP__dstMAC[0] = 0xFF;
+  IPP__dstMAC[1] = 0xFF;
+  IPP__dstMAC[2] = 0xFF;
+  IPP__dstMAC[3] = 0xFF;
+  IPP__dstMAC[4] = 0xFF;
+  IPP__dstMAC[5] = 0xFF;
+  IPP__IEEE8023__sendFrame((uint16_t *)&IPP__request, (uint16_t *)&IPP__dstMAC, 28, 0);
 
 
 
@@ -5643,19 +5723,19 @@ static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP)
   IPP__dstMAC[4] = 0x5d;
   IPP__dstMAC[5] = 0x53;
 
-  IPP__IEEE8023__sendFrame((uint16_t *)&IPP__ipData, (uint16_t *)&IPP__dstMAC);
+  IPP__IEEE8023__sendFrame((uint16_t *)&IPP__ipData, (uint16_t *)&IPP__dstMAC, len, 1);
 
   return SUCCESS;
 }
 
 # 3 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
-inline static uint8_t UDPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP){
+inline static uint8_t UDPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP, uint16_t len){
 #line 3
   unsigned char result;
 #line 3
 
 #line 3
-  result = IPP__IP__sendDatagram(updPtr, destIP);
+  result = IPP__IP__sendDatagram(updPtr, destIP, len);
 #line 3
 
 #line 3
@@ -5663,23 +5743,27 @@ inline static uint8_t UDPP__IP__sendDatagram(uint16_t *updPtr, uint8_t *destIP){
 #line 3
 }
 #line 3
-# 13 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
-static inline uint8_t UDPP__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint8_t len)
+# 24 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+static inline uint8_t UDPP__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len)
 {
 
 
-  UDPP__udpData.srcPort = srcPort;
-  UDPP__udpData.dstPort = destPort;
-  UDPP__udpData.chkSum = 6667;
-  UDPP__udpData.length = len + 0x08;
+  UDPP__udpData.srcPortH = srcPort >> 8;
+  UDPP__udpData.srcPortL = srcPort & 0xFF;
+  UDPP__udpData.dstPortH = destPort >> 8;
+  UDPP__udpData.dstPortL = destPort & 0xFF;
+  UDPP__udpData.chkSum = 0x0000;
+  len = len + 0x08;
+  UDPP__udpData.lengthL = len & 0xFF;
+  UDPP__udpData.lengthH = len >> 8;
   UDPP__udpData.payload = dataPtr;
-#line 35
-  UDPP__IP__sendDatagram((uint16_t *)&UDPP__udpData, destPtr);
+#line 52
+  UDPP__IP__sendDatagram((uint16_t *)&UDPP__udpData, destPtr, len);
   return SUCCESS;
 }
 
 # 3 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
-inline static uint8_t BlinkC__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint8_t len){
+inline static uint8_t BlinkC__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len){
 #line 3
   unsigned char result;
 #line 3
@@ -5941,9 +6025,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequ
 }
 
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2ac5893c4020){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2aabbf7ad408){
 #line 53
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2ac5893c4020);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2aabbf7ad408);
 #line 53
 }
 #line 53
@@ -5991,13 +6075,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2ac5892e5220){
+inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2aabbf6ec868){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2ac5892e5220);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2aabbf6ec868);
 #line 88
 
 #line 88
@@ -6094,13 +6178,13 @@ static inline error_t AdcP__Read__read(uint8_t c)
 }
 
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2ac589127390){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2aabbf4f3390){
 #line 55
   unsigned char result;
 #line 55
 
 #line 55
-  result = AdcP__Read__read(arg_0x2ac589127390);
+  result = AdcP__Read__read(arg_0x2aabbf4f3390);
 #line 55
 
 #line 55
@@ -6122,9 +6206,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__defau
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2ac5890771a0){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2aabbf4431a0){
 #line 102
-  switch (arg_0x2ac5890771a0) {
+  switch (arg_0x2aabbf4431a0) {
 #line 102
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__HAL_ID:
 #line 102
@@ -6134,7 +6218,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__grant
 #line 102
     default:
 #line 102
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2ac5890771a0);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2aabbf4431a0);
 #line 102
       break;
 #line 102
@@ -6149,9 +6233,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2ac58908e538){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2aabbf45a538){
 #line 59
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2ac58908e538);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2aabbf45a538);
 #line 59
 }
 #line 59
@@ -6223,7 +6307,7 @@ static inline uint8_t HplAtm128AdcP__Admux2int(Atm128Admux_t x)
 #line 59
 {
 #line 59
-  union __nesc_unnamed4338 {
+  union __nesc_unnamed4340 {
 #line 59
     Atm128Admux_t f;
 #line 59
@@ -6380,13 +6464,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2ac5890f6cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2aabbf4c2cd0){
 #line 25
   unsigned char result;
 #line 25
 
 #line 25
-  switch (arg_0x2ac5890f6cd0) {
+  switch (arg_0x2aabbf4c2cd0) {
 #line 25
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 25
@@ -6396,7 +6480,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2ac5890f6c
 #line 25
     default:
 #line 25
-      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2ac5890f6cd0);
+      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2aabbf4c2cd0);
 #line 25
       break;
 #line 25
@@ -6429,13 +6513,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2ac5890f6cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2aabbf4c2cd0){
 #line 32
   unsigned char result;
 #line 32
 
 #line 32
-  switch (arg_0x2ac5890f6cd0) {
+  switch (arg_0x2aabbf4c2cd0) {
 #line 32
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 32
@@ -6445,7 +6529,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2ac5890
 #line 32
     default:
 #line 32
-      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2ac5890f6cd0);
+      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2aabbf4c2cd0);
 #line 32
       break;
 #line 32
@@ -6478,13 +6562,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2ac5890f6cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2aabbf4c2cd0){
 #line 39
   unsigned char result;
 #line 39
 
 #line 39
-  switch (arg_0x2ac5890f6cd0) {
+  switch (arg_0x2aabbf4c2cd0) {
 #line 39
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 39
@@ -6494,7 +6578,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2ac5890f
 #line 39
     default:
 #line 39
-      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2ac5890f6cd0);
+      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2aabbf4c2cd0);
 #line 39
       break;
 #line 39
@@ -6563,6 +6647,21 @@ static __inline  void __nesc_enable_interrupt()
 {
    __asm volatile ("sei");}
 
+# 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
+inline static error_t IEEE8023P__Resource__request(void ){
+#line 88
+  unsigned char result;
+#line 88
+
+#line 88
+  result = Atm128SpiP__Resource__request(0);
+#line 88
+
+#line 88
+  return result;
+#line 88
+}
+#line 88
 # 55 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit4*/HplAtm128GeneralIOPinP__12__IO__set(void )
 #line 55
@@ -6608,7 +6707,7 @@ inline static void IEEE8023P__ssETH__makeOutput(void ){
 #line 46
 }
 #line 46
-# 132 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
+# 137 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
 static inline uint8_t IEEE8023P__IEEE8023__init(void )
 {
   if (IEEE8023P__stateETH == IEEE8023_UNINIT) 
@@ -6651,9 +6750,38 @@ inline static uint8_t IPP__IEEE8023__init(void ){
 #line 8
 }
 #line 8
-# 59 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+# 127 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static inline uint8_t IPP__IP__initStack(void )
 {
+
+  IPP__request.hwTypeH = 0x00;
+  IPP__request.hwTypeL = 0x01;
+  IPP__request.protH = 0x06;
+  IPP__request.protL = 0x08;
+  IPP__request.hwSize = 0x06;
+  IPP__request.protSize = 0x04;
+  IPP__request.arpTypeH = 0x00;
+  IPP__request.arpTypeL = 0x01;
+
+  IPP__request.srcMAC[0] = 0x00;
+  IPP__request.srcMAC[1] = 0x00;
+  IPP__request.srcMAC[2] = 0x00;
+  IPP__request.srcMAC[3] = 0x00;
+  IPP__request.srcMAC[4] = 0x00;
+  IPP__request.srcMAC[5] = 0x00;
+
+  IPP__request.srcIP[0] = 192;
+  IPP__request.srcIP[1] = 192;
+  IPP__request.srcIP[2] = 192;
+  IPP__request.srcIP[3] = 192;
+
+  IPP__request.dstMAC[0] = 0x00;
+  IPP__request.dstMAC[1] = 0x00;
+  IPP__request.dstMAC[2] = 0x00;
+  IPP__request.dstMAC[3] = 0x00;
+  IPP__request.dstMAC[4] = 0x00;
+  IPP__request.dstMAC[5] = 0x00;
+
   return IPP__IEEE8023__init();
 }
 
@@ -6672,7 +6800,7 @@ inline static uint8_t UDPP__IP__initStack(void ){
 #line 5
 }
 #line 5
-# 39 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+# 56 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
 static inline uint8_t UDPP__UDP__initStack(void )
 {
   return UDPP__IP__initStack();
@@ -7052,9 +7180,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2ac5890f96d8, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2aabbf4c56d8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-    AdcP__ReadNow__default__readDone(arg_0x2ac5890f96d8, result, val);
+    AdcP__ReadNow__default__readDone(arg_0x2aabbf4c56d8, result, val);
 #line 66
 }
 #line 66
@@ -7436,9 +7564,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2ac588cd6108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2aabbf0a2108){
 #line 75
-  switch (arg_0x2ac588cd6108) {
+  switch (arg_0x2aabbf0a2108) {
 #line 75
     case BlinkC__testTask:
 #line 75
@@ -7520,7 +7648,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2ac588cd6108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2ac588cd6108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2aabbf0a2108);
 #line 75
       break;
 #line 75
@@ -7814,11 +7942,11 @@ static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y)
   if (x < 128 && y < 64) {
     if (x > 110 && y > 50) 
       {
-        dest[3] = 80;
-        dest[2] = 64;
-        dest[1] = 129;
-        dest[0] = 156;
-        BlinkC__UDP__sendData((uint16_t *)"hello world!", &dest[0], 3000, 3000, 12);
+        dest[0] = 192;
+        dest[1] = 168;
+        dest[2] = 0;
+        dest[3] = 1;
+        BlinkC__UDP__sendData((uint16_t *)"hello world!powpow1234567890HATSCH FUCKING RULEZ", &dest[0], 443, 80, sizeof "hello world!powpow1234567890HATSCH FUCKING RULEZ");
       }
     else 
 
@@ -7836,6 +7964,32 @@ static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y)
   else {
 #line 204
     BlinkC__GLCD__isPressed(TRUE);
+    }
+}
+
+# 164 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
+static uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
+{
+  if (IEEE8023P__stateETH == IEEE8023_READY) 
+    {
+      if (IEEE8023P__Resource__request() == FAIL) 
+        {
+          return FAIL;
+        }
+      else 
+        {
+          IEEE8023P__ipType = type;
+          IEEE8023P__TXdataPtr = dataPtr;
+          IEEE8023P__TXdstMAC = dstMAC;
+          IEEE8023P__TXlen = len;
+          IEEE8023P__stateETH = IEEE8023_TX;
+          return SUCCESS;
+        }
+    }
+  else 
+
+    {
+      return FAIL;
     }
 }
 

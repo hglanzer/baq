@@ -6,9 +6,12 @@
 
 
 typedef struct{
-	uint16_t srcPort;
-	uint16_t dstPort;
-	uint16_t length;
+	uint8_t srcPortH;
+	uint8_t srcPortL;
+	uint8_t dstPortH;
+	uint8_t dstPortL;
+	uint8_t lengthH;
+	uint8_t lengthL;
 	uint16_t chkSum;
 	uint16_t *payload;
 }udpStruct;

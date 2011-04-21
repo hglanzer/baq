@@ -344,4 +344,11 @@
 			IEEE8023_RX		= 3,
 			IEEE8023_TX		= 4,
 		};
+	
+		enum
+		{
+			ARP	= 0,
+			IP	= 1,
+		};
+
 #endif

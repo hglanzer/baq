@@ -7,7 +7,11 @@ interface IEEE8023
 	*/
 	command uint8_t init();
 
-	command uint8_t sendFrame(uint16_t *dataPtr, uint16_t *dstMAC);
+	/*
+		type	= TRUE	--> ARP
+			= FALSE	--> standard-ip-packet
+	*/
+	command uint8_t sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
 
 	event void initDone(void);
 	

@@ -248,6 +248,28 @@ ALE = Adress Latch Enable to external memory
 		http://elm-chan.org/docs/mmc/sdinit.png
 
 
+---------------------------------------------------------------------------------------------------------------------
+
+	ETHERNET + IP + UDP - stack
+
+	ACHTUNG - folgende einschränkgungen:
+			* KEINE FRAGMENTATION auf ip-level!	--> flags/fragment offset	= 0x0000 KONSTANT
+								--> identification 		= 0x6666 KONSTANT
+			* KEINE OPTIONS auf ip-level(--> ip-header ist IMMER nur 20byte gross, keine options/padding)
+			* type of service = 0
+			* IP - checksum wird richtig berechnet(aber eben immer nur für 20byte, keine options, s.o.)
+			* UDP-level - CHECKSUM = 0x0000. dies ist erlaubt, checksum wird also ignoriert.
+
+			*** KEIN TCP IMPLEMENTIERT ***
+			***	   UDP ONLY	   ***
+		
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
 ## FLASH der platform ##
 
 flash mittels AVRISP mkII ueber usb-port

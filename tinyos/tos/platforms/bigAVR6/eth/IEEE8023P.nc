@@ -14,8 +14,8 @@ module IEEE8023P
 
 implementation
 {
-	static volatile uint8_t stateETH = IEEE8023_UNINIT;
-	static volatile uint16_t *TXdataPtr, *TXdstMAC;
+	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0;
+	static volatile uint16_t *TXdataPtr, *TXdstMAC, TXlen;
 
 	uint8_t writeSPI(uint8_t opcode, uint8_t data)
 	{
@@ -54,9 +54,8 @@ implementation
 
 	void sendPacket()
 	{		
-		uint16_t payloadCounter = 0, payloadLength;
+		uint16_t payloadCounter = 0;
 		uint16_t *tmpPtr;
-		uint16_t *tmpDoublePtr;
 
 		setBank(0x00);
 		// set START-adress for WR-Pointer = TX-Buffer-Start
@@ -82,20 +81,29 @@ implementation
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR4);
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR5);
 
-		// set len = datapayload WITHOUT PADDING in byte
-		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+1) >> 8);
-		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+1));
+		// LLC-Header --> upper protocol is IP, so the value is the constant 0x0800
+		// the documentation for this 2 byte is very misleading
+		// at first, the framepayload-len was uses here / but that doesn't work: packet
+		// won' get recognized, wireshark says 'unknown DSAP'(although Ethernet-frame was recognized) 
+		writeSPI((ENC28J60_WRITE_BUF_MEM), 0x08);
+
+		if(ipType == IP)
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0x00);	// standard-ip
+		else
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0x06);
 
 		// frame-PAYLOAD - write ip-header(20 bytes, 2 bytes per loop --> 10 loops)
 		for(payloadCounter = 0; payloadCounter < 10; payloadCounter++)
 		{
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) & 0xFF);
 			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) >> 8);
 		}
 
+		// TXdataPtr points to start of ip-packet. we use 16bit-pointer, so a offset of 10
+		// means the beginning of the ip-payload = upd-header(only if minimum ip-header is used, 20bytes, NO options!)
 		tmpPtr = (uint16_t *)*(TXdataPtr+10);
 	
-		// frame-PAYLOAD - write udp-header(8 byte)
+		// frame-PAYLOAD - write UDP-header(8 byte)
 		for(payloadCounter = 0; payloadCounter < 4; payloadCounter++)
 		{
 			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter));
@@ -103,25 +111,19 @@ implementation
 		}
 
 		// frame-PAYLOAD - write ACTUAL PAYLOAD-DATA from application - finally...
-		payloadLength = *(tmpPtr + 2);
-		payloadLength = payloadLength - 8;
-
-		tmpDoublePtr = (uint16_t *)*(tmpPtr+4);
-
-		for(payloadCounter = 0; payloadCounter < (payloadLength/2); payloadCounter++)
+		tmpPtr = (uint16_t *)*(tmpPtr+4);
+		for(payloadCounter = 0; payloadCounter < (TXlen/2); payloadCounter++)
 		{
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpDoublePtr + payloadCounter));
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpDoublePtr + payloadCounter) >> 8);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr + payloadCounter));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr + payloadCounter) >> 8);
 		}
 
 // FIXME data for odd-length
-// ETXNDH/L richtig berechent?
 
-		// set end-adress for TX
-		// misuse payloadCounter. ip-packet-totallength + ethernetframe-bytes
-		payloadCounter = *(TXdataPtr+1) + 14;
-		writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDL), ((TXSTART_INIT & 0xFF) + (payloadCounter & 0xFF)));
-		writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDH), (TXSTART_INIT >> 8) + (payloadCounter >> 8));
+		// set end-adress for TX / misuse TXlen as TX-END-buffer
+		TXlen = TXSTART_INIT + TXlen + 14;
+		writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDL), (TXlen & 0xFF));
+		writeSPI((ENC28J60_WRITE_CTRL_REG | ETXNDH), (TXlen >> 8));
 		
 		// START transmission!
 		setBit(ECON1, ECON1_TXRTS);
@@ -159,7 +161,7 @@ implementation
 		}
 	}
 
-	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint16_t *dstMAC)
+	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
 	{
 		if(stateETH == IEEE8023_READY)
 		{
@@ -169,8 +171,10 @@ implementation
 			}
 			else
 			{
+				ipType = type;
 				TXdataPtr = dataPtr;
 				TXdstMAC = dstMAC;
+				TXlen = len;
 				stateETH = IEEE8023_TX;
 				return SUCCESS;
 			}
@@ -322,6 +326,7 @@ implementation
 				sendPacket();
 				stateETH = IEEE8023_READY;
 				signal IEEE8023.sendDone();
+	
 				call Resource.release();
 			break;
 		}
