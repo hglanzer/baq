@@ -51,6 +51,7 @@ implementation
 			}
 		}
 		call GLCD.initLCD(0x00);
+		count = 1;
 }
 
 /*
@@ -213,5 +214,20 @@ implementation
 	event void UDP.sendDone()
 	{
 		call GLCD.isPressed(TRUE);
+	}
+
+	async event void UDP.hwInterrupt(uint8_t src)
+	{
+		atomic
+		{
+			count2++;
+			if(count2 > 8)
+				count2 = 1;
+
+			if(src == TRUE)
+				call GLCD.startWriteString("link up", 0, count2);
+			else	
+				call GLCD.startWriteString("link down", 0, count2);
+		}
 	}
 }

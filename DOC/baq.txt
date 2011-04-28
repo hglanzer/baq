@@ -139,6 +139,7 @@ ETHERNET
 	PB1(SCK)	--------------->	SCK
 	PB2(MOSI)	--------------->	MOSI
 	PB3(MISO)	--------------->	MISO
+	PD2(EXTINT2)	--------------->	INT	falling edge
 
 	VCC		--------------->	VCC
 	GND		--------------->	GND

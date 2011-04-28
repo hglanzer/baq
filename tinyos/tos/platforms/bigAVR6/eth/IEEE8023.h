@@ -53,8 +53,8 @@
 	#define BANK_MASK       0x60
 	#define SPRD_MASK       0x80
 	// All-bank registers
-	#define EIE                     0x1B
-	#define EIR                     0x1C
+	#define EIE             0x1B
+	#define EIR             0x1C
 	#define ESTAT           0x1D
 	#define ECON2           0x1E
 	#define ECON1           0x1F

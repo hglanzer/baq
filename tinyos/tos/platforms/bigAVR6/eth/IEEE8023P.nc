@@ -6,7 +6,8 @@ module IEEE8023P
 	uses interface GeneralIO as ssMMC;	// SS for mmc / must be set to high in this modul, otherwise driver-collision
 	uses interface GeneralIO as ssETH;
 	uses interface GeneralIO as rstETH;
-	uses interface GeneralIO as intETH;
+
+	uses interface HplAtm128Interrupt as intETH;
 
 	uses interface SpiByte;
 	uses interface Resource;
@@ -14,7 +15,7 @@ module IEEE8023P
 
 implementation
 {
-	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0;
+	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0, linkUP = FALSE;
 	static volatile uint16_t *TXdataPtr, *TXdstMAC, TXlen;
 
 	uint8_t writeSPI(uint8_t opcode, uint8_t data)
@@ -27,7 +28,7 @@ implementation
 
 		return rc;
 	}
-
+	
 	/*
 		set registerbank: 0...3
 	*/
@@ -42,6 +43,37 @@ implementation
 		call SpiByte.write((ENC28J60_BIT_FIELD_SET | ECON1));
 		call SpiByte.write(bank);
 		call ssETH.set();
+	}
+
+	/*
+		read PHY - register
+		PHY is 16bit wide - parameter 'high' controls wheter high- or lowbyte will be returned
+	*/
+	uint8_t readPHY(uint8_t addr, uint8_t high)
+	{
+		static volatile uint16_t tmp = 0, tmp2=0;
+		static volatile uint8_t rc = 0;
+		
+		setBank(0x02);
+		writeSPI(ENC28J60_WRITE_CTRL_REG | MIREGADR, addr);
+		writeSPI(ENC28J60_WRITE_CTRL_REG | MICMD, 0x01);
+
+		while(tmp < 16000)		// FIXME
+		{
+			while(tmp2 < 100)
+			{
+				tmp2++;
+			}
+		tmp++;
+		}
+
+		writeSPI(ENC28J60_WRITE_CTRL_REG | MICMD, 0x00);
+		if(high == TRUE)
+			rc = writeSPI(ENC28J60_READ_CTRL_REG | MIRDH, ENC28J60_READ_CTRL_REG | MIRDH);
+		else
+			rc = writeSPI(ENC28J60_READ_CTRL_REG | MIRDL, ENC28J60_READ_CTRL_REG | MIRDL);
+
+		return rc;
 	}
 
 	void setBit(uint8_t reg, uint8_t bit)
@@ -66,12 +98,24 @@ implementation
 		writeSPI((ENC28J60_WRITE_BUF_MEM), 0x00);
 	
 		// DEST-MAC
-		writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) & 0xFF);
-		writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) >> 8);
-		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) & 0xFF);
-		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) >> 8);
-		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) & 0xFF);
-		writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) >> 8);
+		if(ipType == IP)
+		{
+			writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) & 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) >> 8);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) & 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) >> 8);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) & 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) >> 8);
+		}
+		else
+		{
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0xFF);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), 0xFF);
+		}
 	
 		// SOURCE-MAC
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR0);
@@ -88,34 +132,46 @@ implementation
 		writeSPI((ENC28J60_WRITE_BUF_MEM), 0x08);
 
 		if(ipType == IP)
+		{
 			writeSPI((ENC28J60_WRITE_BUF_MEM), 0x00);	// standard-ip
+
+			// frame-PAYLOAD - write ip-header(20 bytes, 2 bytes per loop --> 10 loops)
+			for(payloadCounter = 0; payloadCounter < 10; payloadCounter++)
+			{
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) & 0xFF);
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) >> 8);
+			}
+		
+			// TXdataPtr points to start of ip-packet. we use 16bit-pointer, so a offset of 10
+			// means start of the ip-payload = upd-header(only if minimum ip-header is used, 20bytes, NO options!)
+			tmpPtr = (uint16_t *)*(TXdataPtr+10);
+	
+			// frame-PAYLOAD - write UDP-header(8 byte)
+			for(payloadCounter = 0; payloadCounter < 4; payloadCounter++)
+			{
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter));
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter) >> 8);
+			}
+
+			// frame-PAYLOAD - write ACTUAL PAYLOAD-DATA from application - finally...
+			tmpPtr = (uint16_t *)*(tmpPtr+4);
+			for(payloadCounter = 0; payloadCounter < (TXlen/2); payloadCounter++)
+			{
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr + payloadCounter));
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr + payloadCounter) >> 8);
+			}	
+		}
+		// this is ARP...
 		else
+		{
 			writeSPI((ENC28J60_WRITE_BUF_MEM), 0x06);
 
-		// frame-PAYLOAD - write ip-header(20 bytes, 2 bytes per loop --> 10 loops)
-		for(payloadCounter = 0; payloadCounter < 10; payloadCounter++)
-		{
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) & 0xFF);
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) >> 8);
-		}
+			for(payloadCounter = 0; payloadCounter < (TXlen/2); payloadCounter++)
+			{
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) & 0xFF);
+				writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdataPtr+payloadCounter) >> 8);
+			}
 
-		// TXdataPtr points to start of ip-packet. we use 16bit-pointer, so a offset of 10
-		// means the beginning of the ip-payload = upd-header(only if minimum ip-header is used, 20bytes, NO options!)
-		tmpPtr = (uint16_t *)*(TXdataPtr+10);
-	
-		// frame-PAYLOAD - write UDP-header(8 byte)
-		for(payloadCounter = 0; payloadCounter < 4; payloadCounter++)
-		{
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter));
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr+payloadCounter) >> 8);
-		}
-
-		// frame-PAYLOAD - write ACTUAL PAYLOAD-DATA from application - finally...
-		tmpPtr = (uint16_t *)*(tmpPtr+4);
-		for(payloadCounter = 0; payloadCounter < (TXlen/2); payloadCounter++)
-		{
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr + payloadCounter));
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(tmpPtr + payloadCounter) >> 8);
 		}
 
 // FIXME data for odd-length
@@ -129,11 +185,6 @@ implementation
 		setBit(ECON1, ECON1_TXRTS);
 	}
 
-	uint8_t arp()
-	{
-
-	}
-
 	command uint8_t IEEE8023.init()
 	{
 		if(stateETH == IEEE8023_UNINIT)
@@ -144,6 +195,11 @@ implementation
 
 			call rstETH.makeOutput();
 			call rstETH.set();		// IEEE8023board has low-active reset
+
+			call intETH.clear();
+			call intETH.edge(FALSE);	// we want falling edge interrupts
+			call intETH.enable();
+
 
 			if(call Resource.request() == FAIL)
 			{
@@ -163,6 +219,15 @@ implementation
 
 	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
 	{
+/*
+uint8_t rc = 0;
+while(1)
+{
+rc = readPHY(PHSTAT1, 0);
+PORTA = rc;
+};
+*/
+
 		if(stateETH == IEEE8023_READY)
 		{
 			if(call Resource.request() == FAIL)
@@ -222,6 +287,7 @@ implementation
 					BANK0 - STUFF	
 					Pointer Options
 				*/
+				setBank(0x00);
 
 				// set RX/TX - buffer. we have 8kb RAM for rx AND tx 
 				// ~1500byte for TX(1 MTU-frame), rest for RX
@@ -249,6 +315,10 @@ implementation
 					Filter Options
 				*/
 				setBank(0x01);
+		
+				// enable unicast and broadcast - RX-filter
+				writeSPI((ENC28J60_WRITE_CTRL_REG | ERXFCON), 0x81);
+				
 
 				/*
 					BANK2 - STUFF
@@ -256,12 +326,11 @@ implementation
 				*/
 				setBank(0x02);
 
-				//writeSPI((ENC28J60_WRITE_CTRL_REG | MACON1), MACON1_MARXEN|MACON1_TXPAUS|MACON1_RXPAUS);
-				// no flow-control for the beginning / halfduplex only @MACON1				FIXME
-				writeSPI(ENC28J60_WRITE_CTRL_REG | MACON1, MACON1_MARXEN);
-
 				// pull MAC out of reset @ MACON2
 				writeSPI(ENC28J60_WRITE_CTRL_REG | MACON2, 0x00);
+
+				// no flow-control for the beginning / halfduplex only @MACON1				FIXME
+				writeSPI(ENC28J60_WRITE_CTRL_REG | MACON1, MACON1_MARXEN);
 
 				// set checksum/padding-options @ MACON3
 				writeSPI(ENC28J60_WRITE_CTRL_REG | MACON3, 0x32);
@@ -294,6 +363,10 @@ implementation
 				
 				setBank(0x02);
 
+				// set fullduplex
+//				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIREGADR, PHCON1);
+//				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRL, 0x00);
+//				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRH, 0x01);
 
 				// no loopbackback
 				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIREGADR, PHCON2);
@@ -305,15 +378,32 @@ implementation
 				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRL, (0x04<<4));	// link status
 				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRH, 0x01);		// transmit activity
 				
+				// set linkchange - interrupt
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIREGADR, PHIE);
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRL, 0x12);
+				rc = writeSPI(ENC28J60_WRITE_CTRL_REG | MIWRH, 0x00);
+
 				/*	
 					DEBUGGING only. read value just set and write to PORTA-leds for checking...
-				setBank(0x02);
-				rc = writeSPI(ENC28J60_READ_CTRL_REG | MAADR5, ENC28J60_READ_CTRL_REG | MAADR5);
-				PORTA = rc;
+					setBank(0x02);
+					rc = writeSPI(ENC28J60_READ_CTRL_REG | MAADR5, ENC28J60_READ_CTRL_REG | MAADR5);
+					PORTA = rc;
 				*/
 
+				setBank(0x00);
+
+				// enable receive packet pending, linkchange and global-interrupt 
+				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | EIE), 0xD1);
+			//	rc = writeSPI((ENC28J60_WRITE_CTRL_REG | EIE), 0x90);
+//				setBit(EIE, EIE_INTIE);
+//				setBit(EIE, EIE_LINKIE);
+//				setBit(EIE, EIE_PKTIE);
+
+				// enable RX
+				setBit(ECON1, ECON1_RXEN);
+
 				stateETH = IEEE8023_READY;
-				
+					
 				call Resource.release();
 				signal IEEE8023.initDone();
 			break;
@@ -330,5 +420,18 @@ implementation
 				call Resource.release();
 			break;
 		}
+	}
+
+	/*
+		interrupt generated by ethernetboard
+	*/	
+	async event void intETH.fired()
+	{
+		if(linkUP)
+			signal IEEE8023.hwInterrupt(TRUE);
+		else	
+			signal IEEE8023.hwInterrupt(FALSE);
+		readPHY(PHIR, 0);
+		readPHY(PHIR, 1);
 	}
 }

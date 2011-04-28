@@ -16,4 +16,6 @@ interface IEEE8023
 	event void initDone(void);
 	
 	event void sendDone(void);
+	
+	async event void hwInterrupt(uint8_t src);
 }
