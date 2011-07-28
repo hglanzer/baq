@@ -185,10 +185,14 @@ implementation
 			{
 				dest[0] = 192;
 				dest[1] = 168;
-				dest[2] = 0;
+				dest[2] = 1;
 				dest[3] = 1;
-				call UDP.sendData((uint16_t *)"hello world!powpow1234567890HATSCH FUCKING RULEZ", &dest[0], 443, 80, sizeof("hello world!powpow1234567890HATSCH FUCKING RULEZ"));
+				call UDP.sendData((uint16_t *)"hello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZ", &dest[0], 443, 80, sizeof("hello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZ"));
 			//	call GLCD.startClearScreen(0x00);
+			}
+			else if((x>110) && (y<20))
+			{
+				call GLCD.startClearScreen(0x00);
 			}
 			else
 			{
@@ -216,18 +220,24 @@ implementation
 		call GLCD.isPressed(TRUE);
 	}
 
-	async event void UDP.hwInterrupt(uint8_t src)
+	event void UDP.hwInterrupt(uint16_t *info)
+	//event void UDP.hwInterrupt(uint8_t src)
 	{
 		atomic
 		{
 			count2++;
-			if(count2 > 8)
-				count2 = 1;
-
+			if(count2 > 7)
+				count2 = 3;
+			
+			call GLCD.startWriteString((char *)info, 0, count2);
+/*
 			if(src == TRUE)
-				call GLCD.startWriteString("link up", 0, count2);
-			else	
-				call GLCD.startWriteString("link down", 0, count2);
+				call GLCD.startWriteString("link up  ", 0, 1);
+			if(src == FALSE)
+				call GLCD.startWriteString("link down", 0, 1);
+			if(src == 66)
+				call GLCD.startWriteString("new package", 0, count2);
+*/
 		}
 	}
 }

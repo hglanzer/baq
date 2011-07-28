@@ -46,6 +46,7 @@ implementation
 
 		ipHeaderPtr = (uint16_t *)&ipData;
 
+		// must be done BEFORE checksum-calculation
 		ipData.version = 0x45;	// l-nibble: version=ipv4 
 					// h-nibble: IHL=ip header length as multiple of 4byte. 20byte when NO OPTIONS!
 		ipData.TOS = 0x00;	// type of service, no priority
@@ -111,8 +112,7 @@ implementation
 
 
 		// FIXME: ARP-request + arp-Table 
-		call IEEE8023.sendFrame((uint16_t *)&request, (uint16_t *)&dstMAC, 28, 0);
-
+		//call IEEE8023.sendFrame((uint16_t *)&request, (uint16_t *)&dstMAC, 28, 0);
 
 		dstMAC[0] = 0x00;
 		dstMAC[1] = 0x16;
@@ -121,7 +121,7 @@ implementation
 		dstMAC[4] = 0x5d;
 		dstMAC[5] = 0x53;
 
-//		call IEEE8023.sendFrame((uint16_t *)&ipData, (uint16_t *)&dstMAC, len, 1);
+		call IEEE8023.sendFrame((uint16_t *)&ipData, (uint16_t *)&dstMAC, len, 1);
 
 		return SUCCESS;
 	}
@@ -170,8 +170,10 @@ implementation
 		signal IP.sendDone();
 	}
 
-	async event void IEEE8023.hwInterrupt(uint8_t src)
+	event void IEEE8023.hwInterrupt(uint16_t *info)
+	//event void IEEE8023.hwInterrupt(uint8_t src)
 	{
-		signal IP.hwInterrupt(src);
+		signal IP.hwInterrupt(info);
+		//signal IP.hwInterrupt(src);
 	}
 }

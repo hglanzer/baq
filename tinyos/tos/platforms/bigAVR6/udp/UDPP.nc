@@ -68,8 +68,10 @@ PORTA = (*(udpData.payload+2))>>8;
 		signal UDP.sendDone();
 	}
 
-	async event void IP.hwInterrupt(uint8_t src)
+	event void IP.hwInterrupt(uint16_t *info)
+	//event void IP.hwInterrupt(uint8_t src)
 	{
-		signal UDP.hwInterrupt(src);
+		signal UDP.hwInterrupt(info);
+		//signal UDP.hwInterrupt(src);
 	}
 }

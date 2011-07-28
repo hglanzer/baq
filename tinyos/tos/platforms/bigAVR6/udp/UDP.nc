@@ -8,5 +8,6 @@ interface UDP
 
 	event void sendDone();
 
-	async event void hwInterrupt(uint8_t src);
+	event void hwInterrupt(uint16_t *info);
+	//event void hwInterrupt(uint8_t src);
 }

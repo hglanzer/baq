@@ -6,7 +6,7 @@
 
 #define MY_IP0	192
 #define MY_IP1	168
-#define MY_IP2	0
+#define MY_IP2	1
 #define MY_IP3	10
 
 #define MY_NETMASK0	255
@@ -16,7 +16,7 @@
 
 #define MY_GATEWAY0	192
 #define MY_GATEWAY1	168
-#define MY_GATEWAY2	0
+#define MY_GATEWAY2	1
 #define MY_GATEWAY3	1
 
 /*
@@ -25,7 +25,7 @@
 	host byte order != network byte order. so instead of using htonl(), split
 	this fields into 8bit - words and set this fields seperately. should be faster...
 
-	ATTENTION: NO Framentation and NO ip-options supported. so the ip-header is alwas 20byte long
+	ATTENTION: NO Fragmentation and NO ip-options supported. so the ip-header is alwas 20byte long
 	and the idendtification and flags/frag-offset - fields are set to constants...
 */
 typedef struct
