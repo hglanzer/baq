@@ -1,0 +1,33 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+
+# gesamtes baq-arbeitsverzeichnis wurde nach 
+#
+# 	/home/hglanzer/GIT/
+#
+# verschoben. deswegen anpassung der ENV-variablen
+
+#export MAKERULES="/homes/hglanzer/SVN/tinyos/support/make/Makerules"
+#export TOSROOT="/homes/hglanzer/SVN/tinyos"
+#export TOSDIR="/homes/hglanzer/SVN/tinyos/tos"
+
+export MAKERULES="/homes/hglanzer/GIT/tinyos/support/make/Makerules"
+export TOSROOT="/homes/hglanzer/GIT/tinyos"
+export TOSDIR="/homes/hglanzer/GIT/tinyos/tos"
+
+echo "--- working directories ---"
+echo
+echo $MAKERULES
+echo $TOSROOT
+echo $TOSDIR
+echo
+echo
+
+
+export HISTFILESIZE=50000
