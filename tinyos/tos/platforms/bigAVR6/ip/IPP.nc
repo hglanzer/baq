@@ -9,7 +9,7 @@ module IPP
 
 implementation
 {
-	static volatile uint8_t dstMAC[6];
+	static volatile uint8_t dstMAC[6], arpCache[10][CACHESIZE], arpReadPtr = 0, arpWritePtr = 0;
 	ipStruct ipData;
 	arpStruct request;
 
@@ -158,6 +158,55 @@ implementation
 		request.dstMAC[5] = 0x00;
 
 		return call IEEE8023.init();
+	}
+
+	uint8_t searchCache()
+	{
+		return TRUE;
+	}
+
+	event void IEEE8023.gotDatagram(uint16_t frameLen, uint16_t *IEEE8023Frame)
+	{
+		volatile uint16_t len = 0;
+
+		// ARP or IP - packet??
+		if( (IEEE8023Frame[0] == 0xFFFF) && (IEEE8023Frame[1] == 0xFFFF) && (IEEE8023Frame[2] == 0xFFFF)) 
+		{
+
+		}
+		else	// IP
+		{
+			// save unknown MAC/IP-combination
+/*	FIXME
+			if(searchCache())
+			{
+				arpCache[0][arpWritePtr] = IEEE8023Frame[0];
+				arpCache[1][arpWritePtr] = IEEE8023Frame[1];
+				arpCache[2][arpWritePtr] = IEEE8023Frame[2];
+				arpCache[3][arpWritePtr] = IEEE8023Frame[3];
+				arpCache[4][arpWritePtr] = IEEE8023Frame[4];
+				arpCache[5][arpWritePtr] = IEEE8023Frame[5];
+
+				arpCache[6][arpWritePtr] = IEEE8023Frame[26];
+				arpCache[7][arpWritePtr] = IEEE8023Frame[27];
+				arpCache[8][arpWritePtr] = IEEE8023Frame[28];
+				arpCache[9][arpWritePtr] = IEEE8023Frame[29];
+
+				arpWritePtr++;
+				if(arpWritePtr == CACHESIZE)
+					arpWritePtr = 0;
+			
+			}
+*/
+/*
+DDRA = 0xFF;
+PORTA = len;
+while(1)
+{};
+*/
+			signal IP.gotDatagram(17, IEEE8023Frame + 17);
+			//signal IP.gotDatagram(len, (uint16_t *)&IEEE8023Frame[14 + (len*4)]);	// FIXME: LEN IMPORTANT??
+		}
 	}
 
 	event void IEEE8023.initDone(void)

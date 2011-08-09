@@ -18,7 +18,7 @@ module IEEE8023P
 implementation
 {
 	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0, IEEE8023packet[60], tmpString[10];
-	static volatile uint16_t *TXdataPtr, *TXdstMAC, TXlen, nextPacketPtr = RXSTART_INIT, tmpCount = 0;
+	static volatile uint16_t *TXdataPtr, *TXdstMAC, TXlen, nextPacketPtr = RXSTART_INIT;
 
 	uint8_t writeSPI(uint8_t opcode, uint8_t data)
 	{
@@ -258,7 +258,7 @@ PORTA = rc;
 	event void Resource.granted(void)
 	{
 		volatile uint8_t rc = 0;
-		volatile uint16_t frameLen, count = 0;
+		volatile uint16_t count = 0, frameLen = 0;
 	
 		call ssETH.set();		// start with HIGH-level
 		call ssMMC.makeOutput();	// must be high, regardless if MMC is used or not
@@ -441,23 +441,16 @@ while(1)
 
 				signal IEEE8023.hwInterrupt((uint16_t *)&tmpString);
 */
-
+				// working through the buffer memory. we use AUTOINC, we don't need to update the read-pointer
 				// set READ - pointer to correct start-adress
-//				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTL), ( nextPacketPtr & 0xFF));
-//				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTH), ( nextPacketPtr >> 8));
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTL), ( nextPacketPtr & 0xFF));
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTH), ( nextPacketPtr >> 8));
 
-//				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTL), 0x00);
-//				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTH), 0x00);
-				
-				// working through the buffer memory. we use AUTOINC, we don't need to update the read-pointer
 				// read next packet pointer
 				nextPacketPtr  = (uint16_t)writeSPI((ENC28J60_READ_BUF_MEM), 0x00);
 				nextPacketPtr |= ((uint16_t)(writeSPI((ENC28J60_READ_BUF_MEM), 0x00)) << 8);
 
-				// read status vector
-				// length of data, lowbyte
+				// read status vector - length of data, lowbyte
 				frameLen = (uint16_t)(writeSPI((ENC28J60_READ_BUF_MEM), 0x00));
 				// length of data, highbyte
 				frameLen |= ((uint16_t)(writeSPI((ENC28J60_READ_BUF_MEM), 0x00)) << 8);
@@ -465,13 +458,11 @@ while(1)
 				rc = writeSPI((ENC28J60_READ_BUF_MEM), 0x00);
 				rc = writeSPI((ENC28J60_READ_BUF_MEM), 0x00);
 
-				//for(count = 0; count < 53; count++)
 				for(count = 0; count < frameLen; count++)
 				{
 					IEEE8023packet[count] = writeSPI((ENC28J60_READ_BUF_MEM), 0x00);
 				}
 /*
-*/				
 				tmpString[0] = IEEE8023packet[42];
 				tmpString[1] = IEEE8023packet[43];
 				tmpString[2] = IEEE8023packet[44];
@@ -482,21 +473,17 @@ while(1)
 				tmpString[7] = 'R';
 				tmpString[8] = 'I';
 				tmpString[9] = '\0';
-			
-		//		rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTL), ( nextPacketPtr & 0xFF));
-		//		rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTH), ( nextPacketPtr >> 8));
+*/			
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTL), ( nextPacketPtr & 0xFF));
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTH), ( nextPacketPtr >> 8));
 
-				tmpCount = tmpCount + 100;
-	//			rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTL), tmpCount & 0xFF);
-	//			rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTH), (tmpCount >> 8));
 				writeSPI((ENC28J60_WRITE_CTRL_REG | ECON2), (ECON2_PKTDEC | ECON2_AUTOINC));
-		//		signal IEEE8023.hwInterrupt((uint16_t *)"NEW FRAME");
 	
+				signal IEEE8023.gotDatagram(frameLen, (uint16_t *)&IEEE8023packet);
+
 				call Resource.release();
 				stateETH = IEEE8023_READY;
-				signal IEEE8023.hwInterrupt((uint16_t *)&tmpString);
+				//signal IEEE8023.hwInterrupt((uint16_t *)&tmpString);
 				writeSPI((ENC28J60_WRITE_CTRL_REG | EIE), 0xD0);
 			break;
 

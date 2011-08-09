@@ -240,4 +240,12 @@ implementation
 */
 		}
 	}
+
+	event void UDP.gotDatagram(uint16_t len, uint16_t *dataPtr)
+	{
+		dataPtr[10] = '\0';
+		//call GLCD.startWriteString((char *)"BLABLA", 0, count2);
+		call GLCD.startWriteString((char *)dataPtr, 0, count2);
+		count2++;
+	}
 }

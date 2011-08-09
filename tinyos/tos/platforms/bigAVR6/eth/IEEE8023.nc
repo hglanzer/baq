@@ -19,4 +19,6 @@ interface IEEE8023
 	
 	event void hwInterrupt(uint16_t *info);
 	//event void hwInterrupt(uint8_t src);
+
+	event void gotDatagram(uint16_t len, uint16_t *IEEE8023frame);
 }

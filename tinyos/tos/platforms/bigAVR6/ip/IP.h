@@ -19,6 +19,8 @@
 #define MY_GATEWAY2	1
 #define MY_GATEWAY3	1
 
+#define CACHESIZE	5
+
 /*
 	structure of ip-packet
 	ATTENTION @ 16bit - fields, as length, chkSum.

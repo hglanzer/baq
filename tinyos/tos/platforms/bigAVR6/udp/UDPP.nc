@@ -58,6 +58,11 @@ PORTA = (*(udpData.payload+2))>>8;
 		return call IP.initStack();
 	}
 
+	event void IP.gotDatagram(uint16_t len, uint16_t *udpPtr)
+	{
+		signal UDP.gotDatagram(len, udpPtr + 4);
+	}
+
 	event void IP.initDone()
 	{
 		signal UDP.initDone();
