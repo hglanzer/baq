@@ -314,8 +314,8 @@ PORTA = rc;
 				setBank(0x01);
 	
 				// enable unicast-, broadcast- and CRC-filter 
-				writeSPI((ENC28J60_WRITE_CTRL_REG | ERXFCON), 0x80);	// FIXME - debugging: accept unicast only, no crc-check
-				//writeSPI((ENC28J60_WRITE_CTRL_REG | ERXFCON), 0xA1);
+				//writeSPI((ENC28J60_WRITE_CTRL_REG | ERXFCON), 0x80);	// FIXME - debugging: accept unicast only, no crc-check
+				writeSPI((ENC28J60_WRITE_CTRL_REG | ERXFCON), 0xA1);
 
 				/*
 					BANK2 - STUFF
@@ -478,21 +478,21 @@ while(1)
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTH), ( nextPacketPtr >> 8));
 
 				writeSPI((ENC28J60_WRITE_CTRL_REG | ECON2), (ECON2_PKTDEC | ECON2_AUTOINC));
-	
-				signal IEEE8023.gotDatagram(frameLen, (uint16_t *)&IEEE8023packet);
 
 				call Resource.release();
 				stateETH = IEEE8023_READY;
-				//signal IEEE8023.hwInterrupt((uint16_t *)&tmpString);
+				signal IEEE8023.gotDatagram(frameLen, (uint8_t *)&IEEE8023packet);
+				
+				// enable interrupts AFTER stackprocessing	FIXME
 				writeSPI((ENC28J60_WRITE_CTRL_REG | EIE), 0xD0);
 			break;
 
 			case IEEE8023_TX:
 				sendPacket();				// FIXME - DEBUGGING RX...
-				signal IEEE8023.sendDone();
-
 				call Resource.release();
 				stateETH = IEEE8023_READY;
+				
+				signal IEEE8023.sendDone();
 			break;
 		}
 	}

@@ -17,7 +17,7 @@ module BlinkC @safe()
 {
 	uses interface Boot;
 	uses interface GLCD;
-//	uses interface Timer<TMilli> as Timer0;
+	uses interface Timer<TMilli> as Timer0;
 
 	uses interface UDP;
 //	uses interface MMC;
@@ -31,12 +31,12 @@ implementation
 	task void testTask()
 	{
 	}
-/*	
+	
 	event void Timer0.fired()
 	{
 		call GLCD.getXY();
+		call GLCD.isPressed(TRUE);
 	}
-*/
 	event void Boot.booted()
 	{
 		//call GLCD.initLCD(0x0);
@@ -86,7 +86,7 @@ implementation
 	event void GLCD.initDone()
 	{
 //		call MMC.init();
-//		call Timer0.startPeriodic(1000);
+		call Timer0.startPeriodic(1000);
 //		call GLCD.startClearScreen(count);
 //		call GLCD.isPressed(TRUE);
 		call UDP.initStack();
@@ -129,10 +129,8 @@ implementation
 	{
 
 	}
-/*
-*/
+	
 	event void GLCD.xyReady(uint16_t x, uint16_t y)
-	//event void GLCD.xyReady(uint8_t x, uint8_t y)
 	{
 		uint8_t dest[4];
 /*
@@ -193,6 +191,7 @@ implementation
 			else if((x>110) && (y<20))
 			{
 				call GLCD.startClearScreen(0x00);
+				count2 = 2;
 			}
 			else
 			{
@@ -217,11 +216,10 @@ implementation
 	
 	event void UDP.sendDone()
 	{
-		call GLCD.isPressed(TRUE);
+//		call GLCD.isPressed(TRUE);
 	}
 
 	event void UDP.hwInterrupt(uint16_t *info)
-	//event void UDP.hwInterrupt(uint8_t src)
 	{
 		atomic
 		{
@@ -230,22 +228,15 @@ implementation
 				count2 = 3;
 			
 			call GLCD.startWriteString((char *)info, 0, count2);
-/*
-			if(src == TRUE)
-				call GLCD.startWriteString("link up  ", 0, 1);
-			if(src == FALSE)
-				call GLCD.startWriteString("link down", 0, 1);
-			if(src == 66)
-				call GLCD.startWriteString("new package", 0, count2);
-*/
 		}
 	}
 
-	event void UDP.gotDatagram(uint16_t len, uint16_t *dataPtr)
+	event void UDP.gotDatagram(uint16_t len, uint8_t *dataPtr)
 	{
-		dataPtr[10] = '\0';
-		//call GLCD.startWriteString((char *)"BLABLA", 0, count2);
+		dataPtr[20] = '\0';
 		call GLCD.startWriteString((char *)dataPtr, 0, count2);
 		count2++;
+		if(count2 > 7)
+			count2 = 3;
 	}
 }

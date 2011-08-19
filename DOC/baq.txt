@@ -191,6 +191,13 @@ ETHERNET
 		8 					@ MAIPGH	0xc
 		9
 		10 set mac adress			@ MAADR0 - MAADR5
+
+	
+
+	** PITFALLS
+
+		* wenn ARP noch nicht bekannt --> 1. paket geht verloren(ARP statt Dataframe)
+
 -------------------------------------------------------------------------------------------------------------
 
 *** MEMORYCARD ***

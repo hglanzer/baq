@@ -184,8 +184,8 @@ typedef struct { unsigned char data[1]; } __attribute__((packed)) nxle_uint8_t;t
 typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;typedef uint16_t __nesc_nxbase_nxle_uint16_t  ;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
-# 116 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/string.h"
-extern void *memset(void *arg_0x2b7043b6b7f0, int arg_0x2b7043b6ba58, size_t arg_0x2b7043b6bd00);
+# 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
+extern void *memset(void *arg_0x2afbbb5687f0, int arg_0x2afbbb568a58, size_t arg_0x2afbbb568d00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b7043b8c968, const void *arg_0x2b7043b8cc40);
+typedef int (*__compar_fn_t)(const void *arg_0x2afbbb589968, const void *arg_0x2afbbb589c40);
 # 23 "/homes/hglanzer/GIT/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -980,8 +980,8 @@ typedef struct __nesc_unnamed4303 {
   uint16_t chkSum;
   uint16_t *payload;
 } udpStruct;
-# 49 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.h"
-#line 33
+# 55 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.h"
+#line 39
 typedef struct __nesc_unnamed4304 {
 
   uint8_t version;
@@ -999,8 +999,8 @@ typedef struct __nesc_unnamed4304 {
   uint8_t dstIP[4];
   uint16_t *data;
 } ipStruct;
-#line 65
-#line 51
+#line 75
+#line 61
 typedef struct __nesc_unnamed4305 {
 
   uint8_t hwTypeH;
@@ -1088,6 +1088,7 @@ typedef union __nesc_unnamed4312 {
 typedef Atm128SPIStatus_t Atm128_SPSR_t;
 
 typedef uint8_t Atm128_SPDR_t;
+typedef TMilli BlinkC__Timer0__precision_tag;
 typedef uint16_t TouchScreenP__Read__val_t;
 typedef uint16_t AdcP__Read__val_t;
 typedef uint16_t AdcP__ReadNow__val_t;
@@ -1097,6 +1098,30 @@ typedef /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__width_t /*WireAdcP.Arbitra
 enum /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0____nesc_unnamed4313 {
   AdcReadClientC__0__ID = 0U, AdcReadClientC__0__HAL_ID = 0U
 };
+enum HilTimerMilliC____nesc_unnamed4314 {
+  HilTimerMilliC__TIMER_COUNT = 1U
+};
+typedef TMilli /*AlarmCounterMilliP.Atm128AlarmSyncC*/Atm128AlarmSyncC__0__precision;
+typedef /*AlarmCounterMilliP.Atm128AlarmSyncC*/Atm128AlarmSyncC__0__precision /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__precision;
+typedef /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__precision /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__precision_tag;
+typedef uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type;
+typedef /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__precision /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__precision_tag;
+typedef uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__size_type;
+typedef uint8_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__size_type;
+typedef uint8_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__timer_size;
+typedef uint8_t HplAtm128Timer0SyncP__Compare__size_type;
+typedef uint8_t HplAtm128Timer0SyncP__Timer__timer_size;
+typedef TMilli /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__precision_tag;
+typedef /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__precision_tag /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__precision_tag;
+typedef uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type;
+typedef /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__precision_tag /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__precision_tag;
+typedef TMilli /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__precision_tag;
+typedef /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__precision_tag /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__precision_tag;
+typedef /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__precision_tag /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__precision_tag;
+typedef TMilli /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__precision_tag;
+typedef /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__precision_tag /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__LocalTime__precision_tag;
+typedef /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__precision_tag /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__precision_tag;
+typedef uint32_t /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__size_type;
 # 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Init.nc"
 static error_t PlatformP__Init__init(void );
 #line 62
@@ -1161,23 +1186,23 @@ static uint8_t MeasureClockC__Atm128Calibrate__adcPrescaler(void );
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7043c94108);
+uint8_t arg_0x2afbbb691108);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7043c94108);
+uint8_t arg_0x2afbbb691108);
 # 57 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
 static void SchedulerBasicP__Scheduler__taskLoop(void );
 #line 65
 static bool SchedulerBasicP__Scheduler__runNextTask(void );
-# 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerOverride.nc"
-static mcu_power_t McuSleepC__McuPowerOverride__default__lowestState(void );
 # 76 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuSleep.nc"
 static void McuSleepC__McuSleep__sleep(void );
 # 52 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerState.nc"
 static void McuSleepC__McuPowerState__update(void );
+# 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static void BlinkC__Timer0__fired(void );
 # 60 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Boot.nc"
 static void BlinkC__Boot__booted(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1214,7 +1239,7 @@ static void BlinkC__UDP__initDone(void );
 
 
 
-static void BlinkC__UDP__gotDatagram(uint16_t len, uint16_t *dataPtr);
+static void BlinkC__UDP__gotDatagram(uint16_t len, uint8_t *dataPtr);
 #line 11
 static void BlinkC__UDP__hwInterrupt(uint16_t *info);
 #line 9
@@ -1357,29 +1382,29 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7044044328);
+uint8_t arg_0x2afbbba4daf8);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7044042538);
+uint8_t arg_0x2afbbba66cc8);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7044042538);
+uint8_t arg_0x2afbbba66cc8);
 # 56 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b70440451a0);
+uint8_t arg_0x2afbbba4e830);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b70440451a0);
+uint8_t arg_0x2afbbba4e830);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b70440451a0);
+uint8_t arg_0x2afbbba4e830);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__runTask(void );
 # 62 "/homes/hglanzer/GIT/tinyos/tos/lib/power/PowerDownCleanup.nc"
@@ -1391,25 +1416,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t AdcP__Read__read(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440ccac0);
+uint8_t arg_0x2afbbbad6ac0);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440ca6d8, 
+uint8_t arg_0x2afbbbad36d8, 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440c7cd0);
+uint8_t arg_0x2afbbbad1cd0);
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440c7cd0);
+uint8_t arg_0x2afbbbad1cd0);
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440c7cd0);
+uint8_t arg_0x2afbbbad1cd0);
 # 81 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1417,31 +1442,31 @@ static void AdcP__acquiredData__runTask(void );
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__read(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440dd6b8);
+uint8_t arg_0x2afbbbb056b8);
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440dd6b8, 
+uint8_t arg_0x2afbbbb056b8, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f9390, 
+uint8_t arg_0x2afbbbb02390, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f8e30);
+uint8_t arg_0x2afbbbb01e30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f8e30);
+uint8_t arg_0x2afbbbb01e30);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__granted(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f8e30);
+uint8_t arg_0x2afbbbb01e30);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeRectangle__runTask(void );
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
@@ -1468,6 +1493,79 @@ static void LCD128x64P__wait4Controller__runTask(void );
 static void LCD128x64P__writeBar__runTask(void );
 #line 75
 static void LCD128x64P__clearScreenNB__runTask(void );
+# 109 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void );
+#line 103
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__startAt(/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type t0, /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type dt);
+#line 116
+static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getAlarm(void );
+#line 73
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__stop(void );
+# 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Init.nc"
+static error_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Init__init(void );
+# 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Counter.nc"
+static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get(void );
+# 58 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__fired(void );
+# 70 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__overflow(void );
+# 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
+static Atm128_TIFR_t HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag(void );
+#line 46
+static void HplAtm128Timer0SyncP__TimerCtrl__setControl(Atm128TimerControl_t control);
+# 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerOverride.nc"
+static mcu_power_t HplAtm128Timer0SyncP__McuPowerOverride__lowestState(void );
+# 51 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
+static int HplAtm128Timer0SyncP__TimerSync__compareBusy(void );
+#line 39
+static void HplAtm128Timer0SyncP__TimerSync__setTimer0Synchronous(void );
+# 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+static HplAtm128Timer0SyncP__Compare__size_type HplAtm128Timer0SyncP__Compare__get(void );
+
+
+
+
+
+static void HplAtm128Timer0SyncP__Compare__set(HplAtm128Timer0SyncP__Compare__size_type t);
+
+
+
+
+
+
+
+
+
+
+static void HplAtm128Timer0SyncP__Compare__start(void );
+# 61 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
+static HplAtm128Timer0SyncP__Timer__timer_size HplAtm128Timer0SyncP__Timer__get(void );
+# 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runTask(void );
+# 78 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__fired(void );
+# 136 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow(void );
+#line 129
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__startOneShotAt(uint32_t t0, uint32_t dt);
+#line 78
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__stop(void );
+# 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__runTask(void );
+# 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__fired(void );
+#line 83
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
+# 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+uint8_t arg_0x2afbbbd54da0);
+# 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
+# 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+uint8_t arg_0x2afbbbd54da0, 
+# 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+uint32_t dt);
+# 82 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Counter.nc"
+static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 5 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
 static uint8_t UDPP__UDP__initStack(void );
 #line 3
@@ -1480,7 +1578,7 @@ static void UDPP__IP__initDone(void );
 
 
 
-static void UDPP__IP__gotDatagram(uint16_t len, uint16_t *udpPtr);
+static void UDPP__IP__gotDatagram(uint16_t len, uint8_t *udpPtr);
 #line 11
 static void UDPP__IP__hwInterrupt(uint16_t *info);
 #line 9
@@ -1493,7 +1591,7 @@ static void IPP__IEEE8023__initDone(void );
 
 
 
-static void IPP__IEEE8023__gotDatagram(uint16_t len, uint16_t *IEEE8023frame);
+static void IPP__IEEE8023__gotDatagram(uint16_t len, uint8_t *IEEE8023frame);
 #line 20
 static void IPP__IEEE8023__hwInterrupt(uint16_t *info);
 #line 18
@@ -1533,7 +1631,7 @@ error_t error);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__ResourceArbiter__granted(
 # 99 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b704432c060);
+uint8_t arg_0x2afbbbf23d00);
 # 45 "/homes/hglanzer/GIT/tinyos/tos/interfaces/SpiByte.nc"
 static uint8_t Atm128SpiP__SpiByte__write(uint8_t tx);
 # 109 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
@@ -1541,15 +1639,15 @@ static void Atm128SpiP__Spi__dataReady(uint8_t data);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__release(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b70442fdae0);
+uint8_t arg_0x2afbbbf13ae0);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__request(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b70442fdae0);
+uint8_t arg_0x2afbbbf13ae0);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__default__granted(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b70442fdae0);
+uint8_t arg_0x2afbbbf13ae0);
 # 89 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void HplAtm128SpiP__SPI__sleep(void );
 #line 83
@@ -1598,23 +1696,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0__F
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(
 # 52 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443f9020);
+uint8_t arg_0x2afbbbfde020);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443f8538);
+uint8_t arg_0x2afbbbfdc538);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443f8538);
+uint8_t arg_0x2afbbbfdc538);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(
 # 51 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443fce30);
+uint8_t arg_0x2afbbbfe0e30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(
 # 51 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443fce30);
+uint8_t arg_0x2afbbbfe0e30);
 # 90 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ArbiterInfo__inUse(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1729,7 +1827,7 @@ static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__I
 
 static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void );
 # 33 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/MeasureClockC.nc"
-enum MeasureClockC____nesc_unnamed4314 {
+enum MeasureClockC____nesc_unnamed4315 {
 
 
   MeasureClockC__MAGIC = 488 / (16 / PLATFORM_MHZ)
@@ -1759,13 +1857,13 @@ int main(void )   ;
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7043c94108);
+uint8_t arg_0x2afbbb691108);
 # 76 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-enum SchedulerBasicP____nesc_unnamed4315 {
+enum SchedulerBasicP____nesc_unnamed4316 {
 
-  SchedulerBasicP__NUM_TASKS = 14U, 
+  SchedulerBasicP__NUM_TASKS = 16U, 
   SchedulerBasicP__NO_TASK = 255
 };
 
@@ -1825,9 +1923,8 @@ static inline mcu_power_t McuSleepC__getPowerState(void );
 static inline void McuSleepC__McuSleep__sleep(void );
 #line 121
 static inline void McuSleepC__McuPowerState__update(void );
-
-
-static inline mcu_power_t McuSleepC__McuPowerOverride__default__lowestState(void );
+# 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static void BlinkC__Timer0__startPeriodic(uint32_t dt);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 static error_t BlinkC__GLCD__startClearScreen(uint8_t pattern);
 #line 12
@@ -1847,7 +1944,7 @@ static uint8_t BlinkC__UDP__initStack(void );
 #line 3
 static uint8_t BlinkC__UDP__sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len);
 # 31 "BlinkC.nc"
-enum BlinkC____nesc_unnamed4316 {
+enum BlinkC____nesc_unnamed4317 {
 #line 31
   BlinkC__testTask = 0U
 };
@@ -1864,7 +1961,7 @@ static inline void BlinkC__testTask__runTask(void );
 
 
 
-
+static inline void BlinkC__Timer0__fired(void );
 
 
 
@@ -1918,9 +2015,8 @@ static inline void BlinkC__GLCD__lineWritten(void );
 
 
 
-
 static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y);
-#line 213
+#line 212
 static inline void BlinkC__UDP__initDone(void );
 
 
@@ -1932,8 +2028,8 @@ static inline void BlinkC__UDP__sendDone(void );
 
 
 static void BlinkC__UDP__hwInterrupt(uint16_t *info);
-#line 244
-static inline void BlinkC__UDP__gotDatagram(uint16_t len, uint16_t *dataPtr);
+#line 234
+static inline void BlinkC__UDP__gotDatagram(uint16_t len, uint8_t *dataPtr);
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void GLCDP__LCD128x64__startClearScreen(uint8_t pattern);
 #line 28
@@ -2085,7 +2181,7 @@ static void TouchScreenP__adcY__makeInput(void );
 #line 41
 static void TouchScreenP__adcY__clr(void );
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
-enum TouchScreenP____nesc_unnamed4317 {
+enum TouchScreenP____nesc_unnamed4318 {
 #line 36
   TouchScreenP__checkTS = 1U
 };
@@ -2162,14 +2258,14 @@ static void Atm128AdcP__HplAtm128Adc__setAdcsra(Atm128Adcsra_t adcsra);
 static uint8_t Atm128AdcP__Atm128Calibrate__adcPrescaler(void );
 # 102 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcP.nc"
 #line 98
-struct Atm128AdcP____nesc_unnamed4318 {
+struct Atm128AdcP____nesc_unnamed4319 {
   bool multiple : 1;
   bool precise : 1;
   uint8_t channel : 5;
 } Atm128AdcP__f;
 #line 102
 #line 98
-struct Atm128AdcP____nesc_unnamed4318 
+struct Atm128AdcP____nesc_unnamed4319 
 
 
 
@@ -2252,7 +2348,7 @@ void __vector_21(void ) __attribute((signal))   ;
 
 static inline bool HplAtm128AdcP__HplAtm128Adc__cancel(void );
 # 49 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
-enum /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0____nesc_unnamed4319 {
+enum /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0____nesc_unnamed4320 {
   RoundRobinResourceQueueC__0__NO_ENTRY = 0xFF, 
   RoundRobinResourceQueueC__0__SIZE = 1U ? (1U - 1) / 8 + 1 : 0
 };
@@ -2288,15 +2384,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7044044328);
+uint8_t arg_0x2afbbba4daf8);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7044042538);
+uint8_t arg_0x2afbbba66cc8);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7044042538);
+uint8_t arg_0x2afbbba66cc8);
 # 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -2310,28 +2406,28 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b70440451a0);
+uint8_t arg_0x2afbbba4e830);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4320 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4321 {
 #line 75
   ArbiterP__0__grantedTask = 2U
 };
 #line 75
 typedef int /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_sillytask_grantedTask[/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask];
 #line 67
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4321 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4322 {
 #line 67
   ArbiterP__0__RES_CONTROLLED, ArbiterP__0__RES_GRANTING, ArbiterP__0__RES_IMM_GRANTING, ArbiterP__0__RES_BUSY
 };
 #line 68
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4322 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4323 {
 #line 68
   ArbiterP__0__default_owner_id = 1U
 };
 #line 69
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4323 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0____nesc_unnamed4324 {
 #line 69
   ArbiterP__0__NO_RES = 0xFF
 };
@@ -2392,41 +2488,41 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440ccac0, 
+uint8_t arg_0x2afbbbad6ac0, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440ca6d8, 
+uint8_t arg_0x2afbbbad36d8, 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440c7cd0);
+uint8_t arg_0x2afbbbad1cd0);
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440c7cd0);
+uint8_t arg_0x2afbbbad1cd0);
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b70440c7cd0);
+uint8_t arg_0x2afbbbad1cd0);
 # 70 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t AdcP__acquiredData__postTask(void );
 # 103 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-enum AdcP____nesc_unnamed4324 {
+enum AdcP____nesc_unnamed4325 {
 #line 103
   AdcP__acquiredData = 3U
 };
 #line 103
 typedef int AdcP____nesc_sillytask_acquiredData[AdcP__acquiredData];
 #line 57
-enum AdcP____nesc_unnamed4325 {
+enum AdcP____nesc_unnamed4326 {
   AdcP__IDLE, 
   AdcP__ACQUIRE_DATA, 
   AdcP__ACQUIRE_DATA_NOW
@@ -2496,21 +2592,21 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440dd6b8, 
+uint8_t arg_0x2afbbbb056b8, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 55
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(
 # 26 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f9390);
+uint8_t arg_0x2afbbbb02390);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f8e30);
+uint8_t arg_0x2afbbbb01e30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b70440f8e30);
+uint8_t arg_0x2afbbbb01e30);
 
 
 
@@ -2565,49 +2661,49 @@ static error_t LCD128x64P__wait4Controller__postTask(void );
 #line 67
 static error_t LCD128x64P__clearScreenNB__postTask(void );
 # 37 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-enum LCD128x64P____nesc_unnamed4326 {
+enum LCD128x64P____nesc_unnamed4327 {
 #line 37
   LCD128x64P__wait4Controller = 4U
 };
 #line 37
 typedef int LCD128x64P____nesc_sillytask_wait4Controller[LCD128x64P__wait4Controller];
 #line 170
-enum LCD128x64P____nesc_unnamed4327 {
+enum LCD128x64P____nesc_unnamed4328 {
 #line 170
   LCD128x64P__writeRectangle = 5U
 };
 #line 170
 typedef int LCD128x64P____nesc_sillytask_writeRectangle[LCD128x64P__writeRectangle];
 #line 186
-enum LCD128x64P____nesc_unnamed4328 {
+enum LCD128x64P____nesc_unnamed4329 {
 #line 186
   LCD128x64P__writeCircle = 6U
 };
 #line 186
 typedef int LCD128x64P____nesc_sillytask_writeCircle[LCD128x64P__writeCircle];
 #line 219
-enum LCD128x64P____nesc_unnamed4329 {
+enum LCD128x64P____nesc_unnamed4330 {
 #line 219
   LCD128x64P__writeString = 7U
 };
 #line 219
 typedef int LCD128x64P____nesc_sillytask_writeString[LCD128x64P__writeString];
 #line 247
-enum LCD128x64P____nesc_unnamed4330 {
+enum LCD128x64P____nesc_unnamed4331 {
 #line 247
   LCD128x64P__clearScreenNB = 8U
 };
 #line 247
 typedef int LCD128x64P____nesc_sillytask_clearScreenNB[LCD128x64P__clearScreenNB];
 #line 278
-enum LCD128x64P____nesc_unnamed4331 {
+enum LCD128x64P____nesc_unnamed4332 {
 #line 278
   LCD128x64P__writeLine = 9U
 };
 #line 278
 typedef int LCD128x64P____nesc_sillytask_writeLine[LCD128x64P__writeLine];
 #line 356
-enum LCD128x64P____nesc_unnamed4332 {
+enum LCD128x64P____nesc_unnamed4333 {
 #line 356
   LCD128x64P__writeBar = 10U
 };
@@ -2668,6 +2764,262 @@ static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8
 static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 #line 478
 static inline void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern);
+# 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
+static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void );
+#line 46
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__setControl(Atm128TimerControl_t control);
+# 78 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__fired(void );
+# 82 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Counter.nc"
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__overflow(void );
+# 51 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
+static int /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__compareBusy(void );
+#line 39
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__setTimer0Synchronous(void );
+# 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get(void );
+
+
+
+
+
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__set(/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__size_type t);
+
+
+
+
+
+
+
+
+
+
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__start(void );
+# 61 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
+static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__timer_size /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get(void );
+# 45 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+uint8_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__set;
+uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__t0;
+#line 46
+uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__dt;
+uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base;
+
+
+
+enum /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0____nesc_unnamed4334 {
+  Atm128AlarmSyncP__0__MINDT = 2, 
+  Atm128AlarmSyncP__0__MAXT = 230
+};
+
+
+
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt(void );
+
+
+static inline error_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Init__init(void );
+#line 81
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setOcr0(uint8_t n);
+#line 97
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt(void );
+#line 156
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__fired(void );
+#line 168
+static uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get(void );
+#line 211
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__stop(void );
+
+
+
+
+
+
+
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__startAt(uint32_t nt0, uint32_t ndt);
+
+
+
+
+
+
+
+
+
+static inline uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void );
+
+
+
+static inline uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getAlarm(void );
+
+
+
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__overflow(void );
+# 58 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+static void HplAtm128Timer0SyncP__Compare__fired(void );
+# 70 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
+static void HplAtm128Timer0SyncP__Timer__overflow(void );
+# 71 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+uint8_t HplAtm128Timer0SyncP__count = 0;
+
+
+static inline uint8_t HplAtm128Timer0SyncP__Timer__get(void );
+#line 100
+static inline void HplAtm128Timer0SyncP__TimerCtrl__setControl(Atm128TimerControl_t x);
+#line 118
+static inline Atm128_TIFR_t HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag(void );
+#line 146
+static inline void HplAtm128Timer0SyncP__Compare__start(void );
+
+
+
+
+
+
+
+
+
+static inline uint8_t HplAtm128Timer0SyncP__Compare__get(void );
+
+
+static inline void HplAtm128Timer0SyncP__Compare__set(uint8_t t);
+
+
+
+
+static __inline void HplAtm128Timer0SyncP__stabiliseTimer0(void );
+#line 179
+static inline mcu_power_t HplAtm128Timer0SyncP__McuPowerOverride__lowestState(void );
+#line 210
+void __vector_15(void ) __attribute((signal))   ;
+#line 226
+void __vector_16(void ) __attribute((signal))   ;
+#line 240
+static inline void HplAtm128Timer0SyncP__TimerSync__setTimer0Synchronous(void );
+
+
+
+
+
+
+
+static inline int HplAtm128Timer0SyncP__TimerSync__compareBusy(void );
+# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+static error_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__postTask(void );
+# 109 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+static /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow(void );
+#line 103
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__startAt(/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type t0, /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type dt);
+#line 116
+static /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getAlarm(void );
+#line 73
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__stop(void );
+# 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired(void );
+# 74 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+enum /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0____nesc_unnamed4335 {
+#line 74
+  AlarmToTimerC__0__fired = 11U
+};
+#line 74
+typedef int /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0____nesc_sillytask_fired[/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired];
+#line 55
+uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__m_dt;
+bool /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__m_oneshot;
+
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__start(uint32_t t0, uint32_t dt, bool oneshot);
+#line 71
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__stop(void );
+
+
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runTask(void );
+
+
+
+
+
+
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__fired(void );
+#line 93
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__startOneShotAt(uint32_t t0, uint32_t dt);
+
+
+static inline uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow(void );
+# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void );
+# 136 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(void );
+#line 129
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__startOneShotAt(uint32_t t0, uint32_t dt);
+#line 78
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__stop(void );
+
+
+
+
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
+# 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+uint8_t arg_0x2afbbbd54da0);
+#line 71
+enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4336 {
+#line 71
+  VirtualizeTimerC__0__updateFromTimer = 12U
+};
+#line 71
+typedef int /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_sillytask_updateFromTimer[/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer];
+#line 53
+enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4337 {
+
+  VirtualizeTimerC__0__NUM_TIMERS = 1, 
+  VirtualizeTimerC__0__END_OF_LIST = 255
+};
+
+
+
+
+
+
+
+
+#line 59
+typedef struct /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4338 {
+
+  uint32_t t0;
+  uint32_t dt;
+  bool isoneshot : 1;
+  bool isrunning : 1;
+  bool _reserved : 6;
+} /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t;
+
+/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__NUM_TIMERS];
+
+
+
+
+
+
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(uint32_t now);
+#line 102
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__runTask(void );
+#line 141
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__fired(void );
+
+
+
+
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot);
+
+
+
+
+
+
+
+
+
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt);
+#line 206
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(uint8_t num);
+# 58 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/CounterToLocalTimeC.nc"
+static inline void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 7 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
 static void UDPP__UDP__initDone(void );
 
@@ -2676,7 +3028,7 @@ static void UDPP__UDP__initDone(void );
 
 
 
-static void UDPP__UDP__gotDatagram(uint16_t len, uint16_t *dataPtr);
+static void UDPP__UDP__gotDatagram(uint16_t len, uint8_t *dataPtr);
 #line 11
 static void UDPP__UDP__hwInterrupt(uint16_t *info);
 #line 9
@@ -2695,7 +3047,8 @@ static inline uint8_t UDPP__UDP__initStack(void );
 
 
 
-static inline void UDPP__IP__gotDatagram(uint16_t len, uint16_t *udpPtr);
+static inline void UDPP__IP__gotDatagram(uint16_t len, uint8_t *udpPtr);
+
 
 
 
@@ -2727,30 +3080,41 @@ static void IPP__IP__initDone(void );
 
 
 
-static void IPP__IP__gotDatagram(uint16_t len, uint16_t *udpPtr);
+static void IPP__IP__gotDatagram(uint16_t len, uint8_t *udpPtr);
 #line 11
 static void IPP__IP__hwInterrupt(uint16_t *info);
 #line 9
 static void IPP__IP__sendDone(void );
 # 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static volatile uint8_t IPP__dstMAC[6];
-ipStruct IPP__ipData;
+#line 12
+static volatile uint8_t IPP__arpCache[10][5];
+#line 12
+static volatile uint8_t IPP__arpReadPtr = 0;
+#line 12
+static volatile uint8_t IPP__arpWritePtr = 0;
+#line 12
+static volatile uint8_t IPP__state = 1;
+static volatile ipStruct IPP__ipData;
 arpStruct IPP__request;
 
 static inline uint16_t IPP__ipChksum(uint16_t len_ip_header);
-#line 43
+#line 47
+static inline uint8_t IPP__getMACforIP(void );
+#line 78
 static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP, uint16_t len);
-#line 129
+#line 158
 static inline uint8_t IPP__IP__initStack(void );
-#line 168
-static inline void IPP__IEEE8023__gotDatagram(uint16_t frameLen, uint16_t *IEEE8023Frame);
-#line 212
+#line 207
+static inline void IPP__IEEE8023__gotDatagram(uint16_t frameLen, uint8_t *IEEE8023Frame);
+#line 297
 static inline void IPP__IEEE8023__initDone(void );
 
 
 
 
 static inline void IPP__IEEE8023__sendDone(void );
+
 
 
 
@@ -2775,7 +3139,7 @@ static void IEEE8023P__IEEE8023__initDone(void );
 
 
 
-static void IEEE8023P__IEEE8023__gotDatagram(uint16_t len, uint16_t *IEEE8023frame);
+static void IEEE8023P__IEEE8023__gotDatagram(uint16_t len, uint8_t *IEEE8023frame);
 #line 20
 static void IEEE8023P__IEEE8023__hwInterrupt(uint16_t *info);
 #line 18
@@ -2797,9 +3161,9 @@ static error_t IEEE8023P__Resource__release(void );
 #line 88
 static error_t IEEE8023P__Resource__request(void );
 # 500 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
-enum IEEE8023P____nesc_unnamed4333 {
+enum IEEE8023P____nesc_unnamed4339 {
 #line 500
-  IEEE8023P__checkInterruptflag = 11U
+  IEEE8023P__checkInterruptflag = 13U
 };
 #line 500
 typedef int IEEE8023P____nesc_sillytask_checkInterruptflag[IEEE8023P__checkInterruptflag];
@@ -2847,7 +3211,7 @@ static inline void IEEE8023P__sendPacket(void );
 #line 192
 static inline uint8_t IEEE8023P__IEEE8023__init(void );
 #line 223
-static inline uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
+static uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
 #line 258
 static inline void IEEE8023P__Resource__granted(void );
 #line 500
@@ -2869,11 +3233,11 @@ error_t error);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__release(
 # 99 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b704432c060);
+uint8_t arg_0x2afbbbf23d00);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__request(
 # 99 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b704432c060);
+uint8_t arg_0x2afbbbf23d00);
 # 89 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void Atm128SpiP__Spi__sleep(void );
 #line 83
@@ -2897,15 +3261,15 @@ static void Atm128SpiP__Spi__setClockPhase(bool sampleOnTrailing);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__granted(
 # 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b70442fdae0);
+uint8_t arg_0x2afbbbf13ae0);
 # 90 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool Atm128SpiP__ArbiterInfo__inUse(void );
 # 52 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerState.nc"
 static void Atm128SpiP__McuPowerState__update(void );
 # 255 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-enum Atm128SpiP____nesc_unnamed4334 {
+enum Atm128SpiP____nesc_unnamed4340 {
 #line 255
-  Atm128SpiP__zeroTask = 12U
+  Atm128SpiP__zeroTask = 14U
 };
 #line 255
 typedef int Atm128SpiP____nesc_sillytask_zeroTask[Atm128SpiP__zeroTask];
@@ -2915,7 +3279,7 @@ uint8_t * Atm128SpiP__txBuffer;
 uint8_t * Atm128SpiP__rxBuffer;
 uint16_t Atm128SpiP__pos;
 
-enum Atm128SpiP____nesc_unnamed4335 {
+enum Atm128SpiP____nesc_unnamed4341 {
   Atm128SpiP__SPI_IDLE, 
   Atm128SpiP__SPI_BUSY, 
   Atm128SpiP__SPI_ATOMIC_SIZE = 10
@@ -3002,7 +3366,7 @@ static inline void HplAtm128SpiP__SPI__setClock(uint8_t v);
 #line 230
 static inline void HplAtm128SpiP__SPI__setMasterDoubleSpeed(bool on);
 # 49 "/homes/hglanzer/GIT/tinyos/tos/system/FcfsResourceQueueC.nc"
-enum /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0____nesc_unnamed4336 {
+enum /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0____nesc_unnamed4342 {
 #line 49
   FcfsResourceQueueC__0__NO_ENTRY = 0xFF
 };
@@ -3029,15 +3393,15 @@ static inline error_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQue
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(
 # 52 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443f9020);
+uint8_t arg_0x2afbbbfde020);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443f8538);
+uint8_t arg_0x2afbbbfdc538);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443f8538);
+uint8_t arg_0x2afbbbfdc538);
 # 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -3047,23 +3411,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Que
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(
 # 51 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b70443fce30);
+uint8_t arg_0x2afbbbfe0e30);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask__postTask(void );
 # 69 "/homes/hglanzer/GIT/tinyos/tos/system/SimpleArbiterP.nc"
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4337 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4343 {
 #line 69
-  SimpleArbiterP__0__grantedTask = 13U
+  SimpleArbiterP__0__grantedTask = 15U
 };
 #line 69
 typedef int /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_sillytask_grantedTask[/*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask];
 #line 62
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4338 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4344 {
 #line 62
   SimpleArbiterP__0__RES_IDLE = 0, SimpleArbiterP__0__RES_GRANTING = 1, SimpleArbiterP__0__RES_BUSY = 2
 };
 #line 63
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4339 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4345 {
 #line 63
   SimpleArbiterP__0__NO_RES = 0xFF
 };
@@ -3258,7 +3622,7 @@ static inline uint8_t HplAtm128AdcP__Adcsra2int(Atm128Adcsra_t x)
 #line 60
 {
 #line 60
-  union __nesc_unnamed4340 {
+  union __nesc_unnamed4346 {
 #line 60
     Atm128Adcsra_t f;
 #line 60
@@ -3482,6 +3846,46 @@ inline static bool RealMainP__Scheduler__runNextTask(void ){
 #line 65
 }
 #line 65
+# 217 "BlinkC.nc"
+static inline void BlinkC__UDP__sendDone(void )
+{
+}
+
+# 9 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
+inline static void UDPP__UDP__sendDone(void ){
+#line 9
+  BlinkC__UDP__sendDone();
+#line 9
+}
+#line 9
+# 72 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+static inline void UDPP__IP__sendDone(void )
+{
+  UDPP__UDP__sendDone();
+}
+
+# 9 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
+inline static void IPP__IP__sendDone(void ){
+#line 9
+  UDPP__IP__sendDone();
+#line 9
+}
+#line 9
+# 302 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+static inline void IPP__IEEE8023__sendDone(void )
+{
+  if (IPP__state != 0) {
+    IPP__IP__sendDone();
+    }
+}
+
+# 18 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+inline static void IEEE8023P__IEEE8023__sendDone(void ){
+#line 18
+  IPP__IEEE8023__sendDone();
+#line 18
+}
+#line 18
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 inline static error_t IEEE8023P__Resource__release(void ){
 #line 120
@@ -3497,90 +3901,6 @@ inline static error_t IEEE8023P__Resource__release(void ){
 #line 120
 }
 #line 120
-# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t TouchScreenP__checkTS__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(TouchScreenP__checkTS);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 143 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
-static inline void TouchScreenP__TouchScreen__isPressed(bool on)
-{
-  TouchScreenP__pressDetect = on;
-  if (on == TRUE) 
-    {
-      TouchScreenP__checkTS__postTask();
-    }
-}
-
-# 6 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
-inline static void GLCDP__TouchScreen__isPressed(bool on){
-#line 6
-  TouchScreenP__TouchScreen__isPressed(on);
-#line 6
-}
-#line 6
-# 60 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static inline void GLCDP__GLCD__isPressed(bool on)
-{
-  GLCDP__TouchScreen__isPressed(on);
-}
-
-# 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static void BlinkC__GLCD__isPressed(bool on){
-#line 12
-  GLCDP__GLCD__isPressed(on);
-#line 12
-}
-#line 12
-# 218 "BlinkC.nc"
-static inline void BlinkC__UDP__sendDone(void )
-{
-  BlinkC__GLCD__isPressed(TRUE);
-}
-
-# 9 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
-inline static void UDPP__UDP__sendDone(void ){
-#line 9
-  BlinkC__UDP__sendDone();
-#line 9
-}
-#line 9
-# 71 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
-static inline void UDPP__IP__sendDone(void )
-{
-  UDPP__UDP__sendDone();
-}
-
-# 9 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
-inline static void IPP__IP__sendDone(void ){
-#line 9
-  UDPP__IP__sendDone();
-#line 9
-}
-#line 9
-# 217 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
-static inline void IPP__IEEE8023__sendDone(void )
-{
-  IPP__IP__sendDone();
-}
-
-# 18 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
-inline static void IEEE8023P__IEEE8023__sendDone(void ){
-#line 18
-  IPP__IEEE8023__sendDone();
-#line 18
-}
-#line 18
 # 92 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
 static inline void IEEE8023P__sendPacket(void )
 {
@@ -3697,60 +4017,171 @@ inline static error_t BlinkC__GLCD__startWriteString(char *data, uint8_t x, uint
 #line 62
 }
 #line 62
-# 244 "BlinkC.nc"
-static inline void BlinkC__UDP__gotDatagram(uint16_t len, uint16_t *dataPtr)
+# 234 "BlinkC.nc"
+static inline void BlinkC__UDP__gotDatagram(uint16_t len, uint8_t *dataPtr)
 {
-  dataPtr[10] = '\0';
-
+  dataPtr[20] = '\0';
   BlinkC__GLCD__startWriteString((char *)dataPtr, 0, BlinkC__count2);
   BlinkC__count2++;
+  if (BlinkC__count2 > 7) {
+    BlinkC__count2 = 3;
+    }
 }
 
 # 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
-inline static void UDPP__UDP__gotDatagram(uint16_t len, uint16_t *dataPtr){
+inline static void UDPP__UDP__gotDatagram(uint16_t len, uint8_t *dataPtr){
 #line 14
   BlinkC__UDP__gotDatagram(len, dataPtr);
 #line 14
 }
 #line 14
 # 61 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
-static inline void UDPP__IP__gotDatagram(uint16_t len, uint16_t *udpPtr)
+static inline void UDPP__IP__gotDatagram(uint16_t len, uint8_t *udpPtr)
+
 {
-  UDPP__UDP__gotDatagram(len, udpPtr + 4);
+  UDPP__UDP__gotDatagram(len, udpPtr + 8);
 }
 
 # 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
-inline static void IPP__IP__gotDatagram(uint16_t len, uint16_t *udpPtr){
+inline static void IPP__IP__gotDatagram(uint16_t len, uint8_t *udpPtr){
 #line 14
   UDPP__IP__gotDatagram(len, udpPtr);
 #line 14
 }
 #line 14
-# 168 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
-static inline void IPP__IEEE8023__gotDatagram(uint16_t frameLen, uint16_t *IEEE8023Frame)
+# 11 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
+inline static void UDPP__UDP__hwInterrupt(uint16_t *info){
+#line 11
+  BlinkC__UDP__hwInterrupt(info);
+#line 11
+}
+#line 11
+# 77 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+static inline void UDPP__IP__hwInterrupt(uint16_t *info)
+
 {
-  volatile uint16_t len = 0;
+  UDPP__UDP__hwInterrupt(info);
+}
 
+# 11 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
+inline static void IPP__IP__hwInterrupt(uint16_t *info){
+#line 11
+  UDPP__IP__hwInterrupt(info);
+#line 11
+}
+#line 11
+# 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+inline static uint8_t IPP__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type){
+#line 14
+  unsigned char result;
+#line 14
 
-  if (IEEE8023Frame[0] == 0xFFFF && IEEE8023Frame[1] == 0xFFFF && IEEE8023Frame[2] == 0xFFFF) 
+#line 14
+  result = IEEE8023P__IEEE8023__sendFrame(dataPtr, dstMAC, len, type);
+#line 14
+
+#line 14
+  return result;
+#line 14
+}
+#line 14
+# 207 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+static inline void IPP__IEEE8023__gotDatagram(uint16_t frameLen, uint8_t *IEEE8023Frame)
+
+{
+
+  if (IEEE8023Frame[0] == 0xFF && IEEE8023Frame[1] == 0xFF && IEEE8023Frame[2] == 0xFF && IEEE8023Frame[3] == 0xFF && IEEE8023Frame[4] == 0xFF && IEEE8023Frame[5] == 0xFF) 
+
     {
+
+      if (IEEE8023Frame[12] == 0x08 && IEEE8023Frame[13] == 0x06) 
+        {
+
+          if (IEEE8023Frame[14] == 0x00 && IEEE8023Frame[15] == 0x01 && IEEE8023Frame[16] == 0x08 && IEEE8023Frame[17] == 0x00) 
+            {
+
+              if (IEEE8023Frame[38] == 192 && IEEE8023Frame[39] == 168 && IEEE8023Frame[40] == 1 && IEEE8023Frame[41] == 10) 
+
+                {
+
+                  if (IEEE8023Frame[20] == 0x00 && IEEE8023Frame[21] == 0x01) 
+                    {
+
+
+
+                      IPP__request.dstIP[0] = IEEE8023Frame[12];
+                      IPP__request.dstIP[1] = IEEE8023Frame[13];
+                      IPP__request.dstIP[2] = IEEE8023Frame[14];
+                      IPP__request.dstIP[3] = IEEE8023Frame[15];
+
+                      IPP__request.dstMAC[0] = 0x01;
+                      IPP__request.dstMAC[1] = 0x16;
+                      IPP__request.dstMAC[2] = 0xCB;
+                      IPP__request.dstMAC[3] = 0xCA;
+                      IPP__request.dstMAC[4] = 0x5D;
+                      IPP__request.dstMAC[5] = 0x55;
+
+                      IPP__dstMAC[0] = IEEE8023Frame[6];
+                      IPP__dstMAC[1] = IEEE8023Frame[7];
+                      IPP__dstMAC[2] = IEEE8023Frame[8];
+                      IPP__dstMAC[3] = IEEE8023Frame[9];
+                      IPP__dstMAC[4] = IEEE8023Frame[10];
+                      IPP__dstMAC[5] = IEEE8023Frame[11];
+
+                      IPP__request.arpTypeL = 0x02;
+                      IPP__state = 0;
+                      IPP__IEEE8023__sendFrame((uint16_t *)&IPP__request, (uint16_t *)&IPP__dstMAC, 28, 0);
+                    }
+                }
+              else 
+                {
+                  IPP__IP__hwInterrupt((uint16_t *)&"NOT MY BUSINESS");
+                }
+            }
+        }
     }
   else 
 
     {
-#line 207
-      IPP__IP__gotDatagram(17, IEEE8023Frame + 17);
+
+      if (IEEE8023Frame[12] == 0x08 && IEEE8023Frame[13] == 0x06) 
+        {
+          if (IEEE8023Frame[20] == 0x00 && IEEE8023Frame[21] == 0x02) 
+            {
+
+              IPP__arpCache[0][IPP__arpWritePtr] = IEEE8023Frame[28];
+              IPP__arpCache[1][IPP__arpWritePtr] = IEEE8023Frame[29];
+              IPP__arpCache[2][IPP__arpWritePtr] = IEEE8023Frame[30];
+              IPP__arpCache[3][IPP__arpWritePtr] = IEEE8023Frame[31];
+
+
+              IPP__arpCache[4][IPP__arpWritePtr] = IEEE8023Frame[22];
+              IPP__arpCache[5][IPP__arpWritePtr] = IEEE8023Frame[23];
+              IPP__arpCache[6][IPP__arpWritePtr] = IEEE8023Frame[24];
+              IPP__arpCache[7][IPP__arpWritePtr] = IEEE8023Frame[25];
+              IPP__arpCache[8][IPP__arpWritePtr] = IEEE8023Frame[26];
+              IPP__arpCache[9][IPP__arpWritePtr] = IEEE8023Frame[27];
+
+              IPP__arpWritePtr++;
+              if (IPP__arpWritePtr == 5) {
+                IPP__arpWritePtr = 0;
+                }
+            }
+        }
+      else {
+          IPP__IP__gotDatagram(17, IEEE8023Frame + 34);
+        }
     }
 }
 
 # 23 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
-inline static void IEEE8023P__IEEE8023__gotDatagram(uint16_t len, uint16_t *IEEE8023frame){
+inline static void IEEE8023P__IEEE8023__gotDatagram(uint16_t len, uint8_t *IEEE8023frame){
 #line 23
   IPP__IEEE8023__gotDatagram(len, IEEE8023frame);
 #line 23
 }
 #line 23
-# 213 "BlinkC.nc"
+# 212 "BlinkC.nc"
 static inline void BlinkC__UDP__initDone(void )
 {
   BlinkC__GLCD__startWriteString("stack init done", 0, 0);
@@ -3763,7 +4194,7 @@ inline static void UDPP__UDP__initDone(void ){
 #line 7
 }
 #line 7
-# 66 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
+# 67 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
 static inline void UDPP__IP__initDone(void )
 {
   UDPP__UDP__initDone();
@@ -3776,7 +4207,7 @@ inline static void IPP__IP__initDone(void ){
 #line 7
 }
 #line 7
-# 212 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+# 297 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static inline void IPP__IEEE8023__initDone(void )
 {
   IPP__IP__initDone();
@@ -3907,8 +4338,8 @@ static inline void IEEE8023P__Resource__granted(void )
       IEEE8023P__setBank(0x01);
 
 
-      IEEE8023P__writeSPI(0x40 | 0x18, 0x80);
 
+      IEEE8023P__writeSPI(0x40 | 0x18, 0xA1);
 
 
 
@@ -4036,20 +4467,20 @@ static inline void IEEE8023P__Resource__granted(void )
 
       IEEE8023P__writeSPI(0x40 | 0x1E, 0x40 | 0x80);
 
-      IEEE8023P__IEEE8023__gotDatagram(frameLen, (uint16_t *)&IEEE8023P__IEEE8023packet);
-
       IEEE8023P__Resource__release();
       IEEE8023P__stateETH = IEEE8023_READY;
+      IEEE8023P__IEEE8023__gotDatagram(frameLen, (uint8_t *)&IEEE8023P__IEEE8023packet);
+
 
       IEEE8023P__writeSPI(0x40 | 0x1B, 0xD0);
       break;
 
       case IEEE8023_TX: 
         IEEE8023P__sendPacket();
-      IEEE8023P__IEEE8023__sendDone();
-
       IEEE8023P__Resource__release();
       IEEE8023P__stateETH = IEEE8023_READY;
+
+      IEEE8023P__IEEE8023__sendDone();
       break;
     }
 }
@@ -4061,9 +4492,9 @@ static inline void Atm128SpiP__Resource__default__granted(uint8_t id)
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b70442fdae0){
+inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2afbbbf13ae0){
 #line 102
-  switch (arg_0x2b70442fdae0) {
+  switch (arg_0x2afbbbf13ae0) {
 #line 102
     case 0:
 #line 102
@@ -4073,7 +4504,7 @@ inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b70442fdae0){
 #line 102
     default:
 #line 102
-      Atm128SpiP__Resource__default__granted(arg_0x2b70442fdae0);
+      Atm128SpiP__Resource__default__granted(arg_0x2afbbbf13ae0);
 #line 102
       break;
 #line 102
@@ -4089,9 +4520,9 @@ static inline void Atm128SpiP__ResourceArbiter__granted(uint8_t id)
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2b70443fce30){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2afbbbfe0e30){
 #line 102
-  Atm128SpiP__ResourceArbiter__granted(arg_0x2b70443fce30);
+  Atm128SpiP__ResourceArbiter__granted(arg_0x2afbbbfe0e30);
 #line 102
 }
 #line 102
@@ -4102,9 +4533,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b70443f8538){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2afbbbfdc538){
 #line 59
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2b70443f8538);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2afbbbfdc538);
 #line 59
 }
 #line 59
@@ -4174,9 +4605,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b70443f8538){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2afbbbfdc538){
 #line 65
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b70443f8538);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2afbbbfdc538);
 #line 65
 }
 #line 65
@@ -4313,13 +4744,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2b704432c060){
+inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2afbbbf23d00){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2b704432c060);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2afbbbf23d00);
 #line 120
 
 #line 120
@@ -4425,149 +4856,6 @@ inline static error_t LCD128x64P__writeString__postTask(void ){
 #line 67
 }
 #line 67
-# 310 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-static inline 
-#line 309
-void Atm128SpiP__SpiPacket__default__sendDone(
-uint8_t *_txbuffer, uint8_t *_rxbuffer, 
-uint16_t _length, error_t _success)
-#line 311
-{
-}
-
-# 82 "/homes/hglanzer/GIT/tinyos/tos/interfaces/SpiPacket.nc"
-inline static void Atm128SpiP__SpiPacket__sendDone(uint8_t * txBuf, uint8_t * rxBuf, uint16_t len, error_t error){
-#line 82
-  Atm128SpiP__SpiPacket__default__sendDone(txBuf, rxBuf, len, error);
-#line 82
-}
-#line 82
-# 255 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-static inline void Atm128SpiP__zeroTask__runTask(void )
-#line 255
-{
-  uint16_t myLen;
-  uint8_t * rx;
-  uint8_t * tx;
-
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 260
-    {
-      myLen = Atm128SpiP__len;
-      rx = Atm128SpiP__rxBuffer;
-      tx = Atm128SpiP__txBuffer;
-      Atm128SpiP__rxBuffer = (void *)0;
-      Atm128SpiP__txBuffer = (void *)0;
-      Atm128SpiP__len = 0;
-      Atm128SpiP__pos = 0;
-      Atm128SpiP__SpiPacket__sendDone(tx, rx, myLen, SUCCESS);
-    }
-#line 269
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 11 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDP.nc"
-inline static void UDPP__UDP__hwInterrupt(uint16_t *info){
-#line 11
-  BlinkC__UDP__hwInterrupt(info);
-#line 11
-}
-#line 11
-# 76 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/udp/UDPP.nc"
-static inline void UDPP__IP__hwInterrupt(uint16_t *info)
-
-{
-  UDPP__UDP__hwInterrupt(info);
-}
-
-# 11 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IP.nc"
-inline static void IPP__IP__hwInterrupt(uint16_t *info){
-#line 11
-  UDPP__IP__hwInterrupt(info);
-#line 11
-}
-#line 11
-# 222 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
-static inline void IPP__IEEE8023__hwInterrupt(uint16_t *info)
-
-{
-  IPP__IP__hwInterrupt(info);
-}
-
-# 20 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
-inline static void IEEE8023P__IEEE8023__hwInterrupt(uint16_t *info){
-#line 20
-  IPP__IEEE8023__hwInterrupt(info);
-#line 20
-}
-#line 20
-# 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t IEEE8023P__Resource__request(void ){
-#line 88
-  unsigned char result;
-#line 88
-
-#line 88
-  result = Atm128SpiP__Resource__request(0);
-#line 88
-
-#line 88
-  return result;
-#line 88
-}
-#line 88
-# 500 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
-static inline void IEEE8023P__checkInterruptflag__runTask(void )
-{
-  static volatile uint8_t iFlag;
-#line 502
-  static volatile uint8_t rc = 0;
-#line 502
-  static volatile uint8_t rc2 = 0;
-
-  iFlag = IEEE8023P__writeSPI(0x00 | 0x1C, 0x00 | 0x1C);
-
-  IEEE8023P__readPHY(0x13, 0);
-  IEEE8023P__readPHY(0x13, 1);
-
-
-  if ((iFlag & 0x40) != 0) 
-    {
-      if (IEEE8023P__Resource__request() == FAIL) 
-        {
-        }
-      else 
-
-        {
-          IEEE8023P__stateETH = IEEE8023_RX;
-        }
-    }
-
-
-  if ((iFlag & 0x10) != 0) 
-    {
-      do 
-        {
-          rc = IEEE8023P__readPHY(0x01, 0);
-          rc = IEEE8023P__readPHY(0x01, 0);
-          rc2 = IEEE8023P__readPHY(0x11, 1);
-        }
-      while (
-#line 530
-      rc != rc2);
-
-      if ((rc & 0x04) != 0) 
-        {
-          IEEE8023P__IEEE8023__hwInterrupt((uint16_t *)"Link UP  ");
-        }
-      else 
-        {
-          IEEE8023P__IEEE8023__hwInterrupt((uint16_t *)"Link DOWN");
-        }
-      IEEE8023P__writeSPI(0x40 | 0x1B, 0xD0);
-    }
-}
-
 # 217 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/HplAtm128SpiP.nc"
 static inline void HplAtm128SpiP__SPI__setClock(uint8_t v)
 #line 217
@@ -4816,9 +5104,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequ
 }
 
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b70443f9020){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2afbbbfde020){
 #line 53
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2b70443f9020);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2afbbbfde020);
 #line 53
 }
 #line 53
@@ -4866,13 +5154,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2b704432c060){
+inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2afbbbf23d00){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2b704432c060);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2afbbbf23d00);
 #line 88
 
 #line 88
@@ -4880,6 +5168,885 @@ inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2b70443
 #line 88
 }
 #line 88
+# 310 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
+static inline 
+#line 309
+void Atm128SpiP__SpiPacket__default__sendDone(
+uint8_t *_txbuffer, uint8_t *_rxbuffer, 
+uint16_t _length, error_t _success)
+#line 311
+{
+}
+
+# 82 "/homes/hglanzer/GIT/tinyos/tos/interfaces/SpiPacket.nc"
+inline static void Atm128SpiP__SpiPacket__sendDone(uint8_t * txBuf, uint8_t * rxBuf, uint16_t len, error_t error){
+#line 82
+  Atm128SpiP__SpiPacket__default__sendDone(txBuf, rxBuf, len, error);
+#line 82
+}
+#line 82
+# 255 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
+static inline void Atm128SpiP__zeroTask__runTask(void )
+#line 255
+{
+  uint16_t myLen;
+  uint8_t * rx;
+  uint8_t * tx;
+
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 260
+    {
+      myLen = Atm128SpiP__len;
+      rx = Atm128SpiP__rxBuffer;
+      tx = Atm128SpiP__txBuffer;
+      Atm128SpiP__rxBuffer = (void *)0;
+      Atm128SpiP__txBuffer = (void *)0;
+      Atm128SpiP__len = 0;
+      Atm128SpiP__pos = 0;
+      Atm128SpiP__SpiPacket__sendDone(tx, rx, myLen, SUCCESS);
+    }
+#line 269
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 308 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+static inline void IPP__IEEE8023__hwInterrupt(uint16_t *info)
+
+{
+  IPP__IP__hwInterrupt(info);
+}
+
+# 20 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
+inline static void IEEE8023P__IEEE8023__hwInterrupt(uint16_t *info){
+#line 20
+  IPP__IEEE8023__hwInterrupt(info);
+#line 20
+}
+#line 20
+# 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
+inline static error_t IEEE8023P__Resource__request(void ){
+#line 88
+  unsigned char result;
+#line 88
+
+#line 88
+  result = Atm128SpiP__Resource__request(0);
+#line 88
+
+#line 88
+  return result;
+#line 88
+}
+#line 88
+# 500 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
+static inline void IEEE8023P__checkInterruptflag__runTask(void )
+{
+  static volatile uint8_t iFlag;
+#line 502
+  static volatile uint8_t rc = 0;
+#line 502
+  static volatile uint8_t rc2 = 0;
+
+  iFlag = IEEE8023P__writeSPI(0x00 | 0x1C, 0x00 | 0x1C);
+
+  IEEE8023P__readPHY(0x13, 0);
+  IEEE8023P__readPHY(0x13, 1);
+
+
+  if ((iFlag & 0x40) != 0) 
+    {
+      if (IEEE8023P__Resource__request() == FAIL) 
+        {
+        }
+      else 
+
+        {
+          IEEE8023P__stateETH = IEEE8023_RX;
+        }
+    }
+
+
+  if ((iFlag & 0x10) != 0) 
+    {
+      do 
+        {
+          rc = IEEE8023P__readPHY(0x01, 0);
+          rc = IEEE8023P__readPHY(0x01, 0);
+          rc2 = IEEE8023P__readPHY(0x11, 1);
+        }
+      while (
+#line 530
+      rc != rc2);
+
+      if ((rc & 0x04) != 0) 
+        {
+          IEEE8023P__IEEE8023__hwInterrupt((uint16_t *)"Link UP  ");
+        }
+      else 
+        {
+          IEEE8023P__IEEE8023__hwInterrupt((uint16_t *)"Link DOWN");
+        }
+      IEEE8023P__writeSPI(0x40 | 0x1B, 0xD0);
+    }
+}
+
+# 103 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+inline static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__startAt(/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type t0, /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type dt){
+#line 103
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__startAt(t0, dt);
+#line 103
+}
+#line 103
+# 58 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__start(uint32_t t0, uint32_t dt, bool oneshot)
+{
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__m_dt = dt;
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__m_oneshot = oneshot;
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__startAt(t0, dt);
+}
+
+#line 93
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__startOneShotAt(uint32_t t0, uint32_t dt)
+{
+#line 94
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__start(t0, dt, TRUE);
+}
+
+# 129 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__startOneShotAt(uint32_t t0, uint32_t dt){
+#line 129
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__startOneShotAt(t0, dt);
+#line 129
+}
+#line 129
+# 211 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__stop(void )
+#line 211
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 212
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__set = FALSE;
+#line 212
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 73 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+inline static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__stop(void ){
+#line 73
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__stop();
+#line 73
+}
+#line 73
+# 71 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__stop(void )
+{
+#line 72
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__stop();
+}
+
+# 78 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__stop(void ){
+#line 78
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__stop();
+#line 78
+}
+#line 78
+# 229 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void )
+#line 229
+{
+  return /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get();
+}
+
+# 109 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+inline static /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow(void ){
+#line 109
+  unsigned long result;
+#line 109
+
+#line 109
+  result = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow();
+#line 109
+
+#line 109
+  return result;
+#line 109
+}
+#line 109
+# 96 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+static inline uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow(void )
+{
+#line 97
+  return /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow();
+}
+
+# 136 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+inline static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(void ){
+#line 136
+  unsigned long result;
+#line 136
+
+#line 136
+  result = /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow();
+#line 136
+
+#line 136
+  return result;
+#line 136
+}
+#line 136
+# 102 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__runTask(void )
+{
+
+
+
+
+  uint32_t now = /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow();
+  int32_t min_remaining = (1UL << 31) - 1;
+  bool min_remaining_isset = FALSE;
+  uint8_t num;
+
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__stop();
+
+  for (num = 0; num < /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__NUM_TIMERS; num++) 
+    {
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
+
+      if (timer->isrunning) 
+        {
+          uint32_t elapsed = now - timer->t0;
+          int32_t remaining = timer->dt - elapsed;
+
+          if (remaining < min_remaining) 
+            {
+              min_remaining = remaining;
+              min_remaining_isset = TRUE;
+            }
+        }
+    }
+
+  if (min_remaining_isset) 
+    {
+      if (min_remaining <= 0) {
+        /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(now);
+        }
+      else {
+#line 137
+        /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__startOneShotAt(now, min_remaining);
+        }
+    }
+}
+
+# 118 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline Atm128_TIFR_t HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag(void )
+#line 118
+{
+  return * (Atm128_TIFR_t *)& * (volatile uint8_t *)(0x36 + 0x20);
+}
+
+# 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
+inline static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void ){
+#line 53
+  union __nesc_unnamed4273 result;
+#line 53
+
+#line 53
+  result = HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag();
+#line 53
+
+#line 53
+  return result;
+#line 53
+}
+#line 53
+# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t TouchScreenP__checkTS__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(TouchScreenP__checkTS);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 143 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+static inline void TouchScreenP__TouchScreen__isPressed(bool on)
+{
+  TouchScreenP__pressDetect = on;
+  if (on == TRUE) 
+    {
+      TouchScreenP__checkTS__postTask();
+    }
+}
+
+# 6 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
+inline static void GLCDP__TouchScreen__isPressed(bool on){
+#line 6
+  TouchScreenP__TouchScreen__isPressed(on);
+#line 6
+}
+#line 6
+# 60 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+static inline void GLCDP__GLCD__isPressed(bool on)
+{
+  GLCDP__TouchScreen__isPressed(on);
+}
+
+# 12 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static void BlinkC__GLCD__isPressed(bool on){
+#line 12
+  GLCDP__GLCD__isPressed(on);
+#line 12
+}
+#line 12
+# 4 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
+inline static void GLCDP__TouchScreen__getXY(void ){
+#line 4
+  TouchScreenP__TouchScreen__getXY();
+#line 4
+}
+#line 4
+# 86 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+static inline void GLCDP__GLCD__getXY(void )
+{
+  GLCDP__TouchScreen__getXY();
+}
+
+# 10 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static void BlinkC__GLCD__getXY(void ){
+#line 10
+  GLCDP__GLCD__getXY();
+#line 10
+}
+#line 10
+# 35 "BlinkC.nc"
+static inline void BlinkC__Timer0__fired(void )
+{
+  BlinkC__GLCD__getXY();
+  BlinkC__GLCD__isPressed(TRUE);
+}
+
+# 206 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(uint8_t num)
+{
+}
+
+# 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2afbbbd54da0){
+#line 83
+  switch (arg_0x2afbbbd54da0) {
+#line 83
+    case 0U:
+#line 83
+      BlinkC__Timer0__fired();
+#line 83
+      break;
+#line 83
+    default:
+#line 83
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2afbbbd54da0);
+#line 83
+      break;
+#line 83
+    }
+#line 83
+}
+#line 83
+# 62 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput(void )
+#line 62
+{
+#line 62
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 62
+    * (volatile uint8_t * )100U |= 1 << 3;
+#line 62
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveA__makeOutput(void ){
+#line 46
+  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput();
+#line 46
+}
+#line 46
+# 62 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void )
+#line 62
+{
+#line 62
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 62
+    * (volatile uint8_t * )100U |= 1 << 4;
+#line 62
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveB__makeOutput(void ){
+#line 46
+  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput();
+#line 46
+}
+#line 46
+# 59 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput(void )
+#line 59
+{
+#line 59
+  * (volatile uint8_t * )97U &= ~(1 << 0);
+}
+
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcX__makeInput(void ){
+#line 44
+  /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput();
+#line 44
+}
+#line 44
+# 59 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput(void )
+#line 59
+{
+#line 59
+  * (volatile uint8_t * )97U &= ~(1 << 1);
+}
+
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcY__makeInput(void ){
+#line 44
+  /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput();
+#line 44
+}
+#line 44
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set(void )
+#line 56
+{
+#line 56
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 56
+    * (volatile uint8_t * )101U |= 1 << 3;
+#line 56
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 40 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveA__set(void ){
+#line 40
+  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set();
+#line 40
+}
+#line 40
+# 57 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr(void )
+#line 57
+{
+#line 57
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 57
+    * (volatile uint8_t * )101U &= ~(1 << 4);
+#line 57
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveB__clr(void ){
+#line 41
+  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr();
+#line 41
+}
+#line 41
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr(void )
+#line 56
+{
+#line 56
+  * (volatile uint8_t * )98U &= ~(1 << 0);
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcX__clr(void ){
+#line 41
+  /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr();
+#line 41
+}
+#line 41
+# 204 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
+static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(uint8_t id)
+#line 204
+{
+}
+
+# 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2afbbba4daf8){
+#line 53
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2afbbba4daf8);
+#line 53
+}
+#line 53
+# 97 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
+static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__enqueue(resource_client_id_t id)
+#line 97
+{
+  /* atomic removed: atomic calls only */
+#line 98
+  {
+    if (!/*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued(id)) {
+        /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__resQ[id / 8] |= 1 << id % 8;
+        {
+          unsigned char __nesc_temp = 
+#line 101
+          SUCCESS;
+
+#line 101
+          return __nesc_temp;
+        }
+      }
+#line 103
+    {
+      unsigned char __nesc_temp = 
+#line 103
+      EBUSY;
+
+#line 103
+      return __nesc_temp;
+    }
+  }
+}
+
+# 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
+inline static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id){
+#line 79
+  unsigned char result;
+#line 79
+
+#line 79
+  result = /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__enqueue(id);
+#line 79
+
+#line 79
+  return result;
+#line 79
+}
+#line 79
+# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 133 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
+static inline error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void )
+#line 133
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 134
+    {
+      if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__resId == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__default_owner_id) {
+          if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_GRANTING) {
+              /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask();
+              {
+                unsigned char __nesc_temp = 
+#line 138
+                SUCCESS;
+
+                {
+#line 138
+                  __nesc_atomic_end(__nesc_atomic); 
+#line 138
+                  return __nesc_temp;
+                }
+              }
+            }
+          else {
+#line 140
+            if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_IMM_GRANTING) {
+                /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__resId = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__reqResId;
+                /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_BUSY;
+                {
+                  unsigned char __nesc_temp = 
+#line 143
+                  SUCCESS;
+
+                  {
+#line 143
+                    __nesc_atomic_end(__nesc_atomic); 
+#line 143
+                    return __nesc_temp;
+                  }
+                }
+              }
+            }
+        }
+    }
+#line 149
+    __nesc_atomic_end(__nesc_atomic); }
+#line 147
+  return FAIL;
+}
+
+# 56 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
+inline static error_t /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__release(void ){
+#line 56
+  unsigned char result;
+#line 56
+
+#line 56
+  result = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release();
+#line 56
+
+#line 56
+  return result;
+#line 56
+}
+#line 56
+# 52 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerState.nc"
+inline static void HplAtm128AdcP__McuPowerState__update(void ){
+#line 52
+  McuSleepC__McuPowerState__update();
+#line 52
+}
+#line 52
+# 78 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/HplAtm128AdcP.nc"
+static inline void HplAtm128AdcP__HplAtm128Adc__enableAdc(void )
+#line 78
+{
+  * (volatile uint8_t *)(0x06 + 0x20) |= 1 << 7;
+  HplAtm128AdcP__McuPowerState__update();
+}
+
+# 82 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/HplAtm128Adc.nc"
+inline static void Atm128AdcP__HplAtm128Adc__enableAdc(void ){
+#line 82
+  HplAtm128AdcP__HplAtm128Adc__enableAdc();
+#line 82
+}
+#line 82
+# 124 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcP.nc"
+static inline error_t Atm128AdcP__AsyncStdControl__start(void )
+#line 124
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 125
+    Atm128AdcP__HplAtm128Adc__enableAdc();
+#line 125
+    __nesc_atomic_end(__nesc_atomic); }
+  return SUCCESS;
+}
+
+# 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/AsyncStdControl.nc"
+inline static error_t /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__AsyncStdControl__start(void ){
+#line 95
+  unsigned char result;
+#line 95
+
+#line 95
+  result = Atm128AdcP__AsyncStdControl__start();
+#line 95
+
+#line 95
+  return result;
+#line 95
+}
+#line 95
+# 69 "/homes/hglanzer/GIT/tinyos/tos/lib/power/AsyncPowerManagerP.nc"
+static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__requested(void )
+#line 69
+{
+  /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__AsyncStdControl__start();
+  /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__release();
+}
+
+# 73 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__requested(void ){
+#line 73
+  /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__requested();
+#line 73
+}
+#line 73
+# 159 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline void HplAtm128Timer0SyncP__Compare__set(uint8_t t)
+#line 159
+{
+  * (volatile uint8_t *)(0x31 + 0x20) = t;
+}
+
+# 54 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__set(/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__size_type t){
+#line 54
+  HplAtm128Timer0SyncP__Compare__set(t);
+#line 54
+}
+#line 54
+# 74 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline uint8_t HplAtm128Timer0SyncP__Timer__get(void )
+#line 74
+{
+#line 74
+  return * (volatile uint8_t *)(0x32 + 0x20);
+}
+
+# 61 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
+inline static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__timer_size /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get(void ){
+#line 61
+  unsigned char result;
+#line 61
+
+#line 61
+  result = HplAtm128Timer0SyncP__Timer__get();
+#line 61
+
+#line 61
+  return result;
+#line 61
+}
+#line 61
+# 248 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline int HplAtm128Timer0SyncP__TimerSync__compareBusy(void )
+#line 248
+{
+  return (* (volatile uint8_t *)(0x30 + 0x20) & (1 << 1)) != 0;
+}
+
+# 51 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
+inline static int /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__compareBusy(void ){
+#line 51
+  int result;
+#line 51
+
+#line 51
+  result = HplAtm128Timer0SyncP__TimerSync__compareBusy();
+#line 51
+
+#line 51
+  return result;
+#line 51
+}
+#line 51
+# 81 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setOcr0(uint8_t n)
+#line 81
+{
+  while (/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__compareBusy()) 
+    ;
+  if (n == /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get()) {
+    n++;
+    }
+
+
+  if (/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + n + 1 < /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base) {
+    n = -/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base - 1;
+    }
+#line 91
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__set(n);
+}
+
+# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 81 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__fired(void )
+{
+#line 82
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__postTask();
+}
+
+# 78 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__fired(void ){
+#line 78
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__fired();
+#line 78
+}
+#line 78
+# 141 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__fired(void )
+{
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow());
+}
+
+# 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+inline static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired(void ){
+#line 83
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__fired();
+#line 83
+}
+#line 83
+# 233 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getAlarm(void )
+#line 233
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 234
+    {
+      unsigned long __nesc_temp = 
+#line 234
+      /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__t0 + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__dt;
+
+      {
+#line 234
+        __nesc_atomic_end(__nesc_atomic); 
+#line 234
+        return __nesc_temp;
+      }
+    }
+#line 236
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 116 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
+inline static /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getAlarm(void ){
+#line 116
+  unsigned long result;
+#line 116
+
+#line 116
+  result = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getAlarm();
+#line 116
+
+#line 116
+  return result;
+#line 116
+}
+#line 116
+# 74 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runTask(void )
+{
+  if (/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__m_oneshot == FALSE) {
+    /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__start(/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getAlarm(), /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__m_dt, FALSE);
+    }
+#line 78
+  /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired();
+}
+
 # 116 "BlinkC.nc"
 static inline void BlinkC__GLCD__barWritten(void )
 {
@@ -5392,13 +6559,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b70440f8e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2afbbbb01e30){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  switch (arg_0x2b70440f8e30) {
+  switch (arg_0x2afbbbb01e30) {
 #line 88
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 88
@@ -5408,7 +6575,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 88
     default:
 #line 88
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b70440f8e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2afbbbb01e30);
 #line 88
       break;
 #line 88
@@ -5476,13 +6643,6 @@ static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw)
     }
 }
 
-# 4 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
-inline static void GLCDP__TouchScreen__getXY(void ){
-#line 4
-  TouchScreenP__TouchScreen__getXY();
-#line 4
-}
-#line 4
 # 101 "BlinkC.nc"
 static inline void BlinkC__GLCD__calibrated(void )
 {
@@ -5633,19 +6793,6 @@ inline static void TouchScreenP__driveA__clr(void ){
 #line 41
 }
 #line 41
-# 86 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static inline void GLCDP__GLCD__getXY(void )
-{
-  GLCDP__TouchScreen__getXY();
-}
-
-# 10 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static void BlinkC__GLCD__getXY(void ){
-#line 10
-  GLCDP__GLCD__getXY();
-#line 10
-}
-#line 10
 # 95 "BlinkC.nc"
 static inline void BlinkC__GLCD__tsPressed(void )
 {
@@ -5758,9 +6905,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b70440dd6b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2afbbbb056b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-  switch (arg_0x2b70440dd6b8) {
+  switch (arg_0x2afbbbb056b8) {
 #line 63
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 63
@@ -5770,7 +6917,7 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
     default:
 #line 63
-      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b70440dd6b8, result, val);
+      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2afbbbb056b8, result, val);
 #line 63
       break;
 #line 63
@@ -5778,13 +6925,6 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
 }
 #line 63
-# 52 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerState.nc"
-inline static void HplAtm128AdcP__McuPowerState__update(void ){
-#line 52
-  McuSleepC__McuPowerState__update();
-#line 52
-}
-#line 52
 # 82 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/HplAtm128AdcP.nc"
 static inline void HplAtm128AdcP__HplAtm128Adc__disableAdc(void )
 #line 82
@@ -5861,27 +7001,12 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b7044042538){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2afbbba66cc8){
 #line 65
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b7044042538);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2afbbba66cc8);
 #line 65
 }
 #line 65
-# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
 # 57 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
 static inline void /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__clearEntry(uint8_t id)
 #line 57
@@ -6042,13 +7167,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b70440f8e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2afbbbb01e30){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  switch (arg_0x2b70440f8e30) {
+  switch (arg_0x2afbbbb01e30) {
 #line 120
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 120
@@ -6058,7 +7183,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 120
     default:
 #line 120
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b70440f8e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2afbbbb01e30);
 #line 120
       break;
 #line 120
@@ -6079,9 +7204,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x2b70440ccac0, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x2afbbbad6ac0, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b70440ccac0, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2afbbbad6ac0, result, val);
 #line 63
 }
 #line 63
@@ -6093,358 +7218,41 @@ static inline void AdcP__acquiredData__runTask(void )
   AdcP__Read__readDone(AdcP__client, SUCCESS, AdcP__val);
 }
 
-# 204 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(uint8_t id)
-#line 204
+# 47 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+static inline uint8_t IPP__getMACforIP(void )
 {
-}
+  uint8_t count;
 
-# 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b7044044328){
-#line 53
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2b7044044328);
-#line 53
-}
-#line 53
-# 97 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
-static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__enqueue(resource_client_id_t id)
-#line 97
-{
-  /* atomic removed: atomic calls only */
-#line 98
-  {
-    if (!/*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued(id)) {
-        /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__resQ[id / 8] |= 1 << id % 8;
+  for (count = 0; count < 5; count++) 
+    {
+      if (IPP__arpCache[0][IPP__arpReadPtr] == IPP__ipData.dstIP[0] && IPP__arpCache[1][IPP__arpReadPtr] == IPP__ipData.dstIP[1] && IPP__arpCache[2][IPP__arpReadPtr] == IPP__ipData.dstIP[2] && IPP__arpCache[3][IPP__arpReadPtr] == IPP__ipData.dstIP[3]) 
+
+
+
         {
-          unsigned char __nesc_temp = 
-#line 101
-          SUCCESS;
 
-#line 101
-          return __nesc_temp;
-        }
-      }
-#line 103
-    {
-      unsigned char __nesc_temp = 
-#line 103
-      EBUSY;
+          IPP__dstMAC[0] = IPP__arpCache[4][IPP__arpReadPtr];
+          IPP__dstMAC[1] = IPP__arpCache[5][IPP__arpReadPtr];
+          IPP__dstMAC[2] = IPP__arpCache[6][IPP__arpReadPtr];
+          IPP__dstMAC[3] = IPP__arpCache[7][IPP__arpReadPtr];
+          IPP__dstMAC[4] = IPP__arpCache[8][IPP__arpReadPtr];
+          IPP__dstMAC[5] = IPP__arpCache[9][IPP__arpReadPtr];
 
-#line 103
-      return __nesc_temp;
-    }
-  }
-}
-
-# 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
-inline static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id){
-#line 79
-  unsigned char result;
-#line 79
-
-#line 79
-  result = /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__enqueue(id);
-#line 79
-
-#line 79
-  return result;
-#line 79
-}
-#line 79
-# 133 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-static inline error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void )
-#line 133
-{
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 134
-    {
-      if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__resId == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__default_owner_id) {
-          if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_GRANTING) {
-              /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask();
-              {
-                unsigned char __nesc_temp = 
-#line 138
-                SUCCESS;
-
-                {
-#line 138
-                  __nesc_atomic_end(__nesc_atomic); 
-#line 138
-                  return __nesc_temp;
-                }
-              }
-            }
-          else {
-#line 140
-            if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_IMM_GRANTING) {
-                /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__resId = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__reqResId;
-                /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_BUSY;
-                {
-                  unsigned char __nesc_temp = 
-#line 143
-                  SUCCESS;
-
-                  {
-#line 143
-                    __nesc_atomic_end(__nesc_atomic); 
-#line 143
-                    return __nesc_temp;
-                  }
-                }
-              }
-            }
-        }
-    }
-#line 149
-    __nesc_atomic_end(__nesc_atomic); }
-#line 147
-  return FAIL;
-}
-
-# 56 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
-inline static error_t /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__release(void ){
-#line 56
-  unsigned char result;
-#line 56
-
-#line 56
-  result = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release();
-#line 56
-
-#line 56
-  return result;
-#line 56
-}
-#line 56
-# 78 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/HplAtm128AdcP.nc"
-static inline void HplAtm128AdcP__HplAtm128Adc__enableAdc(void )
-#line 78
-{
-  * (volatile uint8_t *)(0x06 + 0x20) |= 1 << 7;
-  HplAtm128AdcP__McuPowerState__update();
-}
-
-# 82 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/HplAtm128Adc.nc"
-inline static void Atm128AdcP__HplAtm128Adc__enableAdc(void ){
-#line 82
-  HplAtm128AdcP__HplAtm128Adc__enableAdc();
-#line 82
-}
-#line 82
-# 124 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcP.nc"
-static inline error_t Atm128AdcP__AsyncStdControl__start(void )
-#line 124
-{
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 125
-    Atm128AdcP__HplAtm128Adc__enableAdc();
-#line 125
-    __nesc_atomic_end(__nesc_atomic); }
-  return SUCCESS;
-}
-
-# 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/AsyncStdControl.nc"
-inline static error_t /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__AsyncStdControl__start(void ){
-#line 95
-  unsigned char result;
-#line 95
-
-#line 95
-  result = Atm128AdcP__AsyncStdControl__start();
-#line 95
-
-#line 95
-  return result;
-#line 95
-}
-#line 95
-# 69 "/homes/hglanzer/GIT/tinyos/tos/lib/power/AsyncPowerManagerP.nc"
-static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__requested(void )
-#line 69
-{
-  /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__AsyncStdControl__start();
-  /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__release();
-}
-
-# 73 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__requested(void ){
-#line 73
-  /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefaultOwner__requested();
-#line 73
-}
-#line 73
-# 62 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput(void )
-#line 62
-{
-#line 62
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 62
-    * (volatile uint8_t * )100U |= 1 << 3;
-#line 62
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__driveA__makeOutput(void ){
-#line 46
-  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput();
-#line 46
-}
-#line 46
-# 62 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void )
-#line 62
-{
-#line 62
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 62
-    * (volatile uint8_t * )100U |= 1 << 4;
-#line 62
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__driveB__makeOutput(void ){
-#line 46
-  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput();
-#line 46
-}
-#line 46
-# 59 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput(void )
-#line 59
-{
-#line 59
-  * (volatile uint8_t * )97U &= ~(1 << 0);
-}
-
-# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__adcX__makeInput(void ){
-#line 44
-  /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput();
-#line 44
-}
-#line 44
-# 59 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput(void )
-#line 59
-{
-#line 59
-  * (volatile uint8_t * )97U &= ~(1 << 1);
-}
-
-# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__adcY__makeInput(void ){
-#line 44
-  /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput();
-#line 44
-}
-#line 44
-# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set(void )
-#line 56
-{
-#line 56
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 56
-    * (volatile uint8_t * )101U |= 1 << 3;
-#line 56
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 40 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__driveA__set(void ){
-#line 40
-  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set();
-#line 40
-}
-#line 40
-# 57 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr(void )
-#line 57
-{
-#line 57
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 57
-    * (volatile uint8_t * )101U &= ~(1 << 4);
-#line 57
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__driveB__clr(void ){
-#line 41
-  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr();
-#line 41
-}
-#line 41
-# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr(void )
-#line 56
-{
-#line 56
-  * (volatile uint8_t * )98U &= ~(1 << 0);
-}
-
-# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void TouchScreenP__adcX__clr(void ){
-#line 41
-  /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr();
-#line 41
-}
-#line 41
-# 223 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
-static inline uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
-{
-
-
-
-
-
-
-
-
-
-  if (IEEE8023P__stateETH == IEEE8023_READY) 
-    {
-      if (IEEE8023P__Resource__request() == FAIL) 
-        {
-          return FAIL;
+          return TRUE;
         }
       else 
         {
-          IEEE8023P__ipType = type;
-          IEEE8023P__TXdataPtr = dataPtr;
-          IEEE8023P__TXdstMAC = dstMAC;
-          IEEE8023P__TXlen = len;
-          IEEE8023P__stateETH = IEEE8023_TX;
-          return SUCCESS;
+          IPP__arpReadPtr++;
+        }
+      if (IPP__arpReadPtr == 5) {
+        IPP__arpReadPtr = 0;
         }
     }
-  else 
-
-    {
-      return FAIL;
-    }
+#line 75
+  return FALSE;
 }
 
-# 14 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023.nc"
-inline static uint8_t IPP__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type){
-#line 14
-  unsigned char result;
-#line 14
-
-#line 14
-  result = IEEE8023P__IEEE8023__sendFrame(dataPtr, dstMAC, len, type);
-#line 14
-
-#line 14
-  return result;
-#line 14
-}
-#line 14
-# 16 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+#line 16
 static inline uint16_t IPP__ipChksum(uint16_t len_ip_header)
 {
   uint32_t sum = 0;
@@ -6476,33 +7284,22 @@ static inline uint16_t IPP__ipChksum(uint16_t len_ip_header)
   return (uint16_t )sum;
 }
 
+#line 78
 static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP, uint16_t len)
 {
   uint16_t tmp = 0;
-#line 45
+#line 80
   uint16_t *ipHeaderPtr;
 
   ipHeaderPtr = (uint16_t *)&IPP__ipData;
 
 
-  IPP__ipData.version = 0x45;
 
-  IPP__ipData.TOS = 0x00;
   len = len + 20;
   IPP__ipData.lengthH = len >> 8;
   IPP__ipData.lengthL = len & 0xFF;
-  IPP__ipData.identification = 0x6666;
-  IPP__ipData.flags_fragOffset = 0x00;
-  IPP__ipData.ttl = 0xFF;
-  IPP__ipData.prot = 0x11;
   IPP__ipData.chkSumL = 0;
   IPP__ipData.chkSumH = 0;
-
-  IPP__ipData.srcIP[0] = 192;
-  IPP__ipData.srcIP[1] = 168;
-  IPP__ipData.srcIP[2] = 1;
-  IPP__ipData.srcIP[3] = 10;
-
   IPP__ipData.dstIP[0] = *(destIP + 0);
   IPP__ipData.dstIP[1] = *(destIP + 1);
   IPP__ipData.dstIP[2] = *(destIP + 2);
@@ -6541,25 +7338,31 @@ static inline uint8_t IPP__IP__sendDatagram(uint16_t *dataPtr, uint8_t *destIP, 
       IPP__request.dstIP[3] = 1;
     }
 
-  IPP__dstMAC[0] = 0xFF;
-  IPP__dstMAC[1] = 0xFF;
-  IPP__dstMAC[2] = 0xFF;
-  IPP__dstMAC[3] = 0xFF;
-  IPP__dstMAC[4] = 0xFF;
-  IPP__dstMAC[5] = 0xFF;
+  if (IPP__getMACforIP()) 
+    {
+      IPP__state = 1;
+      IPP__IEEE8023__sendFrame((uint16_t *)&IPP__ipData, (uint16_t *)&IPP__dstMAC, len, 1);
+    }
+  else 
+    {
+      IPP__dstMAC[0] = 0xFF;
+      IPP__dstMAC[1] = 0xFF;
+      IPP__dstMAC[2] = 0xFF;
+      IPP__dstMAC[3] = 0xFF;
+      IPP__dstMAC[4] = 0xFF;
+      IPP__dstMAC[5] = 0xFF;
 
+      IPP__request.dstMAC[0] = 0x00;
+      IPP__request.dstMAC[1] = 0x00;
+      IPP__request.dstMAC[2] = 0x00;
+      IPP__request.dstMAC[3] = 0x00;
+      IPP__request.dstMAC[4] = 0x00;
+      IPP__request.dstMAC[5] = 0x00;
 
-
-
-
-  IPP__dstMAC[0] = 0x00;
-  IPP__dstMAC[1] = 0x16;
-  IPP__dstMAC[2] = 0xcb;
-  IPP__dstMAC[3] = 0xca;
-  IPP__dstMAC[4] = 0x5d;
-  IPP__dstMAC[5] = 0x53;
-
-  IPP__IEEE8023__sendFrame((uint16_t *)&IPP__ipData, (uint16_t *)&IPP__dstMAC, len, 1);
+      IPP__request.arpTypeL = 0x01;
+      IPP__state = 0;
+      IPP__IEEE8023__sendFrame((uint16_t *)&IPP__request, (uint16_t *)&IPP__dstMAC, 28, 0);
+    }
 
   return SUCCESS;
 }
@@ -6732,13 +7535,13 @@ static inline error_t AdcP__Read__read(uint8_t c)
 }
 
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b70440f9390){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2afbbbb02390){
 #line 55
   unsigned char result;
 #line 55
 
 #line 55
-  result = AdcP__Read__read(arg_0x2b70440f9390);
+  result = AdcP__Read__read(arg_0x2afbbbb02390);
 #line 55
 
 #line 55
@@ -6760,9 +7563,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__defau
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b70440451a0){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2afbbba4e830){
 #line 102
-  switch (arg_0x2b70440451a0) {
+  switch (arg_0x2afbbba4e830) {
 #line 102
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__HAL_ID:
 #line 102
@@ -6772,7 +7575,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__grant
 #line 102
     default:
 #line 102
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b70440451a0);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2afbbba4e830);
 #line 102
       break;
 #line 102
@@ -6787,9 +7590,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b7044042538){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2afbbba66cc8){
 #line 59
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b7044042538);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2afbbba66cc8);
 #line 59
 }
 #line 59
@@ -6861,7 +7664,7 @@ static inline uint8_t HplAtm128AdcP__Admux2int(Atm128Admux_t x)
 #line 59
 {
 #line 59
-  union __nesc_unnamed4341 {
+  union __nesc_unnamed4347 {
 #line 59
     Atm128Admux_t f;
 #line 59
@@ -7018,13 +7821,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b70440c7cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2afbbbad1cd0){
 #line 25
   unsigned char result;
 #line 25
 
 #line 25
-  switch (arg_0x2b70440c7cd0) {
+  switch (arg_0x2afbbbad1cd0) {
 #line 25
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 25
@@ -7034,7 +7837,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b70440c7c
 #line 25
     default:
 #line 25
-      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b70440c7cd0);
+      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2afbbbad1cd0);
 #line 25
       break;
 #line 25
@@ -7067,13 +7870,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b70440c7cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2afbbbad1cd0){
 #line 32
   unsigned char result;
 #line 32
 
 #line 32
-  switch (arg_0x2b70440c7cd0) {
+  switch (arg_0x2afbbbad1cd0) {
 #line 32
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 32
@@ -7083,7 +7886,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b70440
 #line 32
     default:
 #line 32
-      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b70440c7cd0);
+      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2afbbbad1cd0);
 #line 32
       break;
 #line 32
@@ -7116,13 +7919,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b70440c7cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2afbbbad1cd0){
 #line 39
   unsigned char result;
 #line 39
 
 #line 39
-  switch (arg_0x2b70440c7cd0) {
+  switch (arg_0x2afbbbad1cd0) {
 #line 39
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 39
@@ -7132,7 +7935,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b70440c
 #line 39
     default:
 #line 39
-      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b70440c7cd0);
+      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2afbbbad1cd0);
 #line 39
       break;
 #line 39
@@ -7170,6 +7973,69 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
   return SUCCESS;
 }
 
+# 146 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline void HplAtm128Timer0SyncP__Compare__start(void )
+#line 146
+{
+#line 146
+  * (volatile uint8_t *)(0x37 + 0x20) |= 1 << 1;
+}
+
+# 65 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__start(void ){
+#line 65
+  HplAtm128Timer0SyncP__Compare__start();
+#line 65
+}
+#line 65
+# 100 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline void HplAtm128Timer0SyncP__TimerCtrl__setControl(Atm128TimerControl_t x)
+#line 100
+{
+  * (volatile uint8_t *)(0x33 + 0x20) = x.flat;
+}
+
+# 46 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
+inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__setControl(Atm128TimerControl_t control){
+#line 46
+  HplAtm128Timer0SyncP__TimerCtrl__setControl(control);
+#line 46
+}
+#line 46
+# 240 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline void HplAtm128Timer0SyncP__TimerSync__setTimer0Synchronous(void )
+#line 240
+{
+  * (volatile uint8_t *)(0x30 + 0x20) &= 1 << 3;
+}
+
+# 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
+inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__setTimer0Synchronous(void ){
+#line 39
+  HplAtm128Timer0SyncP__TimerSync__setTimer0Synchronous();
+#line 39
+}
+#line 39
+# 61 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline error_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Init__init(void )
+#line 61
+{
+  /* atomic removed: atomic calls only */
+  {
+    Atm128TimerControl_t x;
+
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__setTimer0Synchronous();
+    x.flat = 0;
+    x.bits.cs = 3;
+    x.bits.wgm1 = 1;
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__setControl(x);
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__set(/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MAXT);
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__start();
+  }
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt();
+  return SUCCESS;
+}
+
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/FcfsResourceQueueC.nc"
 static inline error_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0__Init__init(void )
 #line 55
@@ -7187,6 +8053,8 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 62
   result = /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__0__Init__init();
 #line 62
+  result = ecombine(result, /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Init__init());
+#line 62
   result = ecombine(result, /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__Init__init());
 #line 62
 
@@ -7195,12 +8063,6 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 62
 }
 #line 62
-# 88 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/atm128hardware.h"
-static __inline  void __nesc_enable_interrupt()
-#line 88
-{
-   __asm volatile ("sei");}
-
 # 51 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128InterruptPinP.nc"
 static __inline void /*HplAtm128InterruptC.IntPin2*/HplAtm128InterruptPinP__2__Irq__enable(void )
 #line 51
@@ -7345,9 +8207,12 @@ inline static uint8_t IPP__IEEE8023__init(void ){
 #line 8
 }
 #line 8
-# 129 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
+# 158 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/ip/IPP.nc"
 static inline uint8_t IPP__IP__initStack(void )
 {
+
+
+
 
   IPP__request.hwTypeH = 0x00;
   IPP__request.hwTypeL = 0x01;
@@ -7356,7 +8221,6 @@ static inline uint8_t IPP__IP__initStack(void )
   IPP__request.hwSize = 0x06;
   IPP__request.protSize = 0x04;
   IPP__request.arpTypeH = 0x00;
-  IPP__request.arpTypeL = 0x01;
 
   IPP__request.srcMAC[0] = 0x55;
   IPP__request.srcMAC[1] = 0x5D;
@@ -7370,12 +8234,20 @@ static inline uint8_t IPP__IP__initStack(void )
   IPP__request.srcIP[2] = 1;
   IPP__request.srcIP[3] = 10;
 
-  IPP__request.dstMAC[0] = 0x00;
-  IPP__request.dstMAC[1] = 0x00;
-  IPP__request.dstMAC[2] = 0x00;
-  IPP__request.dstMAC[3] = 0x00;
-  IPP__request.dstMAC[4] = 0x00;
-  IPP__request.dstMAC[5] = 0x00;
+
+  IPP__ipData.srcIP[0] = 192;
+  IPP__ipData.srcIP[1] = 168;
+  IPP__ipData.srcIP[2] = 1;
+  IPP__ipData.srcIP[3] = 10;
+
+  IPP__ipData.version = 0x45;
+
+  IPP__ipData.TOS = 0x00;
+
+  IPP__ipData.identification = 0x6666;
+  IPP__ipData.flags_fragOffset = 0x00;
+  IPP__ipData.ttl = 0xFF;
+  IPP__ipData.prot = 0x11;
 
   return IPP__IEEE8023__init();
 }
@@ -7416,11 +8288,51 @@ inline static uint8_t BlinkC__UDP__initStack(void ){
 #line 5
 }
 #line 5
+# 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 146 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
+{
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
+
+#line 149
+  timer->t0 = t0;
+  timer->dt = dt;
+  timer->isoneshot = isoneshot;
+  timer->isrunning = TRUE;
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
+}
+
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt)
+{
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, FALSE);
+}
+
+# 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
+inline static void BlinkC__Timer0__startPeriodic(uint32_t dt){
+#line 64
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(0U, dt);
+#line 64
+}
+#line 64
 # 86 "BlinkC.nc"
 static inline void BlinkC__GLCD__initDone(void )
 {
 
-
+  BlinkC__Timer0__startPeriodic(1000);
 
 
   BlinkC__UDP__initStack();
@@ -7530,11 +8442,33 @@ inline static void RealMainP__Boot__booted(void ){
 #line 60
 }
 #line 60
-# 124 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/McuSleepC.nc"
-static inline mcu_power_t McuSleepC__McuPowerOverride__default__lowestState(void )
-#line 124
+# 179 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline mcu_power_t HplAtm128Timer0SyncP__McuPowerOverride__lowestState(void )
+#line 179
 {
-  return ATM128_POWER_DOWN;
+  uint8_t diff;
+
+
+  if (* (volatile uint8_t *)(0x37 + 0x20) & ((1 << 1) | (1 << 0))) {
+
+
+
+
+
+      while (* (volatile uint8_t *)(0x30 + 0x20) & (((1 << 2) | (1 << 1)) | (1 << 0))) 
+        ;
+
+      diff = * (volatile uint8_t *)(0x31 + 0x20) - * (volatile uint8_t *)(0x32 + 0x20);
+      if (diff < EXT_STANDBY_T0_THRESHOLD || 
+      * (volatile uint8_t *)(0x32 + 0x20) > 256 - EXT_STANDBY_T0_THRESHOLD) {
+        return ATM128_POWER_EXT_STANDBY;
+        }
+#line 196
+      return ATM128_POWER_SAVE;
+    }
+  else {
+      return ATM128_POWER_DOWN;
+    }
 }
 
 # 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuPowerOverride.nc"
@@ -7544,7 +8478,7 @@ inline static mcu_power_t McuSleepC__McuPowerOverride__lowestState(void ){
 #line 62
 
 #line 62
-  result = McuSleepC__McuPowerOverride__default__lowestState();
+  result = HplAtm128Timer0SyncP__McuPowerOverride__lowestState();
 #line 62
 
 #line 62
@@ -7776,9 +8710,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b70440ca6d8, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2afbbbad36d8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-    AdcP__ReadNow__default__readDone(arg_0x2b70440ca6d8, result, val);
+    AdcP__ReadNow__default__readDone(arg_0x2afbbbad36d8, result, val);
 #line 66
 }
 #line 66
@@ -7930,6 +8864,92 @@ inline static void HplAtm128AdcP__HplAtm128Adc__dataReady(uint16_t data){
 #line 156
 }
 #line 156
+# 164 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static __inline void HplAtm128Timer0SyncP__stabiliseTimer0(void )
+#line 164
+{
+  * (volatile uint8_t *)(0x33 + 0x20) = * (volatile uint8_t *)(0x33 + 0x20);
+  while (* (volatile uint8_t *)(0x30 + 0x20) & (1 << 0)) 
+    ;
+}
+
+# 58 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/CounterToLocalTimeC.nc"
+static inline void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void )
+{
+}
+
+# 82 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Counter.nc"
+inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__overflow(void ){
+#line 82
+  /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow();
+#line 82
+}
+#line 82
+# 88 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/atm128hardware.h"
+static __inline  void __nesc_enable_interrupt()
+#line 88
+{
+   __asm volatile ("sei");}
+
+# 156 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline uint8_t HplAtm128Timer0SyncP__Compare__get(void )
+#line 156
+{
+#line 156
+  return * (volatile uint8_t *)(0x31 + 0x20);
+}
+
+# 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+inline static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get(void ){
+#line 48
+  unsigned char result;
+#line 48
+
+#line 48
+  result = HplAtm128Timer0SyncP__Compare__get();
+#line 48
+
+#line 48
+  return result;
+#line 48
+}
+#line 48
+# 156 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__fired(void )
+#line 156
+{
+  int overflowed;
+
+
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base += /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get() + 1U;
+  overflowed = !/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base;
+  __nesc_enable_interrupt();
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt();
+  if (overflowed) {
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__overflow();
+    }
+}
+
+# 58 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
+inline static void HplAtm128Timer0SyncP__Compare__fired(void ){
+#line 58
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__fired();
+#line 58
+}
+#line 58
+# 237 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__overflow(void )
+#line 237
+{
+}
+
+# 70 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
+inline static void HplAtm128Timer0SyncP__Timer__overflow(void ){
+#line 70
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__overflow();
+#line 70
+}
+#line 70
 # 115 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/HplAtm128SpiP.nc"
 static inline uint8_t HplAtm128SpiP__SPI__read(void )
 #line 115
@@ -8401,9 +9421,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7043c94108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2afbbb691108){
 #line 75
-  switch (arg_0x2b7043c94108) {
+  switch (arg_0x2afbbb691108) {
 #line 75
     case BlinkC__testTask:
 #line 75
@@ -8471,6 +9491,18 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7043c94108){
 #line 75
       break;
 #line 75
+    case /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired:
+#line 75
+      /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runTask();
+#line 75
+      break;
+#line 75
+    case /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer:
+#line 75
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__runTask();
+#line 75
+      break;
+#line 75
     case IEEE8023P__checkInterruptflag:
 #line 75
       IEEE8023P__checkInterruptflag__runTask();
@@ -8491,7 +9523,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7043c94108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b7043c94108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2afbbb691108);
 #line 75
       break;
 #line 75
@@ -8663,6 +9695,86 @@ static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8
   LCD128x64P__writeString__postTask();
 }
 
+# 223 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
+static uint8_t IEEE8023P__IEEE8023__sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
+{
+
+
+
+
+
+
+
+
+
+  if (IEEE8023P__stateETH == IEEE8023_READY) 
+    {
+      if (IEEE8023P__Resource__request() == FAIL) 
+        {
+          return FAIL;
+        }
+      else 
+        {
+          IEEE8023P__ipType = type;
+          IEEE8023P__TXdataPtr = dataPtr;
+          IEEE8023P__TXdstMAC = dstMAC;
+          IEEE8023P__TXlen = len;
+          IEEE8023P__stateETH = IEEE8023_TX;
+          return SUCCESS;
+        }
+    }
+  else 
+
+    {
+      return FAIL;
+    }
+}
+
+# 361 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
+static error_t Atm128SpiP__Resource__request(uint8_t id)
+#line 361
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 362
+    {
+      if (!Atm128SpiP__ArbiterInfo__inUse()) {
+          Atm128SpiP__startSpi();
+        }
+    }
+#line 366
+    __nesc_atomic_end(__nesc_atomic); }
+  return Atm128SpiP__ResourceArbiter__request(id);
+}
+
+# 132 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/HplAtm128SpiP.nc"
+static void HplAtm128SpiP__SPI__enableInterrupt(bool enabled)
+#line 132
+{
+  if (enabled) {
+      * (volatile uint8_t *)(0x0D + 0x20) |= 1 << 7;
+      HplAtm128SpiP__Mcu__update();
+    }
+  else {
+      * (volatile uint8_t *)(0x0D + 0x20) &= ~(1 << 7);
+      HplAtm128SpiP__Mcu__update();
+    }
+}
+
+# 222 "BlinkC.nc"
+static void BlinkC__UDP__hwInterrupt(uint16_t *info)
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+    {
+      BlinkC__count2++;
+      if (BlinkC__count2 > 7) {
+        BlinkC__count2 = 3;
+        }
+      BlinkC__GLCD__startWriteString((char *)info, 0, BlinkC__count2);
+    }
+#line 231
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
 # 62 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/eth/IEEE8023P.nc"
 static uint8_t IEEE8023P__readPHY(uint8_t addr, uint8_t high)
 {
@@ -8697,50 +9809,239 @@ static uint8_t IEEE8023P__readPHY(uint8_t addr, uint8_t high)
   return rc;
 }
 
-# 361 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-static error_t Atm128SpiP__Resource__request(uint8_t id)
-#line 361
+# 168 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get(void )
+#line 168
 {
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 362
-    {
-      if (!Atm128SpiP__ArbiterInfo__inUse()) {
-          Atm128SpiP__startSpi();
-        }
-    }
-#line 366
-    __nesc_atomic_end(__nesc_atomic); }
-  return Atm128SpiP__ResourceArbiter__request(id);
-}
+  uint32_t now;
 
-# 132 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/HplAtm128SpiP.nc"
-static void HplAtm128SpiP__SPI__enableInterrupt(bool enabled)
-#line 132
-{
-  if (enabled) {
-      * (volatile uint8_t *)(0x0D + 0x20) |= 1 << 7;
-      HplAtm128SpiP__Mcu__update();
-    }
-  else {
-      * (volatile uint8_t *)(0x0D + 0x20) &= ~(1 << 7);
-      HplAtm128SpiP__Mcu__update();
-    }
-}
-
-# 223 "BlinkC.nc"
-static void BlinkC__UDP__hwInterrupt(uint16_t *info)
-
-{
   { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
     {
-      BlinkC__count2++;
-      if (BlinkC__count2 > 7) {
-        BlinkC__count2 = 3;
+
+
+      uint8_t now8 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
+
+      if (/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag().bits.ocf0) {
+
+
+        now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get() + 1 + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
         }
-      BlinkC__GLCD__startWriteString((char *)info, 0, BlinkC__count2);
+      else {
+
+        now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + now8;
+        }
     }
-#line 233
+#line 186
     __nesc_atomic_end(__nesc_atomic); }
+#line 186
+  return now;
+}
+
+# 75 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(uint32_t now)
+{
+  uint8_t num;
+
+  for (num = 0; num < /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__NUM_TIMERS; num++) 
+    {
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
+
+      if (timer->isrunning) 
+        {
+          uint32_t elapsed = now - timer->t0;
+
+          if (elapsed >= timer->dt) 
+            {
+              if (timer->isoneshot) {
+                timer->isrunning = FALSE;
+                }
+              else {
+#line 92
+                timer->t0 += timer->dt;
+                }
+              /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(num);
+              break;
+            }
+        }
+    }
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+static void TouchScreenP__TouchScreen__getXY(void )
+{
+  TouchScreenP__state = DUMMY_FIRST_X;
+  TouchScreenP__driveA__makeOutput();
+  TouchScreenP__driveB__makeOutput();
+  TouchScreenP__adcX__makeInput();
+  TouchScreenP__adcY__makeInput();
+
+  TouchScreenP__driveA__set();
+  TouchScreenP__driveB__clr();
+  TouchScreenP__adcX__clr();
+  TouchScreenP__adcY__clr();
+
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+    {
+      TouchScreenP__channel = ATM128_ADC_SNGL_ADC0;
+    }
+#line 57
+    __nesc_atomic_end(__nesc_atomic); }
+  TouchScreenP__Read__read();
+}
+
+# 77 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
+static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(uint8_t id)
+#line 77
+{
+  /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__resId);
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 79
+    {
+      if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_CONTROLLED) {
+          /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_GRANTING;
+          /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__reqResId = id;
+        }
+      else {
+#line 84
+        if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__reqResId == id) {
+            {
+              unsigned char __nesc_temp = 
+#line 85
+              SUCCESS;
+
+              {
+#line 85
+                __nesc_atomic_end(__nesc_atomic); 
+#line 85
+                return __nesc_temp;
+              }
+            }
+          }
+        else 
+#line 87
+          {
+            unsigned char __nesc_temp = 
+#line 87
+            /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(id);
+
+            {
+#line 87
+              __nesc_atomic_end(__nesc_atomic); 
+#line 87
+              return __nesc_temp;
+            }
+          }
+        }
+    }
+#line 91
+    __nesc_atomic_end(__nesc_atomic); }
+#line 89
+  /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__requested();
+  return SUCCESS;
+}
+
+# 75 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
+static bool /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued(resource_client_id_t id)
+#line 75
+{
+  return /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__resQ[id / 8] & (1 << id % 8);
+}
+
+# 219 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__startAt(uint32_t nt0, uint32_t ndt)
+#line 219
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+    {
+      /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__set = TRUE;
+      /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__t0 = nt0;
+      /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__dt = ndt;
+    }
+#line 225
+    __nesc_atomic_end(__nesc_atomic); }
+  /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt();
+}
+
+#line 97
+static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt(void )
+#line 97
+{
+  bool fired = FALSE;
+
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+    {
+
+
+
+      uint8_t interrupt_in = 1 + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get() - /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
+      uint8_t newOcr0;
+      uint8_t tifr = (uint8_t )/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag().flat;
+
+#line 108
+      ;
+      if ((interrupt_in != 0 && interrupt_in < /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MINDT) || tifr & (1 << 1)) {
+          if (interrupt_in < /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MINDT) {
+              ;
+            }
+          else {
+              ;
+            }
+          {
+#line 116
+            __nesc_atomic_end(__nesc_atomic); 
+#line 116
+            return;
+          }
+        }
+
+      if (!/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__set) {
+          newOcr0 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MAXT;
+          ;
+        }
+      else 
+        {
+          uint32_t now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get();
+
+#line 127
+          ;
+
+          if ((uint32_t )(now - /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__t0) >= /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__dt) 
+            {
+              /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__set = FALSE;
+              fired = TRUE;
+              newOcr0 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MAXT;
+            }
+          else 
+            {
+
+
+              uint32_t alarm_in = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__t0 + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__dt - /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base;
+
+              if (alarm_in > /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MAXT) {
+                newOcr0 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MAXT;
+                }
+              else {
+#line 143
+                if ((uint8_t )alarm_in < /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MINDT) {
+                  newOcr0 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MINDT;
+                  }
+                else {
+#line 146
+                  newOcr0 = alarm_in;
+                  }
+                }
+            }
+        }
+#line 149
+      newOcr0--;
+      /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setOcr0(newOcr0);
+    }
+#line 151
+    __nesc_atomic_end(__nesc_atomic); }
+  if (fired) {
+    /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__fired();
+    }
 }
 
 # 85 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
@@ -8805,94 +10106,12 @@ static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y)
   LCD128x64P__writeGLCD(1, temp | (1 << y % 8));
 }
 
-# 75 "/homes/hglanzer/GIT/tinyos/tos/system/RoundRobinResourceQueueC.nc"
-static bool /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__RoundRobinQueue__isEnqueued(resource_client_id_t id)
-#line 75
-{
-  return /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0__resQ[id / 8] & (1 << id % 8);
-}
-
-# 77 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(uint8_t id)
-#line 77
-{
-  /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__resId);
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 79
-    {
-      if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state == /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_CONTROLLED) {
-          /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__state = /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__RES_GRANTING;
-          /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__reqResId = id;
-        }
-      else {
-#line 84
-        if (/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__reqResId == id) {
-            {
-              unsigned char __nesc_temp = 
-#line 85
-              SUCCESS;
-
-              {
-#line 85
-                __nesc_atomic_end(__nesc_atomic); 
-#line 85
-                return __nesc_temp;
-              }
-            }
-          }
-        else 
-#line 87
-          {
-            unsigned char __nesc_temp = 
-#line 87
-            /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(id);
-
-            {
-#line 87
-              __nesc_atomic_end(__nesc_atomic); 
-#line 87
-              return __nesc_temp;
-            }
-          }
-        }
-    }
-#line 91
-    __nesc_atomic_end(__nesc_atomic); }
-#line 89
-  /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__requested();
-  return SUCCESS;
-}
-
-# 41 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
-static void TouchScreenP__TouchScreen__getXY(void )
-{
-  TouchScreenP__state = DUMMY_FIRST_X;
-  TouchScreenP__driveA__makeOutput();
-  TouchScreenP__driveB__makeOutput();
-  TouchScreenP__adcX__makeInput();
-  TouchScreenP__adcY__makeInput();
-
-  TouchScreenP__driveA__set();
-  TouchScreenP__driveB__clr();
-  TouchScreenP__adcX__clr();
-  TouchScreenP__adcY__clr();
-
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-    {
-      TouchScreenP__channel = ATM128_ADC_SNGL_ADC0;
-    }
-#line 57
-    __nesc_atomic_end(__nesc_atomic); }
-  TouchScreenP__Read__read();
-}
-
-# 134 "BlinkC.nc"
+# 133 "BlinkC.nc"
 static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y)
-
 {
   uint8_t dest[4];
 
-#line 183
+#line 181
   if (x < 128 && y < 64) {
     if (x > 110 && y > 50) 
       {
@@ -8906,6 +10125,7 @@ static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y)
       if (x > 110 && y < 20) 
         {
           BlinkC__GLCD__startClearScreen(0x00);
+          BlinkC__count2 = 2;
         }
       else 
         {
@@ -8921,7 +10141,7 @@ static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y)
       }
     }
   else {
-#line 209
+#line 208
     BlinkC__GLCD__isPressed(TRUE);
     }
 }
@@ -8941,6 +10161,32 @@ __attribute((signal))   void __vector_21(void )
 
   __nesc_enable_interrupt();
   HplAtm128AdcP__HplAtm128Adc__dataReady(data);
+}
+
+# 210 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+__attribute((signal))   void __vector_15(void )
+#line 210
+{
+
+  if (HplAtm128Timer0SyncP__count == 250) 
+    {
+      HplAtm128Timer0SyncP__stabiliseTimer0();
+      HplAtm128Timer0SyncP__Compare__fired();
+      HplAtm128Timer0SyncP__count = 0;
+    }
+  else 
+    {
+      HplAtm128Timer0SyncP__count++;
+    }
+}
+
+
+
+__attribute((signal))   void __vector_16(void )
+#line 226
+{
+  HplAtm128Timer0SyncP__stabiliseTimer0();
+  HplAtm128Timer0SyncP__Timer__overflow();
 }
 
 # 119 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/spi/HplAtm128SpiP.nc"

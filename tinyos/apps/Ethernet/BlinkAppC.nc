@@ -12,12 +12,12 @@ implementation
 {
 	components MainC, BlinkC;
 	components GLCDC;
-//	components new TimerMilliC() as TIMER0;
+	components new TimerMilliC() as TIMER0;
 	components UDPC;
 //	components MMCC;
 
 	BlinkC -> MainC.Boot;
-//	BlinkC.Timer0 -> TIMER0;
+	BlinkC.Timer0 -> TIMER0;
 	BlinkC.GLCD -> GLCDC;
 
 	BlinkC.UDP -> UDPC;

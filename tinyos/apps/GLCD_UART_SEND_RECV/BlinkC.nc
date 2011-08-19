@@ -33,8 +33,7 @@ implementation
 	
 /*
 */
-	//event void GLCD.xyReady(uint16_t x, uint16_t y)
-	event void GLCD.xyReady(uint8_t x, uint8_t y)
+	event void GLCD.xyReady(uint16_t x, uint16_t y)
 	{
 		tmp = (x % 10);
 		buf[3] = tmp + 0x30;
@@ -88,12 +87,11 @@ implementation
 		}
 		count++;
 //		call UART1.uartSend("powpow\r\n", strlen("powpow\r\n"));
-
 	}
 
 	event void Boot.booted()
 	{
-		call GLCD.initLCD(0x0);
+		call GLCD.initLCD(0x01);
 		call bigAVR6UART0.receive((uint8_t *)uartBuf, 5);
 	}
 
@@ -104,7 +102,7 @@ implementation
 		call GLCD.startWriteRectangle(0, 0, 128, 4);
 //		call GLCD.startWriteBar(0, 8, 100, 40);
 //		call GLCD.isPressed(TRUE);
-		call Timer0.startPeriodic(50);
+		call Timer0.startPeriodic(500);
 	}
 
 	event void GLCD.tsPressed()
@@ -156,6 +154,7 @@ implementation
 			call GLCD.startClearScreen(0x00);
 			count = 0;
 		}
+		call bigAVR6UART0.receive((uint8_t *)uartBuf, 5);
 	}
 
 	event void bigAVR6UART0.receivedByte(uint8_t byte)
@@ -164,11 +163,14 @@ implementation
 
 	event void bigAVR6UART0.receiveDone(uint8_t* stream, uint16_t len, error_t error)
 	{
+		call GLCD.startWriteString("GOTCHA", 0, count2);
+/*
 		call GLCD.startWriteString(uartBuf, 0, count2);
 		count2 = count2 + 8;
 		if(count2 == 64)
 		{
 			count2 = 8;
 		}
+*/
 	}
 }
