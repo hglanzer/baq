@@ -10,4 +10,7 @@ interface UDP
 
 	event void hwInterrupt(uint16_t *info);
 	//event void hwInterrupt(uint8_t src);
+
+	event void gotDatagram(uint16_t len, uint8_t *dataPtr);
+	//event void gotDatagram(uint16_t len, uint16_t *dataPtr);
 }

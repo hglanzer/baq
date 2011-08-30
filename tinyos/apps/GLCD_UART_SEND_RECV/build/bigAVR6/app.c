@@ -185,7 +185,7 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memset(void *arg_0x2b34ece5c7f0, int arg_0x2b34ece5ca58, size_t arg_0x2b34ece5cd00);
+extern void *memset(void *arg_0x2aad820777f0, int arg_0x2aad82077a58, size_t arg_0x2aad82077d00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b34ece7d968, const void *arg_0x2b34ece7dc40);
+typedef int (*__compar_fn_t)(const void *arg_0x2aad82098968, const void *arg_0x2aad82098c40);
 # 23 "/homes/hglanzer/GIT/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -1129,7 +1129,32 @@ typedef uint32_t /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__C
 static error_t PlatformP__Init__init(void );
 #line 62
 static error_t MotePlatformP__PlatformInit__init(void );
-#line 62
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+static void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput(void );
+#line 41
+static void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr(void );
+
+
+static void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput(void );
+#line 41
+static void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__clr(void );
+
+
+
+
+static void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput(void );
+#line 40
+static void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set(void );
+static void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__clr(void );
+
+
+
+
+static void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void );
+#line 40
+static void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__set(void );
+static void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr(void );
+# 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Init.nc"
 static error_t MeasureClockC__Init__init(void );
 # 60 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/timerSync/Atm128Calibrate.nc"
 static uint16_t MeasureClockC__Atm128Calibrate__baudrateRegister(uint32_t baudrate);
@@ -1138,11 +1163,11 @@ static uint8_t MeasureClockC__Atm128Calibrate__adcPrescaler(void );
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b34ecf85108);
+uint8_t arg_0x2aad821a0108);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b34ecf85108);
+uint8_t arg_0x2aad821a0108);
 # 57 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1177,8 +1202,8 @@ static void BlinkC__GLCD__lineWritten(void );
 
 
 static void BlinkC__GLCD__screenCleared(void );
-#line 20
-static void BlinkC__GLCD__xyReady(uint8_t x, uint8_t y);
+#line 19
+static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y);
 #line 70
 static void BlinkC__GLCD__circleWritten(void );
 
@@ -1321,29 +1346,29 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed35b328);
+uint8_t arg_0x2aad82572af8);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed359538);
+uint8_t arg_0x2aad8256fcc8);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed359538);
+uint8_t arg_0x2aad8256fcc8);
 # 56 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed3401a0);
+uint8_t arg_0x2aad82573830);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed3401a0);
+uint8_t arg_0x2aad82573830);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed3401a0);
+uint8_t arg_0x2aad82573830);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__runTask(void );
 # 62 "/homes/hglanzer/GIT/tinyos/tos/lib/power/PowerDownCleanup.nc"
@@ -1355,25 +1380,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t AdcP__Read__read(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c9ac0);
+uint8_t arg_0x2aad825dfac0);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c76d8, 
+uint8_t arg_0x2aad825dc6d8, 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c4cd0);
+uint8_t arg_0x2aad825dacd0);
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c4cd0);
+uint8_t arg_0x2aad825dacd0);
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c4cd0);
+uint8_t arg_0x2aad825dacd0);
 # 81 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1381,31 +1406,31 @@ static void AdcP__acquiredData__runTask(void );
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__read(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f86b8);
+uint8_t arg_0x2aad8260e6b8);
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f86b8, 
+uint8_t arg_0x2aad8260e6b8, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f6390, 
+uint8_t arg_0x2aad8260b390, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f5e30);
+uint8_t arg_0x2aad8260ae30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f5e30);
+uint8_t arg_0x2aad8260ae30);
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__granted(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f5e30);
+uint8_t arg_0x2aad8260ae30);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeRectangle__runTask(void );
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
@@ -1480,6 +1505,16 @@ static void /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUart__rxDone(uint8_t data);
 static void /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUart__txDone(void );
 # 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
 static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__StdControl__start(void );
+
+
+
+
+
+
+
+
+
+static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__StdControl__stop(void );
 # 62 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Init.nc"
 static error_t HplAtm128UartP__Uart0Init__init(void );
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/HplAtm128Uart.nc"
@@ -1500,8 +1535,28 @@ static error_t HplAtm128UartP__HplUart1__disableRxIntr(void );
 static void HplAtm128UartP__HplUart1__tx(uint8_t data);
 # 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
 static error_t HplAtm128UartP__Uart1TxControl__start(void );
+
+
+
+
+
+
+
+
+
+static error_t HplAtm128UartP__Uart1TxControl__stop(void );
 #line 95
 static error_t HplAtm128UartP__Uart1RxControl__start(void );
+
+
+
+
+
+
+
+
+
+static error_t HplAtm128UartP__Uart1RxControl__stop(void );
 # 109 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Alarm.nc"
 static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void );
 #line 103
@@ -1566,11 +1621,11 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b34ed73bda0);
+uint8_t arg_0x2aad8297ada0);
 # 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b34ed73bda0, 
+uint8_t arg_0x2aad8297ada0, 
 # 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 # 82 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Counter.nc"
@@ -1592,6 +1647,32 @@ static inline error_t PlatformP__Init__init(void );
 static error_t MotePlatformP__SubInit__init(void );
 # 23 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/MotePlatformP.nc"
 static inline error_t MotePlatformP__PlatformInit__init(void );
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr(void );
+
+
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput(void );
+#line 56
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__clr(void );
+
+
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput(void );
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set(void );
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__clr(void );
+
+
+
+
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput(void );
+#line 56
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__set(void );
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr(void );
+
+
+
+
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void );
 # 33 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/MeasureClockC.nc"
 enum MeasureClockC____nesc_unnamed4313 {
 
@@ -1625,7 +1706,7 @@ int main(void )   ;
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b34ecf85108);
+uint8_t arg_0x2aad821a0108);
 # 76 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
@@ -1735,11 +1816,10 @@ static inline void BlinkC__testTask__runTask(void );
 
 
 
-
-static inline void BlinkC__GLCD__xyReady(uint8_t x, uint8_t y);
-#line 76
+static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y);
+#line 75
 static inline void BlinkC__Timer0__fired(void );
-#line 94
+#line 92
 static inline void BlinkC__Boot__booted(void );
 
 
@@ -1798,7 +1878,7 @@ static inline void BlinkC__GLCD__lineWritten(void );
 
 
 static inline void BlinkC__bigAVR6UART0__sendDone(uint8_t *stream, uint16_t len, error_t error);
-#line 165
+#line 164
 static inline void BlinkC__bigAVR6UART0__receiveDone(uint8_t *stream, uint16_t len, error_t error);
 # 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void GLCDP__LCD128x64__startClearScreen(uint8_t pattern);
@@ -1826,8 +1906,8 @@ static void GLCDP__GLCD__lineWritten(void );
 
 
 static void GLCDP__GLCD__screenCleared(void );
-#line 20
-static void GLCDP__GLCD__xyReady(uint8_t x, uint8_t y);
+#line 19
+static void GLCDP__GLCD__xyReady(uint16_t x, uint16_t y);
 #line 70
 static void GLCDP__GLCD__circleWritten(void );
 
@@ -1853,7 +1933,7 @@ static volatile uint16_t GLCDP__y_min = 128;
 static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw);
 #line 96
 static inline void GLCDP__TouchScreen__xyReady(uint16_t x, uint16_t y);
-#line 146
+#line 145
 static inline void GLCDP__TouchScreen__tsPressed(void );
 
 
@@ -1865,15 +1945,15 @@ static inline void GLCDP__TouchScreen__tsPressed(void );
 
 
 static inline void GLCDP__GLCD__initLCD(uint8_t pattern);
-#line 176
+#line 175
 static inline error_t GLCDP__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
-#line 194
+#line 193
 static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
-#line 227
+#line 231
 static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 259
+#line 267
 static error_t GLCDP__GLCD__startClearScreen(uint8_t pattern);
-#line 280
+#line 288
 static inline void GLCDP__LCD128x64__initDone(void );
 
 
@@ -1909,30 +1989,51 @@ static inline void GLCDP__LCD128x64__barWritten(void );
 
 
 static inline void GLCDP__LCD128x64__stringWritten(void );
-#line 330
+#line 338
 static inline void GLCDP__LCD128x64__screenCleared(void );
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static error_t TouchScreenP__Read__read(void );
+# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+static void TouchScreenP__driveA__makeOutput(void );
+#line 40
+static void TouchScreenP__driveA__set(void );
+static void TouchScreenP__driveA__clr(void );
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t TouchScreenP__checkTS__postTask(void );
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+static void TouchScreenP__adcX__makeInput(void );
+#line 41
+static void TouchScreenP__adcX__clr(void );
+
+
+
+
+static void TouchScreenP__driveB__makeOutput(void );
+#line 40
+static void TouchScreenP__driveB__set(void );
+static void TouchScreenP__driveB__clr(void );
 # 13 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
 static void TouchScreenP__TouchScreen__tsPressed(void );
 #line 11
 static void TouchScreenP__TouchScreen__xyReady(uint16_t x, uint16_t y);
-# 32 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+static void TouchScreenP__adcY__makeInput(void );
+#line 41
+static void TouchScreenP__adcY__clr(void );
+# 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 enum TouchScreenP____nesc_unnamed4316 {
-#line 32
+#line 36
   TouchScreenP__checkTS = 1U
 };
-#line 32
+#line 36
 typedef int TouchScreenP____nesc_sillytask_checkTS[TouchScreenP__checkTS];
-#line 28
+#line 32
 volatile uint8_t TouchScreenP__channel;
 static volatile uint8_t TouchScreenP__state;
-#line 29
+#line 33
 static volatile uint8_t TouchScreenP__pressDetect = FALSE;
 static volatile uint16_t TouchScreenP__x;
-#line 30
+#line 34
 static volatile uint16_t TouchScreenP__y;
 
 static inline void TouchScreenP__checkTS__runTask(void );
@@ -1941,9 +2042,9 @@ static inline void TouchScreenP__checkTS__runTask(void );
 
 
 static void TouchScreenP__TouchScreen__getXY(void );
-#line 58
+#line 61
 static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val);
-#line 149
+#line 152
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getRefVoltage(void );
 
 
@@ -2114,15 +2215,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(
 # 55 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed35b328);
+uint8_t arg_0x2aad82572af8);
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed359538);
+uint8_t arg_0x2aad8256fcc8);
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed359538);
+uint8_t arg_0x2aad8256fcc8);
 # 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -2136,7 +2237,7 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b34ed3401a0);
+uint8_t arg_0x2aad82573830);
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/homes/hglanzer/GIT/tinyos/tos/system/ArbiterP.nc"
@@ -2218,27 +2319,27 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c9ac0, 
+uint8_t arg_0x2aad825dfac0, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c76d8, 
+uint8_t arg_0x2aad825dc6d8, 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c4cd0);
+uint8_t arg_0x2aad825dacd0);
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c4cd0);
+uint8_t arg_0x2aad825dacd0);
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b34ed3c4cd0);
+uint8_t arg_0x2aad825dacd0);
 # 70 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
@@ -2322,21 +2423,21 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f86b8, 
+uint8_t arg_0x2aad8260e6b8, 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 55
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(
 # 26 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f6390);
+uint8_t arg_0x2aad8260b390);
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f5e30);
+uint8_t arg_0x2aad8260ae30);
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(
 # 27 "/homes/hglanzer/GIT/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b34ed3f5e30);
+uint8_t arg_0x2aad8260ae30);
 
 
 
@@ -2392,40 +2493,40 @@ static error_t LCD128x64P__wait4Controller__postTask(void );
 static error_t LCD128x64P__writeBar__postTask(void );
 #line 67
 static error_t LCD128x64P__clearScreenNB__postTask(void );
-# 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 37 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 enum LCD128x64P____nesc_unnamed4325 {
-#line 36
+#line 37
   LCD128x64P__wait4Controller = 4U
 };
-#line 36
+#line 37
 typedef int LCD128x64P____nesc_sillytask_wait4Controller[LCD128x64P__wait4Controller];
-#line 173
+#line 170
 enum LCD128x64P____nesc_unnamed4326 {
-#line 173
+#line 170
   LCD128x64P__writeRectangle = 5U
 };
-#line 173
+#line 170
 typedef int LCD128x64P____nesc_sillytask_writeRectangle[LCD128x64P__writeRectangle];
-#line 189
+#line 186
 enum LCD128x64P____nesc_unnamed4327 {
-#line 189
+#line 186
   LCD128x64P__writeCircle = 6U
 };
-#line 189
+#line 186
 typedef int LCD128x64P____nesc_sillytask_writeCircle[LCD128x64P__writeCircle];
-#line 222
+#line 219
 enum LCD128x64P____nesc_unnamed4328 {
-#line 222
+#line 219
   LCD128x64P__writeString = 7U
 };
-#line 222
+#line 219
 typedef int LCD128x64P____nesc_sillytask_writeString[LCD128x64P__writeString];
-#line 250
+#line 247
 enum LCD128x64P____nesc_unnamed4329 {
-#line 250
+#line 247
   LCD128x64P__clearScreenNB = 8U
 };
-#line 250
+#line 247
 typedef int LCD128x64P____nesc_sillytask_clearScreenNB[LCD128x64P__clearScreenNB];
 #line 278
 enum LCD128x64P____nesc_unnamed4330 {
@@ -2441,48 +2542,48 @@ enum LCD128x64P____nesc_unnamed4331 {
 };
 #line 356
 typedef int LCD128x64P____nesc_sillytask_writeBar[LCD128x64P__writeBar];
-#line 29
+#line 30
 uint8_t LCD128x64P__modPattern = 0x00;
 uint8_t LCD128x64P__pageAddr;
-#line 30
+#line 31
 uint8_t LCD128x64P__xAddr = 0;
 uint8_t LCD128x64P__rad;
-#line 31
+#line 32
 uint8_t LCD128x64P__aRect;
-#line 31
+#line 32
 uint8_t LCD128x64P__bRect;
-#line 31
+#line 32
 uint8_t LCD128x64P__xLineEnd;
-#line 31
+#line 32
 uint8_t LCD128x64P__yLineEnd;
-#line 31
+#line 32
 uint8_t LCD128x64P__aBar;
-#line 31
+#line 32
 uint8_t LCD128x64P__bBar;
 uint8_t LCD128x64P__xPos[5];
-#line 32
+#line 33
 uint8_t LCD128x64P__yPos[5];
 char *LCD128x64P__dataPtr;
 
 
 static inline void LCD128x64P__wait4Controller__runTask(void );
-#line 57
+#line 58
 static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data);
-#line 88
-static void LCD128x64P__setAddress(uint8_t x, uint8_t y);
-#line 110
+#line 85
+static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd);
+#line 107
 static inline uint8_t LCD128x64P__readByte(uint8_t mode);
-#line 143
+#line 140
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y);
-#line 173
+#line 170
 static inline void LCD128x64P__writeRectangle__runTask(void );
-#line 189
+#line 186
 static inline void LCD128x64P__writeCircle__runTask(void );
-#line 222
+#line 219
 static inline void LCD128x64P__writeString__runTask(void );
-#line 250
+#line 247
 static inline void LCD128x64P__clearScreenNB__runTask(void );
-#line 264
+#line 265
 static inline void LCD128x64P__clearScreen(void );
 #line 278
 static inline void LCD128x64P__writeLine__runTask(void );
@@ -2490,13 +2591,13 @@ static inline void LCD128x64P__writeLine__runTask(void );
 static inline void LCD128x64P__writeBar__runTask(void );
 #line 416
 static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern);
-#line 439
+#line 440
 static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 454
+#line 455
 static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
-#line 477
+#line 478
 static inline void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern);
-#line 489
+#line 490
 static inline void LCD128x64P__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
 # 15 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0.nc"
 static void bigAVR6UART0P__bigAVR6UART0__receiveDone(uint8_t *buf, uint16_t len, error_t error);
@@ -2520,12 +2621,23 @@ uint8_t * buf,
 uint16_t len);
 # 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
 static error_t bigAVR6UART0P__StdControl__start(void );
-# 19 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
+
+
+
+
+
+
+
+
+
+static error_t bigAVR6UART0P__StdControl__stop(void );
+# 18 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
 static inline void bigAVR6UART0P__bigAVR6UART0__send(uint8_t *str, uint16_t len);
-#line 31
+#line 30
 static inline error_t bigAVR6UART0P__bigAVR6UART0__receive(uint8_t *buf, uint16_t len);
-#line 43
+#line 42
 static inline void bigAVR6UART0P__UartStream__sendDone(uint8_t *buf, uint16_t len, error_t error);
+
 
 
 
@@ -2538,6 +2650,16 @@ static inline void bigAVR6UART0P__UartStream__receivedByte(uint8_t byte);
 static inline void bigAVR6UART0P__UartStream__receiveDone(uint8_t *buf, uint16_t len, error_t error);
 # 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
 static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartTxControl__start(void );
+
+
+
+
+
+
+
+
+
+static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartTxControl__stop(void );
 # 79 "/homes/hglanzer/GIT/tinyos/tos/interfaces/UartStream.nc"
 static void /*Atm128Uart1C.UartP*/Atm128UartP__0__UartStream__receivedByte(uint8_t byte);
 #line 99
@@ -2568,6 +2690,16 @@ static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUart__disableRxIntr(void
 static void /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUart__tx(uint8_t data);
 # 95 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
 static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartRxControl__start(void );
+
+
+
+
+
+
+
+
+
+static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartRxControl__stop(void );
 # 64 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/Atm128UartP.nc"
 uint16_t /*Atm128Uart1C.UartP*/Atm128UartP__0__m_tx_len;
 #line 64
@@ -2591,6 +2723,8 @@ static inline error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__Init__init(void );
 
 
 static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__StdControl__start(void );
+#line 95
+static inline error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__StdControl__stop(void );
 #line 117
 static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__UartStream__receive(uint8_t *buf, uint16_t len);
 #line 135
@@ -2627,9 +2761,29 @@ void __vector_20(void ) __attribute((interrupt))   ;
 static inline error_t HplAtm128UartP__Uart1Init__init(void );
 #line 210
 static inline error_t HplAtm128UartP__Uart1TxControl__start(void );
-#line 222
+
+
+
+
+
+static inline error_t HplAtm128UartP__Uart1TxControl__stop(void );
+
+
+
+
+
 static inline error_t HplAtm128UartP__Uart1RxControl__start(void );
-#line 234
+
+
+
+
+
+static inline error_t HplAtm128UartP__Uart1RxControl__stop(void );
+
+
+
+
+
 static inline error_t HplAtm128UartP__HplUart1__enableTxIntr(void );
 
 
@@ -2859,7 +3013,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b34ed73bda0);
+uint8_t arg_0x2aad8297ada0);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4334 {
 #line 71
@@ -3409,7 +3563,7 @@ inline static error_t bigAVR6UART0P__StdControl__start(void ){
 #line 95
 }
 #line 95
-# 19 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
+# 18 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
 static inline void bigAVR6UART0P__bigAVR6UART0__send(uint8_t *str, uint16_t len)
 {
   bigAVR6UART0P__StdControl__start();
@@ -3423,7 +3577,7 @@ inline static void BlinkC__bigAVR6UART0__send(uint8_t *str, uint16_t len){
 #line 5
 }
 #line 5
-# 76 "BlinkC.nc"
+# 75 "BlinkC.nc"
 static inline void BlinkC__Timer0__fired(void )
 {
 
@@ -3446,9 +3600,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b34ed73bda0){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2aad8297ada0){
 #line 83
-  switch (arg_0x2b34ed73bda0) {
+  switch (arg_0x2aad8297ada0) {
 #line 83
     case 0U:
 #line 83
@@ -3458,7 +3612,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b34ed73bda0);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2aad8297ada0);
 #line 83
       break;
 #line 83
@@ -3768,7 +3922,7 @@ static inline void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runT
   /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired();
 }
 
-# 130 "BlinkC.nc"
+# 128 "BlinkC.nc"
 static inline void BlinkC__GLCD__barWritten(void )
 {
 }
@@ -3780,7 +3934,7 @@ inline static void GLCDP__GLCD__barWritten(void ){
 #line 78
 }
 #line 78
-# 303 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 311 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__barWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_BAR;
@@ -3867,11 +4021,11 @@ inline static error_t LCD128x64P__wait4Controller__postTask(void ){
 #line 67
 }
 #line 67
-# 110 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 107 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline uint8_t LCD128x64P__readByte(uint8_t mode)
 {
   uint8_t tmp = 0;
-#line 112
+#line 109
   uint8_t c = 0;
 
   for (c = 0; c < 2; c++) 
@@ -3903,7 +4057,7 @@ static inline uint8_t LCD128x64P__readByte(uint8_t mode)
   return tmp;
 }
 
-# 146 "BlinkC.nc"
+# 144 "BlinkC.nc"
 static inline void BlinkC__GLCD__lineWritten(void )
 {
 }
@@ -3915,7 +4069,7 @@ inline static void GLCDP__GLCD__lineWritten(void ){
 #line 76
 }
 #line 76
-# 297 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 305 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__lineWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_LINE;
@@ -4035,7 +4189,7 @@ inline static error_t BlinkC__GLCD__startWriteRectangle(uint8_t x, uint8_t y, ui
 #line 58
 }
 #line 58
-# 125 "BlinkC.nc"
+# 123 "BlinkC.nc"
 static inline void BlinkC__GLCD__screenCleared(void )
 {
   BlinkC__GLCD__startWriteRectangle(0, 0, 128, 4);
@@ -4048,7 +4202,7 @@ inline static void GLCDP__GLCD__screenCleared(void ){
 #line 80
 }
 #line 80
-# 330 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 338 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__screenCleared(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_CLEAR;
@@ -4070,7 +4224,7 @@ inline static void LCD128x64P__LCD128x64__screenCleared(void ){
 #line 50
 }
 #line 50
-# 250 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 247 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__clearScreenNB__runTask(void )
 {
 
@@ -4100,7 +4254,7 @@ inline static error_t LCD128x64P__writeRectangle__postTask(void ){
 #line 67
 }
 #line 67
-# 454 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 455 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 {
   LCD128x64P__xPos[0] = x;
@@ -4133,7 +4287,7 @@ inline static error_t bigAVR6UART0P__UartStream__receive(uint8_t * buf, uint16_t
 #line 90
 }
 #line 90
-# 31 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
+# 30 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
 static inline error_t bigAVR6UART0P__bigAVR6UART0__receive(uint8_t *buf, uint16_t len)
 {
   bigAVR6UART0P__UartStream__receive(buf, len);
@@ -4156,7 +4310,7 @@ inline static error_t BlinkC__bigAVR6UART0__receive(uint8_t *buf, uint16_t len){
 #line 7
 }
 #line 7
-# 142 "BlinkC.nc"
+# 140 "BlinkC.nc"
 static inline void BlinkC__GLCD__stringWritten(void )
 {
   BlinkC__bigAVR6UART0__receive((uint8_t *)BlinkC__uartBuf, 5);
@@ -4169,7 +4323,7 @@ inline static void GLCDP__GLCD__stringWritten(void ){
 #line 72
 }
 #line 72
-# 314 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 322 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__stringWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_STRING;
@@ -4190,30 +4344,30 @@ inline static void LCD128x64P__LCD128x64__stringWritten(void ){
 #line 42
 }
 #line 42
-# 222 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 219 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeString__runTask(void )
 {
   uint8_t index = 0;
-#line 224
+#line 221
   uint8_t offset = 0;
 
-  while (*LCD128x64P__dataPtr) 
+  while (*LCD128x64P__dataPtr != '\0') 
     {
       for (index = 0; index < 5; index++) 
         {
 
-          LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2] / 8);
+          LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2]);
           LCD128x64P__writeGLCD(1, (uint8_t )__extension__ ({
-#line 232
+#line 229
             uint16_t __addr16 = (uint16_t )(uint16_t )&Font5x7[(*LCD128x64P__dataPtr - 0x20) * 5 + index];
-#line 232
+#line 229
             uint8_t __result;
 
-#line 232
+#line 229
              __asm ("lpm""\n\t""mov %0, r0""\n\t" : "=r"(__result) : "z"(__addr16) : "r0");__result;
           }
           ));
-#line 233
+#line 230
           offset++;
         }
       LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2]);
@@ -4224,7 +4378,7 @@ static inline void LCD128x64P__writeString__runTask(void )
   LCD128x64P__LCD128x64__stringWritten();
 }
 
-# 134 "BlinkC.nc"
+# 132 "BlinkC.nc"
 static inline void BlinkC__GLCD__circleWritten(void )
 {
 }
@@ -4236,7 +4390,7 @@ inline static void GLCDP__GLCD__circleWritten(void ){
 #line 70
 }
 #line 70
-# 285 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 293 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__circleWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_CIRCLE;
@@ -4250,15 +4404,15 @@ inline static void LCD128x64P__LCD128x64__circleWritten(void ){
 #line 40
 }
 #line 40
-# 189 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 186 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeCircle__runTask(void )
 {
   int tswitch;
-#line 191
+#line 188
   int y;
-#line 191
+#line 188
   int x = 0;
-#line 191
+#line 188
   int yDraw = 0;
   unsigned char d;
 
@@ -4290,7 +4444,7 @@ static inline void LCD128x64P__writeCircle__runTask(void )
   LCD128x64P__LCD128x64__circleWritten();
 }
 
-# 138 "BlinkC.nc"
+# 136 "BlinkC.nc"
 static inline void BlinkC__GLCD__rectangleWritten(void )
 {
 }
@@ -4302,7 +4456,7 @@ inline static void GLCDP__GLCD__rectangleWritten(void ){
 #line 74
 }
 #line 74
-# 291 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 299 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__rectangleWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_RECT;
@@ -4316,12 +4470,12 @@ inline static void LCD128x64P__LCD128x64__rectangleWritten(void ){
 #line 44
 }
 #line 44
-# 173 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 170 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeRectangle__runTask(void )
 {
   unsigned char j;
 
-#line 176
+#line 173
   for (j = 0; j < LCD128x64P__bRect; j++) 
     {
       LCD128x64P__LCD128x64__setPixel(LCD128x64P__xPos[0], LCD128x64P__yPos[0] + j);
@@ -4335,7 +4489,7 @@ static inline void LCD128x64P__writeRectangle__runTask(void )
   LCD128x64P__LCD128x64__rectangleWritten();
 }
 
-#line 36
+#line 37
 static inline void LCD128x64P__wait4Controller__runTask(void )
 {
   * (volatile uint8_t *)(0x1A + 0x20) = 0x00;
@@ -4365,13 +4519,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 88 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b34ed3f5e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2aad8260ae30){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  switch (arg_0x2b34ed3f5e30) {
+  switch (arg_0x2aad8260ae30) {
 #line 88
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 88
@@ -4381,7 +4535,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 88
     default:
 #line 88
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b34ed3f5e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2aad8260ae30);
 #line 88
       break;
 #line 88
@@ -4415,85 +4569,13 @@ inline static error_t TouchScreenP__Read__read(void ){
 #line 55
 }
 #line 55
-# 66 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static error_t BlinkC__GLCD__startClearScreen(uint8_t pattern){
-#line 66
-  unsigned char result;
-#line 66
-
-#line 66
-  result = GLCDP__GLCD__startClearScreen(pattern);
-#line 66
-
-#line 66
-  return result;
-#line 66
-}
-#line 66
-#line 62
-inline static error_t BlinkC__GLCD__startWriteString(char *data, uint8_t x, uint8_t y){
-#line 62
-  unsigned char result;
-#line 62
-
-#line 62
-  result = GLCDP__GLCD__startWriteString(data, x, y);
-#line 62
-
-#line 62
-  return result;
-#line 62
-}
-#line 62
-# 37 "BlinkC.nc"
-static inline void BlinkC__GLCD__xyReady(uint8_t x, uint8_t y)
-{
-  BlinkC__tmp = x % 10;
-  BlinkC__buf[3] = BlinkC__tmp + 0x30;
-  x = (x - BlinkC__tmp) / 10;
-
-  BlinkC__tmp = x % 10;
-  BlinkC__buf[2] = BlinkC__tmp + 0x30;
-  x = (x - BlinkC__tmp) / 10;
-
-  BlinkC__tmp = x % 10;
-  BlinkC__buf[1] = BlinkC__tmp + 0x30;
-  x = (x - BlinkC__tmp) / 10;
-
-  BlinkC__tmp = x % 10;
-  BlinkC__buf[0] = BlinkC__tmp + 0x30;
-  BlinkC__buf[4] = '/';
-
-  BlinkC__tmp = y % 10;
-  BlinkC__buf[8] = BlinkC__tmp + 0x30;
-  y = (y - BlinkC__tmp) / 10;
-
-  BlinkC__tmp = y % 10;
-  BlinkC__buf[7] = BlinkC__tmp + 0x30;
-  y = (y - BlinkC__tmp) / 10;
-
-  BlinkC__tmp = y % 10;
-  BlinkC__buf[6] = BlinkC__tmp + 0x30;
-  y = (y - BlinkC__tmp) / 10;
-
-  BlinkC__tmp = y % 10;
-  BlinkC__buf[5] = BlinkC__tmp + 0x30;
-  BlinkC__buf[9] = '\0';
-
-  BlinkC__GLCD__startWriteString(BlinkC__buf, 45, 40);
-  BlinkC__x_lokal = x;
-  BlinkC__GLCD__startClearScreen(0x00);
-#line 73
-  ;
-}
-
-# 20 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static void GLCDP__GLCD__xyReady(uint8_t x, uint8_t y){
-#line 20
+# 19 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static void GLCDP__GLCD__xyReady(uint16_t x, uint16_t y){
+#line 19
   BlinkC__GLCD__xyReady(x, y);
-#line 20
+#line 19
 }
-#line 20
+#line 19
 # 27 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw)
 {
@@ -4501,19 +4583,24 @@ static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw)
 #line 29
   float y_tmp = 0;
 
+  if (x_raw < GLCDP__x_max && x_raw > GLCDP__x_min && y_raw < GLCDP__y_max && y_raw > GLCDP__y_min) 
+    {
 
 
+      x_raw = x_raw - 54;
+      y_raw = y_raw - 128;
 
 
-  x_raw = x_raw - 54;
-  y_raw = y_raw - 128;
-
-
-  x_tmp = (float )x_raw / (float )810;
-  y_tmp = (float )y_raw / (float )672;
-  x_tmp = x_tmp * 128;
-  y_tmp = y_tmp * 64;
-  GLCDP__GLCD__xyReady(x_tmp, y_tmp);
+      x_tmp = (float )x_raw / (float )810;
+      y_tmp = (float )y_raw / (float )672;
+      x_tmp = x_tmp * 128;
+      y_tmp = y_tmp * 64;
+      GLCDP__GLCD__xyReady(x_tmp, y_tmp);
+    }
+  else 
+    {
+      GLCDP__GLCD__xyReady(200, 200);
+    }
 }
 
 # 4 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
@@ -4523,7 +4610,7 @@ inline static void GLCDP__TouchScreen__getXY(void ){
 #line 4
 }
 #line 4
-# 115 "BlinkC.nc"
+# 113 "BlinkC.nc"
 static inline void BlinkC__GLCD__calibrated(void )
 {
 }
@@ -4557,7 +4644,7 @@ inline static error_t LCD128x64P__clearScreenNB__postTask(void ){
 #line 67
 }
 #line 67
-# 477 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 478 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern)
 {
   LCD128x64P__modPattern = pattern;
@@ -4626,6 +4713,21 @@ inline static void TouchScreenP__TouchScreen__xyReady(uint16_t x, uint16_t y){
 #line 11
 }
 #line 11
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__clr(void )
+#line 56
+{
+#line 56
+  * (volatile uint8_t * )98U &= ~(1 << 1);
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcY__clr(void ){
+#line 41
+  /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__clr();
+#line 41
+}
+#line 41
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 inline static error_t TouchScreenP__checkTS__postTask(void ){
 #line 67
@@ -4641,7 +4743,39 @@ inline static error_t TouchScreenP__checkTS__postTask(void ){
 #line 67
 }
 #line 67
-# 110 "BlinkC.nc"
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__set(void )
+#line 56
+{
+  /* atomic removed: atomic calls only */
+#line 56
+  * (volatile uint8_t * )101U |= 1 << 4;
+}
+
+# 40 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveB__set(void ){
+#line 40
+  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__set();
+#line 40
+}
+#line 40
+# 57 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__clr(void )
+#line 57
+{
+  /* atomic removed: atomic calls only */
+#line 57
+  * (volatile uint8_t * )101U &= ~(1 << 3);
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveA__clr(void ){
+#line 41
+  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__clr();
+#line 41
+}
+#line 41
+# 108 "BlinkC.nc"
 static inline void BlinkC__GLCD__tsPressed(void )
 {
 }
@@ -4653,7 +4787,7 @@ inline static void GLCDP__GLCD__tsPressed(void ){
 #line 24
 }
 #line 24
-# 146 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 145 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__TouchScreen__tsPressed(void )
 {
   GLCDP__GLCD__tsPressed();
@@ -4666,7 +4800,7 @@ inline static void TouchScreenP__TouchScreen__tsPressed(void ){
 #line 13
 }
 #line 13
-# 58 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 61 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
 {
   { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
@@ -4694,9 +4828,9 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
                     else 
                       {
                         TouchScreenP__x = val;
+                        TouchScreenP__driveA__clr();
+                        TouchScreenP__driveB__set();
 
-                        * (volatile uint8_t *)0x65 &= ~(1 << 3);
-                        * (volatile uint8_t *)0x65 |= 1 << 4;
                         TouchScreenP__channel = ATM128_ADC_SNGL_ADC1;
                         TouchScreenP__state = DUMMY_FIRST_Y;
                         TouchScreenP__Read__read();
@@ -4727,7 +4861,7 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
                   {
                     TouchScreenP__y = val;
                     TouchScreenP__state = FINISHED;
-                    * (volatile uint8_t *)0x65 &= ~(1 << 4);
+                    TouchScreenP__adcY__clr();
                     TouchScreenP__TouchScreen__xyReady(TouchScreenP__x, TouchScreenP__y);
                   }
                 else 
@@ -4741,7 +4875,7 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
             }
         }
     }
-#line 131
+#line 134
     __nesc_atomic_end(__nesc_atomic); }
 }
 
@@ -4752,9 +4886,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b34ed3f86b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2aad8260e6b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-  switch (arg_0x2b34ed3f86b8) {
+  switch (arg_0x2aad8260e6b8) {
 #line 63
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 63
@@ -4764,7 +4898,7 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
     default:
 #line 63
-      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b34ed3f86b8, result, val);
+      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2aad8260e6b8, result, val);
 #line 63
       break;
 #line 63
@@ -4855,9 +4989,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 65 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b34ed359538){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2aad8256fcc8){
 #line 65
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b34ed359538);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2aad8256fcc8);
 #line 65
 }
 #line 65
@@ -5036,13 +5170,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 120 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b34ed3f5e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2aad8260ae30){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  switch (arg_0x2b34ed3f5e30) {
+  switch (arg_0x2aad8260ae30) {
 #line 120
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 120
@@ -5052,7 +5186,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 120
     default:
 #line 120
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b34ed3f5e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2aad8260ae30);
 #line 120
       break;
 #line 120
@@ -5073,9 +5207,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x2b34ed3c9ac0, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x2aad825dfac0, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b34ed3c9ac0, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2aad825dfac0, result, val);
 #line 63
 }
 #line 63
@@ -5094,9 +5228,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequest
 }
 
 # 53 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b34ed35b328){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2aad82572af8){
 #line 53
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2b34ed35b328);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2aad82572af8);
 #line 53
 }
 #line 53
@@ -5282,6 +5416,127 @@ inline static error_t LCD128x64P__writeString__postTask(void ){
 #line 67
 }
 #line 67
+# 62 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput(void )
+#line 62
+{
+#line 62
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 62
+    * (volatile uint8_t * )100U |= 1 << 3;
+#line 62
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveA__makeOutput(void ){
+#line 46
+  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__makeOutput();
+#line 46
+}
+#line 46
+# 62 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput(void )
+#line 62
+{
+#line 62
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 62
+    * (volatile uint8_t * )100U |= 1 << 4;
+#line 62
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 46 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveB__makeOutput(void ){
+#line 46
+  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__makeOutput();
+#line 46
+}
+#line 46
+# 59 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput(void )
+#line 59
+{
+#line 59
+  * (volatile uint8_t * )97U &= ~(1 << 0);
+}
+
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcX__makeInput(void ){
+#line 44
+  /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__makeInput();
+#line 44
+}
+#line 44
+# 59 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput(void )
+#line 59
+{
+#line 59
+  * (volatile uint8_t * )97U &= ~(1 << 1);
+}
+
+# 44 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcY__makeInput(void ){
+#line 44
+  /*HplAtm128GeneralIOC.PortF.Bit1*/HplAtm128GeneralIOPinP__41__IO__makeInput();
+#line 44
+}
+#line 44
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set(void )
+#line 56
+{
+#line 56
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 56
+    * (volatile uint8_t * )101U |= 1 << 3;
+#line 56
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 40 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveA__set(void ){
+#line 40
+  /*HplAtm128GeneralIOC.G3*/HplAtm128GeneralIOSlowPinP__11__IO__set();
+#line 40
+}
+#line 40
+# 57 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOSlowPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr(void )
+#line 57
+{
+#line 57
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 57
+    * (volatile uint8_t * )101U &= ~(1 << 4);
+#line 57
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__driveB__clr(void ){
+#line 41
+  /*HplAtm128GeneralIOC.G4*/HplAtm128GeneralIOSlowPinP__12__IO__clr();
+#line 41
+}
+#line 41
+# 56 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr(void )
+#line 56
+{
+#line 56
+  * (volatile uint8_t * )98U &= ~(1 << 0);
+}
+
+# 41 "/homes/hglanzer/GIT/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void TouchScreenP__adcX__clr(void ){
+#line 41
+  /*HplAtm128GeneralIOC.PortF.Bit0*/HplAtm128GeneralIOPinP__40__IO__clr();
+#line 41
+}
+#line 41
 # 86 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/AdcP.nc"
 static inline error_t AdcP__startGet(uint8_t newState, uint8_t newClient)
 #line 86
@@ -5301,13 +5556,13 @@ static inline error_t AdcP__Read__read(uint8_t c)
 }
 
 # 55 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Read.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b34ed3f6390){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2aad8260b390){
 #line 55
   unsigned char result;
 #line 55
 
 #line 55
-  result = AdcP__Read__read(arg_0x2b34ed3f6390);
+  result = AdcP__Read__read(arg_0x2aad8260b390);
 #line 55
 
 #line 55
@@ -5329,9 +5584,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__defau
 }
 
 # 102 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b34ed3401a0){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2aad82573830){
 #line 102
-  switch (arg_0x2b34ed3401a0) {
+  switch (arg_0x2aad82573830) {
 #line 102
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__HAL_ID:
 #line 102
@@ -5341,7 +5596,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__grant
 #line 102
     default:
 #line 102
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b34ed3401a0);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2aad82573830);
 #line 102
       break;
 #line 102
@@ -5356,9 +5611,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 59 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b34ed359538){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2aad8256fcc8){
 #line 59
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b34ed359538);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2aad8256fcc8);
 #line 59
 }
 #line 59
@@ -5557,25 +5812,25 @@ inline static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVo
 #line 70
 }
 #line 70
-# 154 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 157 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getChannel(void )
 {
   { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
     {
       {
         unsigned char __nesc_temp = 
-#line 158
+#line 161
         TouchScreenP__channel;
 
         {
-#line 158
+#line 161
           __nesc_atomic_end(__nesc_atomic); 
-#line 158
+#line 161
           return __nesc_temp;
         }
       }
     }
-#line 161
+#line 164
     __nesc_atomic_end(__nesc_atomic); }
 }
 
@@ -5587,13 +5842,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b34ed3c4cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2aad825dacd0){
 #line 25
   unsigned char result;
 #line 25
 
 #line 25
-  switch (arg_0x2b34ed3c4cd0) {
+  switch (arg_0x2aad825dacd0) {
 #line 25
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 25
@@ -5603,7 +5858,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b34ed3c4c
 #line 25
     default:
 #line 25
-      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b34ed3c4cd0);
+      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2aad825dacd0);
 #line 25
       break;
 #line 25
@@ -5622,7 +5877,7 @@ static inline uint8_t AdcP__channel(void )
   return AdcP__Atm128AdcConfig__getChannel(AdcP__client);
 }
 
-# 149 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 152 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getRefVoltage(void )
 {
   return 1;
@@ -5636,13 +5891,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b34ed3c4cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2aad825dacd0){
 #line 32
   unsigned char result;
 #line 32
 
 #line 32
-  switch (arg_0x2b34ed3c4cd0) {
+  switch (arg_0x2aad825dacd0) {
 #line 32
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 32
@@ -5652,7 +5907,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b34ed3
 #line 32
     default:
 #line 32
-      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b34ed3c4cd0);
+      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2aad825dacd0);
 #line 32
       break;
 #line 32
@@ -5671,7 +5926,7 @@ static inline uint8_t AdcP__refVoltage(void )
   return AdcP__Atm128AdcConfig__getRefVoltage(AdcP__client);
 }
 
-# 162 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 165 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getPrescaler(void )
 {
   return ATM128_ADC_PRESCALE_128;
@@ -5685,13 +5940,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b34ed3c4cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2aad825dacd0){
 #line 39
   unsigned char result;
 #line 39
 
 #line 39
-  switch (arg_0x2b34ed3c4cd0) {
+  switch (arg_0x2aad825dacd0) {
 #line 39
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 39
@@ -5701,7 +5956,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b34ed3c
 #line 39
     default:
 #line 39
-      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b34ed3c4cd0);
+      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2aad825dacd0);
 #line 39
       break;
 #line 39
@@ -5720,7 +5975,7 @@ static inline uint8_t AdcP__prescaler(void )
   return AdcP__Atm128AdcConfig__getPrescaler(AdcP__client);
 }
 
-# 32 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline void TouchScreenP__checkTS__runTask(void )
 {
   TouchScreenP__TouchScreen__getXY();
@@ -5952,7 +6207,7 @@ inline static void BlinkC__Timer0__startPeriodic(uint32_t dt){
 #line 64
 }
 #line 64
-# 100 "BlinkC.nc"
+# 98 "BlinkC.nc"
 static inline void BlinkC__GLCD__initDone(void )
 {
 
@@ -5960,7 +6215,7 @@ static inline void BlinkC__GLCD__initDone(void )
   BlinkC__GLCD__startWriteRectangle(0, 0, 128, 4);
 
 
-  BlinkC__Timer0__startPeriodic(50);
+  BlinkC__Timer0__startPeriodic(500);
 }
 
 # 68 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
@@ -5970,7 +6225,7 @@ inline static void GLCDP__GLCD__initDone(void ){
 #line 68
 }
 #line 68
-# 280 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 288 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__initDone(void )
 {
   GLCDP__GLCD__initDone();
@@ -5983,9 +6238,8 @@ inline static void LCD128x64P__LCD128x64__initDone(void ){
 #line 38
 }
 #line 38
-# 264 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 265 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__clearScreen(void )
-
 {
 
   for (LCD128x64P__pageAddr = 0; LCD128x64P__pageAddr < 64 >> 3; LCD128x64P__pageAddr++) 
@@ -6003,9 +6257,10 @@ static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern)
 {
 
   * (volatile uint8_t *)(0x02 + 0x20) |= 0xFC;
-  * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
+  * (volatile uint8_t *)(0x1A + 0x20) |= 0xFF;
   * (volatile uint8_t *)(0x03 + 0x20) &= ~0xFC;
   * (volatile uint8_t *)(0x1B + 0x20) = 0x00;
+
 
 
   * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 7;
@@ -6029,7 +6284,7 @@ inline static void GLCDP__LCD128x64__initLCD(uint8_t pattern){
 #line 4
 }
 #line 4
-# 156 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 155 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__initLCD(uint8_t pattern)
 {
   GLCDP__LCD128x64__initLCD(pattern);
@@ -6042,10 +6297,10 @@ inline static void BlinkC__GLCD__initLCD(uint8_t pattern){
 #line 34
 }
 #line 34
-# 94 "BlinkC.nc"
+# 92 "BlinkC.nc"
 static inline void BlinkC__Boot__booted(void )
 {
-  BlinkC__GLCD__initLCD(0x0);
+  BlinkC__GLCD__initLCD(0x01);
   BlinkC__bigAVR6UART0__receive((uint8_t *)BlinkC__uartBuf, 5);
 }
 
@@ -6324,9 +6579,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/homes/hglanzer/GIT/tinyos/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b34ed3c76d8, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2aad825dc6d8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-    AdcP__ReadNow__default__readDone(arg_0x2b34ed3c76d8, result, val);
+    AdcP__ReadNow__default__readDone(arg_0x2aad825dc6d8, result, val);
 #line 66
 }
 #line 66
@@ -6516,15 +6771,25 @@ inline static void /*Atm128Uart1C.UartP*/Atm128UartP__0__UartStream__receivedByt
 #line 79
 }
 #line 79
-# 165 "BlinkC.nc"
+# 62 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static error_t BlinkC__GLCD__startWriteString(char *data, uint8_t x, uint8_t y){
+#line 62
+  unsigned char result;
+#line 62
+
+#line 62
+  result = GLCDP__GLCD__startWriteString(data, x, y);
+#line 62
+
+#line 62
+  return result;
+#line 62
+}
+#line 62
+# 164 "BlinkC.nc"
 static inline void BlinkC__bigAVR6UART0__receiveDone(uint8_t *stream, uint16_t len, error_t error)
 {
-  BlinkC__GLCD__startWriteString(BlinkC__uartBuf, 0, BlinkC__count2);
-  BlinkC__count2 = BlinkC__count2 + 8;
-  if (BlinkC__count2 == 64) 
-    {
-      BlinkC__count2 = 8;
-    }
+  BlinkC__GLCD__startWriteString("GOTCHA", 0, BlinkC__count2);
 }
 
 # 15 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0.nc"
@@ -6604,6 +6869,21 @@ inline static void HplAtm128UartP__HplUart1__rxDone(uint8_t data){
 #line 49
 }
 #line 49
+# 66 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static error_t BlinkC__GLCD__startClearScreen(uint8_t pattern){
+#line 66
+  unsigned char result;
+#line 66
+
+#line 66
+  result = GLCDP__GLCD__startClearScreen(pattern);
+#line 66
+
+#line 66
+  return result;
+#line 66
+}
+#line 66
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 inline static error_t LCD128x64P__writeBar__postTask(void ){
 #line 67
@@ -6619,7 +6899,7 @@ inline static error_t LCD128x64P__writeBar__postTask(void ){
 #line 67
 }
 #line 67
-# 489 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 490 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
 {
   LCD128x64P__xPos[4] = x;
@@ -6636,7 +6916,7 @@ inline static void GLCDP__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t
 #line 26
 }
 #line 26
-# 176 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 175 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline error_t GLCDP__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
 {
   if ((GLCDP__stateGLCD & BUSY_BAR) == 1) 
@@ -6644,7 +6924,7 @@ static inline error_t GLCDP__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t l
       return FAIL;
     }
   else {
-#line 182
+#line 181
     if (((width == 0 || length == 0) || x + length > 128) || y + width > 64) 
       {
         return FAIL;
@@ -6673,7 +6953,7 @@ inline static error_t BlinkC__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t 
 #line 56
 }
 #line 56
-# 151 "BlinkC.nc"
+# 149 "BlinkC.nc"
 static inline void BlinkC__bigAVR6UART0__sendDone(uint8_t *stream, uint16_t len, error_t error)
 {
   BlinkC__GLCD__startWriteBar(0, 1, BlinkC__count, 2);
@@ -6682,6 +6962,7 @@ static inline void BlinkC__bigAVR6UART0__sendDone(uint8_t *stream, uint16_t len,
       BlinkC__GLCD__startClearScreen(0x00);
       BlinkC__count = 0;
     }
+  BlinkC__bigAVR6UART0__receive((uint8_t *)BlinkC__uartBuf, 5);
 }
 
 # 17 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0.nc"
@@ -6691,9 +6972,82 @@ inline static void bigAVR6UART0P__bigAVR6UART0__sendDone(uint8_t *buf, uint16_t 
 #line 17
 }
 #line 17
-# 43 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
+# 228 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/HplAtm128UartP.nc"
+static inline error_t HplAtm128UartP__Uart1RxControl__stop(void )
+#line 228
+{
+  * (volatile uint8_t *)0x9A &= ~(1 << 4);
+  HplAtm128UartP__McuPowerState__update();
+  return SUCCESS;
+}
+
+# 105 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
+inline static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartRxControl__stop(void ){
+#line 105
+  unsigned char result;
+#line 105
+
+#line 105
+  result = HplAtm128UartP__Uart1RxControl__stop();
+#line 105
+
+#line 105
+  return result;
+#line 105
+}
+#line 105
+# 216 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/HplAtm128UartP.nc"
+static inline error_t HplAtm128UartP__Uart1TxControl__stop(void )
+#line 216
+{
+  * (volatile uint8_t *)0x9A &= ~(1 << 3);
+  HplAtm128UartP__McuPowerState__update();
+  return SUCCESS;
+}
+
+# 105 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
+inline static error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartTxControl__stop(void ){
+#line 105
+  unsigned char result;
+#line 105
+
+#line 105
+  result = HplAtm128UartP__Uart1TxControl__stop();
+#line 105
+
+#line 105
+  return result;
+#line 105
+}
+#line 105
+# 95 "/homes/hglanzer/GIT/tinyos/tos/chips/atm128/Atm128UartP.nc"
+static inline error_t /*Atm128Uart1C.UartP*/Atm128UartP__0__StdControl__stop(void )
+#line 95
+{
+  /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartTxControl__stop();
+  /*Atm128Uart1C.UartP*/Atm128UartP__0__HplUartRxControl__stop();
+  return SUCCESS;
+}
+
+# 105 "/homes/hglanzer/GIT/tinyos/tos/interfaces/StdControl.nc"
+inline static error_t bigAVR6UART0P__StdControl__stop(void ){
+#line 105
+  unsigned char result;
+#line 105
+
+#line 105
+  result = /*Atm128Uart1C.UartP*/Atm128UartP__0__StdControl__stop();
+#line 105
+
+#line 105
+  return result;
+#line 105
+}
+#line 105
+# 42 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/uart/bigAVR6UART0P.nc"
 static inline void bigAVR6UART0P__UartStream__sendDone(uint8_t *buf, uint16_t len, error_t error)
 {
+  bigAVR6UART0P__StdControl__stop();
   bigAVR6UART0P__bigAVR6UART0__sendDone(buf, len, error);
 }
 
@@ -6931,9 +7285,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b34ecf85108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2aad821a0108){
 #line 75
-  switch (arg_0x2b34ecf85108) {
+  switch (arg_0x2aad821a0108) {
 #line 75
     case BlinkC__testTask:
 #line 75
@@ -7015,7 +7369,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b34ecf85108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b34ecf85108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2aad821a0108);
 #line 75
       break;
 #line 75
@@ -7259,12 +7613,12 @@ static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmS
     }
 }
 
-# 88 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-static void LCD128x64P__setAddress(uint8_t x, uint8_t y)
+# 85 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd)
 {
   uint8_t tmp;
 
-  if (x < 64) 
+  if (xAdd < 64) 
     {
       * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 3;
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 2);
@@ -7275,37 +7629,33 @@ static void LCD128x64P__setAddress(uint8_t x, uint8_t y)
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 3);
     }
 
-  tmp = x & 0x3f;
+  tmp = xAdd & 0x3f;
   LCD128x64P__writeGLCD(0, tmp | 0x40);
 
-  tmp = y & 0x3f;
+  tmp = yAdd & 0x3f;
   LCD128x64P__writeGLCD(0, tmp | 0xB8);
 }
 
-#line 57
+#line 58
 static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data)
 {
   LCD128x64P__wait4Controller__postTask();
 
 
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
   if (mode == 0) 
     {
 
       * (volatile uint8_t *)(0x03 + 0x20) &= ~((1 << 5) | (1 << 4));
-      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
-
       * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
-      * (volatile uint8_t *)(0x1B + 0x20) = data;
     }
   else 
-
     {
 
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 5);
-      * (volatile uint8_t *)(0x03 + 0x20) |= (1 << 6) | (1 << 4);
-      * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
-      * (volatile uint8_t *)(0x1B + 0x20) = data;
+      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 4;
     }
+  * (volatile uint8_t *)(0x1B + 0x20) = data;
 
    __asm volatile ("nop"); __asm volatile ("nop");
    __asm volatile ("nop"); __asm volatile ("nop");
@@ -7314,7 +7664,7 @@ static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data)
   * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
 }
 
-#line 143
+#line 140
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y)
 {
   unsigned char temp;
@@ -7325,7 +7675,7 @@ static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y)
   LCD128x64P__writeGLCD(1, temp | (1 << y % 8));
 }
 
-# 194 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 193 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 {
   if ((GLCDP__stateGLCD & BUSY_RECT) == 1) 
@@ -7333,7 +7683,7 @@ static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a,
       return FAIL;
     }
   else {
-#line 200
+#line 199
     if (x + a > 128 || y + b > 64) 
       {
         return FAIL;
@@ -7443,7 +7793,7 @@ static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(u
   return SUCCESS;
 }
 
-# 439 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 440 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y)
 {
   LCD128x64P__xPos[2] = x;
@@ -7453,46 +7803,94 @@ static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8
   LCD128x64P__writeString__postTask();
 }
 
-# 37 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 41 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static void TouchScreenP__TouchScreen__getXY(void )
 {
   TouchScreenP__state = DUMMY_FIRST_X;
-  * (volatile uint8_t *)0x64 |= 1 << 4;
-  * (volatile uint8_t *)0x64 |= 1 << 3;
-  * (volatile uint8_t *)0x61 &= ~(1 << 1);
-  * (volatile uint8_t *)0x61 &= ~(1 << 0);
+  TouchScreenP__driveA__makeOutput();
+  TouchScreenP__driveB__makeOutput();
+  TouchScreenP__adcX__makeInput();
+  TouchScreenP__adcY__makeInput();
 
-  * (volatile uint8_t *)0x62 &= ~(1 << 0);
-  * (volatile uint8_t *)0x62 &= ~(1 << 1);
-
-  * (volatile uint8_t *)0x65 |= 1 << 3;
-  * (volatile uint8_t *)0x65 &= ~(1 << 4);
+  TouchScreenP__driveA__set();
+  TouchScreenP__driveB__clr();
+  TouchScreenP__adcX__clr();
+  TouchScreenP__adcY__clr();
 
   { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
     {
       TouchScreenP__channel = ATM128_ADC_SNGL_ADC0;
     }
-#line 54
+#line 57
     __nesc_atomic_end(__nesc_atomic); }
   TouchScreenP__Read__read();
 }
 
-# 227 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 36 "BlinkC.nc"
+static void BlinkC__GLCD__xyReady(uint16_t x, uint16_t y)
+{
+  BlinkC__tmp = x % 10;
+  BlinkC__buf[3] = BlinkC__tmp + 0x30;
+  x = (x - BlinkC__tmp) / 10;
+
+  BlinkC__tmp = x % 10;
+  BlinkC__buf[2] = BlinkC__tmp + 0x30;
+  x = (x - BlinkC__tmp) / 10;
+
+  BlinkC__tmp = x % 10;
+  BlinkC__buf[1] = BlinkC__tmp + 0x30;
+  x = (x - BlinkC__tmp) / 10;
+
+  BlinkC__tmp = x % 10;
+  BlinkC__buf[0] = BlinkC__tmp + 0x30;
+  BlinkC__buf[4] = '/';
+
+  BlinkC__tmp = y % 10;
+  BlinkC__buf[8] = BlinkC__tmp + 0x30;
+  y = (y - BlinkC__tmp) / 10;
+
+  BlinkC__tmp = y % 10;
+  BlinkC__buf[7] = BlinkC__tmp + 0x30;
+  y = (y - BlinkC__tmp) / 10;
+
+  BlinkC__tmp = y % 10;
+  BlinkC__buf[6] = BlinkC__tmp + 0x30;
+  y = (y - BlinkC__tmp) / 10;
+
+  BlinkC__tmp = y % 10;
+  BlinkC__buf[5] = BlinkC__tmp + 0x30;
+  BlinkC__buf[9] = '\0';
+
+  BlinkC__GLCD__startWriteString(BlinkC__buf, 45, 40);
+  BlinkC__x_lokal = x;
+  BlinkC__GLCD__startClearScreen(0x00);
+#line 72
+  ;
+}
+
+# 231 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y)
 {
   if ((GLCDP__stateGLCD & BUSY_STRING) == 1) 
     {
       return FAIL;
     }
-  else 
-    {
-      GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_STRING;
-      GLCDP__LCD128x64__startWriteString(data, x, y);
-      return SUCCESS;
+  else {
+#line 237
+    if (x > 128 || y > 7) 
+      {
+        return FAIL;
+      }
+    else 
+      {
+        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_STRING;
+        GLCDP__LCD128x64__startWriteString(data, x, y);
+        return SUCCESS;
+      }
     }
 }
 
-#line 259
+#line 267
 static error_t GLCDP__GLCD__startClearScreen(uint8_t pattern)
 {
   if ((GLCDP__stateGLCD & BUSY_CLEAR) == 1) 

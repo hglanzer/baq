@@ -4,6 +4,9 @@
 #ifndef bigAVR6IP_H
 	#define bigAVR6IP_H
 
+#define ARPFRAME	0
+#define IPFRAME		1
+
 #define MY_IP0	192
 #define MY_IP1	168
 #define MY_IP2	1
@@ -18,6 +21,11 @@
 #define MY_GATEWAY1	168
 #define MY_GATEWAY2	1
 #define MY_GATEWAY3	1
+
+#define CACHESIZE	5
+
+#define ARPFRAME	0
+#define DATAFRAME	1
 
 /*
 	structure of ip-packet
@@ -45,6 +53,10 @@ typedef struct
 	uint8_t dstIP[4];
 	uint16_t *data;			// pointer to udp-packet
 }ipStruct;
+
+/*
+	structure of arp - REQUEST
+*/
 
 typedef struct
 {
