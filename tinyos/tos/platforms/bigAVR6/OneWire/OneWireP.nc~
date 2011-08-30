@@ -1,0 +1,41 @@
+module OneWireP{
+
+  uses interface bigAVR6UART0;
+  uses interface Timer<TMilli> as Timer0;
+  uses interface GeneralIO as Bus;
+  uses interface BusyWait<TMicro,uint16_t> as BusyWait;
+
+  provides interface OneWire;
+
+}
+
+implementation{
+
+  command error_t OneWire.reset(void){
+    
+    return SUCCESS;
+
+  }
+
+  event void Timer0.fired(){
+    call Bus.set();
+    call BusyWait.wait( 5 );
+    call Bus.clr();
+  }
+
+  event void  bigAVR6UART0.receivedByte( uint8_t byte ){
+
+  }
+
+  event void bigAVR6UART0.receiveDone( uint8_t* buf, uint16_t len, error_t error ){
+
+  }
+
+  event void bigAVR6UART0.sendDone( uint8_t* buf, uint16_t len, error_t error ){
+
+  }
+
+
+}
+
+

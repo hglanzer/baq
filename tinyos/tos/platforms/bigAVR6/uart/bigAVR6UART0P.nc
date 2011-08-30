@@ -47,7 +47,6 @@ implementation
 
 	async event void UartStream.receivedByte( uint8_t byte )
 	{
-
 	}
 
 	async event void UartStream.receiveDone( uint8_t* buf, uint16_t len, error_t error )

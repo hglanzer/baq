@@ -1,0 +1,232 @@
+module MP3TestC{
+  uses interface Boot;
+  //uses interface SoftSPI;
+  uses interface MP3;
+  uses interface GeneralIO as Button0;
+  uses interface GeneralIO as Button1;
+  uses interface Timer<TMilli> as Timer0;
+  uses interface Timer<TMilli> as Timer1;
+  uses interface GLCD;
+  uses interface MMC;
+}
+implementation{
+  enum { BLOCK_SIZE = 32 };
+  enum { X_1 = 8, Y_1 = 32, A_1 = 48, B_1 = 24, X_2 = ( 128 - (8+48) ) };
+
+  /*uint8_t x1 = 8;
+  uint8_t y1 = 32;
+  uint8_t a1 = 48;
+  uint8_t b1 = 24;
+
+  uint8_t x2;
+  x2 = ( 128-(8+48) );*/
+
+  uint32_t blockAddr = 0;
+  uint8_t *dataBuffer;
+  bool play = FALSE;
+  bool dataReady = FALSE;
+  enum{ CALIBRATION, LINE0, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, LINE7, NONE };
+  uint8_t paintState = CALIBRATION;
+
+  char itosBuffer[] = {'0', '0', '0', '0', '0', '\0'};
+  char *itos( uint16_t i );
+
+  void paintLCD( void );
+
+  event void Boot.booted(){
+    call MMC.init();
+    call Button0.makeInput();
+    call GLCD.initLCD( 0x00 );
+    call Timer0.startPeriodic( 500 );
+    call Timer1.startPeriodic( 1000 );
+    if ( !call MP3.init() ){
+      call GLCD.startWriteString( "MP3 Init Error", 0, 1 );
+    }
+  }
+
+  task void readMMCData(){
+    if ( play ){
+      call MMC.readBlock( blockAddr );
+    }
+  }
+
+  task void writeMP3Data(){
+    if ( call MP3.isReady() ){
+      call MP3.writeData( dataBuffer, BLOCK_SIZE );
+      post readMMCData();
+    } else {
+      post writeMP3Data();
+    }
+  }
+
+  event void Timer0.fired(){
+    if ( paintState == NONE ){
+      call GLCD.getXY();
+    }
+    if ( call Button0.get() ){
+      call GLCD.startWriteString( "Playing...", 0, 3 );
+      play = TRUE;
+      call MP3.setVolume( 255 );
+      post readMMCData();
+    }
+    
+    if ( call Button1.get() ){
+      call GLCD.startWriteString( "Stopped.  ", 0, 3 );
+      play = FALSE;
+    }
+  }
+
+  event void Timer1.fired(){
+    /* read playtime */
+    if ( play ){
+      call GLCD.startWriteString( itos(call MP3.readRegister(0x04)), 36, 1 );
+    }
+    /* read volume */
+    //call GLCD.startWriteString( itos(call MP3.readRegister(0x11)), 0, 7 );
+  }
+
+  event void MMC.initDone(){
+  }
+
+  event void MMC.blockReady( uint8_t *data ){
+    dataBuffer = data;
+    dataReady = TRUE;
+    blockAddr++;
+    post writeMP3Data();
+  }
+
+  event void MMC.error( uint8_t *errStr ){
+    dataReady = FALSE;
+    call GLCD.startWriteString( (char *) errStr, 5 , 1 );
+  }
+
+  event void GLCD.initDone() {
+    call GLCD.calibrateTouchScreen();
+  }
+
+  event void GLCD.barWritten() {
+    paintLCD();
+  }
+  event void GLCD.screenCleared() {
+  }
+  event void GLCD.lineWritten() {
+    paintLCD();
+  }
+  event void GLCD.circleWritten() {
+    paintLCD();
+  }
+  event void GLCD.rectangleWritten() {
+    paintLCD();
+  }
+  event void GLCD.stringWritten() {
+    paintLCD();
+  }
+  event void GLCD.tsPressed() {
+    call GLCD.getXY();//startWriteString( "Pressed,,,", 0, 7 );
+    /*
+    if (play){
+      play = FALSE;
+    } else {
+      call GLCD.startWriteString( "Playing...", 0, 3 );
+      play = TRUE;
+      call MP3.setVolume( 255 );
+      post readMMCData();
+    }
+    */
+  }
+  event void GLCD.calibrated() {
+    paintState = LINE0;
+  }
+  
+  event void GLCD.xyReady( uint16_t x, uint16_t y ) {
+    //call GLCD.setPixel(x,y);
+    call GLCD.startWriteString( itos(x), 0, 4 );
+    //if ( (x > X_1) && (x < (X_1+A_1)) && (y > Y_1)  && (y<(Y_1+B_1)) ){
+    /*if ( (x > X_1) && (x < (X_1+A_1)) ){
+      call GLCD.startWriteString( "Playing...", 0, 2 );
+      play = TRUE;
+      call MP3.setVolume( 255 );
+      post readMMCData();
+      }*/
+    //call GLCD.startWriteString( "xyReady,,,", 0, 7 );
+    if (play){
+      play = FALSE;
+      call GLCD.startWriteString( "Stopped...", 0, 2 );
+    } else if ( paintState == NONE ) 
+      {
+	call GLCD.startWriteString( "Playing...", 0, 2 );
+	play = TRUE;
+	call MP3.setVolume( 255 );
+	post readMMCData();
+	}
+  }
+
+  void paintLCD( void ){
+    switch (paintState){
+    case LINE0:
+      call GLCD.startWriteString( "B5: PLAY - B6: STOP", 0 , 0 );
+      paintState = LINE1;
+      break;
+    case LINE1:
+      call GLCD.startWriteString( "Time: -----", 0 , 1 );
+      call GLCD.isPressed(TRUE);
+      paintState = LINE2;
+      break;
+    case LINE2:
+      call GLCD.startWriteRectangle( X_1, Y_1, A_1, B_1 );
+      paintState = LINE3;
+      break;
+    case LINE3:
+      call GLCD.startWriteRectangle( X_2, Y_1, A_1, B_1 );
+      paintState = LINE4;
+      break;
+    case LINE4:
+      call GLCD.startWriteString( "PLAY", X_1+12 , 5 );
+      paintState = LINE5;
+      break;
+    case LINE5:
+      call GLCD.startWriteString( "STOP", X_2+12 , 5 );
+      paintState = NONE;
+      break;
+    case LINE6:
+      paintState = NONE;
+      break;
+    case LINE7:
+      paintState = NONE;
+      break;
+    case CALIBRATION:
+      /* do nothing */
+      break;
+    default:
+      paintState = NONE;
+      /* do nothing*/
+      break;
+    }
+  }
+
+ char *itos(uint16_t i){
+	 itosBuffer[0] = '0';
+	 itosBuffer[1] = '0';
+	 itosBuffer[2] = '0';
+	 itosBuffer[3] = '0';
+	 itosBuffer[4] = '0';
+	 while (i >= 10000){
+		 itosBuffer[0]++;
+		 i -= 10000;
+	 }
+	 while (i >= 1000){
+		 itosBuffer[1]++;
+		 i -= 1000;	
+	 }
+	 while (i >= 100){
+		 itosBuffer[2]++;
+		 i -= 100;	
+	 }
+	 while (i >= 10){
+		 itosBuffer[3]++;
+		 i -= 10;	
+	 }
+	 itosBuffer[4] += i;
+	 return itosBuffer;
+ }
+}

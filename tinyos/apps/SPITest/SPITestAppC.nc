@@ -1,0 +1,25 @@
+/*
+* @author Markus Hartmann e9808811@student.tuwien.ac.at
+*/
+
+configuration SPITestAppC{
+}
+implementation{
+  components MainC;
+  components SPITestC;
+  components HplAtm128GeneralIOC as IO;
+  components new TimerMilliC() as Timer0;
+
+  SPITestC.Boot -> MainC.Boot;
+  SPITestC.Button0 -> IO.PortB5;
+  SPITestC.Button1 -> IO.PortB6;
+  SPITestC.Timer0 -> Timer0;
+
+  components new SoftSPIMasterC() as Resource0;
+  components new SoftSPIMasterC() as Resource1;
+
+  SPITestC.Resource0 -> Resource0;
+  SPITestC.SoftSPI0 -> Resource0;
+  SPITestC.Resource1 -> Resource1;
+  SPITestC.SoftSPI1 -> Resource1;
+}

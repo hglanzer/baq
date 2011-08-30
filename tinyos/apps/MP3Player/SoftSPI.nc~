@@ -1,0 +1,5 @@
+interface SoftSPI{
+
+  command error_t sendByte(uint8_t msg);
+
+}

@@ -1,0 +1,15 @@
+configuration RareResourceC{
+  uses interface Timer<TMilli> as Timer0;
+  provides interface LedBlink;
+  provides interface Resource[uint8_t id];
+}
+implementation{
+  components RareResourceP;
+  components new SimpleFcfsArbiterC("RareResourceC.Resource") as Arbiter;
+  
+  Resource = RareResourceP;
+  LedBlink = RareResourceP;
+  RareResourceP.ResourceArbiter -> Arbiter;
+  RareResourceP.ArbiterInfo  -> Arbiter;
+  RareResourceP.Timer0 -> Timer0;
+}

@@ -7,6 +7,8 @@ interface GLCD
 	*/
         command error_t calibrateTouchScreen();
 
+	command void getCalibration( uint16_t *x_cmin, uint16_t *x_cmax, uint16_t *y_cmin, uint16_t *y_cmax );
+
         command void getXY();
 
 	command void isPressed(bool on);

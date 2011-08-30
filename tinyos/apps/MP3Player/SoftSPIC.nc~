@@ -1,0 +1,19 @@
+configuration SoftSPIC{
+
+  provides interface SoftSPI;
+
+}
+
+implementation{
+
+  components SoftSPIP;
+  components HplAtm128GeneralIOC as IO;
+
+  SoftSPI = SoftSPIP;
+
+  // change port!!!
+  SoftSPIP.sckSPI -> IO.PortA0;
+  SoftSPIP.sckMOSI -> IO.PortA1;
+  SoftSPIP.sckMISO -> IO.PortA2;
+
+}

@@ -1,0 +1,12 @@
+configuration MP3TestAppC{
+}
+
+implementation{
+
+  components MainC, SoftSPIC;
+  //components bigAVR6UART0C;
+  components MP3TestAppC;
+
+  SoftSPIP -> MainC.Boot;
+
+}

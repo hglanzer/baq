@@ -1,0 +1,16 @@
+module SharedResourceImplP{
+  provides interface ResourceOperations as SharedResourceOperations[uint8_t id];
+  uses interface ResourceOperations;
+  uses interface ArbiterInfo;
+}
+implementation{
+  uint8_t current_id;
+
+  command error_t SharedResourceOperations.operation[uint8_t id]( uint8_t value ){
+    if ( call ArbiterInfo.userId() == id && call ResourceOperations.operation( value ) == SUCCESS ){
+      current_id = id;
+      return SUCCESS;
+    }
+    return FAIL;
+  }
+}

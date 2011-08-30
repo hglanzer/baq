@@ -1,0 +1,3 @@
+interface LedBlink{
+  command void blink( uint8_t value );
+}

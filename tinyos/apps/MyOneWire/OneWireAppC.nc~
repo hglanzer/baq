@@ -1,0 +1,18 @@
+configuration OneWireAppC{
+
+}
+
+implementation{
+
+  components MainC, bigAVR6UART0C, OneWireC;
+  components new TimerMilliC() as Timer0;
+
+  components HplAtm128GeneralIOC as IO;
+
+
+  OneWireC.Boot -> MainC.Boot;
+  OneWireC.bigAVR6UART0 -> bigAVR6UART0C;
+  OneWireC.Timer0 -> Timer0;
+  OneWireC.Bus -> IO.PortG0;
+
+}

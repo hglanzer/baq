@@ -1,0 +1,21 @@
+configuration OneWireC{
+  
+  provides interface OneWire;
+
+}
+
+implementation{
+
+  components bigAVR6UART0C, OneWireP;
+  components new TimerMilliC() as Timer0;
+  components BusyWaitMicroC as BusyWait;
+  components HplAtm128GeneralIOC as IO;
+
+  OneWire = OneWireP;
+  
+  OneWireP.bigAVR6UART0 -> bigAVR6UART0C;
+  OneWireP.Timer0 -> Timer0;
+  OneWireP.Bus -> IO.PortG0;
+  OneWireP.BusyWait -> BusyWait;
+  
+}

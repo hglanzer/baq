@@ -1,0 +1,15 @@
+configuration OWTestAppC{
+}
+
+implementation{
+
+  components MainC, OWTestC, OneWireC;
+  components bigAVR6UART0C;
+  components new TimerMilliC() as Timer0;
+
+  OWTestC.Boot -> MainC;
+  OWTestC.OneWire -> OneWireC;
+  OWTestC.Timer0 -> Timer0;
+  OWTestC.bigAVR6UART0 -> bigAVR6UART0C;
+
+}
