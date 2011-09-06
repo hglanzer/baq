@@ -1,0 +1,25 @@
+%%
+%% Abstract
+%%
+%% This file should be edited by user
+%%
+
+\renewcommand{\englabstractname}{}
+\begin{abstract}
+\begin{center}
+\parbox{.95\textwidth}
+{ \setlength{\parindent}{3ex}
+\setlength{\parskip}{0.3\baselineskip}
+
+\noindent 
+
+Subject of this work is to give an introduction to the TinyOS Embedded Operating System, to explain the internal structure of this OS and to present its main components. Additionally, tinyOS is compared to another embedded OS, MicroC/OS-II. Because tinyOS will be used in future lectures at the TU Wien, there is also a chapter about installing tinyOS from scratch. Also, there is a chapter about new tinyOS modules for the bigAVR6 - developementplatform that have been written by me in line with my project thesis. 
+
+
+ }
+\end{center}
+\end{abstract}
+
+%%
+%% = eof =====================================================================
+%%

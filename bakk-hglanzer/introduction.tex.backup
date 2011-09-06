@@ -1,0 +1,44 @@
+%%
+%% Introduction
+%%
+%% This file should be edited by user
+%%
+
+\chapter{Introduction} \label{chapter:introduction}
+
+This work is about explaining tinyOS. tinyOS is an opensource operating system, designed for use with wireless embedded sensor networks. There are 2 major stable branches, v.1.x and v2.x, which are not compatible to each other. tinyOS 2.x introduced some major improvements, for example the task scheduler was completely redesigned. In it's new version, the whole project us now distributed under the new BSD license too.
+
+Because of tinyOS's componentbased architecture, a highlevel programmer does not have to care about microcontroller specifics, as long as the necessary modules are already exisiting. So, implementing new applications or changing exisiting ones is an easy and fast task. There are already existing implementions for a range of popular hardware notes, as for example the mica, iris and teleosa motes.
+
+For developing applications in tinyOS, NesC is used. NesC stands for Network Embedded Systems C, which is very similar to C/C++. Components in NesC are related to objects in C++.
+
+Embedded systems are designed for one or a few specific tasks, perhaps in combination with realtime constraints.
+Because embedded systems are often battery powered, on of the main requirements is low power consumption, so that high operation times can be achieved - flexibility is not that important.
+
+This work has to be considered as part of another work, where tinyOS was ported to a new platform, the bigAVR6 development platform. So, a big part of this work handles about the bigAVR6 platform an explains some new written softwaremodules for highlevel-use of this platform's peripherals. Also, it is explained how to get a running buildenvironment for writing applications or extending the modules for an exisiting platform from scratch.
+
+\section{Motivation and Objectives}
+
+State the goals of your research project here. Furthermore describe
+the \emph{research objectives} and the \emph{research methodology}
+you are applying to solve the problem.
+
+\section{Structure of the Thesis} \label{sec:introduction:structure}
+
+The thesis is structured as follows:
+Chapter~\ref{chapter:concepts} gives an introduction into the
+basic terms and concepts used throughout the work.
+
+Chapter~\ref{chapter:tinyos} gives a more detailed overview over tinyOS and explains its internals. It also compares tinyOS to another embedded operation system, MicroC/OS-II.
+
+Chapter~\ref{chapter:bigAVR6} introduces the developement platfor,m for whi.
+
+
+Finally, the thesis ends with a conclusion in
+Chapter~\ref{chapter:conclusion} summarizing the key results of the
+presented work and giving an outlook on what can be expected from
+future research in this area.
+
+%%
+%% = eof =====================================================================
+%%
