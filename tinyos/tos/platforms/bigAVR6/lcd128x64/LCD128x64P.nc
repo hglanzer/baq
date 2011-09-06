@@ -458,7 +458,6 @@ implementation
 		yPos[RECTANGLE] = y;
 		aRect = a;
 		bRect = b;
-
 		post writeRectangle();
 	}	
 

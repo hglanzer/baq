@@ -58,8 +58,6 @@ generic module Atm128UartP() @safe() {
 }
 
 implementation{
-
-static volatile uint8_t count = 0;
   
   norace uint16_t m_tx_len, m_rx_len;
   norace uint8_t *COUNT_NOK(m_tx_len) m_tx_buf, * COUNT_NOK(m_rx_len) m_rx_buf;

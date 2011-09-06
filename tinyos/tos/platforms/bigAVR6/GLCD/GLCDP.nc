@@ -30,7 +30,6 @@ implementation
 		
 		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
 		{
-	        
 			// offset entfernen
 			x_raw = x_raw - X_MIN;
 			y_raw = y_raw - Y_MIN;
@@ -40,7 +39,7 @@ implementation
 			y_tmp = ((float)y_raw / (float)Y_DISTANCE);
 			x_tmp = x_tmp * 128;
 			y_tmp = y_tmp * 64;
-			signal GLCD.xyReady(x_tmp, y_tmp);
+			signal GLCD.xyReady(x_tmp, 63-y_tmp);
 		}
 		else
 		{
@@ -178,7 +177,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if((width == 0) || (length==0) || ((x+length) > 128) || ((y+width) > 64))
+		else if((width == 0) || (length==0) || ((x+length) >= 128) || ((y+width) >= 64))
 		{
 			return FAIL;
 		}
@@ -196,7 +195,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if(((x+a) > 128) || ((y+b) > 64))
+		else if(((x+a) >= 128) || ((y+b) >= 64))
 		{
 			return FAIL;
 		}
@@ -234,7 +233,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if((x > 128) || (y > 7))
+		else if((x >= 128) || (y >= 7))
 		{
 			return FAIL;
 		}
@@ -252,7 +251,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if(( x>128 )||( y>64 )||( xEnd>128 )||( yEnd>64 ))
+		else if(( x >= 128 )||( y >= 64 )||( xEnd >= 128 )||( yEnd >= 64 ))
 		{
 			return FAIL;
 		}

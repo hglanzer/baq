@@ -185,7 +185,7 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memset(void *arg_0x2b33a1e0c7f0, int arg_0x2b33a1e0ca58, size_t arg_0x2b33a1e0cd00);
+extern void *memset(void *arg_0x2b9089bf77f0, int arg_0x2b9089bf7a58, size_t arg_0x2b9089bf7d00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b33a1e2d968, const void *arg_0x2b33a1e2dc40);
+typedef int (*__compar_fn_t)(const void *arg_0x2b9089c18968, const void *arg_0x2b9089c18c40);
 # 23 "/homes/hglanzer/GIT/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -964,11 +964,11 @@ static error_t MeasureClockC__Init__init(void );
 # 67 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b33a1f35108);
+uint8_t arg_0x2b9089d20108);
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b33a1f35108);
+uint8_t arg_0x2b9089d20108);
 # 57 "/homes/hglanzer/GIT/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1091,11 +1091,11 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b33a23a7da0);
+uint8_t arg_0x2b908a194da0);
 # 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b33a23a7da0, 
+uint8_t arg_0x2b908a194da0, 
 # 64 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 # 82 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Counter.nc"
@@ -1148,7 +1148,7 @@ int main(void )   ;
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b33a1f35108);
+uint8_t arg_0x2b9089d20108);
 # 76 "/homes/hglanzer/GIT/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/hglanzer/GIT/tinyos/tos/system/SchedulerBasicP.nc"
@@ -1295,40 +1295,40 @@ static error_t LCD128x64P__writeLine__postTask(void );
 static error_t LCD128x64P__wait4Controller__postTask(void );
 #line 67
 static error_t LCD128x64P__clearScreenNB__postTask(void );
-# 36 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 37 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 enum LCD128x64P____nesc_unnamed4302 {
-#line 36
+#line 37
   LCD128x64P__wait4Controller = 0U
 };
-#line 36
+#line 37
 typedef int LCD128x64P____nesc_sillytask_wait4Controller[LCD128x64P__wait4Controller];
-#line 173
+#line 170
 enum LCD128x64P____nesc_unnamed4303 {
-#line 173
+#line 170
   LCD128x64P__writeRectangle = 1U
 };
-#line 173
+#line 170
 typedef int LCD128x64P____nesc_sillytask_writeRectangle[LCD128x64P__writeRectangle];
-#line 189
+#line 186
 enum LCD128x64P____nesc_unnamed4304 {
-#line 189
+#line 186
   LCD128x64P__writeCircle = 2U
 };
-#line 189
+#line 186
 typedef int LCD128x64P____nesc_sillytask_writeCircle[LCD128x64P__writeCircle];
-#line 222
+#line 219
 enum LCD128x64P____nesc_unnamed4305 {
-#line 222
+#line 219
   LCD128x64P__writeString = 3U
 };
-#line 222
+#line 219
 typedef int LCD128x64P____nesc_sillytask_writeString[LCD128x64P__writeString];
-#line 250
+#line 247
 enum LCD128x64P____nesc_unnamed4306 {
-#line 250
+#line 247
   LCD128x64P__clearScreenNB = 4U
 };
-#line 250
+#line 247
 typedef int LCD128x64P____nesc_sillytask_clearScreenNB[LCD128x64P__clearScreenNB];
 #line 278
 enum LCD128x64P____nesc_unnamed4307 {
@@ -1344,48 +1344,48 @@ enum LCD128x64P____nesc_unnamed4308 {
 };
 #line 356
 typedef int LCD128x64P____nesc_sillytask_writeBar[LCD128x64P__writeBar];
-#line 29
+#line 30
 uint8_t LCD128x64P__modPattern = 0x00;
 uint8_t LCD128x64P__pageAddr;
-#line 30
+#line 31
 uint8_t LCD128x64P__xAddr = 0;
 uint8_t LCD128x64P__rad;
-#line 31
+#line 32
 uint8_t LCD128x64P__aRect;
-#line 31
+#line 32
 uint8_t LCD128x64P__bRect;
-#line 31
+#line 32
 uint8_t LCD128x64P__xLineEnd;
-#line 31
+#line 32
 uint8_t LCD128x64P__yLineEnd;
-#line 31
+#line 32
 uint8_t LCD128x64P__aBar;
-#line 31
+#line 32
 uint8_t LCD128x64P__bBar;
 uint8_t LCD128x64P__xPos[5];
-#line 32
+#line 33
 uint8_t LCD128x64P__yPos[5];
 char *LCD128x64P__dataPtr;
 
 
 static inline void LCD128x64P__wait4Controller__runTask(void );
-#line 57
+#line 58
 static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data);
-#line 88
-static void LCD128x64P__setAddress(uint8_t x, uint8_t y);
-#line 110
+#line 85
+static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd);
+#line 107
 static inline uint8_t LCD128x64P__readByte(uint8_t mode);
-#line 143
+#line 140
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y);
-#line 173
+#line 170
 static inline void LCD128x64P__writeRectangle__runTask(void );
-#line 189
+#line 186
 static inline void LCD128x64P__writeCircle__runTask(void );
-#line 222
+#line 219
 static inline void LCD128x64P__writeString__runTask(void );
-#line 250
+#line 247
 static inline void LCD128x64P__clearScreenNB__runTask(void );
-#line 264
+#line 265
 static inline void LCD128x64P__clearScreen(void );
 #line 278
 static inline void LCD128x64P__writeLine__runTask(void );
@@ -1590,7 +1590,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b33a23a7da0);
+uint8_t arg_0x2b908a194da0);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4311 {
 #line 71
@@ -2155,9 +2155,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/hglanzer/GIT/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b33a23a7da0){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b908a194da0){
 #line 83
-  switch (arg_0x2b33a23a7da0) {
+  switch (arg_0x2b908a194da0) {
 #line 83
     case 0U:
 #line 83
@@ -2167,7 +2167,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b33a23a7da0);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b908a194da0);
 #line 83
       break;
 #line 83
@@ -2454,11 +2454,11 @@ inline static error_t LCD128x64P__wait4Controller__postTask(void ){
 #line 67
 }
 #line 67
-# 110 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 107 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline uint8_t LCD128x64P__readByte(uint8_t mode)
 {
   uint8_t tmp = 0;
-#line 112
+#line 109
   uint8_t c = 0;
 
   for (c = 0; c < 2; c++) 
@@ -2648,7 +2648,7 @@ inline static void LCD128x64P__LCD128x64__screenCleared(void ){
 #line 50
 }
 #line 50
-# 250 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 247 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__clearScreenNB__runTask(void )
 {
 
@@ -2675,30 +2675,30 @@ inline static void LCD128x64P__LCD128x64__stringWritten(void ){
 #line 42
 }
 #line 42
-# 222 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 219 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeString__runTask(void )
 {
   uint8_t index = 0;
-#line 224
+#line 221
   uint8_t offset = 0;
 
-  while (*LCD128x64P__dataPtr) 
+  while (*LCD128x64P__dataPtr != '\0') 
     {
       for (index = 0; index < 5; index++) 
         {
 
-          LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2] / 8);
+          LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2]);
           LCD128x64P__writeGLCD(1, (uint8_t )__extension__ ({
-#line 232
+#line 229
             uint16_t __addr16 = (uint16_t )(uint16_t )&Font5x7[(*LCD128x64P__dataPtr - 0x20) * 5 + index];
-#line 232
+#line 229
             uint8_t __result;
 
-#line 232
+#line 229
              __asm ("lpm""\n\t""mov %0, r0""\n\t" : "=r"(__result) : "z"(__addr16) : "r0");__result;
           }
           ));
-#line 233
+#line 230
           offset++;
         }
       LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2]);
@@ -2721,15 +2721,15 @@ inline static void LCD128x64P__LCD128x64__circleWritten(void ){
 #line 40
 }
 #line 40
-# 189 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 186 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeCircle__runTask(void )
 {
   int tswitch;
-#line 191
+#line 188
   int y;
-#line 191
+#line 188
   int x = 0;
-#line 191
+#line 188
   int yDraw = 0;
   unsigned char d;
 
@@ -2773,12 +2773,12 @@ inline static void LCD128x64P__LCD128x64__rectangleWritten(void ){
 #line 44
 }
 #line 44
-# 173 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 170 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeRectangle__runTask(void )
 {
   unsigned char j;
 
-#line 176
+#line 173
   for (j = 0; j < LCD128x64P__bRect; j++) 
     {
       LCD128x64P__LCD128x64__setPixel(LCD128x64P__xPos[0], LCD128x64P__yPos[0] + j);
@@ -2792,7 +2792,7 @@ static inline void LCD128x64P__writeRectangle__runTask(void )
   LCD128x64P__LCD128x64__rectangleWritten();
 }
 
-#line 36
+#line 37
 static inline void LCD128x64P__wait4Controller__runTask(void )
 {
   * (volatile uint8_t *)(0x1A + 0x20) = 0x00;
@@ -2949,9 +2949,8 @@ inline static void LCD128x64P__LCD128x64__initDone(void ){
 #line 38
 }
 #line 38
-# 264 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 265 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__clearScreen(void )
-
 {
 
   for (LCD128x64P__pageAddr = 0; LCD128x64P__pageAddr < 64 >> 3; LCD128x64P__pageAddr++) 
@@ -2969,9 +2968,10 @@ static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern)
 {
 
   * (volatile uint8_t *)(0x02 + 0x20) |= 0xFC;
-  * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
+  * (volatile uint8_t *)(0x1A + 0x20) |= 0xFF;
   * (volatile uint8_t *)(0x03 + 0x20) &= ~0xFC;
   * (volatile uint8_t *)(0x1B + 0x20) = 0x00;
+
 
 
   * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 7;
@@ -3347,9 +3347,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/hglanzer/GIT/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b33a1f35108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b9089d20108){
 #line 75
-  switch (arg_0x2b33a1f35108) {
+  switch (arg_0x2b9089d20108) {
 #line 75
     case LCD128x64P__wait4Controller:
 #line 75
@@ -3407,7 +3407,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b33a1f35108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b33a1f35108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b9089d20108);
 #line 75
       break;
 #line 75
@@ -3593,12 +3593,12 @@ static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmS
     }
 }
 
-# 88 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-static void LCD128x64P__setAddress(uint8_t x, uint8_t y)
+# 85 "/homes/hglanzer/GIT/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd)
 {
   uint8_t tmp;
 
-  if (x < 64) 
+  if (xAdd < 64) 
     {
       * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 3;
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 2);
@@ -3609,37 +3609,33 @@ static void LCD128x64P__setAddress(uint8_t x, uint8_t y)
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 3);
     }
 
-  tmp = x & 0x3f;
+  tmp = xAdd & 0x3f;
   LCD128x64P__writeGLCD(0, tmp | 0x40);
 
-  tmp = y & 0x3f;
+  tmp = yAdd & 0x3f;
   LCD128x64P__writeGLCD(0, tmp | 0xB8);
 }
 
-#line 57
+#line 58
 static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data)
 {
   LCD128x64P__wait4Controller__postTask();
 
 
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
   if (mode == 0) 
     {
 
       * (volatile uint8_t *)(0x03 + 0x20) &= ~((1 << 5) | (1 << 4));
-      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
-
       * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
-      * (volatile uint8_t *)(0x1B + 0x20) = data;
     }
   else 
-
     {
 
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 5);
-      * (volatile uint8_t *)(0x03 + 0x20) |= (1 << 6) | (1 << 4);
-      * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
-      * (volatile uint8_t *)(0x1B + 0x20) = data;
+      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 4;
     }
+  * (volatile uint8_t *)(0x1B + 0x20) = data;
 
    __asm volatile ("nop"); __asm volatile ("nop");
    __asm volatile ("nop"); __asm volatile ("nop");
@@ -3648,7 +3644,7 @@ static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data)
   * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
 }
 
-#line 143
+#line 140
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y)
 {
   unsigned char temp;

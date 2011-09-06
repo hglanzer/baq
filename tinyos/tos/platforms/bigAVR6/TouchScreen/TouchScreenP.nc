@@ -77,6 +77,7 @@ implementation
 					case FIRST_X:
 						if(val > X_TRESHOLD)
 						{
+/*
 							if(pressDetect == TRUE)
 							{
 								pressDetect = FALSE;
@@ -92,6 +93,14 @@ implementation
 								state = DUMMY_FIRST_Y;
 								call Read.read();
 							}
+*/
+							x = val;
+							call driveA.clr();
+							call driveB.set();
+
+							channel = ATM128_ADC_SNGL_ADC1;
+							state = DUMMY_FIRST_Y;
+							call Read.read();
 						}
 						else
 						{
@@ -116,10 +125,25 @@ implementation
 					case FIRST_Y:
 						if(val > Y_TRESHOLD)
 						{
+							//
+							if(pressDetect == TRUE)
+							{
+								pressDetect = FALSE;
+								signal TouchScreen.tsPressed();
+							}
+							else
+							{
+								y = val;
+								state = FINISHED;
+								call adcY.clr();
+								signal TouchScreen.xyReady(x, y);
+							}
+							/*
 							y = val;
 							state = FINISHED;
 							call adcY.clr();
 							signal TouchScreen.xyReady(x, y);
+							*/
 						}
 						else
 						{

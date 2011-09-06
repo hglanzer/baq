@@ -332,7 +332,30 @@ default-programmer auf 'avrdude' gesetzt:
 		<TOSROOT>/support/make/avr/avr.rules
 			DEFAULT_PROGRAM ?= avrdude
 
+---------------------------------------------------------------------------------------------------------------------
+
 ## ADC / Touchscreen
+
+0/0					123/0
+-----------------------------------------
+|					|
+|					|
+|					|
+|					|
+|					|
+|					|
+|					|
+|					|
+|					|
+-----------------------------------------
+63/0					123/63
+
+switch 13 aktivieren der schalter
+
+		READX
+		READY
+		DRIVEA
+		DRIVEB
 
 x - koordinaten auf channel 0 PORTF0
 y - koordinaten auf channel 1 PORTF1
@@ -343,4 +366,6 @@ um y zu lesen: driveB = PORTG4 = 1, PORTG3 = 0
 es wird das interface Atm128AdcSingle / getData verwendet
 leftJustfiy = 0, prescaler tw. auf 5, ref-voltage => hier gibt es einen jumper
 J18 / rechts neben GLCD... ??
+
+
 
