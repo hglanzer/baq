@@ -1,0 +1,30 @@
+module RareResourceP{
+  provides interface LedBlink;
+  provides interface Resource[uint8_t id];
+  
+  uses interface Resource as ResourceArbiter[uint8_t id];
+  uses interface ArbiterInfo;
+}
+implementation{
+  command void LedBlink.blink( uint8_t value ){
+  }
+  async command error_t Resource.immediateRequest[uint8_t id](){
+    return call ResourceArbiter.immediateRequest[id]();
+  }
+  async command error_t Resource.request[uint8_t id](){
+    return call ResourceArbiter.request[id]();
+  }
+  async command error_t Resource.release[uint8_t id](){
+    return call ResourceArbiter.release[id]();
+  }
+  async command uint8_t Resource.isOwner[uint8_t id](){
+    return call ResourceArbiter.isOwner[id]();
+  }
+  event void ResourceArbiter.granted[uint8_t id](){
+    signal Resource.granted[id]();
+  }
+
+  /* why???? */
+ default event void Resource.granted[uint8_t id](){}
+}
+

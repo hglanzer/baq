@@ -1,0 +1,3 @@
+interface ResourceOperations{
+  command error_t operation( uint8_t value );
+}

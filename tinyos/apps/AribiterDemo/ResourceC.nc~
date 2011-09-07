@@ -1,0 +1,9 @@
+configuration ResourceC{
+}
+implementation{
+  components LedsC, ResourceP;
+  components new TimerMilliC() as Timer0;
+
+  ResourceP.Leds -> LedsC.Leds;
+  ResourceP.Timer0 -> Timer0;
+}

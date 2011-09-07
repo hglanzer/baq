@@ -1,0 +1,10 @@
+module BlinkC {
+	uses interface Timer<TMilli> as Timer0;
+	uses interface Leds;
+	uses interface Boot;
+}
+implementation {
+	event void Boot.booted() {
+
+	}
+}

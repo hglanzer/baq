@@ -26,26 +26,44 @@ implementation
 	*/
 	void calcXY(uint16_t x_raw, uint16_t y_raw)
 	{
-		float x_tmp = 0, y_tmp = 0;
-		
+	  
+		uint32_t  x_tmp = 0, y_tmp = 0;
 		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
 		{
 			// offset entfernen
-			x_raw = x_raw - X_MIN;
-			y_raw = y_raw - Y_MIN;
+			x_raw = x_raw - x_min;
+			y_raw = y_raw - y_min;
 		
 			// skalieren
+<<<<<<< HEAD
 			x_tmp = ((float)x_raw / (float)X_DISTANCE);
 			y_tmp = ((float)y_raw / (float)Y_DISTANCE);
 			x_tmp = x_tmp * 128;
 			y_tmp = y_tmp * 64;
 			signal GLCD.xyReady(x_tmp, 63-y_tmp);
+=======
+/* 			x_tmp = ((float)x_raw / (float)X_DISTANCE); */
+/* 			y_tmp = ((float)y_raw / (float)Y_DISTANCE); */
+/* 			x_tmp = x_tmp * 128; */
+/* 			y_tmp = y_tmp * 64; */
+			x_tmp = ( (uint32_t)x_raw*128) / (x_max-x_min);
+			y_tmp = ( (uint32_t)y_raw*64) / (y_max-y_min);
+			signal GLCD.xyReady(x_tmp, y_tmp);
+>>>>>>> 47d9b00cf782df9c423d169d00f8694cd612ddb6
 		}
 		else
 		{
-			signal GLCD.xyReady(200,200);
+		  signal GLCD.xyReady(200,200);
 		}
         }
+
+	command void GLCD.getCalibration( uint16_t *x_cmin, uint16_t *x_cmax,  uint16_t *y_cmin, uint16_t *y_cmax ) {
+	  *x_cmin = x_min;
+	  *x_cmax = x_max;
+	  *y_cmin = y_min;
+	  *y_cmax = y_max;
+ 
+	}
 
 
 	/*	########################################################

@@ -1,0 +1,2 @@
+COMPONENT=SPITestAppC
+include $(MAKERULES)

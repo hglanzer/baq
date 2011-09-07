@@ -1,0 +1,2 @@
+COMPONENT=MyUARTAppC
+include $(MAKERULES)

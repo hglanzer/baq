@@ -1,0 +1,41 @@
+module MyBlinkC {
+	uses interface Timer<TMilli> as Timer0;
+	uses interface Leds;
+	uses interface Boot;
+	uses interface LCD128x64;
+}
+
+implementation {
+
+	uint8_t counter = 0;
+
+	event void Boot.booted() {
+		call Timer0.startPeriodic( 500 );
+		call LCD128x64.initLCD(0x00);
+	}
+
+	event void Timer0.fired() {
+		call Leds.led0Toggle();
+		//call LCD128x64.writeByte( 3 , 3 , '7');
+		counter++;
+	}
+
+	event void LCD128x64.initDone(void){
+
+		char *bla = "Hello World!";
+		call LCD128x64.startWriteString(bla, 0, 0);
+	};
+	
+	event void LCD128x64.circleWritten(void){};
+	
+	event void LCD128x64.stringWritten(void){};
+	
+	event void LCD128x64.rectangleWritten(void){};
+	
+	event void LCD128x64.lineWritten(void){};
+	
+	event void LCD128x64.barWritten(void){};
+
+	event void LCD128x64.screenCleared(void){};
+
+}

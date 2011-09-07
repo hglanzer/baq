@@ -20,6 +20,8 @@ push( @includes, qw(
   %T/platforms/bigAVR6/eth
   %T/platforms/bigAVR6/udp
   %T/platforms/bigAVR6/ip
+  %T/platforms/bigAVR6/SoftSPI  
+  %T/platforms/bigAVR6/MP3
   %T/chips/atm128
   %T/chips/atm128/uart
   %T/chips/atm128/adc

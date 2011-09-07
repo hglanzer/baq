@@ -1,11 +1,20 @@
 <tos_image>
   <ident>
+<<<<<<< HEAD
     <uidhash>374DBC26L</uidhash>
     <hostname>ecslab6</hostname>
     <username>hglanzer</username>
     <appname>RadarAppC</appname>
     <userhash>4248BFE2L</userhash>
     <timestamp>4E66193EL</timestamp>
+=======
+    <uidhash>8D03D05AL</uidhash>
+    <hostname>ecslab5</hostname>
+    <username>mhartmann</username>
+    <appname>RadarAppC</appname>
+    <userhash>F011BDF9L</userhash>
+    <timestamp>4E318049L</timestamp>
+>>>>>>> 47d9b00cf782df9c423d169d00f8694cd612ddb6
     <deluge_support>no</deluge_support>
     <platform>bigAVR6</platform>
   </ident>

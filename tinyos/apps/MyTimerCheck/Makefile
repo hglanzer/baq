@@ -1,0 +1,3 @@
+
+COMPONENT=MyTimerAppC
+include $(MAKERULES)

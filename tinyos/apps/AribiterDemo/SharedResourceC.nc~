@@ -1,0 +1,17 @@
+#include "SharedResource.h"
+generic configuration SharedResourceC(){
+  provides interface Resource;
+  provides interface ResourceOperations;
+  provides interface ResourceRequested;
+  uses interface ResourceConfigure;
+}
+implementation{
+  components SharedResourceP;
+
+  enum { RESOURCE_ID = unique(UQ_SHARED_RESOURCE) };
+
+  Resource = SharedResourceP.Resource[RESOURCE_ID];
+  ResourceRequested = SharedResourceP.ResourceRequested[RESOURCE_ID];
+  ResourceOperations = SharedResourceP.ResourceOperations[RESOURCE_ID];
+  ResourceConfigure = SharedResourceP.ResourceConfigure[RESOURCE_ID];
+}

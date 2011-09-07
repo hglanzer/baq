@@ -1,0 +1,3 @@
+
+COMPONENT=MP3TestAppC
+include $(MAKERULES)

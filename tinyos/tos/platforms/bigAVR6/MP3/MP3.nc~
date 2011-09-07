@@ -1,0 +1,10 @@
+interface MP3{
+  command error_t init( void );
+  command void writeRegister( uint8_t mp3Register, uint16_t mp3Cmd  );
+  command uint16_t readRegister( uint8_t mp3Register );
+  command void writeData( uint8_t *data, uint8_t len );
+  command void sineTestStart(void);
+  command void sineTestStop(void);
+  command void setVolume( uint8_t volume );
+  command bool isReady( void );
+}

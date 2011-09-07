@@ -1,0 +1,5 @@
+interface OneWire{
+
+  command error_t reset(void);
+
+}

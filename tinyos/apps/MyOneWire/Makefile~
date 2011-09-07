@@ -1,0 +1,3 @@
+
+COMPONENT=OneWireAppC
+include $(MAKERULES)
