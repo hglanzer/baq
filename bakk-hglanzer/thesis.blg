@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: tinyos.aux
+A level-1 auxiliary file: bigAVR6.aux
+A level-1 auxiliary file: buildenv.aux
+A level-1 auxiliary file: concepts.aux
+A level-1 auxiliary file: relatedwork.aux
+A level-1 auxiliary file: designapproach.aux
+A level-1 auxiliary file: implementation.aux
+A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: alpha.bst
+A level-1 auxiliary file: setupguide.aux
+A level-1 auxiliary file: userguide.aux
+Database file #1: bibfile.bib
+Name 1 in "W. Elmenreich, J. A. T. Machado, and I. J. Rudas" has a comma at the end for entry elmenreich:2005
+while executing---line 1250 of file alpha.bst
+You've used 7 entries,
+            2543 wiz_defined-function locations,
+            606 strings with 5337 characters,
+and the built_in function-call counts, 2147 in all, are:
+= -- 218
+> -- 75
+< -- 8
++ -- 20
+- -- 20
+* -- 123
+:= -- 373
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 36
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 101
+empty$ -- 156
+format.name$ -- 33
+if$ -- 435
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 36
+num.names$ -- 23
+pop$ -- 33
+preamble$ -- 1
+purify$ -- 43
+quote$ -- 0
+skip$ -- 86
+stack$ -- 0
+substring$ -- 77
+swap$ -- 17
+text.length$ -- 8
+text.prefix$ -- 6
+top$ -- 0
+type$ -- 56
+warning$ -- 0
+while$ -- 18
+width$ -- 9
+write$ -- 93
+(There was 1 error message)

@@ -1,0 +1,23 @@
+%%
+%%
+%% This file should be edited by user
+%%
+
+\chapter{bigAVR6} \label{chapter:bigAVR6}
+
+
+\section{The Hardware}
+
+\section{Supported Modules}
+
+\subsection{GLCD}
+
+\subsection{MMC}
+\subsection{Ethernetboard}
+\subsection{LCD 2x16}
+
+
+
+%%
+%% = eof =====================================================================
+%%
