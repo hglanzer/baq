@@ -43,7 +43,11 @@ separate chapters, for example \dq{Results} and \dq{Discussion}.
   \caption{Quality of calibrated infrared sensor data (from~\cite{elmenreich:2002})}\label{table:quality_ir}
 \end{table}
 
-
+Table~\ref{table:quality_ir} shows an example of a table set in
+\LaTeX. To be honest, making tables in {\LaTeX} is a complicated and
+sumptuous task. A good tutorial about setting tables in {\LaTeX} is
+presented bei Axel Reichert in~\cite{reichert:1999} (in German
+language).
 
 \section{Types of Bachelor's Theses}
 

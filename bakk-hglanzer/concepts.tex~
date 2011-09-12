@@ -108,7 +108,8 @@ respective data, if this is not available, the element should be
 left out. The case of the element names does not matter to Bibtex,
 however in the examples we have used UPPERCASE for the obligatory
 fields and lowercase for the optional fields. To see some complete
-examples, have a look into the file \texttt{bibfile.bib}. 
+examples, have a look into the file \texttt{bibfile.bib}. For more
+information, read~\cite{patashnik:1988}.
 
 \subsection{Some BibteX Examples}
 
