@@ -13,6 +13,7 @@ implementation
 	static volatile uint8_t stateTS = UNCALIBRATED, stateGLCD = 0;
 	static volatile uint16_t x_max=X_MAX, y_max=Y_MAX, x_min=X_MIN, y_min=Y_MIN;
 
+	uint8_t rawStat = FALSE;
 
 	/*	########################################################
 			LOCAL - functions - START
@@ -26,8 +27,8 @@ implementation
 	*/
 	void calcXY(uint16_t x_raw, uint16_t y_raw)
 	{
-	  
-		uint32_t  x_tmp = 0, y_tmp = 0;
+
+	  uint32_t  x_tmp = 0, y_tmp = 0;
 		if((x_raw < x_max) && (x_raw > x_min) && (y_raw < y_max) && (y_raw > y_min))
 		{
 	        
@@ -54,8 +55,7 @@ implementation
 	  *x_cmin = x_min;
 	  *x_cmax = x_max;
 	  *y_cmin = y_min;
-	  *y_cmax = y_max;
- 
+	  *y_cmax = y_max; 
 	}
 
 

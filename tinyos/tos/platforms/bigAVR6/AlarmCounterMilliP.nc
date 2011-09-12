@@ -22,6 +22,14 @@
 
 #include <Atm128Timer.h>
 
+#if MHZ == 8
+#define ATM128_CLK8_DIVIDE_PRESCALER ATM128_CLK8_DIVIDE_32
+#elif MHZ == 16
+#define ATM128_CLK8_DIVIDE_PRESCALER ATM128_CLK8_DIVIDE_64
+#else
+#error "Unsupported clock rate in hardware.h -  MHZ must be 8 or 16"
+#endif
+
 configuration AlarmCounterMilliP
 {
   provides interface Init;
@@ -30,7 +38,7 @@ configuration AlarmCounterMilliP
 }
 implementation
 {
-  components new Atm128AlarmSyncC(TMilli, ATM128_CLK8_DIVIDE_32);	// Async --> Sync
+  components new Atm128AlarmSyncC(TMilli, ATM128_CLK8_DIVIDE_PRESCALER);	// Async --> Sync
 
   Init = Atm128AlarmSyncC;		// Async --> Sync
   AlarmMilli32 = Atm128AlarmSyncC;	// Async --> Sync

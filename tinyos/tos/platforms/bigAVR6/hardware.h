@@ -50,7 +50,7 @@
 #ifndef MHZ
 /* Clock rate is ~8MHz except if specified by user 
    (this value must be a power of 2, see MicaTimer.h and MeasureClockC.nc) */
-#define MHZ 8
+#define MHZ 16
 #endif
 
 #include <atm128hardware.h>

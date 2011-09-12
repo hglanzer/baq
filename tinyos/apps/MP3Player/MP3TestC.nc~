@@ -138,9 +138,18 @@ implementation{
     paintState = LINE0;
   }
   
+  
   event void GLCD.xyReady( uint16_t x, uint16_t y ) {
-    call GLCD.setPixel(x,y);
-    //if ( (x > X_1) && (x < (X_1+A_1)) && (y > Y_1)  && (y<(Y_1+B_1)) ){
+    uint16_t x_c = x;
+    uint16_t y_c = y;
+    //call GLCD.setPixel( x_c,y_c-64 );
+    //call GLCD.startWriteString( itos(x), 0, 4 );
+    if ( (x_c > X_1) && (x_c < (X_1+A_1)) && ((64-y_c) > Y_1)  && ((64-y_c)<(Y_1+B_1)) ){ 
+      call GLCD.startWriteString( "Playing...", 0, 2 );
+    }
+    if ( (x_c > X_2) && (x_c < (X_2+A_1)) && ((64-y_c) > Y_1)  && ((64-y_c)<(Y_1+B_1)) ){ 
+      call GLCD.startWriteString( "Stopped...", 0, 2 );
+    }
     /*if ( (x > X_1) && (x < (X_1+A_1)) ){
       call GLCD.startWriteString( "Playing...", 0, 2 );
       play = TRUE;
@@ -148,17 +157,19 @@ implementation{
       post readMMCData();
       }*/
     //call GLCD.startWriteString( "xyReady,,,", 0, 7 );
-    if (play){
-      play = FALSE;
-      call GLCD.startWriteString( "Stopped...", 0, 2 );
-    } else if ( paintState == NONE ) 
-      {
-	call GLCD.startWriteString( "Playing...", 0, 2 );
-	play = TRUE;
-	call MP3.setVolume( 255 );
-	post readMMCData();
-      }
+    /* if (play){ */
+/*       play = FALSE; */
+/*       call GLCD.startWriteString( "Stopped...", 0, 2 ); */
+/*     } else if ( paintState == NONE )  */
+/*       { */
+/* 	call GLCD.startWriteString( "Playing...", 0, 2 ); */
+/* 	play = TRUE; */
+/* 	call MP3.setVolume( 255 ); */
+/* 	post readMMCData(); */
+/* 	} */
   }
+  
+  uint16_t xmin, xmax, ymin, ymax;
 
   void paintLCD( void ){
     switch (paintState){

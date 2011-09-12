@@ -117,6 +117,21 @@ enum {
   EXT_STANDBY_T0_THRESHOLD = 12
 };
 
+#elif MHZ == 16
+typedef T32khz TOne;
+typedef TMicro TThree;
+typedef uint16_t counter_one_overflow_t;
+typedef uint16_t counter_three_overflow_t;
+
+enum {
+  
+  MICA_PRESCALER_ONE = ATM128_CLK16_DIVIDE_256,
+  MICA_DIVIDE_ONE_FOR_32KHZ_LOG2 = 1,
+  MICA_PRESCALER_THREE = ATM128_CLK16_DIVIDE_8,
+  MICA_DIVIDE_THREE_FOR_MICRO_LOG2 = 1,
+  EXT_STANDBY_T0_THRESHOLD = 8
+};
+
 #else
 #error "Unknown clock rate. MHZ must be defined to one of 1, 2, 4, or 8."
 #endif

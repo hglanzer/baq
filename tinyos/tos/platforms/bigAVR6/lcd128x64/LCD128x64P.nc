@@ -46,7 +46,9 @@ implementation
 		{
 			CTRL_GLCD &= ~(1<<ENABLE_GLCD);
 			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
 			CTRL_GLCD |= (1<<ENABLE_GLCD);
+			asm volatile ("nop"); asm volatile ("nop");
 			asm volatile ("nop"); asm volatile ("nop");
 			//post wait4Controller();
 		}
@@ -73,13 +75,21 @@ implementation
 			CTRL_GLCD &= ~( 1<< RW_GLCD );
 			CTRL_GLCD |=  (1 << REGSEL_GLCD);
 		}
+		
+		asm volatile ("nop"); asm volatile ("nop");
+		asm volatile ("nop"); asm volatile ("nop");
+		asm volatile ("nop"); asm volatile ("nop");
+		asm volatile ("nop"); asm volatile ("nop");
+                
 		DATA_OUT_GLCD = data;
 
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
 		asm volatile ("nop"); asm volatile ("nop");
+
 		CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
+
 	}
 
 	void setAddress(uint8_t xAdd, uint8_t yAdd)
@@ -114,6 +124,12 @@ implementation
 			//wait4Controller();
 
 			CTRL_GLCD |= ((1<<ENABLE_GLCD)) | (1 << RW_GLCD);
+
+			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
+			asm volatile ("nop"); asm volatile ("nop");
+
 			if(mode == COMM)	// read COMMANDREGISTER
 			{
 				CTRL_GLCD &= ~(1 << REGSEL_GLCD);
@@ -123,6 +139,7 @@ implementation
 				CTRL_GLCD |= (1 << REGSEL_GLCD);
 				DATA_DDR_GLCD = 0x00;
 			}
+
 			asm volatile ("nop"); asm volatile ("nop");
 			asm volatile ("nop"); asm volatile ("nop");
 			asm volatile ("nop"); asm volatile ("nop");
