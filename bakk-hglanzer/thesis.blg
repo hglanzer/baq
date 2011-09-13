@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: introduction.aux
@@ -16,44 +16,44 @@ The style file: alpha.bst
 A level-1 auxiliary file: setupguide.aux
 A level-1 auxiliary file: userguide.aux
 Database file #1: bibfile.bib
-You've used 2 entries,
+You've used 3 entries,
             2543 wiz_defined-function locations,
-            584 strings with 4970 characters,
-and the built_in function-call counts, 551 in all, are:
-= -- 55
-> -- 16
-< -- 2
-+ -- 4
-- -- 4
-* -- 29
-:= -- 106
-add.period$ -- 7
-call.type$ -- 2
-change.case$ -- 8
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 26
-empty$ -- 39
-format.name$ -- 8
-if$ -- 105
+            588 strings with 5097 characters,
+and the built_in function-call counts, 816 in all, are:
+= -- 82
+> -- 24
+< -- 3
++ -- 6
+- -- 6
+* -- 41
+:= -- 152
+add.period$ -- 11
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 39
+empty$ -- 60
+format.name$ -- 12
+if$ -- 158
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 14
-num.names$ -- 6
-pop$ -- 11
+newline$ -- 20
+num.names$ -- 9
+pop$ -- 19
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 18
 quote$ -- 0
-skip$ -- 17
+skip$ -- 23
 stack$ -- 0
-substring$ -- 14
-swap$ -- 3
-text.length$ -- 2
-text.prefix$ -- 2
+substring$ -- 21
+swap$ -- 5
+text.length$ -- 3
+text.prefix$ -- 3
 top$ -- 0
-type$ -- 16
+type$ -- 24
 warning$ -- 0
-while$ -- 4
-width$ -- 4
-write$ -- 29
+while$ -- 6
+width$ -- 6
+write$ -- 42

@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {2.1}tinyOS Basics}{3}
 \contentsline {subsection}{\numberline {2.1.1}What is tinyOS}{3}
 \contentsline {section}{\numberline {2.2}History}{4}
-\contentsline {section}{\numberline {2.3}Supported Platforms}{5}
+\contentsline {section}{\numberline {2.3}Supported Platforms}{4}
 \contentsline {section}{\numberline {2.4}tinyOS hardware abstraction}{5}
 \contentsline {section}{\numberline {2.5}tinyOS internals}{6}
 \contentsline {subsection}{\numberline {2.5.1}Basic - Scheduler}{6}
@@ -16,42 +16,44 @@
 \contentsline {subsection}{\numberline {2.5.4}Ressource Arbitration}{8}
 \contentsline {chapter}{\numberline {3}nesC}{9}
 \contentsline {section}{\numberline {3.1}Fundamental Programming Hints}{9}
-\contentsline {subsection}{\numberline {3.1.1}LCD 2x16}{10}
-\contentsline {chapter}{\numberline {4}bigAVR6}{11}
-\contentsline {section}{\numberline {4.1}The Hardware}{11}
-\contentsline {section}{\numberline {4.2}Supported Modules}{11}
-\contentsline {subsection}{\numberline {4.2.1}GLCD}{11}
-\contentsline {subsection}{\numberline {4.2.2}MMC}{11}
-\contentsline {subsection}{\numberline {4.2.3}Ethernetboard}{11}
-\contentsline {subsection}{\numberline {4.2.4}LCD 2x16}{11}
-\contentsline {chapter}{\numberline {5}buildenv}{12}
-\contentsline {section}{\numberline {5.1}Prerequisites}{12}
-\contentsline {chapter}{\numberline {6}resourcesused}{13}
-\contentsline {chapter}{\numberline {7}Related Work}{14}
-\contentsline {section}{\numberline {7.1}Types of Bachelor's Theses}{14}
-\contentsline {chapter}{\numberline {8}Design Approach}{15}
-\contentsline {section}{\numberline {8.1}Types of Bachelor's Theses}{15}
-\contentsline {chapter}{\numberline {9}Implementation}{16}
-\contentsline {section}{\numberline {9.1}Types of Bachelor's Theses}{16}
-\contentsline {chapter}{\numberline {10}Results and Discussion}{17}
-\contentsline {section}{\numberline {10.1}Tables}{17}
-\contentsline {section}{\numberline {10.2}Types of Bachelor's Theses}{17}
-\contentsline {chapter}{\numberline {11}Conclusion}{18}
-\contentsline {chapter}{Bibliography}{19}
-\contentsline {chapter}{\numberline {A}Setup Guide}{20}
-\contentsline {section}{\numberline {A.1}System Requirements}{20}
-\contentsline {subsection}{\numberline {A.1.1}Required Software for Windows}{20}
-\contentsline {subsection}{\numberline {A.1.2}Required Software for Linux and BSDs}{20}
-\contentsline {subsection}{\numberline {A.1.3}Required Software for Apple Mac OS X}{21}
-\contentsline {section}{\numberline {A.2}Installing the Thesis Template}{21}
-\contentsline {section}{\numberline {A.3}Types of Bachelor's Theses}{21}
-\contentsline {chapter}{\numberline {B}User Guide}{22}
-\contentsline {section}{\numberline {B.1}Types of Bachelor's Theses}{22}
-\contentsline {section}{\numberline {B.2}How to use the Thesis Template}{22}
-\contentsline {subsection}{\numberline {B.2.1}Files to Edit}{22}
-\contentsline {subsection}{\numberline {B.2.2}Removing Chapters}{23}
-\contentsline {subsection}{\numberline {B.2.3}Adding Chapters}{23}
-\contentsline {subsection}{\numberline {B.2.4}Adding References}{23}
-\contentsline {subsection}{\numberline {B.2.5}Removing References}{23}
-\contentsline {subsection}{\numberline {B.2.6}Changing the .bib Files to be used}{23}
-\contentsline {subsection}{\numberline {B.2.7}Troubleshooting}{24}
+\contentsline {subsection}{\numberline {3.1.1}Namespace, Components and Interfaces}{10}
+\contentsline {subsection}{\numberline {3.1.2}Split-Phase Interfaces}{13}
+\contentsline {subsection}{\numberline {3.1.3}Tasks}{14}
+\contentsline {chapter}{\numberline {4}bigAVR6}{15}
+\contentsline {section}{\numberline {4.1}The Hardware}{15}
+\contentsline {section}{\numberline {4.2}Supported Modules}{15}
+\contentsline {subsection}{\numberline {4.2.1}GLCD}{15}
+\contentsline {subsection}{\numberline {4.2.2}MMC}{15}
+\contentsline {subsection}{\numberline {4.2.3}Ethernetboard}{15}
+\contentsline {subsection}{\numberline {4.2.4}LCD 2x16}{15}
+\contentsline {chapter}{\numberline {5}buildenv}{16}
+\contentsline {section}{\numberline {5.1}Prerequisites}{16}
+\contentsline {chapter}{\numberline {6}resourcesused}{17}
+\contentsline {chapter}{\numberline {7}Related Work}{18}
+\contentsline {section}{\numberline {7.1}Types of Bachelor's Theses}{18}
+\contentsline {chapter}{\numberline {8}Design Approach}{19}
+\contentsline {section}{\numberline {8.1}Types of Bachelor's Theses}{19}
+\contentsline {chapter}{\numberline {9}Implementation}{20}
+\contentsline {section}{\numberline {9.1}Types of Bachelor's Theses}{20}
+\contentsline {chapter}{\numberline {10}Results and Discussion}{21}
+\contentsline {section}{\numberline {10.1}Tables}{21}
+\contentsline {section}{\numberline {10.2}Types of Bachelor's Theses}{21}
+\contentsline {chapter}{\numberline {11}Conclusion}{22}
+\contentsline {chapter}{Bibliography}{23}
+\contentsline {chapter}{\numberline {A}Setup Guide}{24}
+\contentsline {section}{\numberline {A.1}System Requirements}{24}
+\contentsline {subsection}{\numberline {A.1.1}Required Software for Windows}{24}
+\contentsline {subsection}{\numberline {A.1.2}Required Software for Linux and BSDs}{24}
+\contentsline {subsection}{\numberline {A.1.3}Required Software for Apple Mac OS X}{25}
+\contentsline {section}{\numberline {A.2}Installing the Thesis Template}{25}
+\contentsline {section}{\numberline {A.3}Types of Bachelor's Theses}{25}
+\contentsline {chapter}{\numberline {B}User Guide}{26}
+\contentsline {section}{\numberline {B.1}Types of Bachelor's Theses}{26}
+\contentsline {section}{\numberline {B.2}How to use the Thesis Template}{26}
+\contentsline {subsection}{\numberline {B.2.1}Files to Edit}{26}
+\contentsline {subsection}{\numberline {B.2.2}Removing Chapters}{27}
+\contentsline {subsection}{\numberline {B.2.3}Adding Chapters}{27}
+\contentsline {subsection}{\numberline {B.2.4}Adding References}{27}
+\contentsline {subsection}{\numberline {B.2.5}Removing References}{27}
+\contentsline {subsection}{\numberline {B.2.6}Changing the .bib Files to be used}{28}
+\contentsline {subsection}{\numberline {B.2.7}Troubleshooting}{28}

@@ -115,6 +115,8 @@
     \cleardoublepage
     \include{tinyos}
     \cleardoublepage
+    \include{nesc}
+    \cleardoublepage
     \include{bigAVR6}
     \cleardoublepage
     \include{buildenv}
