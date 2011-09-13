@@ -5,13 +5,25 @@
 
 \chapter{tinyos} \label{chapter:tinyos}
 
-\section{What is tinyOS}
+\section{tinyOS Basics}
 
-tinyOS is a free and open operating system for hardware motes, which is written in nesC. Development started as a collaboration of Berkeley University with Intel Research and Crossbow Technology, a california based company.
+\subsection{What is tinyOS}
 
-A hardware mote is a microcontroller based node in a wireless sensor network, capable of reading sensory information, processing and exchanging of this data with other nodes. Communication typically goes on over wireless networks.
+tinyOS is a free and open operating system for hardware motes, which is written in nesC. A hardware mote is a microcontroller based node in a wireless sensor network, capable of reading sensory information, processing and exchanging of this data with other nodes. Communication typically goes on over wireless network, because so the cost for deployment and maintenance is reduced, and because wires are not feasible in many environments. 
 
-One of tinyOS's most important features is that tinyOS applications are built out of components, which are connected or wired to each other by interfaces. 
+Development of tinyOS started as a collaboration of Berkeley University with Intel Research and Crossbow Technology, a california based company.
+The following requirements were defined for tinyOS:
+
+\begin{itemize}
+ \item Require very few resources
+ \item Allow fine-grained concurrency
+ \item Adapt to hardware evolution
+ \item Support a wide range of applications
+ \item Robust Design
+ \item Support a diverse set of platforms
+\end{itemize}
+
+One of tinyOS's most important features is that tinyOS applications are built out of components, which are connected or wired to each other by interfaces. Components can easily be developed, extended and reused. Another advantage is that a component can be built in software \textbf{or} hardware, increasing flexibility. But because hardware is always non-blocking, the software must be non-blocking as well to guarantee this exchangeability. So, tinyOS uses the split-phase - model: a userprogram that wants to execute some kind of code \textit{posts} a \textit{task}, which is queued by the task scheduler, and gets executed later. The finished execution of the task is afterwards \textit{signaled} to the caller of the task. This behavior can be compared to a hardware interrupt: some kind of operation is requested by a program, so the program initialises the needed datastructures and starts the operation. But instead of waiting until the hardware has finished, the userprogram returns immediatly and continues with other instructions, and gets discontinued by an interrupt as soon as the hardware has finished.
 
 \section{History}
 
@@ -79,10 +91,50 @@ Because the scheduler of tinyOS is implemented as a component it is possible to 
 
 \subsection{Microcontroller Power Management}
 
-To reduce power consumption, a microcontroller should always run in the lowest power state possible. As mentioned above, tinyOS enters a low power mode if the task queue is empty. Normally, microcontrollers support a full range of low power modes, the ATmega128 - for example - supports up to 6 different power saving modes.
+To reduce power consumption, a microcontroller should always run in the lowest power state possible. For example, if you want to run an embedded system that is powered by two AA batteries with a capacitiy of 2.7Ah, for one year, you reach an average of about 1mW of power consumption. Clearly, this can only be achieved by saving energy whenever possible.
+
+As mentioned above, tinyOS enters a low power mode if the task queue is empty. Normally, microcontrollers support a range of low power modes, the ATmega128 - for example - supports up to 6 different power saving modes.
 To decide what mode fits best, tinyOS uses the control- and statusregisters to find the proper lowpower-mode.
 
-For example, on a ATmega128-based platform, the cpu-specific powersaving-mode \textit{IDLE} is to be choosen if one or more timer, SPI, UART or I2C are in use. If the ADC-submodule is working, another mode, \textit{ADC Noise Reduction}, is entered. If none of this modules are active, the cpu is set to \textit{POWER DOWN}, from which it only can resume by some external interrupts/resets or a SPI address match interrupt.
+For example, on a ATmega128-based platform, the cpu-specific powersaving-mode \textit{IDLE} is to be choosen if one or more timer, SPI, UART or I2C are in use. If the ADC-submodule is working, another mode, \textit{ADC Noise Reduction}, is entered. If none of this modules are active and the task queue is empty, the cpu is set to \textit{POWER DOWN}, from which it only can resume by some external interrupts/resets or a SPI address match interrupt.
+
+Because entering powersaving modes always come with wakeup latency, problems can arise if some higher-level hardware modules have timeing constraints if the wakeup latency is too big. To solve this, the powersaving mode, found by examing the control- and statusregisters, can be overridden by a higherlevel module. For example, when going to a sleepmode just befor an alarm of a timer would occur, the wakeup latency could propably cause a miss of this alarm. Therefore, a component can \textit{provide} an interface named \textit{lowestState} that will be called when a powersave mode is requested, and can override the in principle valid powersaveing mode found by looking at the control- and statusregisters.
+
+\subsection{Boot Sequence}
+
+When tinyOS is booting up, it uses 3 interfaces:
+
+\begin{itemize}
+ \item Init
+ \item Scheduler
+ \item Boot
+\end{itemize}
+
+\textbf{Init} has one command, called \textit{init()}, that is responsible for initializing hardware components. Initialization must happen sequential, so a component is allowed to use a spin loop when - for example - waiting for an interrupt.
+\textbf{Scheduler} is responsible for initializing the task queue.
+Finally, \textbf{Boot} signales the completion of the bootup-process to the application.
+
+\subsection{Ressource Arbitration}
+
+One major task of every operating system is the management of available resources, like communication interfaces that are used by different components. tinyOS distinguishes between 3 different kinds of abstractions:
+
+\begin{itemize}
+ \item dedicated resources
+ \item virtualized resources
+ \item shared resources
+\end{itemize}
+
+A \textbf{dedicated} resource is a resource which is allocated by one and only one subsystem all the time. Obvious, no sharing policy is needed here. Examples for such resources are counters and interrupts.
+
+\textbf{Virtualized} resources are used by multiple clients through software virtualization. Here, every client interacts like using a dedicated reosource. Because virtualization is done in software, there is no upper bound on the number of clients(apart from memory/efficiency constraints), with all virtualized instances being multiplexed on top of the underlying resource. Clearly, this virtualization 
+goes along with cpu-overhead.
+
+For example, this concept is used for timers on ATmega128-based platforms. Every time a new timer is instantiated, tinyOS builds a virtual timer on top of the physical timer 0. 
+
+The \textbf{shared} concept is used for modules that need exclusive access to a resource for some time. An arbiter is responsible for multiplexing between the different clients that want to use the resource. As long as a client \textit{holds} a resource, it has complete access to it. tinyOS arbiters assume that clients are cooperative, that means that a client only acquires a resource when needed, and only holds it as long as needed, releasing it as soon as possible. No concept of preemption is used here, so client B that needs a resource cannot force Client A to release it.  
+
+The arbiter, the centralized place that knows whether a resource is busy or not, is an interface that must be instantiated by every client that wants to use the resource. After that, the client can \textit{request} the resource. The request is queued by the arbiter if the resource is busy. As soon as the resource is available, a special event, \textit{granted}, is signaled to the client, who has now exclusive access to it. It is the client's responsibility to \textit{release} it so soon as possible.
+To avoid monopolizing a resource a \textit{request} for a resource is only queued if there is no other request of this client queued yet.
 
 
 %%

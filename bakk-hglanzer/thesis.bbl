@@ -6,38 +6,11 @@ W.~Elmenreich.
 \newblock PhD thesis, Technische Universit{\"a}t Wien, Institut f{\"u}r
   Technische Informatik, Vienna, Austria, 2002.
 
-\bibitem[EP05]{elmenreich:2005}
-W.~Elmenreich and S.~Pitzek.
-\newblock Smart transducers -- principles, communications, and configuration.
-\newblock In J.~A. T.~Machado W.~Elmenreich and I.~J. Rudas, editors, {\em
-  Intelligent Systems at the Service of Mankind}, volume~II, pages 175--186.
-  Ubooks, December 2005.
-
-\bibitem[Kra03]{kraut:2003}
-H.~Kraut.
-\newblock {Signalverarbeitung mittels eines Neuronalen Netzwerkes f{\"u}r einen
-  Smart Sensor}.
-\newblock Bachelor's thesis, Technische Universit{\"a}t Wien, Institut f{\"u}r
-  Technische Informatik, Treitlstr. 3/3/182-1, 1040 Vienna, Austria, 2003.
-
-\bibitem[Lev03]{tep106:2003}
-Philip Levis.
-\newblock {Scheduler and Tasks}.
-\newblock Bachelor's thesis, Technische Universit{\"a}t Wien, Institut f{\"u}r
-  Technische Informatik, Treitlstr. 3/3/182-1, 1040 Vienna, Austria, 2003.
-
-\bibitem[Pat88]{patashnik:1988}
-O.~Patashnik.
-\newblock {\em BibTeXing}, 1988.
-
-\bibitem[Rei99]{reichert:1999}
-A.~Reichert.
-\newblock {\em Satz von Tabellen}, 1999.
-
-\bibitem[Wei05]{weirich:2005}
-B.~Weirich.
-\newblock Wireless real-time communication.
-\newblock Bachelor's thesis, Technische Universit{\"a}t Wien, Institut f{\"u}r
-  Technische Informatik, Treitlstr. 3/3/182-1, 1040 Vienna, Austria, 2005.
+\bibitem[FIX]{tep106:2003}
+Philip Levis / Cory~Sharp FIXME.
+\newblock {\em {Scheduler and Tasks}}.
+\newblock Treitlstr. 3/3/182-1, 1040 Vienna, Austria.
+\newblock Available at
+  \url{http://www.tinyos.net/tinyos-2.x/doc/html/tep106.html}.
 
 \end{thebibliography}

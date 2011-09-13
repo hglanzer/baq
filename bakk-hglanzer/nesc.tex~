@@ -1,0 +1,51 @@
+%%
+%%
+%% This file should be edited by user
+%%
+
+\chapter{nesC} \label{chapter:nesC}
+
+
+\section{Fundamental Programming Hints}
+
+Before diving into this C - dialect, the most important programming hints are listed, as given in ~\cite{prognesc:2006}
+
+\begin{itemize}
+ \item It's dangerous to signal events from commands, as you might cause a very long call loop, corrupt memory and crash your program.
+ \item Keep tasks short.
+ \item Keep code synchronous when you can. Code should be async only if its timing is very important or if it might be used by something whose timing is important.
+ \item Keep atomic sections short, and have as few of them as possible. Be careful about calling out to other components from within an atomic section.
+ \item Only one component should be able to modify a pointer's data at any time. In the best case, only one component should be storing the pointer at any time.
+ \item Allocate all state in components. If your application requirements necessitate a dynamic memory pool, encapsulate it in a component and try to limit the set of users.
+ \item Conserve memory by using enums rather than const variables for integer constants, and don't declare variables with an enum type.
+ \item In the top-level configuration of a software abstraction, auto-wire Init to MainC. This removes the burden of wiring Init from the programmer, which removes unnecessary work from the boot sequence and removes the possibility of bugs from forgetting to wire.
+ \item If a component is a usable abstraction by itself, its name should end with C. If it is intended to be an internal and private part of a larger abstraction, its name should end with P. Never wire to
+P components from outside your package (directory).
+ \item Use the as keyword liberally.
+ \item Never ignore combine warnings.
+ \item If a function has an argument which is one of a small number of constants, consider
+defining it as a few separate functions to prevent bugs. If the functions of an interface all have an argument
+that?s almost always a constant within a large range, consider using a parameterized interface to save code
+space. If the functions of an interface all have an argument that?s a constant within a large range but only
+certain valid values, implement it as a parameterized interface but expose it as individual interfaces, to both
+minimize code size and prevent bugs.
+ \item If a component depends on unique, then \#define a string to use in a header file, to
+prevent bugs from string typos.
+ \item Never, ever use the 'packed' attribute.
+ \item Always use platform independent types when defining message formats.
+ \item If you have to perform significant computation on a platform independent type or
+access it many (hundreds or more) times, then temporarily copying it to a native type can be a good idea.
+
+ \item
+
+
+\end{itemize}
+
+
+\subsection{LCD 2x16}
+
+
+
+%%
+%% = eof =====================================================================
+%%
