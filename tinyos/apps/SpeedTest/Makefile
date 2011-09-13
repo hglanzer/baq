@@ -1,0 +1,3 @@
+
+COMPONENT=SpeedTestAppC
+include $(MAKERULES)

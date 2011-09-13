@@ -1,0 +1,3 @@
+
+COMPONENT=TouchTestAppC
+include $(MAKERULES)

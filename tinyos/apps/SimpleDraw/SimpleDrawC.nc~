@@ -1,0 +1,49 @@
+module SimpleDrawC{
+  uses interface Boot;
+  uses interface GeneralIO as Button0;
+  uses interface Timer<TMilli> as Timer0;
+  uses interface GLCD;
+}
+implementation{
+
+  event void Boot.booted(){
+    call GLCD.initLCD( 0x00 );
+    call Timer0.startPeriodic( 200 );
+  }
+
+  event void Timer0.fired(){
+    if ( call Button0.get() ){
+      call GLCD.startClearScreen( 0x00 );
+    }
+  }
+
+  event void GLCD.initDone() {
+    call GLCD.calibrateTouchScreen();
+  }
+
+  event void GLCD.barWritten() {
+  }
+  event void GLCD.screenCleared() {
+    call GLCD.isPressed( 1 );
+  }
+  event void GLCD.lineWritten() {
+  }
+  event void GLCD.circleWritten() {
+  }
+  event void GLCD.rectangleWritten() {
+  }
+  event void GLCD.stringWritten() {
+  }
+  event void GLCD.tsPressed() {
+    call GLCD.getXY();
+  }
+  event void GLCD.calibrated() {
+    call GLCD.startClearScreen( 0x00 );
+  }
+
+  event void GLCD.xyReady( uint16_t x, uint16_t y ) {
+    call GLCD.setPixel( x, ( 64 - y) );
+    //call GLCD.writeByte(x, (64-y), 'X');
+    call GLCD.isPressed( 1 );
+  }
+}
