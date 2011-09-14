@@ -39,9 +39,9 @@ access it many (hundreds or more) times, then temporarily copying it to a native
 
 \end{itemize}
 
-\subsection{Namespace, Components and Interfaces}
+\section{Namespace, Components and Interfaces}
 
-nesC applications consist of components that get wired together. A component can be a \textit{configuration} or a \textit{module}. Modules implement some functionality, while configurations describe how components are 
+nesC applications consist of components that get wired together. A component can be a \textit{configuration} or a \textit{module}. Modules implement some functionality, while configurations describe how components are put together.
 
 nesC uses a purely local namespace. This means that a component has to declare all the functions it calls. An advantage in this approach is that all the functions that get called are known at \textit{compile time} - no RAM is used for storing function pointers, and no runtime allocation is required. This is possible because of the nature of nesC - applications: this applications run on embedded systems with well-defined and tightly specified uses, and it is much more important to save memory than to provide flexibility by dynamic linking.
 
@@ -125,33 +125,19 @@ implementation{
 }
 \end{lstlisting}
 
-So, every higher-level component can switch on and off transmission on the Uart0 - interface, and the implementation also notifies the system that some hardware was started or stopped, an information that is used by the powermanangement system, as described earlier. But what to do if - for example - you want a similar functionality for the CC2420 radio chip, turning on the chip when traffic has to be sent, and turning it off afterwards to save power? Clearly, the way to do this is the same as with the UART-subsystem, as can be acknowledged by examing the implementation for this chip. But here, the \textit{StdControl} - interface is wired to the cc2420 implementation.
+So, every higher-level component can switch on and off transmission on the Uart0 - interface, and the implementation also notifies the system that some hardware was started or stopped, an information that is used by the powermanangement system, as described earlier. Codelisting \ref{MyPowersavingAppC} demonstrates how an application can make use of such a interface.
 
-\lstset{language=C}
-\begin{lstlisting}
-module CC2420ReceiveP @safe() {
-...
-  provides interface StdControl;
-...
-\end{lstlisting}
+At first, we define what components we want to use, and how they are put(\textit{wired}) together.
 
-\lstset{language=C}
-\begin{lstlisting}
-command error_t StdControl.start() {
-  ...
-  // do whatever is necessary to start the hardware
-  ...
-  }
+\lstinputlisting[caption={MyPowersavingAppC.nc},label=MyPowersavingAppC]{listings/MyPowersavingAppC.nc}
 
-command error_t StdControl.stop() {
-  ...
-  // do whatever is necessary to stop the hardware
-  ...
-  }
+After that, we can use the interfaces provided by the used components. See listing \ref{MyPowersavingC} for how that works.
 
-\end{lstlisting}
+\lstinputlisting[caption={MyPowersavingC.nc},label=MyPowersavingC]{listings/MyPowersavingC.nc}
 
-\subsection{Split-Phase Interfaces}
+But what to do if - for example - you want a similar functionality for the CC2420 radio chip, turning on the chip when traffic has to be sent, and turning it off afterwards to save power? Clearly, the way to do this is same as with the UART-subsystem. The only difference is to wire the application to another component - the lower level implementation of the CC2420 - chip will handle the rest. 
+
+\section{Split-Phase Interfaces}
 
 As stated before, it should be possible in tinyOS to build a certain functionality either in software \textit{or} in hardware. Because hardware is almost always non-blocking, the software must be non-blocking as well to guarantee this exchangeability. A traditional approach for this problem is to use multiple threads: one thread requests an operation and is then put on a waiting queue, and another thread continues with some other work. The waiting thread is woken up as soon as the operation has finished and interrupts the other running thread.
 
@@ -177,26 +163,85 @@ A component that \textit{uses} such a split-phase interface \textbf{MUST} implem
 When using split-phase interfaces, remembering the first programming hint is important: signaling events from commands is dangerous, because this can cause long call loops or corrupt memory caused by exploding stack size.
 So instead of using commands, the correct way is to use \textit{tasks}.
 
-\subsection{Tasks}
+\section{Tasks}
 
 In tinyOS, a module can \textit{post} a task to the scheduler, which will get executed at some point later. 
 Because a task is a deferred procedure call, there is no return value. Additionally, there are no parameters for tasks because a task is always executed in the naming scope of a component. A declaration of a task has this form:
 
 \lstset{language=C}
 \begin{lstlisting}
-task void checkInterruptflag();
+	task void checkInterruptflag();
 \end{lstlisting}
 
 Adding this task to the scheduler is done with the \textit{post} keyword: 
 
 \lstset{language=C}
 \begin{lstlisting}
-post checkInterruptflag();
+	post checkInterruptflag();
 \end{lstlisting}
 
 Tasks are non-preemptive, no task will ever get interrupted by the tinyOS scheduler. The advantage is that the programmer never has to worry about tasks corrupting each other's data. On the other hand, tasks never should be too long because otherwise other tasks maybe could get delayed. So, a task that has to do long computations should be broken into multiple tasks.
 
-tinyOS needs about 80 microcontroller clock cycles to post and execute a task, so there's a tradeoff between lots of short tasks and fewer, but longer running tasks - no hard rule can be given here. 
+tinyOS needs about 80 microcontroller clock cycles to post and execute a task, so there's a tradeoff between lots of short tasks and fewer, but longer running tasks - no hard rule can be given here.
+
+\section{Async Functions}
+
+As stated before, a task will always run until it has finished. This is not true under all circumstances, because
+a task can be disrupted by an interrupt. Such functions that run preemptively, triggered by an interrupt and from outside the task context, are labeled with the \textit{async} keyword. Consequently, all commands that are called and all events that get signalled by such functions are async as well and must be marked async too.
+
+To get an async function into a syncronous context, the only way possible is by using tasks. For example, receiving UART bytes will normally be done interrupt driven, so the corresponding interrupt vector will be called asyncronously. If the received data are handled by a higherlevel component in a syncronous function, the interrupthandler can post a task to get from the asyncronous interrupt context to a syncronous task context.
+
+\section{Wiring}
+
+As said before, in nesC a component can only call functions and access variables whithin its local namespace. To call functions outside it's scope, a set of names in one component, generally an interface, must be mapped to a set of names in another component, which is called wiring.
+
+\subsection{Operator}
+
+There are only 3 operators for wiring components together:
+
+\begin{itemize}
+ \item \textless-
+ \item -\textgreater
+ \item =
+\end{itemize}
+
+The first two operators are interchangeable, for example this two lines are identical:
+
+\begin{lstlisting}
+	MyComponent.UsedInterface -> OtherComponent.ProvidedInterface; 
+	OtherComponent.ProvidedInterface <- MyComponent.UsedInterface;
+\end{lstlisting}
+
+In short, the arrow always points from the \textit{user} of an interface to the \textit{provider} of that interface:
+
+\begin{lstlisting}
+	User -> Provider;
+\end{lstlisting}
+
+As soon as MyComponent is connected this way to OtherComponent, MyComponent can use all of the functions provided by ProvidedInterface. Additionally, UsedInterface \textbf{MUST} implement all of the events OtherComponent offers signals for. 
+
+If MyComponent wants to call a function provided by OtherComponent, the call would look like this:
+
+\begin{lstlisting}
+	call UsedInterface.FunctionName(<argumentlist>);
+\end{lstlisting}
+
+To implement the events, a construct of this form is neccessary:
+
+\begin{lstlisting}
+	event <returntype> UsedInterface.EventName(<argumentlist>)
+	{
+		/*
+		code to handle the new situation, as signalled by this event
+		*/
+	}
+\end{lstlisting}
+
+The third operator, '=', \textit{exports} an interface.  In contrast to the first two operator which map between the interfaces of components that a configuration names, this operator maps between 
+
+
+
+
 
 
 %%
