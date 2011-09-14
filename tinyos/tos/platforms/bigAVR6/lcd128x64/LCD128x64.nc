@@ -1,5 +1,9 @@
 interface LCD128x64
 {
+         /*
+	   read one byte and draw it slightly shifted to the right
+	  */ 
+         command void copyByte( uint8_t x, uint8_t y );
 
 	command void initLCD(uint8_t pattern);
 

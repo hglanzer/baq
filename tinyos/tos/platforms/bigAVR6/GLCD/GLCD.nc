@@ -31,7 +31,7 @@ interface GLCD
 				LCD128x64 - interfaces
 	####################################################################
 	*/
-
+	command void copyByte(uint8_t x, uint8_t y);
 
         command void initLCD(uint8_t pattern);
 

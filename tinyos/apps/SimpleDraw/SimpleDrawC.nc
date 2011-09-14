@@ -13,6 +13,8 @@ module SimpleDrawC{
 }
 implementation{
 
+  bool dots = TRUE;
+
   event void Boot.booted(){
     call GLCD.initLCD( 0x00 );
     call Button0.makeInput();
@@ -49,6 +51,13 @@ implementation{
       call GLCD.startWriteRectangle( 80, 16, 28, 32 );
     }
     if ( call Button7.get() ){
+      if ( dots ) {
+	dots = FALSE;
+	call GLCD.startWriteString( "Copy ", 0, 5 );
+      } else {
+	dots = TRUE;
+	call GLCD.startWriteString( "Paint", 0, 5 );
+      }
     }
     
   }
@@ -73,12 +82,16 @@ implementation{
     call GLCD.getXY();
   }
   event void GLCD.calibrated() {
-    call GLCD.startWriteString( "Press D0-D6", 0, 2 );
+    call GLCD.startWriteString( "Press D0-D7", 0, 2 );
     call GLCD.isPressed( 1 );
   }
 
   event void GLCD.xyReady( uint16_t x, uint16_t y ) {
-    call GLCD.setPixel( x, ( 64 - y) );
+    if (dots){
+      call GLCD.setPixel( x, ( 64 - y) );
+    } else {
+      call GLCD.copyByte( x, ( 64 - y) );
+    }
     call GLCD.isPressed( 1 );
   }
 }
