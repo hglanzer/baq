@@ -49,9 +49,9 @@ This developmentboard, as shown in figure ~\ref{fig:bigavr6}, is produced by mik
 
 \subsection{GLCD}
 
-The GLCD - extension consists of a KS0108B GLCD dot matrix liquid cristal graphic display system with a resolution is 128 x 64 pixel. As the schematics shows in figure~\ref{fig:glcd}, SW15/8 must be turned on to activate the GLCD-backlight, the contrast can be changed with potentiometer P3.
+The GLCD - extension consists of a KS0108B GLCD dot matrix liquid cristal graphic display system with a resolution is 128 x 64 pixel. As the schematics shows in figure~\ref{fig:glcd}, SW15/8 must be turned of to activate the GLCD-backlight, the contrast can be changed with potentiometer P3.
 
-The GLCD is combined with a touchscreen foil, sticked onto the GLCD-surface. Activate SW13/1,2,3,4 to use it. To read the x and y coordinates, the component uses ADC channels 0 and 1, respectivly. 
+The GLCD is combined with a touch screen, glued onto the GLCD-surface. Activate SW13/1,2,3,4 to use it. To read the x and y coordinates, the component uses ADC channel 0 and 1, respectivly. 
 
 The following pins \textbf{MUST NOT} be touched by the programmer when using the GLCD and the touchscreen:
 
@@ -69,7 +69,7 @@ The following pins \textbf{MUST NOT} be touched by the programmer when using the
   \label{fig:glcd}
 \end{figure}
 
-To use the GLCD in an application, component \textit{GLCDC} with interface \textit{GLCD} must be used. This interface provides functions for initializing, clearing, writing strings, and drawing graphical objects on the the GLCD. Additionally, it provides functions for calibrating the touchscreen and for getting x/y - coordinates. See listing \ref{GLCD} for all the provided functions. Figure \ref{fig:glcdc} shows the internal composition of the GLCDC: LCD128x64C is responsible for writing and initializing the GLCD, while TouchScreenC provides functionality related to determining the pressed positions. Therefore, TouchScreenC uses the parameterized interface Read\textless uint16\_t\textgreater wired to component AdcReadClientC for getting the needed ADC - values from channels 0 and 1.
+To use the GLCD in an application, component \textit{GLCDC} with interface \textit{GLCD} must be used. This interface provides functions for initializing, clearing, writing strings, and drawing graphical objects on the the GLCD. Additionally, it provides functions for calibrating the touchscreen and for getting x/y - coordinates. See listing\ref{GLCD} for all the provided functions. Figure\ref{fig:glcdc} shows the internal composition of the component.
 
 \lstinputlisting[caption={GLCD.nc},label=GLCD]{../tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc}
 

@@ -8,9 +8,77 @@
 
 \section{The Hardware}
 
+This developmentboard, as shown in figure ~\ref{fig:bigavr6}, is produced by mikroElektronika and supports 64- and 100-pin AVR TQFP packages.
+
+\subsection{Onboard - Features}
+
+\begin{itemize}
+ \item 2 x UART
+ \item highspeed CAN transceiver MCP2551
+ \item USB 2.0
+ \item MMC/SD card slot
+ \item digital thermometer DS1820
+ \item onboard USB 2.0 programmer
+ \item real-time clock DS1307
+ \item 86 LEDs to indicate logic state of all microcontroller-pins
+ \item 86 push buttons to control microcontroller digital inputs
+ \item IDC10 connectors for all microcontroller pins
+ \item DIP - switches to separate port pins from pull-up/down resistors
+ \item potentiometer for testing the ADC - channels
+ \item 1KBit serial EEPROM 24AA01
+\end{itemize}
+
+\subsection{Extensions}
+
+\begin{itemize}
+ \item 2x16 LCD, directly connectable via on-boad connectors
+ \item 64x128 GLCD, directly connectable via on-boad connectors
+ \item IEEE802.3 extensionboard 10MBit
+ \item SmartMP3 decoder board
+\end{itemize}
+
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.5\columnwidth]{pics/bigavr6.png}}
+  \caption{bigAVR6 platform}
+  \label{fig:bigavr6}
+\end{figure}
+
+
 \section{Supported Modules}
 
 \subsection{GLCD}
+
+The GLCD - extension consists of a KS0108B GLCD dot matrix liquid cristal graphic display system with a resolution is 128 x 64 pixel. As the schematics shows in figure~\ref{fig:glcd}, SW15/8 must be turned on to activate the GLCD-backlight, the contrast can be changed with potentiometer P3.
+
+The GLCD is combined with a touchscreen foil, sticked onto the GLCD-surface. Activate SW13/1,2,3,4 to use it. To read the x and y coordinates, the component uses ADC channels 0 and 1, respectivly. 
+
+The following pins \textbf{MUST NOT} be touched by the programmer when using the GLCD and the touchscreen:
+
+\begin{itemize}
+ \item PORT A: 					all ports reserved for GLCD
+ \item PORT E: PE2, PE3, PE4, PE5, PE6, PE7	reserved for GLCD
+ \item PORT F: PF0, PF1 			reserved for touchscreen
+ \item PORT G: PG3, PG4				reserved for touchscreen
+\end{itemize}
+
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.8\columnwidth]{pics/GLCD.png}}
+  \caption{GLCD schematics}
+  \label{fig:glcd}
+\end{figure}
+
+To use the GLCD in an application, component \textit{GLCDC} with interface \textit{GLCD} must be used. This interface provides functions for initializing, clearing, writing strings, and drawing graphical objects on the the GLCD. Additionally, it provides functions for calibrating the touchscreen and for getting x/y - coordinates. See listing \ref{GLCD} for all the provided functions. Figure \ref{fig:glcdc} shows the internal composition of the GLCDC: LCD128x64C is responsible for writing and initializing the GLCD, while TouchScreenC provides functionality related to determining the pressed positions. Therefore, TouchScreenC uses the parameterized interface Read\textless uint16\_t\textgreater wired to component AdcReadClientC for getting the needed ADC - values from channels 0 and 1.
+
+\lstinputlisting[caption={GLCD.nc},label=GLCD]{../tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc}
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.8\columnwidth]{pics/GLCDC.png}}
+  \caption{GLCDC components}
+  \label{fig:glcdc}
+\end{figure}
+
 
 \subsection{MMC}
 

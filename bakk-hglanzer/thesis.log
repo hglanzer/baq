@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  14 SEP 2011 18:30
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  15 SEP 2011 21:22
 entering extended mode
 **thesis.tex
 (./thesis.tex
@@ -330,28 +330,65 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
  [12]) (./listings/MyPowersavingC.nc) [13]
-[14]
+[14] [15]
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 203.
- [15]) [16]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 207.
+) [16]
 \openout2 = `bigAVR6.aux'.
 
  (./bigAVR6.tex
 Chapter 4.
-<pics/bigavr6.png, id=106, 642.4pt x 530.98375pt>
-File: pics/bigavr6.png Graphic file (type png)
- <use pics/bigavr6.png>)
 [17
 
 
 
 
- <./pics/bigavr6.png>]
+] <pics/bigavr6.png, id=109, 642.4pt x 530.98375pt>
+File: pics/bigavr6.png Graphic file (type png)
+ <use pics/bigavr6.png>
+[18 <./pics/bigavr6.png>] <pics/GLCD.png, id=113, 1124.2pt x 726.715pt>
+File: pics/GLCD.png Graphic file (type png)
+
+<use pics/GLCD.png> (../tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc
+Overfull \hbox (159.8284pt too wide) in paragraph at lines 10--12
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[19 <./pics/GLCD.png>]
+Overfull \hbox (47.62592pt too wide) in paragraph at lines 55--56
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 56.
+
+Overfull \hbox (62.92625pt too wide) in paragraph at lines 58--60
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (47.62592pt too wide) in paragraph at lines 60--62
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (62.92625pt too wide) in paragraph at lines 62--64
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.72603pt too wide) in paragraph at lines 66--68
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[20]) <pics/GLCDC.png, id=120, 543.02875pt x 187.70125pt>
+File: pics/GLCDC.png Graphic file (type png)
+ <use pics/GLCDC.png>) [21 <./pics/GLCDC.png>]
 \openout2 = `buildenv.aux'.
 
  (./buildenv.tex
 Chapter 5.
-) [18
+) [22
 
 
 
@@ -361,7 +398,7 @@ Chapter 5.
 
  (./resourcesused.tex
 Chapter 6.
-) [19
+) [23
 
 
 
@@ -371,7 +408,7 @@ Chapter 6.
 
  (./relatedwork.tex
 Chapter 7.
-) [20
+) [24
 
 
 
@@ -381,7 +418,7 @@ Chapter 7.
 
  (./designapproach.tex
 Chapter 8.
-) [21
+) [25
 
 
 
@@ -391,7 +428,7 @@ Chapter 8.
 
  (./implementation.tex
 Chapter 9.
-) [22
+) [26
 
 
 
@@ -401,7 +438,7 @@ Chapter 9.
 
  (./results.tex
 Chapter 10.
-) [23
+) [27
 
 
 
@@ -411,12 +448,12 @@ Chapter 10.
 
  (./conclusion.tex
 Chapter 11.
-) [24
+) [28
 
 
 
 
-] (./thesis.bbl) [25
+] (./thesis.bbl) [29
 
 
 
@@ -426,10 +463,10 @@ Chapter 11.
 
  (./setupguide.tex
 Appendix A.
-[26
+[30
 
 
-]) [27]
+]) [31]
 \openout2 = `userguide.aux'.
 
  (./userguide.tex
@@ -442,12 +479,12 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 31.
 
-[28
+[32
 
 
 
 
-] [29]) [30] (./thesis.aux (./abstract.aux) (./introduction.aux)
+] [33]) [34] (./thesis.aux (./abstract.aux) (./introduction.aux)
 (./tinyos.aux) (./nesc.aux) (./bigAVR6.aux) (./buildenv.aux)
 (./resourcesused.aux) (./relatedwork.aux) (./designapproach.aux)
 (./implementation.aux) (./results.aux) (./conclusion.aux) (./setupguide.aux)
@@ -460,17 +497,17 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4250 strings out of 94500
- 54870 string characters out of 1176767
- 128102 words of memory out of 1000000
- 7264 multiletter control sequences out of 10000+50000
+ 4360 strings out of 94500
+ 56525 string characters out of 1176767
+ 136145 words of memory out of 1000000
+ 7369 multiletter control sequences out of 10000+50000
  11822 words of font info for 41 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
- 38i,11n,61p,761b,1674s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 39i,11n,61p,847b,1674s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 159 PDF objects out of 300000
+ 174 PDF objects out of 300000
  0 named destinations out of 131072
- 16 words of extra memory for PDF output out of 65536
+ 26 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/t
 ype1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></u
 sr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/
@@ -482,4 +519,4 @@ exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 mf/fonts/type1/bluesky/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 /cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texm
 f/fonts/type1/bluesky/cm/cmcsc10.pfb>
-Output written on thesis.pdf (34 pages, 1047170 bytes).
+Output written on thesis.pdf (38 pages, 1249072 bytes).

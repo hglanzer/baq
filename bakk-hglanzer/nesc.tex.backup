@@ -193,11 +193,7 @@ To get an async function into a syncronous context, the only way possible is by 
 
 \section{Wiring}
 
-As said before, in nesC a component can only call functions and access variables whithin its local namespace. To call functions outside it's scope, a set of names in one component, generally an interface, must be mapped to a set of names in another component. This operation is called wiring.
-
-\subsection{Modules vs. Configurations}
-
-FIXME!!
+As said before, in nesC a component can only call functions and access variables whithin its local namespace. To call functions outside it's scope, a set of names in one component, generally an interface, must be mapped to a set of names in another component, which is called wiring.
 
 \subsection{Operators}
 
@@ -241,11 +237,11 @@ To implement the events that can be signaled by ProvidedInterface, a construct o
 	}
 \end{lstlisting}
 
-The third operator, '=', \textit{exports} an interface. It defines how the configuration of an interface is implemented, by delegating the it to another component. In contrast, the 'arrow' - operator combines components that already exist.
+The third operator, '=', \textit{exports} an interface. It defines how the configuration of an interface is implemented, by delegating the it to another component. In contrast, the 'arror' - operator combines components that already exist.
 
-\subsection{Nameing Conventions}
 
-All components in tinyOS are ending in \textit{C} or \textit{P}: the first ending is used for \textit{C}omponents, which means that they represent usable abstractions. \textit{P}rivate components are ending in P. That means that generally, the programmer should not wire to it, because it's functionality is encapsulated by a \textit{C}omponent.
+
+
 
 
 %%
