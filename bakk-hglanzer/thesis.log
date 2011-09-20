@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  15 SEP 2011 21:22
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  20 SEP 2011 16:43
 entering extended mode
 **thesis.tex
 (./thesis.tex
@@ -273,7 +273,11 @@ LaTeX Warning: Reference `chapter:concepts' on page 2 undefined on input line 2
 ) [2]
 \openout2 = `tinyos.aux'.
 
- (./tinyos.tex
+ (./tinyos.tex [3
+
+
+
+]
 Chapter 2.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
 (/usr/share/texmf/tex/latex/base/omscmr.fd
@@ -282,27 +286,34 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
 
-<pics/WeC.png, id=35, 470.75874pt x 275.0275pt>
+<pics/WeC.png, id=39, 470.75874pt x 275.0275pt>
 File: pics/WeC.png Graphic file (type png)
- <use pics/WeC.png> [3
+ <use pics/WeC.png> [4
 
-
-
-
-] [4 <./pics/WeC.png>] <pics/hardwareabstraction.png, id=46, 546.04pt x 541.021
+] [5 <./pics/WeC.png>] <pics/hardwareabstraction.png, id=49, 546.04pt x 541.021
 26pt>
 File: pics/hardwareabstraction.png Graphic file (type png)
 
-<use pics/hardwareabstraction.png>
+<use pics/hardwareabstraction.png> [6] [7 <./pics/hardwareabstraction.png>]
+[8] [9] (./listings/IEEE8023P.nc
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
+ [10]) (./listings/IEEE8023C.nc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 12.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] [6 <./pics/hardwareabstraction.png>] [7]) [8]
+(/usr/share/texmf/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 12.
+)) [11]
 \openout2 = `nesc.aux'.
 
  (./nesc.tex
 Chapter 3.
-[9
+[12
 
 
 
@@ -312,41 +323,29 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
-) [10]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 53.
-
-(/usr/share/texmf/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 53.
- [11]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 123.
-
+) [13] [14]
 (./listings/MyPowersavingAppC.nc
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
- [12]) (./listings/MyPowersavingC.nc) [13]
-[14] [15]
+ [15]) (./listings/MyPowersavingC.nc) [16]
+[17] [18]
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 207.
-) [16]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 209.
+ (../tinyos/tos/platforms/bigAVR6/GLCD/GLCDC.nc [19])) [20]
 \openout2 = `bigAVR6.aux'.
 
- (./bigAVR6.tex
+
+(./bigAVR6.tex
 Chapter 4.
-[17
+[21
 
 
 
 
-] <pics/bigavr6.png, id=109, 642.4pt x 530.98375pt>
+] <pics/bigavr6.png, id=122, 642.4pt x 530.98375pt>
 File: pics/bigavr6.png Graphic file (type png)
  <use pics/bigavr6.png>
-[18 <./pics/bigavr6.png>] <pics/GLCD.png, id=113, 1124.2pt x 726.715pt>
+[22 <./pics/bigavr6.png>] <pics/GLCD.png, id=126, 1124.2pt x 726.715pt>
 File: pics/GLCD.png Graphic file (type png)
 
 <use pics/GLCD.png> (../tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc
@@ -354,7 +353,7 @@ Overfull \hbox (159.8284pt too wide) in paragraph at lines 10--12
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[19 <./pics/GLCD.png>]
+[23 <./pics/GLCD.png>]
 Overfull \hbox (47.62592pt too wide) in paragraph at lines 55--56
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -381,14 +380,14 @@ Overfull \hbox (52.72603pt too wide) in paragraph at lines 66--68
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[20]) <pics/GLCDC.png, id=120, 543.02875pt x 187.70125pt>
+[24]) <pics/GLCDC.png, id=133, 543.02875pt x 187.70125pt>
 File: pics/GLCDC.png Graphic file (type png)
- <use pics/GLCDC.png>) [21 <./pics/GLCDC.png>]
+ <use pics/GLCDC.png>) [25 <./pics/GLCDC.png>]
 \openout2 = `buildenv.aux'.
 
  (./buildenv.tex
 Chapter 5.
-) [22
+) [26
 
 
 
@@ -398,7 +397,7 @@ Chapter 5.
 
  (./resourcesused.tex
 Chapter 6.
-) [23
+) [27
 
 
 
@@ -408,7 +407,7 @@ Chapter 6.
 
  (./relatedwork.tex
 Chapter 7.
-) [24
+) [28
 
 
 
@@ -418,7 +417,7 @@ Chapter 7.
 
  (./designapproach.tex
 Chapter 8.
-) [25
+) [29
 
 
 
@@ -428,7 +427,7 @@ Chapter 8.
 
  (./implementation.tex
 Chapter 9.
-) [26
+) [30
 
 
 
@@ -438,7 +437,7 @@ Chapter 9.
 
  (./results.tex
 Chapter 10.
-) [27
+) [31
 
 
 
@@ -448,12 +447,12 @@ Chapter 10.
 
  (./conclusion.tex
 Chapter 11.
-) [28
+) [32
 
 
 
 
-] (./thesis.bbl) [29
+] (./thesis.bbl) [33
 
 
 
@@ -463,10 +462,10 @@ Chapter 11.
 
  (./setupguide.tex
 Appendix A.
-[30
+[34
 
 
-]) [31]
+]) [35]
 \openout2 = `userguide.aux'.
 
  (./userguide.tex
@@ -479,12 +478,12 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 31.
 
-[32
+[36
 
 
 
 
-] [33]) [34] (./thesis.aux (./abstract.aux) (./introduction.aux)
+] [37]) [38] (./thesis.aux (./abstract.aux) (./introduction.aux)
 (./tinyos.aux) (./nesc.aux) (./bigAVR6.aux) (./buildenv.aux)
 (./resourcesused.aux) (./relatedwork.aux) (./designapproach.aux)
 (./implementation.aux) (./results.aux) (./conclusion.aux) (./setupguide.aux)
@@ -497,15 +496,15 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4360 strings out of 94500
- 56525 string characters out of 1176767
- 136145 words of memory out of 1000000
- 7369 multiletter control sequences out of 10000+50000
+ 4389 strings out of 94500
+ 57133 string characters out of 1176767
+ 136182 words of memory out of 1000000
+ 7390 multiletter control sequences out of 10000+50000
  11822 words of font info for 41 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
- 39i,11n,61p,847b,1674s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 39i,11n,61p,1023b,1692s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 174 PDF objects out of 300000
+ 186 PDF objects out of 300000
  0 named destinations out of 131072
  26 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/t
@@ -519,4 +518,4 @@ exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 mf/fonts/type1/bluesky/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 /cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texm
 f/fonts/type1/bluesky/cm/cmcsc10.pfb>
-Output written on thesis.pdf (38 pages, 1249072 bytes).
+Output written on thesis.pdf (42 pages, 1260180 bytes).

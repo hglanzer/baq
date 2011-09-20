@@ -1,4 +1,4 @@
-%%
+z%%
 %%
 %% This file should be edited by user
 %%
@@ -23,7 +23,7 @@ The following requirements were defined for tinyOS:
  \item Support a diverse set of platforms
 \end{itemize}
 
-One of tinyOS's most important features is that tinyOS applications are built out of components, which are connected or wired to each other by interfaces. Components can easily be developed, extended and reused. Another advantage is that a component can be built in software \textbf{or} hardware, increasing flexibility. But because hardware is always non-blocking, the software must be non-blocking as well to guarantee this exchangeability. So, tinyOS uses the split-phase - model: a userprogram that wants to execute some kind of code \textit{posts} a \textit{task}, which is queued by the task scheduler, and gets executed later. The finished execution of the task is afterwards \textit{signaled} to the caller of the task. This behavior can be compared to a hardware interrupt: some kind of operation is requested by a program, so the program initialises the needed datastructures and starts the operation. But instead of waiting until the hardware has finished, the userprogram returns immediatly and continues with other instructions, and gets discontinued by an interrupt as soon as the hardware has finished.
+One of tinyOS's most important features is that tinyOS applications are built out of components, which are connected or wired to each other by interfaces. Components can easily be developed, extended and reused. Another advantage is that a component can be built in software \textbf{or} hardware, increasing flexibility. 
 
 \section{History}
 
@@ -51,10 +51,11 @@ With version 2.1.1, a range of hardware motes are supported out-of-the-box. A br
  \item epic: MSP430 cpu and CC2420 radio chip
  \item eyesIFX: MSP430F149/F1611 and TDA5250 wireless transceiver
  \item intelmote2: PXA271 XScale cpu and CC2420 radio chip 
+ \item iris: Atmega1281 and AT86RF230 radio chip
  \item mica: Atmega103 and TR1000 radio chip
- \item mica2: Atmeage128L and Chipcon 868/916 radio chip
+ \item mica2: Atmega128L and Chipcon 868/916 radio chip
  \item mica2dot: Atmega128 and cc1000 transceiver
- \item micaz: Atmega128 and cc2420 radio chip
+ \item micaz: Atmega128 and CC2420 radio chip
  \item mulle: Renesas M16C and AT86RF230 transceiver
  \item sam3s\_ek: SAM3S4C chip and cc2520 transceiver
  \item sam3u\_ek: SAM3S4C chip and cc2420 transceiver
@@ -135,6 +136,12 @@ The \textbf{shared} concept is used for modules that need exclusive access to a 
 
 The arbiter, the centralized place that knows whether a resource is busy or not, is an interface that must be instantiated by every client that wants to use the resource. After that, the client can \textit{request} the resource. The request is queued by the arbiter if the resource is busy. As soon as the resource is available, a special event, \textit{granted}, is signaled to the client, who has now exclusive access to it. It is the client's responsibility to \textit{release} it so soon as possible.
 To avoid monopolizing a resource a \textit{request} for a resource is only queued if there is no other request of this client queued yet.
+
+
+An example for such a \textit{shared} resource would be a bus, for example SPI, as show in codelistings \ref{IEEE8023P} and \ref{IEEE8023C}, which are part of a implementation for sending and receiving IEEE8023 - frames with an 10MBit ENC28J60 chip. Communication with this chip is done by SPI. Given that at least one other component could need independent access to SPI too, IEEE8023C \textit{requests} the bus whenever it needs to write data to or read data from the ethernet-chip. Once the resource SPI is available, the arbiter signals this to IEEE8023C, which has implemented the proper handler for this situation, named \textit{Resource.granted()}.
+
+\lstinputlisting[caption={IEEE8023P.nc},label=IEEE8023P]{listings/IEEE8023P.nc}
+\lstinputlisting[caption={IEEE8023C.nc},label=IEEE8023C]{listings/IEEE8023C.nc}
 
 
 %%

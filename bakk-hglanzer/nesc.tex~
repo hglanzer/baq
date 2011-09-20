@@ -197,7 +197,9 @@ As said before, in nesC a component can only call functions and access variables
 
 \subsection{Modules vs. Configurations}
 
-FIXME!!
+Components can either be \textit{Modules} or \textit{Configurations} - both use and provide interfaces. This set of \textit{used} and \textit{provided} interfaces defines the \textit{signature} of the component.
+
+The difference between \textit{Modules} and \textit{Configurations} lies in their implementation: while configurations are implemented by other components, which they wire, modules are executeable code. Modules are written for the most part in standard - C.
 
 \subsection{Operators}
 
@@ -222,7 +224,7 @@ In short, the arrow always points from the \textit{user} of an interface to the 
 	User -> Provider;
 \end{lstlisting}
 
-As soon as MyComponent is connected this way to OtherComponent, MyComponent can use all of the functions provided by ProvidedInterface. Additionally, UsedInterface \textbf{MUST} implement all of the events OtherComponent offers signals for. 
+As soon as MyComponent is connected this way to OtherComponent, MyComponent can use all of the functions provided by ProvidedInterface. Additionally, UsedInterface \textbf{MUST} implement all the handler OtherComponent offers events for. 
 
 If MyComponent wants to call a function provided by OtherComponent, the call would look like this:
 
@@ -230,7 +232,7 @@ If MyComponent wants to call a function provided by OtherComponent, the call wou
 	call UsedInterface.FunctionName(<argumentlist>);
 \end{lstlisting}
 
-To implement the events that can be signaled by ProvidedInterface, a construct of this form in UsedInterface is neccessary:
+To implement the handler for the events that can be signaled by ProvidedInterface, a construct of this form in UsedInterface is neccessary:
 
 \begin{lstlisting}
 	event <returntype> UsedInterface.EventName(<argumentlist>)
@@ -241,7 +243,11 @@ To implement the events that can be signaled by ProvidedInterface, a construct o
 	}
 \end{lstlisting}
 
-The third operator, '=', \textit{exports} an interface. It defines how the configuration of an interface is implemented, by delegating the it to another component. In contrast, the 'arror' - operator combines components that already exist.
+The third operator, '=', \textit{exports} an interface. It defines how the configuration of an interface is implemented, by delegating it to another component. In contrast, the 'arrow' - operator combines components that already exist.
+
+\lstinputlisting[caption={GLCDC.nc},label=GLCDC]{../tinyos/tos/platforms/bigAVR6/GLCD/GLCDC.nc}
+
+The difference is explained on the basis of codelisting \ref{GLCDC} - the top-level configuration for a component that provides functionality for a graphical display. This component provides the interface GLCD which can be used by a high-level programmer to easily use such a display. \textit{GLCDC} consists of the private component \textit{GLCDP} and 2 more components, \textit{TouchScreenC} and \textit{LCD128x64C} 
 
 \subsection{Nameing Conventions}
 
