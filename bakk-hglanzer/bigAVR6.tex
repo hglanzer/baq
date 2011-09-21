@@ -84,6 +84,71 @@ To use the GLCD in an application, component \textit{GLCDC} with interface \text
 
 \subsection{Ethernetboard}
 
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.5\columnwidth]{pics/Ethernetboard.png}}
+  \caption{Ethernet Board}
+  \label{fig:ethernetboard}
+\end{figure}
+
+This extension board, as shown in figure \ref{fig:ethernetboard}, can be used for sending and transmitting IEEE802.3 frames, and therefore embedding the developmentboard into a network. The board features an ethernet controller ENC28J60 that exchanges data with a microcontroller via standard SPI. The board can be connected to dsPIC, AVR-8051 and PIC by three 10-pin IDC connectors. The board needs 3.3V voltage supply, but has a 74LVC1T45 bus transceiver chip for running the board with 5V. Therefore, jumper J1 has to be set correctly.
+
+A basic udp/ip/arp - stack has been implemented, with the following limitations:
+
+\begin{itemize}
+ \item No UDP - level checksum
+ \item No IP - level options
+ \item No IP - level fragmentation
+ \item ARP request/reply only
+ \item No ICMP
+\end{itemize}
+
+For using the extensionboard with the bigAVR6, the following requirements have to be provided:
+
+\begin{itemize}
+ \item Jumper J1 on the Ethernetboard must be set to 5V
+ \item SPI-AVR-8051 VCC  must be connected to 5V
+ \item SPI-AVR-8051 GND  must be connected to ground
+ \item SPI-AVR-8051 CS   must be connected to PORT B0
+ \item SPI-AVR-8051 SCK  must be connected to PORT B1
+ \item SPI-AVR-8051 MOSI must be connected to PORT B2
+ \item SPI-AVR-8051 MISO must be connected to PORT B3
+ \item SPI-AVR-8051 RST  must be connected to PORT B4
+ \item SPI-AVR-8051 INT  must be connected to PORT D2  
+\end{itemize}
+
+Obviously, the state of this connected pins \textbf{MUST NOT} be touched by the programmer.
+
+To use the UDP - stack in an application, component UDPC with interface UDP has to be used. Interface UDP provides functions for initializing the stack and sending and receiving frames, as shown in listing \ref{UDP}.
+
+\lstinputlisting[caption={UDP.nc},label=UDP]{../tinyos/tos/platforms/bigAVR6/udp/UDP.nc}
+
+
+When the application wants to send data to or receive from a remote host, it initializes the stack by calling
+
+\begin{lstlisting}
+  command uint8_t initStack();
+\end{lstlisting}
+
+To send data, the corresponding function must be called:
+
+\begin{lstlisting}
+  command uint8_t sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort,
+			   uint16_t destPort, uint16_t len);
+\end{lstlisting}
+
+Afterwards, the data travels down the stack, as shown in figure \ref{fig:udpstack}. At first, an udp header is generated, and the payload, as assigned by the application, is attached to it. As mentioned above, \textbf{NO} checksum is generated at this level - if needed, a checksum must be calculated at application level. This udp packet(payload + udp-header) is then assigned to the next level, the ip level.
+
+At this level, a checksum is generated, which includes the IP-header only. In the next step, a routing-decision has to be made: either the packet is addressed to a host \textit{inside} the lan(the remote host has the same network-adress than the ip that has been assigned to the bigAVR6 board), or the packet must \textit{hop} outside the lan. In the first case, the packet can be sent to the host directly, otherwise, it must be sent to the default gateway, as defined in the headerfile tinyos/tos/platforms/bigAVR6/ip/IP.h. When the proper destination ip has been found, an ARP - lookup is done. A local arp-cache is implemented as a ringbuffer, which saves ip/mac - address couples in a two-dimensional array. If no ARP - entry is found for the destionation ip, a lookup is sent automatically. Be aware that, if no MAC is found, the ARP-request - triggering packet is lost and must be resent by the application. If the MAC is known, it is extracted from the MAC cache, and component IEEE802.3 takes over control, where the frameheader and the payload(data + udp-header + ip-header) is copied into the transmit memory of the ENC28J60 by SPI. Afterwards, the communication is started, and the completion is signaled to the application.
+
+To receive a packet from remote hosts, the packet must either has the proper destination MAC set, as defined in tinyos/tos/platforms/bigAVR6/eth/IEEE8023.h, or must be be a multicast frame(destination 0xFFFFFFFFFFFF), otherwise the ethernetcontroller chip ENC28J60 will not accept it. If a valid MAC is present, the ENC28J60 will autonomously copy the packet into the receive buffer and signal completion by an interrupt. The packet will be read out by component IEEE8023C and handed over to the IP-level component IPC. If the packet is a ARP - request, a corresponding reply will be sent, otherwise the payload(data + udp-header) will be handed over one level higher, which is the UDP - level. Note that the ip-checksum will \textbf{NOT} be checked. At UPD level, the actual payload will get extracted and is handed over to the application.
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.8\columnwidth]{pics/udpstack.png}}
+  \caption{UPD Stack}
+  \label{fig:udpstack}
+\end{figure}
+
 \subsection{LCD 2x16}
 
 
