@@ -53,7 +53,7 @@ The GLCD - extension consists of a KS0108B GLCD dot matrix liquid cristal graphi
 
 The GLCD is combined with a touchscreen foil, sticked onto the GLCD-surface. Activate SW13/1,2,3,4 to use it. To read the x and y coordinates, the component uses ADC channels 0 and 1, respectivly. 
 
-The following pins \textbf{MUST NOT} be touched by the programmer when using the GLCD and the touchscreen:
+The logic level of the following pins \textbf{MUST NOT} be touched by the programmer when using the GLCD and the touchscreen:
 
 \begin{itemize}
  \item PORT A: 					all ports reserved for GLCD
@@ -82,6 +82,41 @@ To use the GLCD in an application, component \textit{GLCDC} with interface \text
 
 \subsection{MMC}
 
+A MMC/SD connector is available onboard so that memory cards can be interfaced to the microcontroller via SPI. As shown in figure \ref{fig:mmc}, activate SW15/3/4/5/6/7 to use it. Because the memory card is powered with 3.3V, whereas the microcontroller needs 5V supply, a 74LVCC3245 bus transceiver is used to obtain the needed voltage levels.
+
+The logic level of the following pins \textbf{MUST NOT} be touched by the programmer when using the MMC:
+
+\begin{itemize}
+ \item PORT B: PB1, PB2, PB3			reserved for MMC: SCK / MISO / MOSI
+ \item PORT G: PG1, PG2				reserved for MMC: CS / CD
+\end{itemize}
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.8\columnwidth]{pics/mmc.png}}
+  \caption{MMC/SD Schematics}
+  \label{fig:mmc}
+\end{figure}
+
+Component \textit{MMCC} provides interface \textit{MMC} to enable an application programmer to easily read \textbf{RAW} - data from a MMC, no write functionality is supported yet. The available functions are shown in listing \ref{MMC}. 
+
+To read data, \textit{init()} must be called first to initialize the memorycard. If no MMC/SD is present, a corresponding errormessage is signaled to the application. Otherwise, completion is signaled by the event \textit{initDone()}. Afterwards, data can be read from the memorycard by calling
+
+\begin{lstlisting}
+	call command uint8_t readBlock(uint32_t addr);
+\end{lstlisting}
+
+After completion, event \textit{blockReady} is signaled to the application and data is available by a pointer, in units of 32 byte blocks. 
+
+\lstinputlisting[caption={MMC.nc},label=MMC]{../tinyos/tos/platforms/bigAVR6/mmc/MMC.nc}
+
+The following limitations are to be noticed:
+
+\begin{itemize}
+ \item Read - Only
+ \item Raw data, no filesystem supported
+ \item Data is always read in 32 byte blocks
+\end{itemize}
+
 \subsection{Ethernetboard}
 
 
@@ -91,7 +126,7 @@ To use the GLCD in an application, component \textit{GLCDC} with interface \text
   \label{fig:ethernetboard}
 \end{figure}
 
-This extension board, as shown in figure \ref{fig:ethernetboard}, can be used for sending and transmitting IEEE802.3 frames, and therefore embedding the developmentboard into a network. The board features an ethernet controller ENC28J60 that exchanges data with a microcontroller via standard SPI. The board can be connected to dsPIC, AVR-8051 and PIC by three 10-pin IDC connectors. The board needs 3.3V voltage supply, but has a 74LVC1T45 bus transceiver chip for running the board with 5V. Therefore, jumper J1 has to be set correctly.
+This extension board, as shown in figure \ref{fig:ethernetboard}, can be used for sending and receiving IEEE802.3 frames, and therefore embedding the developmentboard into a network. The board features an ethernet controller ENC28J60 that exchanges data with a microcontroller via standard SPI. The board can be connected to dsPIC, AVR-8051 and PIC by three 10-pin IDC connectors. The board needs 3.3V voltage supply, but has a 74LVXc3245 bus transceiver chip for running the board with 5V logic levels. Therefore, jumper J1 has to be set correctly.
 
 A basic udp/ip/arp - stack has been implemented, with the following limitations:
 

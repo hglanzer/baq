@@ -5,10 +5,11 @@ A level-1 auxiliary file: introduction.aux
 A level-1 auxiliary file: tinyos.aux
 A level-1 auxiliary file: nesc.aux
 A level-1 auxiliary file: bigAVR6.aux
+A level-1 auxiliary file: osII.aux
 A level-1 auxiliary file: buildenv.aux
 A level-1 auxiliary file: resourcesused.aux
+A level-1 auxiliary file: todos.aux
 A level-1 auxiliary file: relatedwork.aux
-A level-1 auxiliary file: designapproach.aux
 A level-1 auxiliary file: implementation.aux
 A level-1 auxiliary file: results.aux
 A level-1 auxiliary file: conclusion.aux
@@ -18,7 +19,7 @@ A level-1 auxiliary file: userguide.aux
 Database file #1: bibfile.bib
 You've used 3 entries,
             2543 wiz_defined-function locations,
-            588 strings with 5097 characters,
+            589 strings with 5096 characters,
 and the built_in function-call counts, 816 in all, are:
 = -- 82
 > -- 24
