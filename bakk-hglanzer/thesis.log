@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  22 SEP 2011 17:54
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  23 SEP 2011 17:25
 entering extended mode
 **thesis.tex
 (./thesis.tex
@@ -448,12 +448,12 @@ File: pics/uCtasks.png Graphic file (type png)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32] [33 <./pics/uCtasks.png>]) [34]
+[32] [33 <./pics/uCtasks.png>] [34]) [35]
 \openout2 = `buildenv.aux'.
 
  (./buildenv.tex
 Chapter 6.
-) [35
+) [36
 
 
 
@@ -463,7 +463,7 @@ Chapter 6.
 
  (./resourcesused.tex
 Chapter 7.
-) [36
+) [37
 
 
 
@@ -473,7 +473,7 @@ Chapter 7.
 
  (./todos.tex
 Chapter 8.
-) [37
+) [38
 
 
 
@@ -483,7 +483,7 @@ Chapter 8.
 
  (./relatedwork.tex
 Chapter 9.
-) [38
+) [39
 
 
 
@@ -493,7 +493,7 @@ Chapter 9.
 
  (./implementation.tex
 Chapter 10.
-) [39
+) [40
 
 
 
@@ -503,7 +503,7 @@ Chapter 10.
 
  (./results.tex
 Chapter 11.
-) [40
+) [41
 
 
 
@@ -513,12 +513,12 @@ Chapter 11.
 
  (./conclusion.tex
 Chapter 12.
-) [41
+) [42
 
 
 
 
-] (./thesis.bbl) [42
+] (./thesis.bbl) [43
 
 
 
@@ -528,10 +528,10 @@ Chapter 12.
 
  (./setupguide.tex
 Appendix A.
-[43
+[44
 
 
-]) [44]
+]) [45]
 \openout2 = `userguide.aux'.
 
  (./userguide.tex
@@ -544,12 +544,12 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 31.
 
-[45
+[46
 
 
 
 
-] [46]) [47] (./thesis.aux (./abstract.aux) (./introduction.aux)
+] [47]) [48] (./thesis.aux (./abstract.aux) (./introduction.aux)
 (./tinyos.aux) (./nesc.aux) (./bigAVR6.aux) (./osII.aux) (./buildenv.aux)
 (./resourcesused.aux) (./todos.aux) (./relatedwork.aux) (./implementation.aux)
 (./results.aux) (./conclusion.aux) (./setupguide.aux) (./userguide.aux))
@@ -569,7 +569,7 @@ Here is how much of TeX's memory you used:
  580 hyphenation exceptions out of 1000
  39i,11n,61p,1287b,1692s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 222 PDF objects out of 300000
+ 225 PDF objects out of 300000
  0 named destinations out of 131072
  46 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/t
@@ -583,4 +583,4 @@ exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 mf/fonts/type1/bluesky/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 /cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texm
 f/fonts/type1/bluesky/cm/cmcsc10.pfb>
-Output written on thesis.pdf (52 pages, 2936296 bytes).
+Output written on thesis.pdf (53 pages, 2938659 bytes).

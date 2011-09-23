@@ -45,7 +45,7 @@ While uC/OS-II supports a timely determinstic behaviour, no such assertion can b
 
 \subsection{Scheduler}
 
-MicroC/OS-II has a \textit{preemptive} scheduler - that means that every task gets only a limited time for using the CPU. The time a task gets for execution also depends on the tasks \textit{priority} - every task \textbf{MUST} have a different priority, because otherwise additional round-robing scheduling or similar would be necessary to handle tasks with equal priority. More important tasks get higher priority.
+MicroC/OS-II has a \textit{preemptive} scheduler - that means that every task gets only a limited time for using the CPU. The time a task gets for execution also depends on the task's \textit{priority} - all tasks \textbf{MUST} have different priorities, because otherwise additional round-robing scheduling or similar would be necessary to handle tasks with equal priority. More important tasks get higher priority.
 
 A task can be in 5 different states, as shown in figure \ref{fig:tasksstates}:
 
@@ -82,12 +82,38 @@ Whenever different tasks need to share data with each other, some points must be
  \item Semaphores
 \end{itemize}
 
-Additionally, semaphores can be used to for syncronizing tasks, as described in the following section.
+By \textit{disabling interrupts}, a task or ISR can assure that it won't get preempted by an ISR or by a task, so this is an easy way to grant mutual exclusion. Drawbacks of this solution are that the system obviously can't react to other - possibly important - interrupts. Additionally, because the Micro/OS-II kernel uses timeslicing, the task scheduler is deactivated because no timer interrupts are handled. So, a badly designed task can halt the whole system if it enters a deadlock or some kind of endless loop.
+
+\textit{Semaphores}, developed by Edsger W. Dijkstra, are softwareconstructs that can be used for the same goal. Additionally, they can be used for syncronizing tasks, as described in the following section.
 
 Because tinyOS uses a non-preemptive scheduler, no such constructs are neccessary. Because a task cannot get suspended, apart from an interrupt, by another task, every task is responsible to keep it's data in a consistent state.
 
-\subsection{Inter Process Communication}
+\subsection{Intertask Communication}
 
+The process of sharing data between different tasks or ISRs is called \textit{intertask communication}. Therefore, MicroC/OS-II supports the following ways of sharing data between tasks
+
+\begin{itemize}
+ \item Message Mailboxes
+ \item Message Queues 
+\end{itemize}
+
+MircoC/OS-II provides kernel services to send messages by depositing a pointervariable into a task's mailbox. A task that expects such a message is supended and put onto a waitinglist. If the message arrives within a timeout, the highest-priority task that is waiting for the message is woken up.
+
+A message queue is basically an array of such message mailboxes.
+
+In tinyOS, a task can share data by passing a pointer to the datastructure used, or by using global variables.
+
+\subsection{Task Syncronisation}
+
+\begin{itemize}
+ \item Semaphores 
+ \item Event Flags
+\end{itemize}
+
+Aside from using semaphores for granting mutual exclusion, this software constructs can also be used to syncronize a task with an ISR or other tasks.
+Additionally, MicroC/OS-II offers kernel services to \textit{set}, \textit{clear} and \textit{wait} for event flags.
+
+Syncronisation in tinyOS is implemented by \textit{events}.
 
 \subsection{Memory Footprint}
 
