@@ -1,7 +1,7 @@
 /*
 	Harald Glanzer, 0727156 TU Wien
 
-        lcd 2x16 is operated by 4Bit-mode
+        lcd 2x16 is operated in 4Bit-mode
         R/W is connected to GND --> no read possible, busywait!
 	REGSEL = 0 --> command
 	REGSEL = 1 --> data  
@@ -29,4 +29,3 @@
 #define CURSOR_ON_BLINK_ON      0
 #define CURSOR_ON_BLINK_OFF     1
 #define CURSOR_OFF		2
-

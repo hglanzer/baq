@@ -1,3 +1,8 @@
+/*
+	harald glanzer, TU wien
+
+	interfacedefinition for component LCD128x64C
+*/
 interface LCD128x64
 {
 

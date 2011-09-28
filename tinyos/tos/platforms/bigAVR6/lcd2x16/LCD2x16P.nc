@@ -3,6 +3,7 @@
 */
 
 #include "LCD2x16.h"
+#include "Platform.h"
 
 module LCD2x16P
 {
@@ -11,9 +12,12 @@ module LCD2x16P
 
 implementation
 {
-	static volatile uint8_t dataLen;
+	static volatile uint8_t dataLen, state = UNINIT;
 	static volatile char *dataString;	
 
+	/*
+		write data OR commands to LCD
+	*/
 	void sendLcdData(char *data, uint8_t words, uint8_t mode)
 	{
 		volatile uint8_t wordcount, tmp, nibble, tmp2;
@@ -54,6 +58,7 @@ implementation
 			}
 		}
 
+		state = READY;
 		if(mode == DATA)
 			signal LCD2x16.stringWritten();
 	}
@@ -61,14 +66,19 @@ implementation
 	void setLcdAdr(uint8_t adr)
 	{
 		char tmp;
-
 		tmp = 0x80 | adr;
 		sendLcdData(&tmp, 1, COMM);
 	}
 
-	command void LCD2x16.clearDisplay(void)
+	command error_t LCD2x16.clearDisplay(void)
 	{
+		if(state != READY)
+			return FAIL;
+
+		state = BUSY;
 		sendLcdData((char *)0x01, 1, COMM);
+		return SUCCESS;
+		
 	}
 
 	task void sendData()
@@ -76,40 +86,37 @@ implementation
 		sendLcdData((char *)dataString, dataLen, DATA);
 	}
 
-	command void LCD2x16.sendString(char *str, uint8_t len, uint8_t line, uint8_t row)
+	command error_t LCD2x16.sendString(char *str, uint8_t len, uint8_t line, uint8_t column)
 	{
-	/*
-		uint8_t index = 0;
-		while(str[index] != '\0')
-		{
-			index++;		// bestimme laenge des strings
-			if(index == 255)	// ... nicht entspr. terminierter string - ERROR
-				break;
-		}
-	
-		if(index < 255)
-		{
-			sendLcdData(str, index, DATA);
-		}
-	*/
-		if(row > 16)
-			row = 0;
+		if(state != READY)
+			return FAIL;
+
+		state = BUSY;
+
+		if(column > 16)
+			column = 0;
 	
 		if(line == 1)
-			row = row + 0x40;
+			column = column + 0x40;
 		
 			
-		setLcdAdr(row);
+		setLcdAdr(column);
 
 		dataString = str;
 		dataLen = len;
 
-		post sendData();
+		if((post sendData()) == SUCCESS)
+			return SUCCESS;
+		else 
+			return FAIL;
 	}
 
-	command void LCD2x16.init(uint8_t mode)
+	command error_t LCD2x16.init(uint8_t mode)
 	{
 		char tmp = 0;
+		if(state == BUSY)
+			return FAIL;
+	
 		LCDDAT &= ~((1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (1<<PC3) | (1<<PC2));
 		LCDDDR |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4) | (1<<DDC3) | (1<<DDC2));
 
@@ -125,6 +132,7 @@ implementation
 			tmp = tmp | 0x02;
 		sendLcdData(&tmp, 1, COMM);
 
-		signal LCD2x16.LcdInitDone();
+		state = READY;
+		return SUCCESS;
 	}
 }

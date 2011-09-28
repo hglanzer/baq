@@ -1,4 +1,4 @@
-#include "MMC.h"
+#include "Platform.h"
 
 module MMCP
 {

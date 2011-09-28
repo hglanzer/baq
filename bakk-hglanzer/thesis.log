@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  27 SEP 2011 21:52
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  28 SEP 2011 13:18
 entering extended mode
 **thesis.tex
 (./thesis.tex
@@ -404,24 +404,24 @@ Overfull \hbox (215.92964pt too wide) in paragraph at lines 13--15
  []
 
 )
-Overfull \hbox (11.92513pt too wide) in paragraph at lines 174--175
+Overfull \hbox (11.92513pt too wide) in paragraph at lines 177--178
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [28]
-Underfull \hbox (badness 1168) in paragraph at lines 182--183
+Underfull \hbox (badness 1168) in paragraph at lines 185--186
 []\OT1/cmr/m/n/12 To re-ceive a packet from re-mote hosts, the packet must ei-t
 her has
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 182--183
+Underfull \hbox (badness 1038) in paragraph at lines 185--186
 \OT1/cmr/m/n/12 the proper des-ti-na-tion MAC set, as de-fined in tinyos/-tos/-
 plat-form-s/bi-
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 182--183
+Underfull \hbox (badness 2343) in paragraph at lines 185--186
 \OT1/cmr/m/n/12 gAVR6/eth/IEEE8023.h, or must be be a mul-ti-cast frame(destina
 tion
  []
@@ -432,34 +432,42 @@ File: pics/udpstack.png Graphic file (type png)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pics/lcd2x16.png, id=153, 1006.76125pt x 465.74pt>
+[29] <pics/lcd2x16.png, id=156, 1006.76125pt x 465.74pt>
 File: pics/lcd2x16.png Graphic file (type png)
- <use pics/lcd2x16.png>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use pics/lcd2x16.png> [30 <./pics/udpstack.png> <./pics/lcd2x16.png>]
+(../tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc
+Overfull \hbox (1.72488pt too wide) in paragraph at lines 26--27
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
 
-) [29] [30 <./pics/udpstack.png> <./pics/lcd2x16.png>]
+
+Overfull \hbox (52.72603pt too wide) in paragraph at lines 29--31
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)) [31]
 \openout2 = `osII.aux'.
 
  (./osII.tex
 Chapter 5.
-[31
+[32
 
 
 
 
-] <pics/uCtasks.png, id=163, 669.50125pt x 297.11pt>
+] <pics/uCtasks.png, id=167, 669.50125pt x 297.11pt>
 File: pics/uCtasks.png Graphic file (type png)
  <use pics/uCtasks.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32] [33 <./pics/uCtasks.png>] [34]) [35]
+[33] [34 <./pics/uCtasks.png>] [35]) [36]
 \openout2 = `buildenv.aux'.
 
  (./buildenv.tex
 Chapter 6.
-) [36
+) [37
 
 
 
@@ -469,7 +477,7 @@ Chapter 6.
 
  (./resourcesused.tex
 Chapter 7.
-) [37
+) [38
 
 
 
@@ -479,7 +487,7 @@ Chapter 7.
 
  (./todos.tex
 Chapter 8.
-) [38
+) [39
 
 
 
@@ -489,7 +497,7 @@ Chapter 8.
 
  (./relatedwork.tex
 Chapter 9.
-) [39
+) [40
 
 
 
@@ -499,7 +507,7 @@ Chapter 9.
 
  (./implementation.tex
 Chapter 10.
-) [40
+) [41
 
 
 
@@ -509,7 +517,7 @@ Chapter 10.
 
  (./results.tex
 Chapter 11.
-) [41
+) [42
 
 
 
@@ -519,12 +527,12 @@ Chapter 11.
 
  (./conclusion.tex
 Chapter 12.
-) [42
+) [43
 
 
 
 
-] (./thesis.bbl) [43
+] (./thesis.bbl) [44
 
 
 
@@ -534,10 +542,10 @@ Chapter 12.
 
  (./setupguide.tex
 Appendix A.
-[44
+[45
 
 
-]) [45]
+]) [46]
 \openout2 = `userguide.aux'.
 
  (./userguide.tex
@@ -550,12 +558,12 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 31.
 
-[46
+[47
 
 
 
 
-] [47]) [48] (./thesis.aux (./abstract.aux) (./introduction.aux)
+] [48]) [49] (./thesis.aux (./abstract.aux) (./introduction.aux)
 (./tinyos.aux) (./nesc.aux) (./bigAVR6.aux) (./osII.aux) (./buildenv.aux)
 (./resourcesused.aux) (./todos.aux) (./relatedwork.aux) (./implementation.aux)
 (./results.aux) (./conclusion.aux) (./setupguide.aux) (./userguide.aux))
@@ -567,15 +575,15 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4482 strings out of 94500
- 58619 string characters out of 1176767
- 136543 words of memory out of 1000000
- 7463 multiletter control sequences out of 10000+50000
+ 4502 strings out of 94500
+ 59043 string characters out of 1176767
+ 136565 words of memory out of 1000000
+ 7479 multiletter control sequences out of 10000+50000
  11822 words of font info for 41 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
  39i,11n,61p,1287b,1692s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 226 PDF objects out of 300000
+ 229 PDF objects out of 300000
  0 named destinations out of 131072
  51 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/t
@@ -589,4 +597,4 @@ exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 mf/fonts/type1/bluesky/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 /cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texm
 f/fonts/type1/bluesky/cm/cmcsc10.pfb>
-Output written on thesis.pdf (53 pages, 3006587 bytes).
+Output written on thesis.pdf (54 pages, 3011398 bytes).

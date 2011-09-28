@@ -45,6 +45,9 @@ This developmentboard, as shown in figure ~\ref{fig:bigavr6}, is produced by mik
 \end{figure}
 
 
+
+
+
 \section{Supported Modules}
 
 \subsection{GLCD}
@@ -78,6 +81,7 @@ To use the GLCD in an application, component \textit{GLCDC} with interface \text
   \caption{GLCDC components}
   \label{fig:glcdc}
 \end{figure}
+
 
 
 \subsection{MMC}
@@ -116,7 +120,6 @@ The following limitations are to be noticed:
  \item Raw data, no filesystem supported
  \item Data is always read in 32 byte blocks
 \end{itemize}
-
 
 
 
@@ -188,11 +191,11 @@ To receive a packet from remote hosts, the packet must either has the proper des
 \end{figure}
 
 
-
+\newpage
 
 \subsection{LCD 2x16}
 
-Additionally to the GLCD, a 2x16 alphanumeric LCD module is available for writing ASCII - characters. The display backlight can be turned on with SW15/8, as shown in schematic \ref{fig:lcd2x16}  
+Additionally to the GLCD, a 2x16 alphanumeric LCD module is available for writing ASCII - characters. The display backlight can be turned on with switch SW15/8, as shown in schematic \ref{fig:lcd2x16}, the brightness can be adjusted with potentiometer P1
 
 \begin{figure}[h]
  \centerline{\includegraphics[width=.8\columnwidth]{pics/lcd2x16.png}}
@@ -205,6 +208,22 @@ The logic level of the following pins \textbf{MUST NOT} be touched by the progra
 \begin{itemize}
  \item PORT C: PC2, PC3, PC4, PC5, PC6, PC7, 
 \end{itemize}
+
+To use the LCD2x16, component \textit{LCD2x16C} with interface \textit{LCD2x16} must be used. Before writing data to the display, it must get initialized first. See listing \ref{LCD2x16} for the available functions. 
+
+When initializing, a parameter \textit{mode} must be set, which determines wheter the cursor should be printed. Use the following constants, as defined in tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.h:
+
+\begin{itemize}
+ \item CURSOR\_ON\_BLINK\_ON
+ \item CURSOR\_ON\_BLINK\_OFF
+ \item CURSOR\_OFF
+\end{itemize}
+
+\lstinputlisting[caption={LCD2x16.nc},label=LCD2x16]{../tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc}
+
+\subsection{UART}
+
+There are 2 UART ports available onboard.
 
 %%
 %% = eof =====================================================================
