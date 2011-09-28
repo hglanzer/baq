@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  23 SEP 2011 17:25
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  27 SEP 2011 21:52
 entering extended mode
 **thesis.tex
 (./thesis.tex
@@ -399,29 +399,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26 <./pics/mmc.png>] [27 <./pics/Ethernetboard.png>]
 (../tinyos/tos/platforms/bigAVR6/udp/UDP.nc
-Overfull \hbox (215.92964pt too wide) in paragraph at lines 3--5
+Overfull \hbox (215.92964pt too wide) in paragraph at lines 13--15
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 )
-Overfull \hbox (11.92513pt too wide) in paragraph at lines 171--172
+Overfull \hbox (11.92513pt too wide) in paragraph at lines 174--175
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [28]
-Underfull \hbox (badness 1168) in paragraph at lines 179--180
+Underfull \hbox (badness 1168) in paragraph at lines 182--183
 []\OT1/cmr/m/n/12 To re-ceive a packet from re-mote hosts, the packet must ei-t
 her has
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 179--180
+Underfull \hbox (badness 1038) in paragraph at lines 182--183
 \OT1/cmr/m/n/12 the proper des-ti-na-tion MAC set, as de-fined in tinyos/-tos/-
 plat-form-s/bi-
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 179--180
+Underfull \hbox (badness 2343) in paragraph at lines 182--183
 \OT1/cmr/m/n/12 gAVR6/eth/IEEE8023.h, or must be be a mul-ti-cast frame(destina
 tion
  []
@@ -432,7 +432,13 @@ File: pics/udpstack.png Graphic file (type png)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [29] [30 <./pics/udpstack.png>]
+<pics/lcd2x16.png, id=153, 1006.76125pt x 465.74pt>
+File: pics/lcd2x16.png Graphic file (type png)
+ <use pics/lcd2x16.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [29] [30 <./pics/udpstack.png> <./pics/lcd2x16.png>]
 \openout2 = `osII.aux'.
 
  (./osII.tex
@@ -442,7 +448,7 @@ Chapter 5.
 
 
 
-] <pics/uCtasks.png, id=162, 669.50125pt x 297.11pt>
+] <pics/uCtasks.png, id=163, 669.50125pt x 297.11pt>
 File: pics/uCtasks.png Graphic file (type png)
  <use pics/uCtasks.png>
 
@@ -561,17 +567,17 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4472 strings out of 94500
- 58456 string characters out of 1176767
- 136532 words of memory out of 1000000
- 7454 multiletter control sequences out of 10000+50000
+ 4482 strings out of 94500
+ 58619 string characters out of 1176767
+ 136543 words of memory out of 1000000
+ 7463 multiletter control sequences out of 10000+50000
  11822 words of font info for 41 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
  39i,11n,61p,1287b,1692s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 225 PDF objects out of 300000
+ 226 PDF objects out of 300000
  0 named destinations out of 131072
- 46 words of extra memory for PDF output out of 65536
+ 51 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/t
 ype1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></u
 sr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/
@@ -583,4 +589,4 @@ exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 mf/fonts/type1/bluesky/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 /cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texm
 f/fonts/type1/bluesky/cm/cmcsc10.pfb>
-Output written on thesis.pdf (53 pages, 2938659 bytes).
+Output written on thesis.pdf (53 pages, 3006587 bytes).

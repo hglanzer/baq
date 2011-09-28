@@ -1,3 +1,7 @@
+/*
+	Harald Glanzer, 0727156 TU Wien
+*/
+
 #include "IP.h"
 #include "IEEE8023.h"
 

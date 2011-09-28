@@ -1,3 +1,6 @@
+/*
+	Harald Glanzer, 0727156 TU Wien
+*/
 interface LCD2x16
 {
 	/*
@@ -18,6 +21,6 @@ interface LCD2x16
 	command void clearDisplay(void);
 
 	event void LcdInitDone(void);
-//      command void uartRecvCtrl(uint8_t active);
-//      event void uartSendDone(char* msg, uint8_t msg_len);
+
+	event void stringWritten(void);
 }

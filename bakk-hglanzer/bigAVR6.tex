@@ -117,6 +117,9 @@ The following limitations are to be noticed:
  \item Data is always read in 32 byte blocks
 \end{itemize}
 
+
+
+
 \subsection{Ethernetboard}
 
 
@@ -184,9 +187,24 @@ To receive a packet from remote hosts, the packet must either has the proper des
   \label{fig:udpstack}
 \end{figure}
 
+
+
+
 \subsection{LCD 2x16}
 
+Additionally to the GLCD, a 2x16 alphanumeric LCD module is available for writing ASCII - characters. The display backlight can be turned on with SW15/8, as shown in schematic \ref{fig:lcd2x16}  
 
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.8\columnwidth]{pics/lcd2x16.png}}
+  \caption{LCD 2x16}
+  \label{fig:lcd2x16}
+\end{figure}
+
+The logic level of the following pins \textbf{MUST NOT} be touched by the programmer when using the LCD2x16:
+
+\begin{itemize}
+ \item PORT C: PC2, PC3, PC4, PC5, PC6, PC7, 
+\end{itemize}
 
 %%
 %% = eof =====================================================================

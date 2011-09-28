@@ -1,6 +1,8 @@
+/*
+	Harald Glanzer, 0727156 TU Wien
+*/
+
 #include "LCD2x16.h"
-
-
 
 module LCD2x16P
 {
@@ -9,7 +11,10 @@ module LCD2x16P
 
 implementation
 {
-	void sendLcdData(char *data, uint8_t words, uint8_t mode, uint8_t timeout)
+	static volatile uint8_t dataLen;
+	static volatile char *dataString;	
+
+	void sendLcdData(char *data, uint8_t words, uint8_t mode)
 	{
 		volatile uint8_t wordcount, tmp, nibble, tmp2;
 
@@ -37,15 +42,20 @@ implementation
 			EN_LOW;
 
 			LCDDAT &= 0x03;
-			// WAIT
-			for(tmp = 0; tmp < 255; tmp++)
+			// WAIT - must be done with busywaiting
+			// because RW - pin(data read) of LCD is connected to GND
+			// --> write - only
+			for(tmp = 0; tmp < 250; tmp++)
 			{
-				for(tmp2 = 0; tmp2 < 5; tmp2++)
+				for(tmp2 = 0; tmp2 < 4; tmp2++)
 				{
 
 				}	
 			}
 		}
+
+		if(mode == DATA)
+			signal LCD2x16.stringWritten();
 	}
 
 	void setLcdAdr(uint8_t adr)
@@ -53,15 +63,17 @@ implementation
 		char tmp;
 
 		tmp = 0x80 | adr;
-		sendLcdData(&tmp, 1, COMM, 66);
+		sendLcdData(&tmp, 1, COMM);
 	}
 
 	command void LCD2x16.clearDisplay(void)
 	{
-		char tmp;
+		sendLcdData((char *)0x01, 1, COMM);
+	}
 
-		tmp = 0x01;
-		sendLcdData(&tmp, 1, COMM, 66);
+	task void sendData()
+	{
+		sendLcdData((char *)dataString, dataLen, DATA);
 	}
 
 	command void LCD2x16.sendString(char *str, uint8_t len, uint8_t line, uint8_t row)
@@ -77,7 +89,7 @@ implementation
 	
 		if(index < 255)
 		{
-			sendLcdData(str, index, DATA, 66);
+			sendLcdData(str, index, DATA);
 		}
 	*/
 		if(row > 16)
@@ -88,7 +100,11 @@ implementation
 		
 			
 		setLcdAdr(row);
-		sendLcdData(str, len, DATA, 66);
+
+		dataString = str;
+		dataLen = len;
+
+		post sendData();
 	}
 
 	command void LCD2x16.init(uint8_t mode)
@@ -98,7 +114,7 @@ implementation
 		LCDDDR |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4) | (1<<DDC3) | (1<<DDC2));
 
 		tmp = 0x28;				// do the 4bit - mode:
-		sendLcdData(&tmp, 1, COMM, 66);
+		sendLcdData(&tmp, 1, COMM);
 
 		tmp = 0x08 | 0x04;	// ON, CURSON ON, CURSOR BLINK
 
@@ -107,7 +123,7 @@ implementation
 
 		if(mode == CURSOR_ON_BLINK_OFF)
 			tmp = tmp | 0x02;
-		sendLcdData(&tmp, 1, COMM, 66);
+		sendLcdData(&tmp, 1, COMM);
 
 		signal LCD2x16.LcdInitDone();
 	}

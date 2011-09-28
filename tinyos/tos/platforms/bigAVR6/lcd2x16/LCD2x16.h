@@ -1,8 +1,10 @@
 /*
-        lcd 2x16 wird im 4Bit-Modus betrieben
-        R/W ist schaltungstechnisch auf LOW gezogen --> kein READ moeglich
-	REGSEL = 0 --> Commando
-	REGSEL = 1 --> Daten        
+	Harald Glanzer, 0727156 TU Wien
+
+        lcd 2x16 is operated by 4Bit-mode
+        R/W is connected to GND --> no read possible, busywait!
+	REGSEL = 0 --> command
+	REGSEL = 1 --> data  
 */
 
 

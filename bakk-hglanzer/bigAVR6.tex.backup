@@ -97,10 +97,25 @@ The logic level of the following pins \textbf{MUST NOT} be touched by the progra
   \label{fig:mmc}
 \end{figure}
 
-Component \textit{MMCC} provides interface \textit{MMC} to enable an application programmer to easily read raw - data from a MMC. The available functions are shown in listing \ref{MMC}
+Component \textit{MMCC} provides interface \textit{MMC} to enable an application programmer to easily read \textbf{RAW} - data from a MMC, no write functionality is supported yet. The available functions are shown in listing \ref{MMC}. 
+
+To read data, \textit{init()} must be called first to initialize the memorycard. If no MMC/SD is present, a corresponding errormessage is signaled to the application. Otherwise, completion is signaled by the event \textit{initDone()}. Afterwards, data can be read from the memorycard by calling
+
+\begin{lstlisting}
+	call command uint8_t readBlock(uint32_t addr);
+\end{lstlisting}
+
+After completion, event \textit{blockReady} is signaled to the application and data is available by a pointer, in units of 32 byte blocks. 
 
 \lstinputlisting[caption={MMC.nc},label=MMC]{../tinyos/tos/platforms/bigAVR6/mmc/MMC.nc}
 
+The following limitations are to be noticed:
+
+\begin{itemize}
+ \item Read - Only
+ \item Raw data, no filesystem supported
+ \item Data is always read in 32 byte blocks
+\end{itemize}
 
 \subsection{Ethernetboard}
 
@@ -171,7 +186,7 @@ To receive a packet from remote hosts, the packet must either has the proper des
 
 \subsection{LCD 2x16}
 
-
+Additionally to the GLCD, a 2 line 
 
 %%
 %% = eof =====================================================================

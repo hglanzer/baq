@@ -1,3 +1,7 @@
+/*
+	Harald Glanzer, 0727156 TU Wien
+*/
+
 #include "IEEE8023.h"
 
 //#include<stdio.h>
@@ -222,15 +226,6 @@ implementation
 
 	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
 	{
-/*
-uint8_t rc = 0;
-while(1)
-{
-rc = readPHY(PHSTAT1, 0);
-PORTA = rc;
-};
-*/
-
 		if(stateETH == IEEE8023_READY)
 		{
 			if(call Resource.request() == FAIL)
@@ -252,7 +247,6 @@ PORTA = rc;
 		{
 			return FAIL;
 		}
-		
 	}
 
 	event void Resource.granted(void)
@@ -400,22 +394,11 @@ PORTA = rc;
 				setBit(ECON1, ECON1_RXEN);
 				
 				stateETH = IEEE8023_READY;
-/*				
-				rc = readPHY(PHSTAT2, 0);
-				if(rc & 0x04)
-					PORTA = 0xFF;
-				else
-					PORTA = 0x11;
-while(1)
-{};
-*/
 				call Resource.release();
 				signal IEEE8023.initDone();
 			break;
 
 			case IEEE8023_RX:
-/*
-*/
 				setBank(0x00);
 
 				//frameLen = (uint16_t)writeSPI((ENC28J60_READ_CTRL_REG | ERXWRPTL), (ENC28J60_READ_CTRL_REG | ERXWRPTL));
@@ -428,18 +411,6 @@ PORTA = (writeSPI((ENC28J60_READ_CTRL_REG | ERXSTH), (ENC28J60_READ_CTRL_REG | E
 while(1)
 {};
 
-				tmpString[5] = '\0';
-				tmpString[4] = (frameLen % 10) + 0x30;
-				frameLen = frameLen / 10;
-				tmpString[3] = (frameLen % 10) + 0x30;
-				frameLen = frameLen / 10;
-				tmpString[2] = (frameLen % 10) + 0x30;
-				frameLen = frameLen / 10;
-				tmpString[1] = (frameLen % 10) + 0x30;
-				frameLen = frameLen / 10;
-				tmpString[0] = (frameLen % 10) + 0x30;
-
-				signal IEEE8023.hwInterrupt((uint16_t *)&tmpString);
 */
 				// working through the buffer memory. we use AUTOINC, we don't need to update the read-pointer
 				// set READ - pointer to correct start-adress
@@ -462,18 +433,7 @@ while(1)
 				{
 					IEEE8023packet[count] = writeSPI((ENC28J60_READ_BUF_MEM), 0x00);
 				}
-/*
-				tmpString[0] = IEEE8023packet[42];
-				tmpString[1] = IEEE8023packet[43];
-				tmpString[2] = IEEE8023packet[44];
-				tmpString[3] = IEEE8023packet[45];
-				tmpString[4] = IEEE8023packet[46];
-				tmpString[5] = 'H';
-				tmpString[6] = 'A';
-				tmpString[7] = 'R';
-				tmpString[8] = 'I';
-				tmpString[9] = '\0';
-*/			
+				
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTL), ( nextPacketPtr & 0xFF));
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERXRDPTH), ( nextPacketPtr >> 8));
 
