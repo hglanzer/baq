@@ -17,8 +17,8 @@ implementation{
 
   MP3P.CS -> IO.PortD1;
   MP3P.RST -> IO.PortD2;
-  MP3P.DREQ -> IO.PortF0;
-  MP3P.BSYNC -> IO.PortF1;
+  MP3P.DREQ -> IO.PortF2;
+  MP3P.BSYNC -> IO.PortF3;
   MP3P.Measure0 -> IO.PortC1;
 
   MP3P.SPI0 -> SPI0; /* connect resource */

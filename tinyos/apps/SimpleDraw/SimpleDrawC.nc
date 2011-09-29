@@ -14,6 +14,8 @@ module SimpleDrawC{
 implementation{
 
   bool dots = TRUE;
+  char itosBuffer[] = {'0', '0', '0', '0', '0', '\0'};
+  char *itos( uint16_t i );
 
   event void Boot.booted(){
     call GLCD.initLCD( 0x00 );
@@ -27,22 +29,31 @@ implementation{
     call Button7.makeInput();
     call Timer0.startPeriodic( 200 );
   }
+    uint16_t tempa;
+    uint16_t tempb;
+    uint16_t tempc;
+    uint16_t tempd;
 
   event void Timer0.fired(){
     if ( call Button0.get() ){
       call GLCD.startClearScreen( 0x00 );
     }
     if ( call Button1.get() ){
-      call GLCD.startWriteString( "Hello World!", 10, 3 );
+      //call GLCD.startWriteString( "Hello World!", 10, 3 );
+      call GLCD.getCalibration( &tempa, &tempb, &tempc, &tempd );
+      call GLCD.startWriteString( itos(tempa) , 10, 0);    
     }
     if ( call Button2.get() ){
-      call GLCD.startWriteBar( 8, 40, 64, 16  );
+      call GLCD.startWriteString( itos(tempb) , 10, 1);
+      //call GLCD.startWriteBar( 8, 40, 64, 16  );
     }
     if ( call Button3.get() ){
-      call GLCD.startWriteLine( 0, 0, 127, 63 );
+      call GLCD.startWriteString( itos(tempc) , 10, 2);
+      //call GLCD.startWriteLine( 0, 0, 127, 63 );
     }
     if ( call Button4.get() ){
-      call GLCD.startWriteLine( 127, 0, 0, 63 );
+      call GLCD.startWriteString( itos(tempd) , 10, 3);
+      //call GLCD.startWriteLine( 127, 0, 0, 63 );
     }
     if ( call Button5.get() ){
       call GLCD.startWriteCircle( 24, 20, 16 );      
@@ -63,6 +74,7 @@ implementation{
   }
 
   event void GLCD.initDone() {
+    //call GLCD.isPressed( 1 );
     call GLCD.calibrateTouchScreen();
   }
 
@@ -87,11 +99,38 @@ implementation{
   }
 
   event void GLCD.xyReady( uint16_t x, uint16_t y ) {
+    
     if (dots){
       call GLCD.setPixel( x, ( 64 - y) );
     } else {
       call GLCD.copyByte( x, ( 64 - y) );
     }
     call GLCD.isPressed( 1 );
+  }
+
+  char *itos(uint16_t i){
+    itosBuffer[0] = '0';
+    itosBuffer[1] = '0';
+    itosBuffer[2] = '0';
+    itosBuffer[3] = '0';
+    itosBuffer[4] = '0';
+    while (i >= 10000){
+      itosBuffer[0]++;
+      i -= 10000;
+    }
+    while (i >= 1000){
+      itosBuffer[1]++;
+      i -= 1000;	
+    }
+    while (i >= 100){
+      itosBuffer[2]++;
+      i -= 100;	
+    }
+    while (i >= 10){
+      itosBuffer[3]++;
+      i -= 10;	
+    }
+    itosBuffer[4] += i;
+    return itosBuffer;
   }
 }

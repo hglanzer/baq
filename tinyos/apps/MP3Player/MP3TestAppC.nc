@@ -13,6 +13,7 @@ implementation{
   MP3TestC -> MainC.Boot;
   MP3TestC.Button0 -> IO.PortB5;
   MP3TestC.Button1 -> IO.PortB6;
+  MP3TestC.Button2 -> IO.PortB7;
   MP3TestC.Timer0 -> Timer0;
   MP3TestC.Timer1 -> Timer1;
   MP3TestC.GLCD -> GLCDC;

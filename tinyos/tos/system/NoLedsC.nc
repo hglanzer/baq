@@ -64,4 +64,6 @@ implementation {
 
   async command uint8_t Leds.get() {return 0;}
   async command void Leds.set(uint8_t val) {}
+  
+  async command void Leds.setPort(uint8_t pval, uint8_t port) {}
 }

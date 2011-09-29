@@ -185,7 +185,7 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memset(void *arg_0x2b0ca5e6e7f0, int arg_0x2b0ca5e6ea58, size_t arg_0x2b0ca5e6ed00);
+extern void *memset(void *arg_0x2b94c08d27f0, int arg_0x2b94c08d2a58, size_t arg_0x2b94c08d2d00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b0ca5e8f968, const void *arg_0x2b0ca5e8fc40);
+typedef int (*__compar_fn_t)(const void *arg_0x2b94c08f3968, const void *arg_0x2b94c08f3c40);
 # 23 "/homes/mhartmann/baq/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -1056,11 +1056,11 @@ static uint8_t MeasureClockC__Atm128Calibrate__adcPrescaler(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b0ca5f97108);
+uint8_t arg_0x2b94c09fb108);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b0ca5f97108);
+uint8_t arg_0x2b94c09fb108);
 # 57 "/homes/mhartmann/baq/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1161,11 +1161,11 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b0ca633eda0);
+uint8_t arg_0x2b94c0db1da0);
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b0ca633eda0, 
+uint8_t arg_0x2b94c0db1da0, 
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 # 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
@@ -1196,12 +1196,8 @@ static void GLCDP__LCD128x64__rectangleWritten(void );
 static void GLCDP__LCD128x64__stringWritten(void );
 # 68 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 static error_t GLCDP__GLCD__startClearScreen(uint8_t pattern);
-#line 58
-static error_t GLCDP__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
 #line 14
 static void GLCDP__GLCD__isPressed(bool on);
-#line 66
-static error_t GLCDP__GLCD__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 #line 8
 static error_t GLCDP__GLCD__calibrateTouchScreen(void );
 
@@ -1216,15 +1212,9 @@ static void GLCDP__GLCD__copyByte(uint8_t x, uint8_t y);
 static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y);
 #line 52
 static void GLCDP__GLCD__setPixel(uint8_t x, uint8_t y);
-
-
-
-
-
-
-
-
-
+#line 10
+static void GLCDP__GLCD__getCalibration(uint16_t *x_cmin, uint16_t *x_cmax, uint16_t *y_cmin, uint16_t *y_cmax);
+#line 62
 static error_t GLCDP__GLCD__startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
 #line 36
 static void GLCDP__GLCD__initLCD(uint8_t pattern);
@@ -1328,29 +1318,29 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6538af8);
+uint8_t arg_0x2b94c0f93af8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6536cc8);
+uint8_t arg_0x2b94c0fb3cc8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6536cc8);
+uint8_t arg_0x2b94c0fb3cc8);
 # 56 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6539830);
+uint8_t arg_0x2b94c0f94830);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__request(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6539830);
+uint8_t arg_0x2b94c0f94830);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6539830);
+uint8_t arg_0x2b94c0f94830);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__runTask(void );
 # 62 "/homes/mhartmann/baq/tinyos/tos/lib/power/PowerDownCleanup.nc"
@@ -1362,25 +1352,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t AdcP__Read__read(
 # 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65bdac0);
+uint8_t arg_0x2b94c1017ac0);
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65ba6d8, 
+uint8_t arg_0x2b94c10156d8, 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65b8cd0);
+uint8_t arg_0x2b94c1012cd0);
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65b8cd0);
+uint8_t arg_0x2b94c1012cd0);
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65b8cd0);
+uint8_t arg_0x2b94c1012cd0);
 # 81 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1388,45 +1378,35 @@ static void AdcP__acquiredData__runTask(void );
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__read(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65db6b8);
+uint8_t arg_0x2b94c10366b8);
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65db6b8, 
+uint8_t arg_0x2b94c10366b8, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d9390, 
+uint8_t arg_0x2b94c1059390, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d8e30);
+uint8_t arg_0x2b94c1058e30);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d8e30);
+uint8_t arg_0x2b94c1058e30);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__granted(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d8e30);
+uint8_t arg_0x2b94c1058e30);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeRectangle__runTask(void );
 # 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern);
-#line 30
-static void LCD128x64P__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
-
-
-
-
-
-
-
-static void LCD128x64P__LCD128x64__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 #line 32
 static void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 #line 6
@@ -1589,7 +1569,7 @@ int main(void )   ;
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b0ca5f97108);
+uint8_t arg_0x2b94c09fb108);
 # 76 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
@@ -1675,12 +1655,8 @@ static void SimpleDrawC__Button3__makeInput(void );
 static bool SimpleDrawC__Button3__get(void );
 # 68 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 static error_t SimpleDrawC__GLCD__startClearScreen(uint8_t pattern);
-#line 58
-static error_t SimpleDrawC__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
 #line 14
 static void SimpleDrawC__GLCD__isPressed(bool on);
-#line 66
-static error_t SimpleDrawC__GLCD__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 #line 8
 static error_t SimpleDrawC__GLCD__calibrateTouchScreen(void );
 
@@ -1695,15 +1671,9 @@ static void SimpleDrawC__GLCD__copyByte(uint8_t x, uint8_t y);
 static error_t SimpleDrawC__GLCD__startWriteString(char *data, uint8_t x, uint8_t y);
 #line 52
 static void SimpleDrawC__GLCD__setPixel(uint8_t x, uint8_t y);
-
-
-
-
-
-
-
-
-
+#line 10
+static void SimpleDrawC__GLCD__getCalibration(uint16_t *x_cmin, uint16_t *x_cmax, uint16_t *y_cmin, uint16_t *y_cmax);
+#line 62
 static error_t SimpleDrawC__GLCD__startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
 #line 36
 static void SimpleDrawC__GLCD__initLCD(uint8_t pattern);
@@ -1719,12 +1689,20 @@ static void SimpleDrawC__Button4__makeInput(void );
 static bool SimpleDrawC__Button4__get(void );
 # 16 "SimpleDrawC.nc"
 bool SimpleDrawC__dots = TRUE;
+char SimpleDrawC__itosBuffer[6] = { '0', '0', '0', '0', '0', '\0' };
+static char *SimpleDrawC__itos(uint16_t i);
 
 static inline void SimpleDrawC__Boot__booted(void );
-#line 31
+#line 32
+uint16_t SimpleDrawC__tempa;
+uint16_t SimpleDrawC__tempb;
+uint16_t SimpleDrawC__tempc;
+uint16_t SimpleDrawC__tempd;
+
 static inline void SimpleDrawC__Timer0__fired(void );
-#line 65
+#line 76
 static inline void SimpleDrawC__GLCD__initDone(void );
+
 
 
 
@@ -1749,6 +1727,16 @@ static inline void SimpleDrawC__GLCD__calibrated(void );
 
 
 static void SimpleDrawC__GLCD__xyReady(uint16_t x, uint16_t y);
+
+
+
+
+
+
+
+
+
+static char *SimpleDrawC__itos(uint16_t i);
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
 static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void );
 #line 46
@@ -1942,7 +1930,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b0ca633eda0);
+uint8_t arg_0x2b94c0db1da0);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4308 {
 #line 71
@@ -2007,16 +1995,6 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 static inline void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void GLCDP__LCD128x64__startClearScreen(uint8_t pattern);
-#line 30
-static void GLCDP__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
-
-
-
-
-
-
-
-static void GLCDP__LCD128x64__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 #line 32
 static void GLCDP__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 #line 6
@@ -2076,7 +2054,9 @@ static volatile uint16_t GLCDP__x_min = 54;
 static volatile uint16_t GLCDP__y_min = 128;
 #line 28
 static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw);
-#line 77
+#line 50
+static inline void GLCDP__GLCD__getCalibration(uint16_t *x_cmin, uint16_t *x_cmax, uint16_t *y_cmin, uint16_t *y_cmax);
+#line 66
 static inline void GLCDP__GLCD__isPressed(bool on);
 
 
@@ -2087,7 +2067,7 @@ static inline void GLCDP__GLCD__isPressed(bool on);
 
 
 static inline error_t GLCDP__GLCD__calibrateTouchScreen(void );
-#line 103
+#line 92
 static inline void GLCDP__GLCD__getXY(void );
 
 
@@ -2099,7 +2079,7 @@ static inline void GLCDP__GLCD__getXY(void );
 
 
 static inline void GLCDP__TouchScreen__xyReady(uint16_t x, uint16_t y);
-#line 162
+#line 151
 static inline void GLCDP__TouchScreen__tsPressed(void );
 
 
@@ -2114,24 +2094,17 @@ static inline void GLCDP__GLCD__copyByte(uint8_t x, uint8_t y);
 
 
 static inline void GLCDP__GLCD__initLCD(uint8_t pattern);
-#line 190
+#line 179
 static inline void GLCDP__GLCD__setPixel(uint8_t x, uint8_t y);
-
-
-
-
-static inline error_t GLCDP__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
-#line 213
+#line 202
 static inline error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
-#line 231
+#line 220
 static inline error_t GLCDP__GLCD__startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
-#line 251
+#line 240
 static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 269
-static error_t GLCDP__GLCD__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
-#line 287
+#line 276
 static inline error_t GLCDP__GLCD__startClearScreen(uint8_t pattern);
-#line 308
+#line 297
 static inline void GLCDP__LCD128x64__initDone(void );
 
 
@@ -2167,7 +2140,7 @@ static inline void GLCDP__LCD128x64__barWritten(void );
 
 
 static inline void GLCDP__LCD128x64__stringWritten(void );
-#line 358
+#line 347
 static inline void GLCDP__LCD128x64__screenCleared(void );
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t TouchScreenP__Read__read(void );
@@ -2411,15 +2384,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6538af8);
+uint8_t arg_0x2b94c0f93af8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6536cc8);
+uint8_t arg_0x2b94c0fb3cc8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6536cc8);
+uint8_t arg_0x2b94c0fb3cc8);
 # 79 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -2433,7 +2406,7 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b0ca6539830);
+uint8_t arg_0x2b94c0f94830);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
@@ -2515,27 +2488,27 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65bdac0, 
+uint8_t arg_0x2b94c1017ac0, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65ba6d8, 
+uint8_t arg_0x2b94c10156d8, 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65b8cd0);
+uint8_t arg_0x2b94c1012cd0);
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65b8cd0);
+uint8_t arg_0x2b94c1012cd0);
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b0ca65b8cd0);
+uint8_t arg_0x2b94c1012cd0);
 # 70 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
@@ -2619,21 +2592,21 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65db6b8, 
+uint8_t arg_0x2b94c10366b8, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 55
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(
 # 26 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d9390);
+uint8_t arg_0x2b94c1059390);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d8e30);
+uint8_t arg_0x2b94c1058e30);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b0ca65d8e30);
+uint8_t arg_0x2b94c1058e30);
 
 
 
@@ -2685,10 +2658,6 @@ static void LCD128x64P__LCD128x64__stringWritten(void );
 static error_t LCD128x64P__writeString__postTask(void );
 #line 67
 static error_t LCD128x64P__writeCircle__postTask(void );
-#line 67
-static error_t LCD128x64P__writeLine__postTask(void );
-#line 67
-static error_t LCD128x64P__writeBar__postTask(void );
 #line 67
 static error_t LCD128x64P__clearScreenNB__postTask(void );
 # 65 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
@@ -2816,17 +2785,6 @@ static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t
 static inline void LCD128x64P__LCD128x64__startWriteCircle(uint8_t x, uint8_t y, uint8_t radius);
 #line 519
 static inline void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern);
-#line 531
-static inline void LCD128x64P__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width);
-
-
-
-
-
-
-
-
-static inline void LCD128x64P__LCD128x64__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
 # 92 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/atm128hardware.h"
 static __inline  void __nesc_disable_interrupt()
 #line 92
@@ -3114,9 +3072,9 @@ inline static bool RealMainP__Scheduler__runNextTask(void ){
 #line 65
 }
 #line 65
-# 69 "SimpleDrawC.nc"
+# 81 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__barWritten(void )
-#line 69
+#line 81
 {
 }
 
@@ -3127,7 +3085,7 @@ inline static void GLCDP__GLCD__barWritten(void ){
 #line 80
 }
 #line 80
-# 331 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 320 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__barWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_BAR;
@@ -3199,9 +3157,9 @@ static inline void LCD128x64P__writeBar__runTask(void )
   LCD128x64P__LCD128x64__barWritten();
 }
 
-# 73 "SimpleDrawC.nc"
+# 85 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__lineWritten(void )
-#line 73
+#line 85
 {
 }
 
@@ -3212,7 +3170,7 @@ inline static void GLCDP__GLCD__lineWritten(void ){
 #line 78
 }
 #line 78
-# 325 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 314 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__lineWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_LINE;
@@ -3317,9 +3275,9 @@ static inline void LCD128x64P__writeLine__runTask(void )
   LCD128x64P__LCD128x64__lineWritten();
 }
 
-# 71 "SimpleDrawC.nc"
+# 83 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__screenCleared(void )
-#line 71
+#line 83
 {
 }
 
@@ -3330,7 +3288,7 @@ inline static void GLCDP__GLCD__screenCleared(void ){
 #line 82
 }
 #line 82
-# 358 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 347 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__screenCleared(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_CLEAR;
@@ -3367,9 +3325,9 @@ static inline void LCD128x64P__clearScreenNB__runTask(void )
   LCD128x64P__LCD128x64__screenCleared();
 }
 
-# 79 "SimpleDrawC.nc"
+# 91 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__stringWritten(void )
-#line 79
+#line 91
 {
 }
 
@@ -3380,7 +3338,7 @@ inline static void GLCDP__GLCD__stringWritten(void ){
 #line 74
 }
 #line 74
-# 342 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 331 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__stringWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_STRING;
@@ -3435,9 +3393,9 @@ static inline void LCD128x64P__writeString__runTask(void )
   LCD128x64P__LCD128x64__stringWritten();
 }
 
-# 75 "SimpleDrawC.nc"
+# 87 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__circleWritten(void )
-#line 75
+#line 87
 {
 }
 
@@ -3448,7 +3406,7 @@ inline static void GLCDP__GLCD__circleWritten(void ){
 #line 72
 }
 #line 72
-# 313 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 302 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__circleWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_CIRCLE;
@@ -3502,9 +3460,9 @@ static inline void LCD128x64P__writeCircle__runTask(void )
   LCD128x64P__LCD128x64__circleWritten();
 }
 
-# 77 "SimpleDrawC.nc"
+# 89 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__rectangleWritten(void )
-#line 77
+#line 89
 {
 }
 
@@ -3515,7 +3473,7 @@ inline static void GLCDP__GLCD__rectangleWritten(void ){
 #line 76
 }
 #line 76
-# 319 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 308 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__rectangleWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_RECT;
@@ -3590,22 +3548,11 @@ static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw)
 
 
 
-      x_tmp = (float )x_raw / (float )810;
-      y_tmp = (float )y_raw / (float )672;
-      x_tmp = x_tmp * 128;
-      y_tmp = y_tmp * 64;
-      GLCDP__GLCD__xyReady(x_tmp, 63 - y_tmp);
-
-
-
-
-
-      x_tmp = (uint32_t )x_raw * 128 / (GLCDP__x_max - GLCDP__x_min);
-      y_tmp = (uint32_t )y_raw * 64 / (GLCDP__y_max - GLCDP__y_min);
+      x_tmp = (uint32_t )x_raw * 127 / (GLCDP__x_max - GLCDP__x_min);
+      y_tmp = (uint32_t )y_raw * 63 / (GLCDP__y_max - GLCDP__y_min);
       GLCDP__GLCD__xyReady(x_tmp, y_tmp);
     }
   else 
-
     {
       GLCDP__GLCD__xyReady(200, 200);
     }
@@ -3650,7 +3597,7 @@ inline static void GLCDP__TouchScreen__isPressed(bool on){
 #line 6
 }
 #line 6
-# 77 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 66 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__isPressed(bool on)
 {
   GLCDP__TouchScreen__isPressed(on);
@@ -3678,9 +3625,9 @@ inline static error_t SimpleDrawC__GLCD__startWriteString(char *data, uint8_t x,
 #line 64
 }
 #line 64
-# 84 "SimpleDrawC.nc"
+# 96 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__calibrated(void )
-#line 84
+#line 96
 {
   SimpleDrawC__GLCD__startWriteString("Press D0-D7", 0, 2);
   SimpleDrawC__GLCD__isPressed(1);
@@ -3729,7 +3676,7 @@ inline static void GLCDP__LCD128x64__startClearScreen(uint8_t pattern){
 #line 40
 }
 #line 40
-# 113 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 102 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__TouchScreen__xyReady(uint16_t x, uint16_t y)
 {
 
@@ -3792,13 +3739,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b0ca65d8e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b94c1058e30){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  switch (arg_0x2b0ca65d8e30) {
+  switch (arg_0x2b94c1058e30) {
 #line 88
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 88
@@ -3808,7 +3755,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 88
     default:
 #line 88
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b0ca65d8e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b94c1058e30);
 #line 88
       break;
 #line 88
@@ -3880,7 +3827,7 @@ inline static void TouchScreenP__driveA__clr(void ){
 #line 41
 }
 #line 41
-# 103 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 92 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__getXY(void )
 {
   GLCDP__TouchScreen__getXY();
@@ -3893,9 +3840,9 @@ inline static void SimpleDrawC__GLCD__getXY(void ){
 #line 12
 }
 #line 12
-# 81 "SimpleDrawC.nc"
+# 93 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__tsPressed(void )
-#line 81
+#line 93
 {
   SimpleDrawC__GLCD__getXY();
 }
@@ -3907,7 +3854,7 @@ inline static void GLCDP__GLCD__tsPressed(void ){
 #line 26
 }
 #line 26
-# 162 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 151 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__TouchScreen__tsPressed(void )
 {
   GLCDP__GLCD__tsPressed();
@@ -4032,9 +3979,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b0ca65db6b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b94c10366b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-  switch (arg_0x2b0ca65db6b8) {
+  switch (arg_0x2b94c10366b8) {
 #line 63
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 63
@@ -4044,7 +3991,7 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
     default:
 #line 63
-      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b0ca65db6b8, result, val);
+      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b94c10366b8, result, val);
 #line 63
       break;
 #line 63
@@ -4141,9 +4088,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b0ca6536cc8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b94c0fb3cc8){
 #line 65
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b0ca6536cc8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b94c0fb3cc8);
 #line 65
 }
 #line 65
@@ -4322,13 +4269,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b0ca65d8e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b94c1058e30){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  switch (arg_0x2b0ca65d8e30) {
+  switch (arg_0x2b94c1058e30) {
 #line 120
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 120
@@ -4338,7 +4285,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 120
     default:
 #line 120
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b0ca65d8e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b94c1058e30);
 #line 120
       break;
 #line 120
@@ -4359,9 +4306,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x2b0ca65bdac0, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x2b94c1017ac0, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b0ca65bdac0, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b94c1017ac0, result, val);
 #line 63
 }
 #line 63
@@ -4408,9 +4355,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequest
 }
 
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b0ca6538af8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b94c0f93af8){
 #line 53
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2b0ca6538af8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x2b94c0f93af8);
 #line 53
 }
 #line 53
@@ -4739,7 +4686,7 @@ inline static void GLCDP__LCD128x64__setPixel(uint8_t x, uint8_t y){
 #line 24
 }
 #line 24
-# 190 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 179 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__setPixel(uint8_t x, uint8_t y)
 {
   GLCDP__LCD128x64__setPixel(x, y);
@@ -4772,9 +4719,9 @@ inline static void GLCDP__LCD128x64__copyByte(uint8_t x, uint8_t y){
 #line 6
 }
 #line 6
-# 172 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 161 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__copyByte(uint8_t x, uint8_t y)
-#line 172
+#line 161
 {
   GLCDP__LCD128x64__copyByte(x, y);
 }
@@ -4805,13 +4752,13 @@ static inline error_t AdcP__Read__read(uint8_t c)
 }
 
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b0ca65d9390){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b94c1059390){
 #line 55
   unsigned char result;
 #line 55
 
 #line 55
-  result = AdcP__Read__read(arg_0x2b0ca65d9390);
+  result = AdcP__Read__read(arg_0x2b94c1059390);
 #line 55
 
 #line 55
@@ -4833,9 +4780,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__defau
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b0ca6539830){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b94c0f94830){
 #line 102
-  switch (arg_0x2b0ca6539830) {
+  switch (arg_0x2b94c0f94830) {
 #line 102
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__HAL_ID:
 #line 102
@@ -4845,7 +4792,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__grant
 #line 102
     default:
 #line 102
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b0ca6539830);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b94c0f94830);
 #line 102
       break;
 #line 102
@@ -4860,9 +4807,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigu
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b0ca6536cc8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b94c0fb3cc8){
 #line 59
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b0ca6536cc8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b94c0fb3cc8);
 #line 59
 }
 #line 59
@@ -5091,13 +5038,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b0ca65b8cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b94c1012cd0){
 #line 25
   unsigned char result;
 #line 25
 
 #line 25
-  switch (arg_0x2b0ca65b8cd0) {
+  switch (arg_0x2b94c1012cd0) {
 #line 25
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 25
@@ -5107,7 +5054,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b0ca65b8c
 #line 25
     default:
 #line 25
-      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b0ca65b8cd0);
+      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b94c1012cd0);
 #line 25
       break;
 #line 25
@@ -5140,13 +5087,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b0ca65b8cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b94c1012cd0){
 #line 32
   unsigned char result;
 #line 32
 
 #line 32
-  switch (arg_0x2b0ca65b8cd0) {
+  switch (arg_0x2b94c1012cd0) {
 #line 32
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 32
@@ -5156,7 +5103,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b0ca65
 #line 32
     default:
 #line 32
-      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b0ca65b8cd0);
+      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b94c1012cd0);
 #line 32
       break;
 #line 32
@@ -5189,13 +5136,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b0ca65b8cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b94c1012cd0){
 #line 39
   unsigned char result;
 #line 39
 
 #line 39
-  switch (arg_0x2b0ca65b8cd0) {
+  switch (arg_0x2b94c1012cd0) {
 #line 39
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 39
@@ -5205,7 +5152,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b0ca65b
 #line 39
     default:
 #line 39
-      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b0ca65b8cd0);
+      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b94c1012cd0);
 #line 39
       break;
 #line 39
@@ -5455,7 +5402,7 @@ inline static void GLCDP__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, u
 #line 32
 }
 #line 32
-# 213 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 202 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
 {
   if ((GLCDP__stateGLCD & BUSY_RECT) == 1) 
@@ -5463,7 +5410,7 @@ static inline error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uin
       return FAIL;
     }
   else {
-#line 219
+#line 208
     if (x + a >= 128 || y + b >= 64) 
       {
         return FAIL;
@@ -5547,7 +5494,7 @@ inline static void GLCDP__LCD128x64__startWriteCircle(uint8_t xcenter, uint8_t y
 #line 34
 }
 #line 34
-# 231 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 220 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline error_t GLCDP__GLCD__startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius)
 {
   if ((GLCDP__stateGLCD & BUSY_CIRCLE) == 1) 
@@ -5600,21 +5547,6 @@ inline static bool SimpleDrawC__Button5__get(void ){
 #line 43
 }
 #line 43
-# 66 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static error_t SimpleDrawC__GLCD__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd){
-#line 66
-  unsigned char result;
-#line 66
-
-#line 66
-  result = GLCDP__GLCD__startWriteLine(x, y, xEnd, yEnd);
-#line 66
-
-#line 66
-  return result;
-#line 66
-}
-#line 66
 # 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
 static __inline bool /*HplAtm128GeneralIOC.PortD.Bit4*/HplAtm128GeneralIOPinP__28__IO__get(void )
 #line 54
@@ -5661,75 +5593,6 @@ inline static bool SimpleDrawC__Button3__get(void ){
 #line 43
 }
 #line 43
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t LCD128x64P__writeBar__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__writeBar);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 531 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-static inline void LCD128x64P__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
-{
-  LCD128x64P__xPos[4] = x;
-  LCD128x64P__yPos[4] = y;
-  LCD128x64P__aBar = length;
-  LCD128x64P__bBar = width;
-  LCD128x64P__writeBar__postTask();
-}
-
-# 30 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
-inline static void GLCDP__LCD128x64__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width){
-#line 30
-  LCD128x64P__LCD128x64__startWriteBar(x, y, length, width);
-#line 30
-}
-#line 30
-# 195 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static inline error_t GLCDP__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width)
-{
-  if ((GLCDP__stateGLCD & BUSY_BAR) == 1) 
-    {
-      return FAIL;
-    }
-  else {
-#line 201
-    if (((width == 0 || length == 0) || x + length >= 128) || y + width >= 64) 
-      {
-        return FAIL;
-      }
-    else 
-      {
-        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_BAR;
-        GLCDP__LCD128x64__startWriteBar(x, y, length, width);
-        return SUCCESS;
-      }
-    }
-}
-
-# 58 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static error_t SimpleDrawC__GLCD__startWriteBar(uint8_t x, uint8_t y, uint8_t length, uint8_t width){
-#line 58
-  unsigned char result;
-#line 58
-
-#line 58
-  result = GLCDP__GLCD__startWriteBar(x, y, length, width);
-#line 58
-
-#line 58
-  return result;
-#line 58
-}
-#line 58
 # 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
 static __inline bool /*HplAtm128GeneralIOC.PortD.Bit2*/HplAtm128GeneralIOPinP__26__IO__get(void )
 #line 54
@@ -5753,6 +5616,23 @@ inline static bool SimpleDrawC__Button2__get(void ){
 #line 43
 }
 #line 43
+# 50 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+static inline void GLCDP__GLCD__getCalibration(uint16_t *x_cmin, uint16_t *x_cmax, uint16_t *y_cmin, uint16_t *y_cmax)
+#line 50
+{
+  *x_cmin = GLCDP__x_min;
+  *x_cmax = GLCDP__x_max;
+  *y_cmin = GLCDP__y_min;
+  *y_cmax = GLCDP__y_max;
+}
+
+# 10 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static void SimpleDrawC__GLCD__getCalibration(uint16_t *x_cmin, uint16_t *x_cmax, uint16_t *y_cmin, uint16_t *y_cmax){
+#line 10
+  GLCDP__GLCD__getCalibration(x_cmin, x_cmax, y_cmin, y_cmax);
+#line 10
+}
+#line 10
 # 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
 static __inline bool /*HplAtm128GeneralIOC.PortD.Bit1*/HplAtm128GeneralIOPinP__25__IO__get(void )
 #line 54
@@ -5776,7 +5656,7 @@ inline static bool SimpleDrawC__Button1__get(void ){
 #line 43
 }
 #line 43
-# 287 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 276 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline error_t GLCDP__GLCD__startClearScreen(uint8_t pattern)
 {
   if ((GLCDP__stateGLCD & BUSY_CLEAR) == 1) 
@@ -5829,25 +5709,30 @@ inline static bool SimpleDrawC__Button0__get(void ){
 #line 43
 }
 #line 43
-# 31 "SimpleDrawC.nc"
+# 37 "SimpleDrawC.nc"
 static inline void SimpleDrawC__Timer0__fired(void )
-#line 31
+#line 37
 {
   if (SimpleDrawC__Button0__get()) {
       SimpleDrawC__GLCD__startClearScreen(0x00);
     }
   if (SimpleDrawC__Button1__get()) {
-      SimpleDrawC__GLCD__startWriteString("Hello World!", 10, 3);
+
+      SimpleDrawC__GLCD__getCalibration(&SimpleDrawC__tempa, &SimpleDrawC__tempb, &SimpleDrawC__tempc, &SimpleDrawC__tempd);
+      SimpleDrawC__GLCD__startWriteString(SimpleDrawC__itos(SimpleDrawC__tempa), 10, 0);
     }
   if (SimpleDrawC__Button2__get()) {
-      SimpleDrawC__GLCD__startWriteBar(8, 40, 64, 16);
+      SimpleDrawC__GLCD__startWriteString(SimpleDrawC__itos(SimpleDrawC__tempb), 10, 1);
     }
+
   if (SimpleDrawC__Button3__get()) {
-      SimpleDrawC__GLCD__startWriteLine(0, 0, 127, 63);
+      SimpleDrawC__GLCD__startWriteString(SimpleDrawC__itos(SimpleDrawC__tempc), 10, 2);
     }
+
   if (SimpleDrawC__Button4__get()) {
-      SimpleDrawC__GLCD__startWriteLine(127, 0, 0, 63);
+      SimpleDrawC__GLCD__startWriteString(SimpleDrawC__itos(SimpleDrawC__tempd), 10, 3);
     }
+
   if (SimpleDrawC__Button5__get()) {
       SimpleDrawC__GLCD__startWriteCircle(24, 20, 16);
     }
@@ -5860,7 +5745,7 @@ static inline void SimpleDrawC__Timer0__fired(void )
           SimpleDrawC__GLCD__startWriteString("Copy ", 0, 5);
         }
       else 
-#line 57
+#line 68
         {
           SimpleDrawC__dots = TRUE;
           SimpleDrawC__GLCD__startWriteString("Paint", 0, 5);
@@ -5874,9 +5759,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b0ca633eda0){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b94c0db1da0){
 #line 83
-  switch (arg_0x2b0ca633eda0) {
+  switch (arg_0x2b94c0db1da0) {
 #line 83
     case 0U:
 #line 83
@@ -5886,7 +5771,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b0ca633eda0);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b94c0db1da0);
 #line 83
       break;
 #line 83
@@ -5894,48 +5779,6 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
 }
 #line 83
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t LCD128x64P__writeLine__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__writeLine);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 540 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-static inline void LCD128x64P__LCD128x64__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
-{
-  if (x < xEnd) 
-    {
-      LCD128x64P__xPos[3] = x;
-      LCD128x64P__yPos[3] = y;
-      LCD128x64P__xLineEnd = xEnd;
-      LCD128x64P__yLineEnd = yEnd;
-    }
-  else 
-    {
-      LCD128x64P__xPos[3] = xEnd;
-      LCD128x64P__yPos[3] = yEnd;
-      LCD128x64P__xLineEnd = x;
-      LCD128x64P__yLineEnd = y;
-    }
-  LCD128x64P__writeLine__postTask();
-}
-
-# 38 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
-inline static void GLCDP__LCD128x64__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd){
-#line 38
-  LCD128x64P__LCD128x64__startWriteLine(x, y, xEnd, yEnd);
-#line 38
-}
-#line 38
 # 159 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
 static inline void HplAtm128Timer0SyncP__Compare__set(uint8_t t)
 #line 159
@@ -6350,7 +6193,7 @@ inline static void SimpleDrawC__Button0__makeInput(void ){
 #line 44
 }
 #line 44
-# 86 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 75 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline error_t GLCDP__GLCD__calibrateTouchScreen(void )
 {
   if (GLCDP__stateTS == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM || GLCDP__stateTS == CALIBRATION_IN_PROGRESS_RIGHT_TOP) 
@@ -6383,10 +6226,11 @@ inline static error_t SimpleDrawC__GLCD__calibrateTouchScreen(void ){
 #line 8
 }
 #line 8
-# 65 "SimpleDrawC.nc"
+# 76 "SimpleDrawC.nc"
 static inline void SimpleDrawC__GLCD__initDone(void )
-#line 65
+#line 76
 {
+
   SimpleDrawC__GLCD__calibrateTouchScreen();
 }
 
@@ -6397,7 +6241,7 @@ inline static void GLCDP__GLCD__initDone(void ){
 #line 70
 }
 #line 70
-# 308 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 297 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__initDone(void )
 {
   GLCDP__GLCD__initDone();
@@ -6460,7 +6304,7 @@ inline static void GLCDP__LCD128x64__initLCD(uint8_t pattern){
 #line 8
 }
 #line 8
-# 175 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 164 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__initLCD(uint8_t pattern)
 {
   GLCDP__LCD128x64__initLCD(pattern);
@@ -6473,9 +6317,9 @@ inline static void SimpleDrawC__GLCD__initLCD(uint8_t pattern){
 #line 36
 }
 #line 36
-# 18 "SimpleDrawC.nc"
+# 20 "SimpleDrawC.nc"
 static inline void SimpleDrawC__Boot__booted(void )
-#line 18
+#line 20
 {
   SimpleDrawC__GLCD__initLCD(0x00);
   SimpleDrawC__Button0__makeInput();
@@ -6850,9 +6694,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b0ca65ba6d8, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b94c10156d8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-    AdcP__ReadNow__default__readDone(arg_0x2b0ca65ba6d8, result, val);
+    AdcP__ReadNow__default__readDone(arg_0x2b94c10156d8, result, val);
 #line 66
 }
 #line 66
@@ -7085,9 +6929,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b0ca5f97108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b94c09fb108){
 #line 75
-  switch (arg_0x2b0ca5f97108) {
+  switch (arg_0x2b94c09fb108) {
 #line 75
     case /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired:
 #line 75
@@ -7163,7 +7007,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b0ca5f97108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b0ca5f97108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b94c09fb108);
 #line 75
       break;
 #line 75
@@ -7455,7 +7299,7 @@ static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8
   LCD128x64P__writeString__postTask();
 }
 
-# 251 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 240 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y)
 {
   if ((GLCDP__stateGLCD & BUSY_STRING) == 1) 
@@ -7463,7 +7307,7 @@ static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y)
       return FAIL;
     }
   else {
-#line 257
+#line 246
     if (x >= 128 || y >= 7) 
       {
         return FAIL;
@@ -7477,15 +7321,16 @@ static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y)
     }
 }
 
-# 89 "SimpleDrawC.nc"
+# 101 "SimpleDrawC.nc"
 static void SimpleDrawC__GLCD__xyReady(uint16_t x, uint16_t y)
-#line 89
+#line 101
 {
+
   if (SimpleDrawC__dots) {
       SimpleDrawC__GLCD__setPixel(x, 64 - y);
     }
   else 
-#line 92
+#line 105
     {
       SimpleDrawC__GLCD__copyByte(x, 64 - y);
     }
@@ -7557,26 +7402,33 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(u
   /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
 }
 
-# 269 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static error_t GLCDP__GLCD__startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd)
+# 111 "SimpleDrawC.nc"
+static char *SimpleDrawC__itos(uint16_t i)
+#line 111
 {
-  if ((GLCDP__stateGLCD & BUSY_LINE) == 1) 
-    {
-      return FAIL;
+  SimpleDrawC__itosBuffer[0] = '0';
+  SimpleDrawC__itosBuffer[1] = '0';
+  SimpleDrawC__itosBuffer[2] = '0';
+  SimpleDrawC__itosBuffer[3] = '0';
+  SimpleDrawC__itosBuffer[4] = '0';
+  while (i >= 10000) {
+      SimpleDrawC__itosBuffer[0]++;
+      i -= 10000;
     }
-  else {
-#line 275
-    if (((x >= 128 || y >= 64) || xEnd >= 128) || yEnd >= 64) 
-      {
-        return FAIL;
-      }
-    else 
-      {
-        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_LINE;
-        GLCDP__LCD128x64__startWriteLine(x, y, xEnd, yEnd);
-        return SUCCESS;
-      }
+  while (i >= 1000) {
+      SimpleDrawC__itosBuffer[1]++;
+      i -= 1000;
     }
+  while (i >= 100) {
+      SimpleDrawC__itosBuffer[2]++;
+      i -= 100;
+    }
+  while (i >= 10) {
+      SimpleDrawC__itosBuffer[3]++;
+      i -= 10;
+    }
+  SimpleDrawC__itosBuffer[4] += i;
+  return SimpleDrawC__itosBuffer;
 }
 
 # 219 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"

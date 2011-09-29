@@ -13,6 +13,7 @@ implementation{
 
   event void Boot.booted(){
     call LCD2x16.init( 0x02 );
+    call LCD2x16.clearDisplay();
     call Measure0.makeOutput();
     call Measure0.set();
     call Timer0.startPeriodic( TOGGLE_PERIOD );
@@ -22,10 +23,10 @@ implementation{
     call Measure0.toggle();
   }
 
-  event void LCD2x16.LcdInitDone(){
-    call LCD2x16.clearDisplay();
-    call LCD2x16.sendString( itos(TOGGLE_PERIOD*2), 5, 0, 0 );   
-    call LCD2x16.sendString( "ms", 2, 0, 5 );
+  event void LCD2x16.stringWritten(){
+
+    //call LCD2x16.sendString( itos(TOGGLE_PERIOD*2), 5, 0, 0 );   
+    //call LCD2x16.sendString( "ms", 2, 0, 5 );
   }
 
   char *itos(uint16_t i){

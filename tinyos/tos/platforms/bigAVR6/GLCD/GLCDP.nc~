@@ -169,6 +169,9 @@ implementation
 				LCD128x64 - interfacefunctions
 		#########################################################	*/
 
+	command void GLCD.copyByte(uint8_t x, uint8_t y){
+	  call LCD128x64.copyByte( x, y );
+	}
 	command void GLCD.initLCD(uint8_t pattern)
 	{
 		call LCD128x64.initLCD(pattern);
