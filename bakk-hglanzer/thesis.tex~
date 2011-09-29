@@ -19,6 +19,7 @@
 \usepackage[english,germanb]{babel}
 \usepackage[latin1]{inputenc}  %support direct writing of German Umlauts
 \usepackage{dcolumn}           %decimal column formatting
+\usepackage{listings}
 
 \newcolumntype{d}[1]{D{.}{.}{#1}}              % decimal formatting in tables
 \newcolumntype{C}[1]{@{}>{\centering}p{#1}@{}} % centered columns with fixed width: C{width}
@@ -28,6 +29,17 @@
 %%
 %% ---------------------------------------------------------------------
 %%
+
+%-----------------------------------
+%	global settings
+
+
+
+\lstset{
+%basicstyle=\footnotesize
+basicstyle=\scriptsize
+}
+%-----------------------------------
 
 \sloppy
 
@@ -115,6 +127,8 @@
     \cleardoublepage
     \include{tinyos}
     \cleardoublepage
+    \include{nesc}
+    \cleardoublepage
     \include{bigAVR6}
     \cleardoublepage
     \include{buildenv}
@@ -123,10 +137,12 @@
 %    \cleardoublepage
     \include{resourcesused}
     \cleardoublepage
+    \include{todos}
+    \cleardoublepage
     \include{relatedwork}
     \cleardoublepage
-    \include{designapproach}
-    \cleardoublepage
+%    \include{designapproach}
+%    \cleardoublepage
     \include{implementation}
     \cleardoublepage
     \include{results}

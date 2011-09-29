@@ -1,3 +1,7 @@
+/*
+	Harald Glanzer, 0727156 TU Wien
+*/
+
 configuration LCD2x16C
 {
         provides interface LCD2x16 as Lcd2x16;

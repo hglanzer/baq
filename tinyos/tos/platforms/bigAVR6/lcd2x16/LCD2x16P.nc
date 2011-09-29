@@ -1,6 +1,9 @@
+/*
+	Harald Glanzer, 0727156 TU Wien
+*/
+
 #include "LCD2x16.h"
-
-
+#include "Platform.h"
 
 module LCD2x16P
 {
@@ -9,7 +12,13 @@ module LCD2x16P
 
 implementation
 {
-	void sendLcdData(char *data, uint8_t words, uint8_t mode, uint8_t timeout)
+	static volatile uint8_t dataLen, state = UNINIT;
+	static volatile char *dataString;	
+
+	/*
+		write data OR commands to LCD
+	*/
+	void sendLcdData(char *data, uint8_t words, uint8_t mode)
 	{
 		volatile uint8_t wordcount, tmp, nibble, tmp2;
 
@@ -37,68 +46,82 @@ implementation
 			EN_LOW;
 
 			LCDDAT &= 0x03;
-			// WAIT
-			for(tmp = 0; tmp < 255; tmp++)
+			// WAIT - must be done with busywaiting
+			// because RW - pin(data read) of LCD is connected to GND
+			// --> write - only
+			for(tmp = 0; tmp < 250; tmp++)
 			{
-				for(tmp2 = 0; tmp2 < 5; tmp2++)
+				for(tmp2 = 0; tmp2 < 4; tmp2++)
 				{
 
 				}	
 			}
 		}
+
+		state = READY;
+		if(mode == DATA)
+			signal LCD2x16.stringWritten();
 	}
 
 	void setLcdAdr(uint8_t adr)
 	{
 		char tmp;
-
 		tmp = 0x80 | adr;
-		sendLcdData(&tmp, 1, COMM, 66);
+		sendLcdData(&tmp, 1, COMM);
 	}
 
-	command void LCD2x16.clearDisplay(void)
+	command error_t LCD2x16.clearDisplay(void)
 	{
-		char tmp;
+		if(state != READY)
+			return FAIL;
 
-		tmp = 0x01;
-		sendLcdData(&tmp, 1, COMM, 66);
+		state = BUSY;
+		sendLcdData((char *)0x01, 1, COMM);
+		return SUCCESS;
+		
 	}
 
-	command void LCD2x16.sendString(char *str, uint8_t len, uint8_t line, uint8_t row)
+	task void sendData()
 	{
-	/*
-		uint8_t index = 0;
-		while(str[index] != '\0')
-		{
-			index++;		// bestimme laenge des strings
-			if(index == 255)	// ... nicht entspr. terminierter string - ERROR
-				break;
-		}
-	
-		if(index < 255)
-		{
-			sendLcdData(str, index, DATA, 66);
-		}
-	*/
-		if(row > 16)
-			row = 0;
+		sendLcdData((char *)dataString, dataLen, DATA);
+	}
+
+	command error_t LCD2x16.sendString(char *str, uint8_t len, uint8_t line, uint8_t column)
+	{
+		if(state != READY)
+			return FAIL;
+
+		state = BUSY;
+
+		if(column > 16)
+			column = 0;
 	
 		if(line == 1)
-			row = row + 0x40;
+			column = column + 0x40;
 		
 			
-		setLcdAdr(row);
-		sendLcdData(str, len, DATA, 66);
+		setLcdAdr(column);
+
+		dataString = str;
+		dataLen = len;
+
+		if((post sendData()) == SUCCESS)
+			return SUCCESS;
+		else 
+			return FAIL;
 	}
 
-	command void LCD2x16.init(uint8_t mode)
+	command error_t LCD2x16.init(uint8_t mode)
 	{
 		char tmp = 0;
+		if(state == BUSY)
+			return FAIL;
+	
 		LCDDAT &= ~((1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (1<<PC3) | (1<<PC2));
 		LCDDDR |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4) | (1<<DDC3) | (1<<DDC2));
 
 		tmp = 0x28;				// do the 4bit - mode:
-		sendLcdData(&tmp, 1, COMM, 66);
+		sendLcdData(&tmp, 1, COMM);
 
 		tmp = 0x08 | 0x04;	// ON, CURSON ON, CURSOR BLINK
 
@@ -107,8 +130,9 @@ implementation
 
 		if(mode == CURSOR_ON_BLINK_OFF)
 			tmp = tmp | 0x02;
-		sendLcdData(&tmp, 1, COMM, 66);
+		sendLcdData(&tmp, 1, COMM);
 
-		signal LCD2x16.LcdInitDone();
+		state = READY;
+		return SUCCESS;
 	}
 }

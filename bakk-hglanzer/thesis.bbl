@@ -13,4 +13,11 @@ Philip Levis / Cory~Sharp FIXME.
 \newblock Available at
   \url{http://www.tinyos.net/tinyos-2.x/doc/html/tep106.html}.
 
+\bibitem[Lev]{prognesc:2006}
+Philip Levis.
+\newblock {\em {TinyOS Programming}}.
+\newblock Treitlstr. 3/3/182-1, 1040 Vienna, Austria.
+\newblock Available at
+  \url{http://www.tinyos.net/tinyos-2.x/doc/pdf/tinyos-programming.pdf}.
+
 \end{thebibliography}

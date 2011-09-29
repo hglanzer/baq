@@ -1,0 +1,259 @@
+%%
+%%
+%% This file should be edited by user
+%%
+
+\chapter{nesC} \label{chapter:nesC}
+
+
+\section{Fundamental Programming Hints}
+
+Before diving into this C - dialect, the most important programming hints are listed, as given in ~\cite{prognesc:2006}
+
+\begin{itemize}
+ \item It's dangerous to signal events from commands, as you might cause a very long call loop, corrupt memory and crash your program.
+ \item Keep tasks short.
+ \item Keep code synchronous when you can. Code should be async only if its timing is very important or if it might be used by something whose timing is important.
+ \item Keep atomic sections short, and have as few of them as possible. Be careful about calling out to other components from within an atomic section.
+ \item Only one component should be able to modify a pointer's data at any time. In the best case, only one component should be storing the pointer at any time.
+ \item Allocate all state in components. If your application requirements necessitate a dynamic memory pool, encapsulate it in a component and try to limit the set of users.
+ \item Conserve memory by using enums rather than const variables for integer constants, and don't declare variables with an enum type.
+ \item In the top-level configuration of a software abstraction, auto-wire Init to MainC. This removes the burden of wiring Init from the programmer, which removes unnecessary work from the boot sequence and removes the possibility of bugs from forgetting to wire.
+ \item If a component is a usable abstraction by itself, its name should end with C. If it is intended to be an internal and private part of a larger abstraction, its name should end with P. Never wire to
+P components from outside your package (directory).
+ \item Use the as keyword liberally.
+ \item Never ignore combine warnings.
+ \item If a function has an argument which is one of a small number of constants, consider
+defining it as a few separate functions to prevent bugs. If the functions of an interface all have an argument
+that?s almost always a constant within a large range, consider using a parameterized interface to save code
+space. If the functions of an interface all have an argument that's a constant within a large range but only
+certain valid values, implement it as a parameterized interface but expose it as individual interfaces, to both
+minimize code size and prevent bugs.
+ \item If a component depends on unique, then \#define a string to use in a header file, to
+prevent bugs from string typos.
+ \item Never, ever use the 'packed' attribute.
+ \item Always use platform independent types when defining message formats.
+ \item If you have to perform significant computation on a platform independent type or
+access it many (hundreds or more) times, then temporarily copying it to a native type can be a good idea.
+
+
+\end{itemize}
+
+\section{Namespace, Components and Interfaces}
+
+nesC applications consist of components that get wired together. A component can be a \textit{configuration} or a \textit{module}. Modules implement some functionality, while configurations describe how components are put together.
+
+nesC uses a purely local namespace. This means that a component has to declare all the functions it calls. An advantage in this approach is that all the functions that get called are known at \textit{compile time} - no RAM is used for storing function pointers, and no runtime allocation is required. This is possible because of the nature of nesC - applications: this applications run on embedded systems with well-defined and tightly specified uses, and it is much more important to save memory than to provide flexibility by dynamic linking.
+
+This declaration is done in the \textit{specification} of the component. In this codeblock, the component declares what function it \textit{provides} and what functions it \textit{uses}. This would be such a specification:
+
+\lstset{language=C}
+\begin{lstlisting}
+module doSomethingC {
+  provides command <returnvalue> providedFunctionality(<arguments>);
+  uses command <returnvalue> usedFunctionality(<arguments>);
+}
+\end{lstlisting}
+
+In practice, instead of declaring the individual functions, a component specifies what \textit{interfaces} is uses and it provides. When specifying that a certain interface is used, the component can use or \textit{call} all of the functions that are implemented by this interface. But because this functions can be implemented by different components in different ways, a configuration is needed: there, the calling component is connected to another component that \textit{provides} the needed functions through it's interfaces. This action is called \textit{wiring}.
+
+Consider this code example, taken from the tinyOS powermanagement subsystem:
+
+\lstset{language=C}
+\begin{lstlisting}
+interface StdControl {
+  command error_t start();
+  command error_t stop();
+}
+\end{lstlisting}
+
+This interface named StdControl is \textit{used} by components that that need to turn off or on other components, while StdControl is \textit{provided} by components that represent an abstraction or a service.
+
+For example, it should be possible to enable and disable UART-transmission. So, the UART-module provides the interface StdControl. Mind the keyword \textit{as} in the following code snippet. This keyword just renames the interface for local use and can be ommited.
+
+\lstset{language=C}
+\begin{lstlisting}
+module HplAtm128UartP {
+...
+  provides interface StdControl as Uart0TxControl;
+...
+\end{lstlisting}
+
+The actual work is done in the module's \textit{implementation}. Keep in mind that the \textit{providing} module \textbf{MUST} implement all of the provided functions:
+
+\lstset{language=C}
+\begin{lstlisting}
+
+...
+
+command error_t Uart0TxControl.start() {
+  SET_BIT(UCSR0B, TXEN);
+  call McuPowerState.update();
+  return SUCCESS;
+}
+
+command error_t Uart0TxControl.stop() {
+  CLR_BIT(UCSR0B, TXEN);
+  call McuPowerState.update();
+  return SUCCESS;
+}
+
+...
+
+\end{lstlisting}
+
+The next listing shows how wiring works: 
+
+\lstset{language=C}
+\begin{lstlisting}
+configuration Atm128Uart0C {
+  provides interface StdControl;
+ ...
+}
+
+implementation{
+
+  components new Atm128UartP() as UartP;
+  StdControl = UartP;
+  UartByte = UartP;
+  UartStream = UartP;
+  UartP.Counter = Counter;
+
+  components HplAtm128UartC as HplUartC;
+  UartP.HplUartTxControl -> HplUartC.Uart0TxControl;
+  ...
+}
+\end{lstlisting}
+
+So, every higher-level component can switch on and off transmission on the Uart0 - interface, and the implementation also notifies the system that some hardware was started or stopped, an information that is used by the powermanangement system, as described earlier. Codelisting \ref{MyPowersavingAppC} demonstrates how an application can make use of such a interface.
+
+At first, we define what components we want to use, and how they are put(\textit{wired}) together.
+
+\lstinputlisting[caption={MyPowersavingAppC.nc},label=MyPowersavingAppC]{listings/MyPowersavingAppC.nc}
+
+After that, we can use the interfaces provided by the used components. See listing \ref{MyPowersavingC} for how that works.
+
+\lstinputlisting[caption={MyPowersavingC.nc},label=MyPowersavingC]{listings/MyPowersavingC.nc}
+
+But what to do if - for example - you want a similar functionality for the CC2420 radio chip, turning on the chip when traffic has to be sent, and turning it off afterwards to save power? Clearly, the way to do this is same as with the UART-subsystem. The only difference is to wire the application to another component - the lower level implementation of the CC2420 - chip will handle the rest. 
+
+\section{Split-Phase Interfaces}
+
+As stated before, it should be possible in tinyOS to build a certain functionality either in software \textit{or} in hardware. Because hardware is almost always non-blocking, the software must be non-blocking as well to guarantee this exchangeability. A traditional approach for this problem is to use multiple threads: one thread requests an operation and is then put on a waiting queue, and another thread continues with some other work. The waiting thread is woken up as soon as the operation has finished and interrupts the other running thread.
+
+A problem with threads is that they need RAM - a resource that is very precious on embedded systems. Every thread has it's own private stack that has to be untouched as long as the thread is suspended, so this part of memory is wasted storage.
+
+So, instead of threads, tinyOS uses the split-phase - model: a program that wants to execute some functionality(sampling a sensor; sending a data packet) requests the operation, returning immediatly afterwards. When the operation has finished, this new state is \textit{signaled} to the requester by an \textit{event}. This is an important aspect of split-phase interfaces: they are birectional. There is always a \textit{downcall}, generally a \textit{command}, that starts an operation, and the corresponding \textit{upcall} or \textit{event} to signal the completion. 
+
+The following code snippet gives an example for such an interface:
+
+\lstset{language=C}
+\begin{lstlisting}
+interface Send {
+  command error_t send(message_t* msg, uint8_t len);
+  event void sendDone(message_t* msg, error_t error);
+  command error_t cancel(message_t* msg);
+  command void* getPayload(message_t* msg);
+  command uint8_t maxPayloadLength(message_t* msg);
+}
+\end{lstlisting}
+
+A component that \textit{uses} such a split-phase interface \textbf{MUST} implement all of the possible \textit{events}. So, a higher-level component that wants to make use of the \textit{Send} - interface by calling the \textit{send()} - function must implement an \textit{event} called \textit{sendDone}, that will be \textit{signalled} by the send-function.
+
+When using split-phase interfaces, remembering the first programming hint is important: signaling events from commands is dangerous, because this can cause long call loops or corrupt memory caused by exploding stack size.
+So instead of using commands, the correct way is to use \textit{tasks}.
+
+\section{Tasks}
+
+In tinyOS, a module can \textit{post} a task to the scheduler, which will get executed at some point later. 
+Because a task is a deferred procedure call, there is no return value. Additionally, there are no parameters for tasks because a task is always executed in the naming scope of a component. A declaration of a task has this form:
+
+\lstset{language=C}
+\begin{lstlisting}
+	task void checkInterruptflag();
+\end{lstlisting}
+
+Adding this task to the scheduler is done with the \textit{post} keyword: 
+
+\lstset{language=C}
+\begin{lstlisting}
+	post checkInterruptflag();
+\end{lstlisting}
+
+Tasks are non-preemptive, no task will ever get interrupted by the tinyOS scheduler. The advantage is that the programmer never has to worry about tasks corrupting each other's data. On the other hand, tasks never should be too long because otherwise other tasks maybe could get delayed. So, a task that has to do long computations should be broken into multiple tasks.
+
+tinyOS needs about 80 microcontroller clock cycles to post and execute a task, so there's a tradeoff between lots of short tasks and fewer, but longer running tasks - no hard rule can be given here.
+
+\section{Async Functions}
+
+As stated before, a task will always run until it has finished. This is not true under all circumstances, because
+a task can be disrupted by an interrupt. Such functions that run preemptively, triggered by an interrupt and from outside the task context, are labeled with the \textit{async} keyword. Consequently, all commands that are called and all events that get signalled by such functions are async as well and must be marked async too.
+
+To get an async function into a syncronous context, the only way possible is by using tasks. For example, receiving UART bytes will normally be done interrupt driven, so the corresponding interrupt vector will be called asyncronously. If the received data are handled by a higherlevel component in a syncronous function, the interrupthandler can post a task to get from the asyncronous interrupt context to a syncronous task context.
+
+\section{Wiring}
+
+As said before, in nesC a component can only call functions and access variables whithin its local namespace. To call functions outside it's scope, a set of names in one component, generally an interface, must be mapped to a set of names in another component. This operation is called wiring.
+
+\subsection{Modules vs. Configurations}
+
+Components can either be \textit{Modules} or \textit{Configurations} - both use and provide interfaces. This set of \textit{used} and \textit{provided} interfaces defines the \textit{signature} of the component.
+
+The difference between \textit{Modules} and \textit{Configurations} lies in their implementation: while configurations are implemented by other components, which they wire, modules are executeable code. Modules are written for the most part in standard - C.
+
+\subsection{Operators}
+
+There are only 3 operators for wiring components together:
+
+\begin{itemize}
+ \item \textless-
+ \item -\textgreater
+ \item =
+\end{itemize}
+
+The first two operators are interchangeable, for example this two lines are identical:
+
+\begin{lstlisting}
+	MyComponent.UsedInterface -> OtherComponent.ProvidedInterface; 
+	OtherComponent.ProvidedInterface <- MyComponent.UsedInterface;
+\end{lstlisting}
+
+In short, the arrow always points from the \textit{user} of an interface to the \textit{provider} of that interface:
+
+\begin{lstlisting}
+	User -> Provider;
+\end{lstlisting}
+
+As soon as MyComponent is connected this way to OtherComponent, MyComponent can use all of the functions provided by ProvidedInterface. Additionally, UsedInterface \textbf{MUST} implement all the handler OtherComponent offers events for. 
+
+If MyComponent wants to call a function provided by OtherComponent, the call would look like this:
+
+\begin{lstlisting}
+	call UsedInterface.FunctionName(<argumentlist>);
+\end{lstlisting}
+
+To implement the handler for the events that can be signaled by ProvidedInterface, a construct of this form in UsedInterface is neccessary:
+
+\begin{lstlisting}
+	event <returntype> UsedInterface.EventName(<argumentlist>)
+	{
+		/*
+		code to handle the new situation, as signalled by this event
+		*/
+	}
+\end{lstlisting}
+
+The third operator, '=', \textit{exports} an interface. It defines how the configuration of an interface is implemented, by delegating it to another component. In contrast, the 'arrow' - operator combines components that already exist.
+
+\lstinputlisting[caption={GLCDC.nc},label=GLCDC]{../tinyos/tos/platforms/bigAVR6/GLCD/GLCDC.nc}
+
+The difference is explained on the basis of codelisting \ref{GLCDC} - the top-level configuration for a component that provides functionality for a graphical display. This component provides the interface GLCD which can be used by a high-level programmer to easily use such a display. \textit{GLCDC} consists of 2 more components, \textit{TouchScreenC} and \textit{LCD128x64C} 
+
+\subsection{Nameing Conventions}
+
+All components in tinyOS are ending in \textit{C} or \textit{P}: the first ending is used for \textit{C}omponents, which means that they represent usable abstractions. \textit{P}rivate components are ending in P. That means that generally, the programmer should not wire to it, because it's functionality is encapsulated by a \textit{C}omponent.
+
+
+%%
+%% = eof =====================================================================
+%%
