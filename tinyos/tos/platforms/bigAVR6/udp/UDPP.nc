@@ -107,9 +107,14 @@ implementation
 			signal UDP.gotDatagram(len, udpPtr + 8);
 	}
 
-	event void IP.initDone()
+	event void IP.initDone(uint8_t hwCode)
 	{
-		signal UDP.initDone();
+		signal UDP.initDone(hwCode);
+	}
+
+	event void IP.sendFailed()
+	{
+		signal UDP.sendFailed();
 	}
 
 	event void IP.sendDone()
@@ -117,9 +122,9 @@ implementation
 		signal UDP.sendDone();
 	}
 
-	event void IP.hwInterrupt(uint16_t *info)
+	event void IP.hwInterrupt(uint8_t hwCode)
 	{
-		signal UDP.hwInterrupt(info);
+		signal UDP.hwInterrupt(hwCode);
 		//signal UDP.hwInterrupt(src);
 	}
 }

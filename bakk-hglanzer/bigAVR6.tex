@@ -196,6 +196,27 @@ To receive a packet from remote hosts, the packet must either has the proper des
   \label{fig:udpstack}
 \end{figure}
 
+\subsubsection{Network Sniffing}
+
+For testing purposes, the commandlinetool \textit{netcat} can be used. As example, a constant string should be sent to the ip 192.168.1.100, destinationport 4443, as shown in the following listing.
+
+\begin{lstlisting}
+	...
+	dstIP[0] = 192;
+	dstIP[1] = 168;
+	dstIP[2] = 1;
+	dstIP[3] = 100;
+	call UDP.sendData((uint16_t *)"hello world", (uint8_t *)dstIP, 80, 4443, sizeof("hello world"));
+	...
+\end{lstlisting}
+
+To receive the string on the corresponding host, this commandline can be used:
+
+\begin{lstlisting}
+	nc -u -l 4443
+\end{lstlisting}
+
+This starts netcat in listening mode, specifies that UDP instead of TCP should be used and that it should bind to port 4443. Port 4443 belongs to the so-called \textit{unprivileged ports}, where a 'normal', unpriviliged user can bind to. All ports greater thant 1023 belong to this group. In opposite, ports from 1 to 1023 are called \textit{privileged} or \textit{well-known} ports.
 
 \newpage
 

@@ -4,8 +4,11 @@
  *
  **/
 
-//#include "Timer.h"
 #include "Platform.h"
+#include "LCD2x16.h"
+
+#define	STATUS	0
+#define DATA	1
 
 enum{
 	right	= 	0,
@@ -18,41 +21,31 @@ module BlinkC @safe()
 {
 	uses interface Boot;
 	uses interface GLCD;
-	uses interface Timer<TMilli> as Timer0;
 
 	uses interface UDP;
+	uses interface LCD2x16;
+	uses interface Timer<TMilli> as Timer0;
 //	uses interface MMC;
 }
 implementation
 {
-	static volatile uint8_t count = 0, count2 = 0, x_true=0, tmp = 0, init = FALSE, *ptr, state = 0;
+	static volatile uint8_t count = 0, count2 = 2, *ptr, state = 0, pcount=0, mode, dir = 0;
 	char buf[10]="0000000000", uartBuf[11]="\0\0\0\0\0\0\0\0\0\0\0";
 	volatile uint32_t count3 = 0;
+	static volatile bool link = TRUE;
 
-	task void testTask()
+	void printGLCD()
 	{
 	}
 	
-	event void Timer0.fired()
-	{
-		call GLCD.getXY();
-		call GLCD.isPressed(TRUE);
-	}
 	event void Boot.booted()
 	{
-		//call GLCD.initLCD(0x0);
 		count = 0;
-		count3 = 0;
-		DDRA = 0xFF;
-		for(count = 0; count < 255; count++)
-		{
-			for(count3 = 0; count3 < 255; count3++)
-			{
-				PORTA = count;
-			}
-		}
 		call GLCD.initLCD(0x00);
-		count = 1;
+		call LCD2x16.init(CURSOR_OFF);
+		call LCD2x16.clearDisplay();
+		call UDP.initStack();
+		call Timer0.startPeriodic(1000);
 }
 
 /*
@@ -60,7 +53,6 @@ implementation
 
 	event void MMC.initDone()
 	{
-		call GLCD.isPressed(TRUE);
 	}
 
 	event void MMC.blockReady(uint8_t *data)
@@ -87,30 +79,52 @@ implementation
 	event void GLCD.initDone()
 	{
 //		call MMC.init();
-		call Timer0.startPeriodic(1000);
 //		call GLCD.startClearScreen(count);
-//		call GLCD.isPressed(TRUE);
-		call UDP.initStack();
 	}
 
 	event void GLCD.tsPressed()
 	{
 		call GLCD.getXY();
-//		call GLCD.startClearScreen(count);
 	}
 
 	event void GLCD.calibrated()
 	{
-//		call GLCD.isPressed(TRUE);
 	}
 
 	event void GLCD.stringWritten()
 	{
-		call GLCD.isPressed(TRUE);
+		if(mode == STATUS)
+		{
+			switch(pcount)
+			{
+				case 0:
+					call GLCD.startWriteString("Snd\0", 108, 1);
+					pcount++;
+				break;
+				case 1:
+					call GLCD.startWriteString("Clr\0", 108, 6);
+					pcount++;
+				break;
+				case 2:
+					if(link == TRUE)
+						call GLCD.startWriteString((char *)"Link UP  \0", 0, 7);
+					else
+						call GLCD.startWriteString((char *)"Link DOWN\0", 0, 7);
+					pcount++;
+				break;
+				case 3:
+					call GLCD.startWriteRectangle(105, 0, 23, 23);
+					pcount++;
+				break;
+			}
+		}
 	}
 
 	event void GLCD.screenCleared(void)
 	{
+		pcount = 0;
+		mode = STATUS;
+		call GLCD.startWriteString("bigAVR6 Demo\0", 0, 0);
 		call GLCD.isPressed(TRUE);
 	}
 
@@ -123,6 +137,13 @@ implementation
 	}
 	event void GLCD.rectangleWritten()
 	{
+		switch(pcount)
+		{
+			case 4:
+				call GLCD.startWriteRectangle(105, 41, 23, 23);
+				pcount++;
+			break;
+		}
 		call GLCD.isPressed(TRUE);
 	}
 
@@ -134,65 +155,20 @@ implementation
 	event void GLCD.xyReady(uint16_t x, uint16_t y)
 	{
 		uint8_t dest[4];
-/*
-		call MMC.readBlock(count2);
-		count2++;
-		if(x>64)
-			count2++;
-		else
-		{	
-			if(count2 > 0)
-				count2 = count2-1;
-		}
-		tmp = (x % 10);
-		buf[3] = tmp + 0x30;
-		x = (x - tmp) / 10;
-
-		tmp = (x % 10);
-		buf[2] = tmp + 0x30;
-		x = (x - tmp) / 10;
-
-		tmp = (x % 10);
-		buf[1] = tmp + 0x30;
-		x = (x - tmp) / 10;
-
-		tmp = (x % 10);
-		buf[0] = tmp + 0x30;
-		buf[4] = '/';
-		
-		tmp = (y % 10);
-		buf[8] = tmp + 0x30;
-		y = (y - tmp) / 10;
-
-		tmp = (y % 10);
-		buf[7] = tmp + 0x30;
-		y = (y - tmp) / 10;
-
-		tmp = (y % 10);
-		buf[6] = tmp + 0x30;
-		y = (y - tmp) / 10;
-
-		tmp = (y % 10);
-		buf[5] = tmp + 0x30;
-		buf[9] = '\0';		
-	//	call GLCD.startClearScreen(0x00);
-		call GLCD.startWriteString(buf, 45, 0);
-
-*/
-		if(x<128 && y < 64)
-			if((x>110) && (y>50))
+		if((x<128) && (y < 64))
+		{
+			if((x>104) && (y>40))
 			{
 				dest[0] = 192;
 				dest[1] = 168;
 				dest[2] = 1;
-				dest[3] = 1;
-				call UDP.sendData((uint16_t *)"hello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZ", &dest[0], 443, 80, sizeof("hello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZhello world!powpow1234567890HATSCH FUCKING RULEZ"));
-			//	call GLCD.startClearScreen(0x00);
+				dest[3] = 100;
+				call UDP.sendData((uint16_t *)"bigAVR6 UDP demonstration", &dest[0], 80, 4443, sizeof("bigAVR6 UDP demonstration"));
 			}
-			else if((x>110) && (y<20))
+			else if((x>104) && (y<25))
 			{
 				call GLCD.startClearScreen(0x00);
-				count2 = 2;
+				count2 = 3;
 			}
 			else
 			{
@@ -205,39 +181,78 @@ implementation
 					call GLCD.isPressed(TRUE);
 				}
 			}
+		}
 		else
 			call GLCD.isPressed(TRUE);
 	}
 ////////////////////////////	UDP	///////////////////////////
 
-	event void UDP.initDone()
+	event void UDP.initDone(bool linkStatus)
 	{
-		call GLCD.startWriteString("stack init done", 0, 0);
+		mode = STATUS;
+		link = linkStatus;
+		call GLCD.startWriteString("bigAVR6 Demo\0", 0, 0);
+		call GLCD.isPressed(TRUE);
 	}
 	
-	event void UDP.sendDone()
+	event void UDP.sendFailed()
 	{
-//		call GLCD.isPressed(TRUE);
+		call GLCD.isPressed(TRUE);
 	}
 
-	event void UDP.hwInterrupt(uint16_t *info)
+	event void UDP.sendDone()
 	{
-		atomic
+		call GLCD.isPressed(TRUE);
+	}
+
+	event void UDP.hwInterrupt(uint8_t hwCode)
+	{
+		if(hwCode == TRUE)
 		{
-			count2++;
-			if(count2 > 7)
-				count2 = 3;
-			
-			call GLCD.startWriteString((char *)info, 0, count2);
+			link = TRUE;
+			call GLCD.startWriteString((char *)"Link UP  \0", 0, 7);
 		}
+		if(hwCode == FALSE)
+		{
+			link = FALSE;
+			call GLCD.startWriteString((char *)"Link DOWN\0", 0, 7);
+		}
+		
 	}
 
 	event void UDP.gotDatagram(uint16_t len, uint8_t *dataPtr)
 	{
-		dataPtr[20] = '\0';
+		mode = DATA;
+		dataPtr[10] = '\0';
 		call GLCD.startWriteString((char *)dataPtr, 0, count2);
 		count2++;
-		if(count2 > 7)
-			count2 = 3;
+		if(count2 > 5)
+			count2 = 2;
+	}
+
+////////////////////////////	LCD	///////////////////////////
+
+	event void LCD2x16.stringWritten()
+	{
+	}
+	event void LCD2x16.displayCleared()
+	{
+		call LCD2x16.sendString("TU WIEN", 7, 0, count);
+		if(dir == 0)
+			count++;
+		else
+			count = count - 1;
+
+		if(count >= 9)
+			dir = 1;
+		if(count == 0)
+			dir = 0;
+	}
+
+////////////////////////////	LCD	///////////////////////////
+	
+	event void Timer0.fired()
+	{
+		call LCD2x16.clearDisplay();
 	}
 }

@@ -23,6 +23,7 @@ implementation
 {
 	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0, IEEE8023packet[60], tmpString[10];
 	static volatile uint16_t *TXdataPtr, *TXdstMAC, TXlen, nextPacketPtr = RXSTART_INIT;
+	bool linkStatus = FALSE;
 
 	uint8_t writeSPI(uint8_t opcode, uint8_t data)
 	{
@@ -251,7 +252,7 @@ implementation
 
 	event void Resource.granted(void)
 	{
-		volatile uint8_t rc = 0;
+		volatile uint8_t rc = 0, rc2 = 0;
 		volatile uint16_t count = 0, frameLen = 0;
 	
 		call ssETH.set();		// start with HIGH-level
@@ -384,6 +385,18 @@ implementation
 					PORTA = rc;
 				*/
 			
+				do
+				{
+					rc = readPHY(PHSTAT1, 0);
+					rc = readPHY(PHSTAT1, 0);
+					rc2 = readPHY(PHSTAT2, 1);
+				}while(rc != rc2);
+
+				if((rc & 0x04) != 0)
+					linkStatus = TRUE;
+				else
+					linkStatus = FALSE;
+			
 				setBank(0x00);
 
 				// enable receive packet pending, linkchange and global-interrupt 
@@ -395,7 +408,7 @@ implementation
 				
 				stateETH = IEEE8023_READY;
 				call Resource.release();
-				signal IEEE8023.initDone();
+				signal IEEE8023.initDone(linkStatus);
 			break;
 
 			case IEEE8023_RX:
@@ -491,11 +504,11 @@ while(1)
 
 			if((rc & 0x04) != 0)
 			{
-				signal IEEE8023.hwInterrupt((uint16_t *)"Link UP  ");
+				signal IEEE8023.hwInterrupt(1);
 			}
 			else
 			{
-				signal IEEE8023.hwInterrupt((uint16_t *)"Link DOWN");
+				signal IEEE8023.hwInterrupt(0);
 			}
 			writeSPI((ENC28J60_WRITE_CTRL_REG | EIE), 0xD0);
 		}

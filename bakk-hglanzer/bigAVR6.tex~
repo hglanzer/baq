@@ -164,6 +164,8 @@ Obviously, the state of this connected pins \textbf{MUST NOT} be touched by the 
 
 \textbf{RS-232 Port B CAN NOT BE USED} together with this component because Port D, which is used as the external interrupt source from the ethernetboard, is also used as UART1(=RS-232 Port B) RX pin. Instead, RS-232 Port A \textbf{MUST} be used if the UDP-services are also needed.
 
+Also, jumper J21 \textbf{MUST BE DEACTIVATED} for IEEE8023C to function!
+
 To use the UDP - stack in an application, component UDPC with interface UDP has to be used. Interface UDP provides functions for initializing the stack and sending and receiving frames, as shown in listing \ref{UDP}.
 
 \lstinputlisting[caption={UDP.nc},label=UDP]{../tinyos/tos/platforms/bigAVR6/udp/UDP.nc}
@@ -187,6 +189,26 @@ Afterwards, the data travels down the stack, as shown in figure \ref{fig:udpstac
 At this level, a checksum is generated, which includes the IP-header only. In the next step, a routing-decision has to be made: either the packet is addressed to a host \textit{inside} the lan(the remote host has the same network-adress than the ip that has been assigned to the bigAVR6 board), or the packet must \textit{hop} outside the lan. In the first case, the packet can be sent to the host directly, otherwise, it must be sent to the default gateway, as defined in the headerfile tinyos/tos/platforms/bigAVR6/ip/IP.h. When the proper destination ip has been found, an ARP - lookup is done. A local arp-cache is implemented as a ringbuffer, which saves ip/mac - address couples in a two-dimensional array. If no ARP - entry is found for the destionation ip, a lookup is sent automatically. Be aware that, if no MAC is found, the ARP-request - triggering packet is lost and must be resent by the application. If the MAC is known, it is extracted from the MAC cache, and component IEEE802.3 takes over control, where the frameheader and the payload(data + udp-header + ip-header) is copied into the transmit memory of the ENC28J60 by SPI. Afterwards, the communication is started, and the completion is signaled to the application.
 
 To receive a packet from remote hosts, the packet must either has the proper destination MAC set, as defined in tinyos/tos/platforms/bigAVR6/eth/IEEE8023.h, or must be be a multicast frame(destination 0xFFFFFFFFFFFF), otherwise the ethernetcontroller chip ENC28J60 will not accept it. If a valid MAC is present, the ENC28J60 will autonomously copy the packet into the receive buffer and signal completion by an interrupt. The packet will be read out by component IEEE8023C and handed over to the IP-level component IPC. If the packet is a ARP - request, a corresponding reply will be sent, otherwise the payload(data + udp-header) will be handed over one level higher, which is the UDP - level. Note that the ip-checksum will \textbf{NOT} be checked. At UPD level, the actual payload will get extracted and is handed over to the application.
+
+For testing purposes, the commandlinetool \textit{netcat} can be used. As example, a constant string should be sent to the ip 192.168.1.100, port 4443, as shown in the following listing.
+
+\begin{lstlisting}
+	...
+	dstIP[0] = 192;
+	dstIP[1] = 168;
+	dstIP[2] = 1;
+	dstIP[3] = 100;
+	call UDP.sendData((uint16_t *)"hello world", (uint8_t *)dstIP, 80, 4443, sizeof("hello world"));
+	...
+\end{lstlisting}
+
+To receive the string on the corresponding host, this commandline can be used:
+
+\begin{lstlisting}
+	nc -u -l 4443
+\end{lstlisting}
+
+This starts netcat in listening mode, and specifies that UDP instead of TCP should be used, and that it should bind to port 4443. 
 
 \begin{figure}[h]
  \centerline{\includegraphics[width=.8\columnwidth]{pics/udpstack.png}}

@@ -153,6 +153,7 @@ implementation
 			request.arpTypeL = 0x01;
 			state = ARPFRAME;
 			call IEEE8023.sendFrame((uint16_t *)&request, (uint16_t *)&dstMAC, 28, 0);
+			signal IP.sendFailed();
 		}
 
 		return SUCCESS;
@@ -256,7 +257,7 @@ implementation
 					}
 					else
 					{
-						signal IP.hwInterrupt((uint16_t *)&"NOT MY BUSINESS");
+						signal IP.hwInterrupt(2);
 					}
 				}
 			}
@@ -297,9 +298,9 @@ implementation
 		}
 	}
 
-	event void IEEE8023.initDone(void)
+	event void IEEE8023.initDone(bool linkStatus)
 	{
-		signal IP.initDone();
+		signal IP.initDone(linkStatus);
 	}
 
 	event void IEEE8023.sendDone(void)
@@ -308,10 +309,8 @@ implementation
 			signal IP.sendDone();
 	}
 
-	event void IEEE8023.hwInterrupt(uint16_t *info)
-	//event void IEEE8023.hwInterrupt(uint8_t src)
+	event void IEEE8023.hwInterrupt(uint8_t hwCode)
 	{
-		signal IP.hwInterrupt(info);
-		//signal IP.hwInterrupt(src);
+		signal IP.hwInterrupt(hwCode);
 	}
 }
