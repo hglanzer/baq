@@ -36,21 +36,10 @@ implementation
 			y_raw = y_raw - y_min;
 		
 			// skalieren
-			//<<<<<<< HEAD
-			x_tmp = ((float)x_raw / (float)X_DISTANCE);
-			y_tmp = ((float)y_raw / (float)Y_DISTANCE);
-			x_tmp = x_tmp * 128;
-			y_tmp = y_tmp * 64;
-			signal GLCD.xyReady(x_tmp, 63-y_tmp);
-			//=======
-/* 			x_tmp = ((float)x_raw / (float)X_DISTANCE); */
-/* 			y_tmp = ((float)y_raw / (float)Y_DISTANCE); */
-/* 			x_tmp = x_tmp * 128; */
-/* 			y_tmp = y_tmp * 64; */
-			x_tmp = ( (uint32_t)x_raw*128) / (x_max-x_min);
-			y_tmp = ( (uint32_t)y_raw*64) / (y_max-y_min);
+
+			x_tmp = ( (uint32_t)x_raw*127) / (x_max-x_min);
+			y_tmp = ( (uint32_t)y_raw*63) / (y_max-y_min);
 			signal GLCD.xyReady(x_tmp, y_tmp);
-			//>>>>>>> 47d9b00cf782df9c423d169d00f8694cd612ddb6
 		}
 		else
 		{
@@ -169,6 +158,9 @@ implementation
 				LCD128x64 - interfacefunctions
 		#########################################################	*/
 
+	command void GLCD.copyByte(uint8_t x, uint8_t y){
+	  call LCD128x64.copyByte( x, y );
+	}
 	command void GLCD.initLCD(uint8_t pattern)
 	{
 		call LCD128x64.initLCD(pattern);

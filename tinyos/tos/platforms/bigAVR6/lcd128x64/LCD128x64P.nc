@@ -41,22 +41,23 @@ implementation
 	
   void busyWait4Controller(){
     //call Measure0.set(); /* DEBUG - REMOVE */
+    CTRL_GLCD |= (1<<ENABLE_GLCD);
     DATA_DDR_GLCD = 0x00; // we want to read in from dataport, CTRL-PORT = outout
     CTRL_GLCD |= (1<<RW_GLCD); // set CTRL_RW high
     CTRL_GLCD &= ~(1<<REGSEL_GLCD); // set CTRL_REGSEL low
-    CTRL_GLCD |= (1<<ENABLE_GLCD); // set CTRL_RW high
+
+    CTRL_GLCD &= ~(1<<ENABLE_GLCD);
+    asm volatile ("nop"); asm volatile ("nop");
+    CTRL_GLCD |= (1<<ENABLE_GLCD);
+    asm volatile ("nop"); asm volatile ("nop");
 	  
-    //if(DATA_IN_GLCD & GLCD_STATUS_BUSY) // not ready yet - wait!
     while(DATA_IN_GLCD & GLCD_STATUS_BUSY) // not ready yet - wait!
       {
 	CTRL_GLCD &= ~(1<<ENABLE_GLCD);
 	asm volatile ("nop"); asm volatile ("nop");
 	CTRL_GLCD |= (1<<ENABLE_GLCD);
 	asm volatile ("nop"); asm volatile ("nop");
-	//post wait4Controller();
       }
-    CTRL_GLCD &= ~(1<<ENABLE_GLCD);
-    //CTRL_GLCD |= (1<<RW_GLCD);
     DATA_DDR_GLCD = 0xFF; // reset old condition
     //call Measure0.clr(); /* DEBUG - REMOVE */
   }
@@ -66,27 +67,23 @@ implementation
     DATA_DDR_GLCD = 0x00; // we want to read in from dataport, CTRL-PORT = outout
     CTRL_GLCD |= (1<<RW_GLCD); // set CTRL_RW high
     CTRL_GLCD &= ~(1<<REGSEL_GLCD); // set CTRL_REGSEL low
-    //CTRL_GLCD |= (1<<ENABLE_GLCD); // set CTRL_RW high
-		
-    //if(DATA_IN_GLCD & GLCD_STATUS_BUSY) // not ready yet - wait!
+
     while(DATA_IN_GLCD & GLCD_STATUS_BUSY) // not ready yet - wait!
       {
 	CTRL_GLCD |= (1<<ENABLE_GLCD);
 	asm volatile ("nop"); asm volatile ("nop");
 	CTRL_GLCD &= ~(1<<ENABLE_GLCD);
 	asm volatile ("nop"); asm volatile ("nop");
-	//post wait4Controller();
       }
-    //CTRL_GLCD &= ~(1<<ENABLE_GLCD);
     CTRL_GLCD |= (1<<RW_GLCD);
     DATA_DDR_GLCD = 0xFF; // reset old condition
   }
+
 
   void writeGLCD(uint8_t mode, uint8_t data)
   {
     busyWait4Controller();
     //call Measure1.set(); /* DEBUG - REMOVE */
-    CTRL_GLCD |= ( 1 << ENABLE_GLCD );
     if(mode == COMM)
       {
 	// WRITE COMMANDS to GLCD - RAM
@@ -98,26 +95,24 @@ implementation
 	CTRL_GLCD &= ~( 1<< RW_GLCD );
 	CTRL_GLCD |=  (1 << REGSEL_GLCD);
       }
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    //CTRL_GLCD |=  (1 << ENABLE_GLCD);
+    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
+    CTRL_GLCD |= ( 1 << ENABLE_GLCD );
     DATA_OUT_GLCD = data;
     asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
+    asm volatile ("nop"); asm volatile ("nop");
     CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
-    //asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
+    CTRL_GLCD |= ( 1<< RW_GLCD );
+    asm volatile ("nop");
+    CTRL_GLCD |= ( 1 << ENABLE_GLCD );
+    DATA_OUT_GLCD = 0x00;
     //call Measure1.clr(); /* DEBUG - REMOVE */
   }
 
   void setAddress(uint8_t xAdd, uint8_t yAdd)
   {	
     uint8_t tmp;
-
-    //CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
+    CTRL_GLCD |= ( 1 << ENABLE_GLCD );
+    CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
 
     if(xAdd < 64)
       {
@@ -130,10 +125,10 @@ implementation
 	CTRL_GLCD &= ~(1<<CS1_GLCD);
       }
 		
-    //asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-    //asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
     tmp = xAdd & 0x3f;		// make x address valid
     writeGLCD(COMM, tmp | GLCD_SET_Y_ADDR);
+
+    CTRL_GLCD &= ~( 1 << ENABLE_GLCD );
 
     tmp = yAdd & 0x3f;
     writeGLCD(COMM, tmp | GLCD_SET_X_ADDR);
@@ -145,38 +140,39 @@ implementation
     for(c = 0; c < 2; c++)	// dummy read needed!
       {
 	busyWait4Controller();
-	CTRL_GLCD &= ~( 1<<ENABLE_GLCD );
+	CTRL_GLCD |= (1 << ENABLE_GLCD);
 	CTRL_GLCD |= (1 << RW_GLCD);
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
 	if(mode == COMM)	// read COMMANDREGISTER
 	  {
 	    CTRL_GLCD &= ~(1 << REGSEL_GLCD);
 	  }
 	else			// read DATAREGISTER
 	  {
-	    CTRL_GLCD |= (1 << REGSEL_GLCD);
 	    DATA_DDR_GLCD = 0x00;
+	    CTRL_GLCD |= (1 << REGSEL_GLCD);
 	  }
-	
+	CTRL_GLCD &= ~( 1<<ENABLE_GLCD );
+
 	/* wait min. 140ns */
-	asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
-	//asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
+	asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); //asm volatile ("nop");
 	CTRL_GLCD |= (1 << ENABLE_GLCD);
-	/* wait max. 200ns */
+	
+	/* wait 200ns */
 	asm volatile ("nop"); asm volatile ("nop");asm volatile ("nop"); asm volatile ("nop");
-	asm volatile ("nop"); //asm volatile ("nop");asm volatile ("nop"); asm volatile ("nop");
-	
+	asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop"); asm volatile ("nop");
+		
 	tmp = DATA_IN_GLCD;
-	
-	CTRL_GLCD &= ~( (1<<ENABLE_GLCD) | (1<<RW_GLCD));
 	DATA_DDR_GLCD = 0xFF;
       }
     return tmp;
+  }
+
+  command void LCD128x64.copyByte( uint8_t x, uint8_t y ){
+    unsigned char temp;
+    setAddress(x, y/8);
+    temp = readByte(DATA);
+    setAddress(x+16, (y+16)/8);
+    writeGLCD(DATA, temp | (1 << (y % 8)));
   }
 
   command void LCD128x64.setPixel(uint8_t x, uint8_t y)

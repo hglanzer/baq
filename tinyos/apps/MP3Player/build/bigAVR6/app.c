@@ -185,11 +185,13 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 112 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memcpy(void *arg_0x2b9aa8cc4940, const void *arg_0x2b9aa8cc4c18, size_t arg_0x2b9aa8cc3020);
+extern void *memcpy(void *arg_0x2b7b4a3a8940, const void *arg_0x2b7b4a3a8c18, size_t arg_0x2b7b4a3a7020);
 
 
 
-extern void *memset(void *arg_0x2b9aa8cc77f0, int arg_0x2b9aa8cc7a58, size_t arg_0x2b9aa8cc7d00);
+extern void *memset(void *arg_0x2b7b4a3ab7f0, int arg_0x2b7b4a3aba58, size_t arg_0x2b7b4a3abd00);
+#line 131
+extern char *strncpy(char *arg_0x2b7b4a3ba7c0, const char *arg_0x2b7b4a3baa98, size_t arg_0x2b7b4a3bad40);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -208,7 +210,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b9aa8ce8968, const void *arg_0x2b9aa8ce8c40);
+typedef int (*__compar_fn_t)(const void *arg_0x2b7b4a3cc968, const void *arg_0x2b7b4a3ccc40);
 # 23 "/homes/mhartmann/baq/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -802,7 +804,7 @@ enum __nesc_unnamed4293 {
   MICA_DIVIDE_ONE_FOR_32KHZ_LOG2 = 1, 
   MICA_PRESCALER_THREE = ATM128_CLK16_DIVIDE_8, 
   MICA_DIVIDE_THREE_FOR_MICRO_LOG2 = 1, 
-  EXT_STANDBY_T0_THRESHOLD = 6
+  EXT_STANDBY_T0_THRESHOLD = 8
 };
 
 
@@ -841,8 +843,27 @@ enum __nesc_unnamed4298 {
   LEDS_LED6 = 1 << 6, 
   LEDS_LED7 = 1 << 7
 };
-# 1 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.h"
+# 6 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/Platform.h"
 enum __nesc_unnamed4299 {
+
+  INITIALIZE = 1, 
+  READY = 2, 
+  READ = 3, 
+  EJECTED = 4, 
+  UNINIT = 5, 
+  BUSY = 6
+};
+# 4 "songs.h"
+struct song {
+  char track[2];
+  uint32_t startBlockAddress;
+  uint32_t *nextAddress;
+  uint32_t *prevAddress;
+  char artist[20];
+  char title[20];
+};
+# 1 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.h"
+enum __nesc_unnamed4300 {
 
   UNCALIBRATED = 0, 
   CALIBRATION_IN_PROGRESS_LEFT_BOTTOM = 1, 
@@ -850,7 +871,7 @@ enum __nesc_unnamed4299 {
   CALIBRATION_DONE = 3
 };
 
-enum __nesc_unnamed4300 {
+enum __nesc_unnamed4301 {
 
   BUSY_STRING = 1, 
   BUSY_CIRCLE = 2, 
@@ -860,7 +881,7 @@ enum __nesc_unnamed4300 {
   BUSY_BAR = 32
 };
 # 1 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.h"
-enum __nesc_unnamed4301 {
+enum __nesc_unnamed4302 {
   INIT = 0, 
   DUMMY_FIRST_X = 1, 
   FIRST_X = 2, 
@@ -966,14 +987,6 @@ static unsigned char __attribute((progmem)) Font5x7[480] = {
 0x00, 0x41, 0x36, 0x08, 0x00, 
 0x08, 0x08, 0x2A, 0x1C, 0x08, 
 0x08, 0x1C, 0x2A, 0x08, 0x08 };
-# 1 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/mmc/MMC.h"
-enum __nesc_unnamed4302 {
-  UNINIT = 0, 
-  INITIALIZE = 1, 
-  READY = 2, 
-  READ = 3, 
-  EJECTED = 4
-};
 # 41 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.h"
 enum __nesc_unnamed4303 {
   ATM128_SPI_CLK_DIVIDE_4 = 0, 
@@ -1084,11 +1097,10 @@ static void /*HplAtm128GeneralIOC.PortB.Bit2*/HplAtm128GeneralIOPinP__10__IO__ma
 static void /*HplAtm128GeneralIOC.PortB.Bit3*/HplAtm128GeneralIOPinP__11__IO__makeInput(void );
 #line 44
 static void /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__makeInput(void );
-#line 43
-static bool /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__get(void );
-#line 43
-static bool /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__get(void );
-
+#line 44
+static void /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__makeInput(void );
+#line 44
+static void /*HplAtm128GeneralIOC.PortB.Bit7*/HplAtm128GeneralIOPinP__15__IO__makeInput(void );
 
 static void /*HplAtm128GeneralIOC.PortD.Bit1*/HplAtm128GeneralIOPinP__25__IO__makeOutput(void );
 #line 40
@@ -1165,11 +1177,11 @@ static uint8_t MeasureClockC__Atm128Calibrate__adcPrescaler(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b9aa8df0108);
+uint8_t arg_0x2b7b4a4d4108);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b9aa8df0108);
+uint8_t arg_0x2b7b4a4d4108);
 # 57 "/homes/mhartmann/baq/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1200,13 +1212,13 @@ static uint16_t MP3P__MP3__readRegister(uint8_t mp3Register);
 # 12 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPI.nc"
 static error_t SoftSPIImplP__SoftSPIMaster__receiveByte(
 # 7 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPIImplP.nc"
-uint8_t arg_0x2b9aa9045e80, 
+uint8_t arg_0x2b7b4a729e80, 
 # 12 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPI.nc"
 uint8_t *data);
 #line 9
 static error_t SoftSPIImplP__SoftSPIMaster__sendByte(
 # 7 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPIImplP.nc"
-uint8_t arg_0x2b9aa9045e80, 
+uint8_t arg_0x2b7b4a729e80, 
 # 9 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPI.nc"
 uint8_t msg);
 # 62 "/homes/mhartmann/baq/tinyos/tos/interfaces/Init.nc"
@@ -1218,15 +1230,15 @@ static resource_client_id_t /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__
 # 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907a7e8);
+uint8_t arg_0x2b7b4a75e7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 56 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 #line 46
@@ -1236,15 +1248,15 @@ static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner_
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 97 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__immediateRequest(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 98 "/homes/mhartmann/baq/tinyos/tos/interfaces/ArbiterInfo.nc"
 static uint8_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ArbiterInfo__userId(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1317,28 +1329,15 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 136
 static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__getNow(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9aa9264da0);
+uint8_t arg_0x2b7b4a946778);
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9aa9264da0);
-# 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
-# 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9aa9264da0, 
-# 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-uint32_t dt);
-
-
-
-
-
-
-
-
+uint8_t arg_0x2b7b4a946778);
+# 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9aa9264da0, 
+uint8_t arg_0x2b7b4a946778, 
 # 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 
@@ -1347,7 +1346,7 @@ uint32_t dt);
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9aa9264da0);
+uint8_t arg_0x2b7b4a946778);
 # 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
@@ -1374,12 +1373,10 @@ static void MP3TestC__GLCD__initDone(void );
 static void MP3TestC__GLCD__calibrated(void );
 #line 80
 static void MP3TestC__GLCD__barWritten(void );
-#line 78
-static void MP3TestC__GLCD__lineWritten(void );
-
-
 
 static void MP3TestC__GLCD__screenCleared(void );
+#line 78
+static void MP3TestC__GLCD__lineWritten(void );
 #line 21
 static void MP3TestC__GLCD__xyReady(uint16_t x, uint16_t y);
 #line 72
@@ -1392,7 +1389,7 @@ static void MP3TestC__GLCD__rectangleWritten(void );
 static void MP3TestC__GLCD__stringWritten(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void MP3TestC__writeMP3Data__runTask(void );
-# 38 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 47 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void GLCDP__LCD128x64__initDone(void );
 
 
@@ -1406,23 +1403,19 @@ static void GLCDP__LCD128x64__initDone(void );
 static void GLCDP__LCD128x64__barWritten(void );
 
 static void GLCDP__LCD128x64__screenCleared(void );
-#line 46
+#line 55
 static void GLCDP__LCD128x64__lineWritten(void );
-#line 40
+#line 49
 static void GLCDP__LCD128x64__circleWritten(void );
 
 
 
 static void GLCDP__LCD128x64__rectangleWritten(void );
-#line 42
+#line 51
 static void GLCDP__LCD128x64__stringWritten(void );
 # 14 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 static void GLCDP__GLCD__isPressed(bool on);
-#line 8
-static error_t GLCDP__GLCD__calibrateTouchScreen(void );
-
-
-
+#line 12
 static void GLCDP__GLCD__getXY(void );
 #line 60
 static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
@@ -1532,29 +1525,29 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907a7e8);
+uint8_t arg_0x2b7b4a75e7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 56 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceDefaultOwner__release(void );
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__release(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__request(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask__runTask(void );
 # 62 "/homes/mhartmann/baq/tinyos/tos/lib/power/PowerDownCleanup.nc"
@@ -1566,25 +1559,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t AdcP__Read__read(
 # 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f94f8);
+uint8_t arg_0x2b7b4ac0fac0);
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f6280, 
+uint8_t arg_0x2b7b4ac0d6d8, 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f47f8);
+uint8_t arg_0x2b7b4ac34cd0);
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f47f8);
+uint8_t arg_0x2b7b4ac34cd0);
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f47f8);
+uint8_t arg_0x2b7b4ac34cd0);
 # 81 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1592,44 +1585,44 @@ static void AdcP__acquiredData__runTask(void );
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__read(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951e060);
+uint8_t arg_0x2b7b4ac396b8);
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951e060, 
+uint8_t arg_0x2b7b4ac396b8, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951dd28, 
+uint8_t arg_0x2b7b4ac36390, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951a940);
+uint8_t arg_0x2b7b4ac35e30);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951a940);
+uint8_t arg_0x2b7b4ac35e30);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__granted(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951a940);
+uint8_t arg_0x2b7b4ac35e30);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeRectangle__runTask(void );
-# 36 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 45 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern);
-#line 28
+#line 37
 static void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 
 
 
 static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 20
+#line 29
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y);
-#line 4
+#line 13
 static void LCD128x64P__LCD128x64__initLCD(uint8_t pattern);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeString__runTask(void );
@@ -1666,7 +1659,7 @@ error_t error);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__ResourceArbiter__granted(
 # 99 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9693220);
+uint8_t arg_0x2b7b4adb1060);
 # 45 "/homes/mhartmann/baq/tinyos/tos/interfaces/SpiByte.nc"
 static uint8_t Atm128SpiP__SpiByte__write(uint8_t tx);
 # 109 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
@@ -1674,15 +1667,15 @@ static void Atm128SpiP__Spi__dataReady(uint8_t data);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__release(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9683c00);
+uint8_t arg_0x2b7b4ad9fae0);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__request(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9683c00);
+uint8_t arg_0x2b7b4ad9fae0);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__default__granted(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9683c00);
+uint8_t arg_0x2b7b4ad9fae0);
 # 89 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void HplAtm128SpiP__SPI__sleep(void );
 #line 83
@@ -1731,23 +1724,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1__F
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(
 # 52 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa97332f0);
+uint8_t arg_0x2b7b4ae8a2f0);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9732868);
+uint8_t arg_0x2b7b4ae89868);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9732868);
+uint8_t arg_0x2b7b4ae89868);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(
 # 51 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9734158);
+uint8_t arg_0x2b7b4ae8b158);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(
 # 51 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9734158);
+uint8_t arg_0x2b7b4ae8b158);
 # 90 "/homes/mhartmann/baq/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ArbiterInfo__inUse(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1777,15 +1770,13 @@ static __inline void /*HplAtm128GeneralIOC.PortB.Bit1*/HplAtm128GeneralIOPinP__9
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit2*/HplAtm128GeneralIOPinP__10__IO__makeOutput(void );
 #line 59
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit3*/HplAtm128GeneralIOPinP__11__IO__makeInput(void );
-#line 54
-static __inline bool /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__get(void );
-
-
-
-
+#line 59
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__makeInput(void );
-#line 54
-static __inline bool /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__get(void );
+#line 59
+static __inline void /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__makeInput(void );
+#line 59
+static __inline void /*HplAtm128GeneralIOC.PortB.Bit7*/HplAtm128GeneralIOPinP__15__IO__makeInput(void );
+#line 55
 static __inline void /*HplAtm128GeneralIOC.PortD.Bit1*/HplAtm128GeneralIOPinP__25__IO__set(void );
 static __inline void /*HplAtm128GeneralIOC.PortD.Bit1*/HplAtm128GeneralIOPinP__25__IO__clr(void );
 
@@ -1894,7 +1885,7 @@ int main(void )   ;
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b9aa8df0108);
+uint8_t arg_0x2b7b4a4d4108);
 # 76 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
@@ -2084,15 +2075,15 @@ static inline resource_client_id_t /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQ
 # 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907a7e8);
+uint8_t arg_0x2b7b4a75e7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static bool /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__isEmpty(void );
 #line 70
@@ -2104,7 +2095,7 @@ static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner_
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
@@ -2363,7 +2354,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9aa9264da0);
+uint8_t arg_0x2b7b4a946778);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4321 {
 #line 71
@@ -2412,20 +2403,7 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot);
-
-
-
-
-
-
-
-
-
-static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt);
-
-
-
-
+#line 161
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(uint8_t num, uint32_t dt);
 
 
@@ -2438,16 +2416,14 @@ static inline uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__T
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(uint8_t num);
 # 58 "/homes/mhartmann/baq/tinyos/tos/lib/timer/CounterToLocalTimeC.nc"
 static inline void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
-# 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void MP3TestC__Timer0__startPeriodic(uint32_t dt);
+# 44 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
+static void MP3TestC__Button2__makeInput(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t MP3TestC__readMMCData__postTask(void );
 # 44 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
 static void MP3TestC__Button0__makeInput(void );
-#line 43
-static bool MP3TestC__Button0__get(void );
-# 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void MP3TestC__Timer1__startPeriodic(uint32_t dt);
+# 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
+static void MP3TestC__Timer1__startOneShot(uint32_t dt);
 # 2 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MP3/MP3.nc"
 static error_t MP3TestC__MP3__init(void );
 
@@ -2465,11 +2441,7 @@ static uint8_t MP3TestC__MMC__readBlock(uint32_t addr);
 static uint8_t MP3TestC__MMC__init(void );
 # 14 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 static void MP3TestC__GLCD__isPressed(bool on);
-#line 8
-static error_t MP3TestC__GLCD__calibrateTouchScreen(void );
-
-
-
+#line 12
 static void MP3TestC__GLCD__getXY(void );
 #line 60
 static error_t MP3TestC__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
@@ -2479,16 +2451,16 @@ static error_t MP3TestC__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t
 static error_t MP3TestC__GLCD__startWriteString(char *data, uint8_t x, uint8_t y);
 #line 36
 static void MP3TestC__GLCD__initLCD(uint8_t pattern);
-# 43 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-static bool MP3TestC__Button1__get(void );
+# 44 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
+static void MP3TestC__Button1__makeInput(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t MP3TestC__writeMP3Data__postTask(void );
-# 47 "MP3TestC.nc"
+# 119 "MP3TestC.nc"
 enum MP3TestC____nesc_unnamed4324 {
-#line 47
+#line 119
   MP3TestC__readMMCData = 3U
 };
-#line 47
+#line 119
 typedef int MP3TestC____nesc_sillytask_readMMCData[MP3TestC__readMMCData];
 
 
@@ -2496,20 +2468,38 @@ typedef int MP3TestC____nesc_sillytask_readMMCData[MP3TestC__readMMCData];
 
 
 enum MP3TestC____nesc_unnamed4325 {
-#line 53
+#line 125
   MP3TestC__writeMP3Data = 4U
 };
-#line 53
+#line 125
 typedef int MP3TestC____nesc_sillytask_writeMP3Data[MP3TestC__writeMP3Data];
-#line 13
+#line 16
 enum MP3TestC____nesc_unnamed4326 {
-#line 13
+#line 16
   MP3TestC__BLOCK_SIZE = 32
 };
-#line 14
 enum MP3TestC____nesc_unnamed4327 {
-#line 14
-  MP3TestC__X_1 = 8, MP3TestC__Y_1 = 32, MP3TestC__A_1 = 48, MP3TestC__B_1 = 24, MP3TestC__X_2 = 128 - (8 + 48)
+#line 18
+  MP3TestC__RVS_X = 0, MP3TestC__RVS_Y = 31, MP3TestC__RVS_A = 32, MP3TestC__RVS_B = 24
+};
+#line 19
+enum MP3TestC____nesc_unnamed4328 {
+#line 19
+  MP3TestC__PLAY_X = 48, MP3TestC__PLAY_Y = 31, MP3TestC__PLAY_A = 32, MP3TestC__PLAY_B = 24
+};
+#line 20
+enum MP3TestC____nesc_unnamed4329 {
+#line 20
+  MP3TestC__FWD_X = 95, MP3TestC__FWD_Y = 31, MP3TestC__FWD_A = 32, MP3TestC__FWD_B = 24
+};
+#line 21
+enum MP3TestC____nesc_unnamed4330 {
+#line 21
+  MP3TestC__PRESS_PAUSE_TIME = 950
+};
+enum MP3TestC____nesc_unnamed4331 {
+#line 23
+  MP3TestC__START_1 = 0x6, MP3TestC__START_2 = 0x23F67, MP3TestC__START_3 = 0x30B71, MP3TestC__END_ADDRESS = 0x3F97A
 };
 
 
@@ -2520,32 +2510,42 @@ enum MP3TestC____nesc_unnamed4327 {
 
 
 uint32_t MP3TestC__blockAddr = 0;
+uint32_t MP3TestC__nextAddress;
+char MP3TestC__playTime[6] = { '0', '0', ':', '0', '0', '\0' };
 uint8_t *MP3TestC__dataBuffer;
 bool MP3TestC__play = FALSE;
 bool MP3TestC__dataReady = FALSE;
-enum MP3TestC____nesc_unnamed4328 {
-#line 28
-  MP3TestC__CALIBRATION, MP3TestC__LINE0, MP3TestC__LINE1, MP3TestC__LINE2, MP3TestC__LINE3, MP3TestC__LINE4, MP3TestC__LINE5, MP3TestC__LINE6, MP3TestC__LINE7, MP3TestC__NONE
+bool MP3TestC__refresh = FALSE;
+bool MP3TestC__keypressed = FALSE;
+
+char MP3TestC__title[21] = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\0' };
+char MP3TestC__artist[21] = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\0' };
+char MP3TestC__trackStr[21] = { 'T', 'r', 'a', 'c', 'k', ':', '0', '1', '/', '0', '3', ' ', '-', ' ', '0', '0', ':', '0', '0', ' ', '\0' };
+
+uint8_t MP3TestC__track = 1;
+enum MP3TestC____nesc_unnamed4332 {
+#line 47
+  MP3TestC__CALIBRATION, MP3TestC__LINE0, MP3TestC__LINE1, MP3TestC__LINE2, MP3TestC__LINE3, MP3TestC__LINE4, MP3TestC__LINE5, MP3TestC__LINE6, MP3TestC__LINE7, MP3TestC__LINE8, MP3TestC__LINE9, MP3TestC__LINE10, MP3TestC__LINE11, MP3TestC__NONE
 };
-#line 29
+enum MP3TestC____nesc_unnamed4333 {
+#line 49
+  MP3TestC__VOLUME = 250
+};
 uint8_t MP3TestC__paintState = MP3TestC__CALIBRATION;
 
-char MP3TestC__itosBuffer[6] = { '0', '0', '0', '0', '0', '\0' };
-static inline char *MP3TestC__itos(uint16_t i);
+
+
 
 static void MP3TestC__paintLCD(void );
+static void MP3TestC__forward(void );
+static inline void MP3TestC__reverse(void );
+
+
+
+
 
 static inline void MP3TestC__Boot__booted(void );
-
-
-
-
-
-
-
-
-
-
+#line 119
 static inline void MP3TestC__readMMCData__runTask(void );
 
 
@@ -2562,13 +2562,8 @@ static inline void MP3TestC__writeMP3Data__runTask(void );
 
 
 static inline void MP3TestC__Timer0__fired(void );
-#line 79
+#line 172
 static inline void MP3TestC__Timer1__fired(void );
-
-
-
-
-
 
 
 
@@ -2576,6 +2571,9 @@ static inline void MP3TestC__MMC__initDone(void );
 
 
 static inline void MP3TestC__MMC__blockReady(uint8_t *data);
+
+
+
 
 
 
@@ -2591,10 +2589,13 @@ static inline void MP3TestC__GLCD__initDone(void );
 
 
 
+
 static inline void MP3TestC__GLCD__barWritten(void );
 
 
 static inline void MP3TestC__GLCD__screenCleared(void );
+
+
 
 static inline void MP3TestC__GLCD__lineWritten(void );
 
@@ -2608,27 +2609,32 @@ static inline void MP3TestC__GLCD__rectangleWritten(void );
 static inline void MP3TestC__GLCD__stringWritten(void );
 
 
+
+
 static inline void MP3TestC__GLCD__tsPressed(void );
-#line 137
+
+
 static inline void MP3TestC__GLCD__calibrated(void );
 
 
 
 
 static void MP3TestC__GLCD__xyReady(uint16_t x, uint16_t y);
-#line 178
+#line 273
+static void MP3TestC__forward(void );
+#line 323
+static inline void MP3TestC__reverse(void );
+#line 373
 static void MP3TestC__paintLCD(void );
-#line 221
-static inline char *MP3TestC__itos(uint16_t i);
-# 36 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 45 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void GLCDP__LCD128x64__startClearScreen(uint8_t pattern);
-#line 28
+#line 37
 static void GLCDP__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
 
 
 
 static void GLCDP__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 4
+#line 13
 static void GLCDP__LCD128x64__initLCD(uint8_t pattern);
 # 26 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 static void GLCDP__GLCD__tsPressed(void );
@@ -2638,12 +2644,10 @@ static void GLCDP__GLCD__initDone(void );
 static void GLCDP__GLCD__calibrated(void );
 #line 80
 static void GLCDP__GLCD__barWritten(void );
-#line 78
-static void GLCDP__GLCD__lineWritten(void );
-
-
 
 static void GLCDP__GLCD__screenCleared(void );
+#line 78
+static void GLCDP__GLCD__lineWritten(void );
 #line 21
 static void GLCDP__GLCD__xyReady(uint16_t x, uint16_t y);
 #line 72
@@ -2671,18 +2675,9 @@ static volatile uint16_t GLCDP__x_min = 54;
 static volatile uint16_t GLCDP__y_min = 128;
 #line 28
 static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw);
-#line 70
+#line 66
 static inline void GLCDP__GLCD__isPressed(bool on);
-
-
-
-
-
-
-
-
-static inline error_t GLCDP__GLCD__calibrateTouchScreen(void );
-#line 96
+#line 92
 static inline void GLCDP__GLCD__getXY(void );
 
 
@@ -2694,23 +2689,15 @@ static inline void GLCDP__GLCD__getXY(void );
 
 
 static inline void GLCDP__TouchScreen__xyReady(uint16_t x, uint16_t y);
-#line 155
+#line 151
 static inline void GLCDP__TouchScreen__tsPressed(void );
-
-
-
-
-
-
-
-
-
+#line 164
 static inline void GLCDP__GLCD__initLCD(uint8_t pattern);
-#line 203
+#line 202
 static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
-#line 241
+#line 240
 static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 298
+#line 297
 static inline void GLCDP__LCD128x64__initDone(void );
 
 
@@ -2746,7 +2733,7 @@ static inline void GLCDP__LCD128x64__barWritten(void );
 
 
 static inline void GLCDP__LCD128x64__stringWritten(void );
-#line 348
+#line 347
 static inline void GLCDP__LCD128x64__screenCleared(void );
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t TouchScreenP__Read__read(void );
@@ -2777,24 +2764,24 @@ static void TouchScreenP__TouchScreen__xyReady(uint16_t x, uint16_t y);
 static void TouchScreenP__adcY__makeInput(void );
 #line 41
 static void TouchScreenP__adcY__clr(void );
-# 41 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
-enum TouchScreenP____nesc_unnamed4329 {
-#line 41
+# 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+enum TouchScreenP____nesc_unnamed4334 {
+#line 40
   TouchScreenP__checkTS = 5U
 };
-#line 41
+#line 40
 typedef int TouchScreenP____nesc_sillytask_checkTS[TouchScreenP__checkTS];
-#line 32
+#line 31
 volatile uint8_t TouchScreenP__channel;
 static volatile uint8_t TouchScreenP__state;
-#line 33
+#line 32
 static volatile uint8_t TouchScreenP__pressDetect = FALSE;
 static volatile uint16_t TouchScreenP__x;
-#line 34
+#line 33
 static volatile uint16_t TouchScreenP__y;
 
-enum TouchScreenP____nesc_unnamed4330 {
-#line 36
+enum TouchScreenP____nesc_unnamed4335 {
+#line 35
   TouchScreenP__READ_DUMMY, TouchScreenP__READ_X0, TouchScreenP__READ_X1, TouchScreenP__READ_X2, TouchScreenP__READ_X3, TouchScreenP__READ_Y0, TouchScreenP__READ_Y1, TouchScreenP__READ_Y2, TouchScreenP__READ_Y3
 };
 uint16_t TouchScreenP__results[4];
@@ -2806,11 +2793,11 @@ static inline void TouchScreenP__checkTS__runTask(void );
 
 
 static void TouchScreenP__TouchScreen__getXY(void );
-#line 66
+#line 65
 static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val);
-#line 151
+#line 150
 static uint16_t TouchScreenP__meanOfFour(void );
-#line 262
+#line 180
 static inline void TouchScreenP__TouchScreen__isPressed(bool on);
 
 
@@ -2864,14 +2851,14 @@ static void Atm128AdcP__HplAtm128Adc__setAdcsra(Atm128Adcsra_t adcsra);
 static uint8_t Atm128AdcP__Atm128Calibrate__adcPrescaler(void );
 # 102 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcP.nc"
 #line 98
-struct Atm128AdcP____nesc_unnamed4331 {
+struct Atm128AdcP____nesc_unnamed4336 {
   bool multiple : 1;
   bool precise : 1;
   uint8_t channel : 5;
 } Atm128AdcP__f;
 #line 102
 #line 98
-struct Atm128AdcP____nesc_unnamed4331 
+struct Atm128AdcP____nesc_unnamed4336 
 
 
 
@@ -2954,7 +2941,7 @@ void __vector_21(void ) __attribute((signal))   ;
 
 static inline bool HplAtm128AdcP__HplAtm128Adc__cancel(void );
 # 49 "/homes/mhartmann/baq/tinyos/tos/system/RoundRobinResourceQueueC.nc"
-enum /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0____nesc_unnamed4332 {
+enum /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0____nesc_unnamed4337 {
   RoundRobinResourceQueueC__0__NO_ENTRY = 0xFF, 
   RoundRobinResourceQueueC__0__SIZE = 1U ? (1U - 1) / 8 + 1 : 0
 };
@@ -2990,15 +2977,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907a7e8);
+uint8_t arg_0x2b7b4a75e7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa90789b8);
+uint8_t arg_0x2b7b4a75c9b8);
 # 79 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -3012,28 +2999,28 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceDefaultOwner__
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b9aa907b658);
+uint8_t arg_0x2b7b4a75f658);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask__postTask(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4333 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4338 {
 #line 75
   ArbiterP__1__grantedTask = 6U
 };
 #line 75
 typedef int /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_sillytask_grantedTask[/*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask];
 #line 67
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4334 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4339 {
 #line 67
   ArbiterP__1__RES_CONTROLLED, ArbiterP__1__RES_GRANTING, ArbiterP__1__RES_IMM_GRANTING, ArbiterP__1__RES_BUSY
 };
 #line 68
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4335 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4340 {
 #line 68
   ArbiterP__1__default_owner_id = 1U
 };
 #line 69
-enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4336 {
+enum /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1____nesc_unnamed4341 {
 #line 69
   ArbiterP__1__NO_RES = 0xFF
 };
@@ -3094,41 +3081,41 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f94f8, 
+uint8_t arg_0x2b7b4ac0fac0, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f6280, 
+uint8_t arg_0x2b7b4ac0d6d8, 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f47f8);
+uint8_t arg_0x2b7b4ac34cd0);
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f47f8);
+uint8_t arg_0x2b7b4ac34cd0);
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b9aa94f47f8);
+uint8_t arg_0x2b7b4ac34cd0);
 # 70 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t AdcP__acquiredData__postTask(void );
 # 103 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-enum AdcP____nesc_unnamed4337 {
+enum AdcP____nesc_unnamed4342 {
 #line 103
   AdcP__acquiredData = 7U
 };
 #line 103
 typedef int AdcP____nesc_sillytask_acquiredData[AdcP__acquiredData];
 #line 57
-enum AdcP____nesc_unnamed4338 {
+enum AdcP____nesc_unnamed4343 {
   AdcP__IDLE, 
   AdcP__ACQUIRE_DATA, 
   AdcP__ACQUIRE_DATA_NOW
@@ -3198,21 +3185,21 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951e060, 
+uint8_t arg_0x2b7b4ac396b8, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 55
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(
 # 26 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951dd28);
+uint8_t arg_0x2b7b4ac36390);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951a940);
+uint8_t arg_0x2b7b4ac35e30);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b9aa951a940);
+uint8_t arg_0x2b7b4ac35e30);
 
 
 
@@ -3236,7 +3223,7 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(uint8_t client, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__width_t data);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t LCD128x64P__writeRectangle__postTask(void );
-# 38 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 47 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 static void LCD128x64P__LCD128x64__initDone(void );
 
 
@@ -3250,125 +3237,127 @@ static void LCD128x64P__LCD128x64__initDone(void );
 static void LCD128x64P__LCD128x64__barWritten(void );
 
 static void LCD128x64P__LCD128x64__screenCleared(void );
-#line 46
+#line 55
 static void LCD128x64P__LCD128x64__lineWritten(void );
-#line 40
+#line 49
 static void LCD128x64P__LCD128x64__circleWritten(void );
 
 
 
 static void LCD128x64P__LCD128x64__rectangleWritten(void );
-#line 42
+#line 51
 static void LCD128x64P__LCD128x64__stringWritten(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t LCD128x64P__writeString__postTask(void );
 #line 67
-static error_t LCD128x64P__wait4Controller__postTask(void );
-#line 67
 static error_t LCD128x64P__clearScreenNB__postTask(void );
-# 37 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-enum LCD128x64P____nesc_unnamed4339 {
-#line 37
+# 65 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+enum LCD128x64P____nesc_unnamed4344 {
+#line 65
   LCD128x64P__wait4Controller = 8U
 };
-#line 37
+#line 65
 typedef int LCD128x64P____nesc_sillytask_wait4Controller[LCD128x64P__wait4Controller];
-#line 182
-enum LCD128x64P____nesc_unnamed4340 {
-#line 182
+#line 208
+enum LCD128x64P____nesc_unnamed4345 {
+#line 208
   LCD128x64P__writeRectangle = 9U
 };
-#line 182
+#line 208
 typedef int LCD128x64P____nesc_sillytask_writeRectangle[LCD128x64P__writeRectangle];
-#line 198
-enum LCD128x64P____nesc_unnamed4341 {
-#line 198
+#line 224
+enum LCD128x64P____nesc_unnamed4346 {
+#line 224
   LCD128x64P__writeCircle = 10U
 };
-#line 198
+#line 224
 typedef int LCD128x64P____nesc_sillytask_writeCircle[LCD128x64P__writeCircle];
-#line 231
-enum LCD128x64P____nesc_unnamed4342 {
-#line 231
+#line 257
+enum LCD128x64P____nesc_unnamed4347 {
+#line 257
   LCD128x64P__writeString = 11U
 };
-#line 231
+#line 257
 typedef int LCD128x64P____nesc_sillytask_writeString[LCD128x64P__writeString];
-#line 259
-enum LCD128x64P____nesc_unnamed4343 {
-#line 259
+#line 285
+enum LCD128x64P____nesc_unnamed4348 {
+#line 285
   LCD128x64P__clearScreenNB = 12U
 };
-#line 259
+#line 285
 typedef int LCD128x64P____nesc_sillytask_clearScreenNB[LCD128x64P__clearScreenNB];
-#line 290
-enum LCD128x64P____nesc_unnamed4344 {
-#line 290
+#line 316
+enum LCD128x64P____nesc_unnamed4349 {
+#line 316
   LCD128x64P__writeLine = 13U
 };
-#line 290
+#line 316
 typedef int LCD128x64P____nesc_sillytask_writeLine[LCD128x64P__writeLine];
-#line 368
-enum LCD128x64P____nesc_unnamed4345 {
-#line 368
+#line 394
+enum LCD128x64P____nesc_unnamed4350 {
+#line 394
   LCD128x64P__writeBar = 14U
 };
-#line 368
+#line 394
 typedef int LCD128x64P____nesc_sillytask_writeBar[LCD128x64P__writeBar];
-#line 30
+#line 33
 uint8_t LCD128x64P__modPattern = 0x00;
 uint8_t LCD128x64P__pageAddr;
-#line 31
+#line 34
 uint8_t LCD128x64P__xAddr = 0;
 uint8_t LCD128x64P__rad;
-#line 32
+#line 35
 uint8_t LCD128x64P__aRect;
-#line 32
+#line 35
 uint8_t LCD128x64P__bRect;
-#line 32
+#line 35
 uint8_t LCD128x64P__xLineEnd;
-#line 32
+#line 35
 uint8_t LCD128x64P__yLineEnd;
-#line 32
+#line 35
 uint8_t LCD128x64P__aBar;
-#line 32
+#line 35
 uint8_t LCD128x64P__bBar;
 uint8_t LCD128x64P__xPos[5];
-#line 33
+#line 36
 uint8_t LCD128x64P__yPos[5];
 char *LCD128x64P__dataPtr;
 
-
-static inline void LCD128x64P__wait4Controller__runTask(void );
-#line 60
 static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data);
-#line 93
-static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd);
-#line 115
 static inline uint8_t LCD128x64P__readByte(uint8_t mode);
-#line 152
+
+static void LCD128x64P__busyWait4Controller(void );
+#line 65
+static inline void LCD128x64P__wait4Controller__runTask(void );
+#line 83
+static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data);
+#line 111
+static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd);
+#line 137
+static inline uint8_t LCD128x64P__readByte(uint8_t mode);
+#line 178
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y);
-#line 182
+#line 208
 static inline void LCD128x64P__writeRectangle__runTask(void );
-#line 198
+#line 224
 static inline void LCD128x64P__writeCircle__runTask(void );
-#line 231
+#line 257
 static inline void LCD128x64P__writeString__runTask(void );
-#line 259
+#line 285
 static inline void LCD128x64P__clearScreenNB__runTask(void );
-#line 277
+#line 303
 static inline void LCD128x64P__clearScreen(void );
-#line 290
+#line 316
 static inline void LCD128x64P__writeLine__runTask(void );
-#line 368
+#line 394
 static inline void LCD128x64P__writeBar__runTask(void );
-#line 428
+#line 454
 static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern);
-#line 452
+#line 482
 static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y);
-#line 467
+#line 497
 static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b);
-#line 490
+#line 519
 static inline void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern);
 # 46 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
 static void MMCP__ssB0__makeOutput(void );
@@ -3421,11 +3410,11 @@ error_t error);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__release(
 # 99 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9693220);
+uint8_t arg_0x2b7b4adb1060);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__request(
 # 99 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9693220);
+uint8_t arg_0x2b7b4adb1060);
 # 89 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void Atm128SpiP__Spi__sleep(void );
 #line 83
@@ -3449,13 +3438,13 @@ static void Atm128SpiP__Spi__setClockPhase(bool sampleOnTrailing);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__granted(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b9aa9683c00);
+uint8_t arg_0x2b7b4ad9fae0);
 # 90 "/homes/mhartmann/baq/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool Atm128SpiP__ArbiterInfo__inUse(void );
 # 52 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuPowerState.nc"
 static void Atm128SpiP__McuPowerState__update(void );
 # 255 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-enum Atm128SpiP____nesc_unnamed4346 {
+enum Atm128SpiP____nesc_unnamed4351 {
 #line 255
   Atm128SpiP__zeroTask = 15U
 };
@@ -3467,7 +3456,7 @@ uint8_t * Atm128SpiP__txBuffer;
 uint8_t * Atm128SpiP__rxBuffer;
 uint16_t Atm128SpiP__pos;
 
-enum Atm128SpiP____nesc_unnamed4347 {
+enum Atm128SpiP____nesc_unnamed4352 {
   Atm128SpiP__SPI_IDLE, 
   Atm128SpiP__SPI_BUSY, 
   Atm128SpiP__SPI_ATOMIC_SIZE = 10
@@ -3554,7 +3543,7 @@ static inline void HplAtm128SpiP__SPI__setClock(uint8_t v);
 #line 230
 static inline void HplAtm128SpiP__SPI__setMasterDoubleSpeed(bool on);
 # 49 "/homes/mhartmann/baq/tinyos/tos/system/FcfsResourceQueueC.nc"
-enum /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1____nesc_unnamed4348 {
+enum /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1____nesc_unnamed4353 {
 #line 49
   FcfsResourceQueueC__1__NO_ENTRY = 0xFF
 };
@@ -3581,15 +3570,15 @@ static inline error_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1__FcfsQue
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(
 # 52 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa97332f0);
+uint8_t arg_0x2b7b4ae8a2f0);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9732868);
+uint8_t arg_0x2b7b4ae89868);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9732868);
+uint8_t arg_0x2b7b4ae89868);
 # 79 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -3599,23 +3588,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Que
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(
 # 51 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b9aa9734158);
+uint8_t arg_0x2b7b4ae8b158);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask__postTask(void );
 # 69 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4349 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4354 {
 #line 69
   SimpleArbiterP__0__grantedTask = 16U
 };
 #line 69
 typedef int /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_sillytask_grantedTask[/*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask];
 #line 62
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4350 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4355 {
 #line 62
   SimpleArbiterP__0__RES_IDLE = 0, SimpleArbiterP__0__RES_GRANTING = 1, SimpleArbiterP__0__RES_BUSY = 2
 };
 #line 63
-enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4351 {
+enum /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0____nesc_unnamed4356 {
 #line 63
   SimpleArbiterP__0__NO_RES = 0xFF
 };
@@ -3703,7 +3692,7 @@ static inline uint8_t HplAtm128AdcP__Adcsra2int(Atm128Adcsra_t x)
 #line 60
 {
 #line 60
-  union __nesc_unnamed4352 {
+  union __nesc_unnamed4357 {
 #line 60
     Atm128Adcsra_t f;
 #line 60
@@ -3942,12 +3931,15 @@ inline static error_t MP3TestC__writeMP3Data__postTask(void ){
 #line 67
 }
 #line 67
-# 91 "MP3TestC.nc"
+# 179 "MP3TestC.nc"
 static inline void MP3TestC__MMC__blockReady(uint8_t *data)
-#line 91
+#line 179
 {
   MP3TestC__dataBuffer = data;
   MP3TestC__dataReady = TRUE;
+  if (MP3TestC__blockAddr > MP3TestC__nextAddress) {
+      MP3TestC__forward();
+    }
   MP3TestC__blockAddr++;
   MP3TestC__writeMP3Data__postTask();
 }
@@ -4027,9 +4019,9 @@ inline static void MMCP__ssMMC__clr(void ){
 #line 41
 }
 #line 41
-# 88 "MP3TestC.nc"
+# 176 "MP3TestC.nc"
 static inline void MP3TestC__MMC__initDone(void )
-#line 88
+#line 176
 {
 }
 
@@ -4223,9 +4215,9 @@ static inline void Atm128SpiP__Resource__default__granted(uint8_t id)
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b9aa9683c00){
+inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b7b4ad9fae0){
 #line 102
-  switch (arg_0x2b9aa9683c00) {
+  switch (arg_0x2b7b4ad9fae0) {
 #line 102
     case 0:
 #line 102
@@ -4235,7 +4227,7 @@ inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b9aa9683c00){
 #line 102
     default:
 #line 102
-      Atm128SpiP__Resource__default__granted(arg_0x2b9aa9683c00);
+      Atm128SpiP__Resource__default__granted(arg_0x2b7b4ad9fae0);
 #line 102
       break;
 #line 102
@@ -4251,9 +4243,9 @@ static inline void Atm128SpiP__ResourceArbiter__granted(uint8_t id)
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2b9aa9734158){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2b7b4ae8b158){
 #line 102
-  Atm128SpiP__ResourceArbiter__granted(arg_0x2b9aa9734158);
+  Atm128SpiP__ResourceArbiter__granted(arg_0x2b7b4ae8b158);
 #line 102
 }
 #line 102
@@ -4264,9 +4256,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b9aa9732868){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b7b4ae89868){
 #line 59
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2b9aa9732868);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2b7b4ae89868);
 #line 59
 }
 #line 59
@@ -4306,9 +4298,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b9aa9732868){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b7b4ae89868){
 #line 65
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b9aa9732868);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b7b4ae89868);
 #line 65
 }
 #line 65
@@ -4445,13 +4437,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2b9aa9693220){
+inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2b7b4adb1060){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2b9aa9693220);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2b7b4adb1060);
 #line 120
 
 #line 120
@@ -4542,7 +4534,69 @@ static inline void Atm128SpiP__stopSpi(void )
   Atm128SpiP__McuPowerState__update();
 }
 
-#line 310
+# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t LCD128x64P__writeString__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__writeString);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 60 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static error_t MP3TestC__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b){
+#line 60
+  unsigned char result;
+#line 60
+
+#line 60
+  result = GLCDP__GLCD__startWriteRectangle(x, y, a, b);
+#line 60
+
+#line 60
+  return result;
+#line 60
+}
+#line 60
+# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t LCD128x64P__writeRectangle__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__writeRectangle);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 497 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
+{
+  LCD128x64P__xPos[0] = x;
+  LCD128x64P__yPos[0] = y;
+  LCD128x64P__aRect = a;
+  LCD128x64P__bRect = b;
+  LCD128x64P__writeRectangle__postTask();
+}
+
+# 37 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+inline static void GLCDP__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b){
+#line 37
+  LCD128x64P__LCD128x64__startWriteRectangle(x, y, a, b);
+#line 37
+}
+#line 37
+# 310 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
 static inline 
 #line 309
 void Atm128SpiP__SpiPacket__default__sendDone(
@@ -4583,9 +4637,9 @@ static inline void Atm128SpiP__zeroTask__runTask(void )
     __nesc_atomic_end(__nesc_atomic); }
 }
 
-# 107 "MP3TestC.nc"
+# 199 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__barWritten(void )
-#line 107
+#line 199
 {
   MP3TestC__paintLCD();
 }
@@ -4597,29 +4651,29 @@ inline static void GLCDP__GLCD__barWritten(void ){
 #line 80
 }
 #line 80
-# 321 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 320 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__barWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_BAR;
   GLCDP__GLCD__barWritten();
 }
 
-# 48 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 57 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__barWritten(void ){
-#line 48
+#line 57
   GLCDP__LCD128x64__barWritten();
-#line 48
+#line 57
 }
-#line 48
-# 368 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 57
+# 394 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeBar__runTask(void )
 {
   static volatile uint8_t x_count;
-#line 370
+#line 396
   static volatile uint8_t y_count;
-#line 370
+#line 396
   static volatile uint8_t y_mod = 0;
-#line 370
+#line 396
   static volatile uint8_t byte;
 
   for (x_count = 0; x_count < LCD128x64P__aBar; x_count++) 
@@ -4658,7 +4712,7 @@ static inline void LCD128x64P__writeBar__runTask(void )
           LCD128x64P__writeGLCD(1, byte);
         }
       else 
-#line 418
+#line 444
         {
           for (y_count = 0; y_count < LCD128x64P__bBar; y_count++) 
             {
@@ -4669,171 +4723,47 @@ static inline void LCD128x64P__writeBar__runTask(void )
   LCD128x64P__LCD128x64__barWritten();
 }
 
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t LCD128x64P__wait4Controller__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__wait4Controller);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 115 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 137
 static inline uint8_t LCD128x64P__readByte(uint8_t mode)
 {
   uint8_t tmp = 0;
-#line 117
+#line 139
   uint8_t c = 0;
 
+#line 140
   for (c = 0; c < 2; c++) 
     {
-      LCD128x64P__wait4Controller__postTask();
-
-
-      * (volatile uint8_t *)(0x03 + 0x20) |= (1 << 6) | (1 << 5);
+      LCD128x64P__busyWait4Controller();
+      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 5;
       if (mode == 0) 
         {
           * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 4);
         }
       else 
         {
-          * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 4;
           * (volatile uint8_t *)(0x1A + 0x20) = 0x00;
+          * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 4;
         }
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
+      * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
+
+
+       __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop");
+      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+
+
+       __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop");
+       __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop");
 
       tmp = * (volatile uint8_t *)(0x19 + 0x20);
-
-      * (volatile uint8_t *)(0x03 + 0x20) &= ~((1 << 6) | (1 << 5));
       * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
     }
-
   return tmp;
 }
 
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t LCD128x64P__writeString__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__writeString);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-inline static error_t TouchScreenP__checkTS__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(TouchScreenP__checkTS);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 262 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
-static inline void TouchScreenP__TouchScreen__isPressed(bool on)
-{
-  TouchScreenP__pressDetect = on;
-  if (on == TRUE) 
-    {
-      TouchScreenP__checkTS__postTask();
-    }
-}
-
-# 6 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
-inline static void GLCDP__TouchScreen__isPressed(bool on){
-#line 6
-  TouchScreenP__TouchScreen__isPressed(on);
-#line 6
-}
-#line 6
-# 70 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static inline void GLCDP__GLCD__isPressed(bool on)
-{
-  GLCDP__TouchScreen__isPressed(on);
-}
-
-# 14 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static void MP3TestC__GLCD__isPressed(bool on){
-#line 14
-  GLCDP__GLCD__isPressed(on);
-#line 14
-}
-#line 14
-#line 60
-inline static error_t MP3TestC__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b){
-#line 60
-  unsigned char result;
-#line 60
-
-#line 60
-  result = GLCDP__GLCD__startWriteRectangle(x, y, a, b);
-#line 60
-
-#line 60
-  return result;
-#line 60
-}
-#line 60
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t LCD128x64P__writeRectangle__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(LCD128x64P__writeRectangle);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 467 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-static inline void LCD128x64P__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
-{
-  LCD128x64P__xPos[0] = x;
-  LCD128x64P__yPos[0] = y;
-  LCD128x64P__aRect = a;
-  LCD128x64P__bRect = b;
-
-  LCD128x64P__writeRectangle__postTask();
-}
-
-# 28 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
-inline static void GLCDP__LCD128x64__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b){
-#line 28
-  LCD128x64P__LCD128x64__startWriteRectangle(x, y, a, b);
-#line 28
-}
-#line 28
-# 112 "MP3TestC.nc"
+# 206 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__lineWritten(void )
-#line 112
+#line 206
 {
   MP3TestC__paintLCD();
 }
@@ -4845,33 +4775,33 @@ inline static void GLCDP__GLCD__lineWritten(void ){
 #line 78
 }
 #line 78
-# 315 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 314 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__lineWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_LINE;
   GLCDP__GLCD__lineWritten();
 }
 
-# 46 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 55 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__lineWritten(void ){
-#line 46
+#line 55
   GLCDP__LCD128x64__lineWritten();
-#line 46
+#line 55
 }
-#line 46
-# 290 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 55
+# 316 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeLine__runTask(void )
 {
   static volatile uint8_t count;
-#line 292
+#line 318
   static volatile uint8_t orientation;
-#line 292
+#line 318
   static volatile uint8_t dx;
-#line 292
+#line 318
   static volatile uint8_t dy;
-#line 292
+#line 318
   static volatile uint8_t steep = 0;
-#line 292
+#line 318
   static volatile uint8_t steepCnt = 0;
   float tmp = 0;
 
@@ -4898,7 +4828,7 @@ static inline void LCD128x64P__writeLine__runTask(void )
     steep = dy / dx;
     }
   else {
-#line 317
+#line 343
     steep = 0;
     }
   if (LCD128x64P__yLineEnd == LCD128x64P__yPos[3]) 
@@ -4929,7 +4859,7 @@ static inline void LCD128x64P__writeLine__runTask(void )
                 }
             }
           else {
-#line 345
+#line 371
             if (orientation == 2) 
               {
                 for (steepCnt = 0; steepCnt <= steep; steepCnt++) 
@@ -4946,14 +4876,16 @@ static inline void LCD128x64P__writeLine__runTask(void )
             }
         }
     }
-#line 359
+#line 385
   LCD128x64P__LCD128x64__lineWritten();
 }
 
-# 110 "MP3TestC.nc"
+# 202 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__screenCleared(void )
-#line 110
+#line 202
 {
+  MP3TestC__paintState = MP3TestC__LINE0;
+  MP3TestC__paintLCD();
 }
 
 # 82 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
@@ -4963,7 +4895,7 @@ inline static void GLCDP__GLCD__screenCleared(void ){
 #line 82
 }
 #line 82
-# 348 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 347 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__screenCleared(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_CLEAR;
@@ -4978,14 +4910,14 @@ static inline void GLCDP__LCD128x64__screenCleared(void )
     }
 }
 
-# 50 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 59 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__screenCleared(void ){
-#line 50
+#line 59
   GLCDP__LCD128x64__screenCleared();
-#line 50
+#line 59
 }
-#line 50
-# 259 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 59
+# 285 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__clearScreenNB__runTask(void )
 {
 
@@ -5000,11 +4932,13 @@ static inline void LCD128x64P__clearScreenNB__runTask(void )
   LCD128x64P__LCD128x64__screenCleared();
 }
 
-# 121 "MP3TestC.nc"
+# 215 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__stringWritten(void )
-#line 121
+#line 215
 {
-  MP3TestC__paintLCD();
+  if (MP3TestC__refresh) {
+      MP3TestC__paintLCD();
+    }
 }
 
 # 74 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
@@ -5014,7 +4948,7 @@ inline static void GLCDP__GLCD__stringWritten(void ){
 #line 74
 }
 #line 74
-# 332 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 331 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__stringWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_STRING;
@@ -5028,18 +4962,18 @@ static inline void GLCDP__LCD128x64__stringWritten(void )
     }
 }
 
-# 42 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 51 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__stringWritten(void ){
-#line 42
+#line 51
   GLCDP__LCD128x64__stringWritten();
-#line 42
+#line 51
 }
-#line 42
-# 231 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 51
+# 257 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeString__runTask(void )
 {
   uint8_t index = 0;
-#line 233
+#line 259
   uint8_t offset = 0;
 
   while (*LCD128x64P__dataPtr != '\0') 
@@ -5049,16 +4983,16 @@ static inline void LCD128x64P__writeString__runTask(void )
 
           LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2]);
           LCD128x64P__writeGLCD(1, (uint8_t )__extension__ ({
-#line 241
+#line 267
             uint16_t __addr16 = (uint16_t )(uint16_t )&Font5x7[(*LCD128x64P__dataPtr - 0x20) * 5 + index];
-#line 241
+#line 267
             uint8_t __result;
 
-#line 241
+#line 267
              __asm ("lpm""\n\t""mov %0, r0""\n\t" : "=r"(__result) : "z"(__addr16) : "r0");__result;
           }
           ));
-#line 242
+#line 268
           offset++;
         }
       LCD128x64P__setAddress(LCD128x64P__xPos[2] + offset, LCD128x64P__yPos[2]);
@@ -5069,9 +5003,9 @@ static inline void LCD128x64P__writeString__runTask(void )
   LCD128x64P__LCD128x64__stringWritten();
 }
 
-# 115 "MP3TestC.nc"
+# 209 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__circleWritten(void )
-#line 115
+#line 209
 {
   MP3TestC__paintLCD();
 }
@@ -5083,29 +5017,29 @@ inline static void GLCDP__GLCD__circleWritten(void ){
 #line 72
 }
 #line 72
-# 303 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 302 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__circleWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_CIRCLE;
   GLCDP__GLCD__circleWritten();
 }
 
-# 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 49 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__circleWritten(void ){
-#line 40
+#line 49
   GLCDP__LCD128x64__circleWritten();
-#line 40
+#line 49
 }
-#line 40
-# 198 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 49
+# 224 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeCircle__runTask(void )
 {
   int tswitch;
-#line 200
+#line 226
   int y;
-#line 200
+#line 226
   int x = 0;
-#line 200
+#line 226
   int yDraw = 0;
   unsigned char d;
 
@@ -5137,9 +5071,9 @@ static inline void LCD128x64P__writeCircle__runTask(void )
   LCD128x64P__LCD128x64__circleWritten();
 }
 
-# 118 "MP3TestC.nc"
+# 212 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__rectangleWritten(void )
-#line 118
+#line 212
 {
   MP3TestC__paintLCD();
 }
@@ -5151,26 +5085,26 @@ inline static void GLCDP__GLCD__rectangleWritten(void ){
 #line 76
 }
 #line 76
-# 309 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 308 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__rectangleWritten(void )
 {
   GLCDP__stateGLCD = GLCDP__stateGLCD & ~BUSY_RECT;
   GLCDP__GLCD__rectangleWritten();
 }
 
-# 44 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 53 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__rectangleWritten(void ){
-#line 44
+#line 53
   GLCDP__LCD128x64__rectangleWritten();
-#line 44
+#line 53
 }
-#line 44
-# 182 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 53
+# 208 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__writeRectangle__runTask(void )
 {
   unsigned char j;
 
-#line 185
+#line 211
   for (j = 0; j < LCD128x64P__bRect; j++) 
     {
       LCD128x64P__LCD128x64__setPixel(LCD128x64P__xPos[0], LCD128x64P__yPos[0] + j);
@@ -5184,26 +5118,20 @@ static inline void LCD128x64P__writeRectangle__runTask(void )
   LCD128x64P__LCD128x64__rectangleWritten();
 }
 
-#line 37
+#line 65
 static inline void LCD128x64P__wait4Controller__runTask(void )
 {
   * (volatile uint8_t *)(0x1A + 0x20) = 0x00;
   * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 5;
   * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 4);
-  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
-
 
   while (* (volatile uint8_t *)(0x19 + 0x20) & 0x80) 
     {
-      * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
-       __asm volatile ("nop"); __asm volatile ("nop");
-       __asm volatile ("nop"); __asm volatile ("nop");
       * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
        __asm volatile ("nop"); __asm volatile ("nop");
+      * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
        __asm volatile ("nop"); __asm volatile ("nop");}
 
-
-  * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
   * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 5;
   * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
 }
@@ -5227,17 +5155,13 @@ static inline void GLCDP__calcXY(uint16_t x_raw, uint16_t y_raw)
   if (x_raw < GLCDP__x_max && x_raw > GLCDP__x_min && y_raw < GLCDP__y_max && y_raw > GLCDP__y_min) 
     {
 
-
       x_raw = x_raw - GLCDP__x_min;
       y_raw = y_raw - GLCDP__y_min;
 
 
 
-
-
-
-      x_tmp = (uint32_t )x_raw * 128 / (GLCDP__x_max - GLCDP__x_min);
-      y_tmp = (uint32_t )y_raw * 64 / (GLCDP__y_max - GLCDP__y_min);
+      x_tmp = (uint32_t )x_raw * 127 / (GLCDP__x_max - GLCDP__x_min);
+      y_tmp = (uint32_t )y_raw * 63 / (GLCDP__y_max - GLCDP__y_min);
       GLCDP__GLCD__xyReady(x_tmp, y_tmp);
     }
   else 
@@ -5253,10 +5177,56 @@ inline static void GLCDP__TouchScreen__getXY(void ){
 #line 4
 }
 #line 4
-# 137 "MP3TestC.nc"
-static inline void MP3TestC__GLCD__calibrated(void )
-#line 137
+# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t TouchScreenP__checkTS__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(TouchScreenP__checkTS);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 180 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+static inline void TouchScreenP__TouchScreen__isPressed(bool on)
 {
+  TouchScreenP__pressDetect = on;
+  if (on == TRUE) 
+    {
+      TouchScreenP__checkTS__postTask();
+    }
+}
+
+# 6 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreen.nc"
+inline static void GLCDP__TouchScreen__isPressed(bool on){
+#line 6
+  TouchScreenP__TouchScreen__isPressed(on);
+#line 6
+}
+#line 6
+# 66 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+static inline void GLCDP__GLCD__isPressed(bool on)
+{
+  GLCDP__TouchScreen__isPressed(on);
+}
+
+# 14 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
+inline static void MP3TestC__GLCD__isPressed(bool on){
+#line 14
+  GLCDP__GLCD__isPressed(on);
+#line 14
+}
+#line 14
+# 223 "MP3TestC.nc"
+static inline void MP3TestC__GLCD__calibrated(void )
+#line 223
+{
+  MP3TestC__GLCD__isPressed(1);
   MP3TestC__paintState = MP3TestC__LINE0;
 }
 
@@ -5267,13 +5237,13 @@ inline static void GLCDP__GLCD__calibrated(void ){
 #line 24
 }
 #line 24
-# 32 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 41 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void GLCDP__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y){
-#line 32
+#line 41
   LCD128x64P__LCD128x64__startWriteString(data, x, y);
-#line 32
+#line 41
 }
-#line 32
+#line 41
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 inline static error_t LCD128x64P__clearScreenNB__postTask(void ){
 #line 67
@@ -5289,21 +5259,21 @@ inline static error_t LCD128x64P__clearScreenNB__postTask(void ){
 #line 67
 }
 #line 67
-# 490 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 519 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__LCD128x64__startClearScreen(uint8_t pattern)
 {
   LCD128x64P__modPattern = pattern;
   LCD128x64P__clearScreenNB__postTask();
 }
 
-# 36 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 45 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void GLCDP__LCD128x64__startClearScreen(uint8_t pattern){
-#line 36
+#line 45
   LCD128x64P__LCD128x64__startClearScreen(pattern);
-#line 36
+#line 45
 }
-#line 36
-# 106 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+#line 45
+# 102 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__TouchScreen__xyReady(uint16_t x, uint16_t y)
 {
 
@@ -5366,13 +5336,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b9aa951a940){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b7b4ac35e30){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  switch (arg_0x2b9aa951a940) {
+  switch (arg_0x2b7b4ac35e30) {
 #line 88
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 88
@@ -5382,7 +5352,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 88
     default:
 #line 88
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b9aa951a940);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b7b4ac35e30);
 #line 88
       break;
 #line 88
@@ -5454,7 +5424,7 @@ inline static void TouchScreenP__driveA__clr(void ){
 #line 41
 }
 #line 41
-# 96 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 92 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__getXY(void )
 {
   GLCDP__TouchScreen__getXY();
@@ -5467,9 +5437,9 @@ inline static void MP3TestC__GLCD__getXY(void ){
 #line 12
 }
 #line 12
-# 124 "MP3TestC.nc"
+# 220 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__tsPressed(void )
-#line 124
+#line 220
 {
   MP3TestC__GLCD__getXY();
 }
@@ -5481,7 +5451,7 @@ inline static void GLCDP__GLCD__tsPressed(void ){
 #line 26
 }
 #line 26
-# 155 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 151 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__TouchScreen__tsPressed(void )
 {
   GLCDP__GLCD__tsPressed();
@@ -5494,9 +5464,9 @@ inline static void TouchScreenP__TouchScreen__tsPressed(void ){
 #line 13
 }
 #line 13
-# 66 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 65 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
-#line 66
+#line 65
 {
   if (err == SUCCESS) {
       switch (TouchScreenP__state) {
@@ -5515,7 +5485,7 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
                     TouchScreenP__TouchScreen__tsPressed();
                   }
                 else 
-#line 82
+#line 81
                   {
 
                     TouchScreenP__results[0] = val;
@@ -5524,7 +5494,7 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
                   }
               }
             else 
-#line 88
+#line 87
               {
 
                 if (TouchScreenP__pressDetect) {
@@ -5532,7 +5502,7 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
                     TouchScreenP__checkTS__postTask();
                   }
                 else 
-#line 93
+#line 92
                   {
 
                     TouchScreenP__Read__read();
@@ -5560,14 +5530,14 @@ static inline void TouchScreenP__Read__readDone(error_t err, uint16_t val)
           TouchScreenP__driveA__clr();
           TouchScreenP__driveB__set();
           { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 119
+#line 118
             {
-#line 119
+#line 118
               TouchScreenP__channel = ATM128_ADC_SNGL_ADC1;
             }
-#line 120
+#line 119
             __nesc_atomic_end(__nesc_atomic); }
-#line 120
+#line 119
           TouchScreenP__Read__read();
           break;
 
@@ -5606,9 +5576,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b9aa951e060, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b7b4ac396b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-  switch (arg_0x2b9aa951e060) {
+  switch (arg_0x2b7b4ac396b8) {
 #line 63
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 63
@@ -5618,7 +5588,7 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
     default:
 #line 63
-      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b9aa951e060, result, val);
+      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b7b4ac396b8, result, val);
 #line 63
       break;
 #line 63
@@ -5709,9 +5679,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigu
 }
 
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x2b9aa90789b8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x2b7b4a75c9b8){
 #line 65
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x2b9aa90789b8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x2b7b4a75c9b8);
 #line 65
 }
 #line 65
@@ -5890,13 +5860,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b9aa951a940){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b7b4ac35e30){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  switch (arg_0x2b9aa951a940) {
+  switch (arg_0x2b7b4ac35e30) {
 #line 120
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 120
@@ -5906,7 +5876,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 120
     default:
 #line 120
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b9aa951a940);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b7b4ac35e30);
 #line 120
       break;
 #line 120
@@ -5927,9 +5897,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x2b9aa94f94f8, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x2b7b4ac0fac0, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b9aa94f94f8, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b7b4ac0fac0, result, val);
 #line 63
 }
 #line 63
@@ -5948,9 +5918,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequest
 }
 
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(uint8_t arg_0x2b9aa907a7e8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(uint8_t arg_0x2b7b4a75e7e8){
 #line 53
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(arg_0x2b9aa907a7e8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(arg_0x2b7b4a75e7e8);
 #line 53
 }
 #line 53
@@ -6257,27 +6227,123 @@ inline static void TouchScreenP__adcY__clr(void ){
 #line 41
 }
 #line 41
-# 206 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(uint8_t id)
-#line 206
+# 323 "MP3TestC.nc"
+static inline void MP3TestC__reverse(void )
+#line 323
 {
+  switch (MP3TestC__track) {
+      case 1: 
+        MP3TestC__track = 3;
+      MP3TestC__blockAddr = MP3TestC__START_3;
+
+      strncpy(MP3TestC__artist, "Van Halen           ", 20);
+      strncpy(MP3TestC__title, "Jump                ", 20);
+
+      MP3TestC__nextAddress = MP3TestC__END_ADDRESS;
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '4';
+      MP3TestC__playTime[3] = '0';
+      MP3TestC__playTime[4] = '1';
+      break;
+      case 2: 
+        MP3TestC__track = 1;
+      MP3TestC__blockAddr = MP3TestC__START_1;
+
+      strncpy(MP3TestC__artist, "Lady Gaga           ", 20);
+      strncpy(MP3TestC__title, "Bad Romance         ", 20);
+
+      MP3TestC__nextAddress = MP3TestC__START_2;
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '4';
+      MP3TestC__playTime[3] = '5';
+      MP3TestC__playTime[4] = '4';
+      break;
+      case 3: 
+        MP3TestC__track = 2;
+      MP3TestC__blockAddr = MP3TestC__START_2;
+
+      strncpy(MP3TestC__artist, "AC/DC               ", 20);
+      strncpy(MP3TestC__title, "Highway To Hell     ", 20);
+
+      MP3TestC__nextAddress = MP3TestC__START_3;
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '3';
+      MP3TestC__playTime[3] = '1';
+      MP3TestC__playTime[4] = '7';
+      break;
+    }
+
+
+
+  MP3TestC__paintState = MP3TestC__LINE0;
+  MP3TestC__paintLCD();
 }
 
-# 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x2b9aa907a7e8){
-#line 61
-    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x2b9aa907a7e8);
-#line 61
+# 229 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static inline uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void )
+#line 229
+{
+  return /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get();
 }
-#line 61
+
+# 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
+inline static /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow(void ){
+#line 109
+  unsigned long result;
+#line 109
+
+#line 109
+  result = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow();
+#line 109
+
+#line 109
+  return result;
+#line 109
+}
+#line 109
+# 96 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
+static inline uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow(void )
+{
+#line 97
+  return /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow();
+}
+
+# 136 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
+inline static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(void ){
+#line 136
+  unsigned long result;
+#line 136
+
+#line 136
+  result = /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow();
+#line 136
+
+#line 136
+  return result;
+#line 136
+}
+#line 136
+# 161 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(uint8_t num, uint32_t dt)
+{
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, TRUE);
+}
+
+# 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
+inline static void MP3TestC__Timer1__startOneShot(uint32_t dt){
+#line 73
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(2U, dt);
+#line 73
+}
+#line 73
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void ){
+inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
 #line 67
   unsigned char result;
 #line 67
 
 #line 67
-  result = SchedulerBasicP__TaskBasic__postTask(/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask);
+  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
 #line 67
 
 #line 67
@@ -6285,94 +6351,21 @@ inline static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask
 #line 67
 }
 #line 67
-# 133 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-static inline error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void )
-#line 133
+# 118 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline Atm128_TIFR_t HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag(void )
+#line 118
 {
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 134
-    {
-      if (/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__resId == /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__default_owner_id) {
-          if (/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__state == /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__RES_GRANTING) {
-              /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask();
-              {
-                unsigned char __nesc_temp = 
-#line 138
-                SUCCESS;
-
-                {
-#line 138
-                  __nesc_atomic_end(__nesc_atomic); 
-#line 138
-                  return __nesc_temp;
-                }
-              }
-            }
-          else {
-#line 140
-            if (/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__state == /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__RES_IMM_GRANTING) {
-                /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__resId = /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__reqResId;
-                /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__state = /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__RES_BUSY;
-                {
-                  unsigned char __nesc_temp = 
-#line 143
-                  SUCCESS;
-
-                  {
-#line 143
-                    __nesc_atomic_end(__nesc_atomic); 
-#line 143
-                    return __nesc_temp;
-                  }
-                }
-              }
-            }
-        }
-    }
-#line 149
-    __nesc_atomic_end(__nesc_atomic); }
-#line 147
-  return FAIL;
+  return * (Atm128_TIFR_t *)& * (volatile uint8_t *)(0x36 + 0x20);
 }
 
-#line 213
-static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__immediateRequested(void )
-#line 213
-{
-  /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release();
-}
-
-# 81 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__immediateRequested(void ){
-#line 81
-  /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__immediateRequested();
-#line 81
-}
-#line 81
-# 60 "/homes/mhartmann/baq/tinyos/tos/system/FcfsResourceQueueC.nc"
-static inline bool /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__isEmpty(void )
-#line 60
-{
-  /* atomic removed: atomic calls only */
-#line 61
-  {
-    unsigned char __nesc_temp = 
-#line 61
-    /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead == /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
-
-#line 61
-    return __nesc_temp;
-  }
-}
-
-# 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
-inline static bool /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__isEmpty(void ){
+# 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
+inline static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void ){
 #line 53
-  unsigned char result;
+  union __nesc_unnamed4273 result;
 #line 53
 
 #line 53
-  result = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__isEmpty();
+  result = HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag();
 #line 53
 
 #line 53
@@ -6380,85 +6373,6 @@ inline static bool /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__isEmpty
 #line 53
 }
 #line 53
-# 68 "/homes/mhartmann/baq/tinyos/tos/system/FcfsResourceQueueC.nc"
-static inline resource_client_id_t /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__dequeue(void )
-#line 68
-{
-  /* atomic removed: atomic calls only */
-#line 69
-  {
-    if (/*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead != /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY) {
-        uint8_t id = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead;
-
-#line 72
-        /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__resQ[/*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead];
-        if (/*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead == /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY) {
-          /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qTail = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
-          }
-#line 75
-        /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__resQ[id] = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
-        {
-          unsigned char __nesc_temp = 
-#line 76
-          id;
-
-#line 76
-          return __nesc_temp;
-        }
-      }
-#line 78
-    {
-      unsigned char __nesc_temp = 
-#line 78
-      /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
-
-#line 78
-      return __nesc_temp;
-    }
-  }
-}
-
-# 70 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
-inline static resource_client_id_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__dequeue(void ){
-#line 70
-  unsigned char result;
-#line 70
-
-#line 70
-  result = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__dequeue();
-#line 70
-
-#line 70
-  return result;
-#line 70
-}
-#line 70
-# 218 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(uint8_t id)
-#line 218
-{
-}
-
-# 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b9aa90789b8){
-#line 65
-    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b9aa90789b8);
-#line 65
-}
-#line 65
-# 208 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__granted(void )
-#line 208
-{
-}
-
-# 46 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__granted(void ){
-#line 46
-  /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__granted();
-#line 46
-}
-#line 46
 # 86 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
 static inline error_t AdcP__startGet(uint8_t newState, uint8_t newClient)
 #line 86
@@ -6478,13 +6392,13 @@ static inline error_t AdcP__Read__read(uint8_t c)
 }
 
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b9aa951dd28){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b7b4ac36390){
 #line 55
   unsigned char result;
 #line 55
 
 #line 55
-  result = AdcP__Read__read(arg_0x2b9aa951dd28);
+  result = AdcP__Read__read(arg_0x2b7b4ac36390);
 #line 55
 
 #line 55
@@ -6506,9 +6420,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__defau
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(uint8_t arg_0x2b9aa907b658){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(uint8_t arg_0x2b7b4a75f658){
 #line 102
-  switch (arg_0x2b9aa907b658) {
+  switch (arg_0x2b7b4a75f658) {
 #line 102
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__HAL_ID:
 #line 102
@@ -6518,7 +6432,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__grant
 #line 102
     default:
 #line 102
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(arg_0x2b9aa907b658);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(arg_0x2b7b4a75f658);
 #line 102
       break;
 #line 102
@@ -6533,9 +6447,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigu
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x2b9aa90789b8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x2b7b4a75c9b8){
 #line 59
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(arg_0x2b9aa90789b8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(arg_0x2b7b4a75c9b8);
 #line 59
 }
 #line 59
@@ -6607,7 +6521,7 @@ static inline uint8_t HplAtm128AdcP__Admux2int(Atm128Admux_t x)
 #line 59
 {
 #line 59
-  union __nesc_unnamed4353 {
+  union __nesc_unnamed4358 {
 #line 59
     Atm128Admux_t f;
 #line 59
@@ -6734,25 +6648,25 @@ inline static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVo
 #line 70
 }
 #line 70
-# 276 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 194 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getChannel(void )
 {
   { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
     {
       {
         unsigned char __nesc_temp = 
-#line 280
+#line 198
         TouchScreenP__channel;
 
         {
-#line 280
+#line 198
           __nesc_atomic_end(__nesc_atomic); 
-#line 280
+#line 198
           return __nesc_temp;
         }
       }
     }
-#line 283
+#line 201
     __nesc_atomic_end(__nesc_atomic); }
 }
 
@@ -6764,13 +6678,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b9aa94f47f8){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b7b4ac34cd0){
 #line 25
   unsigned char result;
 #line 25
 
 #line 25
-  switch (arg_0x2b9aa94f47f8) {
+  switch (arg_0x2b7b4ac34cd0) {
 #line 25
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 25
@@ -6780,7 +6694,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b9aa94f47
 #line 25
     default:
 #line 25
-      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b9aa94f47f8);
+      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b7b4ac34cd0);
 #line 25
       break;
 #line 25
@@ -6799,7 +6713,7 @@ static inline uint8_t AdcP__channel(void )
   return AdcP__Atm128AdcConfig__getChannel(AdcP__client);
 }
 
-# 271 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 189 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getRefVoltage(void )
 {
   return 1;
@@ -6813,13 +6727,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b9aa94f47f8){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b7b4ac34cd0){
 #line 32
   unsigned char result;
 #line 32
 
 #line 32
-  switch (arg_0x2b9aa94f47f8) {
+  switch (arg_0x2b7b4ac34cd0) {
 #line 32
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 32
@@ -6829,7 +6743,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b9aa94
 #line 32
     default:
 #line 32
-      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b9aa94f47f8);
+      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b7b4ac34cd0);
 #line 32
       break;
 #line 32
@@ -6848,7 +6762,7 @@ static inline uint8_t AdcP__refVoltage(void )
   return AdcP__Atm128AdcConfig__getRefVoltage(AdcP__client);
 }
 
-# 284 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 202 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline uint8_t TouchScreenP__Atm128AdcConfig__getPrescaler(void )
 {
   return ATM128_ADC_PRESCALE_128;
@@ -6862,13 +6776,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b9aa94f47f8){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b7b4ac34cd0){
 #line 39
   unsigned char result;
 #line 39
 
 #line 39
-  switch (arg_0x2b9aa94f47f8) {
+  switch (arg_0x2b7b4ac34cd0) {
 #line 39
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 39
@@ -6878,7 +6792,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b9aa94f
 #line 39
     default:
 #line 39
-      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b9aa94f47f8);
+      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b7b4ac34cd0);
 #line 39
       break;
 #line 39
@@ -6897,7 +6811,7 @@ static inline uint8_t AdcP__prescaler(void )
   return AdcP__Atm128AdcConfig__getPrescaler(AdcP__client);
 }
 
-# 41 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static inline void TouchScreenP__checkTS__runTask(void )
 {
   TouchScreenP__TouchScreen__getXY();
@@ -7249,21 +7163,223 @@ inline static bool MP3TestC__MP3__isReady(void ){
 #line 9
 }
 #line 9
-# 53 "MP3TestC.nc"
+# 125 "MP3TestC.nc"
 static inline void MP3TestC__writeMP3Data__runTask(void )
-#line 53
+#line 125
 {
   if (MP3TestC__MP3__isReady()) {
       MP3TestC__MP3__writeData(MP3TestC__dataBuffer, MP3TestC__BLOCK_SIZE);
       MP3TestC__readMMCData__postTask();
     }
   else 
-#line 57
+#line 129
     {
       MP3TestC__writeMP3Data__postTask();
     }
 }
 
+# 206 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
+static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(uint8_t id)
+#line 206
+{
+}
+
+# 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x2b7b4a75e7e8){
+#line 61
+    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x2b7b4a75e7e8);
+#line 61
+}
+#line 61
+# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
+inline static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void ){
+#line 67
+  unsigned char result;
+#line 67
+
+#line 67
+  result = SchedulerBasicP__TaskBasic__postTask(/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask);
+#line 67
+
+#line 67
+  return result;
+#line 67
+}
+#line 67
+# 133 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
+static inline error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void )
+#line 133
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 134
+    {
+      if (/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__resId == /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__default_owner_id) {
+          if (/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__state == /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__RES_GRANTING) {
+              /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask();
+              {
+                unsigned char __nesc_temp = 
+#line 138
+                SUCCESS;
+
+                {
+#line 138
+                  __nesc_atomic_end(__nesc_atomic); 
+#line 138
+                  return __nesc_temp;
+                }
+              }
+            }
+          else {
+#line 140
+            if (/*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__state == /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__RES_IMM_GRANTING) {
+                /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__resId = /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__reqResId;
+                /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__state = /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__RES_BUSY;
+                {
+                  unsigned char __nesc_temp = 
+#line 143
+                  SUCCESS;
+
+                  {
+#line 143
+                    __nesc_atomic_end(__nesc_atomic); 
+#line 143
+                    return __nesc_temp;
+                  }
+                }
+              }
+            }
+        }
+    }
+#line 149
+    __nesc_atomic_end(__nesc_atomic); }
+#line 147
+  return FAIL;
+}
+
+#line 213
+static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__immediateRequested(void )
+#line 213
+{
+  /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release();
+}
+
+# 81 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__immediateRequested(void ){
+#line 81
+  /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__immediateRequested();
+#line 81
+}
+#line 81
+# 60 "/homes/mhartmann/baq/tinyos/tos/system/FcfsResourceQueueC.nc"
+static inline bool /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__isEmpty(void )
+#line 60
+{
+  /* atomic removed: atomic calls only */
+#line 61
+  {
+    unsigned char __nesc_temp = 
+#line 61
+    /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead == /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
+
+#line 61
+    return __nesc_temp;
+  }
+}
+
+# 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
+inline static bool /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__isEmpty(void ){
+#line 53
+  unsigned char result;
+#line 53
+
+#line 53
+  result = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__isEmpty();
+#line 53
+
+#line 53
+  return result;
+#line 53
+}
+#line 53
+# 68 "/homes/mhartmann/baq/tinyos/tos/system/FcfsResourceQueueC.nc"
+static inline resource_client_id_t /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__dequeue(void )
+#line 68
+{
+  /* atomic removed: atomic calls only */
+#line 69
+  {
+    if (/*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead != /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY) {
+        uint8_t id = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead;
+
+#line 72
+        /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__resQ[/*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead];
+        if (/*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qHead == /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY) {
+          /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__qTail = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
+          }
+#line 75
+        /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__resQ[id] = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
+        {
+          unsigned char __nesc_temp = 
+#line 76
+          id;
+
+#line 76
+          return __nesc_temp;
+        }
+      }
+#line 78
+    {
+      unsigned char __nesc_temp = 
+#line 78
+      /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__NO_ENTRY;
+
+#line 78
+      return __nesc_temp;
+    }
+  }
+}
+
+# 70 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
+inline static resource_client_id_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__dequeue(void ){
+#line 70
+  unsigned char result;
+#line 70
+
+#line 70
+  result = /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__0__FcfsQueue__dequeue();
+#line 70
+
+#line 70
+  return result;
+#line 70
+}
+#line 70
+# 218 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
+static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(uint8_t id)
+#line 218
+{
+}
+
+# 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b7b4a75c9b8){
+#line 65
+    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b7b4a75c9b8);
+#line 65
+}
+#line 65
+# 208 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
+static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__granted(void )
+#line 208
+{
+}
+
+# 46 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__granted(void ){
+#line 46
+  /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__default__granted();
+#line 46
+}
+#line 46
 # 64 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
 inline static error_t MP3TestC__GLCD__startWriteString(char *data, uint8_t x, uint8_t y){
 #line 64
@@ -7279,9 +7395,9 @@ inline static error_t MP3TestC__GLCD__startWriteString(char *data, uint8_t x, ui
 #line 64
 }
 #line 64
-# 98 "MP3TestC.nc"
+# 189 "MP3TestC.nc"
 static inline void MP3TestC__MMC__error(uint8_t *errStr)
-#line 98
+#line 189
 {
   MP3TestC__dataReady = FALSE;
   MP3TestC__GLCD__startWriteString((char *)errStr, 5, 1);
@@ -7383,9 +7499,9 @@ inline static uint8_t MP3TestC__MMC__readBlock(uint32_t addr){
 #line 5
 }
 #line 5
-# 47 "MP3TestC.nc"
+# 119 "MP3TestC.nc"
 static inline void MP3TestC__readMMCData__runTask(void )
-#line 47
+#line 119
 {
   if (MP3TestC__play) {
       MP3TestC__MMC__readBlock(MP3TestC__blockAddr);
@@ -7640,9 +7756,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequ
 }
 
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b9aa97332f0){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b7b4ae8a2f0){
 #line 53
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2b9aa97332f0);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2b7b4ae8a2f0);
 #line 53
 }
 #line 53
@@ -7690,13 +7806,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2b9aa9693220){
+inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2b7b4adb1060){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2b9aa9693220);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2b7b4adb1060);
 #line 88
 
 #line 88
@@ -7765,50 +7881,6 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 78
 }
 #line 78
-# 229 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void )
-#line 229
-{
-  return /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get();
-}
-
-# 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-inline static /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow(void ){
-#line 109
-  unsigned long result;
-#line 109
-
-#line 109
-  result = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow();
-#line 109
-
-#line 109
-  return result;
-#line 109
-}
-#line 109
-# 96 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-static inline uint32_t /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow(void )
-{
-#line 97
-  return /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__getNow();
-}
-
-# 136 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(void ){
-#line 136
-  unsigned long result;
-#line 136
-
-#line 136
-  result = /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__getNow();
-#line 136
-
-#line 136
-  return result;
-#line 136
-}
-#line 136
 # 102 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__runTask(void )
 {
@@ -7852,113 +7924,10 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updat
     }
 }
 
-# 118 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
-static inline Atm128_TIFR_t HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag(void )
-#line 118
-{
-  return * (Atm128_TIFR_t *)& * (volatile uint8_t *)(0x36 + 0x20);
-}
-
-# 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
-inline static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void ){
-#line 53
-  union __nesc_unnamed4273 result;
-#line 53
-
-#line 53
-  result = HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag();
-#line 53
-
-#line 53
-  return result;
-#line 53
-}
-#line 53
 # 201 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MP3/MP3P.nc"
 static inline void MP3P__Timer0__fired(void )
 #line 201
 {
-}
-
-# 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline bool /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__get(void )
-#line 54
-{
-#line 54
-  return (* (volatile uint8_t * )54U & (1 << 6)) != 0;
-}
-
-# 43 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-inline static bool MP3TestC__Button1__get(void ){
-#line 43
-  unsigned char result;
-#line 43
-
-#line 43
-  result = /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__get();
-#line 43
-
-#line 43
-  return result;
-#line 43
-}
-#line 43
-# 8 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MP3/MP3.nc"
-inline static error_t MP3TestC__MP3__setVolume(uint8_t volume){
-#line 8
-  unsigned char result;
-#line 8
-
-#line 8
-  result = MP3P__MP3__setVolume(volume);
-#line 8
-
-#line 8
-  return result;
-#line 8
-}
-#line 8
-# 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline bool /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__get(void )
-#line 54
-{
-#line 54
-  return (* (volatile uint8_t * )54U & (1 << 5)) != 0;
-}
-
-# 43 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-inline static bool MP3TestC__Button0__get(void ){
-#line 43
-  unsigned char result;
-#line 43
-
-#line 43
-  result = /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__get();
-#line 43
-
-#line 43
-  return result;
-#line 43
-}
-#line 43
-# 62 "MP3TestC.nc"
-static inline void MP3TestC__Timer0__fired(void )
-#line 62
-{
-  if (MP3TestC__paintState == MP3TestC__NONE) {
-      MP3TestC__GLCD__getXY();
-    }
-  if (MP3TestC__Button0__get()) {
-      MP3TestC__GLCD__startWriteString("Playing...", 0, 3);
-      MP3TestC__play = TRUE;
-      MP3TestC__MP3__setVolume(255);
-      MP3TestC__readMMCData__postTask();
-    }
-
-  if (MP3TestC__Button1__get()) {
-      MP3TestC__GLCD__startWriteString("Stopped.  ", 0, 3);
-      MP3TestC__play = FALSE;
-    }
 }
 
 # 55 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
@@ -8181,43 +8150,41 @@ inline static uint16_t MP3TestC__MP3__readRegister(uint8_t mp3Register){
 #line 4
 }
 #line 4
-# 221 "MP3TestC.nc"
-static inline char *MP3TestC__itos(uint16_t i)
-#line 221
+# 134 "MP3TestC.nc"
+static inline void MP3TestC__Timer0__fired(void )
+#line 134
 {
-  MP3TestC__itosBuffer[0] = '0';
-  MP3TestC__itosBuffer[1] = '0';
-  MP3TestC__itosBuffer[2] = '0';
-  MP3TestC__itosBuffer[3] = '0';
-  MP3TestC__itosBuffer[4] = '0';
-  while (i >= 10000) {
-      MP3TestC__itosBuffer[0]++;
-      i -= 10000;
+  uint16_t temp = 0;
+
+#line 136
+  if (MP3TestC__MP3__isReady()) {
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '0';
+      MP3TestC__playTime[3] = '0';
+      MP3TestC__playTime[4] = '0';
+      temp = MP3TestC__MP3__readRegister(0x04);
+      while (temp >= 600) {
+          temp -= 600;
+          MP3TestC__playTime[0]++;
+        }
+      while (temp >= 60) {
+          temp -= 60;
+          MP3TestC__playTime[1]++;
+        }
+      while (temp >= 10) {
+          temp -= 10;
+          MP3TestC__playTime[3]++;
+        }
+      MP3TestC__playTime[4] += temp;
+      MP3TestC__GLCD__startWriteString(MP3TestC__playTime, 84, 0);
     }
-  while (i >= 1000) {
-      MP3TestC__itosBuffer[1]++;
-      i -= 1000;
-    }
-  while (i >= 100) {
-      MP3TestC__itosBuffer[2]++;
-      i -= 100;
-    }
-  while (i >= 10) {
-      MP3TestC__itosBuffer[3]++;
-      i -= 10;
-    }
-  MP3TestC__itosBuffer[4] += i;
-  return MP3TestC__itosBuffer;
 }
 
-#line 79
+#line 172
 static inline void MP3TestC__Timer1__fired(void )
-#line 79
+#line 172
 {
-
-  if (MP3TestC__play) {
-      MP3TestC__GLCD__startWriteString(MP3TestC__itos(MP3TestC__MP3__readRegister(0x04)), 36, 1);
-    }
+  MP3TestC__keypressed = FALSE;
 }
 
 # 206 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
@@ -8226,9 +8193,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b9aa9264da0){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b7b4a946778){
 #line 83
-  switch (arg_0x2b9aa9264da0) {
+  switch (arg_0x2b7b4a946778) {
 #line 83
     case 0U:
 #line 83
@@ -8250,7 +8217,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b9aa9264da0);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b7b4a946778);
 #line 83
       break;
 #line 83
@@ -8258,21 +8225,6 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
 }
 #line 83
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
 # 159 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
 static inline void HplAtm128Timer0SyncP__Compare__set(uint8_t t)
 #line 159
@@ -8452,9 +8404,9 @@ static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__defa
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b9aa907b658){
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b7b4a75f658){
 #line 102
-  switch (arg_0x2b9aa907b658) {
+  switch (arg_0x2b7b4a75f658) {
 #line 102
     case /*MP3C.SPI0*/SoftSPIMasterC__0__RESOURCE_ID:
 #line 102
@@ -8464,7 +8416,7 @@ inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__gran
 #line 102
     default:
 #line 102
-      /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b9aa907b658);
+      /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b7b4a75f658);
 #line 102
       break;
 #line 102
@@ -8479,9 +8431,9 @@ static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfig
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b9aa90789b8){
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b7b4a75c9b8){
 #line 59
-    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b9aa90789b8);
+    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b7b4a75c9b8);
 #line 59
 }
 #line 59
@@ -8609,6 +8561,21 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 62
 }
 #line 62
+# 8 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MP3/MP3.nc"
+inline static error_t MP3TestC__MP3__setVolume(uint8_t volume){
+#line 8
+  unsigned char result;
+#line 8
+
+#line 8
+  result = MP3P__MP3__setVolume(volume);
+#line 8
+
+#line 8
+  return result;
+#line 8
+}
+#line 8
 # 166 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(uint8_t num)
 {
@@ -8733,12 +8700,6 @@ inline static void MP3P__CS__makeOutput(void ){
 #line 46
 }
 #line 46
-# 161 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(uint8_t num, uint32_t dt)
-{
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, TRUE);
-}
-
 # 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 inline static void MP3P__Timer0__startOneShot(uint32_t dt){
 #line 73
@@ -8807,57 +8768,12 @@ inline static error_t MP3TestC__MP3__init(void ){
 #line 2
 }
 #line 2
-# 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void MP3TestC__Timer1__startPeriodic(uint32_t dt){
-#line 64
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(2U, dt);
-#line 64
-}
-#line 64
-inline static void MP3TestC__Timer0__startPeriodic(uint32_t dt){
-#line 64
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(1U, dt);
-#line 64
-}
-#line 64
-# 79 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static inline error_t GLCDP__GLCD__calibrateTouchScreen(void )
-{
-  if (GLCDP__stateTS == CALIBRATION_IN_PROGRESS_LEFT_BOTTOM || GLCDP__stateTS == CALIBRATION_IN_PROGRESS_RIGHT_TOP) 
-    {
-      return FAIL;
-    }
-  else 
-    {
-      GLCDP__stateTS = CALIBRATION_IN_PROGRESS_LEFT_BOTTOM;
-
-      GLCDP__LCD128x64__startClearScreen(0x00);
-      GLCDP__LCD128x64__startWriteString("Press Left/Bottom", 0, 60);
-      GLCDP__TouchScreen__getXY();
-      return SUCCESS;
-    }
-}
-
-# 8 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
-inline static error_t MP3TestC__GLCD__calibrateTouchScreen(void ){
-#line 8
-  unsigned char result;
-#line 8
-
-#line 8
-  result = GLCDP__GLCD__calibrateTouchScreen();
-#line 8
-
-#line 8
-  return result;
-#line 8
-}
-#line 8
-# 103 "MP3TestC.nc"
+# 194 "MP3TestC.nc"
 static inline void MP3TestC__GLCD__initDone(void )
-#line 103
+#line 194
 {
-  MP3TestC__GLCD__calibrateTouchScreen();
+  MP3TestC__paintState = MP3TestC__LINE0;
+  MP3TestC__paintLCD();
 }
 
 # 70 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCD.nc"
@@ -8867,20 +8783,20 @@ inline static void GLCDP__GLCD__initDone(void ){
 #line 70
 }
 #line 70
-# 298 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+# 297 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__LCD128x64__initDone(void )
 {
   GLCDP__GLCD__initDone();
 }
 
-# 38 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 47 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void LCD128x64P__LCD128x64__initDone(void ){
-#line 38
+#line 47
   GLCDP__LCD128x64__initDone();
-#line 38
+#line 47
 }
-#line 38
-# 277 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+#line 47
+# 303 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static inline void LCD128x64P__clearScreen(void )
 {
 
@@ -8894,7 +8810,7 @@ static inline void LCD128x64P__clearScreen(void )
     }
 }
 
-#line 428
+#line 454
 static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern)
 {
 
@@ -8902,6 +8818,10 @@ static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern)
   * (volatile uint8_t *)(0x1A + 0x20) |= 0xFF;
   * (volatile uint8_t *)(0x03 + 0x20) &= ~0xFC;
   * (volatile uint8_t *)(0x1B + 0x20) = 0x00;
+
+
+
+
 
 
 
@@ -8919,14 +8839,14 @@ static inline void LCD128x64P__LCD128x64__initLCD(uint8_t pattern)
   LCD128x64P__LCD128x64__initDone();
 }
 
-# 4 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
+# 13 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
 inline static void GLCDP__LCD128x64__initLCD(uint8_t pattern){
-#line 4
+#line 13
   LCD128x64P__LCD128x64__initLCD(pattern);
-#line 4
+#line 13
 }
-#line 4
-# 165 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+#line 13
+# 164 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
 static inline void GLCDP__GLCD__initLCD(uint8_t pattern)
 {
   GLCDP__LCD128x64__initLCD(pattern);
@@ -8939,6 +8859,36 @@ inline static void MP3TestC__GLCD__initLCD(uint8_t pattern){
 #line 36
 }
 #line 36
+# 59 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortB.Bit7*/HplAtm128GeneralIOPinP__15__IO__makeInput(void )
+#line 59
+{
+#line 59
+  * (volatile uint8_t * )55U &= ~(1 << 7);
+}
+
+# 44 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void MP3TestC__Button2__makeInput(void ){
+#line 44
+  /*HplAtm128GeneralIOC.PortB.Bit7*/HplAtm128GeneralIOPinP__15__IO__makeInput();
+#line 44
+}
+#line 44
+# 59 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
+static __inline void /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__makeInput(void )
+#line 59
+{
+#line 59
+  * (volatile uint8_t * )55U &= ~(1 << 6);
+}
+
+# 44 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
+inline static void MP3TestC__Button1__makeInput(void ){
+#line 44
+  /*HplAtm128GeneralIOC.PortB.Bit6*/HplAtm128GeneralIOPinP__14__IO__makeInput();
+#line 44
+}
+#line 44
 # 59 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__makeInput(void )
 #line 59
@@ -9014,18 +8964,34 @@ inline static uint8_t MP3TestC__MMC__init(void ){
 #line 3
 }
 #line 3
-# 36 "MP3TestC.nc"
+# 64 "MP3TestC.nc"
 static inline void MP3TestC__Boot__booted(void )
-#line 36
+#line 64
 {
+
+
   MP3TestC__MMC__init();
   MP3TestC__Button0__makeInput();
+  MP3TestC__Button1__makeInput();
+  MP3TestC__Button2__makeInput();
   MP3TestC__GLCD__initLCD(0x00);
-  MP3TestC__Timer0__startPeriodic(500);
-  MP3TestC__Timer1__startPeriodic(1000);
+
+
+  strncpy(MP3TestC__artist, "AC/DC               ", 20);
+  strncpy(MP3TestC__title, "Highway To Hell     ", 20);
+
+
+
+
+
+
+
+
+
   if (!MP3TestC__MP3__init()) {
       MP3TestC__GLCD__startWriteString("MP3 Init Error", 0, 1);
     }
+  MP3TestC__MP3__setVolume(MP3TestC__VOLUME);
 }
 
 # 60 "/homes/mhartmann/baq/tinyos/tos/interfaces/Boot.nc"
@@ -9389,9 +9355,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b9aa94f6280, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b7b4ac0d6d8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-    AdcP__ReadNow__default__readDone(arg_0x2b9aa94f6280, result, val);
+    AdcP__ReadNow__default__readDone(arg_0x2b7b4ac0d6d8, result, val);
 #line 66
 }
 #line 66
@@ -9773,9 +9739,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b9aa8df0108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7b4a4d4108){
 #line 75
-  switch (arg_0x2b9aa8df0108) {
+  switch (arg_0x2b7b4a4d4108) {
 #line 75
     case /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask:
 #line 75
@@ -9881,7 +9847,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b9aa8df0108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b9aa8df0108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b7b4a4d4108);
 #line 75
       break;
 #line 75
@@ -9984,10 +9950,198 @@ static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ArbiterInfo__inUse(
   return TRUE;
 }
 
-# 93 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+# 273 "MP3TestC.nc"
+static void MP3TestC__forward(void )
+#line 273
+{
+
+  switch (MP3TestC__track) {
+      case 1: 
+        MP3TestC__track = 2;
+      MP3TestC__blockAddr = MP3TestC__START_2;
+
+      strncpy(MP3TestC__artist, "AC/DC               ", 20);
+      strncpy(MP3TestC__title, "Highway To Hell     ", 20);
+
+      MP3TestC__nextAddress = MP3TestC__START_3;
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '3';
+      MP3TestC__playTime[3] = '1';
+      MP3TestC__playTime[4] = '7';
+      break;
+      case 2: 
+        MP3TestC__track = 3;
+      MP3TestC__blockAddr = MP3TestC__START_3;
+
+      strncpy(MP3TestC__artist, "Van Halen           ", 20);
+      strncpy(MP3TestC__title, "Jump                ", 20);
+
+      MP3TestC__nextAddress = MP3TestC__END_ADDRESS;
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '4';
+      MP3TestC__playTime[3] = '0';
+      MP3TestC__playTime[4] = '1';
+      break;
+      case 3: 
+        MP3TestC__track = 1;
+      MP3TestC__blockAddr = MP3TestC__START_1;
+
+      strncpy(MP3TestC__artist, "Lady Gaga           ", 20);
+      strncpy(MP3TestC__title, "Bad Romance         ", 20);
+
+      MP3TestC__nextAddress = MP3TestC__START_2;
+      MP3TestC__playTime[0] = '0';
+      MP3TestC__playTime[1] = '4';
+      MP3TestC__playTime[3] = '5';
+      MP3TestC__playTime[4] = '4';
+      break;
+    }
+
+
+
+  MP3TestC__paintState = MP3TestC__LINE0;
+  MP3TestC__paintLCD();
+}
+
+#line 373
+static void MP3TestC__paintLCD(void )
+#line 373
+{
+  MP3TestC__refresh = TRUE;
+  switch (MP3TestC__paintState) {
+      case MP3TestC__LINE0: 
+
+        MP3TestC__trackStr[7] = '0' + MP3TestC__track;
+      MP3TestC__trackStr[14] = MP3TestC__playTime[0];
+      MP3TestC__trackStr[15] = MP3TestC__playTime[1];
+      MP3TestC__trackStr[17] = MP3TestC__playTime[3];
+      MP3TestC__trackStr[18] = MP3TestC__playTime[4];
+      MP3TestC__GLCD__startWriteString(MP3TestC__trackStr, 0, 0);
+
+      MP3TestC__paintState = MP3TestC__LINE1;
+      break;
+      case MP3TestC__LINE1: 
+        MP3TestC__GLCD__startWriteString(MP3TestC__artist, 0, 1);
+      MP3TestC__paintState = MP3TestC__LINE2;
+      break;
+      case MP3TestC__LINE2: 
+        MP3TestC__GLCD__startWriteString(MP3TestC__title, 0, 2);
+      MP3TestC__paintState = MP3TestC__LINE3;
+      break;
+      case MP3TestC__LINE3: 
+        if (MP3TestC__play) {
+            MP3TestC__GLCD__startWriteString("<<     STOP     >>", 10, 5);
+          }
+        else 
+#line 398
+          {
+            MP3TestC__GLCD__startWriteString("<<     PLAY     >>", 10, 5);
+          }
+      MP3TestC__paintState = MP3TestC__LINE4;
+      break;
+      case MP3TestC__LINE4: 
+        MP3TestC__GLCD__startWriteRectangle(MP3TestC__RVS_X, MP3TestC__RVS_Y, MP3TestC__RVS_A, MP3TestC__RVS_B);
+      MP3TestC__paintState = MP3TestC__LINE5;
+      break;
+      case MP3TestC__LINE5: 
+        MP3TestC__GLCD__startWriteRectangle(MP3TestC__PLAY_X, MP3TestC__PLAY_Y, MP3TestC__PLAY_A, MP3TestC__PLAY_B);
+      MP3TestC__paintState = MP3TestC__LINE6;
+      break;
+      case MP3TestC__LINE6: 
+        MP3TestC__GLCD__startWriteRectangle(MP3TestC__FWD_X, MP3TestC__FWD_Y, MP3TestC__FWD_A, MP3TestC__FWD_B);
+
+      MP3TestC__paintState = MP3TestC__NONE;
+      MP3TestC__refresh = FALSE;
+      MP3TestC__GLCD__isPressed(1);
+      break;
+      case MP3TestC__LINE7: 
+        switch (MP3TestC__track) {
+            case 1: 
+              MP3TestC__GLCD__startWriteString("1", 42, 0);
+            break;
+            case 2: 
+              MP3TestC__GLCD__startWriteString("2", 42, 0);
+            break;
+            case 3: 
+              MP3TestC__GLCD__startWriteString("3", 42, 0);
+            break;
+          }
+      MP3TestC__paintState = MP3TestC__NONE;
+      MP3TestC__refresh = FALSE;
+      MP3TestC__GLCD__isPressed(1);
+      break;
+      case MP3TestC__CALIBRATION: 
+
+        break;
+      default: 
+        MP3TestC__paintState = MP3TestC__NONE;
+
+      break;
+    }
+}
+
+# 240 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y)
+{
+  if ((GLCDP__stateGLCD & BUSY_STRING) == 1) 
+    {
+      return FAIL;
+    }
+  else {
+#line 246
+    if (x >= 128 || y >= 7) 
+      {
+        return FAIL;
+      }
+    else 
+      {
+        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_STRING;
+        GLCDP__LCD128x64__startWriteString(data, x, y);
+        return SUCCESS;
+      }
+    }
+}
+
+# 482 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
+static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y)
+{
+  LCD128x64P__xPos[2] = x;
+  LCD128x64P__yPos[2] = y;
+  LCD128x64P__dataPtr = data;
+
+  LCD128x64P__writeString__postTask();
+}
+
+# 202 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
+static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
+{
+  if ((GLCDP__stateGLCD & BUSY_RECT) == 1) 
+    {
+      return FAIL;
+    }
+  else {
+#line 208
+    if (x + a >= 128 || y + b >= 64) 
+      {
+        return FAIL;
+      }
+    else 
+      {
+        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_RECT;
+        GLCDP__LCD128x64__startWriteRectangle(x, y, a, b);
+        return SUCCESS;
+      }
+    }
+}
+
+# 111 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
 static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd)
 {
   uint8_t tmp;
+
+#line 114
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+  * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
 
   if (xAdd < 64) 
     {
@@ -10003,22 +10157,21 @@ static void LCD128x64P__setAddress(uint8_t xAdd, uint8_t yAdd)
   tmp = xAdd & 0x3f;
   LCD128x64P__writeGLCD(0, tmp | 0x40);
 
+  * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
+
   tmp = yAdd & 0x3f;
   LCD128x64P__writeGLCD(0, tmp | 0xB8);
 }
 
-#line 60
+#line 83
 static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data)
 {
-  LCD128x64P__wait4Controller__postTask();
+  LCD128x64P__busyWait4Controller();
 
-
-  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
   if (mode == 0) 
     {
 
       * (volatile uint8_t *)(0x03 + 0x20) &= ~((1 << 5) | (1 << 4));
-      * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
     }
   else 
     {
@@ -10026,21 +10179,44 @@ static void LCD128x64P__writeGLCD(uint8_t mode, uint8_t data)
       * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 5);
       * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 4;
     }
+   __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop");
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
   * (volatile uint8_t *)(0x1B + 0x20) = data;
-
+   __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop"); __asm volatile ("nop");
    __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-   __asm volatile ("nop"); __asm volatile ("nop");
-
   * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 5;
+   __asm volatile ("nop");
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+  * (volatile uint8_t *)(0x1B + 0x20) = 0x00;
 }
 
-#line 152
+#line 42
+static void LCD128x64P__busyWait4Controller(void )
+#line 42
+{
+
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+  * (volatile uint8_t *)(0x1A + 0x20) = 0x00;
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 5;
+  * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 4);
+
+  * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
+   __asm volatile ("nop"); __asm volatile ("nop");
+  * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+   __asm volatile ("nop"); __asm volatile ("nop");
+
+  while (* (volatile uint8_t *)(0x19 + 0x20) & 0x80) 
+    {
+      * (volatile uint8_t *)(0x03 + 0x20) &= ~(1 << 6);
+       __asm volatile ("nop"); __asm volatile ("nop");
+      * (volatile uint8_t *)(0x03 + 0x20) |= 1 << 6;
+       __asm volatile ("nop"); __asm volatile ("nop");}
+
+  * (volatile uint8_t *)(0x1A + 0x20) = 0xFF;
+}
+
+#line 178
 static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y)
 {
   unsigned char temp;
@@ -10049,106 +10225,6 @@ static void LCD128x64P__LCD128x64__setPixel(uint8_t x, uint8_t y)
   temp = LCD128x64P__readByte(1);
   LCD128x64P__setAddress(x, y / 8);
   LCD128x64P__writeGLCD(1, temp | (1 << y % 8));
-}
-
-# 178 "MP3TestC.nc"
-static void MP3TestC__paintLCD(void )
-#line 178
-{
-  switch (MP3TestC__paintState) {
-      case MP3TestC__LINE0: 
-        MP3TestC__GLCD__startWriteString("B5: PLAY - B6: STOP", 0, 0);
-      MP3TestC__paintState = MP3TestC__LINE1;
-      break;
-      case MP3TestC__LINE1: 
-        MP3TestC__GLCD__startWriteString("Time: -----", 0, 1);
-      MP3TestC__GLCD__isPressed(TRUE);
-      MP3TestC__paintState = MP3TestC__LINE2;
-      break;
-      case MP3TestC__LINE2: 
-        MP3TestC__GLCD__startWriteRectangle(MP3TestC__X_1, MP3TestC__Y_1, MP3TestC__A_1, MP3TestC__B_1);
-      MP3TestC__paintState = MP3TestC__LINE3;
-      break;
-      case MP3TestC__LINE3: 
-        MP3TestC__GLCD__startWriteRectangle(MP3TestC__X_2, MP3TestC__Y_1, MP3TestC__A_1, MP3TestC__B_1);
-      MP3TestC__paintState = MP3TestC__LINE4;
-      break;
-      case MP3TestC__LINE4: 
-        MP3TestC__GLCD__startWriteString("PLAY", MP3TestC__X_1 + 12, 5);
-      MP3TestC__paintState = MP3TestC__LINE5;
-      break;
-      case MP3TestC__LINE5: 
-        MP3TestC__GLCD__startWriteString("STOP", MP3TestC__X_2 + 12, 5);
-      MP3TestC__paintState = MP3TestC__NONE;
-      break;
-      case MP3TestC__LINE6: 
-        MP3TestC__paintState = MP3TestC__NONE;
-      break;
-      case MP3TestC__LINE7: 
-        MP3TestC__paintState = MP3TestC__NONE;
-      break;
-      case MP3TestC__CALIBRATION: 
-
-        break;
-      default: 
-        MP3TestC__paintState = MP3TestC__NONE;
-
-      break;
-    }
-}
-
-# 241 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static error_t GLCDP__GLCD__startWriteString(char *data, uint8_t x, uint8_t y)
-{
-  if ((GLCDP__stateGLCD & BUSY_STRING) == 1) 
-    {
-      return FAIL;
-    }
-  else {
-#line 247
-    if (x > 128 || y > 7) 
-      {
-        return FAIL;
-      }
-    else 
-      {
-        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_STRING;
-        GLCDP__LCD128x64__startWriteString(data, x, y);
-        return SUCCESS;
-      }
-    }
-}
-
-# 452 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64P.nc"
-static void LCD128x64P__LCD128x64__startWriteString(char *data, uint8_t x, uint8_t y)
-{
-  LCD128x64P__xPos[2] = x;
-  LCD128x64P__yPos[2] = y;
-  LCD128x64P__dataPtr = data;
-
-  LCD128x64P__writeString__postTask();
-}
-
-# 203 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/GLCD/GLCDP.nc"
-static error_t GLCDP__GLCD__startWriteRectangle(uint8_t x, uint8_t y, uint8_t a, uint8_t b)
-{
-  if ((GLCDP__stateGLCD & BUSY_RECT) == 1) 
-    {
-      return FAIL;
-    }
-  else {
-#line 209
-    if (x + a > 128 || y + b > 64) 
-      {
-        return FAIL;
-      }
-    else 
-      {
-        GLCDP__stateGLCD = GLCDP__stateGLCD | BUSY_RECT;
-        GLCDP__LCD128x64__startWriteRectangle(x, y, a, b);
-        return SUCCESS;
-      }
-    }
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/system/RoundRobinResourceQueueC.nc"
@@ -10209,7 +10285,7 @@ static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__request(u
   return SUCCESS;
 }
 
-# 46 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
+# 45 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/TouchScreen/TouchScreenP.nc"
 static void TouchScreenP__TouchScreen__getXY(void )
 {
   TouchScreenP__state = TouchScreenP__READ_DUMMY;
@@ -10227,14 +10303,14 @@ static void TouchScreenP__TouchScreen__getXY(void )
     {
       TouchScreenP__channel = ATM128_ADC_SNGL_ADC0;
     }
-#line 62
+#line 61
     __nesc_atomic_end(__nesc_atomic); }
   TouchScreenP__Read__read();
 }
 
-#line 151
+#line 150
 static uint16_t TouchScreenP__meanOfFour(void )
-#line 151
+#line 150
 {
   uint16_t tmp;
 
@@ -10253,7 +10329,7 @@ static uint16_t TouchScreenP__meanOfFour(void )
       tmp = TouchScreenP__results[2];
     }
   else 
-#line 167
+#line 166
     {
       tmp = TouchScreenP__results[0];
     }
@@ -10261,7 +10337,7 @@ static uint16_t TouchScreenP__meanOfFour(void )
       tmp += TouchScreenP__results[3];
     }
   else 
-#line 172
+#line 171
     {
       tmp += TouchScreenP__results[1];
     }
@@ -10270,52 +10346,107 @@ static uint16_t TouchScreenP__meanOfFour(void )
   return tmp;
 }
 
-# 142 "MP3TestC.nc"
+# 228 "MP3TestC.nc"
 static void MP3TestC__GLCD__xyReady(uint16_t x, uint16_t y)
-#line 142
+#line 228
 {
   uint16_t x_c = x;
-  uint16_t y_c = y;
+  uint16_t y_c = 64 - y;
 
+#line 231
+  MP3TestC__GLCD__isPressed(1);
+  if (!MP3TestC__keypressed) {
+      if (y_c > MP3TestC__RVS_Y) {
 
-  if (x_c > MP3TestC__X_1 && x_c < MP3TestC__X_1 + MP3TestC__A_1 && 64 - y_c > MP3TestC__Y_1 && 64 - y_c < MP3TestC__Y_1 + MP3TestC__B_1) {
-      MP3TestC__GLCD__startWriteString("Playing...", 0, 2);
-      MP3TestC__play = TRUE;
-      MP3TestC__MP3__setVolume(255);
-      MP3TestC__readMMCData__postTask();
-    }
-  if (x_c > MP3TestC__X_2 && x_c < MP3TestC__X_2 + MP3TestC__A_1 && 64 - y_c > MP3TestC__Y_1 && 64 - y_c < MP3TestC__Y_1 + MP3TestC__B_1) {
-      MP3TestC__GLCD__startWriteString("Stopped...", 0, 2);
-      MP3TestC__play = FALSE;
+          if (x_c < MP3TestC__RVS_X + MP3TestC__RVS_A - 8) {
+
+              MP3TestC__keypressed = TRUE;
+              MP3TestC__reverse();
+              MP3TestC__Timer1__startOneShot(MP3TestC__PRESS_PAUSE_TIME);
+            }
+          else 
+#line 240
+            {
+              if (x_c > MP3TestC__PLAY_X + 1 && x_c < MP3TestC__PLAY_X + MP3TestC__PLAY_A - 12) {
+
+                  MP3TestC__keypressed = TRUE;
+                  MP3TestC__Timer1__startOneShot(MP3TestC__PRESS_PAUSE_TIME);
+                  if (MP3TestC__play) {
+                      MP3TestC__play = FALSE;
+                      MP3TestC__GLCD__startWriteString("PLAY", 52, 5);
+                    }
+                  else 
+#line 248
+                    {
+                      MP3TestC__play = TRUE;
+
+                      MP3TestC__readMMCData__postTask();
+                      MP3TestC__GLCD__startWriteString("STOP", 52, 5);
+                    }
+                }
+              else 
+#line 254
+                {
+                  if (x_c > MP3TestC__FWD_X + 8 && x_c < 128) {
+
+                      MP3TestC__keypressed = TRUE;
+                      MP3TestC__forward();
+                      MP3TestC__Timer1__startOneShot(MP3TestC__PRESS_PAUSE_TIME);
+                    }
+                  else {
+                    }
+                }
+            }
+        }
     }
 }
 
-# 81 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MP3/MP3P.nc"
-static error_t MP3P__MP3__setVolume(uint8_t volume)
-#line 81
+# 146 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
 {
-  if (volume == 0) {
-      return MP3P__MP3__writeRegister(MP3P__VOLUME, 0xFEFE);
-    }
-  return MP3P__MP3__writeRegister(MP3P__VOLUME, (255 - volume) * 256 + (255 - volume));
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
+
+#line 149
+  timer->t0 = t0;
+  timer->dt = dt;
+  timer->isoneshot = isoneshot;
+  timer->isrunning = TRUE;
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
 }
 
-#line 109
-static error_t MP3P__MP3__writeRegister(uint8_t mp3Register, uint16_t mp3Cmd)
-#line 109
+# 168 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
+static uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get(void )
+#line 168
 {
-  if (!MP3P__SPI0__immediateRequest()) {
-      return EBUSY;
-    }
+  uint32_t now;
 
-  MP3P__CS__clr();
-  MP3P__SoftSPI0__sendByte(MP3P__MP3_WRITE);
-  MP3P__SoftSPI0__sendByte(mp3Register);
-  MP3P__SoftSPI0__sendByte(mp3Cmd >> 8);
-  MP3P__SoftSPI0__sendByte(mp3Cmd);
-  MP3P__CS__set();
-  MP3P__SPI0__release();
-  return SUCCESS;
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+    {
+
+
+      uint8_t now8 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
+
+      if (/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag().bits.ocf0) {
+
+
+        now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get() + 1 + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
+        }
+      else {
+
+        now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + now8;
+        }
+    }
+#line 186
+    __nesc_atomic_end(__nesc_atomic); }
+#line 186
+  return now;
+}
+
+# 82 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
+static void AdcP__sample(void )
+#line 82
+{
+  AdcP__Atm128AdcSingle__getData(AdcP__channel(), AdcP__refVoltage(), FALSE, AdcP__prescaler());
 }
 
 # 93 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
@@ -10438,13 +10569,6 @@ static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__release(
   return FAIL;
 }
 
-# 82 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-static void AdcP__sample(void )
-#line 82
-{
-  AdcP__Atm128AdcSingle__getData(AdcP__channel(), AdcP__refVoltage(), FALSE, AdcP__prescaler());
-}
-
 # 361 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
 static error_t Atm128SpiP__Resource__request(uint8_t id)
 #line 361
@@ -10473,34 +10597,6 @@ static void HplAtm128SpiP__SPI__enableInterrupt(bool enabled)
       * (volatile uint8_t *)(0x0D + 0x20) &= ~(1 << 7);
       HplAtm128SpiP__Mcu__update();
     }
-}
-
-# 168 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Counter__get(void )
-#line 168
-{
-  uint32_t now;
-
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-    {
-
-
-      uint8_t now8 = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
-
-      if (/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag().bits.ocf0) {
-
-
-        now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__get() + 1 + /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get();
-        }
-      else {
-
-        now = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__base + now8;
-        }
-    }
-#line 186
-    __nesc_atomic_end(__nesc_atomic); }
-#line 186
-  return now;
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
@@ -10629,23 +10725,32 @@ static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmS
     }
 }
 
-# 156 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt)
+# 109 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MP3/MP3P.nc"
+static error_t MP3P__MP3__writeRegister(uint8_t mp3Register, uint16_t mp3Cmd)
+#line 109
 {
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, FALSE);
+  if (!MP3P__SPI0__immediateRequest()) {
+      return EBUSY;
+    }
+
+  MP3P__CS__clr();
+  MP3P__SoftSPI0__sendByte(MP3P__MP3_WRITE);
+  MP3P__SoftSPI0__sendByte(mp3Register);
+  MP3P__SoftSPI0__sendByte(mp3Cmd >> 8);
+  MP3P__SoftSPI0__sendByte(mp3Cmd);
+  MP3P__CS__set();
+  MP3P__SPI0__release();
+  return SUCCESS;
 }
 
-#line 146
-static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
+#line 81
+static error_t MP3P__MP3__setVolume(uint8_t volume)
+#line 81
 {
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
-
-#line 149
-  timer->t0 = t0;
-  timer->dt = dt;
-  timer->isoneshot = isoneshot;
-  timer->isrunning = TRUE;
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
+  if (volume == 0) {
+      return MP3P__MP3__writeRegister(MP3P__VOLUME, 0xFEFE);
+    }
+  return MP3P__MP3__writeRegister(MP3P__VOLUME, (255 - volume) * 256 + (255 - volume));
 }
 
 # 210 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"

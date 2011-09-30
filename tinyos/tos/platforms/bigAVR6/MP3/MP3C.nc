@@ -1,3 +1,7 @@
+/**
+ * @author Markus Hartmann e988811@student.tuwien.ac.at
+ */
+
 configuration MP3C{
 
   provides interface MP3;

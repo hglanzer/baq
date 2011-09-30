@@ -185,7 +185,7 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memset(void *arg_0x2b47bd6c17f0, int arg_0x2b47bd6c1a58, size_t arg_0x2b47bd6c1d00);
+extern void *memset(void *arg_0x2af3de18b7f0, int arg_0x2af3de18ba58, size_t arg_0x2af3de18bd00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b47bd6e2968, const void *arg_0x2b47bd6e2c40);
+typedef int (*__compar_fn_t)(const void *arg_0x2af3de1ac968, const void *arg_0x2af3de1acc40);
 # 23 "/homes/mhartmann/baq/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -798,7 +798,7 @@ enum __nesc_unnamed4293 {
   MICA_DIVIDE_ONE_FOR_32KHZ_LOG2 = 1, 
   MICA_PRESCALER_THREE = ATM128_CLK16_DIVIDE_8, 
   MICA_DIVIDE_THREE_FOR_MICRO_LOG2 = 1, 
-  EXT_STANDBY_T0_THRESHOLD = 6
+  EXT_STANDBY_T0_THRESHOLD = 8
 };
 
 
@@ -824,8 +824,18 @@ enum __nesc_unnamed4296 {
 enum __nesc_unnamed4297 {
   PLATFORM_BAUDRATE = 57600L
 };
+# 6 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/Platform.h"
+enum __nesc_unnamed4298 {
+
+  INITIALIZE = 1, 
+  READY = 2, 
+  READ = 3, 
+  EJECTED = 4, 
+  UNINIT = 5, 
+  BUSY = 6
+};
 typedef TMilli SpeedTestC__Timer0__precision_tag;
-enum HilTimerMilliC____nesc_unnamed4298 {
+enum HilTimerMilliC____nesc_unnamed4299 {
   HilTimerMilliC__TIMER_COUNT = 1U
 };
 typedef TMilli /*AlarmCounterMilliP.Atm128AlarmSyncC*/Atm128AlarmSyncC__0__precision;
@@ -868,11 +878,11 @@ static error_t MeasureClockC__Init__init(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b47bd7ea108);
+uint8_t arg_0x2af3de2b4108);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b47bd7ea108);
+uint8_t arg_0x2af3de2b4108);
 # 57 "/homes/mhartmann/baq/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -885,21 +895,14 @@ static void McuSleepC__McuSleep__sleep(void );
 static void SpeedTestC__Timer0__fired(void );
 # 60 "/homes/mhartmann/baq/tinyos/tos/interfaces/Boot.nc"
 static void SpeedTestC__Boot__booted(void );
-# 20 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-static void SpeedTestC__LCD2x16__LcdInitDone(void );
+# 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
+static void SpeedTestC__LCD2x16__stringWritten(void );
+#line 35
+static error_t LCD2x16P__LCD2x16__clearDisplay(void );
 #line 18
-static void LCD2x16P__LCD2x16__clearDisplay(void );
-#line 7
-static void LCD2x16P__LCD2x16__init(uint8_t mode);
-
-
-
-
-
-
-
-
-static void LCD2x16P__LCD2x16__sendString(char *str, uint8_t len, uint8_t line, uint8_t row);
+static error_t LCD2x16P__LCD2x16__init(uint8_t mode);
+# 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
+static void LCD2x16P__sendData__runTask(void );
 # 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
 static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void );
 #line 103
@@ -964,11 +967,11 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b47bdb81da0);
+uint8_t arg_0x2af3de65fda0);
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b47bdb81da0, 
+uint8_t arg_0x2af3de65fda0, 
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 # 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
@@ -1001,7 +1004,7 @@ static inline void /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13_
 
 static __inline void /*HplAtm128GeneralIOC.PortB.Bit5*/HplAtm128GeneralIOPinP__13__IO__makeOutput(void );
 # 33 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MeasureClockC.nc"
-enum MeasureClockC____nesc_unnamed4299 {
+enum MeasureClockC____nesc_unnamed4300 {
 
 
   MeasureClockC__MAGIC = 488 / (16 / PLATFORM_MHZ)
@@ -1029,13 +1032,13 @@ int main(void )   ;
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b47bd7ea108);
+uint8_t arg_0x2af3de2b4108);
 # 76 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-enum SchedulerBasicP____nesc_unnamed4300 {
+enum SchedulerBasicP____nesc_unnamed4301 {
 
-  SchedulerBasicP__NUM_TASKS = 2U, 
+  SchedulerBasicP__NUM_TASKS = 3U, 
   SchedulerBasicP__NO_TASK = 255
 };
 
@@ -1095,19 +1098,10 @@ static inline mcu_power_t McuSleepC__getPowerState(void );
 static inline void McuSleepC__McuSleep__sleep(void );
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void SpeedTestC__Timer0__startPeriodic(uint32_t dt);
-# 18 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-static void SpeedTestC__LCD2x16__clearDisplay(void );
-#line 7
-static void SpeedTestC__LCD2x16__init(uint8_t mode);
-
-
-
-
-
-
-
-
-static void SpeedTestC__LCD2x16__sendString(char *str, uint8_t len, uint8_t line, uint8_t row);
+# 35 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
+static error_t SpeedTestC__LCD2x16__clearDisplay(void );
+#line 18
+static error_t SpeedTestC__LCD2x16__init(uint8_t mode);
 # 42 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
 static void SpeedTestC__Measure0__toggle(void );
 
@@ -1116,11 +1110,9 @@ static void SpeedTestC__Measure0__toggle(void );
 static void SpeedTestC__Measure0__makeOutput(void );
 #line 40
 static void SpeedTestC__Measure0__set(void );
-# 11 "SpeedTestC.nc"
-char SpeedTestC__itosBuffer[6] = { '0', '0', '0', '0', '0', '\0' };
-static inline char *SpeedTestC__itos(uint16_t i);
-
+# 14 "SpeedTestC.nc"
 static inline void SpeedTestC__Boot__booted(void );
+
 
 
 
@@ -1131,37 +1123,41 @@ static inline void SpeedTestC__Timer0__fired(void );
 
 
 
-static inline void SpeedTestC__LCD2x16__LcdInitDone(void );
+static inline void SpeedTestC__LCD2x16__stringWritten(void );
+# 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
+static void LCD2x16P__LCD2x16__stringWritten(void );
+# 84 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
+enum LCD2x16P____nesc_unnamed4302 {
+#line 84
+  LCD2x16P__sendData = 0U
+};
+#line 84
+typedef int LCD2x16P____nesc_sillytask_sendData[LCD2x16P__sendData];
+#line 15
+static volatile uint8_t LCD2x16P__dataLen;
+#line 15
+static volatile uint8_t LCD2x16P__state = UNINIT;
+static volatile char *LCD2x16P__dataString;
+
+
+
+
+static void LCD2x16P__sendLcdData(char *data, uint8_t words, uint8_t mode);
+#line 73
+static inline error_t LCD2x16P__LCD2x16__clearDisplay(void );
 
 
 
 
 
-static inline char *SpeedTestC__itos(uint16_t i);
-# 20 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-static void LCD2x16P__LCD2x16__LcdInitDone(void );
-# 12 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
-static void LCD2x16P__sendLcdData(char *data, uint8_t words, uint8_t mode, uint8_t timeout);
-#line 51
-static inline void LCD2x16P__setLcdAdr(uint8_t adr);
 
 
 
 
 
-
-
-static inline void LCD2x16P__LCD2x16__clearDisplay(void );
-
-
-
-
-
-
-
-static void LCD2x16P__LCD2x16__sendString(char *str, uint8_t len, uint8_t line, uint8_t row);
-#line 94
-static inline void LCD2x16P__LCD2x16__init(uint8_t mode);
+static inline void LCD2x16P__sendData__runTask(void );
+#line 114
+static inline error_t LCD2x16P__LCD2x16__init(uint8_t mode);
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
 static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void );
 #line 46
@@ -1204,7 +1200,7 @@ uint32_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSync
 
 
 
-enum /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0____nesc_unnamed4301 {
+enum /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0____nesc_unnamed4303 {
   Atm128AlarmSyncP__0__MINDT = 2, 
   Atm128AlarmSyncP__0__MAXT = 230
 };
@@ -1313,9 +1309,9 @@ static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__stop(void )
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired(void );
 # 74 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-enum /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0____nesc_unnamed4302 {
+enum /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0____nesc_unnamed4304 {
 #line 74
-  AlarmToTimerC__0__fired = 0U
+  AlarmToTimerC__0__fired = 1U
 };
 #line 74
 typedef int /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0____nesc_sillytask_fired[/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired];
@@ -1355,16 +1351,16 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b47bdb81da0);
+uint8_t arg_0x2af3de65fda0);
 #line 71
-enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4303 {
+enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4305 {
 #line 71
-  VirtualizeTimerC__0__updateFromTimer = 1U
+  VirtualizeTimerC__0__updateFromTimer = 2U
 };
 #line 71
 typedef int /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_sillytask_updateFromTimer[/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer];
 #line 53
-enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4304 {
+enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4306 {
 
   VirtualizeTimerC__0__NUM_TIMERS = 1, 
   VirtualizeTimerC__0__END_OF_LIST = 255
@@ -1378,7 +1374,7 @@ enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4304 
 
 
 #line 59
-typedef struct /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4305 {
+typedef struct /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4307 {
 
   uint32_t t0;
   uint32_t dt;
@@ -1732,9 +1728,9 @@ inline static void SpeedTestC__Measure0__toggle(void ){
 #line 42
 }
 #line 42
-# 21 "SpeedTestC.nc"
+# 22 "SpeedTestC.nc"
 static inline void SpeedTestC__Timer0__fired(void )
-#line 21
+#line 22
 {
   SpeedTestC__Measure0__toggle();
 }
@@ -1745,9 +1741,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b47bdb81da0){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2af3de65fda0){
 #line 83
-  switch (arg_0x2b47bdb81da0) {
+  switch (arg_0x2af3de65fda0) {
 #line 83
     case 0U:
 #line 83
@@ -1757,7 +1753,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b47bdb81da0);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2af3de65fda0);
 #line 83
       break;
 #line 83
@@ -2022,6 +2018,19 @@ inline static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fire
 #line 83
 }
 #line 83
+# 26 "SpeedTestC.nc"
+static inline void SpeedTestC__LCD2x16__stringWritten(void )
+#line 26
+{
+}
+
+# 40 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
+inline static void LCD2x16P__LCD2x16__stringWritten(void ){
+#line 40
+  SpeedTestC__LCD2x16__stringWritten();
+#line 40
+}
+#line 40
 # 146 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
 static inline void HplAtm128Timer0SyncP__Compare__start(void )
 #line 146
@@ -2170,85 +2179,46 @@ inline static void SpeedTestC__Measure0__makeOutput(void ){
 #line 46
 }
 #line 46
-# 16 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-inline static void SpeedTestC__LCD2x16__sendString(char *str, uint8_t len, uint8_t line, uint8_t row){
-#line 16
-  LCD2x16P__LCD2x16__sendString(str, len, line, row);
-#line 16
-}
-#line 16
-# 31 "SpeedTestC.nc"
-static inline char *SpeedTestC__itos(uint16_t i)
-#line 31
+# 73 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
+static inline error_t LCD2x16P__LCD2x16__clearDisplay(void )
 {
-  SpeedTestC__itosBuffer[0] = '0';
-  SpeedTestC__itosBuffer[1] = '0';
-  SpeedTestC__itosBuffer[2] = '0';
-  SpeedTestC__itosBuffer[3] = '0';
-  SpeedTestC__itosBuffer[4] = '0';
-  while (i >= 10000) {
-      SpeedTestC__itosBuffer[0]++;
-      i -= 10000;
+  if (LCD2x16P__state != READY) {
+    return FAIL;
     }
-  while (i >= 1000) {
-      SpeedTestC__itosBuffer[1]++;
-      i -= 1000;
-    }
-  while (i >= 100) {
-      SpeedTestC__itosBuffer[2]++;
-      i -= 100;
-    }
-  while (i >= 10) {
-      SpeedTestC__itosBuffer[3]++;
-      i -= 10;
-    }
-  SpeedTestC__itosBuffer[4] += i;
-  return SpeedTestC__itosBuffer;
+  LCD2x16P__state = BUSY;
+  LCD2x16P__sendLcdData((char *)0x01, 1, 0);
+  return SUCCESS;
 }
 
-# 59 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
-static inline void LCD2x16P__LCD2x16__clearDisplay(void )
-{
-  char tmp;
+# 35 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
+inline static error_t SpeedTestC__LCD2x16__clearDisplay(void ){
+#line 35
+  unsigned char result;
+#line 35
 
-  tmp = 0x01;
-  LCD2x16P__sendLcdData(&tmp, 1, 0, 66);
-}
+#line 35
+  result = LCD2x16P__LCD2x16__clearDisplay();
+#line 35
 
-# 18 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-inline static void SpeedTestC__LCD2x16__clearDisplay(void ){
-#line 18
-  LCD2x16P__LCD2x16__clearDisplay();
-#line 18
+#line 35
+  return result;
+#line 35
 }
-#line 18
-# 25 "SpeedTestC.nc"
-static inline void SpeedTestC__LCD2x16__LcdInitDone(void )
-#line 25
-{
-  SpeedTestC__LCD2x16__clearDisplay();
-  SpeedTestC__LCD2x16__sendString(SpeedTestC__itos(50 * 2), 5, 0, 0);
-  SpeedTestC__LCD2x16__sendString("ms", 2, 0, 5);
-}
-
-# 20 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-inline static void LCD2x16P__LCD2x16__LcdInitDone(void ){
-#line 20
-  SpeedTestC__LCD2x16__LcdInitDone();
-#line 20
-}
-#line 20
-# 94 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
-static inline void LCD2x16P__LCD2x16__init(uint8_t mode)
+#line 35
+# 114 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
+static inline error_t LCD2x16P__LCD2x16__init(uint8_t mode)
 {
   char tmp = 0;
 
-#line 97
+#line 117
+  if (LCD2x16P__state == BUSY) {
+    return FAIL;
+    }
   * (volatile uint8_t *)(0x15 + 0x20) &= ~((((((1 << 7) | (1 << 6)) | (1 << 5)) | (1 << 4)) | (1 << 3)) | (1 << 2));
   * (volatile uint8_t *)(0x14 + 0x20) |= (((((1 << 7) | (1 << 6)) | (1 << 5)) | (1 << 4)) | (1 << 3)) | (1 << 2);
 
   tmp = 0x28;
-  LCD2x16P__sendLcdData(&tmp, 1, 0, 66);
+  LCD2x16P__sendLcdData(&tmp, 1, 0);
 
   tmp = 0x08 | 0x04;
 
@@ -2258,24 +2228,34 @@ static inline void LCD2x16P__LCD2x16__init(uint8_t mode)
   if (mode == 1) {
     tmp = tmp | 0x02;
     }
-#line 110
-  LCD2x16P__sendLcdData(&tmp, 1, 0, 66);
+#line 133
+  LCD2x16P__sendLcdData(&tmp, 1, 0);
 
-  LCD2x16P__LCD2x16__LcdInitDone();
+  LCD2x16P__state = READY;
+  return SUCCESS;
 }
 
-# 7 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
-inline static void SpeedTestC__LCD2x16__init(uint8_t mode){
-#line 7
-  LCD2x16P__LCD2x16__init(mode);
-#line 7
+# 18 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc"
+inline static error_t SpeedTestC__LCD2x16__init(uint8_t mode){
+#line 18
+  unsigned char result;
+#line 18
+
+#line 18
+  result = LCD2x16P__LCD2x16__init(mode);
+#line 18
+
+#line 18
+  return result;
+#line 18
 }
-#line 7
+#line 18
 # 14 "SpeedTestC.nc"
 static inline void SpeedTestC__Boot__booted(void )
 #line 14
 {
   SpeedTestC__LCD2x16__init(0x02);
+  SpeedTestC__LCD2x16__clearDisplay();
   SpeedTestC__Measure0__makeOutput();
   SpeedTestC__Measure0__set();
   SpeedTestC__Timer0__startPeriodic(50);
@@ -2288,13 +2268,10 @@ inline static void RealMainP__Boot__booted(void ){
 #line 60
 }
 #line 60
-# 51 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
-static inline void LCD2x16P__setLcdAdr(uint8_t adr)
+# 84 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
+static inline void LCD2x16P__sendData__runTask(void )
 {
-  char tmp;
-
-  tmp = 0x80 | adr;
-  LCD2x16P__sendLcdData(&tmp, 1, 0, 66);
+  LCD2x16P__sendLcdData((char *)LCD2x16P__dataString, LCD2x16P__dataLen, 1);
 }
 
 # 175 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
@@ -2303,9 +2280,15 @@ static inline void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b47bd7ea108){
+inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2af3de2b4108){
 #line 75
-  switch (arg_0x2b47bd7ea108) {
+  switch (arg_0x2af3de2b4108) {
+#line 75
+    case LCD2x16P__sendData:
+#line 75
+      LCD2x16P__sendData__runTask();
+#line 75
+      break;
 #line 75
     case /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired:
 #line 75
@@ -2321,7 +2304,7 @@ inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b47bd7ea10
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b47bd7ea108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2af3de2b4108);
 #line 75
       break;
 #line 75
@@ -2893,15 +2876,15 @@ static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runTask(voi
   /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired();
 }
 
-# 12 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
-static void LCD2x16P__sendLcdData(char *data, uint8_t words, uint8_t mode, uint8_t timeout)
+# 21 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16P.nc"
+static void LCD2x16P__sendLcdData(char *data, uint8_t words, uint8_t mode)
 {
   volatile uint8_t wordcount;
-#line 14
+#line 23
   volatile uint8_t tmp;
-#line 14
+#line 23
   volatile uint8_t nibble;
-#line 14
+#line 23
   volatile uint8_t tmp2;
 
   for (wordcount = 0; wordcount < words; wordcount++) 
@@ -2912,7 +2895,7 @@ static void LCD2x16P__sendLcdData(char *data, uint8_t words, uint8_t mode, uint8
         * (volatile uint8_t *)(0x15 + 0x20) |= 1 << 2;
         }
       else {
-#line 23
+#line 32
         * (volatile uint8_t *)(0x15 + 0x20) &= ~(1 << 2);
         }
 
@@ -2931,28 +2914,21 @@ static void LCD2x16P__sendLcdData(char *data, uint8_t words, uint8_t mode, uint8
 
       * (volatile uint8_t *)(0x15 + 0x20) &= 0x03;
 
-      for (tmp = 0; tmp < 255; tmp++) 
+
+
+      for (tmp = 0; tmp < 250; tmp++) 
         {
-          for (tmp2 = 0; tmp2 < 5; tmp2++) 
+          for (tmp2 = 0; tmp2 < 4; tmp2++) 
             {
             }
         }
     }
-}
 
-#line 67
-static void LCD2x16P__LCD2x16__sendString(char *str, uint8_t len, uint8_t line, uint8_t row)
-{
-#line 83
-  if (row > 16) {
-    row = 0;
-    }
-  if (line == 1) {
-    row = row + 0x40;
-    }
 
-  LCD2x16P__setLcdAdr(row);
-  LCD2x16P__sendLcdData(str, len, 1, 66);
+  LCD2x16P__state = READY;
+  if (mode == 1) {
+    LCD2x16P__LCD2x16__stringWritten();
+    }
 }
 
 # 210 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
