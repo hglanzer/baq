@@ -110,10 +110,10 @@ implementation
 		*/
 
 		if(											\
-			(((ipData.srcIP[0] & MY_NETMASK0) & (ipData.dstIP[0] & MY_NETMASK0 )) == 0) &&	\
-			(((ipData.srcIP[1] & MY_NETMASK1) & (ipData.dstIP[1] & MY_NETMASK1 )) == 0) &&	\
-			(((ipData.srcIP[2] & MY_NETMASK2) & (ipData.dstIP[2] & MY_NETMASK2 )) == 0) &&	\
-			(((ipData.srcIP[3] & MY_NETMASK3) & (ipData.dstIP[3] & MY_NETMASK3 )) == 0))
+			((ipData.srcIP[0] & MY_NETMASK0) == (ipData.dstIP[0] & MY_NETMASK0 )) &&	\
+			((ipData.srcIP[1] & MY_NETMASK1) == (ipData.dstIP[1] & MY_NETMASK1 )) &&	\
+			((ipData.srcIP[2] & MY_NETMASK2) == (ipData.dstIP[2] & MY_NETMASK2 )) &&	\
+			((ipData.srcIP[3] & MY_NETMASK3) == (ipData.dstIP[3] & MY_NETMASK3 )))
 		{
 			// belongs to my subnet. send directly to host
 			request.dstIP[0] = ipData.dstIP[0];
@@ -129,7 +129,6 @@ implementation
 			request.dstIP[2] = MY_GATEWAY2;
 			request.dstIP[3] = MY_GATEWAY3;
 		}
-	
 		if(getMACforIP())
 		{
 			state = IPFRAME;

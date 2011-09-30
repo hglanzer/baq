@@ -1,5 +1,7 @@
 /*
 	Harald Glanzer, 0727156 TU Wien
+
+	BLOCKING version of LCD2x16C
 */
 
 #include "LCD2x16.h"
@@ -8,6 +10,11 @@
 module LCD2x16P
 {
         provides interface LCD2x16;
+
+	// only register-select and enable - pins are controlled through interface GeneralIO
+	// the 4bit datapins are set directly --> faster
+	uses interface GeneralIO as REGSEL;
+	uses interface GeneralIO as ENABLE;
 }
 
 implementation
@@ -17,6 +24,8 @@ implementation
 
 	/*
 		write data OR commands to LCD
+
+		this is the BLOCKING version, using a spinloop
 	*/
 	void sendLcdData(char *data, uint8_t words, uint8_t mode)
 	{
@@ -27,23 +36,23 @@ implementation
 			LCDDAT &= 0x03;			// reset Datenports
 
 			if(mode == DATA)
-				storeDATA;
+				call REGSEL.set();
 			else
-				storeCOMMAND;
+				call REGSEL.clr();
 
 			// HIGH - NIBBLE
-			EN_HIG;
+			call ENABLE.set();
 			nibble = data[wordcount] & 0xF0;
 			LCDDAT |= nibble;
-			EN_LOW;
+			call ENABLE.clr();
 			LCDDAT &= 0x0F;
 		
 			// LOW - NIBBLE
-			EN_HIG;
+			call ENABLE.set();
 			nibble = data[wordcount] & 0x0F;
 			nibble = nibble << 4;
 			LCDDAT |= nibble;
-			EN_LOW;
+			call ENABLE.clr();
 
 			LCDDAT &= 0x03;
 			// WAIT - must be done with busywaiting
@@ -77,6 +86,7 @@ implementation
 
 		state = BUSY;
 		sendLcdData((char *)0x01, 1, COMM);
+		signal LCD2x16.displayCleared();
 		return SUCCESS;
 		
 	}
@@ -117,8 +127,8 @@ implementation
 		if(state == BUSY)
 			return FAIL;
 	
-		LCDDAT &= ~((1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) | (1<<PC3) | (1<<PC2));
-		LCDDDR |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4) | (1<<DDC3) | (1<<DDC2));
+		LCDDAT &= ~((1<<PC7) | (1<<PC6) | (1<<PC5) | (1<<PC4) );
+		LCDDDR |= ((1<<DDC7) | (1<<DDC6) | (1<<DDC5) | (1<<DDC4) );
 
 		tmp = 0x28;				// do the 4bit - mode:
 		sendLcdData(&tmp, 1, COMM);

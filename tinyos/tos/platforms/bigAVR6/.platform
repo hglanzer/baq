@@ -13,7 +13,10 @@ push( @includes, qw(
   %T/platforms/bigAVR6
   %T/platforms/bigAVR6/GLCD
   %T/platforms/bigAVR6/TouchScreen
+# uncomment the following line to use the non-blocking version of LCD2x16C
   %T/platforms/bigAVR6/lcd2x16
+# uncomment the following line to use the blocking version of LCD2x16C
+#  %T/platforms/bigAVR6/lcd2x16_BLOCKING
   %T/platforms/bigAVR6/lcd128x64
   %T/platforms/bigAVR6/uart
   %T/platforms/bigAVR6/mmc

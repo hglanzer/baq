@@ -1,0 +1,3 @@
+COMPONENT=MinimalAppC
+include $(MAKERULES)
+

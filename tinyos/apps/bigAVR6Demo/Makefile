@@ -1,0 +1,3 @@
+COMPONENT=bigAVR6DemoAppC
+include $(MAKERULES)
+

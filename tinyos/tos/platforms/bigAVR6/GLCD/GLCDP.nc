@@ -251,7 +251,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if((x >= 128) || (y >= 7))
+		else if((x >= 128) || (y > 7))
 		{
 			return FAIL;
 		}

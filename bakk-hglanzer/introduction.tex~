@@ -8,28 +8,30 @@
 
 This work is about explaining tinyOS. tinyOS is an opensource operating system, designed for use with wireless embedded sensor networks. There are 2 major stable branches, v.1.x and v2.x, which are not compatible to each other. tinyOS 2.x introduced some major improvements, for example the task scheduler was completely redesigned. In it's new version, the whole project us now distributed under the new BSD license too.
 
-Because of tinyOS's component-based architecture, a highlevel programmer does not have to care about microcontroller specifics, as long as the necessary modules are already exisiting. So, implementing new applications or changing exisiting ones is an easy and fast task. There are already existing implementions for a range of popular hardware notes, as for example the mica, iris and teleosa motes.
+Because of tinyOS's component-based architecture, a highlevel programmer does not have to care about microcontroller specifics, as long as the necessary modules are already exisiting. So, implementing new applications or changing exisiting ones is an easy and fast task. There are already existing implementations for a range of popular hardware notes, as for example the mica, iris and teleosa motes.
 
 For developing applications in tinyOS, NesC is used. NesC stands for Network Embedded Systems C, which is very similar to C/C++. Components in NesC are related to objects in C++.
 
 Embedded systems are designed for one or a few specific tasks, perhaps in combination with realtime constraints.
-Because embedded systems are often battery powered, on of the main requirements is low power consumption, so that high operation times can be achieved - flexibility is not that important.
+Because embedded systems are often battery powered, one of the main requirements is low power consumption, so that high operation times can be achieved - flexibility is not that important.
 
-This work has to be considered as part of another work, where tinyOS was ported to a new platform, the bigAVR6 development platform. So, a big part of this work handles about the bigAVR6 platform an explains some new written softwaremodules for highlevel-use of this platform's peripherals. Also, it is explained how to get a running buildenvironment for writing applications or extending the modules for an exisiting platform from scratch.
+This work has to be considered as part of another work, where tinyOS was ported to a new platform, the bigAVR6 development platform. So, a big part of this work handles about the bigAVR6 platform and explains some new written softwaremodules for highlevel-use of this platform's peripherals. It is also explained how to get a running buildenvironment for writing applications or extending the modules for an exisiting platform from scratch.
 
 \section{Motivation and Objectives}
 
-Ultimate goal of this work is to provide an easy-to-use manual for using tinyOS to the reader, so that a buildenvironement can be set up from scratch step-by-step without any necessary previous knowledge. By comparing tinyOS to other embedded OS FIXME the specific characteristics of tinyOS will get much clearer. Finally, by guidung through the selfwritten software modules for the bigAVR6-board, the reader will get familiar with how to practically extend the tinyOS framework by using as much of the preexisting components and how to properly integrate the selfwritten code into tinyOS.
+Ultimate goal of this work is to provide an easy-to-use manual for using tinyOS to the reader, so that a buildenvironement can be set up from scratch step-by-step without any necessary previous knowledge. By comparing tinyOS to another embedded operating system - MicroC/OS-II -  the specific characteristics of tinyOS will get much clearer. Finally, by guidung through the selfwritten software modules for the bigAVR6-board, the reader will get familiar with how to practically extend the tinyOS framework by using as much of the preexisting components and how to properly integrate the selfwritten code into tinyOS.
 
 \section{Structure of the Thesis} \label{sec:introduction:structure}
 
 The thesis is structured as follows:
-Chapter~\ref{chapter:concepts} gives an introduction into the
-basic terms and concepts used throughout the work.
 
 Chapter~\ref{chapter:tinyos} gives a more detailed overview over tinyOS and explains its internals. It also compares tinyOS to another embedded operation system, MicroC/OS-II.
 
-Chapter~\ref{chapter:bigAVR6} introduces the developement platform for which tinyOS was ported to by the author, and explains the supported devices for this platform. 
+Chapter~\ref{chapter:nesC} gives an introduction to nesC.  
+
+Chapter~\ref{chapter:bigAVR6} introduces the developement platform bigAVR6, for which tinyOS was ported to by the author, and explains the supported devices for this platform. 
+
+Chapter~\ref{chapter:osII} introduces another embedded operation system, named MicroC/OS-II, and compares it's main characteristics to tinyOS.
 
 Chapter~\ref{chapter:buildenv} is a step-by-step howto for setting up a fresh tinyOS - environment.
 

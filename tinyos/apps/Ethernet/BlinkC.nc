@@ -5,6 +5,7 @@
  **/
 
 //#include "Timer.h"
+#include "Platform.h"
 
 enum{
 	right	= 	0,
