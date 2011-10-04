@@ -103,8 +103,8 @@ implementation
 	*/
 	event void IP.gotDatagram(uint16_t len, uint8_t *udpPtr)
 	{
-		if(listeningPort == (uint16_t)*(udpPtr+2))
-			signal UDP.gotDatagram(len, udpPtr + 8);
+//		if(listeningPort == (uint16_t)*(udpPtr+2))		// FIXME
+			signal UDP.gotDatagram(len-8, udpPtr + 8);
 	}
 
 	event void IP.initDone(uint8_t hwCode)
@@ -126,5 +126,10 @@ implementation
 	{
 		signal UDP.hwInterrupt(hwCode);
 		//signal UDP.hwInterrupt(src);
+	}
+
+	event void IP.gotARP(uint16_t len, uint8_t *data)
+	{
+		signal UDP.gotARP(len, data);
 	}
 }

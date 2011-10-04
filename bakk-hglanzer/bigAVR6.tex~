@@ -190,7 +190,15 @@ At this level, a checksum is generated, which includes the IP-header only. In th
 
 To receive a packet from remote hosts, the packet must either has the proper destination MAC set, as defined in tinyos/tos/platforms/bigAVR6/eth/IEEE8023.h, or must be be a multicast frame(destination 0xFFFFFFFFFFFF), otherwise the ethernetcontroller chip ENC28J60 will not accept it. If a valid MAC is present, the ENC28J60 will autonomously copy the packet into the receive buffer and signal completion by an interrupt. The packet will be read out by component IEEE8023C and handed over to the IP-level component IPC. If the packet is a ARP - request, a corresponding reply will be sent, otherwise the payload(data + udp-header) will be handed over one level higher, which is the UDP - level. Note that the ip-checksum will \textbf{NOT} be checked. At UPD level, the actual payload will get extracted and is handed over to the application.
 
-For testing purposes, the commandlinetool \textit{netcat} can be used. As example, a constant string should be sent to the ip 192.168.1.100, port 4443, as shown in the following listing.
+\begin{figure}[h]
+ \centerline{\includegraphics[width=.8\columnwidth]{pics/udpstack.png}}
+  \caption{UPD Stack}
+  \label{fig:udpstack}
+\end{figure}
+
+\subsubsection{Network Sniffing}
+
+For testing purposes, the commandlinetool \textit{netcat} can be used. As example, a constant string should be sent to the ip 192.168.1.100, destinationport 4443, as shown in the following listing.
 
 \begin{lstlisting}
 	...
@@ -208,14 +216,7 @@ To receive the string on the corresponding host, this commandline can be used:
 	nc -u -l 4443
 \end{lstlisting}
 
-This starts netcat in listening mode, and specifies that UDP instead of TCP should be used, and that it should bind to port 4443. 
-
-\begin{figure}[h]
- \centerline{\includegraphics[width=.8\columnwidth]{pics/udpstack.png}}
-  \caption{UPD Stack}
-  \label{fig:udpstack}
-\end{figure}
-
+This starts netcat in listening mode, specifies that UDP instead of TCP should be used and that it should bind to port 4443. Port 4443 belongs to the so-called \textit{unprivileged ports}, where a 'normal', unpriviliged user can bind to. All ports greater thant 1023 belong to this group. In opposite, ports from 1 to 1023 are called \textit{privileged} or \textit{well-known} ports.
 
 \newpage
 

@@ -34,13 +34,22 @@
 #ifndef ENC28J60_H
 	#define ENC28J60_H
 
-	// define MAC-adress to be used: 2c:6b:f5:8a:72:a7
+/*
 	#define MACADR5 0x01
 	#define MACADR4 0x16
 	#define MACADR3 0xCB
 	#define MACADR2 0xCA
 	#define MACADR1 0x5D
 	#define MACADR0 0x55
+
+	MACFIX
+*/
+	#define MACADR0 0x01
+	#define MACADR1 0x16
+	#define MACADR2 0xCB
+	#define MACADR3 0xCA
+	#define MACADR4 0x5D
+	#define MACADR5 0x55
 	
 
 	// ENC28J60 Control Registers

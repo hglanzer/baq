@@ -13,5 +13,6 @@ interface IP
 	event void hwInterrupt(uint8_t hwCode);
 
 	event void gotDatagram(uint16_t len, uint8_t *udpPtr);
-	//event void gotDatagram(uint16_t len, uint16_t *udpPtr);
+
+	event void gotARP(uint16_t len, uint8_t *data);
 }

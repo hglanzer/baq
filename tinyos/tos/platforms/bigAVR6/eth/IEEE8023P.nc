@@ -22,7 +22,8 @@ module IEEE8023P
 implementation
 {
 	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0, IEEE8023packet[60], tmpString[10];
-	static volatile uint16_t *TXdataPtr, *TXdstMAC, TXlen, nextPacketPtr = RXSTART_INIT;
+	static volatile uint16_t *TXdataPtr, TXlen, nextPacketPtr = RXSTART_INIT;
+	static volatile uint8_t *TXdstMAC;
 	bool linkStatus = FALSE;
 
 	uint8_t writeSPI(uint8_t opcode, uint8_t data)
@@ -110,12 +111,12 @@ implementation
 		// DEST-MAC
 		if(ipType == IP)
 		{
-			writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) & 0xFF);
-			writeSPI((ENC28J60_WRITE_BUF_MEM), (*(TXdstMAC+0)) >> 8);
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) & 0xFF);
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1) >> 8);
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) & 0xFF);
-			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2) >> 8);
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+0));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+1));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+2));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+3));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+4));
+			writeSPI((ENC28J60_WRITE_BUF_MEM), *(TXdstMAC+5));
 		}
 		else	// ARP - Request
 		{
@@ -128,12 +129,23 @@ implementation
 		}
 	
 		// SOURCE-MAC
+/*
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR5);
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR4);
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR3);
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR2);
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR1);
 		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR0);
+
+	MACFIX
+*/
+
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR0);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR1);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR2);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR3);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR4);
+		writeSPI((ENC28J60_WRITE_BUF_MEM), MACADR5);
 
 		// LLC-Header --> upper protocol is IP, so the value is the constant 0x0800
 		// the documentation for this 2 byte is very misleading
@@ -225,7 +237,7 @@ implementation
 		}
 	}
 
-	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type)
+	command uint8_t IEEE8023.sendFrame(uint16_t *dataPtr, uint8_t *dstMAC, uint16_t len, uint8_t type)
 	{
 		if(stateETH == IEEE8023_READY)
 		{
@@ -418,13 +430,7 @@ implementation
 				//frameLen |= (uint16_t)(writeSPI((ENC28J60_READ_CTRL_REG | ERXWRPTH), (ENC28J60_READ_CTRL_REG | ERXWRPTH))) << 8;
 				//frameLen = (uint16_t)writeSPI((ENC28J60_READ_CTRL_REG | ERXSTL), (ENC28J60_READ_CTRL_REG | ERXSTL));
 				//frameLen |= (uint16_t)(writeSPI((ENC28J60_READ_CTRL_REG | ERXSTH), (ENC28J60_READ_CTRL_REG | ERXSTH))) << 8;
-/*
-DDRA = 0xFF;
-PORTA = (writeSPI((ENC28J60_READ_CTRL_REG | ERXSTH), (ENC28J60_READ_CTRL_REG | ERXSTH)));
-while(1)
-{};
-
-*/
+				
 				// working through the buffer memory. we use AUTOINC, we don't need to update the read-pointer
 				// set READ - pointer to correct start-adress
 				rc = writeSPI((ENC28J60_WRITE_CTRL_REG | ERDPTL), ( nextPacketPtr & 0xFF));
@@ -454,7 +460,10 @@ while(1)
 
 				call Resource.release();
 				stateETH = IEEE8023_READY;
-				signal IEEE8023.gotDatagram(frameLen, (uint8_t *)&IEEE8023packet);
+
+				// this is IP, ARP or WOL
+				if(IEEE8023packet[12] == 0x08)
+					signal IEEE8023.gotDatagram(frameLen, (uint8_t *)&IEEE8023packet);
 				
 				// enable interrupts AFTER stackprocessing	FIXME
 				writeSPI((ENC28J60_WRITE_CTRL_REG | EIE), 0xD0);

@@ -163,6 +163,10 @@ implementation
 				dest[1] = 168;
 				dest[2] = 1;
 				dest[3] = 100;
+//				dest[0] = 88;
+//				dest[1] = 198;
+//				dest[2] = 119;
+//				dest[3] = 50;
 				call UDP.sendData((uint16_t *)"bigAVR6 UDP demonstration", &dest[0], 80, 4443, sizeof("bigAVR6 UDP demonstration"));
 			}
 			else if((x>104) && (y<25))
@@ -197,6 +201,7 @@ implementation
 	
 	event void UDP.sendFailed()
 	{
+		call GLCD.startWriteString((char *)"Failed  \0", 0, 6);
 		call GLCD.isPressed(TRUE);
 	}
 
@@ -220,10 +225,19 @@ implementation
 		
 	}
 
+	event void UDP.gotARP(uint16_t len, uint8_t *data)
+	{
+		if(data[7] == 0x02)
+			call GLCD.startWriteString((char *)"ARP REPLY\0", 0, 4);
+		else
+			call GLCD.startWriteString((char *)"ARP\0", 0, 4);
+	}
+
 	event void UDP.gotDatagram(uint16_t len, uint8_t *dataPtr)
 	{
 		mode = DATA;
-		dataPtr[10] = '\0';
+		dataPtr[len-1] = '\0';
+		//dataPtr[5] = '\0';
 		call GLCD.startWriteString((char *)dataPtr, 0, count2);
 		count2++;
 		if(count2 > 5)
@@ -250,7 +264,6 @@ implementation
 	}
 
 ////////////////////////////	LCD	///////////////////////////
-	
 	event void Timer0.fired()
 	{
 		call LCD2x16.clearDisplay();
