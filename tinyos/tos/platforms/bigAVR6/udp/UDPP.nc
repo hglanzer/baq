@@ -46,6 +46,7 @@ implementation
 {
 	udpStruct udpData; 
 	static volatile uint16_t listeningPort = 0;
+	static volatile uint8_t state = UNINIT;
 
 	/*
 		we don't calculate a checksum. if you need one - DIY
@@ -60,7 +61,10 @@ implementation
 	*/
 	command uint8_t UDP.sendData(uint16_t *dataPtr, uint8_t *destPtr, uint16_t srcPort, uint16_t destPort, uint16_t len)
 	{
-		// FIXME: busy - state?
+		if(state != READY)
+			return FAIL;
+
+		state = BUSY;
 
 		// 16 - bit pointer arithmetics - shifting / masking necessary
 		udpData.srcPortH = (srcPort >> 8);
@@ -109,16 +113,19 @@ implementation
 
 	event void IP.initDone(uint8_t hwCode)
 	{
+		state = READY;
 		signal UDP.initDone(hwCode);
 	}
 
 	event void IP.sendFailed()
 	{
+		state = READY;
 		signal UDP.sendFailed();
 	}
 
 	event void IP.sendDone()
 	{
+		state = READY;
 		signal UDP.sendDone();
 	}
 

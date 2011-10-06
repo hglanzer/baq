@@ -132,9 +132,10 @@ implementation
 	*/
 	event void ARP.ipResolved(uint8_t *dstMAC)
 	{
+		call ARPtimeout.stop();
 		timeout = 0;
 		state = IPFRAME;
-		call IEEE8023.sendFrame((uint16_t *)&ipData, (uint8_t *)&dstMAC, ipLen, 1);
+		call IEEE8023.sendFrame((uint16_t *)&ipData, dstMAC, ipLen, 1);
 	}
 
 	/*
@@ -192,16 +193,29 @@ implementation
 			/*
 				belongs to MYIP
 			*/
-			if( (IEEE8023Frame[30] == MY_IP0) && (IEEE8023Frame[31] == MY_IP1) && \
+			if( (IEEE8023Frame[30] == MY_IP0) && (IEEE8023Frame[31] == MY_IP1) && 
 				(IEEE8023Frame[32] == MY_IP2) && (IEEE8023Frame[33] == MY_IP3) )
 			{
-				// FIXME: only constant IP header size(20byte) supported!!
-				rxLen = IEEE8023Frame[17];
-				rxLen |= (IEEE8023Frame[16]) << 8;
+				// UDP
+				if(IEEE8023Frame[23] == 0x011)
+				{
+					// FIXME: only constant IP header size(20byte) supported!!
+					rxLen = IEEE8023Frame[17];
+					rxLen |= (IEEE8023Frame[16]) << 8;
 
-				// size of ip-header
-				rxLen = rxLen - 20;
-				signal IP.gotDatagram(rxLen, IEEE8023Frame + 34);
+					// size of ip-header
+					rxLen = rxLen - 20;
+					signal IP.gotDatagram(rxLen, IEEE8023Frame + 34);
+				}
+				// ICMP
+				else if(IEEE8023Frame[23] == 0x01)
+				{
+
+				}
+				else
+				{
+					// unsupported protokoll
+				}
 			}
 			// NOT MY BUSINESS
 			else	

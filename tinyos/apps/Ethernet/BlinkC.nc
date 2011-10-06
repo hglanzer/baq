@@ -163,11 +163,15 @@ implementation
 				dest[1] = 168;
 				dest[2] = 1;
 				dest[3] = 100;
-//				dest[0] = 88;
-//				dest[1] = 198;
-//				dest[2] = 119;
-//				dest[3] = 50;
-				call UDP.sendData((uint16_t *)"bigAVR6 UDP demonstration", &dest[0], 80, 4443, sizeof("bigAVR6 UDP demonstration"));
+				call UDP.sendData((uint16_t *)"bigAVR6 UDP demonstration", &dest[0], 1300, 1024, sizeof("bigAVR6 UDP demonstration"));
+			}
+			else if((x>104) && ((y<40) && (y > 25)))
+			{
+				dest[0] = 192;
+				dest[1] = 168;
+				dest[2] = 1;
+				dest[3] = 200;
+				call UDP.sendData((uint16_t *)"another host", &dest[0], 1300, 1024, sizeof("another host"));
 			}
 			else if((x>104) && (y<25))
 			{
@@ -267,5 +271,6 @@ implementation
 	event void Timer0.fired()
 	{
 		call LCD2x16.clearDisplay();
+		//call GLCD.isPressed(TRUE);
 	}
 }

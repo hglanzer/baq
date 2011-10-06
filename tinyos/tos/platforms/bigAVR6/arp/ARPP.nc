@@ -11,7 +11,7 @@ module ARPP
 
 implementation
 {
-	static volatile arpStruct request, reply;
+	static volatile arpStruct request;
 	static volatile uint8_t arpCache[CACHESIZE][10], arpReadPtr = 0, arpWritePtr = 0, dstMAC[6];
 	
 	/*
@@ -91,6 +91,7 @@ implementation
 
 					request.arpTypeL = 0x02;
 
+					//signal ARP.sendARPreply((arpStruct *)&request, (uint8_t *)dstMAC);
 					signal ARP.sendARPreply((uint16_t *)&request, (uint8_t *)dstMAC);
 				}
 			}
@@ -141,6 +142,7 @@ implementation
 			request.dstIP[2] = dstIP[2];
 			request.dstIP[3] = dstIP[3];
 			request.arpTypeL = ARPOP_REQUEST;
+			//signal ARP.ipNotFound((arpStruct *)&request);
 			signal ARP.ipNotFound((uint16_t *)&request);
 		}
 	}
