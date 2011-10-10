@@ -180,5 +180,10 @@ implementation
 	{
 
 	}
+
+	event void UDP.sendFailed()
+	{
+
+	}
 }
 

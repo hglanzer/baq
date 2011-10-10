@@ -23,6 +23,7 @@ module BlinkC @safe()
 	uses interface GLCD;
 
 	uses interface UDP;
+	uses interface IPcontrol;
 	uses interface LCD2x16;
 	uses interface Timer<TMilli> as Timer0;
 //	uses interface MMC;
@@ -33,6 +34,7 @@ implementation
 	char buf[10]="0000000000", uartBuf[11]="\0\0\0\0\0\0\0\0\0\0\0";
 	volatile uint32_t count3 = 0;
 	static volatile bool link = TRUE;
+	uint8_t dest[4], myip[4], mygw[4], mynm[4];
 
 	void printGLCD()
 	{
@@ -154,7 +156,6 @@ implementation
 	
 	event void GLCD.xyReady(uint16_t x, uint16_t y)
 	{
-		uint8_t dest[4];
 		if((x<128) && (y < 64))
 		{
 			if((x>104) && (y>40))
@@ -197,6 +198,21 @@ implementation
 
 	event void UDP.initDone(bool linkStatus)
 	{
+		myip[0] = 192;
+		myip[1] = 168;
+		myip[2] = 1;
+		myip[3] = 20;
+
+		mygw[0] = 192;
+		mygw[1] = 168;
+		mygw[2] = 1;
+		mygw[3] = 1;
+
+		mynm[0] = 255;
+		mynm[1] = 255;
+		mynm[2] = 255;
+		mynm[3] = 128;
+		call IPcontrol.setIP((uint8_t *)&myip[0], (uint8_t *)&mygw[0], (uint8_t *)&mynm[0]);
 		mode = STATUS;
 		link = linkStatus;
 		call GLCD.startWriteString("bigAVR6 Demo\0", 0, 0);

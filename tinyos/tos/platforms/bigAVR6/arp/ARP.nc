@@ -9,6 +9,8 @@ interface ARP
 	
 	command void processARP(uint8_t *IEEEFramePtr);
 
+	command void updateIPconfig(uint8_t *myIP);
+
 	event void ipResolved(uint8_t *macPtr);
 
 	event void ipNotFound(uint16_t *dataPtr);

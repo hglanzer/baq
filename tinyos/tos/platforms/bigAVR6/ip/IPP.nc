@@ -8,6 +8,8 @@
 module IPP
 {
 	provides interface IP;
+	provides interface IPcontrol;
+
 	uses interface IEEE8023;
 	uses interface ARP;
 	uses interface Timer<TMilli> as ARPtimeout;
@@ -15,9 +17,30 @@ module IPP
 
 implementation
 {
-	static volatile uint8_t state = IPFRAME, timeout = 0, tmpdestIP[4];
+	static volatile uint8_t state = IPFRAME, timeout = 0, tmpdestIP[4], gateway[4], netmask[4];
 	static volatile uint16_t ipLen, *localPtr, rxLen = 0;
 	static volatile ipStruct ipData;
+
+	command void IPcontrol.setIP(uint8_t *newIP, uint8_t *newgw, uint8_t *newnm)
+	{
+		// set ipData - struct
+		ipData.srcIP[0] = newIP[0];
+		ipData.srcIP[1] = newIP[1];
+		ipData.srcIP[2] = newIP[2];
+		ipData.srcIP[3] = newIP[3];
+	
+		gateway[0] = newgw[0];
+		gateway[1] = newgw[1];
+		gateway[2] = newgw[2];
+		gateway[3] = newgw[3];
+
+		netmask[0] = newnm[0];
+		netmask[1] = newnm[1];
+		netmask[2] = newnm[2];
+		netmask[3] = newnm[3];
+
+		call ARP.updateIPconfig(newIP);
+	}
 
 	uint16_t ipChksum(uint16_t len_ip_header)
 	{
@@ -74,10 +97,10 @@ implementation
 		*/
 
 		if(											\
-			((ipData.srcIP[0] & MY_NETMASK0) == (ipData.dstIP[0] & MY_NETMASK0 )) &&	\
-			((ipData.srcIP[1] & MY_NETMASK1) == (ipData.dstIP[1] & MY_NETMASK1 )) &&	\
-			((ipData.srcIP[2] & MY_NETMASK2) == (ipData.dstIP[2] & MY_NETMASK2 )) &&	\
-			((ipData.srcIP[3] & MY_NETMASK3) == (ipData.dstIP[3] & MY_NETMASK3 )))
+			((ipData.srcIP[0] & netmask[0]) == (ipData.dstIP[0] & netmask[0] )) &&	\
+			((ipData.srcIP[1] & netmask[1]) == (ipData.dstIP[1] & netmask[1] )) &&	\
+			((ipData.srcIP[2] & netmask[2]) == (ipData.dstIP[2] & netmask[2] )) &&	\
+			((ipData.srcIP[3] & netmask[3]) == (ipData.dstIP[3] & netmask[3] )))
 		{
 			// belongs to my subnet. send directly to host
 			tmpdestIP[0] = ipData.dstIP[0];
@@ -88,10 +111,10 @@ implementation
 		else
 		{
 			// belongs to other subnet. send packet to GATEWAY
-			tmpdestIP[0] = MY_GATEWAY0;
-			tmpdestIP[1] = MY_GATEWAY1;
-			tmpdestIP[2] = MY_GATEWAY2;
-			tmpdestIP[3] = MY_GATEWAY3;
+			tmpdestIP[0] = gateway[0];
+			tmpdestIP[1] = gateway[1];
+			tmpdestIP[2] = gateway[2];
+			tmpdestIP[3] = gateway[3];
 		}
 		call ARP.resolveIP((uint8_t *)tmpdestIP);
 		return TRUE;
@@ -147,12 +170,6 @@ implementation
 		// this only needs to be done ONCE
 		// init as much data as possible to save time later
 
-		// init ipData - struct
-		ipData.srcIP[0] = MY_IP0;
-		ipData.srcIP[1] = MY_IP1;
-		ipData.srcIP[2] = MY_IP2;
-		ipData.srcIP[3] = MY_IP3;
-		
 		ipData.version = 0x45;	// l-nibble: version=ipv4 
 					// h-nibble: IHL=ip header length as multiple of 4byte. 20byte when NO OPTIONS!
 		ipData.TOS = 0x00;	// type of service, no priority
@@ -193,8 +210,8 @@ implementation
 			/*
 				belongs to MYIP
 			*/
-			if( (IEEE8023Frame[30] == MY_IP0) && (IEEE8023Frame[31] == MY_IP1) && 
-				(IEEE8023Frame[32] == MY_IP2) && (IEEE8023Frame[33] == MY_IP3) )
+			if( (IEEE8023Frame[30] == ipData.srcIP[0]) && (IEEE8023Frame[31] == ipData.srcIP[1]) && 
+				(IEEE8023Frame[32] == ipData.srcIP[2]) && (IEEE8023Frame[33] == ipData.srcIP[3]) )
 			{
 				// UDP
 				if(IEEE8023Frame[23] == 0x011)

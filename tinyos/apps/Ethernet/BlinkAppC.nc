@@ -13,6 +13,7 @@ implementation
 	components MainC, BlinkC;
 	components GLCDC;
 	components UDPC;
+	components IPC;
 //	components MMCC;
 	components LCD2x16C;
 	components new TimerMilliC() as TIMER0;
@@ -22,6 +23,7 @@ implementation
 	BlinkC.UDP -> UDPC;
 	BlinkC.LCD2x16 -> LCD2x16C;
 	BlinkC.Timer0 -> TIMER0;
+	BlinkC.IPcontrol -> IPC;
 //	BlinkC.MMC -> MMCC;
 }
 

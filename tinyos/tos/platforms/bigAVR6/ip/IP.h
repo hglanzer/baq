@@ -7,6 +7,7 @@
 #define ARPFRAME	0
 #define IPFRAME		1
 
+/*
 #define MY_IP0	192
 #define MY_IP1	168
 #define MY_IP2	1
@@ -21,6 +22,7 @@
 #define MY_GATEWAY1	168
 #define MY_GATEWAY2	1
 #define MY_GATEWAY3	100
+*/
 
 #define ARP_TIMEOUTS	3
 

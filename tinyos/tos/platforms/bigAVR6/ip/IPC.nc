@@ -1,6 +1,7 @@
 configuration IPC
 {
 	provides interface IP;
+	provides interface IPcontrol;
 }
 
 implementation
@@ -11,7 +12,9 @@ implementation
 	components new TimerMilliC();
 
 	IP = IPP;
+	IPcontrol = IPP;
 	IPP.IEEE8023 -> IEEE8023C;
 	IPP.ARP -> ARPC;
 	IPP.ARPtimeout -> TimerMilliC;
+
 }

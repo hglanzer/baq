@@ -53,6 +53,14 @@ implementation
 		return FALSE;
         }
 
+	command void ARP.updateIPconfig(uint8_t *ip)
+	{
+		request.srcIP[0] = ip[0];
+		request.srcIP[1] = ip[1];
+		request.srcIP[2] = ip[2];
+		request.srcIP[3] = ip[3];
+	}
+
 	/*
 
 	*/
@@ -67,20 +75,20 @@ implementation
 				/*
 					someone wants to know MY mac adress, so send it
 				*/
-				if( (IEEE8023FramePtr[38] == MY_IP0) && (IEEE8023FramePtr[39] == MY_IP1) && \
-					(IEEE8023FramePtr[40] == MY_IP2) && (IEEE8023FramePtr[41] == MY_IP3) )
+				if( (IEEE8023FramePtr[38] ==  request.srcIP[0]) && (IEEE8023FramePtr[39] ==  request.srcIP[1]) && \
+					(IEEE8023FramePtr[40] ==  request.srcIP[2]) && (IEEE8023FramePtr[41] ==  request.srcIP[3]) )
 				{
 					request.dstIP[0] = IEEE8023FramePtr[28];
 					request.dstIP[1] = IEEE8023FramePtr[29];
 					request.dstIP[2] = IEEE8023FramePtr[30];
 					request.dstIP[3] = IEEE8023FramePtr[31];
 
-					request.dstMAC[0] = MACADR0;
-					request.dstMAC[1] = MACADR1;
-					request.dstMAC[2] = MACADR2;
-					request.dstMAC[3] = MACADR3;
-					request.dstMAC[4] = MACADR4;
-					request.dstMAC[5] = MACADR5;
+					request.dstMAC[0] = IEEE8023FramePtr[22];
+					request.dstMAC[1] = IEEE8023FramePtr[23];
+					request.dstMAC[2] = IEEE8023FramePtr[24];
+					request.dstMAC[3] = IEEE8023FramePtr[25];
+					request.dstMAC[4] = IEEE8023FramePtr[26];
+					request.dstMAC[5] = IEEE8023FramePtr[27];
 		
 					dstMAC[0] = IEEE8023FramePtr[6];
 					dstMAC[1] = IEEE8023FramePtr[7];
@@ -137,6 +145,13 @@ implementation
 				ip not in local arp cache. ARP Request must 
 				be sent by component IPC
 			*/
+			request.dstMAC[0] = 0;
+			request.dstMAC[1] = 0;
+			request.dstMAC[2] = 0;
+			request.dstMAC[3] = 0;
+			request.dstMAC[4] = 0;
+			request.dstMAC[5] = 0;
+		
 			request.dstIP[0] = dstIP[0];
 			request.dstIP[1] = dstIP[1];
 			request.dstIP[2] = dstIP[2];
@@ -172,10 +187,10 @@ implementation
 		request.dstMAC[4] = 0x00;
 		request.dstMAC[5] = 0x00;
 
-		request.srcIP[0] = MY_IP0;
-		request.srcIP[1] = MY_IP1;
-		request.srcIP[2] = MY_IP2;
-		request.srcIP[3] = MY_IP3;
+		request.srcIP[0] = 0;
+		request.srcIP[1] = 0;
+		request.srcIP[2] = 0;
+		request.srcIP[3] = 0;
 
 		arpWritePtr = 0;
 		arpReadPtr = 0;

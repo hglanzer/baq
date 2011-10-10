@@ -21,7 +21,7 @@ module IEEE8023P
 
 implementation
 {
-	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0, IEEE8023packet[90], tmpString[10];
+	static volatile uint8_t stateETH = IEEE8023_UNINIT, ipType = 0, IEEE8023packet[100], tmpString[10];
 	static volatile uint16_t *TXdataPtr, TXlen, nextPacketPtr = RXSTART_INIT;
 	static volatile uint8_t *TXdstMAC;
 	bool linkStatus = FALSE;
