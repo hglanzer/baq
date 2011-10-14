@@ -39,8 +39,8 @@ implementation{
   bool refresh = FALSE;
   bool keypressed = FALSE;
   /*             12345678901234567890*/
-  char title[21] = {'1','2','3','4','5','6','7','8','9','0','1','2','3','4','5','6','7','8','9','0','\0' };
-  char artist[21] = {'1','2','3','4','5','6','7','8','9','0','1','2','3','4','5','6','7','8','9','0','\0' };
+  char title[21] = {'B','a','d',' ','R','o','m','a','n','c','e',' ',' ',' ',' ',' ',' ',' ',' ',' ','\0' };
+  char artist[21] = {'L','a','d','y',' ','G','a','g','a',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','\0' };
   char trackStr[21] = {'T','r','a','c','k',':','0','1','/','0','3',' ','-',' ','0','0',':','0','0',' ','\0' };
   /*              12345678901234567890*/
   uint8_t track = 1;
@@ -71,8 +71,8 @@ implementation{
     call GLCD.initLCD( 0x00 );
     //call Timer0.startPeriodic( 200 );
     //call Timer1.startPeriodic( 200 );
-    strncpy(artist, "AC/DC               ", 20);
-    strncpy(title, "Highway To Hell     ", 20);
+    //strncpy(artist, "AC/DC               ", 20);
+    //strncpy(title, "Highway To Hell     ", 20);
     
     //for ( i = 0; i< 21; i++ ){
       //artist[i] = 61;

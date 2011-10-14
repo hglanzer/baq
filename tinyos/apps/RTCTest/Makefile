@@ -1,0 +1,3 @@
+
+COMPONENT=RTCTestAppC
+include $(MAKERULES)

@@ -185,13 +185,13 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 112 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memcpy(void *arg_0x2b7b4a3a8940, const void *arg_0x2b7b4a3a8c18, size_t arg_0x2b7b4a3a7020);
+extern void *memcpy(void *arg_0x2ba31cf07940, const void *arg_0x2ba31cf07c18, size_t arg_0x2ba31cf06020);
 
 
 
-extern void *memset(void *arg_0x2b7b4a3ab7f0, int arg_0x2b7b4a3aba58, size_t arg_0x2b7b4a3abd00);
+extern void *memset(void *arg_0x2ba31cf0a7f0, int arg_0x2ba31cf0aa58, size_t arg_0x2ba31cf0ad00);
 #line 131
-extern char *strncpy(char *arg_0x2b7b4a3ba7c0, const char *arg_0x2b7b4a3baa98, size_t arg_0x2b7b4a3bad40);
+extern char *strncpy(char *arg_0x2ba31cf197c0, const char *arg_0x2ba31cf19a98, size_t arg_0x2ba31cf19d40);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -210,7 +210,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b7b4a3cc968, const void *arg_0x2b7b4a3ccc40);
+typedef int (*__compar_fn_t)(const void *arg_0x2ba31cf2b968, const void *arg_0x2ba31cf2bc40);
 # 23 "/homes/mhartmann/baq/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -1177,11 +1177,11 @@ static uint8_t MeasureClockC__Atm128Calibrate__adcPrescaler(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7b4a4d4108);
+uint8_t arg_0x2ba31d033108);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7b4a4d4108);
+uint8_t arg_0x2ba31d033108);
 # 57 "/homes/mhartmann/baq/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1212,13 +1212,13 @@ static uint16_t MP3P__MP3__readRegister(uint8_t mp3Register);
 # 12 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPI.nc"
 static error_t SoftSPIImplP__SoftSPIMaster__receiveByte(
 # 7 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPIImplP.nc"
-uint8_t arg_0x2b7b4a729e80, 
+uint8_t arg_0x2ba31d288e80, 
 # 12 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPI.nc"
 uint8_t *data);
 #line 9
 static error_t SoftSPIImplP__SoftSPIMaster__sendByte(
 # 7 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPIImplP.nc"
-uint8_t arg_0x2b7b4a729e80, 
+uint8_t arg_0x2ba31d288e80, 
 # 9 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/SoftSPI/SoftSPI.nc"
 uint8_t msg);
 # 62 "/homes/mhartmann/baq/tinyos/tos/interfaces/Init.nc"
@@ -1230,15 +1230,15 @@ static resource_client_id_t /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQueueC__
 # 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75e7e8);
+uint8_t arg_0x2ba31d2bd7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 56 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 #line 46
@@ -1248,15 +1248,15 @@ static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner_
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 97 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__immediateRequest(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 98 "/homes/mhartmann/baq/tinyos/tos/interfaces/ArbiterInfo.nc"
 static uint8_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ArbiterInfo__userId(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1329,15 +1329,15 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 136
 static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__getNow(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7b4a946778);
+uint8_t arg_0x2ba31d4a5778);
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7b4a946778);
+uint8_t arg_0x2ba31d4a5778);
 # 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startOneShot(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7b4a946778, 
+uint8_t arg_0x2ba31d4a5778, 
 # 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 
@@ -1346,7 +1346,7 @@ uint32_t dt);
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7b4a946778);
+uint8_t arg_0x2ba31d4a5778);
 # 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
@@ -1525,29 +1525,29 @@ static resource_client_id_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQue
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75e7e8);
+uint8_t arg_0x2ba31d2bd7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 56 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceDefaultOwner__release(void );
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__release(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__request(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask__runTask(void );
 # 62 "/homes/mhartmann/baq/tinyos/tos/lib/power/PowerDownCleanup.nc"
@@ -1559,25 +1559,25 @@ static void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__ResourceDefault
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t AdcP__Read__read(
 # 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac0fac0);
+uint8_t arg_0x2ba31d770ac0);
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__default__readDone(
 # 49 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac0d6d8, 
+uint8_t arg_0x2ba31d76e6d8, 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac34cd0);
+uint8_t arg_0x2ba31d76bcd0);
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getChannel(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac34cd0);
+uint8_t arg_0x2ba31d76bcd0);
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac34cd0);
+uint8_t arg_0x2ba31d76bcd0);
 # 81 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static void AdcP__Atm128AdcSingle__dataReady(uint16_t data, bool precise);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1585,31 +1585,31 @@ static void AdcP__acquiredData__runTask(void );
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__read(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac396b8);
+uint8_t arg_0x2ba31d7996b8);
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac396b8, 
+uint8_t arg_0x2ba31d7996b8, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 63
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(
 # 26 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac36390, 
+uint8_t arg_0x2ba31d797390, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__val_t val);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac35e30);
+uint8_t arg_0x2ba31d796e30);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac35e30);
+uint8_t arg_0x2ba31d796e30);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__granted(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac35e30);
+uint8_t arg_0x2ba31d796e30);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void LCD128x64P__writeRectangle__runTask(void );
 # 45 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/lcd128x64/LCD128x64.nc"
@@ -1659,7 +1659,7 @@ error_t error);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__ResourceArbiter__granted(
 # 99 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4adb1060);
+uint8_t arg_0x2ba31d912060);
 # 45 "/homes/mhartmann/baq/tinyos/tos/interfaces/SpiByte.nc"
 static uint8_t Atm128SpiP__SpiByte__write(uint8_t tx);
 # 109 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
@@ -1667,15 +1667,15 @@ static void Atm128SpiP__Spi__dataReady(uint8_t data);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__release(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4ad9fae0);
+uint8_t arg_0x2ba31d8ffae0);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__Resource__request(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4ad9fae0);
+uint8_t arg_0x2ba31d8ffae0);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__default__granted(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4ad9fae0);
+uint8_t arg_0x2ba31d8ffae0);
 # 89 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void HplAtm128SpiP__SPI__sleep(void );
 #line 83
@@ -1724,23 +1724,23 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1__F
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(
 # 52 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae8a2f0);
+uint8_t arg_0x2ba31d9eb2f0);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae89868);
+uint8_t arg_0x2ba31d9e9868);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae89868);
+uint8_t arg_0x2ba31d9e9868);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(
 # 51 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae8b158);
+uint8_t arg_0x2ba31d9ba158);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(
 # 51 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae8b158);
+uint8_t arg_0x2ba31d9ba158);
 # 90 "/homes/mhartmann/baq/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ArbiterInfo__inUse(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
@@ -1885,7 +1885,7 @@ int main(void )   ;
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7b4a4d4108);
+uint8_t arg_0x2ba31d033108);
 # 76 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
@@ -2075,15 +2075,15 @@ static inline resource_client_id_t /*SoftSPIMasterP.Arbiter.Queue*/FcfsResourceQ
 # 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75e7e8);
+uint8_t arg_0x2ba31d2bd7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static bool /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Queue__isEmpty(void );
 #line 70
@@ -2095,7 +2095,7 @@ static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceDefaultOwner_
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
@@ -2354,7 +2354,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7b4a946778);
+uint8_t arg_0x2ba31d4a5778);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4321 {
 #line 71
@@ -2518,8 +2518,8 @@ bool MP3TestC__dataReady = FALSE;
 bool MP3TestC__refresh = FALSE;
 bool MP3TestC__keypressed = FALSE;
 
-char MP3TestC__title[21] = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\0' };
-char MP3TestC__artist[21] = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '\0' };
+char MP3TestC__title[21] = { 'B', 'a', 'd', ' ', 'R', 'o', 'm', 'a', 'n', 'c', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '\0' };
+char MP3TestC__artist[21] = { 'L', 'a', 'd', 'y', ' ', 'G', 'a', 'g', 'a', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '\0' };
 char MP3TestC__trackStr[21] = { 'T', 'r', 'a', 'c', 'k', ':', '0', '1', '/', '0', '3', ' ', '-', ' ', '0', '0', ':', '0', '0', ' ', '\0' };
 
 uint8_t MP3TestC__track = 1;
@@ -2977,15 +2977,15 @@ static inline error_t /*Atm128AdcC.AdcArbiter.Queue*/RoundRobinResourceQueueC__0
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(
 # 55 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75e7e8);
+uint8_t arg_0x2ba31d2bd7e8);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(
 # 60 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75c9b8);
+uint8_t arg_0x2ba31d2bb9b8);
 # 79 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -2999,7 +2999,7 @@ static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceDefaultOwner__
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(
 # 54 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
-uint8_t arg_0x2b7b4a75f658);
+uint8_t arg_0x2ba31d2be658);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__grantedTask__postTask(void );
 # 75 "/homes/mhartmann/baq/tinyos/tos/system/ArbiterP.nc"
@@ -3081,27 +3081,27 @@ static inline void /*Atm128AdcC.PM.PowerManager*/AsyncPowerManagerP__0__PowerDow
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void AdcP__Read__readDone(
 # 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac0fac0, 
+uint8_t arg_0x2ba31d770ac0, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, AdcP__Read__val_t val);
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 static void AdcP__ReadNow__readDone(
 # 49 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac0d6d8, 
+uint8_t arg_0x2ba31d76e6d8, 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
 error_t result, AdcP__ReadNow__val_t val);
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac34cd0);
+uint8_t arg_0x2ba31d76bcd0);
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getChannel(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac34cd0);
+uint8_t arg_0x2ba31d76bcd0);
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
 static uint8_t AdcP__Atm128AdcConfig__getPrescaler(
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/AdcP.nc"
-uint8_t arg_0x2b7b4ac34cd0);
+uint8_t arg_0x2ba31d76bcd0);
 # 70 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcSingle.nc"
 static bool AdcP__Atm128AdcSingle__getData(uint8_t channel, uint8_t refVoltage, 
 bool leftJustify, uint8_t prescaler);
@@ -3185,21 +3185,21 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 # 24 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac396b8, 
+uint8_t arg_0x2ba31d7996b8, 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
 error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val);
 #line 55
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(
 # 26 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac36390);
+uint8_t arg_0x2ba31d797390);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac35e30);
+uint8_t arg_0x2ba31d796e30);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(
 # 27 "/homes/mhartmann/baq/tinyos/tos/system/ArbitratedReadC.nc"
-uint8_t arg_0x2b7b4ac35e30);
+uint8_t arg_0x2ba31d796e30);
 
 
 
@@ -3410,11 +3410,11 @@ error_t error);
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__release(
 # 99 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4adb1060);
+uint8_t arg_0x2ba31d912060);
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static error_t Atm128SpiP__ResourceArbiter__request(
 # 99 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4adb1060);
+uint8_t arg_0x2ba31d912060);
 # 89 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128Spi.nc"
 static void Atm128SpiP__Spi__sleep(void );
 #line 83
@@ -3438,7 +3438,7 @@ static void Atm128SpiP__Spi__setClockPhase(bool sampleOnTrailing);
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void Atm128SpiP__Resource__granted(
 # 95 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/spi/Atm128SpiP.nc"
-uint8_t arg_0x2b7b4ad9fae0);
+uint8_t arg_0x2ba31d8ffae0);
 # 90 "/homes/mhartmann/baq/tinyos/tos/interfaces/ArbiterInfo.nc"
 static bool Atm128SpiP__ArbiterInfo__inUse(void );
 # 52 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuPowerState.nc"
@@ -3570,15 +3570,15 @@ static inline error_t /*Atm128SpiC.Arbiter.Queue*/FcfsResourceQueueC__1__FcfsQue
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(
 # 52 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae8a2f0);
+uint8_t arg_0x2ba31d9eb2f0);
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae89868);
+uint8_t arg_0x2ba31d9e9868);
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae89868);
+uint8_t arg_0x2ba31d9e9868);
 # 79 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceQueue.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -3588,7 +3588,7 @@ static resource_client_id_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Que
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
 static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(
 # 51 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
-uint8_t arg_0x2b7b4ae8b158);
+uint8_t arg_0x2ba31d9ba158);
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__grantedTask__postTask(void );
 # 69 "/homes/mhartmann/baq/tinyos/tos/system/SimpleArbiterP.nc"
@@ -4215,9 +4215,9 @@ static inline void Atm128SpiP__Resource__default__granted(uint8_t id)
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b7b4ad9fae0){
+inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2ba31d8ffae0){
 #line 102
-  switch (arg_0x2b7b4ad9fae0) {
+  switch (arg_0x2ba31d8ffae0) {
 #line 102
     case 0:
 #line 102
@@ -4227,7 +4227,7 @@ inline static void Atm128SpiP__Resource__granted(uint8_t arg_0x2b7b4ad9fae0){
 #line 102
     default:
 #line 102
-      Atm128SpiP__Resource__default__granted(arg_0x2b7b4ad9fae0);
+      Atm128SpiP__Resource__default__granted(arg_0x2ba31d8ffae0);
 #line 102
       break;
 #line 102
@@ -4243,9 +4243,9 @@ static inline void Atm128SpiP__ResourceArbiter__granted(uint8_t id)
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2b7b4ae8b158){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__granted(uint8_t arg_0x2ba31d9ba158){
 #line 102
-  Atm128SpiP__ResourceArbiter__granted(arg_0x2b7b4ae8b158);
+  Atm128SpiP__ResourceArbiter__granted(arg_0x2ba31d9ba158);
 #line 102
 }
 #line 102
@@ -4256,9 +4256,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b7b4ae89868){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2ba31d9e9868){
 #line 59
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2b7b4ae89868);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__configure(arg_0x2ba31d9e9868);
 #line 59
 }
 #line 59
@@ -4298,9 +4298,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConf
 }
 
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b7b4ae89868){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2ba31d9e9868){
 #line 65
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b7b4ae89868);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2ba31d9e9868);
 #line 65
 }
 #line 65
@@ -4437,13 +4437,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2b7b4adb1060){
+inline static error_t Atm128SpiP__ResourceArbiter__release(uint8_t arg_0x2ba31d912060){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2b7b4adb1060);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__release(arg_0x2ba31d912060);
 #line 120
 
 #line 120
@@ -5336,13 +5336,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2b7b4ac35e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__request(uint8_t arg_0x2ba31d796e30){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  switch (arg_0x2b7b4ac35e30) {
+  switch (arg_0x2ba31d796e30) {
 #line 88
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 88
@@ -5352,7 +5352,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 88
     default:
 #line 88
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2b7b4ac35e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__request(arg_0x2ba31d796e30);
 #line 88
       break;
 #line 88
@@ -5576,9 +5576,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__
 }
 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2b7b4ac396b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
+inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(uint8_t arg_0x2ba31d7996b8, error_t result, /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__val_t val){
 #line 63
-  switch (arg_0x2b7b4ac396b8) {
+  switch (arg_0x2ba31d7996b8) {
 #line 63
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 63
@@ -5588,7 +5588,7 @@ inline static void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__readDone(
 #line 63
     default:
 #line 63
-      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2b7b4ac396b8, result, val);
+      /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Read__default__readDone(arg_0x2ba31d7996b8, result, val);
 #line 63
       break;
 #line 63
@@ -5679,9 +5679,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigu
 }
 
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x2b7b4a75c9b8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__unconfigure(uint8_t arg_0x2ba31d2bb9b8){
 #line 65
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x2b7b4a75c9b8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__unconfigure(arg_0x2ba31d2bb9b8);
 #line 65
 }
 #line 65
@@ -5860,13 +5860,13 @@ static inline error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__de
 }
 
 # 120 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2b7b4ac35e30){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__release(uint8_t arg_0x2ba31d796e30){
 #line 120
   unsigned char result;
 #line 120
 
 #line 120
-  switch (arg_0x2b7b4ac35e30) {
+  switch (arg_0x2ba31d796e30) {
 #line 120
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 120
@@ -5876,7 +5876,7 @@ inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__re
 #line 120
     default:
 #line 120
-      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2b7b4ac35e30);
+      result = /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Resource__default__release(arg_0x2ba31d796e30);
 #line 120
       break;
 #line 120
@@ -5897,9 +5897,9 @@ static inline void /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDo
 }
 
 # 63 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static void AdcP__Read__readDone(uint8_t arg_0x2b7b4ac0fac0, error_t result, AdcP__Read__val_t val){
+inline static void AdcP__Read__readDone(uint8_t arg_0x2ba31d770ac0, error_t result, AdcP__Read__val_t val){
 #line 63
-  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2b7b4ac0fac0, result, val);
+  /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__readDone(arg_0x2ba31d770ac0, result, val);
 #line 63
 }
 #line 63
@@ -5918,9 +5918,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequest
 }
 
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(uint8_t arg_0x2b7b4a75e7e8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__requested(uint8_t arg_0x2ba31d2bd7e8){
 #line 53
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(arg_0x2b7b4a75e7e8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceRequested__default__requested(arg_0x2ba31d2bd7e8);
 #line 53
 }
 #line 53
@@ -6392,13 +6392,13 @@ static inline error_t AdcP__Read__read(uint8_t c)
 }
 
 # 55 "/homes/mhartmann/baq/tinyos/tos/interfaces/Read.nc"
-inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2b7b4ac36390){
+inline static error_t /*WireAdcP.ArbitrateRead*/ArbitratedReadC__0__Service__read(uint8_t arg_0x2ba31d797390){
 #line 55
   unsigned char result;
 #line 55
 
 #line 55
-  result = AdcP__Read__read(arg_0x2b7b4ac36390);
+  result = AdcP__Read__read(arg_0x2ba31d797390);
 #line 55
 
 #line 55
@@ -6420,9 +6420,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__defau
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(uint8_t arg_0x2b7b4a75f658){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__granted(uint8_t arg_0x2ba31d2be658){
 #line 102
-  switch (arg_0x2b7b4a75f658) {
+  switch (arg_0x2ba31d2be658) {
 #line 102
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__HAL_ID:
 #line 102
@@ -6432,7 +6432,7 @@ inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__grant
 #line 102
     default:
 #line 102
-      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(arg_0x2b7b4a75f658);
+      /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__Resource__default__granted(arg_0x2ba31d2be658);
 #line 102
       break;
 #line 102
@@ -6447,9 +6447,9 @@ static inline void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigu
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x2b7b4a75c9b8){
+inline static void /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__configure(uint8_t arg_0x2ba31d2bb9b8){
 #line 59
-    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(arg_0x2b7b4a75c9b8);
+    /*Atm128AdcC.AdcArbiter.Arbiter*/ArbiterP__1__ResourceConfigure__default__configure(arg_0x2ba31d2bb9b8);
 #line 59
 }
 #line 59
@@ -6678,13 +6678,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getChannel(uint8_t c)
 }
 
 # 25 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b7b4ac34cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2ba31d76bcd0){
 #line 25
   unsigned char result;
 #line 25
 
 #line 25
-  switch (arg_0x2b7b4ac34cd0) {
+  switch (arg_0x2ba31d76bcd0) {
 #line 25
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 25
@@ -6694,7 +6694,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getChannel(uint8_t arg_0x2b7b4ac34c
 #line 25
     default:
 #line 25
-      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2b7b4ac34cd0);
+      result = AdcP__Atm128AdcConfig__default__getChannel(arg_0x2ba31d76bcd0);
 #line 25
       break;
 #line 25
@@ -6727,13 +6727,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getRefVoltage(uint8_t c)
 }
 
 # 32 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b7b4ac34cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2ba31d76bcd0){
 #line 32
   unsigned char result;
 #line 32
 
 #line 32
-  switch (arg_0x2b7b4ac34cd0) {
+  switch (arg_0x2ba31d76bcd0) {
 #line 32
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 32
@@ -6743,7 +6743,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getRefVoltage(uint8_t arg_0x2b7b4ac
 #line 32
     default:
 #line 32
-      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2b7b4ac34cd0);
+      result = AdcP__Atm128AdcConfig__default__getRefVoltage(arg_0x2ba31d76bcd0);
 #line 32
       break;
 #line 32
@@ -6776,13 +6776,13 @@ static inline uint8_t AdcP__Atm128AdcConfig__default__getPrescaler(uint8_t c)
 }
 
 # 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/adc/Atm128AdcConfig.nc"
-inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b7b4ac34cd0){
+inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2ba31d76bcd0){
 #line 39
   unsigned char result;
 #line 39
 
 #line 39
-  switch (arg_0x2b7b4ac34cd0) {
+  switch (arg_0x2ba31d76bcd0) {
 #line 39
     case /*TouchScreenC.AdcReadClientC*/AdcReadClientC__0__ID:
 #line 39
@@ -6792,7 +6792,7 @@ inline static uint8_t AdcP__Atm128AdcConfig__getPrescaler(uint8_t arg_0x2b7b4ac3
 #line 39
     default:
 #line 39
-      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2b7b4ac34cd0);
+      result = AdcP__Atm128AdcConfig__default__getPrescaler(arg_0x2ba31d76bcd0);
 #line 39
       break;
 #line 39
@@ -7185,9 +7185,9 @@ static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceReques
 }
 
 # 61 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x2b7b4a75e7e8){
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x2ba31d2bd7e8){
 #line 61
-    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x2b7b4a75e7e8);
+    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x2ba31d2bd7e8);
 #line 61
 }
 #line 61
@@ -7361,9 +7361,9 @@ static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfig
 }
 
 # 65 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2b7b4a75c9b8){
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x2ba31d2bb9b8){
 #line 65
-    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2b7b4a75c9b8);
+    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x2ba31d2bb9b8);
 #line 65
 }
 #line 65
@@ -7756,9 +7756,9 @@ static inline void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequ
 }
 
 # 53 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceRequested.nc"
-inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2b7b4ae8a2f0){
+inline static void /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__requested(uint8_t arg_0x2ba31d9eb2f0){
 #line 53
-    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2b7b4ae8a2f0);
+    /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__ResourceRequested__default__requested(arg_0x2ba31d9eb2f0);
 #line 53
 }
 #line 53
@@ -7806,13 +7806,13 @@ static inline error_t /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource_
 }
 
 # 88 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2b7b4adb1060){
+inline static error_t Atm128SpiP__ResourceArbiter__request(uint8_t arg_0x2ba31d912060){
 #line 88
   unsigned char result;
 #line 88
 
 #line 88
-  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2b7b4adb1060);
+  result = /*Atm128SpiC.Arbiter.Arbiter*/SimpleArbiterP__0__Resource__request(arg_0x2ba31d912060);
 #line 88
 
 #line 88
@@ -8193,9 +8193,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b7b4a946778){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2ba31d4a5778){
 #line 83
-  switch (arg_0x2b7b4a946778) {
+  switch (arg_0x2ba31d4a5778) {
 #line 83
     case 0U:
 #line 83
@@ -8217,7 +8217,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b7b4a946778);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2ba31d4a5778);
 #line 83
       break;
 #line 83
@@ -8404,9 +8404,9 @@ static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__defa
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/interfaces/Resource.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2b7b4a75f658){
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x2ba31d2be658){
 #line 102
-  switch (arg_0x2b7b4a75f658) {
+  switch (arg_0x2ba31d2be658) {
 #line 102
     case /*MP3C.SPI0*/SoftSPIMasterC__0__RESOURCE_ID:
 #line 102
@@ -8416,7 +8416,7 @@ inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__gran
 #line 102
     default:
 #line 102
-      /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2b7b4a75f658);
+      /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x2ba31d2be658);
 #line 102
       break;
 #line 102
@@ -8431,9 +8431,9 @@ static inline void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfig
 }
 
 # 59 "/homes/mhartmann/baq/tinyos/tos/interfaces/ResourceConfigure.nc"
-inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2b7b4a75c9b8){
+inline static void /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x2ba31d2bb9b8){
 #line 59
-    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2b7b4a75c9b8);
+    /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x2ba31d2bb9b8);
 #line 59
 }
 #line 59
@@ -8975,19 +8975,7 @@ static inline void MP3TestC__Boot__booted(void )
   MP3TestC__Button1__makeInput();
   MP3TestC__Button2__makeInput();
   MP3TestC__GLCD__initLCD(0x00);
-
-
-  strncpy(MP3TestC__artist, "AC/DC               ", 20);
-  strncpy(MP3TestC__title, "Highway To Hell     ", 20);
-
-
-
-
-
-
-
-
-
+#line 85
   if (!MP3TestC__MP3__init()) {
       MP3TestC__GLCD__startWriteString("MP3 Init Error", 0, 1);
     }
@@ -9355,9 +9343,9 @@ static inline void AdcP__ReadNow__default__readDone(uint8_t c, error_t e, uint16
 }
 
 # 66 "/homes/mhartmann/baq/tinyos/tos/interfaces/ReadNow.nc"
-inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2b7b4ac0d6d8, error_t result, AdcP__ReadNow__val_t val){
+inline static void AdcP__ReadNow__readDone(uint8_t arg_0x2ba31d76e6d8, error_t result, AdcP__ReadNow__val_t val){
 #line 66
-    AdcP__ReadNow__default__readDone(arg_0x2b7b4ac0d6d8, result, val);
+    AdcP__ReadNow__default__readDone(arg_0x2ba31d76e6d8, result, val);
 #line 66
 }
 #line 66
@@ -9739,9 +9727,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7b4a4d4108){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2ba31d033108){
 #line 75
-  switch (arg_0x2b7b4a4d4108) {
+  switch (arg_0x2ba31d033108) {
 #line 75
     case /*SoftSPIMasterP.Arbiter.Arbiter*/ArbiterP__0__grantedTask:
 #line 75
@@ -9847,7 +9835,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7b4a4d4108){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b7b4a4d4108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2ba31d033108);
 #line 75
       break;
 #line 75

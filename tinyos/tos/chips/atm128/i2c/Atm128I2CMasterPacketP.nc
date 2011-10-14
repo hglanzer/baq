@@ -294,7 +294,8 @@ implementation {
         	call I2C.sendCommand();
         }                        	      	
       } else if (state == I2C_DATA) {
-		
+	//DDRG |= (0X01);
+	//PORTG ^= 0x01;
 		if (reading == TRUE) {
 			if (index < packetLen) {
 	    		packetPtr[index] = call I2C.read();
@@ -343,7 +344,7 @@ implementation {
 	    		call I2C.sendCommand();
 	    		state = I2C_IDLE;
 	    		call WriteDebugLeds.led2On();
-	    		signal I2CPacket.writeDone(SUCCESS, packetAddr, packetLen, packetPtr);
+			signal I2CPacket.writeDone(SUCCESS, packetAddr, packetLen, packetPtr);
 	    		return;
 	  		}
 		}
