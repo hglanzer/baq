@@ -26,7 +26,7 @@ implementation{
 
   event void Boot.booted(){
     call Timer0.startPeriodic( 200 );
-    call LCD2x16.init( 0x00 );
+    call LCD2x16.init( 0x02 );
     call LCD2x16.clearDisplay();
     call Button5.makeInput();
     call Button6.makeInput();
@@ -145,6 +145,10 @@ implementation{
       writeDone = TRUE;
       call LCD2x16.sendString( date_str, 11, 1, 0 );     
     }
+  }
+
+  event void LCD2x16.displayCleared(){
+    call LCD2x16.sendString( time_str, 8, 0, 0 ); 
   }
 
  char *itos(uint16_t i){
