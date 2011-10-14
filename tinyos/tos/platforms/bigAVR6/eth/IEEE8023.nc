@@ -11,14 +11,13 @@ interface IEEE8023
 		type	= TRUE	--> ARP
 			= FALSE	--> standard-ip-packet
 	*/
-	command uint8_t sendFrame(uint16_t *dataPtr, uint16_t *dstMAC, uint16_t len, uint8_t type);
+	command uint8_t sendFrame(uint16_t *dataPtr, uint8_t *dstMAC, uint16_t len, uint8_t type);
 
-	event void initDone(void);
+	event void initDone(bool linkStatus);
 	
 	event void sendDone(void);
 	
-	event void hwInterrupt(uint16_t *info);
-	//event void hwInterrupt(uint8_t src);
+	event void hwInterrupt(uint8_t hwCode);
 
 	event void gotDatagram(uint16_t len, uint8_t *IEEE8023frame);
 	//event void gotDatagram(uint16_t len, uint16_t *IEEE8023frame);

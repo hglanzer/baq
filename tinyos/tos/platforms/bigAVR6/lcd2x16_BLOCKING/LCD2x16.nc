@@ -38,4 +38,6 @@ interface LCD2x16
 		event for splitphase command sendString()
 	*/
 	event void stringWritten(void);
+
+	event void displayCleared(void);
 }

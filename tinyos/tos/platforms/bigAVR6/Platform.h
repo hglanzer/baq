@@ -10,7 +10,9 @@ enum
         READ		=       3,
         EJECTED		=       4,
 	UNINIT		=	5,
-	BUSY		=	6
+	BUSY		=	6,
+	LCDFINISHED	=	7,
+	CLEARING	=	8
 };
 
 #endif

@@ -158,7 +158,13 @@ For using the extensionboard with the bigAVR6, the following requirements have t
  \item SPI-AVR-8051 INT  must be connected to PORT D2  
 \end{itemize}
 
-Obviously, the state of this connected pins \textbf{MUST NOT} be touched by the programmer.
+Obviously, the state of this connected pins \textbf{MUST NOT} be touched by the programmer. 
+
+\textbf{IMPORTANT NOTE}
+
+\textbf{RS-232 Port B CAN NOT BE USED} together with this component because Port D, which is used as the external interrupt source from the ethernetboard, is also used as UART1(=RS-232 Port B) RX pin. Instead, RS-232 Port A \textbf{MUST} be used if the UDP-services are also needed.
+
+Also, jumper J21 \textbf{MUST BE DEACTIVATED} for IEEE8023C to function!
 
 To use the UDP - stack in an application, component UDPC with interface UDP has to be used. Interface UDP provides functions for initializing the stack and sending and receiving frames, as shown in listing \ref{UDP}.
 
@@ -190,6 +196,27 @@ To receive a packet from remote hosts, the packet must either has the proper des
   \label{fig:udpstack}
 \end{figure}
 
+\subsubsection{Network Sniffing}
+
+For testing purposes, the commandlinetool \textit{netcat} can be used. As example, a constant string should be sent to the ip 192.168.1.100, destinationport 4443, as shown in the following listing.
+
+\begin{lstlisting}
+	...
+	dstIP[0] = 192;
+	dstIP[1] = 168;
+	dstIP[2] = 1;
+	dstIP[3] = 100;
+	call UDP.sendData((uint16_t *)"hello world", (uint8_t *)dstIP, 80, 4443, sizeof("hello world"));
+	...
+\end{lstlisting}
+
+To receive the string on the corresponding host, this commandline can be used:
+
+\begin{lstlisting}
+	nc -u -l 4443
+\end{lstlisting}
+
+This starts netcat in listening mode, specifies that UDP instead of TCP should be used and that it should bind to port 4443. Port 4443 belongs to the so-called \textit{unprivileged ports}, where a 'normal', unpriviliged user can bind to. All ports greater thant 1023 belong to this group. In opposite, ports from 1 to 1023 are called \textit{privileged} or \textit{well-known} ports.
 
 \newpage
 
@@ -198,7 +225,7 @@ To receive a packet from remote hosts, the packet must either has the proper des
 Additionally to the GLCD, a 2x16 alphanumeric LCD module is available for writing ASCII - characters. The display backlight can be turned on with switch SW15/8, as shown in schematic \ref{fig:lcd2x16}, the brightness can be adjusted with potentiometer P1
 
 \begin{figure}[h]
- \centerline{\includegraphics[width=.8\columnwidth]{pics/lcd2x16.png}}
+ \centerline{\includegraphics[width=1.0\columnwidth]{pics/lcd2x16.png}}
   \caption{LCD 2x16}
   \label{fig:lcd2x16}
 \end{figure}
@@ -209,7 +236,7 @@ The logic level of the following pins \textbf{MUST NOT} be touched by the progra
  \item PORT C: PC2, PC3, PC4, PC5, PC6, PC7, 
 \end{itemize}
 
-To use the LCD2x16, component \textit{LCD2x16C} with interface \textit{LCD2x16} must be used. Before writing data to the display, it must get initialized first. See listing \ref{LCD2x16} for the available functions. 
+To use the LCD2x16, component \textit{LCD2x16C} with interface \textit{LCD2x16} must be used. Before writing data to the display, it must get initialized first. See listing \ref{LCD2x16} for the available functions. After initializing, data can be written to the LCD - memory, which will then get printed. It should be noticed that once-written data is preserved unless the corresponding position is overwritten by new text or the display is cleared. 
 
 When initializing, a parameter \textit{mode} must be set, which determines wheter the cursor should be printed. Use the following constants, as defined in tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.h:
 
@@ -221,6 +248,47 @@ When initializing, a parameter \textit{mode} must be set, which determines whete
 
 \lstinputlisting[caption={LCD2x16.nc},label=LCD2x16]{../tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc}
 
+When examing schematic \ref{fig:lcd2x16}, one can see that there is a design flaw existing: pin RW is bound to GND. Because this pin is low-active(low=write operation), \textbf{no read operation} is possible. Accordingly, it is not possible to read the corresponding register to determine whether a write-operation has already finished. To handle this problem and give the LCD controller enough time to process a write-operation(needed for initializing, clearing the display and writing characters to it), there are two options:
+
+\begin{itemize}
+ \item use busywaiting - blocking
+ \item use a timer - non-blocking
+\end{itemize}
+
+With the first solution - busy waiting - the time to wait can be minimized to the absolutely necessary time, but obviously the time spent in the spinloop is lost cpu time, which is bad.
+
+The second solution - using the generic timer interface TimerMilliC - doesn't waste cpu time(apart from the extratime spent in the timer's interrupt vector), but problematic about this solution is that the existing timer-framework doesn't provide good granularity. The minimal periodic time that can be achieved is about 20msec, which is hereby the waiting time for every character when sending a string to the display. While this is not problematic when initializing or clearing the display, a considerable delay is introduced when text is written to the display. 
+
+By default, the blocking solution is used. This is achieved by setting a softlink name \textbf{lcd2x16} in the directory  tinyos/tos/platforms/bigAVR6. FIXME - ziemlich unsauber. funkt leider nicht mittels file tinyos/tos/platforms/bigAVR6/.platform.h -  möglicherweise mittels precompiler - direktive??
+
+Because booth solutions are not optimal, it is recommended to \textbf{NOT} use the LCD2x16 - component to write long, fast-changing strings to the LCD. Because once written data are preservered unless the display is cleared, it is possible to update individual positions of the lcd by sending substrings, thus minimizing this problem.
+
+\subsection{UART}
+
+There are 2 UART ports available onboard, RS-232 port A and port B. To use them, component \textit{bigAVR6UARTAC} with interface \textit{bigAVR6UARTA} or component \textit{bigAVR6UARTBC} with interface \textit{bigAVR6UARTB} must be used. Switch SW15/5/6 respective SW15/7/8 must be used to active the ports, as shown in figure \ref{fig:uart}. Functions for sending bytes or streams and receiving a given number of stringcharacters are implemented, as defined in listing \ref{uarta}.
+
+\lstinputlisting[caption={bigAVR6UARTA.nc},label=uarta]{../tinyos/tos/platforms/bigAVR6/uart/bigAVR6UARTA.nc}
+
+The logic level of the following pins \textbf{MUST NOT} be touched by the programmer when using the UART components:
+
+\begin{itemize}
+ \item RS-232 \textbf{A}: Port E PE0, PE1
+ \item RS-232 \textbf{B}: Port E PD2, PD3
+\end{itemize}
+
+Additionally, the following restrictions have to be noticed:
+
+\begin{itemize}
+ \item RS-232 Port A: disable Jumper J21(external programmer)
+ \item RS-232 Port B: Port PD3 servers as TX, but also connected to RTC. Disable with switch SW15/1
+ \item BAUDRATE: use constant 115200/8/N/1
+\end{itemize}
+
+\begin{figure}[h]
+ \centerline{\includegraphics[width=1.0\columnwidth]{pics/UART.png}}
+  \caption{RS-232 Ports}
+  \label{fig:uart}
+\end{figure}
 
 %%
 %% = eof =====================================================================

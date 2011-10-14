@@ -269,6 +269,7 @@ implementation
 	  }
 	setAddress(xPos[STRING]+offset, yPos[STRING]);
 	writeGLCD(DATA, 0x00);
+	// leave 1 pixel space between characters:
 	offset++;
 	dataPtr++;
       }

@@ -14,11 +14,15 @@ interface UDP
 
 	command uint8_t initStack();
 
-	event void initDone();
+	event void initDone(bool linkStatus);
 
 	event void sendDone();
 
-	event void hwInterrupt(uint16_t *info);
+	event void sendFailed();
+
+	event void hwInterrupt(uint8_t hwCode);
 
 	event void gotDatagram(uint16_t len, uint8_t *dataPtr);
+
+	event void gotARP(uint16_t len, uint8_t *data);
 }

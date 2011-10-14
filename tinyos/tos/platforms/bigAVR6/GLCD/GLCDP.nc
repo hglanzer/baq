@@ -205,7 +205,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if(((x+a) >= 128) || ((y+b) >= 64))
+		else if(((x+a) > 128) || ((y+b) > 64))
 		{
 			return FAIL;
 		}
@@ -243,7 +243,7 @@ implementation
 		{
 			return FAIL;
 		}
-		else if((x >= 128) || (y >= 7))
+		else if((x >= 128) || (y > 7))
 		{
 			return FAIL;
 		}

@@ -7,6 +7,7 @@
 #define ARPFRAME	0
 #define IPFRAME		1
 
+/*
 #define MY_IP0	192
 #define MY_IP1	168
 #define MY_IP2	1
@@ -20,12 +21,14 @@
 #define MY_GATEWAY0	192
 #define MY_GATEWAY1	168
 #define MY_GATEWAY2	1
-#define MY_GATEWAY3	1
+#define MY_GATEWAY3	100
+*/
 
-#define CACHESIZE	5
+#define ARP_TIMEOUTS	3
 
-#define ARPFRAME	0
-#define DATAFRAME	1
+#define ARPREQUEST	0
+#define ARPREPLY	1
+#define DATAFRAME	2
 
 /*
 	structure of ip-packet
@@ -53,25 +56,5 @@ typedef struct
 	uint8_t dstIP[4];
 	uint16_t *data;			// pointer to udp-packet
 }ipStruct;
-
-/*
-	structure of arp - REQUEST
-*/
-
-typedef struct
-{
-	uint8_t hwTypeH;
-	uint8_t hwTypeL;
-	uint8_t protH;
-	uint8_t protL;
-	uint8_t hwSize;
-	uint8_t protSize;
-	uint8_t arpTypeH;
-	uint8_t arpTypeL;
-	uint8_t srcMAC[6];
-	uint8_t srcIP[4];
-	uint8_t dstMAC[6];
-	uint8_t dstIP[4];
-}arpStruct;
 
 #endif

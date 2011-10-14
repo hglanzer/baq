@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  28 SEP 2011 13:18
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2011.9.2)  30 SEP 2011 14:49
 entering extended mode
 **thesis.tex
 (./thesis.tex
@@ -266,9 +266,10 @@ Chapter 1.
 
 
 ]
-
-LaTeX Warning: Reference `chapter:concepts' on page 2 undefined on input line 2
-7.
+Underfull \hbox (badness 4303) in paragraph at lines 34--35
+[]\OT1/cmr/m/n/12 Chapter 5[] in-tro-duces an-other em-bed-ded op-er-a-tion sys
+-tem, named
+ []
 
 ) [2]
 \openout2 = `tinyos.aux'.
@@ -376,7 +377,7 @@ Overfull \hbox (62.92625pt too wide) in paragraph at lines 62--64
  []
 
 
-Overfull \hbox (52.72603pt too wide) in paragraph at lines 66--68
+Overfull \hbox (52.72603pt too wide) in paragraph at lines 73--75
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -389,7 +390,7 @@ File: pics/mmc.png Graphic file (type png)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(../tinyos/tos/platforms/bigAVR6/mmc/MMC.nc [25 <./pics/GLCDC.png>])
+[25 <./pics/GLCDC.png>] (../tinyos/tos/platforms/bigAVR6/mmc/MMC.nc)
 <pics/Ethernetboard.png, id=141, 951.555pt x 740.7675pt>
 File: pics/Ethernetboard.png Graphic file (type png)
 
@@ -404,39 +405,41 @@ Overfull \hbox (215.92964pt too wide) in paragraph at lines 13--15
  []
 
 )
-Overfull \hbox (11.92513pt too wide) in paragraph at lines 177--178
+Overfull \hbox (11.92513pt too wide) in paragraph at lines 183--184
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [28]
-Underfull \hbox (badness 1168) in paragraph at lines 185--186
+Underfull \hbox (badness 1168) in paragraph at lines 191--192
 []\OT1/cmr/m/n/12 To re-ceive a packet from re-mote hosts, the packet must ei-t
 her has
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 185--186
+Underfull \hbox (badness 1038) in paragraph at lines 191--192
 \OT1/cmr/m/n/12 the proper des-ti-na-tion MAC set, as de-fined in tinyos/-tos/-
 plat-form-s/bi-
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 185--186
+Underfull \hbox (badness 2343) in paragraph at lines 191--192
 \OT1/cmr/m/n/12 gAVR6/eth/IEEE8023.h, or must be be a mul-ti-cast frame(destina
 tion
  []
 
-<pics/udpstack.png, id=152, 580.1675pt x 492.84125pt>
+[29]
+Overfull \hbox (129.22772pt too wide) in paragraph at lines 201--202
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+<pics/udpstack.png, id=155, 580.1675pt x 492.84125pt>
 File: pics/udpstack.png Graphic file (type png)
  <use pics/udpstack.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29] <pics/lcd2x16.png, id=156, 1006.76125pt x 465.74pt>
+[30 <./pics/udpstack.png>]
+<pics/lcd2x16.png, id=159, 1144.275pt x 657.45625pt>
 File: pics/lcd2x16.png Graphic file (type png)
-
-<use pics/lcd2x16.png> [30 <./pics/udpstack.png> <./pics/lcd2x16.png>]
-(../tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc
+ <use pics/lcd2x16.png>
+[31 <./pics/lcd2x16.png>] (../tinyos/tos/platforms/bigAVR6/lcd2x16/LCD2x16.nc
 Overfull \hbox (1.72488pt too wide) in paragraph at lines 26--27
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -446,28 +449,44 @@ Overfull \hbox (52.72603pt too wide) in paragraph at lines 29--31
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-)) [31]
+) [32] (../tinyos/tos/platforms/bigAVR6/uart/bigAVR6UARTA.nc [33]
+Overfull \hbox (47.62592pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (11.92513pt too wide) in paragraph at lines 25--27
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) <pics/UART.png, id=170, 1262.7175pt x 607.26875pt>
+File: pics/UART.png Graphic file (type png)
+ <use pics/UART.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [34] [35 <./pics/UART.png>]
 \openout2 = `osII.aux'.
 
  (./osII.tex
 Chapter 5.
-[32
+[36
 
 
 
 
-] <pics/uCtasks.png, id=167, 669.50125pt x 297.11pt>
+] <pics/uCtasks.png, id=180, 669.50125pt x 297.11pt>
 File: pics/uCtasks.png Graphic file (type png)
  <use pics/uCtasks.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33] [34 <./pics/uCtasks.png>] [35]) [36]
+[37] [38 <./pics/uCtasks.png>] [39]) [40]
 \openout2 = `buildenv.aux'.
 
  (./buildenv.tex
 Chapter 6.
-) [37
+) [41
 
 
 
@@ -477,7 +496,7 @@ Chapter 6.
 
  (./resourcesused.tex
 Chapter 7.
-) [38
+) [42
 
 
 
@@ -487,7 +506,7 @@ Chapter 7.
 
  (./todos.tex
 Chapter 8.
-) [39
+) [43
 
 
 
@@ -497,7 +516,7 @@ Chapter 8.
 
  (./relatedwork.tex
 Chapter 9.
-) [40
+) [44
 
 
 
@@ -507,7 +526,7 @@ Chapter 9.
 
  (./implementation.tex
 Chapter 10.
-) [41
+) [45
 
 
 
@@ -517,7 +536,7 @@ Chapter 10.
 
  (./results.tex
 Chapter 11.
-) [42
+) [46
 
 
 
@@ -527,12 +546,12 @@ Chapter 11.
 
  (./conclusion.tex
 Chapter 12.
-) [43
+) [47
 
 
 
 
-] (./thesis.bbl) [44
+] (./thesis.bbl) [48
 
 
 
@@ -542,10 +561,10 @@ Chapter 12.
 
  (./setupguide.tex
 Appendix A.
-[45
+[49
 
 
-]) [46]
+]) [50]
 \openout2 = `userguide.aux'.
 
  (./userguide.tex
@@ -558,34 +577,31 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 31.
 
-[47
+[51
 
 
 
 
-] [48]) [49] (./thesis.aux (./abstract.aux) (./introduction.aux)
+] [52]) [53] (./thesis.aux (./abstract.aux) (./introduction.aux)
 (./tinyos.aux) (./nesc.aux) (./bigAVR6.aux) (./osII.aux) (./buildenv.aux)
 (./resourcesused.aux) (./todos.aux) (./relatedwork.aux) (./implementation.aux)
 (./results.aux) (./conclusion.aux) (./setupguide.aux) (./userguide.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 4502 strings out of 94500
- 59043 string characters out of 1176767
- 136565 words of memory out of 1000000
- 7479 multiletter control sequences out of 10000+50000
+ 4544 strings out of 94500
+ 59750 string characters out of 1176767
+ 137587 words of memory out of 1000000
+ 7516 multiletter control sequences out of 10000+50000
  11822 words of font info for 41 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
- 39i,11n,61p,1287b,1692s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 38i,11n,61p,1287b,1692s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 229 PDF objects out of 300000
+ 243 PDF objects out of 300000
  0 named destinations out of 131072
- 51 words of extra memory for PDF output out of 65536
+ 56 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/t
 ype1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></u
 sr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/
@@ -597,4 +613,4 @@ exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 mf/fonts/type1/bluesky/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
 /cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texm
 f/fonts/type1/bluesky/cm/cmcsc10.pfb>
-Output written on thesis.pdf (54 pages, 3011398 bytes).
+Output written on thesis.pdf (58 pages, 3170535 bytes).

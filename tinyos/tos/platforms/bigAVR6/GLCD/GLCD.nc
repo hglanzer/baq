@@ -61,6 +61,13 @@ interface GLCD
 
         command error_t startWriteCircle(uint8_t xcenter, uint8_t ycenter, uint8_t radius);
 
+	/*
+		print string pointed to by *data to coordinates x/y
+		must be '\0' - terminated!
+		
+		x: range 0-127(pixel)
+		y: range 0-7(lines)
+	*/
         command error_t startWriteString(char *data, uint8_t x, uint8_t y);
 
         command error_t startWriteLine(uint8_t x, uint8_t y, uint8_t xEnd, uint8_t yEnd);
