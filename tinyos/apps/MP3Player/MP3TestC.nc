@@ -64,11 +64,15 @@ implementation{
   event void Boot.booted(){
     //uint8_t i;
 
+    DDRC = 0xFF;
+    PORTC = 1;
     call MMC.init();
+    PORTC = 2;
     call Button0.makeInput();
     call Button1.makeInput();
     call Button2.makeInput();
     call GLCD.initLCD( 0x00 );
+    PORTC = 3;
     //call Timer0.startPeriodic( 200 );
     //call Timer1.startPeriodic( 200 );
     //strncpy(artist, "AC/DC               ", 20);
@@ -85,6 +89,7 @@ implementation{
     if ( !call MP3.init() ){
       call GLCD.startWriteString( "MP3 Init Error", 0, 1 );
     }
+    PORTC = 0xAA;
     call MP3.setVolume( VOLUME );
   }
 

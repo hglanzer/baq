@@ -40,12 +40,12 @@ implementation{
   event void Timer0.fired(){
     
     if ( call Button5.get() ){
-      time.seconds = 0;
-      time.minutes = 26;
-      time.hours = 15;
+      time.seconds = 20;
+      time.minutes = 22;
+      time.hours = 20;
       time.day = 3;
-      time.date = 13;
-      time.month = 10;
+      time.date = 23;
+      time.month = 11;
       time.year = 11;
       //call RTC.start( NULL );
       call RTC.start( &time );

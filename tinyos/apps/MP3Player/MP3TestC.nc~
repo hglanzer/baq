@@ -18,7 +18,10 @@ implementation{
   enum { RVS_X = 0, RVS_Y = 31, RVS_A = 32, RVS_B = 24 };
   enum { PLAY_X = 48, PLAY_Y = 31, PLAY_A = 32, PLAY_B = 24 };
   enum { FWD_X = 95, FWD_Y = 31, FWD_A = 32, FWD_B = 24 };
-  enum { PRESS_PAUSE_TIME = 650 };
+  enum { PRESS_PAUSE_TIME = 950 };
+
+  enum { START_1 = 0x6, START_2 = 0x23F67, START_3 = 0x30B71, END_ADDRESS = 0x3F97A };
+
   /*uint8_t x1 = 8;
     uint8_t y1 = 32;
     uint8_t a1 = 48;
@@ -29,20 +32,21 @@ implementation{
 
   uint32_t blockAddr = 0;
   uint32_t nextAddress;
-  uint32_t ENDADDR = 0x7bc36;//0x1be57c0;
   char playTime[] = { '0', '0', ':', '0', '0', '\0'};
   uint8_t *dataBuffer;
   bool play = FALSE;
   bool dataReady = FALSE;
   bool refresh = FALSE;
   bool keypressed = FALSE;
-  /*             1345678901234567890*/
-  char *title = "T___________________";
-  char *artist = "A___________________";//1234567890123456789A";
+  /*             12345678901234567890*/
+  char title[21] = {'B','a','d',' ','R','o','m','a','n','c','e',' ',' ',' ',' ',' ',' ',' ',' ',' ','\0' };
+  char artist[21] = {'L','a','d','y',' ','G','a','g','a',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','\0' };
+  char trackStr[21] = {'T','r','a','c','k',':','0','1','/','0','3',' ','-',' ','0','0',':','0','0',' ','\0' };
+  /*              12345678901234567890*/
   uint8_t track = 1;
   enum{ CALIBRATION, LINE0, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, LINE7,LINE8, LINE9, LINE10, LINE11,  NONE };
 
-  enum { VOLUME = 240};
+  enum { VOLUME = 250};
   
   uint8_t paintState = CALIBRATION;
 
@@ -58,14 +62,26 @@ implementation{
   //static struct song song1, song2, song3, song4, song5, song6;
 
   event void Boot.booted(){
-    
+    //uint8_t i;
+
     call MMC.init();
     call Button0.makeInput();
     call Button1.makeInput();
     call Button2.makeInput();
     call GLCD.initLCD( 0x00 );
-    call Timer0.startPeriodic( 400 );
+    //call Timer0.startPeriodic( 200 );
     //call Timer1.startPeriodic( 200 );
+    //strncpy(artist, "AC/DC               ", 20);
+    //strncpy(title, "Highway To Hell     ", 20);
+    
+    //for ( i = 0; i< 21; i++ ){
+      //artist[i] = 61;
+      //title[i] = 61;
+    //}
+    
+    //title[21] = '/0';
+    //artist[21] = '/0';
+
     if ( !call MP3.init() ){
       call GLCD.startWriteString( "MP3 Init Error", 0, 1 );
     }
@@ -259,34 +275,47 @@ implementation{
     switch (track){
     case 1:
       track = 2;
-      blockAddr = 0x1888d;
+      blockAddr = START_2;
       /*               12345678901234567890 */
-      strncpy(artist, "Warren Zevon        ", 20);
-      strncpy(title, "Wanted Dead Or Alive", 20);
+      strncpy(artist, "AC/DC               ", 20);
+      strncpy(title, "Highway To Hell     ", 20);
       /*              12345678901234567890 */
-      nextAddress = 0x48731;
+      nextAddress = START_3;
+      playTime[0] = '0';
+      playTime[1] = '3';
+      playTime[3] = '1';
+      playTime[4] = '7';
       break;
     case 2:
       track = 3;
-      blockAddr = 0x48731;
+      blockAddr = START_3;
       /*               12345678901234567890 */
-      strncpy(artist, "Rob Zombie          ", 20);
-      strncpy(title, "Go To California    ", 20);
+      strncpy(artist, "Van Halen           ", 20);
+      strncpy(title, "Jump                ", 20);
       /*              12345678901234567890 */
-      nextAddress = 0x7bc36;
+      nextAddress = END_ADDRESS;
+      playTime[0] = '0';
+      playTime[1] = '4';
+      playTime[3] = '0';
+      playTime[4] = '1';
       break;
     case 3:
       track = 1;
-      blockAddr = 0x0;
+      blockAddr = START_1;
       /*               12345678901234567890 */
-      strncpy(artist, "Kenny Rogers        ", 20);
-      strncpy(title, "Just Dropped In     ", 20);
+      strncpy(artist, "Lady Gaga           ", 20);
+      strncpy(title, "Bad Romance         ", 20);
       /*              12345678901234567890 */
-      nextAddress = 0x1888d;
+      nextAddress = START_2;
+      playTime[0] = '0';
+      playTime[1] = '4';
+      playTime[3] = '5';
+      playTime[4] = '4';
       break;
     }
 
-    call MP3.writeRegister( 0x04, 0x00 );
+    //call MP3.writeRegister( 0x04, 0x00 );
+    //call MP3.writeRegister( 0x04, 0x00 );
     paintState = LINE0;
     paintLCD();
   }
@@ -295,34 +324,47 @@ implementation{
     switch (track){
     case 1:
       track = 3;
-      blockAddr = 0x48731;
+      blockAddr = START_3;
       /*               12345678901234567890 */
-      strncpy(artist, "Rob Zombie          ", 20);
-      strncpy(title, "Go To California    ", 20);
+      strncpy(artist, "Van Halen           ", 20);
+      strncpy(title, "Jump                ", 20);
       /*              12345678901234567890 */
-      nextAddress = 0x7bc36;
+      nextAddress = END_ADDRESS;
+      playTime[0] = '0';
+      playTime[1] = '4';
+      playTime[3] = '0';
+      playTime[4] = '1';
       break;
     case 2:
       track = 1;
-      blockAddr = 0x0;
+      blockAddr = START_1;
       /*               12345678901234567890 */
-      strncpy(artist, "Kenny Rogers        ", 20);
-      strncpy(title, "Just Dropped In     ", 20);
+      strncpy(artist, "Lady Gaga           ", 20);
+      strncpy(title, "Bad Romance         ", 20);
       /*              12345678901234567890 */
-      nextAddress = 0x1888d;
+      nextAddress = START_2;
+      playTime[0] = '0';
+      playTime[1] = '4';
+      playTime[3] = '5';
+      playTime[4] = '4';
       break;
     case 3:
       track = 2;
-      blockAddr = 0x1888d;
+      blockAddr = START_2;
       /*               12345678901234567890 */
-      strncpy(artist, "Warren Zevon        ", 20);
-      strncpy(title, "Wanted Dead Or Alive", 20);
+      strncpy(artist, "AC/DC               ", 20);
+      strncpy(title, "Highway To Hell     ", 20);
       /*              12345678901234567890 */
-      nextAddress = 0x48731;
+      nextAddress = START_3;
+      playTime[0] = '0';
+      playTime[1] = '3';
+      playTime[3] = '1';
+      playTime[4] = '7';
       break;
     }
 
-    call MP3.writeRegister( 0x04, 0x00 );
+    //call MP3.writeRegister( 0x04, 0x00 );
+    //call MP3.writeRegister( 0x04, 0x00 );
     paintState = LINE0;
     paintLCD();
   }
@@ -332,7 +374,13 @@ implementation{
     refresh = TRUE;
     switch (paintState){
     case LINE0:
-      call GLCD.startWriteString( "Track:0_/03 - 00:00", 0 , 0 );
+      //call GLCD.startWriteString( "Track:0_/03 - 00:00", 0 , 0 );
+      trackStr[7] = ('0' + track);
+      trackStr[14] = playTime[0];
+      trackStr[15] = playTime[1];
+      trackStr[17] = playTime[3];
+      trackStr[18] = playTime[4];
+      call GLCD.startWriteString( trackStr, 0, 0 );
       //call GLCD.startWriteString( "012345678901234567890", 0 , 0 );
       paintState = LINE1;
       break;
@@ -362,7 +410,10 @@ implementation{
       break;
     case LINE6:
       call GLCD.startWriteRectangle( FWD_X, FWD_Y, FWD_A, FWD_B);
-      paintState = LINE7;
+      //paintState = LINE7;
+      paintState = NONE;
+      refresh = FALSE;
+      call GLCD.isPressed( 1 );
       break;
     case LINE7:
       switch (track){

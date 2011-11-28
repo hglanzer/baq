@@ -4,6 +4,8 @@
 PLATFORM = bigAVR6
 SENSORBOARD ?= micasb
 PROGRAMMER ?= avrdude
+PROGRAMMER_TARGET ?= m128
+
 ifeq ($(PROGRAMMER),avrdude)
 #  PROGRAMMER_PART ?= -pm128  -U efuse:w:0xff:m
 endif

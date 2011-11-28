@@ -185,7 +185,7 @@ typedef struct { unsigned char data[2]; } __attribute__((packed)) nxle_uint16_t;
 typedef struct { unsigned char data[4]; } __attribute__((packed)) nxle_uint32_t;typedef uint32_t __nesc_nxbase_nxle_uint32_t  ;
 typedef struct { unsigned char data[8]; } __attribute__((packed)) nxle_uint64_t;typedef uint64_t __nesc_nxbase_nxle_uint64_t  ;
 # 116 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/string.h" 3
-extern void *memset(void *arg_0x2b7e0170b7f0, int arg_0x2b7e0170ba58, size_t arg_0x2b7e0170bd00);
+extern void *memset(void *arg_0x2b9bd56c37f0, int arg_0x2b9bd56c3a58, size_t arg_0x2b9bd56c3d00);
 # 71 "/opt/tinyos-2.x/sys/lib/gcc/avr/4.1.2/../../../../avr/include/stdlib.h" 3
 #line 68
 typedef struct __nesc_unnamed4242 {
@@ -204,7 +204,7 @@ typedef struct __nesc_unnamed4243 {
 } ldiv_t;
 
 
-typedef int (*__compar_fn_t)(const void *arg_0x2b7e0172c968, const void *arg_0x2b7e0172cc40);
+typedef int (*__compar_fn_t)(const void *arg_0x2b9bd56e4968, const void *arg_0x2b9bd56e4c40);
 # 23 "/homes/mhartmann/baq/tinyos/tos/system/tos.h"
 typedef uint8_t bool;
 enum __nesc_unnamed4244 {
@@ -786,18 +786,19 @@ typedef struct __nesc_unnamed4292 {
 } 
 #line 54
 T4mhz;
-#line 107
+#line 121
 typedef T32khz TOne;
 typedef TMicro TThree;
 typedef uint16_t counter_one_overflow_t;
 typedef uint16_t counter_three_overflow_t;
 
 enum __nesc_unnamed4293 {
+
   MICA_PRESCALER_ONE = ATM128_CLK16_DIVIDE_256, 
-  MICA_DIVIDE_ONE_FOR_32KHZ_LOG2 = 0, 
+  MICA_DIVIDE_ONE_FOR_32KHZ_LOG2 = 1, 
   MICA_PRESCALER_THREE = ATM128_CLK16_DIVIDE_8, 
-  MICA_DIVIDE_THREE_FOR_MICRO_LOG2 = 0, 
-  EXT_STANDBY_T0_THRESHOLD = 12
+  MICA_DIVIDE_THREE_FOR_MICRO_LOG2 = 1, 
+  EXT_STANDBY_T0_THRESHOLD = 8
 };
 
 
@@ -805,7 +806,7 @@ enum __nesc_unnamed4293 {
 
 
 enum __nesc_unnamed4294 {
-  PLATFORM_MHZ = 8
+  PLATFORM_MHZ = 16
 };
 # 62 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/hardware.h"
 enum __nesc_unnamed4295 {
@@ -823,9 +824,20 @@ enum __nesc_unnamed4296 {
 enum __nesc_unnamed4297 {
   PLATFORM_BAUDRATE = 57600L
 };
+# 6 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/Platform.h"
+enum __nesc_unnamed4298 {
+
+  INITIALIZE = 1, 
+  READY = 2, 
+  READ = 3, 
+  EJECTED = 4, 
+  UNINIT = 5, 
+  BUSY = 6, 
+  LCDFINISHED = 7, 
+  CLEARING = 8
+};
 typedef TMilli MyTimerC__Timer0__precision_tag;
-typedef TMicro MyTimerC__Timer1__precision_tag;
-enum HilTimerMilliC____nesc_unnamed4298 {
+enum HilTimerMilliC____nesc_unnamed4299 {
   HilTimerMilliC__TIMER_COUNT = 1U
 };
 typedef TMilli /*AlarmCounterMilliP.Atm128AlarmSyncC*/Atm128AlarmSyncC__0__precision;
@@ -849,52 +861,22 @@ typedef TMilli /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__pre
 typedef /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__precision_tag /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__LocalTime__precision_tag;
 typedef /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__precision_tag /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__precision_tag;
 typedef uint32_t /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__size_type;
-enum HilTimerMicroC____nesc_unnamed4299 {
-  HilTimerMicroC__TIMER_COUNT = 1U
-};
-typedef TMicro /*AlarmCounterMicroP.Atm128AlarmSyncC*/Atm128AlarmSyncC__1__precision;
-typedef /*AlarmCounterMicroP.Atm128AlarmSyncC*/Atm128AlarmSyncC__1__precision /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__precision;
-typedef /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__precision /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__precision_tag;
-typedef uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__size_type;
-typedef /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__precision /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__precision_tag;
-typedef uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__size_type;
-typedef uint8_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__size_type;
-typedef uint8_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__timer_size;
-typedef TMicro /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__precision_tag;
-typedef /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__precision_tag /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__precision_tag;
-typedef uint32_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type;
-typedef /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__precision_tag /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__precision_tag;
-typedef TMicro /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__precision_tag;
-typedef /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__precision_tag /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__precision_tag;
-typedef /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__precision_tag /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__precision_tag;
-typedef TMicro /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__precision_tag;
-typedef /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__precision_tag /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__LocalTime__precision_tag;
-typedef /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__precision_tag /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__precision_tag;
-typedef uint32_t /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__size_type;
 # 62 "/homes/mhartmann/baq/tinyos/tos/interfaces/Init.nc"
 static error_t PlatformP__Init__init(void );
 #line 62
 static error_t MotePlatformP__SubInit__default__init(void );
 #line 62
 static error_t MotePlatformP__PlatformInit__init(void );
-# 42 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-static void /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__toggle(void );
-
-
-
-static void /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__makeOutput(void );
-#line 46
-static void /*HplAtm128GeneralIOC.PortC.Bit5*/HplAtm128GeneralIOPinP__21__IO__makeOutput(void );
-# 62 "/homes/mhartmann/baq/tinyos/tos/interfaces/Init.nc"
+#line 62
 static error_t MeasureClockC__Init__init(void );
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7e01834108);
+uint8_t arg_0x2b9bd57f8108);
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7e01834108);
+uint8_t arg_0x2b9bd57f8108);
 # 57 "/homes/mhartmann/baq/tinyos/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -907,8 +889,6 @@ static void McuSleepC__McuSleep__sleep(void );
 static void MyTimerC__Timer0__fired(void );
 # 60 "/homes/mhartmann/baq/tinyos/tos/interfaces/Boot.nc"
 static void MyTimerC__Boot__booted(void );
-# 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void MyTimerC__Timer1__fired(void );
 # 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
 static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__size_type /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Alarm__getNow(void );
 #line 103
@@ -973,51 +953,15 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7e01babda0);
-# 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
-static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
-# 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__size_type /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getNow(void );
-#line 103
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__startAt(/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__size_type t0, /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__size_type dt);
-#line 116
-static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__size_type /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getAlarm(void );
-#line 73
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__stop(void );
-# 62 "/homes/mhartmann/baq/tinyos/tos/interfaces/Init.nc"
-static error_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Init__init(void );
-# 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
-static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__size_type /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__get(void );
-# 58 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__fired(void );
-# 70 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__overflow(void );
-# 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__runTask(void );
-# 78 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__fired(void );
-# 136 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static uint32_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__getNow(void );
-#line 129
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__startOneShotAt(uint32_t t0, uint32_t dt);
-#line 78
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__stop(void );
-# 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__runTask(void );
-# 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__fired(void );
-#line 83
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__default__fired(
-# 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7e01babda0);
+uint8_t arg_0x2b9bd5b4eda0);
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__startPeriodic(
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7e01babda0, 
+uint8_t arg_0x2b9bd5b4eda0, 
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
 uint32_t dt);
 # 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
-static void /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__overflow(void );
+static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 62 "/homes/mhartmann/baq/tinyos/tos/interfaces/Init.nc"
 static error_t PlatformP__MoteInit__init(void );
 #line 62
@@ -1037,14 +981,6 @@ static error_t MotePlatformP__SubInit__init(void );
 static inline error_t MotePlatformP__PlatformInit__init(void );
 #line 35
 static inline error_t MotePlatformP__SubInit__default__init(void );
-# 57 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static void /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__toggle(void );
-
-
-
-static __inline void /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__makeOutput(void );
-#line 61
-static __inline void /*HplAtm128GeneralIOC.PortC.Bit5*/HplAtm128GeneralIOPinP__21__IO__makeOutput(void );
 # 33 "/homes/mhartmann/baq/tinyos/tos/platforms/bigAVR6/MeasureClockC.nc"
 enum MeasureClockC____nesc_unnamed4300 {
 
@@ -1074,13 +1010,13 @@ int main(void )   ;
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x2b7e01834108);
+uint8_t arg_0x2b9bd57f8108);
 # 76 "/homes/mhartmann/baq/tinyos/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
 enum SchedulerBasicP____nesc_unnamed4301 {
 
-  SchedulerBasicP__NUM_TASKS = 4U, 
+  SchedulerBasicP__NUM_TASKS = 2U, 
   SchedulerBasicP__NO_TASK = 255
 };
 
@@ -1138,17 +1074,9 @@ const_uint8_t McuSleepC__atm128PowerBits[ATM128_POWER_DOWN + 1] = {
 static inline mcu_power_t McuSleepC__getPowerState(void );
 #line 108
 static inline void McuSleepC__McuSleep__sleep(void );
-# 46 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-static void MyTimerC__Out1__makeOutput(void );
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void MyTimerC__Timer1__startPeriodic(uint32_t dt);
-# 42 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-static void MyTimerC__Out0__toggle(void );
-
-
-
-static void MyTimerC__Out0__makeOutput(void );
-# 14 "MyTimerC.nc"
+static void MyTimerC__Timer0__startPeriodic(uint32_t dt);
+# 15 "MyTimerC.nc"
 static inline void MyTimerC__Boot__booted(void );
 
 
@@ -1158,13 +1086,8 @@ static inline void MyTimerC__Boot__booted(void );
 
 
 
+
 static inline void MyTimerC__Timer0__fired(void );
-
-
-
-
-
-static inline void MyTimerC__Timer1__fired(void );
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
 static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void );
 #line 46
@@ -1358,7 +1281,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7e01babda0);
+uint8_t arg_0x2b9bd5b4eda0);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4304 {
 #line 71
@@ -1402,217 +1325,25 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(u
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__runTask(void );
 #line 141
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__fired(void );
+
+
+
+
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot);
+
+
+
+
+
+
+
+
+
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt);
 #line 206
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(uint8_t num);
 # 58 "/homes/mhartmann/baq/tinyos/tos/lib/timer/CounterToLocalTimeC.nc"
 static inline void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
-# 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
-static Atm128_TIFR_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__getInterruptFlag(void );
-#line 46
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__setControl(Atm128TimerControl_t control);
-# 78 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__fired(void );
-# 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__overflow(void );
-# 51 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
-static int /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerSync__compareBusy(void );
-#line 39
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerSync__setTimer0Synchronous(void );
-# 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
-static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__size_type /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__get(void );
-
-
-
-
-
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__set(/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__size_type t);
-
-
-
-
-
-
-
-
-
-
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__start(void );
-# 61 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
-static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__timer_size /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__get(void );
-# 45 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-uint8_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__set;
-uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__t0;
-#line 46
-uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__dt;
-uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base;
-
-
-
-enum /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1____nesc_unnamed4307 {
-  Atm128AlarmSyncP__1__MINDT = 2, 
-  Atm128AlarmSyncP__1__MAXT = 230
-};
-
-
-
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setInterrupt(void );
-
-
-static inline error_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Init__init(void );
-#line 81
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setOcr0(uint8_t n);
-#line 97
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setInterrupt(void );
-#line 156
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__fired(void );
-#line 168
-static uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__get(void );
-#line 211
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__stop(void );
-
-
-
-
-
-
-
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__startAt(uint32_t nt0, uint32_t ndt);
-
-
-
-
-
-
-
-
-
-static inline uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getNow(void );
-
-
-
-static inline uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getAlarm(void );
-
-
-
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__overflow(void );
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static error_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__postTask(void );
-# 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-static /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__getNow(void );
-#line 103
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__startAt(/*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type t0, /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type dt);
-#line 116
-static /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__getAlarm(void );
-#line 73
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__stop(void );
-# 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__fired(void );
-# 74 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-enum /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1____nesc_unnamed4308 {
-#line 74
-  AlarmToTimerC__1__fired = 2U
-};
-#line 74
-typedef int /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1____nesc_sillytask_fired[/*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired];
-#line 55
-uint32_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__m_dt;
-bool /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__m_oneshot;
-
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__start(uint32_t t0, uint32_t dt, bool oneshot);
-#line 71
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__stop(void );
-
-
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__runTask(void );
-
-
-
-
-
-
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__fired(void );
-#line 93
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__startOneShotAt(uint32_t t0, uint32_t dt);
-
-
-static inline uint32_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__getNow(void );
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-static error_t /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__postTask(void );
-# 136 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-static uint32_t /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__getNow(void );
-#line 129
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__startOneShotAt(uint32_t t0, uint32_t dt);
-#line 78
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__stop(void );
-
-
-
-
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__fired(
-# 48 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b7e01babda0);
-#line 71
-enum /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1____nesc_unnamed4309 {
-#line 71
-  VirtualizeTimerC__1__updateFromTimer = 3U
-};
-#line 71
-typedef int /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1____nesc_sillytask_updateFromTimer[/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer];
-#line 53
-enum /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1____nesc_unnamed4310 {
-
-  VirtualizeTimerC__1__NUM_TIMERS = 1, 
-  VirtualizeTimerC__1__END_OF_LIST = 255
-};
-
-
-
-
-
-
-
-
-#line 59
-typedef struct /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1____nesc_unnamed4311 {
-
-  uint32_t t0;
-  uint32_t dt;
-  bool isoneshot : 1;
-  bool isrunning : 1;
-  bool _reserved : 6;
-} /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer_t;
-
-/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer_t /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__m_timers[/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__NUM_TIMERS];
-
-
-
-
-
-
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__fireTimers(uint32_t now);
-#line 102
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__runTask(void );
-#line 141
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__fired(void );
-
-
-
-
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot);
-
-
-
-
-
-
-
-
-
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__startPeriodic(uint8_t num, uint32_t dt);
-#line 206
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__default__fired(uint8_t num);
-# 58 "/homes/mhartmann/baq/tinyos/tos/lib/timer/CounterToLocalTimeC.nc"
-static inline void /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__overflow(void );
 # 92 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/atm128hardware.h"
 static __inline  void __nesc_disable_interrupt()
 #line 92
@@ -1862,351 +1593,6 @@ static inline Atm128_TIFR_t HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag(vo
 }
 
 # 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
-inline static Atm128_TIFR_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__getInterruptFlag(void ){
-#line 53
-  union __nesc_unnamed4273 result;
-#line 53
-
-#line 53
-  result = HplAtm128Timer0SyncP__TimerCtrl__getInterruptFlag();
-#line 53
-
-#line 53
-  return result;
-#line 53
-}
-#line 53
-# 211 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__stop(void )
-#line 211
-{
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 212
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__set = FALSE;
-#line 212
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 73 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-inline static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__stop(void ){
-#line 73
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__stop();
-#line 73
-}
-#line 73
-# 71 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__stop(void )
-{
-#line 72
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__stop();
-}
-
-# 78 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__stop(void ){
-#line 78
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__stop();
-#line 78
-}
-#line 78
-# 42 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void MyTimerC__Out0__toggle(void ){
-#line 42
-  /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__toggle();
-#line 42
-}
-#line 42
-# 29 "MyTimerC.nc"
-static inline void MyTimerC__Timer1__fired(void )
-#line 29
-{
-
-  MyTimerC__Out0__toggle();
-}
-
-# 206 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__default__fired(uint8_t num)
-{
-}
-
-# 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__fired(uint8_t arg_0x2b7e01babda0){
-#line 83
-  switch (arg_0x2b7e01babda0) {
-#line 83
-    case 0U:
-#line 83
-      MyTimerC__Timer1__fired();
-#line 83
-      break;
-#line 83
-    default:
-#line 83
-      /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__default__fired(arg_0x2b7e01babda0);
-#line 83
-      break;
-#line 83
-    }
-#line 83
-}
-#line 83
-# 97 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-static inline bool SchedulerBasicP__isWaiting(uint8_t id)
-{
-  return SchedulerBasicP__m_next[id] != SchedulerBasicP__NO_TASK || SchedulerBasicP__m_tail == id;
-}
-
-static inline bool SchedulerBasicP__pushTask(uint8_t id)
-{
-  if (!SchedulerBasicP__isWaiting(id)) 
-    {
-      if (SchedulerBasicP__m_head == SchedulerBasicP__NO_TASK) 
-        {
-          SchedulerBasicP__m_head = id;
-          SchedulerBasicP__m_tail = id;
-        }
-      else 
-        {
-          SchedulerBasicP__m_next[SchedulerBasicP__m_tail] = id;
-          SchedulerBasicP__m_tail = id;
-        }
-      return TRUE;
-    }
-  else 
-    {
-      return FALSE;
-    }
-}
-
-# 103 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-inline static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__startAt(/*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type t0, /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type dt){
-#line 103
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__startAt(t0, dt);
-#line 103
-}
-#line 103
-# 58 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__start(uint32_t t0, uint32_t dt, bool oneshot)
-{
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__m_dt = dt;
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__m_oneshot = oneshot;
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__startAt(t0, dt);
-}
-
-#line 93
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__startOneShotAt(uint32_t t0, uint32_t dt)
-{
-#line 94
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__start(t0, dt, TRUE);
-}
-
-# 129 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__startOneShotAt(uint32_t t0, uint32_t dt){
-#line 129
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__startOneShotAt(t0, dt);
-#line 129
-}
-#line 129
-# 159 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
-static inline void HplAtm128Timer0SyncP__Compare__set(uint8_t t)
-#line 159
-{
-  * (volatile uint8_t *)(0x31 + 0x20) = t;
-}
-
-# 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
-inline static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__set(/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__size_type t){
-#line 54
-  HplAtm128Timer0SyncP__Compare__set(t);
-#line 54
-}
-#line 54
-# 74 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
-static inline uint8_t HplAtm128Timer0SyncP__Timer__get(void )
-#line 74
-{
-#line 74
-  return * (volatile uint8_t *)(0x32 + 0x20);
-}
-
-# 61 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
-inline static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__timer_size /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__get(void ){
-#line 61
-  unsigned char result;
-#line 61
-
-#line 61
-  result = HplAtm128Timer0SyncP__Timer__get();
-#line 61
-
-#line 61
-  return result;
-#line 61
-}
-#line 61
-# 248 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
-static inline int HplAtm128Timer0SyncP__TimerSync__compareBusy(void )
-#line 248
-{
-  return (* (volatile uint8_t *)(0x30 + 0x20) & (1 << 1)) != 0;
-}
-
-# 51 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
-inline static int /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerSync__compareBusy(void ){
-#line 51
-  int result;
-#line 51
-
-#line 51
-  result = HplAtm128Timer0SyncP__TimerSync__compareBusy();
-#line 51
-
-#line 51
-  return result;
-#line 51
-}
-#line 51
-# 81 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setOcr0(uint8_t n)
-#line 81
-{
-  while (/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerSync__compareBusy()) 
-    ;
-  if (n == /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__get()) {
-    n++;
-    }
-
-
-  if (/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base + n + 1 < /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base) {
-    n = -/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base - 1;
-    }
-#line 91
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__set(n);
-}
-
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired);
-#line 67
-
-#line 67
-  return result;
-#line 67
-}
-#line 67
-# 81 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-static inline void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__fired(void )
-{
-#line 82
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__postTask();
-}
-
-# 78 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-inline static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__fired(void ){
-#line 78
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__fired();
-#line 78
-}
-#line 78
-# 233 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getAlarm(void )
-#line 233
-{
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 234
-    {
-      unsigned long __nesc_temp = 
-#line 234
-      /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__t0 + /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__dt;
-
-      {
-#line 234
-        __nesc_atomic_end(__nesc_atomic); 
-#line 234
-        return __nesc_temp;
-      }
-    }
-#line 236
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 116 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-inline static /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__getAlarm(void ){
-#line 116
-  unsigned long result;
-#line 116
-
-#line 116
-  result = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getAlarm();
-#line 116
-
-#line 116
-  return result;
-#line 116
-}
-#line 116
-# 229 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getNow(void )
-#line 229
-{
-  return /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__get();
-}
-
-# 109 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
-inline static /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__size_type /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__getNow(void ){
-#line 109
-  unsigned long result;
-#line 109
-
-#line 109
-  result = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__getNow();
-#line 109
-
-#line 109
-  return result;
-#line 109
-}
-#line 109
-# 96 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-static inline uint32_t /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__getNow(void )
-{
-#line 97
-  return /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__getNow();
-}
-
-# 136 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static uint32_t /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__getNow(void ){
-#line 136
-  unsigned long result;
-#line 136
-
-#line 136
-  result = /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__getNow();
-#line 136
-
-#line 136
-  return result;
-#line 136
-}
-#line 136
-# 141 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__fired(void )
-{
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__fireTimers(/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__getNow());
-}
-
-# 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__fired(void ){
-#line 83
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__fired();
-#line 83
-}
-#line 83
-# 53 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
 inline static Atm128_TIFR_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__getInterruptFlag(void ){
 #line 53
   union __nesc_unnamed4273 result;
@@ -2253,12 +1639,11 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 78
 }
 #line 78
-# 23 "MyTimerC.nc"
+# 25 "MyTimerC.nc"
 static inline void MyTimerC__Timer0__fired(void )
-#line 23
+#line 25
 {
-
-  MyTimerC__Out0__toggle();
+  * (volatile uint8_t *)(0x12 + 0x20) ^= 0x01;
 }
 
 # 206 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
@@ -2267,9 +1652,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b7e01babda0){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x2b9bd5b4eda0){
 #line 83
-  switch (arg_0x2b7e01babda0) {
+  switch (arg_0x2b9bd5b4eda0) {
 #line 83
     case 0U:
 #line 83
@@ -2279,7 +1664,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b7e01babda0);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x2b9bd5b4eda0);
 #line 83
       break;
 #line 83
@@ -2287,21 +1672,34 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
 }
 #line 83
-# 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
-#line 67
-  unsigned char result;
-#line 67
-
-#line 67
-  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
-#line 67
-
-#line 67
-  return result;
-#line 67
+# 97 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
+static inline bool SchedulerBasicP__isWaiting(uint8_t id)
+{
+  return SchedulerBasicP__m_next[id] != SchedulerBasicP__NO_TASK || SchedulerBasicP__m_tail == id;
 }
-#line 67
+
+static inline bool SchedulerBasicP__pushTask(uint8_t id)
+{
+  if (!SchedulerBasicP__isWaiting(id)) 
+    {
+      if (SchedulerBasicP__m_head == SchedulerBasicP__NO_TASK) 
+        {
+          SchedulerBasicP__m_head = id;
+          SchedulerBasicP__m_tail = id;
+        }
+      else 
+        {
+          SchedulerBasicP__m_next[SchedulerBasicP__m_tail] = id;
+          SchedulerBasicP__m_tail = id;
+        }
+      return TRUE;
+    }
+  else 
+    {
+      return FALSE;
+    }
+}
+
 # 103 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Alarm.nc"
 inline static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__startAt(/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type t0, /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type dt){
 #line 103
@@ -2331,6 +1729,13 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 129
 }
 #line 129
+# 159 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline void HplAtm128Timer0SyncP__Compare__set(uint8_t t)
+#line 159
+{
+  * (volatile uint8_t *)(0x31 + 0x20) = t;
+}
+
 # 54 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
 inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__set(/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__size_type t){
 #line 54
@@ -2338,6 +1743,14 @@ inline static void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm12
 #line 54
 }
 #line 54
+# 74 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline uint8_t HplAtm128Timer0SyncP__Timer__get(void )
+#line 74
+{
+#line 74
+  return * (volatile uint8_t *)(0x32 + 0x20);
+}
+
 # 61 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
 inline static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__timer_size /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__get(void ){
 #line 61
@@ -2353,6 +1766,13 @@ inline static /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128Alar
 #line 61
 }
 #line 61
+# 248 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer0SyncP.nc"
+static inline int HplAtm128Timer0SyncP__TimerSync__compareBusy(void )
+#line 248
+{
+  return (* (volatile uint8_t *)(0x30 + 0x20) & (1 << 1)) != 0;
+}
+
 # 51 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
 inline static int /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__compareBusy(void ){
 #line 51
@@ -2562,54 +1982,13 @@ static inline error_t /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/At
 
     /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerSync__setTimer0Synchronous();
     x.flat = 0;
-    x.bits.cs = 3;
+    x.bits.cs = 4;
     x.bits.wgm1 = 1;
     /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__TimerCtrl__setControl(x);
     /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__set(/*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__MAXT);
     /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__start();
   }
   /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__setInterrupt();
-  return SUCCESS;
-}
-
-# 65 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
-inline static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__start(void ){
-#line 65
-  HplAtm128Timer0SyncP__Compare__start();
-#line 65
-}
-#line 65
-# 46 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerCtrl8.nc"
-inline static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__setControl(Atm128TimerControl_t control){
-#line 46
-  HplAtm128Timer0SyncP__TimerCtrl__setControl(control);
-#line 46
-}
-#line 46
-# 39 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128TimerSync.nc"
-inline static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerSync__setTimer0Synchronous(void ){
-#line 39
-  HplAtm128Timer0SyncP__TimerSync__setTimer0Synchronous();
-#line 39
-}
-#line 39
-# 61 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline error_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Init__init(void )
-#line 61
-{
-  /* atomic removed: atomic calls only */
-  {
-    Atm128TimerControl_t x;
-
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerSync__setTimer0Synchronous();
-    x.flat = 0;
-    x.bits.cs = 3;
-    x.bits.wgm1 = 1;
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__setControl(x);
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__set(/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MAXT);
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__start();
-  }
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setInterrupt();
   return SUCCESS;
 }
 
@@ -2620,9 +1999,7 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 62
 
 #line 62
-  result = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Init__init();
-#line 62
-  result = ecombine(result, /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Init__init());
+  result = /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Init__init();
 #line 62
 
 #line 62
@@ -2630,44 +2007,14 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 62
 }
 #line 62
-# 61 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.PortC.Bit5*/HplAtm128GeneralIOPinP__21__IO__makeOutput(void )
-#line 61
-{
-#line 61
-  * (volatile uint8_t * )52U |= 1 << 5;
-}
-
-# 46 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void MyTimerC__Out1__makeOutput(void ){
-#line 46
-  /*HplAtm128GeneralIOC.PortC.Bit5*/HplAtm128GeneralIOPinP__21__IO__makeOutput();
-#line 46
-}
-#line 46
-# 61 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__makeOutput(void )
-#line 61
-{
-#line 61
-  * (volatile uint8_t * )52U |= 1 << 1;
-}
-
-# 46 "/homes/mhartmann/baq/tinyos/tos/interfaces/GeneralIO.nc"
-inline static void MyTimerC__Out0__makeOutput(void ){
-#line 46
-  /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__makeOutput();
-#line 46
-}
-#line 46
 # 67 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static error_t /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__postTask(void ){
+inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
 #line 67
   unsigned char result;
 #line 67
 
 #line 67
-  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer);
+  result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
 #line 67
 
 #line 67
@@ -2676,39 +2023,41 @@ inline static error_t /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__up
 }
 #line 67
 # 146 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
 {
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer_t *timer = &/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__m_timers[num];
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
 
 #line 149
   timer->t0 = t0;
   timer->dt = dt;
   timer->isoneshot = isoneshot;
   timer->isrunning = TRUE;
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__postTask();
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
 }
 
-static inline void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__startPeriodic(uint8_t num, uint32_t dt)
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt)
 {
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__startTimer(num, /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__getNow(), dt, FALSE);
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, FALSE);
 }
 
 # 64 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Timer.nc"
-inline static void MyTimerC__Timer1__startPeriodic(uint32_t dt){
+inline static void MyTimerC__Timer0__startPeriodic(uint32_t dt){
 #line 64
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__startPeriodic(0U, dt);
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(0U, dt);
 #line 64
 }
 #line 64
-# 14 "MyTimerC.nc"
+# 15 "MyTimerC.nc"
 static inline void MyTimerC__Boot__booted(void )
-#line 14
+#line 15
 {
 
-  MyTimerC__Timer1__startPeriodic(40);
 
-  MyTimerC__Out0__makeOutput();
-  MyTimerC__Out1__makeOutput();
+
+  * (volatile uint8_t *)(0x11 + 0x20) = 0xFF;
+  * (volatile uint8_t *)(0x12 + 0x20) = 0xAA;
+  MyTimerC__Timer0__startPeriodic(500);
+  * (volatile uint8_t *)(0x12 + 0x20) = 0x00;
 }
 
 # 60 "/homes/mhartmann/baq/tinyos/tos/interfaces/Boot.nc"
@@ -2724,9 +2073,9 @@ static inline void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/homes/mhartmann/baq/tinyos/tos/interfaces/TaskBasic.nc"
-inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7e01834108){
+inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b9bd57f8108){
 #line 75
-  switch (arg_0x2b7e01834108) {
+  switch (arg_0x2b9bd57f8108) {
 #line 75
     case /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired:
 #line 75
@@ -2740,21 +2089,9 @@ inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x2b7e0183410
 #line 75
       break;
 #line 75
-    case /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired:
-#line 75
-      /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__runTask();
-#line 75
-      break;
-#line 75
-    case /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer:
-#line 75
-      /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__runTask();
-#line 75
-      break;
-#line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b7e01834108);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x2b9bd57f8108);
 #line 75
       break;
 #line 75
@@ -3000,53 +2337,8 @@ static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm12
     }
 }
 
-# 58 "/homes/mhartmann/baq/tinyos/tos/lib/timer/CounterToLocalTimeC.nc"
-static inline void /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__overflow(void )
-{
-}
-
-# 82 "/homes/mhartmann/baq/tinyos/tos/lib/timer/Counter.nc"
-inline static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__overflow(void ){
-#line 82
-  /*HilTimerMicroC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__overflow();
-#line 82
-}
-#line 82
-# 48 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
-inline static /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__size_type /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__get(void ){
-#line 48
-  unsigned char result;
-#line 48
-
-#line 48
-  result = HplAtm128Timer0SyncP__Compare__get();
-#line 48
-
-#line 48
-  return result;
-#line 48
-}
-#line 48
-# 156 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__fired(void )
-#line 156
-{
-  int overflowed;
-
-
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base += /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__get() + 1U;
-  overflowed = !/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base;
-  __nesc_enable_interrupt();
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setInterrupt();
-  if (overflowed) {
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__overflow();
-    }
-}
-
 # 58 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Compare.nc"
 inline static void HplAtm128Timer0SyncP__Compare__fired(void ){
-#line 58
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__fired();
 #line 58
   /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Compare__fired();
 #line 58
@@ -3058,16 +2350,8 @@ static inline void /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm12
 {
 }
 
-#line 237
-static inline void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__overflow(void )
-#line 237
-{
-}
-
 # 70 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/HplAtm128Timer.nc"
 inline static void HplAtm128Timer0SyncP__Timer__overflow(void ){
-#line 70
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__overflow();
 #line 70
   /*AlarmCounterMilliP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__0__Timer__overflow();
 #line 70
@@ -3146,249 +2430,6 @@ static bool SchedulerBasicP__Scheduler__runNextTask(void )
 #line 145
   SchedulerBasicP__TaskBasic__runTask(nextTask);
   return TRUE;
-}
-
-# 102 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__runTask(void )
-{
-
-
-
-
-  uint32_t now = /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__getNow();
-  int32_t min_remaining = (1UL << 31) - 1;
-  bool min_remaining_isset = FALSE;
-  uint8_t num;
-
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__stop();
-
-  for (num = 0; num < /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__NUM_TIMERS; num++) 
-    {
-      /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer_t *timer = &/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__m_timers[num];
-
-      if (timer->isrunning) 
-        {
-          uint32_t elapsed = now - timer->t0;
-          int32_t remaining = timer->dt - elapsed;
-
-          if (remaining < min_remaining) 
-            {
-              min_remaining = remaining;
-              min_remaining_isset = TRUE;
-            }
-        }
-    }
-
-  if (min_remaining_isset) 
-    {
-      if (min_remaining <= 0) {
-        /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__fireTimers(now);
-        }
-      else {
-#line 137
-        /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__TimerFrom__startOneShotAt(now, min_remaining);
-        }
-    }
-}
-
-# 168 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static uint32_t /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__get(void )
-#line 168
-{
-  uint32_t now;
-
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-    {
-
-
-      uint8_t now8 = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__get();
-
-      if (/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__getInterruptFlag().bits.ocf0) {
-
-
-        now = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base + /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__get() + 1 + /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__get();
-        }
-      else {
-
-        now = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base + now8;
-        }
-    }
-#line 186
-    __nesc_atomic_end(__nesc_atomic); }
-#line 186
-  return now;
-}
-
-# 75 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
-static void /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__fireTimers(uint32_t now)
-{
-  uint8_t num;
-
-  for (num = 0; num < /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__NUM_TIMERS; num++) 
-    {
-      /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer_t *timer = &/*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__m_timers[num];
-
-      if (timer->isrunning) 
-        {
-          uint32_t elapsed = now - timer->t0;
-
-          if (elapsed >= timer->dt) 
-            {
-              if (timer->isoneshot) {
-                timer->isrunning = FALSE;
-                }
-              else {
-#line 92
-                timer->t0 += timer->dt;
-                }
-              /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__Timer__fired(num);
-              break;
-            }
-        }
-    }
-  /*HilTimerMicroC.VirtualizeTimerC*/VirtualizeTimerC__1__updateFromTimer__postTask();
-}
-
-# 57 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/pins/HplAtm128GeneralIOPinP.nc"
-static void /*HplAtm128GeneralIOC.PortC.Bit1*/HplAtm128GeneralIOPinP__17__IO__toggle(void )
-#line 57
-{
-#line 57
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 57
-    * (volatile uint8_t * )53U ^= 1 << 1;
-#line 57
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 170 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
-static error_t SchedulerBasicP__TaskBasic__postTask(uint8_t id)
-{
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 172
-    {
-#line 172
-      {
-        unsigned char __nesc_temp = 
-#line 172
-        SchedulerBasicP__pushTask(id) ? SUCCESS : EBUSY;
-
-        {
-#line 172
-          __nesc_atomic_end(__nesc_atomic); 
-#line 172
-          return __nesc_temp;
-        }
-      }
-    }
-#line 175
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
-# 219 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__startAt(uint32_t nt0, uint32_t ndt)
-#line 219
-{
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-    {
-      /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__set = TRUE;
-      /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__t0 = nt0;
-      /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__dt = ndt;
-    }
-#line 225
-    __nesc_atomic_end(__nesc_atomic); }
-  /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setInterrupt();
-}
-
-#line 97
-static void /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setInterrupt(void )
-#line 97
-{
-  bool fired = FALSE;
-
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-    {
-
-
-
-      uint8_t interrupt_in = 1 + /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Compare__get() - /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Timer__get();
-      uint8_t newOcr0;
-      uint8_t tifr = (uint8_t )/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__TimerCtrl__getInterruptFlag().flat;
-
-#line 108
-      ;
-      if ((interrupt_in != 0 && interrupt_in < /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MINDT) || tifr & (1 << 1)) {
-          if (interrupt_in < /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MINDT) {
-              ;
-            }
-          else {
-              ;
-            }
-          {
-#line 116
-            __nesc_atomic_end(__nesc_atomic); 
-#line 116
-            return;
-          }
-        }
-
-      if (!/*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__set) {
-          newOcr0 = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MAXT;
-          ;
-        }
-      else 
-        {
-          uint32_t now = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Counter__get();
-
-#line 127
-          ;
-
-          if ((uint32_t )(now - /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__t0) >= /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__dt) 
-            {
-              /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__set = FALSE;
-              fired = TRUE;
-              newOcr0 = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MAXT;
-            }
-          else 
-            {
-
-
-              uint32_t alarm_in = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__t0 + /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__dt - /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__base;
-
-              if (alarm_in > /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MAXT) {
-                newOcr0 = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MAXT;
-                }
-              else {
-#line 143
-                if ((uint8_t )alarm_in < /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MINDT) {
-                  newOcr0 = /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__MINDT;
-                  }
-                else {
-#line 146
-                  newOcr0 = alarm_in;
-                  }
-                }
-            }
-        }
-#line 149
-      newOcr0--;
-      /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__setOcr0(newOcr0);
-    }
-#line 151
-    __nesc_atomic_end(__nesc_atomic); }
-  if (fired) {
-    /*AlarmCounterMicroP.Atm128AlarmSyncC.Atm128AlarmSyncP*/Atm128AlarmSyncP__1__Alarm__fired();
-    }
-}
-
-# 74 "/homes/mhartmann/baq/tinyos/tos/lib/timer/AlarmToTimerC.nc"
-static void /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__fired__runTask(void )
-{
-  if (/*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__m_oneshot == FALSE) {
-    /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__start(/*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Alarm__getAlarm(), /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__m_dt, FALSE);
-    }
-#line 78
-  /*HilTimerMicroC.AlarmToTimerC*/AlarmToTimerC__1__Timer__fired();
 }
 
 # 102 "/homes/mhartmann/baq/tinyos/tos/lib/timer/VirtualizeTimerC.nc"
@@ -3490,6 +2531,30 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(u
         }
     }
   /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
+}
+
+# 170 "/homes/mhartmann/baq/tinyos/tos/system/SchedulerBasicP.nc"
+static error_t SchedulerBasicP__TaskBasic__postTask(uint8_t id)
+{
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 172
+    {
+#line 172
+      {
+        unsigned char __nesc_temp = 
+#line 172
+        SchedulerBasicP__pushTask(id) ? SUCCESS : EBUSY;
+
+        {
+#line 172
+          __nesc_atomic_end(__nesc_atomic); 
+#line 172
+          return __nesc_temp;
+        }
+      }
+    }
+#line 175
+    __nesc_atomic_end(__nesc_atomic); }
 }
 
 # 219 "/homes/mhartmann/baq/tinyos/tos/chips/atm128/timerSync/Atm128AlarmSyncP.nc"

@@ -43,20 +43,20 @@ implementation{
     call RST.set();
     call BSYNC.set();
     call DREQ.makeInput();
-   
+    PORTC = 4;   
     /* reset */
     call RST.clr();
     call RST.set();
     while ( !call MP3.isReady() ){
       ; /* ~380us */
     }
-
+    PORTC = 5;
     /* set clock */
     call MP3.writeRegister( CLOCKF, 12500 );
     while ( !call MP3.isReady() ){
       ; /* ~50us */
     }
-   
+    PORTC = 6;
     /* set native mode */
     call MP3.writeRegister( MODE, (1<<SM_SDINEW) );
     while ( !call MP3.isReady() ){

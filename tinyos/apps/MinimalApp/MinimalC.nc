@@ -8,12 +8,14 @@
 
 module MinimalC @safe()
 {
-	uses interface Boot;
+  uses interface Boot;
 }
 implementation
 {
-	event void Boot.booted()
-	{
-	}
+  event void Boot.booted()
+  {
+    DDRD = 0xFF;
+    PORTD = 0xAA;
+  }
 }
 

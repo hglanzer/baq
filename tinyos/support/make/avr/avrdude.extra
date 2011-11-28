@@ -16,8 +16,8 @@ ifeq ($(PROGRAMMER),avrdude)
         BOOTLOADER_IMG := $(shell cygpath -m $(BOOTLOADER_IMG))
       endif
     endif
-    
-    PROGRAMMER_FLAGS = -p m128 -c avrisp2 -P usb -e -U flash:w:$(MAIN_IHEX)
+
+    PROGRAMMER_FLAGS = -p $(PROGRAMMER_TARGET) -c avrisp2 -P usb -e -U flash:w:$(MAIN_IHEX)
 #    PROGRAMMER_FLAGS = -p m128 -c avrisp2 -P usb -e -U flash:w:build/bigAVR6/main.ihex
     PROGRAMMER_INSTALL_SREC_FLAGS =
     PROGRAMMER_INSTLAL_BOOTLOADER_FLAGS=
