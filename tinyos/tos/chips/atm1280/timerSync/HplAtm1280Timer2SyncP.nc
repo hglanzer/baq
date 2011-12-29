@@ -249,14 +249,15 @@ implementation
     }
   }
 
-#ifndef PRESCALER
-#define PRESCALER 124
+/* when using UART, PRESCALER is defined else where... 124 is the correct value for the Atm1280 with 16MHz */
+#ifndef PRESCALER_1280
+#define PRESCALER_1280 124
 #endif
 
   default async event void Compare.fired() { }
   AVR_ATOMIC_HANDLER(SIG_OUTPUT_COMPARE2A) {
     /* taken from HplAtm128Timer0SyncP */
-    if(count == PRESCALER)
+    if(count == PRESCALER_1280)
       {
     	stabiliseTimer2();
 	signal Compare.fired();

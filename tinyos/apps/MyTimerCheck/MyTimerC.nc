@@ -28,9 +28,15 @@ implementation {
     call Out4.set();
     call Timer0.startPeriodic( 1000 );
     call Timer1.startPeriodic( 500 );
+    DDRA = 0xFF;
+    DDRB = 0xFF;
+    DDRC = 0xFF;
   }
   
   event void Timer0.fired(){
+    PORTA = TCCR2A;
+    PORTB = TCCR2B;
+    PORTC = ASSR;
     //PORTH ^= _BV(1);
     //_SFR_MEM8(0x102) ^= _BV(1);
     call Out0.toggle();

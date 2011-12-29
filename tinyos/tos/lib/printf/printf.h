@@ -40,6 +40,11 @@
 #ifndef PRINTF_H
 #define PRINTF_H
 
+#ifndef NEW_PRINTF_SEMANTICS
+#warning \
+"                                  *************************** PRINTF SEMANTICS HAVE CHANGED! ********************************************* Make sure you now include the following two components in your top level application file: PrintfC and SerialStartC. To supress this warning in the future, #define the variable NEW_PRINTF_SEMANTICS. Take a look at the updated tutorial application under apps/tutorials/printf for an example. ************************************************************************************"
+#endif
+
 #ifndef PRINTF_BUFFER_SIZE
 #define PRINTF_BUFFER_SIZE 250 
 #endif
@@ -52,19 +57,17 @@
   #define PrintfQueue	Queue
 #endif
 
-#ifdef _H_msp430hardware_h
+#if defined (_H_msp430hardware_h) || defined (_H_atmega128hardware_H)
   #include <stdio.h>
 #else
-#ifdef _H_atmega128hardware_H
-  #include "avr_stdio.h"
-#else
-#ifdef __M16C62PHARDWARE_H__ 
-  #include "m16c62p_printf.h"
+#ifdef __M16C60HARDWARE_H__ 
+  #include "m16c60_printf.h"
 #else
   #include "generic_printf.h"
 #endif
 #endif
-#endif
+#undef putchar
+
 #include "message.h"
 int printfflush();
 
